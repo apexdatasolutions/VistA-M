@@ -1,140 +1,124 @@
-IBDEI0QY ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0QY ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,13297,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13297,1,4,0)
- ;;=4^788.36
- ;;^UTILITY(U,$J,358.3,13297,1,5,0)
- ;;=5^Enuresis, nocturnal
- ;;^UTILITY(U,$J,358.3,13297,2)
- ;;=^293939
- ;;^UTILITY(U,$J,358.3,13298,0)
- ;;=788.41^^87^832^64
- ;;^UTILITY(U,$J,358.3,13298,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13298,1,4,0)
- ;;=4^788.41
- ;;^UTILITY(U,$J,358.3,13298,1,5,0)
- ;;=5^Frequency of urine
- ;;^UTILITY(U,$J,358.3,13298,2)
- ;;=^124396
- ;;^UTILITY(U,$J,358.3,13299,0)
- ;;=788.21^^87^832^81
- ;;^UTILITY(U,$J,358.3,13299,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13299,1,4,0)
- ;;=4^788.21
- ;;^UTILITY(U,$J,358.3,13299,1,5,0)
- ;;=5^Incomplet bladder emptying
- ;;^UTILITY(U,$J,358.3,13299,2)
- ;;=^295766
- ;;^UTILITY(U,$J,358.3,13300,0)
- ;;=788.34^^87^832^83
- ;;^UTILITY(U,$J,358.3,13300,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13300,1,4,0)
- ;;=4^788.34
- ;;^UTILITY(U,$J,358.3,13300,1,5,0)
- ;;=5^Incontinence w/o Sensory Aware
- ;;^UTILITY(U,$J,358.3,13300,2)
- ;;=^293937
- ;;^UTILITY(U,$J,358.3,13301,0)
- ;;=788.33^^87^832^84
- ;;^UTILITY(U,$J,358.3,13301,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13301,1,4,0)
- ;;=4^788.33
- ;;^UTILITY(U,$J,358.3,13301,1,5,0)
- ;;=5^Incontinence, mixed
- ;;^UTILITY(U,$J,358.3,13301,2)
- ;;=^293936
- ;;^UTILITY(U,$J,358.3,13302,0)
- ;;=788.30^^87^832^85
- ;;^UTILITY(U,$J,358.3,13302,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13302,1,4,0)
- ;;=4^788.30
- ;;^UTILITY(U,$J,358.3,13302,1,5,0)
- ;;=5^Incontinence, other
- ;;^UTILITY(U,$J,358.3,13302,2)
- ;;=Incontinence, other^124400
- ;;^UTILITY(U,$J,358.3,13303,0)
- ;;=788.32^^87^832^86
- ;;^UTILITY(U,$J,358.3,13303,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13303,1,4,0)
- ;;=4^788.32
- ;;^UTILITY(U,$J,358.3,13303,1,5,0)
- ;;=5^Incontinence, stress, male
- ;;^UTILITY(U,$J,358.3,13303,2)
- ;;=^293934
- ;;^UTILITY(U,$J,358.3,13304,0)
- ;;=788.31^^87^832^87
- ;;^UTILITY(U,$J,358.3,13304,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13304,1,4,0)
- ;;=4^788.31
- ;;^UTILITY(U,$J,358.3,13304,1,5,0)
- ;;=5^Incontinence, urge
- ;;^UTILITY(U,$J,358.3,13304,2)
- ;;=^260046
- ;;^UTILITY(U,$J,358.3,13305,0)
- ;;=788.43^^87^832^105
- ;;^UTILITY(U,$J,358.3,13305,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13305,1,4,0)
- ;;=4^788.43
- ;;^UTILITY(U,$J,358.3,13305,1,5,0)
- ;;=5^Nocturia
- ;;^UTILITY(U,$J,358.3,13305,2)
- ;;=Nocturia^84740
- ;;^UTILITY(U,$J,358.3,13306,0)
- ;;=788.5^^87^832^106
- ;;^UTILITY(U,$J,358.3,13306,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13306,1,4,0)
- ;;=4^788.5
- ;;^UTILITY(U,$J,358.3,13306,1,5,0)
- ;;=5^Oliguria/Anuria
- ;;^UTILITY(U,$J,358.3,13306,2)
- ;;=Oliguria/Anuria^85458
- ;;^UTILITY(U,$J,358.3,13307,0)
- ;;=788.42^^87^832^114
- ;;^UTILITY(U,$J,358.3,13307,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13307,1,4,0)
- ;;=4^788.42
- ;;^UTILITY(U,$J,358.3,13307,1,5,0)
- ;;=5^Polyuria
- ;;^UTILITY(U,$J,358.3,13307,2)
- ;;=Polyuria^96503
- ;;^UTILITY(U,$J,358.3,13308,0)
- ;;=788.20^^87^832^121
- ;;^UTILITY(U,$J,358.3,13308,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13308,1,4,0)
- ;;=4^788.20
- ;;^UTILITY(U,$J,358.3,13308,1,5,0)
- ;;=5^Retention, urinary
- ;;^UTILITY(U,$J,358.3,13308,2)
- ;;=^295812
- ;;^UTILITY(U,$J,358.3,13309,0)
- ;;=788.62^^87^832^126
- ;;^UTILITY(U,$J,358.3,13309,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13309,1,4,0)
- ;;=4^788.62
- ;;^UTILITY(U,$J,358.3,13309,1,5,0)
- ;;=5^Slowing, urine stream
- ;;^UTILITY(U,$J,358.3,13309,2)
- ;;=^295769
- ;;^UTILITY(U,$J,358.3,13310,0)
- ;;=788.7^^87^832^141
- ;;^UTILITY(U,$J,358.3,13310,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13310,1,4,0)
- ;;=4^788.7
- ;;^UTILITY(U,$J,358.3,13310,1,5,0)
- ;;=5^Urethral Discharge
+ ;;^UTILITY(U,$J,358.3,12340,1,4,0)
+ ;;=4^S16.1XXA
+ ;;^UTILITY(U,$J,358.3,12340,2)
+ ;;=^5022358
+ ;;^UTILITY(U,$J,358.3,12341,0)
+ ;;=T69.9XXA^^71^708^56
+ ;;^UTILITY(U,$J,358.3,12341,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12341,1,3,0)
+ ;;=3^Effect of reduced temperature, unspecified, init encntr
+ ;;^UTILITY(U,$J,358.3,12341,1,4,0)
+ ;;=4^T69.9XXA
+ ;;^UTILITY(U,$J,358.3,12341,2)
+ ;;=^5053978
+ ;;^UTILITY(U,$J,358.3,12342,0)
+ ;;=T69.8XXA^^71^708^57
+ ;;^UTILITY(U,$J,358.3,12342,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12342,1,3,0)
+ ;;=3^Effects of Reduced Temperature NEC,Init Encntr
+ ;;^UTILITY(U,$J,358.3,12342,1,4,0)
+ ;;=4^T69.8XXA
+ ;;^UTILITY(U,$J,358.3,12342,2)
+ ;;=^5053975
+ ;;^UTILITY(U,$J,358.3,12343,0)
+ ;;=L57.8^^71^708^196
+ ;;^UTILITY(U,$J,358.3,12343,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12343,1,3,0)
+ ;;=3^Skin Changes d/t Chr Expsr to Nonionizing Radiation NEC
+ ;;^UTILITY(U,$J,358.3,12343,1,4,0)
+ ;;=4^L57.8
+ ;;^UTILITY(U,$J,358.3,12343,2)
+ ;;=^5009226
+ ;;^UTILITY(U,$J,358.3,12344,0)
+ ;;=S91.001A^^71^708^165
+ ;;^UTILITY(U,$J,358.3,12344,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12344,1,3,0)
+ ;;=3^Open wnd of right ankle unspec, initial encounter
+ ;;^UTILITY(U,$J,358.3,12344,1,4,0)
+ ;;=4^S91.001A
+ ;;^UTILITY(U,$J,358.3,12344,2)
+ ;;=^5044129
+ ;;^UTILITY(U,$J,358.3,12345,0)
+ ;;=S91.002A^^71^708^155
+ ;;^UTILITY(U,$J,358.3,12345,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12345,1,3,0)
+ ;;=3^Open wnd of left ankle unspec, initial encounter
+ ;;^UTILITY(U,$J,358.3,12345,1,4,0)
+ ;;=4^S91.002A
+ ;;^UTILITY(U,$J,358.3,12345,2)
+ ;;=^5044132
+ ;;^UTILITY(U,$J,358.3,12346,0)
+ ;;=S41.101A^^71^708^174
+ ;;^UTILITY(U,$J,358.3,12346,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12346,1,3,0)
+ ;;=3^Open wnd of right upper arm unspec, initial enco
+ ;;^UTILITY(U,$J,358.3,12346,1,4,0)
+ ;;=4^S41.101A
+ ;;^UTILITY(U,$J,358.3,12346,2)
+ ;;=^5026330
+ ;;^UTILITY(U,$J,358.3,12347,0)
+ ;;=S41.102A^^71^708^164
+ ;;^UTILITY(U,$J,358.3,12347,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12347,1,3,0)
+ ;;=3^Open wnd of left upper arm unspec, initial encou
+ ;;^UTILITY(U,$J,358.3,12347,1,4,0)
+ ;;=4^S41.102A
+ ;;^UTILITY(U,$J,358.3,12347,2)
+ ;;=^5026333
+ ;;^UTILITY(U,$J,358.3,12348,0)
+ ;;=S61.200A^^71^708^169
+ ;;^UTILITY(U,$J,358.3,12348,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12348,1,3,0)
+ ;;=3^Open wnd of right idx fngr w/o damage to nail unspec, init
+ ;;^UTILITY(U,$J,358.3,12348,1,4,0)
+ ;;=4^S61.200A
+ ;;^UTILITY(U,$J,358.3,12348,2)
+ ;;=^5032741
+ ;;^UTILITY(U,$J,358.3,12349,0)
+ ;;=S61.201A^^71^708^159
+ ;;^UTILITY(U,$J,358.3,12349,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12349,1,3,0)
+ ;;=3^Open wnd of left idx fngr w/o damage to nail unspec, init
+ ;;^UTILITY(U,$J,358.3,12349,1,4,0)
+ ;;=4^S61.201A
+ ;;^UTILITY(U,$J,358.3,12349,2)
+ ;;=^5032744
+ ;;^UTILITY(U,$J,358.3,12350,0)
+ ;;=S61.202A^^71^708^172
+ ;;^UTILITY(U,$J,358.3,12350,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12350,1,3,0)
+ ;;=3^Open wnd of right mid finger w/o damage to nail unspec, ini
+ ;;^UTILITY(U,$J,358.3,12350,1,4,0)
+ ;;=4^S61.202A
+ ;;^UTILITY(U,$J,358.3,12350,2)
+ ;;=^5032747
+ ;;^UTILITY(U,$J,358.3,12351,0)
+ ;;=S61.203A^^71^708^162
+ ;;^UTILITY(U,$J,358.3,12351,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12351,1,3,0)
+ ;;=3^Open wnd of left mid finger w/o damage to nail unspec, ini
+ ;;^UTILITY(U,$J,358.3,12351,1,4,0)
+ ;;=4^S61.203A
+ ;;^UTILITY(U,$J,358.3,12351,2)
+ ;;=^5032750
+ ;;^UTILITY(U,$J,358.3,12352,0)
+ ;;=S61.204A^^71^708^173
+ ;;^UTILITY(U,$J,358.3,12352,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12352,1,3,0)
+ ;;=3^Open wnd of right rng fngr w/o damage to nail unspec, init

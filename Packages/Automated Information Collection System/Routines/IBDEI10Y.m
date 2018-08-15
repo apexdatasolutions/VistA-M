@@ -1,138 +1,124 @@
-IBDEI10Y ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI10Y ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,18375,1,5,0)
- ;;=5^Abscess- toe
- ;;^UTILITY(U,$J,358.3,18375,2)
- ;;=^271885
- ;;^UTILITY(U,$J,358.3,18376,0)
- ;;=682.6^^121^1166^8
- ;;^UTILITY(U,$J,358.3,18376,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,18376,1,3,0)
- ;;=3^682.6
- ;;^UTILITY(U,$J,358.3,18376,1,5,0)
- ;;=5^Abscess- ankle or leg
- ;;^UTILITY(U,$J,358.3,18376,2)
- ;;=^271894
- ;;^UTILITY(U,$J,358.3,18377,0)
- ;;=754.53^^121^1166^12
- ;;^UTILITY(U,$J,358.3,18377,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,18377,1,3,0)
- ;;=3^754.53
- ;;^UTILITY(U,$J,358.3,18377,1,5,0)
- ;;=5^Adductovarus (metatarsus) congenital
- ;;^UTILITY(U,$J,358.3,18377,2)
- ;;=^273007
- ;;^UTILITY(U,$J,358.3,18378,0)
- ;;=V49.74^^121^1166^16
- ;;^UTILITY(U,$J,358.3,18378,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,18378,1,3,0)
- ;;=3^V49.74
- ;;^UTILITY(U,$J,358.3,18378,1,5,0)
- ;;=5^Amputation Status, ankle
- ;;^UTILITY(U,$J,358.3,18378,2)
- ;;=^303442
- ;;^UTILITY(U,$J,358.3,18379,0)
- ;;=V49.73^^121^1166^18
- ;;^UTILITY(U,$J,358.3,18379,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,18379,1,3,0)
- ;;=3^V49.73
- ;;^UTILITY(U,$J,358.3,18379,1,5,0)
- ;;=5^Amputation Status, foot
- ;;^UTILITY(U,$J,358.3,18379,2)
- ;;=^303441
- ;;^UTILITY(U,$J,358.3,18380,0)
- ;;=V49.77^^121^1166^20
- ;;^UTILITY(U,$J,358.3,18380,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,18380,1,3,0)
- ;;=3^V49.77
- ;;^UTILITY(U,$J,358.3,18380,1,5,0)
- ;;=5^Amputation Status, hip
- ;;^UTILITY(U,$J,358.3,18380,2)
- ;;=^303445
- ;;^UTILITY(U,$J,358.3,18381,0)
- ;;=V49.76^^121^1166^15
- ;;^UTILITY(U,$J,358.3,18381,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,18381,1,3,0)
- ;;=3^V49.76
- ;;^UTILITY(U,$J,358.3,18381,1,5,0)
- ;;=5^Amputation Status, above knee
- ;;^UTILITY(U,$J,358.3,18381,2)
- ;;=^303444
- ;;^UTILITY(U,$J,358.3,18382,0)
- ;;=V49.75^^121^1166^17
- ;;^UTILITY(U,$J,358.3,18382,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,18382,1,3,0)
- ;;=3^V49.75
- ;;^UTILITY(U,$J,358.3,18382,1,5,0)
- ;;=5^Amputation Status, below knee
- ;;^UTILITY(U,$J,358.3,18382,2)
- ;;=^303443
- ;;^UTILITY(U,$J,358.3,18383,0)
- ;;=V49.70^^121^1166^21
- ;;^UTILITY(U,$J,358.3,18383,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,18383,1,3,0)
- ;;=3^V49.70
- ;;^UTILITY(U,$J,358.3,18383,1,5,0)
- ;;=5^Amputation Status, leg
- ;;^UTILITY(U,$J,358.3,18383,2)
- ;;=^303438
- ;;^UTILITY(U,$J,358.3,18384,0)
- ;;=V49.71^^121^1166^19
- ;;^UTILITY(U,$J,358.3,18384,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,18384,1,3,0)
- ;;=3^V49.71
- ;;^UTILITY(U,$J,358.3,18384,1,5,0)
- ;;=5^Amputation Status, great toe
- ;;^UTILITY(U,$J,358.3,18384,2)
- ;;=^303439
- ;;^UTILITY(U,$J,358.3,18385,0)
- ;;=V49.72^^121^1166^22
- ;;^UTILITY(U,$J,358.3,18385,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,18385,1,3,0)
- ;;=3^V49.72
- ;;^UTILITY(U,$J,358.3,18385,1,5,0)
- ;;=5^Amputation Status, other toe(s)
- ;;^UTILITY(U,$J,358.3,18385,2)
- ;;=^303440
- ;;^UTILITY(U,$J,358.3,18386,0)
- ;;=705.0^^121^1166^23
- ;;^UTILITY(U,$J,358.3,18386,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,18386,1,3,0)
- ;;=3^705.0
- ;;^UTILITY(U,$J,358.3,18386,1,5,0)
- ;;=5^Anhidrosis
- ;;^UTILITY(U,$J,358.3,18386,2)
- ;;=^7648
- ;;^UTILITY(U,$J,358.3,18387,0)
- ;;=715.37^^121^1166^27
- ;;^UTILITY(U,$J,358.3,18387,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,18387,1,3,0)
- ;;=3^715.37
- ;;^UTILITY(U,$J,358.3,18387,1,5,0)
- ;;=5^Arthritis, Osteoarthrosis- ankle /foot/toe 
- ;;^UTILITY(U,$J,358.3,18387,2)
- ;;=^272156
- ;;^UTILITY(U,$J,358.3,18388,0)
- ;;=714.0^^121^1166^30
- ;;^UTILITY(U,$J,358.3,18388,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,18388,1,3,0)
- ;;=3^714.0
- ;;^UTILITY(U,$J,358.3,18388,1,5,0)
- ;;=5^Arthritis, Rheumatoid
- ;;^UTILITY(U,$J,358.3,18388,2)
- ;;=^10473
+ ;;^UTILITY(U,$J,358.3,17047,0)
+ ;;=I69.943^^88^857^33
+ ;;^UTILITY(U,$J,358.3,17047,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17047,1,3,0)
+ ;;=3^Cerebrovascular Disease,Monoplegia,Rt Nondominant Side
+ ;;^UTILITY(U,$J,358.3,17047,1,4,0)
+ ;;=4^I69.943
+ ;;^UTILITY(U,$J,358.3,17047,2)
+ ;;=^5133584
+ ;;^UTILITY(U,$J,358.3,17048,0)
+ ;;=I69.931^^88^857^34
+ ;;^UTILITY(U,$J,358.3,17048,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17048,1,3,0)
+ ;;=3^Cerebrovascular Disease,Monoplegia,Rt Upper Dominant Side
+ ;;^UTILITY(U,$J,358.3,17048,1,4,0)
+ ;;=4^I69.931
+ ;;^UTILITY(U,$J,358.3,17048,2)
+ ;;=^5007558
+ ;;^UTILITY(U,$J,358.3,17049,0)
+ ;;=I69.933^^88^857^35
+ ;;^UTILITY(U,$J,358.3,17049,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17049,1,3,0)
+ ;;=3^Cerebrovascular Disease,Monoplegia,Rt Upper Nondominant Side
+ ;;^UTILITY(U,$J,358.3,17049,1,4,0)
+ ;;=4^I69.933
+ ;;^UTILITY(U,$J,358.3,17049,2)
+ ;;=^5007559
+ ;;^UTILITY(U,$J,358.3,17050,0)
+ ;;=I69.998^^88^857^42
+ ;;^UTILITY(U,$J,358.3,17050,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17050,1,3,0)
+ ;;=3^Cerebrovascular Disease,Sequelae,Unspec
+ ;;^UTILITY(U,$J,358.3,17050,1,4,0)
+ ;;=4^I69.998
+ ;;^UTILITY(U,$J,358.3,17050,2)
+ ;;=^5007572
+ ;;^UTILITY(U,$J,358.3,17051,0)
+ ;;=I69.928^^88^857^43
+ ;;^UTILITY(U,$J,358.3,17051,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17051,1,3,0)
+ ;;=3^Cerebrovascular Disease,Speech/Language Deficits,Unspec
+ ;;^UTILITY(U,$J,358.3,17051,1,4,0)
+ ;;=4^I69.928
+ ;;^UTILITY(U,$J,358.3,17051,2)
+ ;;=^5007557
+ ;;^UTILITY(U,$J,358.3,17052,0)
+ ;;=I69.965^^88^857^37
+ ;;^UTILITY(U,$J,358.3,17052,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17052,1,3,0)
+ ;;=3^Cerebrovascular Disease,Paralytic Syndrome,Bilateral,Unspec
+ ;;^UTILITY(U,$J,358.3,17052,1,4,0)
+ ;;=4^I69.965
+ ;;^UTILITY(U,$J,358.3,17052,2)
+ ;;=^5007566
+ ;;^UTILITY(U,$J,358.3,17053,0)
+ ;;=I69.962^^88^857^38
+ ;;^UTILITY(U,$J,358.3,17053,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17053,1,3,0)
+ ;;=3^Cerebrovascular Disease,Paralytic Syndrome,Lt Dominant Side
+ ;;^UTILITY(U,$J,358.3,17053,1,4,0)
+ ;;=4^I69.962
+ ;;^UTILITY(U,$J,358.3,17053,2)
+ ;;=^5133588
+ ;;^UTILITY(U,$J,358.3,17054,0)
+ ;;=I69.964^^88^857^39
+ ;;^UTILITY(U,$J,358.3,17054,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17054,1,3,0)
+ ;;=3^Cerebrovascular Disease,Paralytic Syndrome,Lt Nondominant Side
+ ;;^UTILITY(U,$J,358.3,17054,1,4,0)
+ ;;=4^I69.964
+ ;;^UTILITY(U,$J,358.3,17054,2)
+ ;;=^5133589
+ ;;^UTILITY(U,$J,358.3,17055,0)
+ ;;=I69.961^^88^857^40
+ ;;^UTILITY(U,$J,358.3,17055,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17055,1,3,0)
+ ;;=3^Cerebrovascular Disease,Paralytic Syndrome,Rt Dominant Side
+ ;;^UTILITY(U,$J,358.3,17055,1,4,0)
+ ;;=4^I69.961
+ ;;^UTILITY(U,$J,358.3,17055,2)
+ ;;=^5007564
+ ;;^UTILITY(U,$J,358.3,17056,0)
+ ;;=I69.963^^88^857^41
+ ;;^UTILITY(U,$J,358.3,17056,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17056,1,3,0)
+ ;;=3^Cerebrovascular Disease,Paralytic Syndrome,Rt Nondominant Side
+ ;;^UTILITY(U,$J,358.3,17056,1,4,0)
+ ;;=4^I69.963
+ ;;^UTILITY(U,$J,358.3,17056,2)
+ ;;=^5007565
+ ;;^UTILITY(U,$J,358.3,17057,0)
+ ;;=G90.50^^88^857^44
+ ;;^UTILITY(U,$J,358.3,17057,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17057,1,3,0)
+ ;;=3^Complex Regional Pain Syndrome I,Unspec
+ ;;^UTILITY(U,$J,358.3,17057,1,4,0)
+ ;;=4^G90.50
+ ;;^UTILITY(U,$J,358.3,17057,2)
+ ;;=^5004163
+ ;;^UTILITY(U,$J,358.3,17058,0)
+ ;;=R56.9^^88^857^45
+ ;;^UTILITY(U,$J,358.3,17058,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17058,1,3,0)
+ ;;=3^Convulsions,Unspec
+ ;;^UTILITY(U,$J,358.3,17058,1,4,0)
+ ;;=4^R56.9
+ ;;^UTILITY(U,$J,358.3,17058,2)
+ ;;=^5019524

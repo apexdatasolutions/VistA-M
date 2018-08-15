@@ -1,5 +1,5 @@
 ONCPTX ;Hines OIFO/GWB - First Course of Treatment ;10/05/11
- ;;2.2;ONCOLOGY;**1**;Jul 31, 2013;Build 8
+ ;;2.2;ONCOLOGY;**1,5,6**;Jul 31, 2013;Build 10
  ;
  N DATEDX
  S DATEDX=$P($G(^ONCO(165.5,D0,0)),U,16)
@@ -20,9 +20,9 @@ NCDS ;Surgical Diagnostic and Staging Procedure
  N DASHES S $P(DASHES,"-",80)="-"
  N DA,DI,DIC,DIQ,DR K ONC
  S DIC="^ONCO(165.5,"
- S DR="58.1;58.3;58.4;58.5;235;124"
+ S DR="58.1;58.3;58.4;58.5;235;281;228;229;230;231;232;124"
  S DA=D0,DIQ="ONC(" D EN^DIQ1
- F I=58.1,58.4,235 S X=ONC(165.5,D0,I) D UCASE S ONC(165.5,D0,I)=X
+ F I=58.1,58.4,235,281 S X=ONC(165.5,D0,I) D UCASE S ONC(165.5,D0,I)=X
  D FST^ONCOAIP
  W !," SURGICAL DIAGNOSTIC AND STAGING PROCEDURE"
  W !," -----------------------------------------"
@@ -32,6 +32,14 @@ NCDS ;Surgical Diagnostic and Staging Procedure
  S TXT=ONC(165.5,D0,58.4),LEN=38 D TXT
  W !," Surg Dx/Staging Proc @fac....: ",$E(ONC(165.5,D0,58.5),1,6)_$E(ONC(165.5,D0,58.5),9,10),?41,TXT1
  W:TXT2'="" !?41,TXT2
+ W !!," Tx Guidelines Discussion.....: ",ONC(165.5,D0,281)
+ S TXGL=""
+ I ONC(165.5,D0,228)'="" S TXGL=ONC(165.5,D0,228)
+ I ONC(165.5,D0,229)'="" S TXGL=TXGL_"/"_ONC(165.5,D0,229)
+ I ONC(165.5,D0,230)'="" S TXGL=TXGL_"/"_ONC(165.5,D0,230)
+ W !," Treatment Guideline(s).......: ",TXGL
+ W:TXGL'="" !," Treatment Guideline Location.: ",ONC(165.5,D0,231)
+ W:TXGL'="" !," Treatment Guideline Doc Date.: ",ONC(165.5,D0,232)
  W:DATEDX>3091231 !!," Treatment Status.............: ",ONC(165.5,D0,235)
  W:ONC(165.5,D0,124)'="" !," Date of No Treatment.........: ",ONC(165.5,D0,124)
  W !,DASHES
@@ -77,9 +85,9 @@ FORDS ;Surgical Procedures (FORDS)
  .S $P(^ONCO(165.5,D0,3),U,1)="0000000"
  N DI,DIC,DR,DA,DIQ K ONC
  S DIC="^ONCO(165.5,"
- S DR="50;58.6;50.3;58.7;59;138:138.5;139:139.7;435;14;58;23;74;58.2;50.2;140;140.1;170;46;47;228;229;230;231;232;234;281"
+ S DR="50;58.6;50.3;58.7;59;138:138.5;139:139.7;435;14;58;23;74;58.2;50.2;140;140.1;170;46;47;234"
  S DA=D0,DIQ="ONC(" D EN^DIQ1
- F I=58.6,58.7,59,138,138.1,138.4,138.5,139,139.1,139.4,139.5,139.6,435,14,58,23,74,58.2,50.2,140,140.1,234,46,47,281 S X=ONC(165.5,D0,I) D UCASE S ONC(165.5,D0,I)=X
+ F I=58.6,58.7,59,138,138.1,138.4,138.5,139,139.1,139.4,139.5,139.6,435,14,58,23,74,58.2,50.2,140,140.1,234,46,47 S X=ONC(165.5,D0,I) D UCASE S ONC(165.5,D0,I)=X
  D FST^ONCOAIP
  ;W !," SURGICAL PROCEDURES (FORDS)"
  ;W !," ---------------------------"
@@ -115,14 +123,6 @@ FORDS ;Surgical Procedures (FORDS)
  W !," Reason no surgery of primary.: ",ONC(165.5,D0,58)
  W !," CAP Protocol Review..........: ",ONC(165.5,D0,46)
  W:ONC(165.5,D0,46)="FAILED" !," CAP Text.....................: ",ONC(165.5,D0,47)
- W !," Tx Guidelines Discussion.....: ",ONC(165.5,D0,281)
- S TXGL=""
- I ONC(165.5,D0,228)'="" S TXGL=ONC(165.5,D0,228)
- I ONC(165.5,D0,229)'="" S TXGL=TXGL_"/"_ONC(165.5,D0,229)
- I ONC(165.5,D0,230)'="" S TXGL=TXGL_"/"_ONC(165.5,D0,230)
- W !," Treatment Guideline(s).......: ",TXGL
- W:TXGL'="" !," Treatment Guideline Location.: ",ONC(165.5,D0,231)
- W:TXGL'="" !," Treatment Guideline Doc Date.: ",ONC(165.5,D0,232)
  W !,DASHES
  D EXIT
  Q
@@ -161,9 +161,9 @@ ST ;Systemic Therapy
  ;W !," ----------------"
  N DI,DIC,DR,DA,DIQ K ONC
  S DIC="^ONCO(165.5,"
- S DR="152;53;53.2;53.3;53.4;54;54.2;54.3;54.4;55;55.2;55.3;55.4;153;153.1;15;1423:1423.4"
+ S DR="152;53;53.2;53.3;53.4;54;54.2;54.3;54.4;55;55.2;55.3;55.4;153:153.3;15;1423:1423.4"
  S DA=D0,DIQ="ONC(" D EN^DIQ1
- F I=53.2,53.3,54.2,54.3,55.2,55.3,153,15 S X=ONC(165.5,D0,I) D UCASE S ONC(165.5,D0,I)=X
+ F I=53.2,53.3,54.2,54.3,55.2,55.3,153,153.2,15 S X=ONC(165.5,D0,I) D UCASE S ONC(165.5,D0,I)=X
  W !," Date systemic therapy started.: ",ONC(165.5,DA,152)
  W !," Chemotherapy..................: ",ONC(165.5,DA,53)," ",$E(ONC(165.5,DA,53.2),1,34)
  W !," Chemotherapy @fac.............: ",ONC(165.5,DA,53.4)," ",$E(ONC(165.5,DA,53.3),1,34)
@@ -177,6 +177,7 @@ ST ;Systemic Therapy
  W !," Immunotherapy.................: ",ONC(165.5,DA,55)," ",$E(ONC(165.5,DA,55.2),1,34)
  W !," Immunotherapy @fac............: ",ONC(165.5,DA,55.4)," ",$E(ONC(165.5,DA,55.3),1,34)
  W !," Hema Trans/Endocrine Proc.....: ",ONC(165.5,DA,153.1)," ",$E(ONC(165.5,DA,153),1,34)
+ W !," Hema Trans/Endocrine Proc @fac: ",ONC(165.5,DA,153.3)," ",$E(ONC(165.5,DA,153.2),1,34)
  W:DATEDX>3051231 !," Systemic/Surgery Sequence.....: ",ONC(165.5,DA,15)
  W !,DASHES
  D EXIT

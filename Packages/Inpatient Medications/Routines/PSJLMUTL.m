@@ -1,14 +1,14 @@
-PSJLMUTL ;BIR/MLM-INPATIENT LISTMAN UTILITIES ; 9/12/07 10:28am
- ;;5.0; INPATIENT MEDICATIONS ;**7,67,58,85,111,160,198**;16 DEC 97;Build 7
+PSJLMUTL ;BIR/MLM - INPATIENT LISTMAN UTILITIES ; 9/12/07 10:28am
+ ;;5.0;INPATIENT MEDICATIONS ;**7,67,58,85,111,160,198,320,281**;16 DEC 97;Build 113
  ;
  ; Reference to ^ORD(101 is supported by DBIA #872.
  ; Reference to ^PS(50.606 is supported by DBIA #2174.
  ; Reference to ^PS(50.7 is supported by DBIA #2180.
  ; Reference to ^PS(55 is supported by DBIA #2191.
- ; Reference to ^PSDRUG is supported by DBIA #2192.
+ ; Reference to ^PSDRUG( is supported by DBIA #2192.
  ; Reference to ^GMRAPEM0 is supported by DBIA #190.
  ; Reference to ^SDAMA203 is supported by DBIA #4133.
- ; Reference to ^VSIT is supported by DBIA #1905.
+ ; Reference to SELECTED^VSIT is supported by DBIA #1905.
  ;
 NEWALL(DFN) ; Enter Allergy info.
  ;
@@ -17,8 +17,8 @@ NEWALL(DFN) ; Enter Allergy info.
 DISALL(DFN) ; Display brief patient info list.
  K ^TMP("PSJALL",$J) N PSJLN,X,Y,PSGALG,PSGRALG,PSGLDR,PSJGMRAL,PSJWHERE S PSJWHERE="PSJLMUTL"
  D ATS^PSJMUTL(57,57,2)
- I (PSJGMRAL=0) S ^TMP("PSJALL",$J,1,0)=" Allergies/Reactions: "_"NKA",PSJLN=2 G NARRATIV
- I (PSJGMRAL="") S ^TMP("PSJALL",$J,1,0)=" Allergies/Reactions: No Allergy Assessment",PSJLN=2 G NARRATIV
+ I (PSJGMRAL=0) S ^TMP("PSJALL",$J,1,0)=" Allergies/Reactions: "_"NKA",PSJLN=2 G RAD
+ I (PSJGMRAL="") S ^TMP("PSJALL",$J,1,0)=" Allergies/Reactions: No Allergy Assessment",PSJLN=2 G RAD
  I ($G(PSGVALG(1))="NKA")!((PSGVALG=0)&(PSGALG=0)) D
  .S ^TMP("PSJALL",$J,1,0)="           Allergies: "_$G(PSGVALG(1)),PSJLN=2,X=1
  I ($G(PSGVALG(1))'="NKA")&((PSGVALG>0)!(PSGALG>0)) D
@@ -26,7 +26,7 @@ DISALL(DFN) ; Display brief patient info list.
  .F  S X=$O(PSGVALG(X)) Q:'X  S ^TMP("PSJALL",$J,PSJLN,0)="                        "_PSGVALG(X),PSJLN=PSJLN+1
  .S ^TMP("PSJALL",$J,PSJLN,0)="        Non-Verified: "_$S($G(PSGALG(1))=0:"",1:$G(PSGALG(1))),PSJLN=PSJLN+1,X=1
  .F  S X=$O(PSGALG(X)) Q:'X  S ^TMP("PSJALL",$J,PSJLN,0)="                        "_PSGALG(X),PSJLN=PSJLN+1
- D RAD^PSJMUTL
+RAD D RAD^PSJMUTL
  I ($G(PSGVADR(1))="NKA")!((PSGVADR=0)&(PSGADR=0)) D
  .S ^TMP("PSJALL",$J,PSJLN,0)="",^TMP("PSJALL",$J,PSJLN+1,0)="   Adverse Reactions: "_$G(PSGADR(1)),PSJLN=PSJLN+2,X=1
  I ($G(PSGVADR(1))'="NKA")&((PSGVADR>0)!(PSGADR>0)) D
@@ -63,6 +63,7 @@ SDA N PSJPAD,PSJCLIN,PSJCLINO,PSJAPD,PSJSCI,PSJCLOK,VAERR K ^TMP("PSJVSIT"),PSJD
  Q
  ;
 ENC(SDPATDFN,SDCLIEN) ;
+ I '$G(PSGDT) D NOW^%DTC S PSGDT=% ;*281
  N SDFROM,DT,SUBVIS,VIS S SDSTART=$$FMADD^XLFDT($P(PSGDT,"."),-1),SDEND=$$FMADD^XLFDT($P(PSGDT,"."),+365) K ^TMP("VSIT",$J)
  D SELECTED^VSIT(SDPATDFN,SDSTART,SDEND,SDCLIEN) N VIS S VIS=0 F  S VIS=$O(^TMP("VSIT",$J,VIS)) Q:'VIS  D
  . S SUBVIS=0 F  S SUBVIS=$O(^TMP("VSIT",$J,VIS,SUBVIS)) Q:'SUBVIS  D

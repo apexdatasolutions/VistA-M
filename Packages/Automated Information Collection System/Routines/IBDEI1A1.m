@@ -1,140 +1,124 @@
-IBDEI1A1 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1A1 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,22856,1,5,0)
- ;;=5^Other Drug Abuse, Episodic
- ;;^UTILITY(U,$J,358.3,22856,2)
- ;;=^268260
- ;;^UTILITY(U,$J,358.3,22857,0)
- ;;=V65.2^^141^1406^24
- ;;^UTILITY(U,$J,358.3,22857,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22857,1,4,0)
- ;;=4^V65.2
- ;;^UTILITY(U,$J,358.3,22857,1,5,0)
- ;;=5^Malingering
- ;;^UTILITY(U,$J,358.3,22857,2)
- ;;=^92393
- ;;^UTILITY(U,$J,358.3,22858,0)
- ;;=V65.49^^141^1406^29
- ;;^UTILITY(U,$J,358.3,22858,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22858,1,4,0)
- ;;=4^V65.49
- ;;^UTILITY(U,$J,358.3,22858,1,5,0)
- ;;=5^Other Specified Counseling
- ;;^UTILITY(U,$J,358.3,22858,2)
- ;;=^303471
- ;;^UTILITY(U,$J,358.3,22859,0)
- ;;=V61.10^^141^1406^34
- ;;^UTILITY(U,$J,358.3,22859,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22859,1,4,0)
- ;;=4^V61.10
- ;;^UTILITY(U,$J,358.3,22859,1,5,0)
- ;;=5^Partner Relational Problem
- ;;^UTILITY(U,$J,358.3,22859,2)
- ;;=^74110
- ;;^UTILITY(U,$J,358.3,22860,0)
- ;;=V61.20^^141^1406^32
- ;;^UTILITY(U,$J,358.3,22860,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22860,1,4,0)
- ;;=4^V61.20
- ;;^UTILITY(U,$J,358.3,22860,1,5,0)
- ;;=5^Parent-Child Problem NOS
- ;;^UTILITY(U,$J,358.3,22860,2)
- ;;=^304300
- ;;^UTILITY(U,$J,358.3,22861,0)
- ;;=V61.12^^141^1406^2
- ;;^UTILITY(U,$J,358.3,22861,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22861,1,4,0)
- ;;=4^V61.12
- ;;^UTILITY(U,$J,358.3,22861,1,5,0)
- ;;=5^Domestic Violence/Perpet
- ;;^UTILITY(U,$J,358.3,22861,2)
- ;;=^304356
- ;;^UTILITY(U,$J,358.3,22862,0)
- ;;=V61.11^^141^1406^3
- ;;^UTILITY(U,$J,358.3,22862,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22862,1,4,0)
- ;;=4^V61.11
- ;;^UTILITY(U,$J,358.3,22862,1,5,0)
- ;;=5^Domestic Violence/Victim
- ;;^UTILITY(U,$J,358.3,22862,2)
- ;;=^304357
- ;;^UTILITY(U,$J,358.3,22863,0)
- ;;=V62.0^^141^1406^41
- ;;^UTILITY(U,$J,358.3,22863,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22863,1,4,0)
- ;;=4^V62.0
- ;;^UTILITY(U,$J,358.3,22863,1,5,0)
- ;;=5^Unemployment
- ;;^UTILITY(U,$J,358.3,22863,2)
- ;;=^123545
- ;;^UTILITY(U,$J,358.3,22864,0)
- ;;=V69.2^^141^1406^15
- ;;^UTILITY(U,$J,358.3,22864,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22864,1,4,0)
- ;;=4^V69.2
- ;;^UTILITY(U,$J,358.3,22864,1,5,0)
- ;;=5^Hi-Risk Sexual Behavior
- ;;^UTILITY(U,$J,358.3,22864,2)
- ;;=^303474
- ;;^UTILITY(U,$J,358.3,22865,0)
- ;;=V62.82^^141^1406^1
- ;;^UTILITY(U,$J,358.3,22865,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22865,1,4,0)
- ;;=4^V62.82
- ;;^UTILITY(U,$J,358.3,22865,1,5,0)
- ;;=5^Bereavement/Uncomplicat
- ;;^UTILITY(U,$J,358.3,22865,2)
- ;;=^123500
- ;;^UTILITY(U,$J,358.3,22866,0)
- ;;=V70.1^^141^1406^37
- ;;^UTILITY(U,$J,358.3,22866,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22866,1,4,0)
- ;;=4^V70.1
- ;;^UTILITY(U,$J,358.3,22866,1,5,0)
- ;;=5^Psych Exam, Mandated
- ;;^UTILITY(U,$J,358.3,22866,2)
- ;;=^295591
- ;;^UTILITY(U,$J,358.3,22867,0)
- ;;=V60.2^^141^1406^4
- ;;^UTILITY(U,$J,358.3,22867,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22867,1,4,0)
- ;;=4^V60.2
- ;;^UTILITY(U,$J,358.3,22867,1,5,0)
- ;;=5^Economic Problem
- ;;^UTILITY(U,$J,358.3,22867,2)
- ;;=^62174
- ;;^UTILITY(U,$J,358.3,22868,0)
- ;;=V62.89^^141^1406^38
- ;;^UTILITY(U,$J,358.3,22868,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22868,1,4,0)
- ;;=4^V62.89
- ;;^UTILITY(U,$J,358.3,22868,1,5,0)
- ;;=5^Psychological Stress
- ;;^UTILITY(U,$J,358.3,22868,2)
- ;;=^87822
- ;;^UTILITY(U,$J,358.3,22869,0)
- ;;=V62.9^^141^1406^39
- ;;^UTILITY(U,$J,358.3,22869,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22869,1,4,0)
- ;;=4^V62.9
- ;;^UTILITY(U,$J,358.3,22869,1,5,0)
- ;;=5^Psychosocial Circum
- ;;^UTILITY(U,$J,358.3,22869,2)
- ;;=^295551
- ;;^UTILITY(U,$J,358.3,22870,0)
- ;;=V60.0^^141^1406^22
+ ;;^UTILITY(U,$J,358.3,21344,1,4,0)
+ ;;=4^M19.011
+ ;;^UTILITY(U,$J,358.3,21344,2)
+ ;;=^5010808
+ ;;^UTILITY(U,$J,358.3,21345,0)
+ ;;=M76.12^^101^1030^64
+ ;;^UTILITY(U,$J,358.3,21345,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21345,1,3,0)
+ ;;=3^Psoas tendinitis, left hip
+ ;;^UTILITY(U,$J,358.3,21345,1,4,0)
+ ;;=4^M76.12
+ ;;^UTILITY(U,$J,358.3,21345,2)
+ ;;=^5013271
+ ;;^UTILITY(U,$J,358.3,21346,0)
+ ;;=M76.11^^101^1030^65
+ ;;^UTILITY(U,$J,358.3,21346,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21346,1,3,0)
+ ;;=3^Psoas tendinitis, right hip
+ ;;^UTILITY(U,$J,358.3,21346,1,4,0)
+ ;;=4^M76.11
+ ;;^UTILITY(U,$J,358.3,21346,2)
+ ;;=^5013270
+ ;;^UTILITY(U,$J,358.3,21347,0)
+ ;;=M65.4^^101^1030^66
+ ;;^UTILITY(U,$J,358.3,21347,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21347,1,3,0)
+ ;;=3^Radial styloid tenosynovitis [de Quervain]
+ ;;^UTILITY(U,$J,358.3,21347,1,4,0)
+ ;;=4^M65.4
+ ;;^UTILITY(U,$J,358.3,21347,2)
+ ;;=^5012792
+ ;;^UTILITY(U,$J,358.3,21348,0)
+ ;;=M54.18^^101^1030^67
+ ;;^UTILITY(U,$J,358.3,21348,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21348,1,3,0)
+ ;;=3^Radiculopathy, sacral and sacrococcygeal region
+ ;;^UTILITY(U,$J,358.3,21348,1,4,0)
+ ;;=4^M54.18
+ ;;^UTILITY(U,$J,358.3,21348,2)
+ ;;=^5012303
+ ;;^UTILITY(U,$J,358.3,21349,0)
+ ;;=M05.772^^101^1030^68
+ ;;^UTILITY(U,$J,358.3,21349,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21349,1,3,0)
+ ;;=3^Rheu arthrit w rheu factor of left ank/ft w/o org/sys involv
+ ;;^UTILITY(U,$J,358.3,21349,1,4,0)
+ ;;=4^M05.772
+ ;;^UTILITY(U,$J,358.3,21349,2)
+ ;;=^5010020
+ ;;^UTILITY(U,$J,358.3,21350,0)
+ ;;=M05.742^^101^1030^69
+ ;;^UTILITY(U,$J,358.3,21350,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21350,1,3,0)
+ ;;=3^Rheu arthrit w rheu factor of left hand w/o org/sys involv
+ ;;^UTILITY(U,$J,358.3,21350,1,4,0)
+ ;;=4^M05.742
+ ;;^UTILITY(U,$J,358.3,21350,2)
+ ;;=^5010011
+ ;;^UTILITY(U,$J,358.3,21351,0)
+ ;;=M05.762^^101^1030^70
+ ;;^UTILITY(U,$J,358.3,21351,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21351,1,3,0)
+ ;;=3^Rheu arthrit w rheu factor of left knee w/o org/sys involv
+ ;;^UTILITY(U,$J,358.3,21351,1,4,0)
+ ;;=4^M05.762
+ ;;^UTILITY(U,$J,358.3,21351,2)
+ ;;=^5010017
+ ;;^UTILITY(U,$J,358.3,21352,0)
+ ;;=M05.712^^101^1030^71
+ ;;^UTILITY(U,$J,358.3,21352,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21352,1,3,0)
+ ;;=3^Rheu arthrit w rheu factor of left shoulder w/o org/sys involv
+ ;;^UTILITY(U,$J,358.3,21352,1,4,0)
+ ;;=4^M05.712
+ ;;^UTILITY(U,$J,358.3,21352,2)
+ ;;=^5010002
+ ;;^UTILITY(U,$J,358.3,21353,0)
+ ;;=M05.732^^101^1030^72
+ ;;^UTILITY(U,$J,358.3,21353,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21353,1,3,0)
+ ;;=3^Rheu arthrit w rheu factor of left wrist w/o org/sys involv
+ ;;^UTILITY(U,$J,358.3,21353,1,4,0)
+ ;;=4^M05.732
+ ;;^UTILITY(U,$J,358.3,21353,2)
+ ;;=^5010008
+ ;;^UTILITY(U,$J,358.3,21354,0)
+ ;;=M05.771^^101^1030^73
+ ;;^UTILITY(U,$J,358.3,21354,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21354,1,3,0)
+ ;;=3^Rheu arthrit w rheu factor of right ank/ft w/o org/sys involv
+ ;;^UTILITY(U,$J,358.3,21354,1,4,0)
+ ;;=4^M05.771
+ ;;^UTILITY(U,$J,358.3,21354,2)
+ ;;=^5010019
+ ;;^UTILITY(U,$J,358.3,21355,0)
+ ;;=M05.721^^101^1030^74
+ ;;^UTILITY(U,$J,358.3,21355,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21355,1,3,0)
+ ;;=3^Rheu arthrit w rheu factor of right elbow w/o org/sys involv
+ ;;^UTILITY(U,$J,358.3,21355,1,4,0)
+ ;;=4^M05.721
+ ;;^UTILITY(U,$J,358.3,21355,2)
+ ;;=^5010004
+ ;;^UTILITY(U,$J,358.3,21356,0)
+ ;;=M05.741^^101^1030^75
+ ;;^UTILITY(U,$J,358.3,21356,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21356,1,3,0)
+ ;;=3^Rheu arthrit w rheu factor of right hand w/o org/sys involv

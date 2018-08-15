@@ -1,0 +1,128 @@
+IBDEI1KX ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,26417,1,3,0)
+ ;;=3^glc,Low-Tension,Right Eye,Severe Stage
+ ;;^UTILITY(U,$J,358.3,26417,1,4,0)
+ ;;=4^H40.1213
+ ;;^UTILITY(U,$J,358.3,26417,2)
+ ;;=^5005761
+ ;;^UTILITY(U,$J,358.3,26418,0)
+ ;;=H40.1214^^130^1290^38
+ ;;^UTILITY(U,$J,358.3,26418,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26418,1,3,0)
+ ;;=3^glc,Low-Tension,Right Eye,Indeterminate Stage
+ ;;^UTILITY(U,$J,358.3,26418,1,4,0)
+ ;;=4^H40.1214
+ ;;^UTILITY(U,$J,358.3,26418,2)
+ ;;=^5005762
+ ;;^UTILITY(U,$J,358.3,26419,0)
+ ;;=H40.1220^^130^1290^37
+ ;;^UTILITY(U,$J,358.3,26419,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26419,1,3,0)
+ ;;=3^glc,Low-Tension,Left Eye,Stage Unspec
+ ;;^UTILITY(U,$J,358.3,26419,1,4,0)
+ ;;=4^H40.1220
+ ;;^UTILITY(U,$J,358.3,26419,2)
+ ;;=^5005763
+ ;;^UTILITY(U,$J,358.3,26420,0)
+ ;;=H40.1221^^130^1290^34
+ ;;^UTILITY(U,$J,358.3,26420,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26420,1,3,0)
+ ;;=3^glc,Low-Tension,Left Eye,Mild Stage
+ ;;^UTILITY(U,$J,358.3,26420,1,4,0)
+ ;;=4^H40.1221
+ ;;^UTILITY(U,$J,358.3,26420,2)
+ ;;=^5005764
+ ;;^UTILITY(U,$J,358.3,26421,0)
+ ;;=H40.1222^^130^1290^35
+ ;;^UTILITY(U,$J,358.3,26421,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26421,1,3,0)
+ ;;=3^glc,Low-Tension,Left Eye,Moderate Stage
+ ;;^UTILITY(U,$J,358.3,26421,1,4,0)
+ ;;=4^H40.1222
+ ;;^UTILITY(U,$J,358.3,26421,2)
+ ;;=^5005765
+ ;;^UTILITY(U,$J,358.3,26422,0)
+ ;;=H40.1223^^130^1290^36
+ ;;^UTILITY(U,$J,358.3,26422,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26422,1,3,0)
+ ;;=3^glc,Low-Tension,Left Eye,Severe Stage
+ ;;^UTILITY(U,$J,358.3,26422,1,4,0)
+ ;;=4^H40.1223
+ ;;^UTILITY(U,$J,358.3,26422,2)
+ ;;=^5133492
+ ;;^UTILITY(U,$J,358.3,26423,0)
+ ;;=H40.1224^^130^1290^33
+ ;;^UTILITY(U,$J,358.3,26423,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26423,1,3,0)
+ ;;=3^glc,Low-Tension,Left Eye,Indeterminate Stage
+ ;;^UTILITY(U,$J,358.3,26423,1,4,0)
+ ;;=4^H40.1224
+ ;;^UTILITY(U,$J,358.3,26423,2)
+ ;;=^5005766
+ ;;^UTILITY(U,$J,358.3,26424,0)
+ ;;=H40.1230^^130^1290^32
+ ;;^UTILITY(U,$J,358.3,26424,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26424,1,3,0)
+ ;;=3^glc,Low-Tension,Bilateral,Stage Unspec
+ ;;^UTILITY(U,$J,358.3,26424,1,4,0)
+ ;;=4^H40.1230
+ ;;^UTILITY(U,$J,358.3,26424,2)
+ ;;=^5005767
+ ;;^UTILITY(U,$J,358.3,26425,0)
+ ;;=H40.1231^^130^1290^29
+ ;;^UTILITY(U,$J,358.3,26425,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26425,1,3,0)
+ ;;=3^glc,Low-Tension,Bilateral,Mild Stage
+ ;;^UTILITY(U,$J,358.3,26425,1,4,0)
+ ;;=4^H40.1231
+ ;;^UTILITY(U,$J,358.3,26425,2)
+ ;;=^5005768
+ ;;^UTILITY(U,$J,358.3,26426,0)
+ ;;=H40.1232^^130^1290^30
+ ;;^UTILITY(U,$J,358.3,26426,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26426,1,3,0)
+ ;;=3^glc,Low-Tension,Bilateral,Moderate Stage
+ ;;^UTILITY(U,$J,358.3,26426,1,4,0)
+ ;;=4^H40.1232
+ ;;^UTILITY(U,$J,358.3,26426,2)
+ ;;=^5005769
+ ;;^UTILITY(U,$J,358.3,26427,0)
+ ;;=H40.1233^^130^1290^31
+ ;;^UTILITY(U,$J,358.3,26427,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26427,1,3,0)
+ ;;=3^glc,Low-Tension,Bilateral,Severe Stage
+ ;;^UTILITY(U,$J,358.3,26427,1,4,0)
+ ;;=4^H40.1233
+ ;;^UTILITY(U,$J,358.3,26427,2)
+ ;;=^5005770
+ ;;^UTILITY(U,$J,358.3,26428,0)
+ ;;=H40.1234^^130^1290^28
+ ;;^UTILITY(U,$J,358.3,26428,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26428,1,3,0)
+ ;;=3^glc,Low-Tension,Bilateral,Indeterminate Stage
+ ;;^UTILITY(U,$J,358.3,26428,1,4,0)
+ ;;=4^H40.1234
+ ;;^UTILITY(U,$J,358.3,26428,2)
+ ;;=^5005771
+ ;;^UTILITY(U,$J,358.3,26429,0)
+ ;;=H40.1310^^130^1290^67
+ ;;^UTILITY(U,$J,358.3,26429,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26429,1,3,0)
+ ;;=3^glc,Pigmentary,Right Eye,Stage Unspec
+ ;;^UTILITY(U,$J,358.3,26429,1,4,0)
+ ;;=4^H40.1310

@@ -1,5 +1,5 @@
-PXKENC ;ISL/dee,ESW - Builds the array of all encounter data for the event point ; 12/5/02 11:53am  ; 1/5/07 4:54pm
- ;;1.0;PCE PATIENT CARE ENCOUNTER;**15,22,73,108,143,183**;Aug 12, 1996;Build 3
+PXKENC ;ISL/dee,ESW - Builds the array of all encounter data for the event point ;10/05/2016
+ ;;1.0;PCE PATIENT CARE ENCOUNTER;**15,22,73,108,143,183,210,215,211**;Aug 12, 1996;Build 244
  Q
  ;
 GETENC(DFN,ENCDT,HLOC) ;Get all of the encounter data
@@ -47,7 +47,7 @@ ENCEVENT(VISITIEN,DONTKILL) ;Create the ^TMP("PXKENC",$J, array of all the
  S PXKROOT=$NA(@("^TMP(""PXKENC"",$J,"_VISITIEN_")"))
  ;
  N IEN,FILE,VFILE,FILESTR,PXKNODE
- F FILE="SIT","CSTP","PRV","POV","CPT","TRT","IMM","PED","SK","HF","XAM" D
+ F FILE="SIT","CSTP","PRV","POV","CPT","TRT","IMM","PED","SK","HF","XAM","ICR","SC" D
  . S FILESTR=$S(FILE="SIT":"VST",1:FILE)
  . S VFILE=$P($T(GLOBAL^@("PXKF"_$S(FILE="SIT":"VST",FILE="CSTP":"VST",1:FILE))),";;",2)
  . I FILE="SIT" D
@@ -67,6 +67,12 @@ ENCEVENT(VISITIEN,DONTKILL) ;Create the ^TMP("PXKENC",$J, array of all the
  ..... N SUBIEN
  ..... S SUBIEN=0
  ..... F  S SUBIEN=$O(@VFILE@(IEN,PXKNODE,SUBIEN)) Q:SUBIEN=""  D
+ ...... S @PXKROOT@(FILESTR,IEN,PXKNODE,SUBIEN,0)=$G(@VFILE@(IEN,PXKNODE,SUBIEN,0))
+ .... ;for immunizatin multiples
+ .... I FILE="IMM",PXKNODE?1(1"2",1"3",1"11") D  Q
+ ..... N SUBIEN
+ ..... S SUBIEN=0
+ ..... F  S SUBIEN=$O(@VFILE@(IEN,PXKNODE,SUBIEN)) Q:'SUBIEN  D
  ...... S @PXKROOT@(FILESTR,IEN,PXKNODE,SUBIEN,0)=$G(@VFILE@(IEN,PXKNODE,SUBIEN,0))
  .... ;
  .... S @PXKROOT@(FILESTR,IEN,PXKNODE)=$G(@VFILE@(IEN,PXKNODE))
@@ -103,7 +109,7 @@ COEVENT(VISITIEN) ;Add to the ^TMP("PXKCO",$J, array all of the
  S PXKROOT=$NA(@("^TMP(""PXKCO"",$J,"_VISITIEN_")"))
  ;
  N IEN,FILE,VFILE,PXKNODE
- F FILE="CSTP","PRV","POV","CPT","TRT","IMM","PED","SK","HF","XAM" D
+ F FILE="CSTP","PRV","POV","CPT","TRT","IMM","PED","SK","HF","XAM","ICR","SC" D
  . S VFILE=$P($T(GLOBAL^@("PXKF"_$S(FILE="CSTP":"VST",1:FILE))),";;",2)
  . I FILE="PRV" D EVALD(VISITIEN,PXKROOT,VFILE,FILE)
  . I FILE'="PRV" S IEN="" F  S IEN=$O(@VFILE@("AD",VISITIEN,IEN)) Q:'IEN  D
@@ -111,6 +117,15 @@ COEVENT(VISITIEN) ;Add to the ^TMP("PXKCO",$J, array all of the
  .. S PXKNODE=""
  .. I '$D(@PXKROOT@(FILE,IEN)) D
  ... F  S PXKNODE=$O(@VFILE@(IEN,PXKNODE)) Q:PXKNODE=""  D:PXKNODE'=801
+ .... ;
+ .... I FILE="IMM",PXKNODE?1(1"2",1"3",1"11") D  Q
+ ..... N SUBIEN,VAL
+ ..... S SUBIEN=0
+ ..... F  S SUBIEN=$O(@VFILE@(IEN,PXKNODE,SUBIEN)) Q:'SUBIEN  D
+ ...... S VAL=$G(@VFILE@(IEN,PXKNODE,SUBIEN,0))
+ ...... S @PXKROOT@(FILE,IEN,PXKNODE,"BEFORE",SUBIEN)=VAL
+ ...... S @PXKROOT@(FILE,IEN,PXKNODE,"AFTER",SUBIEN)=VAL
+ .... ;
  .... I FILE="CPT",PXKNODE=1 D  Q
  ..... N SUBIEN,MOD
  ..... S SUBIEN=0
@@ -118,6 +133,7 @@ COEVENT(VISITIEN) ;Add to the ^TMP("PXKCO",$J, array all of the
  ...... S MOD=@VFILE@(IEN,PXKNODE,SUBIEN,0)
  ...... S @PXKROOT@(FILE,IEN,PXKNODE,"BEFORE",MOD)=""
  ...... S @PXKROOT@(FILE,IEN,PXKNODE,"AFTER",MOD)=""
+ .... ;
  .... S @PXKROOT@(FILE,IEN,PXKNODE,"BEFORE")=$G(@VFILE@(IEN,PXKNODE))
  .... S @PXKROOT@(FILE,IEN,PXKNODE,"AFTER")=$G(@VFILE@(IEN,PXKNODE))
  Q

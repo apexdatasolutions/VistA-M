@@ -1,130 +1,124 @@
-IBDEI1BR ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1BR ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,23722,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23722,1,2,0)
- ;;=2^51701
- ;;^UTILITY(U,$J,358.3,23722,1,3,0)
- ;;=3^Catherization for Residual Urine
- ;;^UTILITY(U,$J,358.3,23723,0)
- ;;=51702^^151^1511^11^^^^1
- ;;^UTILITY(U,$J,358.3,23723,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23723,1,2,0)
- ;;=2^51702
- ;;^UTILITY(U,$J,358.3,23723,1,3,0)
- ;;=3^Foley Catheterization
- ;;^UTILITY(U,$J,358.3,23724,0)
- ;;=51703^^151^1511^5^^^^1
- ;;^UTILITY(U,$J,358.3,23724,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23724,1,2,0)
- ;;=2^51703
- ;;^UTILITY(U,$J,358.3,23724,1,3,0)
- ;;=3^Catheterization, Complex (MD)
- ;;^UTILITY(U,$J,358.3,23725,0)
- ;;=51102^^151^1511^15^^^^1
- ;;^UTILITY(U,$J,358.3,23725,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23725,1,2,0)
- ;;=2^51102
- ;;^UTILITY(U,$J,358.3,23725,1,3,0)
- ;;=3^SPT Placement w/ Aspiration
- ;;^UTILITY(U,$J,358.3,23726,0)
- ;;=51705^^151^1511^14^^^^1
- ;;^UTILITY(U,$J,358.3,23726,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23726,1,2,0)
- ;;=2^51705
- ;;^UTILITY(U,$J,358.3,23726,1,3,0)
- ;;=3^SPT Exchange;Simple
- ;;^UTILITY(U,$J,358.3,23727,0)
- ;;=50394^^151^1511^1^^^^1
- ;;^UTILITY(U,$J,358.3,23727,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23727,1,2,0)
- ;;=2^50394
- ;;^UTILITY(U,$J,358.3,23727,1,3,0)
- ;;=3^Antgrd Pyelogram Inj Proc
- ;;^UTILITY(U,$J,358.3,23728,0)
- ;;=50398^^151^1511^12^^^^1
- ;;^UTILITY(U,$J,358.3,23728,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23728,1,2,0)
- ;;=2^50398
- ;;^UTILITY(U,$J,358.3,23728,1,3,0)
- ;;=3^Nephrostomy Tube Change
- ;;^UTILITY(U,$J,358.3,23729,0)
- ;;=51710^^151^1511^13^^^^1
- ;;^UTILITY(U,$J,358.3,23729,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23729,1,2,0)
- ;;=2^51710
- ;;^UTILITY(U,$J,358.3,23729,1,3,0)
- ;;=3^SPT Exchange;Comp
- ;;^UTILITY(U,$J,358.3,23730,0)
- ;;=52000^^151^1511^8^^^^1
- ;;^UTILITY(U,$J,358.3,23730,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23730,1,2,0)
- ;;=2^52000
- ;;^UTILITY(U,$J,358.3,23730,1,3,0)
- ;;=3^Cystoscopy
- ;;^UTILITY(U,$J,358.3,23731,0)
- ;;=53600^^151^1511^18^^^^1
- ;;^UTILITY(U,$J,358.3,23731,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23731,1,2,0)
- ;;=2^53600
- ;;^UTILITY(U,$J,358.3,23731,1,3,0)
- ;;=3^Urethral Dil Sound/Dilator;Male
- ;;^UTILITY(U,$J,358.3,23732,0)
- ;;=53620^^151^1511^17^^^^1
- ;;^UTILITY(U,$J,358.3,23732,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23732,1,2,0)
- ;;=2^53620
- ;;^UTILITY(U,$J,358.3,23732,1,3,0)
- ;;=3^Urethral Dil Fil/Fol;Male
- ;;^UTILITY(U,$J,358.3,23733,0)
- ;;=74425^^151^1511^2^^^^1
- ;;^UTILITY(U,$J,358.3,23733,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23733,1,2,0)
- ;;=2^74425
- ;;^UTILITY(U,$J,358.3,23733,1,3,0)
- ;;=3^Antgrd Urography
- ;;^UTILITY(U,$J,358.3,23734,0)
- ;;=74430^^151^1511^7^^^^1
- ;;^UTILITY(U,$J,358.3,23734,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23734,1,2,0)
- ;;=2^74430
- ;;^UTILITY(U,$J,358.3,23734,1,3,0)
- ;;=3^Cystogram,Rad Supv & Interp
- ;;^UTILITY(U,$J,358.3,23735,0)
- ;;=76942^^151^1511^16^^^^1
- ;;^UTILITY(U,$J,358.3,23735,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23735,1,2,0)
- ;;=2^76942
- ;;^UTILITY(U,$J,358.3,23735,1,3,0)
- ;;=3^US Guidance for Needle Placement
- ;;^UTILITY(U,$J,358.3,23736,0)
- ;;=77002^^151^1511^10^^^^1
- ;;^UTILITY(U,$J,358.3,23736,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23736,1,2,0)
- ;;=2^77002
- ;;^UTILITY(U,$J,358.3,23736,1,3,0)
- ;;=3^FLUORO Guide for Needle Placement
- ;;^UTILITY(U,$J,358.3,23737,0)
- ;;=51725^^151^1512^1^^^^1
- ;;^UTILITY(U,$J,358.3,23737,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23737,1,2,0)
- ;;=2^51725
- ;;^UTILITY(U,$J,358.3,23737,1,3,0)
- ;;=3^Cystometrogram, Simple
+ ;;^UTILITY(U,$J,358.3,22089,1,4,0)
+ ;;=4^S42.111S
+ ;;^UTILITY(U,$J,358.3,22089,2)
+ ;;=^5026550
+ ;;^UTILITY(U,$J,358.3,22090,0)
+ ;;=S42.132S^^101^1037^18
+ ;;^UTILITY(U,$J,358.3,22090,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22090,1,3,0)
+ ;;=3^Disp fx of coracoid process, left shoulder, sequela
+ ;;^UTILITY(U,$J,358.3,22090,1,4,0)
+ ;;=4^S42.132S
+ ;;^UTILITY(U,$J,358.3,22090,2)
+ ;;=^5026641
+ ;;^UTILITY(U,$J,358.3,22091,0)
+ ;;=S42.131S^^101^1037^19
+ ;;^UTILITY(U,$J,358.3,22091,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22091,1,3,0)
+ ;;=3^Disp fx of coracoid process, right shoulder, sequela
+ ;;^UTILITY(U,$J,358.3,22091,1,4,0)
+ ;;=4^S42.131S
+ ;;^UTILITY(U,$J,358.3,22091,2)
+ ;;=^5026634
+ ;;^UTILITY(U,$J,358.3,22092,0)
+ ;;=S42.142S^^101^1037^21
+ ;;^UTILITY(U,$J,358.3,22092,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22092,1,3,0)
+ ;;=3^Disp fx of glenoid cavity of scapula, left shoulder, sequela
+ ;;^UTILITY(U,$J,358.3,22092,1,4,0)
+ ;;=4^S42.142S
+ ;;^UTILITY(U,$J,358.3,22092,2)
+ ;;=^5026683
+ ;;^UTILITY(U,$J,358.3,22093,0)
+ ;;=S42.141S^^101^1037^20
+ ;;^UTILITY(U,$J,358.3,22093,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22093,1,3,0)
+ ;;=3^Disp fx of glenoid cav of scapula, right shoulder, sequela
+ ;;^UTILITY(U,$J,358.3,22093,1,4,0)
+ ;;=4^S42.141S
+ ;;^UTILITY(U,$J,358.3,22093,2)
+ ;;=^5026676
+ ;;^UTILITY(U,$J,358.3,22094,0)
+ ;;=S42.151S^^101^1037^36
+ ;;^UTILITY(U,$J,358.3,22094,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22094,1,3,0)
+ ;;=3^Disp fx of neck of scapula, right shoulder, sequela
+ ;;^UTILITY(U,$J,358.3,22094,1,4,0)
+ ;;=4^S42.151S
+ ;;^UTILITY(U,$J,358.3,22094,2)
+ ;;=^5026718
+ ;;^UTILITY(U,$J,358.3,22095,0)
+ ;;=S42.151S^^101^1037^37
+ ;;^UTILITY(U,$J,358.3,22095,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22095,1,3,0)
+ ;;=3^Disp fx of neck of scapula, right shoulder, sequela
+ ;;^UTILITY(U,$J,358.3,22095,1,4,0)
+ ;;=4^S42.151S
+ ;;^UTILITY(U,$J,358.3,22095,2)
+ ;;=^5026718
+ ;;^UTILITY(U,$J,358.3,22096,0)
+ ;;=S42.125S^^101^1037^57
+ ;;^UTILITY(U,$J,358.3,22096,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22096,1,3,0)
+ ;;=3^Nondisp fx of acromial process, left shoulder, sequela
+ ;;^UTILITY(U,$J,358.3,22096,1,4,0)
+ ;;=4^S42.125S
+ ;;^UTILITY(U,$J,358.3,22096,2)
+ ;;=^5026620
+ ;;^UTILITY(U,$J,358.3,22097,0)
+ ;;=S42.115S^^101^1037^58
+ ;;^UTILITY(U,$J,358.3,22097,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22097,1,3,0)
+ ;;=3^Nondisp fx of body of scapula, left shoulder, sequela
+ ;;^UTILITY(U,$J,358.3,22097,1,4,0)
+ ;;=4^S42.115S
+ ;;^UTILITY(U,$J,358.3,22097,2)
+ ;;=^5026578
+ ;;^UTILITY(U,$J,358.3,22098,0)
+ ;;=S42.114S^^101^1037^59
+ ;;^UTILITY(U,$J,358.3,22098,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22098,1,3,0)
+ ;;=3^Nondisp fx of body of scapula, right shoulder, sequela
+ ;;^UTILITY(U,$J,358.3,22098,1,4,0)
+ ;;=4^S42.114S
+ ;;^UTILITY(U,$J,358.3,22098,2)
+ ;;=^5026571
+ ;;^UTILITY(U,$J,358.3,22099,0)
+ ;;=S42.114S^^101^1037^60
+ ;;^UTILITY(U,$J,358.3,22099,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22099,1,3,0)
+ ;;=3^Nondisp fx of body of scapula, right shoulder, sequela
+ ;;^UTILITY(U,$J,358.3,22099,1,4,0)
+ ;;=4^S42.114S
+ ;;^UTILITY(U,$J,358.3,22099,2)
+ ;;=^5026571
+ ;;^UTILITY(U,$J,358.3,22100,0)
+ ;;=S42.135S^^101^1037^65
+ ;;^UTILITY(U,$J,358.3,22100,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22100,1,3,0)
+ ;;=3^Nondisp fx of coracoid process, left shoulder, sequela
+ ;;^UTILITY(U,$J,358.3,22100,1,4,0)
+ ;;=4^S42.135S
+ ;;^UTILITY(U,$J,358.3,22100,2)
+ ;;=^5026662
+ ;;^UTILITY(U,$J,358.3,22101,0)
+ ;;=S42.134S^^101^1037^66
+ ;;^UTILITY(U,$J,358.3,22101,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22101,1,3,0)
+ ;;=3^Nondisp fx of coracoid process, right shoulder, sequela

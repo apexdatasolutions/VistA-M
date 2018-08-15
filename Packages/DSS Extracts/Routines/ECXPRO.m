@@ -1,5 +1,5 @@
-ECXPRO ;ALB/GTS - Prosthetics Extract for DSS ;4/16/13  16:47
- ;;3.0;DSS EXTRACTS;**9,13,15,21,24,33,39,46,71,92,105,120,127,132,136,144,149**;Dec 22, 1997;Build 27
+ECXPRO ;ALB/GTS - Prosthetics Extract for DSS ;11/8/17  14:51
+ ;;3.0;DSS EXTRACTS;**9,13,15,21,24,33,39,46,71,92,105,120,127,132,136,144,149,154,161,166,169**;Dec 22, 1997;Build 2
 BEG ;entry point from option
  D SETUP I ECFILE="" Q
  D:+ECINST>0 ^ECXTRAC D ^ECXKILL
@@ -20,7 +20,7 @@ START ;start package specific extract
  N ECXLNE,ECXCT,ECXDACT,ECX0,ECXLB,ECXED1,ECINSTSV,ECXLNSTR,ECXP
  N ECXICD10P,ECXICD101,ECXICD102,ECXICD103,ECXICD104
  N DIC,DR,DA,DIQ,CPTCODE,ECXNPRFI
- N ECXESC,ECXCLST,ECXECL ;144
+ N ECXESC,ECXCLST,ECXECL,ECXUI ;144,166
  D ECXBUL^ECXPRO2(.ECXLNE,ECSDN,ECEDN,EC)
  S QFLG=0,ECXLNSTR=ECXLNE,ECXED1=ECED+.9999,ECXCT=ECSD1
  F  S ECXCT=$O(^RMPR(660,"CT",ECXCT)) Q:(ECXCT>ECXED1)!('ECXCT)!(QFLG=1)  D
@@ -42,6 +42,7 @@ START ;start package specific extract
  ..S ECXDFN=$G(ECXP(660,ECXDACT,.02,"I"))
  ..S ECXFORM=$G(ECXP(660,ECXDACT,11,"E"))_U_$G(ECXP(660,ECXDACT,11,"I"))
  ..S ECXLH=$G(ECXP(660,ECXDACT,45,"I"))
+ ..S ECXUI=$$GET1^DIQ(660,ECXDACT,78) ;166 get unit of issue
  ..Q:'$$PATDEM^ECXUTL2(ECXDFN,ECXCT)
  ..S OK=$$PAT^ECXUTL3(ECXDFN,ECXDATE,"1;5",.ECXPAT)
  ..I 'OK S ECXERR=1 K ECXPAT Q
@@ -87,9 +88,11 @@ START ;start package specific extract
  ..;- If no encounter number don't file record
  ..S ECXENC=$$ENCNUM^ECXUTL4(ECXA,ECXSSN,ECXADMDT,ECXDATE,ECXTS,ECXOBS,ECHEAD,,) Q:ECXENC=""
  ..I ECXFORM["-3" F ECXLAB="LAB","ORD" D
+ ...S ECINSTSV=ECXRQST I ECINSTSV="" S ECINSTSV=ECXPDIV  ;166,169 tjl
  ...D FEEDINFO^ECXPRO2(ECXSRCE,CPTCODE,ECXTYPE,ECXSTAT2,ECXRQST,ECXRCST,ECXLAB,ECXNPPDC)
  ...Q:ECXFELOC=""  D FILE
  ..I ECXFORM'["-3" S ECXLAB="NONL" D
+ ...S ECINSTSV=ECXSTAT2 I ECINSTSV="" S ECINSTSV=ECXPDIV  ;166,169 tjl
  ...D FEEDINFO^ECXPRO2(ECXSRCE,CPTCODE,ECXTYPE,ECXSTAT2,ECXRQST,ECXRCST,ECXLAB,ECXNPPDC)
  ...Q:ECXFELOC=""  D FILE
  ;* Send the Exception message
@@ -106,13 +109,13 @@ FILE ;file extract record
  ;node0
  ;facility^dfn (ECXDFN)^ssn (ECXSSN)^name (ECXPNM)^in/out (ECXA)^
  ;day^feeder location^
- ;feeder key^qty^pc team^pc provider^hcpcs^icd9 (ECXICD9)^
- ;icd9-1 (ECXICD91)^icd9-2 (ECXICD92)^icd9-3 (ECXICD93)^
- ;icd9-4 (ECXICD94)^agent orange^radiation^env contam^eligibility^
+ ;feeder key^qty^pc team^pc provider^hcpcs^Placeholder (ECXICD9)^
+ ;Placeholder (ECXICD91)^Placeholder (ECXICD92)^Placeholder (ECXICD93)^
+ ;Placeholder (ECXICD94)^agent orange^radiation^env contam^eligibility^
  ;cost^lab labor cost^lab matl cost^billing status^
  ;vet^transaction type^req station^rec station^file#661.1 ien
  ;node1
- ;zip^dob^sex^amis grouper^placeholder^mpi^dss dept ECXDSSD^
+ ;zip^dob^sex^amis grouper^placeholder^mpi^placeholder ECXDSSD^
  ;pc prov person class^race^pow status^pow loc^
  ;sharing agree payor^sharing agree ins^mst status^
  ;enroll loc^state^county^assoc pc provider^
@@ -139,11 +142,12 @@ FILE ;file extract record
  ;PATCAT^EXCPATCAT^
  ;primary ICD-10 code (currently null)ECXICD10P^Secondary ICD-10 Code #1 (currently null)ECXICD101^
  ;Secondary ICD-10 Code #2 (currently null)ECXICD102^Secondary ICD-10 Code #3 (currently null)ECXICD103^
- ;Secondary ICD-10 Code #4 (currently null)ECXICD104^Encounter SC ECXEXC^Vietnam Status ECXVNS^Camp Lejeune Status ECXCLST^Encounter Camp Lejeune ECXECL
- ;Combat Service Indicator (ECXSVCI) ^ Combat Service Location (ECXSVCL)
+ ;Secondary ICD-10 Code #4 (currently null)ECXICD104^Encounter SC ECXEXC^Vietnam Status ECXVNS^Camp Lejeune Status ECXCLST^Encounter Camp Lejeune ECXECL^
+ ;Combat Service Indicator (ECXSVCI)^Combat Service Location (ECXSVCL)^
+ ;Form Requested On (ECXFORM)^Unit of Issue (ECXUI)
  N DA,DIK
  S EC7=$O(^ECX(ECFILE,999999999),-1),EC7=EC7+1
- S ECODE=EC7_U_EC23_U_ECINST_U_ECXDFN_U_ECXSSN_U_ECXPNM_U_ECXA_U
+ S ECODE=EC7_U_EC23_U_ECINSTSV_U_ECXDFN_U_ECXSSN_U_ECXPNM_U_ECXA_U  ;169 tjl
  S ECODE=ECODE_$$ECXDATE^ECXUTL(ECXDATE,ECXYM)_U_ECXFELOC_U
  S ECODE=ECODE_ECXFEKEY_U_ECXQTY_U_ECPTTM_U_ECPTPR_U_ECXHCPCS_U
  S ECODE=ECODE_ECXICD9_U_ECXICD91_U_ECXICD92_U_ECXICD93_U_ECXICD94_U
@@ -165,6 +169,8 @@ FILE ;file extract record
  I ECXLOGIC>2012 S ECODE2=ECODE2_U_ECXICD10P_U_ECXICD101_U_ECXICD102_U_ECXICD103_U_ECXICD104
  I ECXLOGIC>2013 S ECODE2=ECODE2_U_ECXESC_U_ECXVNS_U_ECXCLST_U_ECXECL ;144
  I ECXLOGIC>2014 S ECODE2=ECODE2_U_ECXSVCI_U_ECXSVCL ;149
+ I ECXLOGIC>2015 S ECODE2=ECODE2_U_$P(ECXFORM,U,2) ;154
+ I ECXLOGIC>2017 S ECODE2=ECODE2_U_$G(ECXUI) ;166
  S ^ECX(ECFILE,EC7,0)=ECODE,^ECX(ECFILE,EC7,1)=ECODE1,^ECX(ECFILE,EC7,2)=$G(ECODE2),ECRN=ECRN+1
  S DA=EC7,DIK="^ECX("_ECFILE_"," D IX1^DIK K DIK,DA
  I $D(ZTQUEUED),$$S^%ZTLOAD S QFLG=1

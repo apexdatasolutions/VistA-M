@@ -1,140 +1,126 @@
-IBDEI0HQ ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0HQ ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,8617,0)
- ;;=371.71^^58^612^42
- ;;^UTILITY(U,$J,358.3,8617,1,0)
+ ;;^UTILITY(U,$J,358.3,7943,0)
+ ;;=L97.319^^55^531^90
+ ;;^UTILITY(U,$J,358.3,7943,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8617,1,3,0)
- ;;=3^Corneal Ectasia
- ;;^UTILITY(U,$J,358.3,8617,1,4,0)
- ;;=4^371.71
- ;;^UTILITY(U,$J,358.3,8617,2)
- ;;=^268994
- ;;^UTILITY(U,$J,358.3,8618,0)
- ;;=371.72^^58^612^49
- ;;^UTILITY(U,$J,358.3,8618,1,0)
+ ;;^UTILITY(U,$J,358.3,7943,1,3,0)
+ ;;=3^Non-prs chr ulcer of right ankle with unsp severity
+ ;;^UTILITY(U,$J,358.3,7943,1,4,0)
+ ;;=4^L97.319
+ ;;^UTILITY(U,$J,358.3,7943,2)
+ ;;=^5009519
+ ;;^UTILITY(U,$J,358.3,7944,0)
+ ;;=L97.321^^55^531^66
+ ;;^UTILITY(U,$J,358.3,7944,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8618,1,3,0)
- ;;=3^Descemetocele
- ;;^UTILITY(U,$J,358.3,8618,1,4,0)
- ;;=4^371.72
- ;;^UTILITY(U,$J,358.3,8618,2)
- ;;=^268995
- ;;^UTILITY(U,$J,358.3,8619,0)
- ;;=372.00^^58^612^22
- ;;^UTILITY(U,$J,358.3,8619,1,0)
+ ;;^UTILITY(U,$J,358.3,7944,1,3,0)
+ ;;=3^Non-prs chr ulcer of left ankle limited to brkdwn skin
+ ;;^UTILITY(U,$J,358.3,7944,1,4,0)
+ ;;=4^L97.321
+ ;;^UTILITY(U,$J,358.3,7944,2)
+ ;;=^5009520
+ ;;^UTILITY(U,$J,358.3,7945,0)
+ ;;=L97.314^^55^531^88
+ ;;^UTILITY(U,$J,358.3,7945,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8619,1,3,0)
- ;;=3^Conjunctivitis,Acute
- ;;^UTILITY(U,$J,358.3,8619,1,4,0)
- ;;=4^372.00
- ;;^UTILITY(U,$J,358.3,8619,2)
- ;;=^269000
- ;;^UTILITY(U,$J,358.3,8620,0)
- ;;=372.02^^58^612^25
- ;;^UTILITY(U,$J,358.3,8620,1,0)
+ ;;^UTILITY(U,$J,358.3,7945,1,3,0)
+ ;;=3^Non-prs chr ulcer of right ankle w necrosis of bone
+ ;;^UTILITY(U,$J,358.3,7945,1,4,0)
+ ;;=4^L97.314
+ ;;^UTILITY(U,$J,358.3,7945,2)
+ ;;=^5009518
+ ;;^UTILITY(U,$J,358.3,7946,0)
+ ;;=L97.313^^55^531^89
+ ;;^UTILITY(U,$J,358.3,7946,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8620,1,3,0)
- ;;=3^Conjunctivitis,Acute,Follicular
- ;;^UTILITY(U,$J,358.3,8620,1,4,0)
- ;;=4^372.02
- ;;^UTILITY(U,$J,358.3,8620,2)
- ;;=^269003
- ;;^UTILITY(U,$J,358.3,8621,0)
- ;;=372.03^^58^612^10
- ;;^UTILITY(U,$J,358.3,8621,1,0)
+ ;;^UTILITY(U,$J,358.3,7946,1,3,0)
+ ;;=3^Non-prs chr ulcer of right ankle w necrosis of muscle
+ ;;^UTILITY(U,$J,358.3,7946,1,4,0)
+ ;;=4^L97.313
+ ;;^UTILITY(U,$J,358.3,7946,2)
+ ;;=^5009517
+ ;;^UTILITY(U,$J,358.3,7947,0)
+ ;;=L97.311^^55^531^86
+ ;;^UTILITY(U,$J,358.3,7947,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8621,1,3,0)
- ;;=3^Conjuctivitis,Mucopurulent
- ;;^UTILITY(U,$J,358.3,8621,1,4,0)
- ;;=4^372.03
- ;;^UTILITY(U,$J,358.3,8621,2)
- ;;=^87718
- ;;^UTILITY(U,$J,358.3,8622,0)
- ;;=372.04^^58^612^33
- ;;^UTILITY(U,$J,358.3,8622,1,0)
+ ;;^UTILITY(U,$J,358.3,7947,1,3,0)
+ ;;=3^Non-prs chr ulcer of right ankle limited to brkdwn skin
+ ;;^UTILITY(U,$J,358.3,7947,1,4,0)
+ ;;=4^L97.311
+ ;;^UTILITY(U,$J,358.3,7947,2)
+ ;;=^5009515
+ ;;^UTILITY(U,$J,358.3,7948,0)
+ ;;=L97.312^^55^531^87
+ ;;^UTILITY(U,$J,358.3,7948,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8622,1,3,0)
- ;;=3^Conjunctivitis,Pseudomembranous
- ;;^UTILITY(U,$J,358.3,8622,1,4,0)
- ;;=4^372.04
- ;;^UTILITY(U,$J,358.3,8622,2)
- ;;=^269006
- ;;^UTILITY(U,$J,358.3,8623,0)
- ;;=372.05^^58^612^23
- ;;^UTILITY(U,$J,358.3,8623,1,0)
+ ;;^UTILITY(U,$J,358.3,7948,1,3,0)
+ ;;=3^Non-prs chr ulcer of right ankle w fat layer exposed
+ ;;^UTILITY(U,$J,358.3,7948,1,4,0)
+ ;;=4^L97.312
+ ;;^UTILITY(U,$J,358.3,7948,2)
+ ;;=^5009516
+ ;;^UTILITY(U,$J,358.3,7949,0)
+ ;;=L97.411^^55^531^96
+ ;;^UTILITY(U,$J,358.3,7949,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8623,1,3,0)
- ;;=3^Conjunctivitis,Acute,Atopic
- ;;^UTILITY(U,$J,358.3,8623,1,4,0)
- ;;=4^372.05
- ;;^UTILITY(U,$J,358.3,8623,2)
- ;;=^2605
- ;;^UTILITY(U,$J,358.3,8624,0)
- ;;=372.06^^58^612^24
- ;;^UTILITY(U,$J,358.3,8624,1,0)
+ ;;^UTILITY(U,$J,358.3,7949,1,3,0)
+ ;;=3^Non-prs chr ulcer of right heel and midft lmt to brkdwn skin
+ ;;^UTILITY(U,$J,358.3,7949,1,4,0)
+ ;;=4^L97.411
+ ;;^UTILITY(U,$J,358.3,7949,2)
+ ;;=^5009530
+ ;;^UTILITY(U,$J,358.3,7950,0)
+ ;;=L97.413^^55^531^97
+ ;;^UTILITY(U,$J,358.3,7950,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8624,1,3,0)
- ;;=3^Conjunctivitis,Acute,Chemical
- ;;^UTILITY(U,$J,358.3,8624,1,4,0)
- ;;=4^372.06
- ;;^UTILITY(U,$J,358.3,8624,2)
- ;;=^338237
- ;;^UTILITY(U,$J,358.3,8625,0)
- ;;=372.10^^58^612^30
- ;;^UTILITY(U,$J,358.3,8625,1,0)
+ ;;^UTILITY(U,$J,358.3,7950,1,3,0)
+ ;;=3^Non-prs chr ulcer of right heel and midfoot w necros muscle
+ ;;^UTILITY(U,$J,358.3,7950,1,4,0)
+ ;;=4^L97.413
+ ;;^UTILITY(U,$J,358.3,7950,2)
+ ;;=^5009532
+ ;;^UTILITY(U,$J,358.3,7951,0)
+ ;;=L97.414^^55^531^98
+ ;;^UTILITY(U,$J,358.3,7951,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8625,1,3,0)
- ;;=3^Conjunctivitis,Chronic,Unspec
- ;;^UTILITY(U,$J,358.3,8625,1,4,0)
- ;;=4^372.10
- ;;^UTILITY(U,$J,358.3,8625,2)
- ;;=^269008
- ;;^UTILITY(U,$J,358.3,8626,0)
- ;;=372.11^^58^612^29
- ;;^UTILITY(U,$J,358.3,8626,1,0)
+ ;;^UTILITY(U,$J,358.3,7951,1,3,0)
+ ;;=3^Non-prs chr ulcer of right heel and midfoot w necros bone
+ ;;^UTILITY(U,$J,358.3,7951,1,4,0)
+ ;;=4^L97.414
+ ;;^UTILITY(U,$J,358.3,7951,2)
+ ;;=^5009533
+ ;;^UTILITY(U,$J,358.3,7952,0)
+ ;;=L97.412^^55^531^99
+ ;;^UTILITY(U,$J,358.3,7952,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8626,1,3,0)
- ;;=3^Conjunctivitis,Chronic,Simple
- ;;^UTILITY(U,$J,358.3,8626,1,4,0)
- ;;=4^372.11
- ;;^UTILITY(U,$J,358.3,8626,2)
- ;;=^269010
- ;;^UTILITY(U,$J,358.3,8627,0)
- ;;=372.12^^58^612^28
- ;;^UTILITY(U,$J,358.3,8627,1,0)
+ ;;^UTILITY(U,$J,358.3,7952,1,3,0)
+ ;;=3^Non-prs chr ulcer of right heel and midft w fat layer expos
+ ;;^UTILITY(U,$J,358.3,7952,1,4,0)
+ ;;=4^L97.412
+ ;;^UTILITY(U,$J,358.3,7952,2)
+ ;;=^5009531
+ ;;^UTILITY(U,$J,358.3,7953,0)
+ ;;=L97.419^^55^531^100
+ ;;^UTILITY(U,$J,358.3,7953,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8627,1,3,0)
- ;;=3^Conjunctivitis,Chronic,Follicular
- ;;^UTILITY(U,$J,358.3,8627,1,4,0)
- ;;=4^372.12
- ;;^UTILITY(U,$J,358.3,8627,2)
- ;;=^269013
- ;;^UTILITY(U,$J,358.3,8628,0)
- ;;=372.13^^58^612^36
- ;;^UTILITY(U,$J,358.3,8628,1,0)
+ ;;^UTILITY(U,$J,358.3,7953,1,3,0)
+ ;;=3^Non-prs chr ulcer of right heel and midfoot w unsp severt
+ ;;^UTILITY(U,$J,358.3,7953,1,4,0)
+ ;;=4^L97.419
+ ;;^UTILITY(U,$J,358.3,7953,2)
+ ;;=^5009534
+ ;;^UTILITY(U,$J,358.3,7954,0)
+ ;;=L97.421^^55^531^76
+ ;;^UTILITY(U,$J,358.3,7954,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8628,1,3,0)
- ;;=3^Conjunctivitis,Vernal
- ;;^UTILITY(U,$J,358.3,8628,1,4,0)
- ;;=4^372.13
- ;;^UTILITY(U,$J,358.3,8628,2)
- ;;=^27613
- ;;^UTILITY(U,$J,358.3,8629,0)
- ;;=372.14^^58^612^27
- ;;^UTILITY(U,$J,358.3,8629,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8629,1,3,0)
- ;;=3^Conjunctivitis,Chronic,Allergic
- ;;^UTILITY(U,$J,358.3,8629,1,4,0)
- ;;=4^372.14
- ;;^UTILITY(U,$J,358.3,8629,2)
- ;;=^87396
- ;;^UTILITY(U,$J,358.3,8630,0)
- ;;=372.20^^58^612^4
- ;;^UTILITY(U,$J,358.3,8630,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8630,1,3,0)
- ;;=3^Blepharoconjunctivitis,Unspec
+ ;;^UTILITY(U,$J,358.3,7954,1,3,0)
+ ;;=3^Non-prs chr ulcer of left heel and midft lmt to brkdwn skin
+ ;;^UTILITY(U,$J,358.3,7954,1,4,0)
+ ;;=4^L97.421
+ ;;^UTILITY(U,$J,358.3,7954,2)
+ ;;=^5009535
+ ;;^UTILITY(U,$J,358.3,7955,0)
+ ;;=L97.422^^55^531^77

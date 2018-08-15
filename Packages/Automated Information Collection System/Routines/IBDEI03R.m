@@ -1,128 +1,140 @@
-IBDEI03R ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI03R ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,1430,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1430,1,2,0)
- ;;=2^37233
- ;;^UTILITY(U,$J,358.3,1430,1,3,0)
- ;;=3^TIB/Per Revasc w/Ather,ea addl Vessel
- ;;^UTILITY(U,$J,358.3,1431,0)
- ;;=37234^^14^132^50^^^^1
- ;;^UTILITY(U,$J,358.3,1431,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1431,1,2,0)
- ;;=2^37234
- ;;^UTILITY(U,$J,358.3,1431,1,3,0)
- ;;=3^TIB/Per Revasc w/Stent,ea addl Vessel
- ;;^UTILITY(U,$J,358.3,1432,0)
- ;;=37235^^14^132^51^^^^1
- ;;^UTILITY(U,$J,358.3,1432,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1432,1,2,0)
- ;;=2^37235
- ;;^UTILITY(U,$J,358.3,1432,1,3,0)
- ;;=3^TIB/Per Revasc w/Stnt&Ather,addl Vessel
- ;;^UTILITY(U,$J,358.3,1433,0)
- ;;=36251^^14^132^38^^^^1
- ;;^UTILITY(U,$J,358.3,1433,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1433,1,2,0)
- ;;=2^36251
- ;;^UTILITY(U,$J,358.3,1433,1,3,0)
- ;;=3^Select Cath 1st Main Ren&Access Art
- ;;^UTILITY(U,$J,358.3,1434,0)
- ;;=36252^^14^132^37^^^^1
- ;;^UTILITY(U,$J,358.3,1434,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1434,1,2,0)
- ;;=2^36252
- ;;^UTILITY(U,$J,358.3,1434,1,3,0)
- ;;=3^Select Cath 1st Main Ren&Acc Art,Bilat
- ;;^UTILITY(U,$J,358.3,1435,0)
- ;;=36254^^14^132^45^^^^1
- ;;^UTILITY(U,$J,358.3,1435,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1435,1,2,0)
- ;;=2^36254
- ;;^UTILITY(U,$J,358.3,1435,1,3,0)
- ;;=3^Superselect Cath Ren Art&Access Art
- ;;^UTILITY(U,$J,358.3,1436,0)
- ;;=37191^^14^132^25^^^^1
- ;;^UTILITY(U,$J,358.3,1436,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1436,1,2,0)
- ;;=2^37191
- ;;^UTILITY(U,$J,358.3,1436,1,3,0)
- ;;=3^Insert Intravas Vena Cava Filter,Endovas
- ;;^UTILITY(U,$J,358.3,1437,0)
- ;;=37619^^14^132^28^^^^1
- ;;^UTILITY(U,$J,358.3,1437,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1437,1,2,0)
- ;;=2^37619
- ;;^UTILITY(U,$J,358.3,1437,1,3,0)
- ;;=3^Open Inferior Vena Cava Filter Placement
- ;;^UTILITY(U,$J,358.3,1438,0)
- ;;=75635^^14^132^13^^^^1
- ;;^UTILITY(U,$J,358.3,1438,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1438,1,2,0)
- ;;=2^75635
- ;;^UTILITY(U,$J,358.3,1438,1,3,0)
- ;;=3^CT Angio Abd Art w/Contrast
- ;;^UTILITY(U,$J,358.3,1439,0)
- ;;=75658^^14^132^5^^^^1
- ;;^UTILITY(U,$J,358.3,1439,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1439,1,2,0)
- ;;=2^75658
- ;;^UTILITY(U,$J,358.3,1439,1,3,0)
- ;;=3^Angiography,Brachial,Retrograd,Rad S&I
- ;;^UTILITY(U,$J,358.3,1440,0)
- ;;=76506^^14^132^16^^^^1
- ;;^UTILITY(U,$J,358.3,1440,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1440,1,2,0)
- ;;=2^76506
- ;;^UTILITY(U,$J,358.3,1440,1,3,0)
- ;;=3^Echoencephalography,Real Time w/Image Doc
- ;;^UTILITY(U,$J,358.3,1441,0)
- ;;=76000^^14^132^14^^^^1
- ;;^UTILITY(U,$J,358.3,1441,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1441,1,2,0)
- ;;=2^76000
- ;;^UTILITY(U,$J,358.3,1441,1,3,0)
- ;;=3^Cardiac Fluoro<1hr(No Cath Proc)
- ;;^UTILITY(U,$J,358.3,1442,0)
- ;;=35472^^14^132^32^^^^1
- ;;^UTILITY(U,$J,358.3,1442,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1442,1,2,0)
- ;;=2^35472
- ;;^UTILITY(U,$J,358.3,1442,1,3,0)
- ;;=3^Perc Angioplasty,Aortic
- ;;^UTILITY(U,$J,358.3,1443,0)
- ;;=35476^^14^132^33^^^^1
- ;;^UTILITY(U,$J,358.3,1443,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1443,1,2,0)
- ;;=2^35476
- ;;^UTILITY(U,$J,358.3,1443,1,3,0)
- ;;=3^Perc Angioplasty,Venous
- ;;^UTILITY(U,$J,358.3,1444,0)
- ;;=37236^^14^132^58^^^^1
- ;;^UTILITY(U,$J,358.3,1444,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1444,1,2,0)
- ;;=2^37236
- ;;^UTILITY(U,$J,358.3,1444,1,3,0)
- ;;=3^Transcath Plcmt of Intravas Stent,Init Art
- ;;^UTILITY(U,$J,358.3,1445,0)
- ;;=37237^^14^132^56^^^^1
- ;;^UTILITY(U,$J,358.3,1445,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1445,1,2,0)
- ;;=2^37237
+ ;;^UTILITY(U,$J,358.3,1049,0)
+ ;;=K82.9^^12^125^2
+ ;;^UTILITY(U,$J,358.3,1049,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1049,1,3,0)
+ ;;=3^Gallbladder Disease,Unspec
+ ;;^UTILITY(U,$J,358.3,1049,1,4,0)
+ ;;=4^K82.9
+ ;;^UTILITY(U,$J,358.3,1049,2)
+ ;;=^5008875
+ ;;^UTILITY(U,$J,358.3,1050,0)
+ ;;=K92.2^^12^125^6
+ ;;^UTILITY(U,$J,358.3,1050,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1050,1,3,0)
+ ;;=3^Gastrointestinal Hemorrhage,Unspec
+ ;;^UTILITY(U,$J,358.3,1050,1,4,0)
+ ;;=4^K92.2
+ ;;^UTILITY(U,$J,358.3,1050,2)
+ ;;=^5008915
+ ;;^UTILITY(U,$J,358.3,1051,0)
+ ;;=K25.9^^12^125^3
+ ;;^UTILITY(U,$J,358.3,1051,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1051,1,3,0)
+ ;;=3^Gastric Ulcer w/o Hemorrhage/Perforation
+ ;;^UTILITY(U,$J,358.3,1051,1,4,0)
+ ;;=4^K25.9
+ ;;^UTILITY(U,$J,358.3,1051,2)
+ ;;=^5008522
+ ;;^UTILITY(U,$J,358.3,1052,0)
+ ;;=I69.959^^12^126^11
+ ;;^UTILITY(U,$J,358.3,1052,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1052,1,3,0)
+ ;;=3^Hemiplegia/Hemiparesis Following Unspec Cerebrovascular Disease
+ ;;^UTILITY(U,$J,358.3,1052,1,4,0)
+ ;;=4^I69.959
+ ;;^UTILITY(U,$J,358.3,1052,2)
+ ;;=^5007563
+ ;;^UTILITY(U,$J,358.3,1053,0)
+ ;;=D89.2^^12^126^22
+ ;;^UTILITY(U,$J,358.3,1053,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1053,1,3,0)
+ ;;=3^Hypergammaglobulinemia,Unspec
+ ;;^UTILITY(U,$J,358.3,1053,1,4,0)
+ ;;=4^D89.2
+ ;;^UTILITY(U,$J,358.3,1053,2)
+ ;;=^5002455
+ ;;^UTILITY(U,$J,358.3,1054,0)
+ ;;=B19.10^^12^126^15
+ ;;^UTILITY(U,$J,358.3,1054,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1054,1,3,0)
+ ;;=3^Hepatitis B w/o Hepatic Coma
+ ;;^UTILITY(U,$J,358.3,1054,1,4,0)
+ ;;=4^B19.10
+ ;;^UTILITY(U,$J,358.3,1054,2)
+ ;;=^5000552
+ ;;^UTILITY(U,$J,358.3,1055,0)
+ ;;=B17.10^^12^126^17
+ ;;^UTILITY(U,$J,358.3,1055,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1055,1,3,0)
+ ;;=3^Hepatitis C w/o Hepatic Coma,Acute
+ ;;^UTILITY(U,$J,358.3,1055,1,4,0)
+ ;;=4^B17.10
+ ;;^UTILITY(U,$J,358.3,1055,2)
+ ;;=^5000542
+ ;;^UTILITY(U,$J,358.3,1056,0)
+ ;;=B18.2^^12^126^18
+ ;;^UTILITY(U,$J,358.3,1056,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1056,1,3,0)
+ ;;=3^Hepatitis C,Chr
+ ;;^UTILITY(U,$J,358.3,1056,1,4,0)
+ ;;=4^B18.2
+ ;;^UTILITY(U,$J,358.3,1056,2)
+ ;;=^5000548
+ ;;^UTILITY(U,$J,358.3,1057,0)
+ ;;=E03.9^^12^126^31
+ ;;^UTILITY(U,$J,358.3,1057,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1057,1,3,0)
+ ;;=3^Hypothyroidism,Unspec
+ ;;^UTILITY(U,$J,358.3,1057,1,4,0)
+ ;;=4^E03.9
+ ;;^UTILITY(U,$J,358.3,1057,2)
+ ;;=^5002476
+ ;;^UTILITY(U,$J,358.3,1058,0)
+ ;;=E16.2^^12^126^28
+ ;;^UTILITY(U,$J,358.3,1058,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1058,1,3,0)
+ ;;=3^Hypoglycemia,Unspec
+ ;;^UTILITY(U,$J,358.3,1058,1,4,0)
+ ;;=4^E16.2
+ ;;^UTILITY(U,$J,358.3,1058,2)
+ ;;=^5002708
+ ;;^UTILITY(U,$J,358.3,1059,0)
+ ;;=E78.0^^12^126^21
+ ;;^UTILITY(U,$J,358.3,1059,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1059,1,3,0)
+ ;;=3^Hypercholesterolemia,Pure
+ ;;^UTILITY(U,$J,358.3,1059,1,4,0)
+ ;;=4^E78.0
+ ;;^UTILITY(U,$J,358.3,1059,2)
+ ;;=^5002966
+ ;;^UTILITY(U,$J,358.3,1060,0)
+ ;;=E78.1^^12^126^23
+ ;;^UTILITY(U,$J,358.3,1060,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1060,1,3,0)
+ ;;=3^Hyperglyceridemia,Pure
+ ;;^UTILITY(U,$J,358.3,1060,1,4,0)
+ ;;=4^E78.1
+ ;;^UTILITY(U,$J,358.3,1060,2)
+ ;;=^101303
+ ;;^UTILITY(U,$J,358.3,1061,0)
+ ;;=E78.5^^12^126^26
+ ;;^UTILITY(U,$J,358.3,1061,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1061,1,3,0)
+ ;;=3^Hyperlipidemia,Unspec
+ ;;^UTILITY(U,$J,358.3,1061,1,4,0)
+ ;;=4^E78.5
+ ;;^UTILITY(U,$J,358.3,1061,2)
+ ;;=^5002969
+ ;;^UTILITY(U,$J,358.3,1062,0)
+ ;;=E78.4^^12^126^25
+ ;;^UTILITY(U,$J,358.3,1062,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1062,1,3,0)
+ ;;=3^Hyperlipidemia,Other

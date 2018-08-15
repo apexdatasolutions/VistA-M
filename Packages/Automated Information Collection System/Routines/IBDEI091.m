@@ -1,126 +1,134 @@
-IBDEI091 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI091 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,4142,1,4,0)
- ;;=4^11056
- ;;^UTILITY(U,$J,358.3,4143,0)
- ;;=11057^^36^312^3^^^^1
- ;;^UTILITY(U,$J,358.3,4143,1,0)
+ ;;^UTILITY(U,$J,358.3,3682,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4143,1,2,0)
- ;;=2^Pare/cut corn/callus, >4
- ;;^UTILITY(U,$J,358.3,4143,1,4,0)
- ;;=4^11057
- ;;^UTILITY(U,$J,358.3,4144,0)
- ;;=11420^^36^313^1^^^^1
- ;;^UTILITY(U,$J,358.3,4144,1,0)
+ ;;^UTILITY(U,$J,358.3,3682,1,3,0)
+ ;;=3^Fx in Neoplastic Disease,Unspec Site,Malunion
+ ;;^UTILITY(U,$J,358.3,3682,1,4,0)
+ ;;=4^M84.50XP
+ ;;^UTILITY(U,$J,358.3,3682,2)
+ ;;=^5014026
+ ;;^UTILITY(U,$J,358.3,3683,0)
+ ;;=M84.60XA^^28^258^42
+ ;;^UTILITY(U,$J,358.3,3683,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4144,1,2,0)
- ;;=2^Scalp/Neck/Head 0.5 cm or less Benign Excision
- ;;^UTILITY(U,$J,358.3,4144,1,4,0)
- ;;=4^11420
- ;;^UTILITY(U,$J,358.3,4145,0)
- ;;=11421^^36^313^2^^^^1
- ;;^UTILITY(U,$J,358.3,4145,1,0)
+ ;;^UTILITY(U,$J,358.3,3683,1,3,0)
+ ;;=3^Fx in Oth Disease,Unspec Site,Init Encntr
+ ;;^UTILITY(U,$J,358.3,3683,1,4,0)
+ ;;=4^M84.60XA
+ ;;^UTILITY(U,$J,358.3,3683,2)
+ ;;=^5014214
+ ;;^UTILITY(U,$J,358.3,3684,0)
+ ;;=M84.60XD^^28^258^45
+ ;;^UTILITY(U,$J,358.3,3684,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4145,1,2,0)
- ;;=2^Scalp/Neck/Head 0.6 - 1.0 cm Benign Excision
- ;;^UTILITY(U,$J,358.3,4145,1,4,0)
- ;;=4^11421
- ;;^UTILITY(U,$J,358.3,4146,0)
- ;;=11422^^36^313^3^^^^1
- ;;^UTILITY(U,$J,358.3,4146,1,0)
+ ;;^UTILITY(U,$J,358.3,3684,1,3,0)
+ ;;=3^Fx in Oth Disease,Unspec Site,Rountine Healing
+ ;;^UTILITY(U,$J,358.3,3684,1,4,0)
+ ;;=4^M84.60XD
+ ;;^UTILITY(U,$J,358.3,3684,2)
+ ;;=^5014215
+ ;;^UTILITY(U,$J,358.3,3685,0)
+ ;;=M84.60XS^^28^258^46
+ ;;^UTILITY(U,$J,358.3,3685,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4146,1,2,0)
- ;;=2^Scalp/Neck/Head 1.1 - 2.0 cm Benign Excision
- ;;^UTILITY(U,$J,358.3,4146,1,4,0)
- ;;=4^11422
- ;;^UTILITY(U,$J,358.3,4147,0)
- ;;=11423^^36^313^4^^^^1
- ;;^UTILITY(U,$J,358.3,4147,1,0)
+ ;;^UTILITY(U,$J,358.3,3685,1,3,0)
+ ;;=3^Fx in Oth Disease,Unspec Site,Sequela
+ ;;^UTILITY(U,$J,358.3,3685,1,4,0)
+ ;;=4^M84.60XS
+ ;;^UTILITY(U,$J,358.3,3685,2)
+ ;;=^5014219
+ ;;^UTILITY(U,$J,358.3,3686,0)
+ ;;=M84.60XG^^28^258^41
+ ;;^UTILITY(U,$J,358.3,3686,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4147,1,2,0)
- ;;=2^Scalp/Neck/Head 2.1 - 3.0 cm Benign Excision
- ;;^UTILITY(U,$J,358.3,4147,1,4,0)
- ;;=4^11423
- ;;^UTILITY(U,$J,358.3,4148,0)
- ;;=11424^^36^313^5^^^^1
- ;;^UTILITY(U,$J,358.3,4148,1,0)
+ ;;^UTILITY(U,$J,358.3,3686,1,3,0)
+ ;;=3^Fx in Oth Disease,Unspec Site,Delayed Healing
+ ;;^UTILITY(U,$J,358.3,3686,1,4,0)
+ ;;=4^M84.60XG
+ ;;^UTILITY(U,$J,358.3,3686,2)
+ ;;=^5014216
+ ;;^UTILITY(U,$J,358.3,3687,0)
+ ;;=M84.60XK^^28^258^44
+ ;;^UTILITY(U,$J,358.3,3687,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4148,1,2,0)
- ;;=2^Scalp/Neck/Head 3.1 - 4.0 cm Benign Excision
- ;;^UTILITY(U,$J,358.3,4148,1,4,0)
- ;;=4^11424
- ;;^UTILITY(U,$J,358.3,4149,0)
- ;;=11426^^36^313^6^^^^1
- ;;^UTILITY(U,$J,358.3,4149,1,0)
+ ;;^UTILITY(U,$J,358.3,3687,1,3,0)
+ ;;=3^Fx in Oth Disease,Unspec Site,Nonunion
+ ;;^UTILITY(U,$J,358.3,3687,1,4,0)
+ ;;=4^M84.60XK
+ ;;^UTILITY(U,$J,358.3,3687,2)
+ ;;=^5014217
+ ;;^UTILITY(U,$J,358.3,3688,0)
+ ;;=M84.60XP^^28^258^43
+ ;;^UTILITY(U,$J,358.3,3688,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4149,1,2,0)
- ;;=2^Scalp/Neck/Head > 4.0 cm Benign Excision
- ;;^UTILITY(U,$J,358.3,4149,1,4,0)
- ;;=4^11426
- ;;^UTILITY(U,$J,358.3,4150,0)
- ;;=11440^^36^314^1^^^^1
- ;;^UTILITY(U,$J,358.3,4150,1,0)
+ ;;^UTILITY(U,$J,358.3,3688,1,3,0)
+ ;;=3^Fx in Oth Disease,Unspec Site,Malunion
+ ;;^UTILITY(U,$J,358.3,3688,1,4,0)
+ ;;=4^M84.60XP
+ ;;^UTILITY(U,$J,358.3,3688,2)
+ ;;=^5014218
+ ;;^UTILITY(U,$J,358.3,3689,0)
+ ;;=M84.40XA^^28^258^56
+ ;;^UTILITY(U,$J,358.3,3689,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4150,1,2,0)
- ;;=2^Face/Ear/Lip 0.5 cm or less Benign Excision
- ;;^UTILITY(U,$J,358.3,4150,1,4,0)
- ;;=4^11440
- ;;^UTILITY(U,$J,358.3,4151,0)
- ;;=11441^^36^314^2^^^^1
- ;;^UTILITY(U,$J,358.3,4151,1,0)
+ ;;^UTILITY(U,$J,358.3,3689,1,3,0)
+ ;;=3^Fx,Unspec Site,Init Encntr
+ ;;^UTILITY(U,$J,358.3,3689,1,4,0)
+ ;;=4^M84.40XA
+ ;;^UTILITY(U,$J,358.3,3689,2)
+ ;;=^5013794
+ ;;^UTILITY(U,$J,358.3,3690,0)
+ ;;=M84.40XD^^28^258^59
+ ;;^UTILITY(U,$J,358.3,3690,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4151,1,2,0)
- ;;=2^Face/Ear/Lip 0.6 - 1.0 cm Benign Excision
- ;;^UTILITY(U,$J,358.3,4151,1,4,0)
- ;;=4^11441
- ;;^UTILITY(U,$J,358.3,4152,0)
- ;;=11442^^36^314^3^^^^1
- ;;^UTILITY(U,$J,358.3,4152,1,0)
+ ;;^UTILITY(U,$J,358.3,3690,1,3,0)
+ ;;=3^Fx,Unspec Site,Routine Healing
+ ;;^UTILITY(U,$J,358.3,3690,1,4,0)
+ ;;=4^M84.40XD
+ ;;^UTILITY(U,$J,358.3,3690,2)
+ ;;=^5013795
+ ;;^UTILITY(U,$J,358.3,3691,0)
+ ;;=M84.40XS^^28^258^60
+ ;;^UTILITY(U,$J,358.3,3691,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4152,1,2,0)
- ;;=2^Face/Ear/Lip 1.1 - 2.0 cm Benign Excision
- ;;^UTILITY(U,$J,358.3,4152,1,4,0)
- ;;=4^11442
- ;;^UTILITY(U,$J,358.3,4153,0)
- ;;=11443^^36^314^4^^^^1
- ;;^UTILITY(U,$J,358.3,4153,1,0)
+ ;;^UTILITY(U,$J,358.3,3691,1,3,0)
+ ;;=3^Fx,Unspec Site,Sequela
+ ;;^UTILITY(U,$J,358.3,3691,1,4,0)
+ ;;=4^M84.40XS
+ ;;^UTILITY(U,$J,358.3,3691,2)
+ ;;=^5013799
+ ;;^UTILITY(U,$J,358.3,3692,0)
+ ;;=M84.40XG^^28^258^55
+ ;;^UTILITY(U,$J,358.3,3692,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4153,1,2,0)
- ;;=2^Face/Ear/Lip 2.1 - 3.0 cm Benign Excision
- ;;^UTILITY(U,$J,358.3,4153,1,4,0)
- ;;=4^11443
- ;;^UTILITY(U,$J,358.3,4154,0)
- ;;=11444^^36^314^5^^^^1
- ;;^UTILITY(U,$J,358.3,4154,1,0)
+ ;;^UTILITY(U,$J,358.3,3692,1,3,0)
+ ;;=3^Fx,Unspec Site,Delayed Healing
+ ;;^UTILITY(U,$J,358.3,3692,1,4,0)
+ ;;=4^M84.40XG
+ ;;^UTILITY(U,$J,358.3,3692,2)
+ ;;=^5013796
+ ;;^UTILITY(U,$J,358.3,3693,0)
+ ;;=M84.40XK^^28^258^58
+ ;;^UTILITY(U,$J,358.3,3693,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4154,1,2,0)
- ;;=2^Face/Ear/Lip 3.1 - 4.0 cm Benign Excision
- ;;^UTILITY(U,$J,358.3,4154,1,4,0)
- ;;=4^11444
- ;;^UTILITY(U,$J,358.3,4155,0)
- ;;=11446^^36^314^6^^^^1
- ;;^UTILITY(U,$J,358.3,4155,1,0)
+ ;;^UTILITY(U,$J,358.3,3693,1,3,0)
+ ;;=3^Fx,Unspec Site,Nonunion
+ ;;^UTILITY(U,$J,358.3,3693,1,4,0)
+ ;;=4^M84.40XK
+ ;;^UTILITY(U,$J,358.3,3693,2)
+ ;;=^5013797
+ ;;^UTILITY(U,$J,358.3,3694,0)
+ ;;=M84.40XP^^28^258^57
+ ;;^UTILITY(U,$J,358.3,3694,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4155,1,2,0)
- ;;=2^Face/Ear/Lip > 4.0 cm Benign Excision
- ;;^UTILITY(U,$J,358.3,4155,1,4,0)
- ;;=4^11446
- ;;^UTILITY(U,$J,358.3,4156,0)
- ;;=11400^^36^315^1^^^^1
- ;;^UTILITY(U,$J,358.3,4156,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4156,1,2,0)
- ;;=2^Trunk/Arm/Leg 0.5 cm or less Benign Excision
- ;;^UTILITY(U,$J,358.3,4156,1,4,0)
- ;;=4^11400
- ;;^UTILITY(U,$J,358.3,4157,0)
- ;;=11401^^36^315^2^^^^1
- ;;^UTILITY(U,$J,358.3,4157,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4157,1,2,0)
- ;;=2^Trunk/Arm/Leg 0.6 - 1.0 cm Benign Excision
- ;;^UTILITY(U,$J,358.3,4157,1,4,0)
- ;;=4^11401
+ ;;^UTILITY(U,$J,358.3,3694,1,3,0)
+ ;;=3^Fx,Unspec Site,Malunion
+ ;;^UTILITY(U,$J,358.3,3694,1,4,0)
+ ;;=4^M84.40XP
+ ;;^UTILITY(U,$J,358.3,3694,2)
+ ;;=^5013798
+ ;;^UTILITY(U,$J,358.3,3695,0)
+ ;;=M84.30XA^^28^258^50

@@ -1,142 +1,128 @@
-IBDEI0JN ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0JN ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,9617,2)
- ;;=^62807
- ;;^UTILITY(U,$J,358.3,9618,0)
- ;;=381.01^^67^665^31
- ;;^UTILITY(U,$J,358.3,9618,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9618,1,4,0)
- ;;=4^381.01
- ;;^UTILITY(U,$J,358.3,9618,1,5,0)
- ;;=5^Otitis Media, Serous Acute
- ;;^UTILITY(U,$J,358.3,9618,2)
- ;;=^269369
- ;;^UTILITY(U,$J,358.3,9619,0)
- ;;=382.9^^67^665^28
- ;;^UTILITY(U,$J,358.3,9619,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9619,1,4,0)
- ;;=4^382.9
- ;;^UTILITY(U,$J,358.3,9619,1,5,0)
- ;;=5^Otitis Med, Other Acute
- ;;^UTILITY(U,$J,358.3,9619,2)
- ;;=^123967
- ;;^UTILITY(U,$J,358.3,9620,0)
- ;;=382.01^^67^665^30
- ;;^UTILITY(U,$J,358.3,9620,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9620,1,4,0)
- ;;=4^382.01
- ;;^UTILITY(U,$J,358.3,9620,1,5,0)
- ;;=5^Otitis Media W/Tympanic Membrane Rupture
- ;;^UTILITY(U,$J,358.3,9620,2)
- ;;=^269396
- ;;^UTILITY(U,$J,358.3,9621,0)
- ;;=381.10^^67^665^29
- ;;^UTILITY(U,$J,358.3,9621,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9621,1,4,0)
- ;;=4^381.10
- ;;^UTILITY(U,$J,358.3,9621,1,5,0)
- ;;=5^Otitis Med, Serous Chronic
- ;;^UTILITY(U,$J,358.3,9621,2)
- ;;=Otitis Med,serous chroinic^269376
- ;;^UTILITY(U,$J,358.3,9622,0)
- ;;=379.91^^67^665^32
- ;;^UTILITY(U,$J,358.3,9622,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9622,1,4,0)
- ;;=4^379.91
- ;;^UTILITY(U,$J,358.3,9622,1,5,0)
- ;;=5^Pain In Or Around Eye
- ;;^UTILITY(U,$J,358.3,9622,2)
- ;;=^89093
- ;;^UTILITY(U,$J,358.3,9623,0)
- ;;=462.^^67^665^33
- ;;^UTILITY(U,$J,358.3,9623,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9623,1,4,0)
- ;;=4^462.
- ;;^UTILITY(U,$J,358.3,9623,1,5,0)
- ;;=5^Pharyngitis, Acute
- ;;^UTILITY(U,$J,358.3,9623,2)
- ;;=Pharyngitis, Acute^2653
- ;;^UTILITY(U,$J,358.3,9624,0)
- ;;=460.^^67^665^21
- ;;^UTILITY(U,$J,358.3,9624,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9624,1,4,0)
- ;;=4^460.
- ;;^UTILITY(U,$J,358.3,9624,1,5,0)
- ;;=5^Nasopharyngitis, Acute
- ;;^UTILITY(U,$J,358.3,9624,2)
- ;;=^26543
- ;;^UTILITY(U,$J,358.3,9625,0)
- ;;=477.9^^67^665^3
- ;;^UTILITY(U,$J,358.3,9625,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9625,1,4,0)
- ;;=4^477.9
- ;;^UTILITY(U,$J,358.3,9625,1,5,0)
- ;;=5^Allergic Rhinitis
- ;;^UTILITY(U,$J,358.3,9625,2)
- ;;=^4955
- ;;^UTILITY(U,$J,358.3,9626,0)
- ;;=473.9^^67^665^37
- ;;^UTILITY(U,$J,358.3,9626,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9626,1,4,0)
- ;;=4^473.9
- ;;^UTILITY(U,$J,358.3,9626,1,5,0)
- ;;=5^Sinusitis, Chronic
- ;;^UTILITY(U,$J,358.3,9626,2)
- ;;=^123985
- ;;^UTILITY(U,$J,358.3,9627,0)
- ;;=461.1^^67^665^38
- ;;^UTILITY(U,$J,358.3,9627,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9627,1,4,0)
- ;;=4^461.1
- ;;^UTILITY(U,$J,358.3,9627,1,5,0)
- ;;=5^Sinusitis, Frontal Acute
- ;;^UTILITY(U,$J,358.3,9627,2)
- ;;=^269856
- ;;^UTILITY(U,$J,358.3,9628,0)
- ;;=473.1^^67^665^39
- ;;^UTILITY(U,$J,358.3,9628,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9628,1,4,0)
- ;;=4^473.1
- ;;^UTILITY(U,$J,358.3,9628,1,5,0)
- ;;=5^Sinusitis, Frontal Chronic
- ;;^UTILITY(U,$J,358.3,9628,2)
- ;;=^24380
- ;;^UTILITY(U,$J,358.3,9629,0)
- ;;=461.0^^67^665^40
- ;;^UTILITY(U,$J,358.3,9629,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9629,1,4,0)
- ;;=4^461.0
- ;;^UTILITY(U,$J,358.3,9629,1,5,0)
- ;;=5^Sinusitis, Maxillary Acute
- ;;^UTILITY(U,$J,358.3,9629,2)
- ;;=^269853
- ;;^UTILITY(U,$J,358.3,9630,0)
- ;;=473.0^^67^665^41
- ;;^UTILITY(U,$J,358.3,9630,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9630,1,4,0)
- ;;=4^473.0
- ;;^UTILITY(U,$J,358.3,9630,1,5,0)
- ;;=5^Sinusitis, Maxillary Chronic
- ;;^UTILITY(U,$J,358.3,9630,2)
- ;;=^24407
- ;;^UTILITY(U,$J,358.3,9631,0)
- ;;=388.31^^67^665^43
- ;;^UTILITY(U,$J,358.3,9631,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9631,1,4,0)
- ;;=4^388.31
+ ;;^UTILITY(U,$J,358.3,8852,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8852,1,3,0)
+ ;;=3^Male Genital Organ Disorders NEC
+ ;;^UTILITY(U,$J,358.3,8852,1,4,0)
+ ;;=4^N50.8
+ ;;^UTILITY(U,$J,358.3,8852,2)
+ ;;=^88009
+ ;;^UTILITY(U,$J,358.3,8853,0)
+ ;;=R10.2^^55^549^17
+ ;;^UTILITY(U,$J,358.3,8853,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8853,1,3,0)
+ ;;=3^Pelvic and perineal pain
+ ;;^UTILITY(U,$J,358.3,8853,1,4,0)
+ ;;=4^R10.2
+ ;;^UTILITY(U,$J,358.3,8853,2)
+ ;;=^5019209
+ ;;^UTILITY(U,$J,358.3,8854,0)
+ ;;=Z85.810^^55^550^7
+ ;;^UTILITY(U,$J,358.3,8854,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8854,1,3,0)
+ ;;=3^Personal history of malignant neoplasm of tongue
+ ;;^UTILITY(U,$J,358.3,8854,1,4,0)
+ ;;=4^Z85.810
+ ;;^UTILITY(U,$J,358.3,8854,2)
+ ;;=^5063438
+ ;;^UTILITY(U,$J,358.3,8855,0)
+ ;;=Z85.05^^55^550^8
+ ;;^UTILITY(U,$J,358.3,8855,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8855,1,3,0)
+ ;;=3^Personal history of malignant neoplasm of liver
+ ;;^UTILITY(U,$J,358.3,8855,1,4,0)
+ ;;=4^Z85.05
+ ;;^UTILITY(U,$J,358.3,8855,2)
+ ;;=^5063402
+ ;;^UTILITY(U,$J,358.3,8856,0)
+ ;;=Z85.068^^55^550^9
+ ;;^UTILITY(U,$J,358.3,8856,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8856,1,3,0)
+ ;;=3^Personal history of malignant neoplasm of small intestine
+ ;;^UTILITY(U,$J,358.3,8856,1,4,0)
+ ;;=4^Z85.068
+ ;;^UTILITY(U,$J,358.3,8856,2)
+ ;;=^5063404
+ ;;^UTILITY(U,$J,358.3,8857,0)
+ ;;=Z85.07^^55^550^10
+ ;;^UTILITY(U,$J,358.3,8857,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8857,1,3,0)
+ ;;=3^Personal history of malignant neoplasm of pancreas
+ ;;^UTILITY(U,$J,358.3,8857,1,4,0)
+ ;;=4^Z85.07
+ ;;^UTILITY(U,$J,358.3,8857,2)
+ ;;=^5063405
+ ;;^UTILITY(U,$J,358.3,8858,0)
+ ;;=Z85.09^^55^550^11
+ ;;^UTILITY(U,$J,358.3,8858,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8858,1,3,0)
+ ;;=3^Personal history of malignant neoplasm of digestive organs
+ ;;^UTILITY(U,$J,358.3,8858,1,4,0)
+ ;;=4^Z85.09
+ ;;^UTILITY(U,$J,358.3,8858,2)
+ ;;=^5063406
+ ;;^UTILITY(U,$J,358.3,8859,0)
+ ;;=Z85.12^^55^550^12
+ ;;^UTILITY(U,$J,358.3,8859,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8859,1,3,0)
+ ;;=3^Personal history of malignant neoplasm of trachea
+ ;;^UTILITY(U,$J,358.3,8859,1,4,0)
+ ;;=4^Z85.12
+ ;;^UTILITY(U,$J,358.3,8859,2)
+ ;;=^5063409
+ ;;^UTILITY(U,$J,358.3,8860,0)
+ ;;=Z85.22^^55^550^13
+ ;;^UTILITY(U,$J,358.3,8860,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8860,1,3,0)
+ ;;=3^Personal history of malignant neoplasm of nasl cav,med ear,acces sinus
+ ;;^UTILITY(U,$J,358.3,8860,1,4,0)
+ ;;=4^Z85.22
+ ;;^UTILITY(U,$J,358.3,8860,2)
+ ;;=^5063412
+ ;;^UTILITY(U,$J,358.3,8861,0)
+ ;;=Z85.41^^55^550^14
+ ;;^UTILITY(U,$J,358.3,8861,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8861,1,3,0)
+ ;;=3^Personal history of malignant neoplasm of cervix uteri
+ ;;^UTILITY(U,$J,358.3,8861,1,4,0)
+ ;;=4^Z85.41
+ ;;^UTILITY(U,$J,358.3,8861,2)
+ ;;=^5063418
+ ;;^UTILITY(U,$J,358.3,8862,0)
+ ;;=Z85.42^^55^550^15
+ ;;^UTILITY(U,$J,358.3,8862,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8862,1,3,0)
+ ;;=3^Personal history of malignant neoplasm of oth prt uterus
+ ;;^UTILITY(U,$J,358.3,8862,1,4,0)
+ ;;=4^Z85.42
+ ;;^UTILITY(U,$J,358.3,8862,2)
+ ;;=^5063419
+ ;;^UTILITY(U,$J,358.3,8863,0)
+ ;;=Z85.48^^55^550^16
+ ;;^UTILITY(U,$J,358.3,8863,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8863,1,3,0)
+ ;;=3^Personal history of malignant neoplasm of epididymis
+ ;;^UTILITY(U,$J,358.3,8863,1,4,0)
+ ;;=4^Z85.48
+ ;;^UTILITY(U,$J,358.3,8863,2)
+ ;;=^5063425
+ ;;^UTILITY(U,$J,358.3,8864,0)
+ ;;=Z85.54^^55^550^17
+ ;;^UTILITY(U,$J,358.3,8864,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8864,1,3,0)
+ ;;=3^Personal history of malignant neoplasm of ureter

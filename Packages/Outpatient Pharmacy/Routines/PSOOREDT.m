@@ -1,7 +1,10 @@
-PSOOREDT ;BIR/SAB - edit orders from backdoor ;5/8/08 3:27pm
- ;;7.0;OUTPATIENT PHARMACY;**4,20,27,37,57,46,78,102,104,119,143,148,260,281,304,289,298,379,377,391,313**;DEC 1997;Build 76
- ;External reference to ^PSDRUG supported by DBIA 221
- ;External reference to PSSLOCK supported by DBIA 2789
+PSOOREDT ;BIR/SAB - Edit orders from backdoor ;5/8/08 3:27pm
+ ;;7.0;OUTPATIENT PHARMACY;**4,20,27,37,57,46,78,102,104,119,143,148,260,281,304,289,298,379,377,391,313,427,411**;DEC 1997;Build 95
+ ;External reference to ^PSDRUG( supported by DBIA 221
+ ;External reference to L^PSSLOCK supported by DBIA 2789
+ ;External reference to UL^PSSLOCK supported by DBIA 2789
+ ;External reference to PSOL^PSSLOCK supported by DBIA 2789
+ ;External reference to PSOUL^PSSLOCK supported by DBIA 2789
  ;External reference to ^VA(200 supported by DBIA 10060
 SEL K PSOISLKD,PSOLOKED S PSOPLCK=$$L^PSSLOCK(PSODFN,0) I '$G(PSOPLCK) D LOCK^PSOORCPY D SVAL K PSOPLCK S VALMBCK="" Q
  K PSOPLCK D PSOL^PSSLOCK($P(PSOLST(ORN),"^",2)) I '$G(PSOMSG) D UL^PSSLOCK(+$G(PSODFN)) D SVALO K PSOMSG S VALMBCK="" Q
@@ -27,7 +30,7 @@ EX I $G(PSOISLKD)!($G(PSOQUIT)) D UL K PSOISLKD G EX2
  ..K QUIT,PSORX("DFLG"),FST,FLD,IEN,FLN,INCOM,PSOI,PSODRUG,PSOEDIT
  ..K PSORENW,PSOSIGFL,PSOOIFLG,PSOMRFLG,PSODIR,CHK,PSORX("SIG"),PSODE
  ..K PSOTRN,PSORX("EDIT"),PSORXED("FLD"),NEWEDT
- ..D EOJ^PSONEW
+ ..S ZZEDIT=1 D EOJ^PSONEW K ZZEDIT
  ..D UL K PSOLOKED S VALMBCK="Q"
  .S PSOFROM=PSOTMP I PSOFROM="" K PSOFROM
  ;
@@ -67,7 +70,9 @@ EDT ; Rx Edit (Backdoor)
  .I FLN=20,'$G(REF) S VALMSG="There is no Refill Data to be edited." Q
  .S DR=$P(FDR,"^",FLN) I DR="RF" D REF^PSOORED2 Q
  .I DR="PSOCOU" D PSOCOU^PSOORED6 Q
- .I FLN=2,'$P(PSOPAR,"^",3),$$RXRLDT^PSOBPSUT(RXN,0),$$STATUS^PSOBPSUT(RXN,0)'="" D  Q
+ .; Allow edit of the NDC when the EDIT DRUG setting is off
+ .; Other checks regarding if the NDC may be edited are found in NDC^PSODRG - PSO*7*427
+ .I FLN=2,'$P(PSOPAR,"^",3) D  Q
  ..N NDC D NDC^PSODRG(RXN,0,,.NDC) I $G(NDC)="^"!($G(NDC)="") Q
  ..S (PSODRUG("NDC"),PSORXED("FLD",27))=NDC
  .I FLN'>2,'$P(PSOPAR,"^",3) S VALMSG="Check site parameters, Drug data is not editable." Q

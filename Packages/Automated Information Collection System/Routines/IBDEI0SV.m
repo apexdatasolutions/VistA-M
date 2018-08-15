@@ -1,136 +1,122 @@
-IBDEI0SV ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0SV ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,14253,1,4,0)
- ;;=4^198.5
- ;;^UTILITY(U,$J,358.3,14253,1,5,0)
- ;;=5^Mets to Bone or Bone Marrow
- ;;^UTILITY(U,$J,358.3,14253,2)
- ;;=^267336
- ;;^UTILITY(U,$J,358.3,14254,0)
- ;;=198.3^^90^858^96
- ;;^UTILITY(U,$J,358.3,14254,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14254,1,4,0)
- ;;=4^198.3
- ;;^UTILITY(U,$J,358.3,14254,1,5,0)
- ;;=5^Mets to Brain
- ;;^UTILITY(U,$J,358.3,14254,2)
- ;;=Brain Metatastasis^267334
- ;;^UTILITY(U,$J,358.3,14255,0)
- ;;=197.7^^90^858^39
- ;;^UTILITY(U,$J,358.3,14255,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14255,1,4,0)
- ;;=4^197.7
- ;;^UTILITY(U,$J,358.3,14255,1,5,0)
- ;;=5^Ca Liver, Secondary
- ;;^UTILITY(U,$J,358.3,14255,2)
- ;;=CA Liver, Secondary^267328
- ;;^UTILITY(U,$J,358.3,14256,0)
- ;;=197.0^^90^858^97
- ;;^UTILITY(U,$J,358.3,14256,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14256,1,4,0)
- ;;=4^197.0
- ;;^UTILITY(U,$J,358.3,14256,1,5,0)
- ;;=5^Mets to Lung
- ;;^UTILITY(U,$J,358.3,14256,2)
- ;;=Mets to Lung^267322
- ;;^UTILITY(U,$J,358.3,14257,0)
- ;;=196.2^^90^858^98
- ;;^UTILITY(U,$J,358.3,14257,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14257,1,4,0)
- ;;=4^196.2
- ;;^UTILITY(U,$J,358.3,14257,1,5,0)
- ;;=5^Mets to Lymph Nodes,Abdominal
- ;;^UTILITY(U,$J,358.3,14257,2)
- ;;=^267316
- ;;^UTILITY(U,$J,358.3,14258,0)
- ;;=196.3^^90^858^99
- ;;^UTILITY(U,$J,358.3,14258,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14258,1,4,0)
- ;;=4^196.3
- ;;^UTILITY(U,$J,358.3,14258,1,5,0)
- ;;=5^Mets to Lymph Nodes,Axillary Or Brachial
- ;;^UTILITY(U,$J,358.3,14258,2)
- ;;=^267317
- ;;^UTILITY(U,$J,358.3,14259,0)
- ;;=196.0^^90^858^100
- ;;^UTILITY(U,$J,358.3,14259,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14259,1,4,0)
- ;;=4^196.0
- ;;^UTILITY(U,$J,358.3,14259,1,5,0)
- ;;=5^Mets to Lymph Nodes,Cervical
- ;;^UTILITY(U,$J,358.3,14259,2)
- ;;=Lymph Nodes^267314
- ;;^UTILITY(U,$J,358.3,14260,0)
- ;;=196.1^^90^858^101
- ;;^UTILITY(U,$J,358.3,14260,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14260,1,4,0)
- ;;=4^196.1
- ;;^UTILITY(U,$J,358.3,14260,1,5,0)
- ;;=5^Mets to Lymph Nodes,Mediastinal 
- ;;^UTILITY(U,$J,358.3,14260,2)
- ;;=Lymph Nodes^267315
- ;;^UTILITY(U,$J,358.3,14261,0)
- ;;=196.8^^90^858^102
- ;;^UTILITY(U,$J,358.3,14261,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14261,1,4,0)
- ;;=4^196.8
- ;;^UTILITY(U,$J,358.3,14261,1,5,0)
- ;;=5^Mets to Lymph Nodes,Multiple Sites
- ;;^UTILITY(U,$J,358.3,14261,2)
- ;;=^267320
- ;;^UTILITY(U,$J,358.3,14262,0)
- ;;=V10.51^^90^858^56
- ;;^UTILITY(U,$J,358.3,14262,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14262,1,4,0)
- ;;=4^V10.51
- ;;^UTILITY(U,$J,358.3,14262,1,5,0)
- ;;=5^H/O Bladder Cancer
- ;;^UTILITY(U,$J,358.3,14262,2)
- ;;=^295228
- ;;^UTILITY(U,$J,358.3,14263,0)
- ;;=V10.3^^90^858^57
- ;;^UTILITY(U,$J,358.3,14263,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14263,1,4,0)
- ;;=4^V10.3
- ;;^UTILITY(U,$J,358.3,14263,1,5,0)
- ;;=5^H/O Breast Cancer
- ;;^UTILITY(U,$J,358.3,14263,2)
- ;;=^295217
- ;;^UTILITY(U,$J,358.3,14264,0)
- ;;=V10.41^^90^858^58
- ;;^UTILITY(U,$J,358.3,14264,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14264,1,4,0)
- ;;=4^V10.41
- ;;^UTILITY(U,$J,358.3,14264,1,5,0)
- ;;=5^H/O Cervical Cancer
- ;;^UTILITY(U,$J,358.3,14264,2)
- ;;=^295219
- ;;^UTILITY(U,$J,358.3,14265,0)
- ;;=V10.05^^90^858^59
- ;;^UTILITY(U,$J,358.3,14265,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14265,1,4,0)
- ;;=4^V10.05
- ;;^UTILITY(U,$J,358.3,14265,1,5,0)
- ;;=5^H/O Colon Cancer
- ;;^UTILITY(U,$J,358.3,14265,2)
- ;;=H/O Colon Cancer^295207
- ;;^UTILITY(U,$J,358.3,14266,0)
- ;;=V10.03^^90^858^60
- ;;^UTILITY(U,$J,358.3,14266,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14266,1,4,0)
- ;;=4^V10.03
+ ;;^UTILITY(U,$J,358.3,13279,0)
+ ;;=E11.359^^80^758^20
+ ;;^UTILITY(U,$J,358.3,13279,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13279,1,3,0)
+ ;;=3^DM Type 2 w/ Prolif Diab Retinopathy w/o Macular Edema
+ ;;^UTILITY(U,$J,358.3,13279,1,4,0)
+ ;;=4^E11.359
+ ;;^UTILITY(U,$J,358.3,13279,2)
+ ;;=^5002641
+ ;;^UTILITY(U,$J,358.3,13280,0)
+ ;;=E11.351^^80^758^21
+ ;;^UTILITY(U,$J,358.3,13280,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13280,1,3,0)
+ ;;=3^DM Type 2 w/ Prolif Diab Retinopathy w/ Macular Edema
+ ;;^UTILITY(U,$J,358.3,13280,1,4,0)
+ ;;=4^E11.351
+ ;;^UTILITY(U,$J,358.3,13280,2)
+ ;;=^5002640
+ ;;^UTILITY(U,$J,358.3,13281,0)
+ ;;=E11.349^^80^758^22
+ ;;^UTILITY(U,$J,358.3,13281,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13281,1,3,0)
+ ;;=3^DM Type 2 w/ Severe NonProlif Diab Retinopathy w/o Macular Edema
+ ;;^UTILITY(U,$J,358.3,13281,1,4,0)
+ ;;=4^E11.349
+ ;;^UTILITY(U,$J,358.3,13281,2)
+ ;;=^5002639
+ ;;^UTILITY(U,$J,358.3,13282,0)
+ ;;=E11.341^^80^758^23
+ ;;^UTILITY(U,$J,358.3,13282,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13282,1,3,0)
+ ;;=3^DM Type 2 w/ Severe NonProlif Diab Retinopathy w/ Macular Edema
+ ;;^UTILITY(U,$J,358.3,13282,1,4,0)
+ ;;=4^E11.341
+ ;;^UTILITY(U,$J,358.3,13282,2)
+ ;;=^5002638
+ ;;^UTILITY(U,$J,358.3,13283,0)
+ ;;=E11.339^^80^758^18
+ ;;^UTILITY(U,$J,358.3,13283,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13283,1,3,0)
+ ;;=3^DM Type 2 w/ Moderate NonProlif Diab Retinopathy w/o Macular Edema
+ ;;^UTILITY(U,$J,358.3,13283,1,4,0)
+ ;;=4^E11.339
+ ;;^UTILITY(U,$J,358.3,13283,2)
+ ;;=^5002637
+ ;;^UTILITY(U,$J,358.3,13284,0)
+ ;;=E11.331^^80^758^19
+ ;;^UTILITY(U,$J,358.3,13284,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13284,1,3,0)
+ ;;=3^DM Type 2 w/ Moderate NonProlif Diab Retinopathy w/ Macular Edema
+ ;;^UTILITY(U,$J,358.3,13284,1,4,0)
+ ;;=4^E11.331
+ ;;^UTILITY(U,$J,358.3,13284,2)
+ ;;=^5002636
+ ;;^UTILITY(U,$J,358.3,13285,0)
+ ;;=E11.329^^80^758^16
+ ;;^UTILITY(U,$J,358.3,13285,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13285,1,3,0)
+ ;;=3^DM Type 2 w/ Mild NonProlif Diab Retinopathy w/o Macular Edema
+ ;;^UTILITY(U,$J,358.3,13285,1,4,0)
+ ;;=4^E11.329
+ ;;^UTILITY(U,$J,358.3,13285,2)
+ ;;=^5002635
+ ;;^UTILITY(U,$J,358.3,13286,0)
+ ;;=E11.321^^80^758^17
+ ;;^UTILITY(U,$J,358.3,13286,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13286,1,3,0)
+ ;;=3^DM Type 2 w/ Mild NonProlif Diab Retinopathy w/ Macular Edema
+ ;;^UTILITY(U,$J,358.3,13286,1,4,0)
+ ;;=4^E11.321
+ ;;^UTILITY(U,$J,358.3,13286,2)
+ ;;=^5002634
+ ;;^UTILITY(U,$J,358.3,13287,0)
+ ;;=E11.319^^80^758^24
+ ;;^UTILITY(U,$J,358.3,13287,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13287,1,3,0)
+ ;;=3^DM Type 2 w/ Unspec Diab Retinopathy w/o Macular Edema
+ ;;^UTILITY(U,$J,358.3,13287,1,4,0)
+ ;;=4^E11.319
+ ;;^UTILITY(U,$J,358.3,13287,2)
+ ;;=^5002633
+ ;;^UTILITY(U,$J,358.3,13288,0)
+ ;;=E11.311^^80^758^25
+ ;;^UTILITY(U,$J,358.3,13288,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13288,1,3,0)
+ ;;=3^DM Type 2 w/ Unspec Diab Retinopathy w/ Macular Edema
+ ;;^UTILITY(U,$J,358.3,13288,1,4,0)
+ ;;=4^E11.311
+ ;;^UTILITY(U,$J,358.3,13288,2)
+ ;;=^5002632
+ ;;^UTILITY(U,$J,358.3,13289,0)
+ ;;=E10.9^^80^758^13
+ ;;^UTILITY(U,$J,358.3,13289,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13289,1,3,0)
+ ;;=3^DM Type 1 w/o Complications
+ ;;^UTILITY(U,$J,358.3,13289,1,4,0)
+ ;;=4^E10.9
+ ;;^UTILITY(U,$J,358.3,13289,2)
+ ;;=^5002626
+ ;;^UTILITY(U,$J,358.3,13290,0)
+ ;;=E10.311^^80^758^11
+ ;;^UTILITY(U,$J,358.3,13290,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13290,1,3,0)
+ ;;=3^DM Type 1 w/ Unspec Diab Retinopathy w/ Macular Edema
+ ;;^UTILITY(U,$J,358.3,13290,1,4,0)
+ ;;=4^E10.311

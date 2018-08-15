@@ -1,132 +1,138 @@
-IBDEI02X ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI02X ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,992,1,3,0)
- ;;=3^HA,Digital Analog,Monaural,Behind Ear
- ;;^UTILITY(U,$J,358.3,993,0)
- ;;=V5248^^12^109^4^^^^1
- ;;^UTILITY(U,$J,358.3,993,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,993,1,2,0)
- ;;=2^V5248
- ;;^UTILITY(U,$J,358.3,993,1,3,0)
- ;;=3^HA,Analog,Binaural,CIC
- ;;^UTILITY(U,$J,358.3,994,0)
- ;;=V5249^^12^109^5^^^^1
- ;;^UTILITY(U,$J,358.3,994,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,994,1,2,0)
- ;;=2^V5249
- ;;^UTILITY(U,$J,358.3,994,1,3,0)
- ;;=3^HA,Analog,Binaural,ITC
- ;;^UTILITY(U,$J,358.3,995,0)
- ;;=V5250^^12^109^19^^^^1
- ;;^UTILITY(U,$J,358.3,995,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,995,1,2,0)
- ;;=2^V5250
- ;;^UTILITY(U,$J,358.3,995,1,3,0)
- ;;=3^HA,Digital Analog,Binaural,CIC
- ;;^UTILITY(U,$J,358.3,996,0)
- ;;=V5253^^12^109^21^^^^1
- ;;^UTILITY(U,$J,358.3,996,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,996,1,2,0)
- ;;=2^V5253
- ;;^UTILITY(U,$J,358.3,996,1,3,0)
- ;;=3^HA,Digital Analog,Monaural,CIC
- ;;^UTILITY(U,$J,358.3,997,0)
- ;;=V5254^^12^109^25^^^^1
- ;;^UTILITY(U,$J,358.3,997,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,997,1,2,0)
- ;;=2^V5254
- ;;^UTILITY(U,$J,358.3,997,1,3,0)
- ;;=3^HA,Digital,Monaural,CIC
- ;;^UTILITY(U,$J,358.3,998,0)
- ;;=V5258^^12^109^23^^^^1
- ;;^UTILITY(U,$J,358.3,998,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,998,1,2,0)
- ;;=2^V5258
- ;;^UTILITY(U,$J,358.3,998,1,3,0)
- ;;=3^HA,Digital,Binaural,CIC
- ;;^UTILITY(U,$J,358.3,999,0)
- ;;=V5259^^12^109^24^^^^1
- ;;^UTILITY(U,$J,358.3,999,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,999,1,2,0)
- ;;=2^V5259
- ;;^UTILITY(U,$J,358.3,999,1,3,0)
- ;;=3^HA,Digital,Binaural,ITC
- ;;^UTILITY(U,$J,358.3,1000,0)
- ;;=V5262^^12^109^27^^^^1
- ;;^UTILITY(U,$J,358.3,1000,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1000,1,2,0)
- ;;=2^V5262
- ;;^UTILITY(U,$J,358.3,1000,1,3,0)
- ;;=3^HA,Disposable,Monaural
- ;;^UTILITY(U,$J,358.3,1001,0)
- ;;=V5263^^12^109^26^^^^1
- ;;^UTILITY(U,$J,358.3,1001,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1001,1,2,0)
- ;;=2^V5263
- ;;^UTILITY(U,$J,358.3,1001,1,3,0)
- ;;=3^HA,Disposable,Binaural
- ;;^UTILITY(U,$J,358.3,1002,0)
- ;;=V5266^^12^109^34^^^^1
- ;;^UTILITY(U,$J,358.3,1002,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1002,1,2,0)
- ;;=2^V5266
- ;;^UTILITY(U,$J,358.3,1002,1,3,0)
- ;;=3^Hearing Aid Battery
- ;;^UTILITY(U,$J,358.3,1003,0)
- ;;=V5274^^12^109^1^^^^1
- ;;^UTILITY(U,$J,358.3,1003,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1003,1,2,0)
- ;;=2^V5274
- ;;^UTILITY(U,$J,358.3,1003,1,3,0)
- ;;=3^Assistive Listening Device
- ;;^UTILITY(U,$J,358.3,1004,0)
- ;;=92626^^12^110^3^^^^1
- ;;^UTILITY(U,$J,358.3,1004,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1004,1,2,0)
- ;;=2^92626
- ;;^UTILITY(U,$J,358.3,1004,1,3,0)
- ;;=3^Eval of Auditory Rehab Status,1st Hr
- ;;^UTILITY(U,$J,358.3,1005,0)
- ;;=92627^^12^110^4^^^^1
- ;;^UTILITY(U,$J,358.3,1005,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1005,1,2,0)
- ;;=2^92627
- ;;^UTILITY(U,$J,358.3,1005,1,3,0)
- ;;=3^Eval of Auditory Rehab Status,Ea Addl 15min
- ;;^UTILITY(U,$J,358.3,1006,0)
- ;;=92630^^12^110^1^^^^1
- ;;^UTILITY(U,$J,358.3,1006,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1006,1,2,0)
- ;;=2^92630
- ;;^UTILITY(U,$J,358.3,1006,1,3,0)
- ;;=3^Auditory Rehab;Prelingual Hearing Loss
- ;;^UTILITY(U,$J,358.3,1007,0)
- ;;=92633^^12^110^2^^^^1
- ;;^UTILITY(U,$J,358.3,1007,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1007,1,2,0)
- ;;=2^92633
- ;;^UTILITY(U,$J,358.3,1007,1,3,0)
- ;;=3^Auditory Rehab;Postlingual Hearing Loss
- ;;^UTILITY(U,$J,358.3,1008,0)
- ;;=92625^^12^110^5^^^^1
- ;;^UTILITY(U,$J,358.3,1008,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1008,1,2,0)
- ;;=2^92625
+ ;;^UTILITY(U,$J,358.3,607,1,3,0)
+ ;;=3^Hemiplegia Following CVD,Left Dominant Side
+ ;;^UTILITY(U,$J,358.3,607,1,4,0)
+ ;;=4^I69.952
+ ;;^UTILITY(U,$J,358.3,607,2)
+ ;;=^5133586
+ ;;^UTILITY(U,$J,358.3,608,0)
+ ;;=I69.953^^6^73^8
+ ;;^UTILITY(U,$J,358.3,608,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,608,1,3,0)
+ ;;=3^Hemiplegia Following CVD,Right Nondomiant Side
+ ;;^UTILITY(U,$J,358.3,608,1,4,0)
+ ;;=4^I69.953
+ ;;^UTILITY(U,$J,358.3,608,2)
+ ;;=^5007562
+ ;;^UTILITY(U,$J,358.3,609,0)
+ ;;=I69.954^^6^73^6
+ ;;^UTILITY(U,$J,358.3,609,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,609,1,3,0)
+ ;;=3^Hemiplegia Following CVD,Left Nondomiant Side
+ ;;^UTILITY(U,$J,358.3,609,1,4,0)
+ ;;=4^I69.954
+ ;;^UTILITY(U,$J,358.3,609,2)
+ ;;=^5133587
+ ;;^UTILITY(U,$J,358.3,610,0)
+ ;;=K21.9^^6^74^4
+ ;;^UTILITY(U,$J,358.3,610,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,610,1,3,0)
+ ;;=3^GERD w/o Esophagitis
+ ;;^UTILITY(U,$J,358.3,610,1,4,0)
+ ;;=4^K21.9
+ ;;^UTILITY(U,$J,358.3,610,2)
+ ;;=^5008505
+ ;;^UTILITY(U,$J,358.3,611,0)
+ ;;=K21.0^^6^74^3
+ ;;^UTILITY(U,$J,358.3,611,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,611,1,3,0)
+ ;;=3^GERD w/ Esophagitis
+ ;;^UTILITY(U,$J,358.3,611,1,4,0)
+ ;;=4^K21.0
+ ;;^UTILITY(U,$J,358.3,611,2)
+ ;;=^5008504
+ ;;^UTILITY(U,$J,358.3,612,0)
+ ;;=N40.0^^6^74^2
+ ;;^UTILITY(U,$J,358.3,612,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,612,1,3,0)
+ ;;=3^Enlarged Prostate w/o Lower Urinary Tract Symptoms
+ ;;^UTILITY(U,$J,358.3,612,1,4,0)
+ ;;=4^N40.0
+ ;;^UTILITY(U,$J,358.3,612,2)
+ ;;=^5015689
+ ;;^UTILITY(U,$J,358.3,613,0)
+ ;;=B35.1^^6^74^5
+ ;;^UTILITY(U,$J,358.3,613,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,613,1,3,0)
+ ;;=3^Tinea Unguium
+ ;;^UTILITY(U,$J,358.3,613,1,4,0)
+ ;;=4^B35.1
+ ;;^UTILITY(U,$J,358.3,613,2)
+ ;;=^119748
+ ;;^UTILITY(U,$J,358.3,614,0)
+ ;;=R54.^^6^74^1
+ ;;^UTILITY(U,$J,358.3,614,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,614,1,3,0)
+ ;;=3^Age-related Physical Debility
+ ;;^UTILITY(U,$J,358.3,614,1,4,0)
+ ;;=4^R54.
+ ;;^UTILITY(U,$J,358.3,614,2)
+ ;;=^5019521
+ ;;^UTILITY(U,$J,358.3,615,0)
+ ;;=J44.9^^6^75^2
+ ;;^UTILITY(U,$J,358.3,615,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,615,1,3,0)
+ ;;=3^COPD,Unspec
+ ;;^UTILITY(U,$J,358.3,615,1,4,0)
+ ;;=4^J44.9
+ ;;^UTILITY(U,$J,358.3,615,2)
+ ;;=^5008241
+ ;;^UTILITY(U,$J,358.3,616,0)
+ ;;=J45.909^^6^75^1
+ ;;^UTILITY(U,$J,358.3,616,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,616,1,3,0)
+ ;;=3^Asthma,Uncomplicated,Unspec
+ ;;^UTILITY(U,$J,358.3,616,1,4,0)
+ ;;=4^J45.909
+ ;;^UTILITY(U,$J,358.3,616,2)
+ ;;=^5008256
+ ;;^UTILITY(U,$J,358.3,617,0)
+ ;;=F02.81^^6^76^11
+ ;;^UTILITY(U,$J,358.3,617,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,617,1,3,0)
+ ;;=3^Dementia in Oth Diseases Classd Elswhr w/ Behavioral Disturbances
+ ;;^UTILITY(U,$J,358.3,617,1,4,0)
+ ;;=4^F02.81
+ ;;^UTILITY(U,$J,358.3,617,2)
+ ;;=^5003049
+ ;;^UTILITY(U,$J,358.3,618,0)
+ ;;=F02.80^^6^76^12
+ ;;^UTILITY(U,$J,358.3,618,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,618,1,3,0)
+ ;;=3^Dementia in Oth Diseases Classd Elswhr w/o Behavioral Disturbances
+ ;;^UTILITY(U,$J,358.3,618,1,4,0)
+ ;;=4^F02.80
+ ;;^UTILITY(U,$J,358.3,618,2)
+ ;;=^5003048
+ ;;^UTILITY(U,$J,358.3,619,0)
+ ;;=F03.91^^6^76^13
+ ;;^UTILITY(U,$J,358.3,619,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,619,1,3,0)
+ ;;=3^Dementia w/ Behavioral Disturbances,Unspec
+ ;;^UTILITY(U,$J,358.3,619,1,4,0)
+ ;;=4^F03.91
+ ;;^UTILITY(U,$J,358.3,619,2)
+ ;;=^5133350
+ ;;^UTILITY(U,$J,358.3,620,0)
+ ;;=G31.83^^6^76^14
+ ;;^UTILITY(U,$J,358.3,620,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,620,1,3,0)
+ ;;=3^Dementia w/ Lewy Bodies
+ ;;^UTILITY(U,$J,358.3,620,1,4,0)
+ ;;=4^G31.83

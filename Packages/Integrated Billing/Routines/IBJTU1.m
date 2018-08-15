@@ -1,6 +1,6 @@
 IBJTU1 ;ALB/ARH - TPI UTILITIES ;2/14/95
- ;;2.0;INTEGRATED BILLING;**39,80,276,451**;21-MAR-94;Build 47
- ;;Per VHA Directive 2004-038, this routine should not be modified.
+ ;;2.0;INTEGRATED BILLING;**39,80,276,451,516,530**;21-MAR-94;Build 71
+ ;;Per VA Directive 6402, this routine should not be modified.
  ;
 PRVSCR(SCRNARR) ; called as part of a screen ACTION PROTOCOL'S ENTRY ACTION to determine if screen has already been displayed
  ; returns true if screen array already exists (ie. already displayed), 
@@ -15,19 +15,24 @@ HDR(IBIFN,DFN,LNS) ; called by a screens's LIST TEMPLATE HEADER to get lines for
  ;
  N X,Y,Z,IBD0,IBPD0,IBDI1,IBCNT S IBIFN=+$G(IBIFN),DFN=+$G(DFN),LNS=+$G(LNS) K VALMHDR
  S IBCNT=0,IBD0=$G(^DGCR(399,+IBIFN,0)),IBPD0=$G(^DPT(+DFN,0))
- S IBDI1=$P(IBD0,U,21),IBDI1=$S(IBDI1="S":"I2",IBDI1="T":"I3",1:"I1"),IBDI1=$G(^DGCR(399,+IBIFN,IBDI1))
+ ;IB*2.0*516/TAZ - Call $$POLICY^IBCEF to insert HIPAA compliant fields into variable IBDI1. Data will
+ ;continue to be extracted from IBDI1 original location.
+ ;S IBDI1=$P(IBD0,U,21),IBDI1=$S(IBDI1="S":"I2",IBDI1="T":"I3",1:"I1"),IBDI1=$G(^DGCR(399,+IBIFN,IBDI1))
+ S IBDI1=$P(IBD0,U,21),IBDI1=$$POLICY^IBCEF(IBIFN,,IBDI1)  ; 516 - baa
  ;
 1 I LNS'[1 G 2
  ; -- first line of screens: BILL NUMBER, PAT NAME, PAT ID, DOB, SUBSCRIBER ID
- N IBBILL,IBPAT,IBPATID,IBDOB,IBSUB,IBPNWDTH S IBCNT=IBCNT+1,(IBSUB,IBPATID)=""
+ N IBBILL,IBPAT,IBPATID,IBDOB,IBSUB,IBPNWDTH,REJFLG S IBCNT=IBCNT+1,(IBSUB,IBPATID)=""
  S IBBILL=$P(IBD0,U,1)_$$ECME^IBTRE(IBIFN)
  S X=$$PT^IBEFUNC(DFN),IBPAT=$P(X,U,1) I $P(X,U,3)'="" S IBPATID=$E(X)_$P(X,U,3)
  S IBDOB="DOB: "_$$DATE^IBJU1($P(IBPD0,U,3))
  I +IBIFN S X=$P(IBDI1,U,2),X=X_$J("",(13-$L(X))),IBSUB="Subsc ID: "_X
  ;
+ ; IB*2.0*530 - Reject Indicator
+ I ($G(NAME)="IBJT BILL CHARGES")!($G(NAME)="IBJT CLAIM INFO") S REJFLG=$S($$BILLREJ^IBJTU6($P(IBBILL,"e")):"c",1:"")
  ; IB*2.0*451 - get EEOB indicator for bill #
  S IBPFLAG=$$EEOB^IBJTLA1(IBIFN)
- S IBBILL=$G(IBPFLAG)_IBBILL
+ S IBBILL=$G(IBPFLAG)_$G(REJFLG)_IBBILL
  S IBPNWDTH=80-($L(IBBILL)+3+2+$L(IBPATID)+3+$L(IBDOB)+3+$L(IBSUB)),IBPAT=$E(IBPAT,1,IBPNWDTH),Z="   "
  S VALMHDR(IBCNT)=IBBILL_Z_IBPAT_"  "_IBPATID_$J("",(IBPNWDTH-$L(IBPAT)))_Z_IBDOB_Z_IBSUB
  ; IB*2.0*451 - add explanation of '%' indicator for the user

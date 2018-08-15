@@ -1,5 +1,5 @@
 RORX023A ;ALB/TMK - HCV SUSTAINED VIROLOGIC RESPONSE REPORT(QUERY & STORE) ;7/15/11 3:37pm
- ;;1.5;CLINICAL CASE REGISTRIES;**24**;Feb 17, 2006;Build 15
+ ;;1.5;CLINICAL CASE REGISTRIES;**24,27,31**;Feb 17, 2006;Build 62
  ;
  ; This routine uses the following IAs:
  ;
@@ -13,6 +13,11 @@ RORX023A ;ALB/TMK - HCV SUSTAINED VIROLOGIC RESPONSE REPORT(QUERY & STORE) ;7/15
  ;PKG/PATCH    DATE        DEVELOPER    MODIFICATION
  ;-----------  ----------  -----------  ----------------------------------------
  ;ROR*1.5*24   JUN 2014    T KOPP       New report
+ ;ROR*1.5*27   FEB 2015    T KOPP       Fix selection of SVR chg ">" to "<" 
+ ;                                      at LTSCB+11 and pull SVR/NO SVR logic
+ ;                                      into callable function $$SVR
+ ;ROR*1.5*31   MAY 2017    M FERRARESE  Adding PACT, PCP, and AGE/DOB as additional
+ ;                                      identifiers. 
  ;                                      
  ;******************************************************************************
  ;******************************************************************************
@@ -44,7 +49,7 @@ LTSCB(ROR8DST,INVDT,RESULT) ;
  S TMP=0
  I CAT'="HepC GT",(CAT'="HepC Quant"),(CAT'="HepC Qual") S TMP=1
  I 'TMP,CAT'="HepC GT" D
- . S TMP=$S($E(VAL)=">":0,VAL["NOT DETECT":0,VAL["NO HCV RNA":0,VAL["NO RNA":0,$E(VAL,1,3)="NEG":0,VAL["NEGATIVE":0,VAL["NO_HCV_RNA_DETECTED":0,VAL["TND":0,1:1)
+ . S TMP=$S($E(VAL)="<":0,VAL["NOT DETECT":0,VAL["NO HCV RNA":0,VAL["NO RNA":0,$E(VAL,1,3)="NEG":0,VAL["NEGATIVE":0,VAL["NO_HCV_RNA_DETECTED":0,VAL["TND":0,1:1)
  I 'TMP,+VAL=VAL,VAL<51 S TMP=1  ;skip abnormally low values
  I TMP Q 1
  S SUB=$S(CAT="HepC GT":"GT",1:"HepC")
@@ -135,22 +140,11 @@ QUERY(REPORT,FLAGS,NSPT) ;
  . ;
  . S SKIP=1,UTIL=0
  . D  I RC<0  S ECNT=ECNT+1,RC=0  Q
- . . ; Get registry meds for patient
- . . S RORXDST=$NA(^TMP("RORX023",$J,"PAT",PATIEN,"RX"))
- . . S RC=$$RXSEARCH^RORUTL14(PATIEN,RORXL,.RORXDST,"EIOV",RORXSDT,RORXEDT)
- . . Q:RC<0  ;error occurred
- . . I $G(RORXDST("SKIP"))!'$O(@RORXDST@("")) S SKIP=1 K RORXDST("SKIP") Q  ;skip if never took or still takes registry meds
- . . ;
- . . S LTSDT=""
- . . S RORLDST=$NA(^TMP("RORX023",$J,"PAT",PATIEN,"LR"))
- . . S RC=$$LTSEARCH^RORUTL10(PATIEN,+RORREG,.RORLDST,,LTSDT,LTEDT)
- . . Q:RC'>0
- . . ;=== Skip if patient has no qualifying lab test at least 84 days past the last taken date
- . . I '$O(@RORLDST@("HepC","")) S SKIP=1 Q
- . . S RORTAKN=$O(@RORXDST@(" "),-1)
- . . S RORTAKN=9999999-$$FMADD^XLFDT(RORTAKN,84)
- . . I $O(@RORLDST@("HepC",""))<RORTAKN S SKIP=1 Q
- . . S SKIP=0
+ . . N RORCHK
+ . . S RORCHK=$$SVR(PATIEN,RORXSDT,RORXEDT,RORREG,RORXL,LTSDT,LTEDT,.RORLDST,.RORXDST),RC=RORCHK
+ . . I RORCHK<0 Q  ;error
+ . . I RORCHK S SKIP=0 ; SVR criteria met - don't skip
+ . ;
  . ;--- Check if patient should be skipped because no utilization in the corresponding date range
  . I 'SKIP D:$$PARAM^RORTSK01("PATIENTS","CAREONLY")
  . . K TMP  S TMP("ALL")=1
@@ -158,12 +152,16 @@ QUERY(REPORT,FLAGS,NSPT) ;
  . . S:'UTIL SKIP=1
  . ;
  . ;--- Skip the patient if not all selection criteria have been met
- . I SKIP K ^TMP("RORX023",$J,"PAT",PATIEN)  Q
+ . I SKIP K ^TMP("RORX023",$J,"PAT",PATIEN) Q
  . ;
  . ;--- Get and store the patient's data  last4^name
  . D VADEM^RORUTL05(PATIEN,1)
  . S TMP=$S($$PARAM^RORTSK01("PATIENTS","ICN"):$$ICN^RORUTL02(PATIEN),1:"")
- . S ^TMP("RORX023",$J,"PAT",PATIEN)=VA("BID")_U_VADM(1)_U_U_TMP
+ . S TMP=TMP_U_$S($$PARAM^RORTSK01("PATIENTS","PACT"):$$PACT^RORUTL02(PATIEN),1:"")
+ . S TMP=TMP_U_$S($$PARAM^RORTSK01("PATIENTS","PCP"):$$PCP^RORUTL02(PATIEN),1:"")
+ . S AGETYPE=$$PARAM^RORTSK01("AGE_RANGE","TYPE") D
+ . . S AGE=$S(AGETYPE="AGE":$P(VADM(4),U),AGETYPE="DOB":$$DATE^RORXU002($P(VADM(3),U)\1),1:"")
+ . S ^TMP("RORX023",$J,"PAT",PATIEN)=VA("BID")_U_VADM(1)_U_U_TMP_U_AGE
  . S NSPT=NSPT+1   ;increment count of selected patients
  ;
  D FREE^RORTMP(RORXL)  ;clean up drug list
@@ -230,6 +228,49 @@ RXOCB(ROR8DST,ORDER,ORDFLG,DRUG,DATE) ;
  . . . S RORTAKEN=$$FMADD^XLFDT(+TMP,+RORDS)         ; Last date taken
  . . . S @ROR8DST@(RORTAKEN)=""
  Q 0
+ ;
+ ;***** CHECKS FOR SVR CRITERIA MET
+ ;PATIEN the ien of patient entry from PATIENT file (#2)
+ ;RORREG the ien of the ROR REGISTER PARAMETERS entry in file 798.1 being processed
+ ;RORXL Closed root of the array containing RX list of HepC registry drugs from call to $$DRUGLIST^RORUTL1
+ ;RORXEDT RX end date
+ ;RORXSDT RX start date
+ ;LTSDT  Labs start date
+ ;LTEDT   Labs end date
+ ;RORLDST  Descriptor for Lab search API
+ ;RORXDST  Descriptor for pharmacy search API
+ ;
+ ;=== SVR criteria 'rules'
+ ; Find last date HepC registry meds were taken, add the days supply to the date of the last med fill/refill
+ ; Include in report if the patient has selected HepC Quant or HepC Qual lab results:
+ ; Result either starts with a < -- OR -- includes the phrase "NOT DETECT" or "NO HCV RNA" or "NO RNA" or "NEGATIVE" 
+ ; -- OR -- starts "NEG" -- OR -- = "NO_HCV_RNA_DETECTED" or "TND".) and the last result was on or after 84 days past
+ ; the last date registry med was taken calculated date.
+ ;
+ ; Return Values:
+ ; <0 Error code
+ ; 0 SVR criteria not met
+ ; 1 SVR criteria met
+ ;
+SVR(PATIEN,RORXSDT,RORXEDT,RORREG,RORXL,LTSDT,LTEDT,RORLDST,RORXDST) ; 
+ N RC,RORLABDT,RORTAKN
+ ; Get registry meds for patient
+ S RORXDST=$NA(^TMP("RORX023",$J,"PAT",PATIEN,"RX"))
+ S RC=$$RXSEARCH^RORUTL14(PATIEN,RORXL,.RORXDST,"EIOV",RORXSDT,RORXEDT)
+ I RC<0 Q RC  ;error occurred
+ I $G(RORXDST("SKIP"))!'$O(@RORXDST@("")) K RORXDST("SKIP") Q 0 ;patient never took or still takes registry meds
+ ;
+ S RORLDST=$NA(^TMP("RORX023",$J,"PAT",PATIEN,"LR"))
+ S RC=$$LTSEARCH^RORUTL10(PATIEN,+RORREG,.RORLDST,,LTSDT,LTEDT)
+ I RC<0 Q RC  ;error
+ ;=== SVR if patient has a qualifying lab test at least 84 days past the last med taken date
+ I '$O(@RORLDST@("HepC","")) Q 0  ; No lab result date
+ S RORLABDT=(9999999-$O(@RORLDST@("HepC","")))/1 ; Data stored inversely, reverse to normal and strip time
+ S RORTAKN=$O(@RORXDST@(" "),-1)
+ I 'RORTAKN Q 0  ; No last taken date
+ I RORLABDT<$$FMADD^XLFDT(RORTAKN,84) Q 0  ; No qualifying lab test at least 84 days past the last taken date
+ Q 1
+ ;
  ;***** STORES THE REPORT DATA
  ;
  ; REPORT        IEN of the REPORT element
@@ -247,8 +288,10 @@ STORE(REPORT,NSPT) ;
  N RORLDST
  N RORXDST
  N RORICN
+ N RORPACT
+ N RORPCP
  N RORBODY,PTAG  ;parent iens
- N CNT,DATE,DFN,ECNT,IEN,LAST4,LTLST,NAME,NODE,PTCNT,PTLST,PTNAME,RC,RXLST,TMP,VAL,THIST
+ N CNT,DATE,DFN,ECNT,IEN,LAST4,LTLST,NAME,NODE,PTCNT,PTLST,PTNAME,RC,RXLST,TMP,VAL,THIST,AGETYPE,AGE
  N GT,HCV,HCVHEPC
  S (ECNT,RC)=0,(LTLST,PTLST,RXLST)=-1
  ;--- Create 'patients' table
@@ -261,7 +304,7 @@ STORE(REPORT,NSPT) ;
  . S CNT=CNT+1,NODE=$NA(^TMP("RORX023",$J,"PAT",DFN))
  . ;--- Patient's data
  . S TMP=$G(@NODE)
- . S LAST4=$P(TMP,U),PTNAME=$P(TMP,U,2),RORICN=$P(TMP,U,4)
+ . S LAST4=$P(TMP,U),PTNAME=$P(TMP,U,2),RORICN=$P(TMP,U,4),RORPACT=$P(TMP,U,5),RORPCP=$P(TMP,U,6),AGE=$P(TMP,U,7)
  . ;--- get lab results
  . S RORLDST=$NA(^TMP("RORX023",$J,"PAT",DFN,"LR"))
  . S RORXDST=$NA(^TMP("RORX023",$J,"PAT",DFN,"RX"))
@@ -281,11 +324,16 @@ STORE(REPORT,NSPT) ;
  . ;--- store
  . D ADDVAL^RORTSK11(RORTSK,"NAME",PTNAME,PTAG,1)
  . D ADDVAL^RORTSK11(RORTSK,"LAST4",LAST4,PTAG,2)
+ . ;--- Patient age/DOB 
+ . S AGETYPE=$$PARAM^RORTSK01("AGE_RANGE","TYPE") I AGETYPE'="ALL" D
+ . . D ADDVAL^RORTSK11(RORTSK,AGETYPE,AGE,PTAG,1)
  . D ADDVAL^RORTSK11(RORTSK,"HCV_DATE",$P(HEPC,U),PTAG,1)
  . D ADDVAL^RORTSK11(RORTSK,"HCV",$P(HEPC,U,2),PTAG,3)
  . D ADDVAL^RORTSK11(RORTSK,"GT",$P(GT,U,2),PTAG,1)
  . D ADDVAL^RORTSK11(RORTSK,"LAST_TAKEN",RORFDT,PTAG,1)
  . I $$PARAM^RORTSK01("PATIENTS","ICN") D ADDVAL^RORTSK11(RORTSK,"ICN",RORICN,PTAG,1)
+ . I $$PARAM^RORTSK01("PATIENTS","PACT") D ADDVAL^RORTSK11(RORTSK,"PACT",RORPACT,PTAG,1)
+ . I $$PARAM^RORTSK01("PATIENTS","PCP") D ADDVAL^RORTSK11(RORTSK,"PCP",RORPCP,PTAG,1)
  . S PTCNT=PTCNT+1
  ;--- Inactivate the patient list tag if the list is empty
  D:PTCNT'>0 UPDVAL^RORTSK11(RORTSK,PTLST,,,1)

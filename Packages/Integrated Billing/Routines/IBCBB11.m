@@ -1,6 +1,6 @@
 IBCBB11 ;ALB/AAS/OIFO-BP/PIJ - CONTINUATION OF EDIT CHECK ROUTINE ;12 Jun 2006  3:45 PM
- ;;2.0;INTEGRATED BILLING;**51,343,363,371,395,392,401,384,400,436,432**;21-MAR-94;Build 192
- ;;Per VHA Directive 2004-038, this routine should not be modified.
+ ;;2.0;INTEGRATED BILLING;**51,343,363,371,395,392,401,384,400,436,432,516,550,577**;21-MAR-94;Build 38
+ ;;Per VA Directive 6402, this routine should not be modified.
  ;
 WARN(IBDISP) ; Set warning in global
  ; DISP = warning text to display
@@ -58,31 +58,22 @@ NPICHK ; Check for required NPIs
  . F  S IBPRV=$O(IBXSAVE("L-PROV",IBIFN,IBLINE,"C",1,IBPRV)) Q:IBPRV=""  D
  .. I $P($G(IBXSAVE("L-PROV",IBIFN,IBLINE,"C",1,IBPRV,0)),U,4)="" S IBNONPI(IBPRV)=""
  I $D(IBNONPI) S IBPRV="" F  S IBPRV=$O(IBNONPI(IBPRV)) Q:'IBPRV  D
- . ;*** pij start IB*20*436 ***
- . ;I IBNPIREQ S IBER=IBER_"IB"_(140+$P(IBNONPI,U,Z))_";" Q  ; If required, set error
- . I IBNPIREQ,IBLEGAL="" S IBER=IBER_"IB"_(140+IBPRV)_";" Q  ; If required, set error
- . ; ;*** pij end ***
- . D WARN("NPI for the "_$P("referring^operating^rendering^attending^supervising^^^^other",U,IBPRV)_" provider has no value")  ; Else, set warning
+ . S IBER=IBER_"IB"_(140+IBPRV)_";" Q  ; If required, set error IB*2*516
  ; Check organizations
  S IBNONPI=""
  S IBNPIS=$$ORGNPI^IBCEF73A(IBIFN,.IBNONPI)
  I $L(IBNONPI) F Z=1:1:$L(IBNONPI,U) D
- . ; Turn IB161, IB162 to a warning
- . ;*** pij start IB*20*436 ***
- . ;I IBNPIREQ,$P(IBNONPI,U,Z)=3 S IBER=IBER_"IB163;" Q
- . I IBNPIREQ,$P(IBNONPI,U,Z)=3,IBLEGAL="" S IBER=IBER_"IB163;" Q
- . ;*** pij end ***
- . ; PRXM/KJH - Changed descriptions.
- . D WARN("NPI for the "_$P("Service Facility^Non-VA Service Facility^Billing Provider",U,$P(IBNONPI,U,Z))_" has no value")  ; Else, set warning
- . ;S IBER=IBER_$P("IB339;^IB340;^IB341;",U,$P(IBNONPI,U,Z))  ; DEM;432 Added NPI errors.
- . ;IB*2.0*432/TAZ - Removed fatal error for Non-VA Service Facility NPI.
- . S IBER=IBER_$P("IB339;^^IB341;",U,$P(IBNONPI,U,Z))
- . Q
+ . S IBER=IBER_$P("IB339;^IB340;^IB341;",U,$P(IBNONPI,U,Z))  ; DEM;432 Added NPI errors.
  Q
  ;
 TAXCHK ; Check for required taxonomies
- N IBTAXS,IBNOTAX,IBTAXREQ,Z,IBXSAVE,IBLINE,IBPRV
- S IBTAXREQ=$$TAXREQ^IBCEP81(DT)  ; Check if taxonomy is required
+ N IBDT,IBLINE,IBNOTAX,IBPRV,IBTAXS,IBXSAVE,Z
+ ;
+ ; MRD;IB*2.0*516 - This check is now moot; 'today' is always on or
+ ; after May 23, 2008, so taxonomy codes are always required
+ ; for certain providers.
+ ;S IBTAXREQ=$$TAXREQ^IBCEP81(DT)  ; Check if taxonomy is required
+ ;
  ; Check providers
  ; IB*2.0*432 changed the Taxonomy check to the new Provider Array
  ;S IBTAXS=$$PROVTAX^IBCEF73A(IBIFN,.IBNOTAX)
@@ -90,23 +81,42 @@ TAXCHK ; Check for required taxonomies
  S IBPRV=""
  F  S IBPRV=$O(IBXSAVE("PROVINF",IBIFN,"C",1,IBPRV)) Q:'IBPRV  D
  . I $G(IBXSAVE("PROVINF",IBIFN,"C",1,IBPRV,"TAXONOMY"))="" S IBNOTAX(IBPRV)=""
+ . Q
+ ;
  S IBLINE=""
  F  S IBLINE=$O(IBXSAVE("L-PROV",IBIFN,IBLINE)) Q:'IBLINE  D
  . S IBPRV=""
  . F  S IBPRV=$O(IBXSAVE("L-PROV",IBIFN,IBLINE,"C",1,IBPRV)) Q:IBPRV=""  D
- .. I $G(IBXSAVE("L-PROV",IBIFN,IBLINE,"C",1,IBPRV,"TAXONOMY"))="" S IBNOTAX(IBPRV)=""
+ . . I $G(IBXSAVE("L-PROV",IBIFN,IBLINE,"C",1,IBPRV,"TAXONOMY"))="" S IBNOTAX(IBPRV)=""
+ . . Q
+ . Q
+ ;
+ ; IB251 = Referring provider taxonomy missing.
+ ; IB253 = Rendering provider taxonomy missing.
+ ; IB254 = Attending provider taxonomy missing.
+ ;
  I $D(IBNOTAX) S IBPRV="" F  S IBPRV=$O(IBNOTAX(IBPRV)) Q:'IBPRV  D
  . ; Only Referring, Rendering and Attending are currently sent to the payer
- . I IBTAXREQ,"134"[IBPRV S IBER=IBER_"IB"_(250+IBPRV)_";" Q  ; If required, set error
+ . ;I IBTAXREQ,"134"[IBPRV S IBER=IBER_"IB"_(250+IBPRV)_";" Q  ; MRD;IB*2.0*516 - Always required.
+ . I "134"[IBPRV S IBER=IBER_"IB"_(250+IBPRV)_";" Q  ; If required, set error and quit
  . D WARN("Taxonomy for the "_$P("referring^operating^rendering^attending^supervising^^^^other",U,IBPRV)_" provider has no value")  ; Else, set warning
- ; Check organizations
+ . Q
+ ;
+ ; Check organizations.  The function ORGTAX will set IBNOTAX to be a
+ ; list of entities missing taxonomy codes, if any (n, n^m, n^m^p,
+ ; where each 1 is service facility, 2 is non-VA service facility and
+ ; 3 is billing provider.
+ ;
  S IBNOTAX=""
  S IBTAXS=$$ORGTAX^IBCEF73A(IBIFN,.IBNOTAX)
  I $L(IBNOTAX) F Z=1:1:$L(IBNOTAX,U) D
- . ; Turn IB165, IB166 to a warning
- . I IBTAXREQ,$P(IBNOTAX,U,Z)=3 S IBER=IBER_"IB167;" Q
- . ; PRXM/KJH - Changed descriptions.
- . D WARN("Taxonomy for the "_$P("Service Facility^Non-VA Service Facility^Billing Provider",U,$P(IBNOTAX,U,Z))_" has no value")  ; Else, set warning
+ . ; IB167 = Billing Provider taxonomy missing.
+ . ;I IBTAXREQ,$P(IBNOTAX,U,Z)=3 S IBER=IBER_"IB167;" Q  ; MRD;IB*2.0*516 - Always required.
+ . I $P(IBNOTAX,U,Z)=3 S IBER=IBER_"IB167;" Q
+ . ; MRD;IB*2.0*516 - Remove warning message for missing taxonomy code for lab or facility.
+ . ; D WARN("Taxonomy for the "_$P("Service Facility^Non-VA Service Facility^Billing Provider",U,$P(IBNOTAX,U,Z))_" has no value")  ; Else, set warning
+ . Q
+ ;
  Q
  ;
 VALNDC(IBIFN,IBDFN) ; IB*2*363 - validate NDC# between PRESCRIPTION file (#52)
@@ -140,8 +150,8 @@ RXNPI(IBIFN) ; check for multiple pharmacy npi's on the same bill
  Q
  ;
 ROICHK(IBIFN,IBDFN,IBINS) ; IB*2.0*384 - check prescriptions that contain the
- ; special handling code U against the Claims Tracking ROI file (#356.25)
- ; to see if an ROI is on file
+ ; SENSITIVE DIAGNOSIS DRUG field #87 in the DRUG File #50 set to 1 against
+ ; the Claims Tracking ROI file (#356.25) to see if an ROI is on file
  ; input - IBIFN = IEN of the Bill/Claims file (#399)
  ;         IBDFN = IEN of the patient
  ;         IBINS = IEN of the payer insurance company (#36)
@@ -154,7 +164,7 @@ ROICHK(IBIFN,IBDFN,IBINS) ; IB*2.0*384 - check prescriptions that contain the
  .S IBY0=^IBA(362.4,IBX,0),IBRXIEN=$P(IBY0,U,5) I 'IBRXIEN Q
  .S IBDT=$P(IBY0,U,3),IBDRUG=$P(IBY0,U,4)
  .D ZERO^IBRXUTL(IBDRUG)
- .I ^TMP($J,"IBDRUG",IBDRUG,3)["U" D
+ .I $$SENS^IBNCPDR(IBDRUG) D  ; Sensitive Diagnosis Drug - check for ROI
  .. I $$ROI^IBNCPDR4(IBDFN,IBDRUG,IBINS,IBDT) Q  ;ROI is on file
  .. D WARN("ROI not on file for prescription "_$$RXAPI1^IBNCPUT1(IBRXIEN,.01,"E"))
  .. S ROIQ=1
@@ -289,3 +299,22 @@ LNACCK(IBIFN) ; DEM;IB*2.0*432 (Line Level) If any of the loop info is present, 
  . Q
  ;
  Q IBLNERR
+ ;
+ ;vd/Beginning of IB*2*577 - Validate Line Level for NDC
+LNNDCCK(IBIFN) ;IB*2*577 (Line Level) The Units and Units/Basis of Measurement fields are required if the NDC field is populated.
+ ; INPUT  - IBIFN = IEN of the Bill/Claims file (#399)
+ ; OUTPUT - IBLNERR = 0 = no error
+ ;          IBLNERR = 1 = Error
+ ;
+ N IBAC,IBPROCP,I,IBLNERR
+ S IBLNERR=0  ; IB*2*577 - Initialize error flag IBLNERR to '0' for no errors.
+ Q:IBIFN="" IBLNERR
+ S IBPROCP=0 F  S IBPROCP=$O(^DGCR(399,IBIFN,"CP",IBPROCP)) Q:'IBPROCP  D  Q:IBLNERR
+ . Q:($$GET1^DIQ(399.0304,IBPROCP_","_IBIFN_",","NDC","I")="")   ; IB*2*577 - No NDC Code
+ . ; If there is an NDC Code, then the UNITS and UNITS/BASIS OF MEASUREMENT are Required.
+ . I $$GET1^DIQ(399.0304,IBPROCP_","_IBIFN_",","UNITS/BASIS OF MEASUREMENT","I")="" S IBLNERR=1 Q
+ . I $$GET1^DIQ(399.0304,IBPROCP_","_IBIFN_",","UNITS","I")="" S IBLNERR=1 Q  ;Units (Quantity) is required if there is an NDC Code.
+ . Q
+ ;
+ Q IBLNERR
+ ;vd/End of IB*2*577

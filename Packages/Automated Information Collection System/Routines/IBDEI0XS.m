@@ -1,136 +1,126 @@
-IBDEI0XS ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0XS ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,16760,1,0)
+ ;;^UTILITY(U,$J,358.3,15573,1,3,0)
+ ;;=3^Malig Neop of Skin of Face,Other Parts
+ ;;^UTILITY(U,$J,358.3,15573,1,4,0)
+ ;;=4^C44.309
+ ;;^UTILITY(U,$J,358.3,15573,2)
+ ;;=^5001042
+ ;;^UTILITY(U,$J,358.3,15574,0)
+ ;;=C44.300^^85^821^89
+ ;;^UTILITY(U,$J,358.3,15574,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16760,1,3,0)
- ;;=3^646.03
- ;;^UTILITY(U,$J,358.3,16760,1,4,0)
- ;;=4^Papyraceous fetus-Antepartum
- ;;^UTILITY(U,$J,358.3,16760,2)
- ;;=^270905
- ;;^UTILITY(U,$J,358.3,16761,0)
- ;;=646.13^^108^1055^15
- ;;^UTILITY(U,$J,358.3,16761,1,0)
+ ;;^UTILITY(U,$J,358.3,15574,1,3,0)
+ ;;=3^Malig Neop of Skin of Face,Unspec Part
+ ;;^UTILITY(U,$J,358.3,15574,1,4,0)
+ ;;=4^C44.300
+ ;;^UTILITY(U,$J,358.3,15574,2)
+ ;;=^5001040
+ ;;^UTILITY(U,$J,358.3,15575,0)
+ ;;=C44.301^^85^821^90
+ ;;^UTILITY(U,$J,358.3,15575,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16761,1,3,0)
- ;;=3^646.13
- ;;^UTILITY(U,$J,358.3,16761,1,4,0)
- ;;=4^Edema in preg-Antepartum
- ;;^UTILITY(U,$J,358.3,16761,2)
- ;;=^270910
- ;;^UTILITY(U,$J,358.3,16762,0)
- ;;=646.14^^108^1055^16
- ;;^UTILITY(U,$J,358.3,16762,1,0)
+ ;;^UTILITY(U,$J,358.3,15575,1,3,0)
+ ;;=3^Malig Neop of Skin of Nose
+ ;;^UTILITY(U,$J,358.3,15575,1,4,0)
+ ;;=4^C44.301
+ ;;^UTILITY(U,$J,358.3,15575,2)
+ ;;=^5001041
+ ;;^UTILITY(U,$J,358.3,15576,0)
+ ;;=E10.621^^85^821^80
+ ;;^UTILITY(U,$J,358.3,15576,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16762,1,3,0)
- ;;=3^646.14
- ;;^UTILITY(U,$J,358.3,16762,1,4,0)
- ;;=4^Edema in preg-Postpartum
- ;;^UTILITY(U,$J,358.3,16762,2)
- ;;=^270911
- ;;^UTILITY(U,$J,358.3,16763,0)
- ;;=646.23^^108^1055^34
- ;;^UTILITY(U,$J,358.3,16763,1,0)
+ ;;^UTILITY(U,$J,358.3,15576,1,3,0)
+ ;;=3^Diabetes Type 1 w/ Foot Ulcer
+ ;;^UTILITY(U,$J,358.3,15576,1,4,0)
+ ;;=4^E10.621
+ ;;^UTILITY(U,$J,358.3,15576,2)
+ ;;=^5002616
+ ;;^UTILITY(U,$J,358.3,15577,0)
+ ;;=T81.31XA^^85^822^3
+ ;;^UTILITY(U,$J,358.3,15577,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16763,1,3,0)
- ;;=3^646.23
- ;;^UTILITY(U,$J,358.3,16763,1,4,0)
- ;;=4^Renal Dis NOS w/o HTN-Antepartum
- ;;^UTILITY(U,$J,358.3,16763,2)
- ;;=^270916
- ;;^UTILITY(U,$J,358.3,16764,0)
- ;;=646.24^^108^1055^35
- ;;^UTILITY(U,$J,358.3,16764,1,0)
+ ;;^UTILITY(U,$J,358.3,15577,1,3,0)
+ ;;=3^Disruption of External Surgical Wound,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15577,1,4,0)
+ ;;=4^T81.31XA
+ ;;^UTILITY(U,$J,358.3,15577,2)
+ ;;=^5054470
+ ;;^UTILITY(U,$J,358.3,15578,0)
+ ;;=T81.33XA^^85^822^4
+ ;;^UTILITY(U,$J,358.3,15578,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16764,1,3,0)
- ;;=3^646.24
- ;;^UTILITY(U,$J,358.3,16764,1,4,0)
- ;;=4^Renal Dis NOS w/o HTN-Postpartum
- ;;^UTILITY(U,$J,358.3,16764,2)
- ;;=^270917
- ;;^UTILITY(U,$J,358.3,16765,0)
- ;;=646.33^^108^1055^33
- ;;^UTILITY(U,$J,358.3,16765,1,0)
+ ;;^UTILITY(U,$J,358.3,15578,1,3,0)
+ ;;=3^Disruption of Traumatic Injury Wound Repair,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15578,1,4,0)
+ ;;=4^T81.33XA
+ ;;^UTILITY(U,$J,358.3,15578,2)
+ ;;=^5054476
+ ;;^UTILITY(U,$J,358.3,15579,0)
+ ;;=T81.4XXA^^85^822^5
+ ;;^UTILITY(U,$J,358.3,15579,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16765,1,3,0)
- ;;=3^646.33
- ;;^UTILITY(U,$J,358.3,16765,1,4,0)
- ;;=4^Recurnt pregnan loss-Antepartum
- ;;^UTILITY(U,$J,358.3,16765,2)
- ;;=^339731
- ;;^UTILITY(U,$J,358.3,16766,0)
- ;;=646.43^^108^1055^26
- ;;^UTILITY(U,$J,358.3,16766,1,0)
+ ;;^UTILITY(U,$J,358.3,15579,1,3,0)
+ ;;=3^Infection Following a Procedure,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15579,1,4,0)
+ ;;=4^T81.4XXA
+ ;;^UTILITY(U,$J,358.3,15579,2)
+ ;;=^5054479
+ ;;^UTILITY(U,$J,358.3,15580,0)
+ ;;=T81.89XA^^85^822^1
+ ;;^UTILITY(U,$J,358.3,15580,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16766,1,3,0)
- ;;=3^646.43
- ;;^UTILITY(U,$J,358.3,16766,1,4,0)
- ;;=4^Neuritis in pregnan-Antepartum
- ;;^UTILITY(U,$J,358.3,16766,2)
- ;;=^270926
- ;;^UTILITY(U,$J,358.3,16767,0)
- ;;=646.44^^108^1055^27
- ;;^UTILITY(U,$J,358.3,16767,1,0)
+ ;;^UTILITY(U,$J,358.3,15580,1,3,0)
+ ;;=3^Complications of Procedures NEC,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15580,1,4,0)
+ ;;=4^T81.89XA
+ ;;^UTILITY(U,$J,358.3,15580,2)
+ ;;=^5054662
+ ;;^UTILITY(U,$J,358.3,15581,0)
+ ;;=K91.89^^85^822^7
+ ;;^UTILITY(U,$J,358.3,15581,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16767,1,3,0)
- ;;=3^646.44
- ;;^UTILITY(U,$J,358.3,16767,1,4,0)
- ;;=4^Neuritis in pregnan-Postpartum
- ;;^UTILITY(U,$J,358.3,16767,2)
- ;;=^270927
- ;;^UTILITY(U,$J,358.3,16768,0)
- ;;=646.53^^108^1055^5
- ;;^UTILITY(U,$J,358.3,16768,1,0)
+ ;;^UTILITY(U,$J,358.3,15581,1,3,0)
+ ;;=3^Postprocedural Complications/Disorders of Digestive System
+ ;;^UTILITY(U,$J,358.3,15581,1,4,0)
+ ;;=4^K91.89
+ ;;^UTILITY(U,$J,358.3,15581,2)
+ ;;=^5008912
+ ;;^UTILITY(U,$J,358.3,15582,0)
+ ;;=T88.8XXA^^85^822^2
+ ;;^UTILITY(U,$J,358.3,15582,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16768,1,3,0)
- ;;=3^646.53
- ;;^UTILITY(U,$J,358.3,16768,1,4,0)
- ;;=4^Asympt bacteriuria-Antepartum
- ;;^UTILITY(U,$J,358.3,16768,2)
- ;;=^270932
- ;;^UTILITY(U,$J,358.3,16769,0)
- ;;=646.54^^108^1055^6
- ;;^UTILITY(U,$J,358.3,16769,1,0)
+ ;;^UTILITY(U,$J,358.3,15582,1,3,0)
+ ;;=3^Complications of Surgical/Medical Care NEC,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15582,1,4,0)
+ ;;=4^T88.8XXA
+ ;;^UTILITY(U,$J,358.3,15582,2)
+ ;;=^5055814
+ ;;^UTILITY(U,$J,358.3,15583,0)
+ ;;=T81.83XA^^85^822^6
+ ;;^UTILITY(U,$J,358.3,15583,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16769,1,3,0)
- ;;=3^646.54
- ;;^UTILITY(U,$J,358.3,16769,1,4,0)
- ;;=4^Asympt bacteriuria-Postpartum
- ;;^UTILITY(U,$J,358.3,16769,2)
- ;;=^270933
- ;;^UTILITY(U,$J,358.3,16770,0)
- ;;=646.63^^108^1055^17
- ;;^UTILITY(U,$J,358.3,16770,1,0)
+ ;;^UTILITY(U,$J,358.3,15583,1,3,0)
+ ;;=3^Persistent Postprocedural Fistula,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15583,1,4,0)
+ ;;=4^T81.83XA
+ ;;^UTILITY(U,$J,358.3,15583,2)
+ ;;=^5054659
+ ;;^UTILITY(U,$J,358.3,15584,0)
+ ;;=I97.610^^85^822^9
+ ;;^UTILITY(U,$J,358.3,15584,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16770,1,3,0)
- ;;=3^646.63
- ;;^UTILITY(U,$J,358.3,16770,1,4,0)
- ;;=4^GU tract Infection-Antepartum
- ;;^UTILITY(U,$J,358.3,16770,2)
- ;;=^270938
- ;;^UTILITY(U,$J,358.3,16771,0)
- ;;=646.64^^108^1055^18
- ;;^UTILITY(U,$J,358.3,16771,1,0)
+ ;;^UTILITY(U,$J,358.3,15584,1,3,0)
+ ;;=3^Postprocedural Hemorrhage/Hematoma of Circ System Following Cardiac Cath
+ ;;^UTILITY(U,$J,358.3,15584,1,4,0)
+ ;;=4^I97.610
+ ;;^UTILITY(U,$J,358.3,15584,2)
+ ;;=^5008099
+ ;;^UTILITY(U,$J,358.3,15585,0)
+ ;;=H95.42^^85^822^13
+ ;;^UTILITY(U,$J,358.3,15585,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16771,1,3,0)
- ;;=3^646.64
- ;;^UTILITY(U,$J,358.3,16771,1,4,0)
- ;;=4^GU tract Infection-Postpartum
- ;;^UTILITY(U,$J,358.3,16771,2)
- ;;=^270939
- ;;^UTILITY(U,$J,358.3,16772,0)
- ;;=646.73^^108^1055^21
- ;;^UTILITY(U,$J,358.3,16772,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16772,1,3,0)
- ;;=3^646.73
- ;;^UTILITY(U,$J,358.3,16772,1,4,0)
- ;;=4^Liver/Bil tract d/o-Antepartum
- ;;^UTILITY(U,$J,358.3,16772,2)
- ;;=^340638
- ;;^UTILITY(U,$J,358.3,16773,0)
- ;;=647.03^^108^1055^38
- ;;^UTILITY(U,$J,358.3,16773,1,0)
- ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15585,1,3,0)
+ ;;=3^Postprocedural Hemorrhage/Hematoma of Ear/Mastoid

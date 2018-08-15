@@ -1,11 +1,11 @@
 PSIVOD ;BIR/JCH-CREATE NEW IV ORDER FROM OLD ONE ;25 Nov 98 / 3:34 PM
- ;;5.0; INPATIENT MEDICATIONS ;**110,127,181**;16 DEC 97;Build 190
+ ;;5.0;INPATIENT MEDICATIONS;**110,127,181,281,256**;16 DEC 97;Build 34
  ;
  ; Reference to ^PS(55 is supported by DBIA 2191.
  ; Reference to ^ORX2 is supported by DBIA 867.
  ;
 COPY(DFN,OLDON) ;Ask to enter new order.
- N PSIVOORD,OLDP,PSIVCOPY,PSGCOPY M OLDP=P
+ N PSIVOORD,OLDP,PSIVCOPY,PSGCOPY,I,% M OLDP=P
  Q:'$$HIDDEN^PSJLMUTL("COPY")  D ^PSJHVARS
  I $P($G(^PS(55,PSGP,"IV",+PSGORD,.2)),U,4)="D",'$P($G(^(4)),"^",3) D  G Q
  .W !!,"Nurse verified orders with a priority of DONE may not be Copied." D PAUSE^VALM1 Q
@@ -16,6 +16,11 @@ COPY(DFN,OLDON) ;Ask to enter new order.
  S P("RES")="N",PSIVAC="PN",P("PON")=ON55,PSIVUP=+$$GTPCI^PSIVUTL,PSJORD=ON55,PSGORD=PSJORD
  N OLDACT,PSIVCHG S OLDACT=PSGACT S PSGACT=PSGACT_"E",P(17)="N",(P("LOG"),P("LF"))="",P(21)="" K P("NAT")
  S:'$G(PSGDT) PSGDT=$$DATE^PSJUTL2() S P("LOG")=PSGDT,P("PRNTON")=""
+ ;PSJ*5*256
+ NEW PSJOLDNM
+ S PSJOLDNM("ORD_SCHD")=$G(P(9))
+ I $$CHKSCHD^PSJMISC2(.PSJOLDNM) W !!,"Order not copied." D PAUSE^VALM1 K PSJOLDNM G Q
+ S:$G(PSJOLDNM("NEW_SCHD"))]"" P(9)=PSJOLDNM("NEW_SCHD") K PSJOLDNM
  D ENT^PSIVCAL,ENSTOP^PSIVCAL S ND4="^^^^" F I=5,6,8,9 S $P(ND2,"^",I)=""
  S P(17)=$S($G(PSGOEAV):"A",1:"N") S P("CLRK")=DUZ_"^"_$P($G(^VA(200,+DUZ,0)),"^")
  S PSIVCHG=0,PSJNEWOE=0,PSIVCOPY=1,VALMBCK="Q" K PSIVACEP
@@ -25,13 +30,15 @@ COPY(DFN,OLDON) ;Ask to enter new order.
  I $G(P("NAT"))=""&($G(PSJORNAT)="") D  G Q
  .D FULL^VALM1 W !!,"Order not copied" D PAUSE^VALM1
  W !!,"...copying..."
+ ;RTC 178789 - not to store allergy OC until either verify or quit as non-vf order
+ ;D SETOC^PSJNEWOC(ON55)
  ;
  I '$G(PSGOEAV) D INMED
  ;
  D FULL^VALM1 W !!?5,"You are finished with the new order.",!,"The following ACTION prompt is for the original order." D PAUSE^VALM1
 Q ; Kill and exit.
  L:'$D(PSJOE) -^PS(53.45,DUZ) S PSJNKF=1 D Q^PSIV
- K FIL,I1,ND,PC,PDM,PSGDT,PSGID,PSGLMT,PSGSI,PSJNARC,PSIVAC,PSIVCHG,PSIVUP,PSIVX,PSJOPC
+ K FIL,I1,ND,PC,PDM,PSGDT,PSGID,PSGLMT,PSGSI,PSJNARC,PSIVAC,PSIVCHG,PSIVUP,PSIVX,PSJOPC,PSJAGYSV
  S VALMBCK="R"
  I '$G(PSGDT) S PSGDT=$$DATE^PSJUTL2
  S PSGACT=$$ENACTION^PSGOE1(PSGP,PSIVOORD) ; resets PSGACT after copy
@@ -46,6 +53,8 @@ INMED ;
  ;S (PSJORNAT,P("NAT"))="W"
  ;D OK^PSIVORE
  D EN^VALM("PSJ LM IV INPT ACTIVE")
+ ;RTC 178789 - Store allergy OC as non-vf order
+ D:$G(ON55)["P" SETOC^PSJNEWOC($G(ON55))
  L -^PS(55,DFN,"IV",+ON55) D ULK
  I $G(P("NAT"))="" D  G Q
  .D FULL^VALM1 W !!,"Order not copied" D PAUSE^VALM1

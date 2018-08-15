@@ -1,6 +1,7 @@
 DVBAB82 ;ALB/DJS - CAPRI DVBA REPORTS ; 01/24/12
- ;;2.7;AMIE;**42,90,100,119,156,149,179,181,184,185**;Apr 10, 1995;Build 18
+ ;;2.7;AMIE;**42,90,100,119,156,149,179,181,184,185,192,196**;Apr 10, 1995;Build 1
  ;Per VHA Directive 2004-038, this routine should not be modified.
+ ;ALB/RTW added subroutine VBACRPON to allow VBA reprint reqardless of office
  Q
  ;
 START(MSG,RPID,PARM) ; CALLED BY REMOTE PROCEDURE DVBAB REPORTS
@@ -21,6 +22,9 @@ START(MSG,RPID,PARM) ; CALLED BY REMOTE PROCEDURE DVBAB REPORTS
  D CHECK I DVBERR G END  ;reports below require parameters
  I RPID=2 D CRRR G END
  I RPID=4 D CRPON G END
+ ;DVBA*196 - I6184115FY16 REMOVE CALL TO VBACRPON
+ ;I RPID=4,$P(PARM,U,8)=0 D CRPON G END
+ ;I RPID=4,$P(PARM,U,8)=1 D VBACRPON G END
  I RPID=5 D CIRPT G END
  I RPID=6 D DSRP G END
  I RPID=7 D SDPP G END
@@ -164,7 +168,8 @@ CRPON ; Report # - 4 Reprint C&P Final Report
  ; DFN  : Patient Identification Number
  ;
  U IO
- N ONE
+ N ONE,DVBAQ,DVBAWHO
+ S DVBAWHO=$P($G(PARM),U,8),DVBAQ=""
  S RTYPE=$P(PARM,"^",1),RUNDATE=$P(PARM,"^",2),ANS=$P(PARM,"^",3),%=$P(PARM,"^",4),DA(1)=$P(PARM,"^",5),DFN=$P(PARM,"^",6),DA=DA(1)
  I RTYPE="V" D VAL Q:DVBERR
  S XDD=^DD("DD"),$P(ULINE,"_",70)="_",ONE="N",Y=DT
@@ -176,14 +181,52 @@ CRPON ; Report # - 4 Reprint C&P Final Report
  I ANS="M" S AUTO=1
  I "^M^R^"'[ANS S DVBERR=1,^TMP("DVBA",$J,1)="0^Incorrect Data Type" Q
  I RTYPE="D" D GO^DVBCRPRT Q
+ ;DVBA*196 - I6184115FY16 FIX VALIDATION LOGIC FOR "BY VETERAN" TO MEET REQUIREMENTS IN PATCH 192
  I RTYPE="V" D
  . S ONE="Y",RO=$P(^DVB(396.3,DA,0),U,3)
- . I RO'=DUZ(2)&('$D(AUTO))&(SUPER=0) W !!,*7,"Those results do not belong to your office.",!! Q
- . I RO=DUZ(2)&('$D(AUTO))&("RC"'[($P(^DVB(396.3,DA,0),U,18))) W *7,!!,"This request has not been released to the Regional Office yet.",!! Q
- . S PRTDATE=$P(^DVB(396.3,DA,0),U,16) I PRTDATE="" W *7,!!,"This has never been printed.",!! I SUPER=0 S OUT=1 Q
+ . I DVBAWHO=0  D
+ .. I RO'=DUZ(2)&('$D(AUTO))&(SUPER=0) W !!,*7,"Those results do not belong to your office.",!! S DVBAQ=1 Q
+ .. I RO=DUZ(2)&('$D(AUTO))&("RC"'[($P(^DVB(396.3,DA,0),U,18))) W *7,!!,"This request has not been released to the Regional Office yet.",!! S DVBAQ=1 Q
+ .. S PRTDATE=$P(^DVB(396.3,DA,0),U,16) I PRTDATE="" W *7,!!,"This has never been printed.",!! I SUPER=0 S OUT=1 S DVBAQ=1 Q
+ . I DVBAWHO=1 D
+ .. I "RC"'[($P(^DVB(396.3,DA,0),U,18)) W *7,!!,"This request has not been released to the Regional Office yet.",!! S DVBAQ=1 Q
+ . I DVBAQ=1 Q
  . I %=1 D REN2^DVBCLABR Q
  . ;D OV^DVBCRPON
- . K DVBAON2 D SETLAB^DVBCPRNT,VARS^DVBCUTIL,STEP2^DVBCRPRT
+ . K DVBAON2 D SETLAB^DVBCPRNT,VARS^DVBCUTIL  D
+ ..I DVBAWHO=1 D VBASTEP2^DVBCRPRT
+ ..I DVBAWHO=0 D STEP2^DVBCRPRT
+ Q
+ ;
+VBACRPON ; Report # - 4 Reprint C&P Final Report by VBA personnel
+ ;Parameters
+ ;=============
+ ; RTYPE : Select Reprint Option (D)ate or (V)eteran
+ ; RUNDATE : ORIGINAL PROCESSING date
+ ; ANS : Reprinted by the RO or MAS
+ ; % : LAB 1 OR 0
+ ; DA(1) : Patient IEN for lab results
+ ; DFN  : Patient Identification Number
+ ;
+ S DVBERR=0
+ I $D(^TMP("DVBA",$J)) S DVBAX=(^TMP("DVBA",$J))
+ U IO
+ N ONE
+ S RTYPE=$P(PARM,"^",1),RUNDATE=$P(PARM,"^",2),ANS=$P(PARM,"^",3),%=$P(PARM,"^",4),DA(1)=$P(PARM,"^",5),DFN=$P(PARM,"^",6),DA=DA(1)
+ I RTYPE="V" D VAL Q:DVBERR
+ S XDD=^DD("DD"),$P(ULINE,"_",70)="_",ONE="N",Y=DT
+ X XDD S HD="Reprint C & P Exams"
+ S DVBCDT(0)=Y,PGHD="Compensation and Pension Exam Report",LOC=DUZ(2),PG=0,DVBCSITE=$S($D(^DVB(396.1,1,0)):$P(^(0),U,1),1:"Not specified")
+ I "^D^V^"'[RTYPE S DVBERR=1,^TMP("DVBA",$J,1)="0^Incorrect Data Type" Q
+ I ANS="R" K AUTO
+ I ANS="M" S AUTO=1
+ I "^M^R^"'[ANS S DVBERR=1,^TMP("DVBA",$J,1)="0^Incorrect Data Type" Q
+ I RTYPE="D" D VBAGO^DVBCRPRT Q
+ I RTYPE="V" D
+ . S ONE="Y",RO=$P(^DVB(396.3,DA,0),U,3)
+ . S PRTDATE=$P(^DVB(396.3,DA,0),U,16)
+ . I %=1 D REN2^DVBCLABR Q
+ . K DVBAON2 D SETLAB^DVBCPRNT,VARS^DVBCUTIL,VBASTEP2^DVBCRPRT
  Q
  ;
 CIRPT ; Report # 5 - Insufficient Exam Report
@@ -202,15 +245,14 @@ CIRPT ; Report # 5 - Insufficient Exam Report
  ;
  N DVBAPRTY,RPTTYPE,BEGDT,ENDDT,RESANS
  U IO
- S RPTTYPE=$P(PARM,"^",1),BEGDT=$P(PARM,"^",2),ENDDT=$P(PARM,"^",3),RESANS=$P(PARM,"^",4)
- S DVBAPRTY=$P(PARM,"^",5)
+ S RPTTYPE=$P(PARM,"^",1),BEGDT=$P(PARM,"^",2),ENDDT=$P(PARM,"^",3),RESANS=""
  S DVBADLMTR=$P(PARM,"^",6),DVBADLMTR=$S(DVBADLMTR=1:",",1:0)
  S ENDDT=ENDDT_".2359"
- I RPTTYPE="S" D SUM^DVBCIRPT Q
+ I RPTTYPE="S" D SUM^DVBCIRP2 Q
  I RPTTYPE="D" D
  . D INREAS
  . Q:($D(^TMP("DVBA",$J,1)))  ;invalid reason sent
- . D EXMTPE,DETAIL^DVBCIRP1
+ . D EXMTPE,DETAIL^DVBCIRP2
  Q
  ;
 EXMTPE ;exam types (retrieve all for filter)
@@ -223,10 +265,10 @@ INREAS ;insufficient reason (validate specific or retrieve all)
  D:(RESANS="")  ;use all insufficient reasons
  .F DVBAXIFN=0:0 S DVBAXIFN=$O(^DVB(396.94,DVBAXIFN)) Q:+DVBAXIFN=0  DO
  .. S DVBAARY("REASON",DVBAXIFN)=""
- D:(RESANS'="")  ;use specific insufficient reason
- .I ('$D(^DVB(396.94,+RESANS))) D  ;validate IEN
- ..S DVBERR=1,^TMP("DVBA",$J,1)="0^Invalid Insufficient Reason IEN"
- .E  S DVBAARY("REASON",+RESANS)=""
+ ;D:(RESANS'="")  ;use specific insufficient reason
+ ;.I ('$D(^DVB(396.94,+RESANS))) D  ;validate IEN
+ ;..S DVBERR=1,^TMP("DVBA",$J,1)="0^Invalid Insufficient Reason IEN"
+ ;.E  S DVBAARY("REASON",+RESANS)=""
  Q
  ;
 CRMS ; Report # 1 - Regional Office 21- day Certificate Printing Report.

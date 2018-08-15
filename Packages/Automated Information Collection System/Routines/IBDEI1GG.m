@@ -1,34 +1,134 @@
-IBDEI1GG ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
- Q:'DIFQ(358.6)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+IBDEI1GG ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^DD(358.6,.01,1,2,2)
- ;;=K ^IBE(358.6,"E",$E(X,$F(X," "),40),DA)
- ;;^DD(358.6,.01,1,2,"%D",0)
- ;;=^^4^4^2940224^
- ;;^DD(358.6,.01,1,2,"%D",1,0)
- ;;= 
- ;;^DD(358.6,.01,1,2,"%D",2,0)
- ;;=For package interfaces that are output routines the name has the custodial
- ;;^DD(358.6,.01,1,2,"%D",3,0)
- ;;=package's name space as a prefix. This cross-reference removes that
- ;;^DD(358.6,.01,1,2,"%D",4,0)
- ;;=prefix. It is used to improve the display of output routines for the user.
- ;;^DD(358.6,.01,1,2,"DT")
- ;;=2930409
- ;;^DD(358.6,.01,3)
- ;;=Answer must be 3-40 characters in length. All entries with Action Type other than PRINT REPORT must be be prefixed with the namespace of the package that is responsible for the data.
- ;;^DD(358.6,.01,21,0)
- ;;=^^3^3^2950412^^^^
- ;;^DD(358.6,.01,21,1,0)
- ;;= 
- ;;^DD(358.6,.01,21,2,0)
- ;;=The name of the Package Interface. For interfaces returning data the name
- ;;^DD(358.6,.01,21,3,0)
- ;;=should be preceded with the namespace of the package.
- ;;^DD(358.6,.01,23,0)
- ;;=^^1^1^2950412^
- ;;^DD(358.6,.01,23,1,0)
- ;;= 
- ;;^DD(358.6,.01,"DT")
- ;;=2930409
+ ;;^UTILITY(U,$J,358.3,24307,0)
+ ;;=Z91.49^^118^1204^11
+ ;;^UTILITY(U,$J,358.3,24307,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24307,1,3,0)
+ ;;=3^Personal Hx of Psychological Trauma NEC
+ ;;^UTILITY(U,$J,358.3,24307,1,4,0)
+ ;;=4^Z91.49
+ ;;^UTILITY(U,$J,358.3,24307,2)
+ ;;=^5063623
+ ;;^UTILITY(U,$J,358.3,24308,0)
+ ;;=Z91.19^^118^1204^5
+ ;;^UTILITY(U,$J,358.3,24308,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24308,1,3,0)
+ ;;=3^Noncompliance w/ Medical Treatment/Regimen
+ ;;^UTILITY(U,$J,358.3,24308,1,4,0)
+ ;;=4^Z91.19
+ ;;^UTILITY(U,$J,358.3,24308,2)
+ ;;=^5063618
+ ;;^UTILITY(U,$J,358.3,24309,0)
+ ;;=Z87.891^^118^1204^10
+ ;;^UTILITY(U,$J,358.3,24309,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24309,1,3,0)
+ ;;=3^Personal Hx of Nicotine Dependence
+ ;;^UTILITY(U,$J,358.3,24309,1,4,0)
+ ;;=4^Z87.891
+ ;;^UTILITY(U,$J,358.3,24309,2)
+ ;;=^5063518
+ ;;^UTILITY(U,$J,358.3,24310,0)
+ ;;=Z77.090^^118^1204^1
+ ;;^UTILITY(U,$J,358.3,24310,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24310,1,3,0)
+ ;;=3^Asbestos Contact/Exposure
+ ;;^UTILITY(U,$J,358.3,24310,1,4,0)
+ ;;=4^Z77.090
+ ;;^UTILITY(U,$J,358.3,24310,2)
+ ;;=^5063312
+ ;;^UTILITY(U,$J,358.3,24311,0)
+ ;;=Z91.81^^118^1204^3
+ ;;^UTILITY(U,$J,358.3,24311,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24311,1,3,0)
+ ;;=3^History of Falling
+ ;;^UTILITY(U,$J,358.3,24311,1,4,0)
+ ;;=4^Z91.81
+ ;;^UTILITY(U,$J,358.3,24311,2)
+ ;;=^5063625
+ ;;^UTILITY(U,$J,358.3,24312,0)
+ ;;=Z57.8^^118^1204^6
+ ;;^UTILITY(U,$J,358.3,24312,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24312,1,3,0)
+ ;;=3^Occupational Risk Factor Exposure
+ ;;^UTILITY(U,$J,358.3,24312,1,4,0)
+ ;;=4^Z57.8
+ ;;^UTILITY(U,$J,358.3,24312,2)
+ ;;=^5063127
+ ;;^UTILITY(U,$J,358.3,24313,0)
+ ;;=Z77.011^^118^1204^4
+ ;;^UTILITY(U,$J,358.3,24313,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24313,1,3,0)
+ ;;=3^Lead Contact/Exposure
+ ;;^UTILITY(U,$J,358.3,24313,1,4,0)
+ ;;=4^Z77.011
+ ;;^UTILITY(U,$J,358.3,24313,2)
+ ;;=^5063306
+ ;;^UTILITY(U,$J,358.3,24314,0)
+ ;;=Z77.9^^118^1204^2
+ ;;^UTILITY(U,$J,358.3,24314,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24314,1,3,0)
+ ;;=3^Hazardous to Health Contact/Exposures
+ ;;^UTILITY(U,$J,358.3,24314,1,4,0)
+ ;;=4^Z77.9
+ ;;^UTILITY(U,$J,358.3,24314,2)
+ ;;=^5063326
+ ;;^UTILITY(U,$J,358.3,24315,0)
+ ;;=Z91.89^^118^1204^12
+ ;;^UTILITY(U,$J,358.3,24315,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24315,1,3,0)
+ ;;=3^Personal Risk Factors NEC
+ ;;^UTILITY(U,$J,358.3,24315,1,4,0)
+ ;;=4^Z91.89
+ ;;^UTILITY(U,$J,358.3,24315,2)
+ ;;=^5063628
+ ;;^UTILITY(U,$J,358.3,24316,0)
+ ;;=Z76.3^^118^1205^5
+ ;;^UTILITY(U,$J,358.3,24316,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24316,1,3,0)
+ ;;=3^Healthy Person Accompanying Sick Person
+ ;;^UTILITY(U,$J,358.3,24316,1,4,0)
+ ;;=4^Z76.3
+ ;;^UTILITY(U,$J,358.3,24316,2)
+ ;;=^5063300
+ ;;^UTILITY(U,$J,358.3,24317,0)
+ ;;=Z71.0^^118^1205^3
+ ;;^UTILITY(U,$J,358.3,24317,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24317,1,3,0)
+ ;;=3^Health Service Consult on Behalf of Another Person
+ ;;^UTILITY(U,$J,358.3,24317,1,4,0)
+ ;;=4^Z71.0
+ ;;^UTILITY(U,$J,358.3,24317,2)
+ ;;=^5063242
+ ;;^UTILITY(U,$J,358.3,24318,0)
+ ;;=Z76.5^^118^1205^6
+ ;;^UTILITY(U,$J,358.3,24318,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24318,1,3,0)
+ ;;=3^Malingerer
+ ;;^UTILITY(U,$J,358.3,24318,1,4,0)
+ ;;=4^Z76.5
+ ;;^UTILITY(U,$J,358.3,24318,2)
+ ;;=^5063302
+ ;;^UTILITY(U,$J,358.3,24319,0)
+ ;;=Z71.41^^118^1205^1
+ ;;^UTILITY(U,$J,358.3,24319,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24319,1,3,0)
+ ;;=3^Alcohol Abuse Counseling/Surveillance of Alcoholic
+ ;;^UTILITY(U,$J,358.3,24319,1,4,0)
+ ;;=4^Z71.41
+ ;;^UTILITY(U,$J,358.3,24319,2)
+ ;;=^5063246

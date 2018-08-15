@@ -1,6 +1,6 @@
 IBNCPDP1 ;OAK/ELZ - IB BILLING DETERMINATION PROCESSING FOR NEW RX REQUESTS ;5/22/08
- ;;2.0;INTEGRATED BILLING;**223,276,339,363,383,405,384,411,434,437,435,455,452,473,494**;21-MAR-94;Build 11
- ;;Per VHA Directive 2004-038, this routine should not be modified.
+ ;;2.0;INTEGRATED BILLING;**223,276,339,363,383,405,384,411,434,437,435,455,452,473,494,534,550**;21-MAR-94;Build 25
+ ;;Per VA Directive 6402, this routine should not be modified.
  ;
  ; Reference to CL^SDCO21 supported by IA# 406
  ; Reference to IN5^VADPT supported by IA# 10061
@@ -21,7 +21,7 @@ RX(DFN,IBD) ; pharmacy package call, passing in IBD by ref
  K IBD("SC/EI NO ANSW"),IBD("INS")
  ;
  N IBTRKR,IBARR,IBADT,IBRXN,IBFIL,IBTRKRN,IBRMARK,IBANY,IBX,IBT,IBINS,IBSAVE,IBPRDATA,IBDISPFEE,IBADMINFEE
- N IBFEE,IBBI,IBIT,IBPRICE,IBRS,IBRT,IBTRN,IBCHG,IBRES,IBNEEDS,IBELIG,IBDEA,IBPTYP
+ N IBFEE,IBBI,IBIT,IBPRICE,IBRS,IBRT,IBTRN,IBCHG,IBRES,IBNEEDS,IBELIG,IBDEA,IBPTYP,IBACDUTY,IBINSXRES
  ;
  ; eligibility verification request flag - esg 9/9/10 IB*2*435
  S IBELIG=($G(IBD("RX ACTION"))="ELIG")
@@ -62,19 +62,9 @@ RX(DFN,IBD) ; pharmacy package call, passing in IBD by ref
  ; already in claims tracking
  S IBTRKRN=+$O(^IBT(356,"ARXFL",IBRXN,IBFIL,0))
  ;
- ; -- Check for TRICARE Inpatient - esg 8/5/10 IB*2*434
- I $P(IBRT,U,3)="T",$$INP(DFN,IBRXN,IBFIL) D  G RXQ
- . S IBRMARK="TRICARE INPATIENT/DISCHARGE"            ; reason not billable
- . D CT                                               ; update/add claims tracking entry
- . S IBRES=0_U_IBRMARK                                ; not ECME billable
- . Q
- ;
- ; -- Check for CHAMPVA Inpatient - esg 4/28/11 IB*2*452
- I $P(IBRT,U,3)="C",$$INP(DFN,IBRXN,IBFIL) D  G RXQ
- . S IBRMARK="CHAMPVA INPATIENT/DISCHARGE"            ; reason not billable
- . D CT                                               ; update/add claims tracking entry
- . S IBRES=0_U_IBRMARK                                ; not ECME billable
- . Q
+ ; Gather and store insurance information in the IBD("INS") insurance array
+ D SETINSUR(IBADT,IBRT,IBELIG,.IBINS,.IBD,.IBRES)
+ I $G(IBD("NO ECME INSURANCE")) S IBINSXRES=$G(IBRES)      ; save IBRES when there are insurance errors
  ;
  ;for secondary billing - skip claim tracking functionality
  G:$G(IBD("RXCOB"))>1 GETINS
@@ -85,63 +75,81 @@ RX(DFN,IBD) ; pharmacy package call, passing in IBD by ref
  ; -- no pharmacy coverage, update ct if applicable, quit
  I '$$PTCOV^IBCNSU3(DFN,IBADT,"PHARMACY",.IBANY) S IBRMARK=$S($G(IBANY):"SERVICE NOT COVERED",1:"NOT INSURED") D:$P(IBTRKR,U,4)=2 CT S IBRES="0^"_IBRMARK,IBD("NO ECME INSURANCE")=1 G RXQ
  ;
- ;  -- check for DEA SPECIAL HDLG
- S IBDEA=$$DEA^IBNCPDP($G(IBD("DEA")),.IBRMARK) I 'IBDEA S IBRES=IBDEA D CT G RXQ
- ;
- ;retrieve indicators from file #52 and overwrite the indicators in IBD array
+ ; Environmental Indicators Validation
+ ; Find out if the patient is Active Duty - IB*2*534
+ S IBACDUTY=$P(IBRT,U,3)="T"&$$ACDUTY^IBNCPDPU(DFN)
+ ; Retrieve indicators from file #52 and overwrite the indicators in IBD array
  D GETINDIC^IBNCPUT2(+IBD("IEN"),.IBD)
- ; -- process patient exemptions if any (if not already resolved)
- I $G(IBD("SC/EI OVR"))'=1 D CL^SDCO21(DFN,IBADT,"",.IBARR)
- ; check out exemptions
+ ; Process patient exemptions if any and if not already resolved
  S IBNEEDS=0 ;flag will be set to 1 if at least one of the questions wasn't answered
- I $G(IBD("SC/EI OVR"))'=1 I $D(IBARR)>9 F IBX=2:1 S IBT=$P($T(EXEMPT+IBX),";;",2) Q:IBT=""  D:$D(IBARR(+IBT))
- . I $G(IBD($P(IBT,U,2)))=0 Q
- . I $G(IBD($P(IBT,U,2))) S IBRMARK=$P(IBT,U,3) Q
- . I '$G(IBSCRES(IBRXN,IBFIL)) S IBNEEDS=1 D
- . . S IBD("SC/EI NO ANSW")=$S($G(IBD("SC/EI NO ANSW"))="":$P(IBT,U,2),1:$G(IBD("SC/EI NO ANSW"))_","_$P(IBT,U,2))
+ I $G(IBD("SC/EI OVR"))'=1,'IBACDUTY D
+ . D CL^SDCO21(DFN,IBADT,"",.IBARR)
+ . I $D(IBARR)>9 F IBX=2:1 S IBT=$P($T(EXEMPT+IBX),";;",2) Q:IBT=""  D:$D(IBARR(+IBT))
+ . . I $G(IBD($P(IBT,U,2)))=0 Q
+ . . I $G(IBD($P(IBT,U,2))) S IBRMARK=$P(IBT,U,3) Q
+ . . I '$G(IBSCRES(IBRXN,IBFIL)) S IBNEEDS=1 D
+ . . . S IBD("SC/EI NO ANSW")=$S($G(IBD("SC/EI NO ANSW"))="":$P(IBT,U,2),1:$G(IBD("SC/EI NO ANSW"))_","_$P(IBT,U,2))
  I '$D(IBRMARK),IBNEEDS=1 S IBRMARK="NEEDS SC DETERMINATION"
  I $D(IBRMARK) D CT S IBRES="0^"_IBRMARK G RXQ
+ ;
+ ;  -- check for drug billable
+ I '$$BILLABLE^IBNCPDP($G(IBD("DRUG")),$P(IBRT,U,3),.IBRMARK,.IBD) S IBRES="0^"_IBRMARK D CT G RXQ
+ ;
+ ; -- check for sensitive diagnosis drug and ROI on file
+ I $$SENS^IBNCPDR($G(IBD("DRUG")),.IBD),$D(IBD("INS",1,3)) D
+ . I '$$ROI^IBNCPDR4(DFN,$G(IBD("DRUG")),+$P($G(IBD("INS",1,3)),U,5),IBADT) D  Q
+ .. ;
+ .. ; no active ROI found for patient/drug/insurance/DOS
+ .. S IBRMARK="ROI NOT OBTAINED"
+ .. S IBRES="0^NO ACTIVE/VALID ROI FOR DRUG OR INSURANCE"      ; PSO routine PSOREJU3 contains this text
+ .. Q
+ . ;
+ . ; active ROI found, clear out RNB from Claims Tracking and variable IBRMARK
+ . D ROICLN^IBNCPDR4(IBTRKRN,IBRXN,IBFIL)
+ . I $G(IBRMARK)["ROI" K IBRMARK
+ . Q
+ I $D(IBRMARK) D CT G RXQ
+ ;
  ; Clean-up the NEEDS SC DETERMINATION record if resolved
  ; And check if it is non-billable in CT
  I IBTRKRN D
  . N IBNBR,IBNBRT
  . S IBNBR=$P($G(^IBT(356,+IBTRKRN,0)),U,19) Q:'IBNBR
  . S IBNBRT=$P($G(^IBE(356.8,IBNBR,0)),U) Q:IBNBRT=""
+ . ;
  . ; if refill was deleted (not RX) and now the refill is re-entered
  . ;use $$RXSTATUS^IBNCPRR instead of $G(^PSRX(IBRXN,"STA"))
  . I IBNBRT="PRESCRIPTION DELETED",$$RXSTATUS^IBNCPRR(DFN,IBRXN)'=13 D  Q
  . . N DIE,DA,DR
  . . ; clean up REASON NOT BILLABLE and ADDITIONAL COMMENT
  . . S DIE="^IBT(356,",DA=+IBTRKRN,DR=".19////@;1.08////@" D ^DIE
+ . ;
  . ; Clean up NBR if released
  . I IBNBRT="PRESCRIPTION NOT RELEASED" D:$G(IBD("RELEASE DATE"))  Q
  . . N DIE,DA,DR
  . . S DIE="^IBT(356,",DA=+IBTRKRN,DR=".19////@" D ^DIE
+ . ;
  . ; Clean up 'Needs SC determ'
  . I IBNBRT="NEEDS SC DETERMINATION" D  Q
  . . N DIE,DA,DR
  . . S DIE="^IBT(356,",DA=+IBTRKRN,DR=".19////@" D ^DIE
+ . ;
+ . ; Clean up 'DRUG NOT BILLABLE' since we made it through the $$BILLABLE function above - IB*2*550
+ . I IBNBRT="DRUG NOT BILLABLE" D  Q
+ .. N DIE,DA,DR
+ .. S DIE="^IBT(356,",DA=+IBTRKRN,DR=".19////@;1.08////@" D ^DIE
+ .. Q
+ . ;
  . S IBRMARK=IBNBRT
  I $D(IBRMARK) S IBRES="0^Non-Billable in CT: "_IBRMARK G RXQ
  ;
-GETINS ; -- setup insurance data for patient
+GETINS ; -- examine the insurance data for a patient
  ;
- D SETINSUR(IBADT,IBRT,IBELIG,.IBINS,.IBD,.IBRES)       ; build IBD("INS") insurance array
- I $G(IBD("NO ECME INSURANCE")) G RXQ
+ ; if insurance errors were detected earlier, then restore IBRES and get out
+ I $G(IBD("NO ECME INSURANCE")) S IBRES=$G(IBINSXRES) G RXQ
  ;
- ;for secondary billing - skip ROI functionality
- G:$G(IBD("RXCOB"))>1 RATEPRIC
+RATEPRIC ; determine rates/prices to use
  ;
- ; -- check drug for sensitive dx special handling code and ROI on file
- I IBD("DEA")["U",$D(IBD("INS",1,3)) D  G:$D(IBRMARK) RXQ
- . I '$$ROI^IBNCPDR4(DFN,$G(IBD("DRUG")),+$P($G(IBD("INS",1,3)),U,5),IBADT) D  Q
- .. S IBRMARK="REFUSES TO SIGN RELEASE (ROI)"
- .. D CT
- .. S IBRES="0^NOT BILLABLE, NO ROI - NO ACTIVE ROI ON FILE"
- . D ROICLN^IBNCPDR4(IBTRKRN,IBRXN,IBFIL) K:$G(IBRMARK)="REFUSES TO SIGN RELEASE (ROI)" IBRMARK
- ;
-RATEPRIC ;
- ; determine rates/prices to use
  I 'IBRT D CT S IBRES="0^Cannot determine Rate type" G RXQ
  S IBBI=$$EVNTITM^IBCRU3(+IBRT,3,"PRESCRIPTION FILL",IBADT,.IBRS)
  I 'IBBI,$P(IBBI,";")'="VA COST" D CT S IBRES="0^Cannot find Billable Item" G RXQ
@@ -315,30 +323,6 @@ SETINSUR(IBADT,IBRT,IBELIG,IBINS,IBD,IBRES) ; build insurance data array
  I '$D(IBD("INS",IBX)) S IBRES="0^No Insurance ECME billable",IBD("NO ECME INSURANCE")=1
 SETINX ;
  Q
- ;
-INP(DFN,IBRXN,IBFIL) ; Is this an inpatient, NON-BILLABLE Rx as of the Issue Date?    esg 8/5/10 - IB*2*434
- N INP,VAHOW,VAROOT,IBRXINP,VAIP,IBRXISUE,IBMW
- S INP=0
- ;
- S VAROOT="IBRXINP"
- S IBRXISUE=$$FILE^IBRXUTL(IBRXN,1)\1   ; Rx Issue Date (Field# 1)
- I 'IBRXISUE S IBRXISUE=DT
- S VAIP("D")=IBRXISUE        ; if pt was an inpatient at any time during this day
- D IN5^VADPT                 ; DBIA 10061 - inpatient episode API
- I '$G(IBRXINP(1)) G INPX    ; not an inpatient on this day
- ;
- ; check Rx issue date = discharge date. This is billable so get out (esg 9/13/10)
- I IBRXISUE=(+$G(IBRXINP(17,1))\1) G INPX
- ;
- ; if Rx/fill is MAIL, then this is billable so get out (esg 9/13/10)
- I IBFIL S IBMW=$$SUBFILE^IBRXUTL(IBRXN,IBFIL,52,2)    ; 52.1,2 MAIL/WINDOW field
- I 'IBFIL S IBMW=$$FILE^IBRXUTL(IBRXN,11)              ; 52,11 MAIL/WINDOW field
- I IBMW="M" G INPX
- ;
- ; inpatient and non-billable
- S INP=1
-INPX ;
- Q INP
  ;
 RXPCT(IBD,BWHERE) ; Penny drug cost calculation
  ; Input-IBD array, BWHERE

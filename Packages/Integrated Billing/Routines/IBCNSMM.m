@@ -1,6 +1,6 @@
 IBCNSMM ;ALB/CMS -MEDICARE INSURANCE INTAKE ; 18-OCT-98
- ;;2.0;INTEGRATED BILLING;**103,133,184**;21-MAR-94
- ;;Per VHA Directive 10-93-142, this routine should not be modified.
+ ;;2.0;INTEGRATED BILLING;**103,133,184,516,601**;21-MAR-94;Build 14
+ ;;Per VA Directive 6402, this routine should not be modified.
  Q
  ;
 EN ; -- Entry point from Medicare Intake Standalone option
@@ -46,7 +46,9 @@ ENR(DFN,IBSOUR,IBOPT) ; -- Entry point from IBCNBME Patient Registration or Pre-
  ; -- get the patient's Medicare policies
  S (IBPOLA,IBPOLB)=0
  S IBCDFN=0 F  S IBCDFN=$O(^DPT(DFN,.312,"B",+IBCNSP,IBCDFN)) Q:'IBCDFN  D
- .S IBCPOL=$G(^DPT(DFN,.312,IBCDFN,0))
+ .;IB*2.0*516/TAZ - Retrieve Data from HIPAA compliant fields.
+ .;S IBCPOL=$G(^DPT(DFN,.312,IBCDFN,0))  ;516 - baa
+ .S IBCPOL=$$ZND^IBCNS1(DFN,IBCDFN)  ;516 - baa
  .;
  .; - is the policy for Part A?
  .I $P(IBCNSP,U,3)=$P(IBCPOL,U,18) D  Q
@@ -141,6 +143,12 @@ GETWNR ;
  ;
 VALHIC(X) ; Edits for validating HIC #
  ; X = the HIC # to be validated
+ ;IB*2.0*601 JRA Remove special HIC # validation - use existing error messages IB356/IB357/IB358 when the
+ ; Primary/Secondary/Tertiary insurance subscriber's ID number is missing (as with other insurances).
+ ; 
+ ;IB*2.0*601 JRA QUIT '1' to remove special validation for HIC #, which will prevent the display of IB Error
+ ; message IB215 and the HIC # help text at HLP^IBCNSM32.
+ Q 1  ;IB*2.0*601 JRA
  N VAL
  S VAL=1
  I X'?9N1A.1AN,X'?1.3A6N,X'?1.3A9N S VAL=0

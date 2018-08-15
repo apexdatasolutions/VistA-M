@@ -1,142 +1,132 @@
-IBDEI0AD ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0AD ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,4826,1,2,0)
- ;;=2^916.4
- ;;^UTILITY(U,$J,358.3,4826,1,5,0)
- ;;=5^Insect Bite, Leg, W/O Infection
- ;;^UTILITY(U,$J,358.3,4826,2)
- ;;=^275334
- ;;^UTILITY(U,$J,358.3,4827,0)
- ;;=919.4^^39^374^9
- ;;^UTILITY(U,$J,358.3,4827,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4827,1,2,0)
- ;;=2^919.4
- ;;^UTILITY(U,$J,358.3,4827,1,5,0)
- ;;=5^Insect Bite, Skin NOS
- ;;^UTILITY(U,$J,358.3,4827,2)
- ;;=^63612
- ;;^UTILITY(U,$J,358.3,4828,0)
- ;;=912.4^^39^374^8
- ;;^UTILITY(U,$J,358.3,4828,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4828,1,2,0)
- ;;=2^912.4
- ;;^UTILITY(U,$J,358.3,4828,1,5,0)
- ;;=5^Insect Bite, Shoulder, W/O Infection
- ;;^UTILITY(U,$J,358.3,4828,2)
- ;;=^275290
- ;;^UTILITY(U,$J,358.3,4829,0)
- ;;=911.5^^39^375^9
- ;;^UTILITY(U,$J,358.3,4829,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4829,1,2,0)
- ;;=2^911.5
- ;;^UTILITY(U,$J,358.3,4829,1,5,0)
- ;;=5^Insect Bite, Trunk, W Infection
- ;;^UTILITY(U,$J,358.3,4829,2)
- ;;=^275280
- ;;^UTILITY(U,$J,358.3,4830,0)
- ;;=913.5^^39^375^1
- ;;^UTILITY(U,$J,358.3,4830,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4830,1,2,0)
- ;;=2^913.5
- ;;^UTILITY(U,$J,358.3,4830,1,5,0)
- ;;=5^Insect Bite, Arm, W Infection
- ;;^UTILITY(U,$J,358.3,4830,2)
- ;;=^275302
- ;;^UTILITY(U,$J,358.3,4831,0)
- ;;=910.5^^39^375^2
- ;;^UTILITY(U,$J,358.3,4831,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4831,1,2,0)
- ;;=2^910.5
- ;;^UTILITY(U,$J,358.3,4831,1,5,0)
- ;;=5^Insect Bite, Face, W Infection
- ;;^UTILITY(U,$J,358.3,4831,2)
- ;;=^275268
- ;;^UTILITY(U,$J,358.3,4832,0)
- ;;=915.5^^39^375^3
- ;;^UTILITY(U,$J,358.3,4832,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4832,1,2,0)
- ;;=2^915.5
- ;;^UTILITY(U,$J,358.3,4832,1,5,0)
- ;;=5^Insect Bite, Finger, W Infection
- ;;^UTILITY(U,$J,358.3,4832,2)
- ;;=^275324
- ;;^UTILITY(U,$J,358.3,4833,0)
- ;;=917.5^^39^375^4
- ;;^UTILITY(U,$J,358.3,4833,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4833,1,2,0)
- ;;=2^917.5
- ;;^UTILITY(U,$J,358.3,4833,1,5,0)
- ;;=5^Insect Bite, Foot, W Infection 
- ;;^UTILITY(U,$J,358.3,4833,2)
- ;;=^275346
- ;;^UTILITY(U,$J,358.3,4834,0)
- ;;=914.5^^39^375^5
- ;;^UTILITY(U,$J,358.3,4834,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4834,1,2,0)
- ;;=2^914.5
- ;;^UTILITY(U,$J,358.3,4834,1,5,0)
- ;;=5^Insect Bite, Hand, W Infection
- ;;^UTILITY(U,$J,358.3,4834,2)
- ;;=^275313
- ;;^UTILITY(U,$J,358.3,4835,0)
- ;;=916.5^^39^375^6
- ;;^UTILITY(U,$J,358.3,4835,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4835,1,2,0)
- ;;=2^916.5
- ;;^UTILITY(U,$J,358.3,4835,1,5,0)
- ;;=5^Insect Bite, Leg, W Infection
- ;;^UTILITY(U,$J,358.3,4835,2)
- ;;=^275335
- ;;^UTILITY(U,$J,358.3,4836,0)
- ;;=919.5^^39^375^8
- ;;^UTILITY(U,$J,358.3,4836,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4836,1,2,0)
- ;;=2^919.5
- ;;^UTILITY(U,$J,358.3,4836,1,5,0)
- ;;=5^Insect Bite, Skin NOS
- ;;^UTILITY(U,$J,358.3,4836,2)
- ;;=^275360
- ;;^UTILITY(U,$J,358.3,4837,0)
- ;;=912.5^^39^375^7
- ;;^UTILITY(U,$J,358.3,4837,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4837,1,2,0)
- ;;=2^912.5
- ;;^UTILITY(U,$J,358.3,4837,1,5,0)
- ;;=5^Insect Bite, Shoulder, W Infection
- ;;^UTILITY(U,$J,358.3,4837,2)
- ;;=^275291
- ;;^UTILITY(U,$J,358.3,4838,0)
- ;;=702.0^^39^376^1
- ;;^UTILITY(U,$J,358.3,4838,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4838,1,2,0)
- ;;=2^702.0
- ;;^UTILITY(U,$J,358.3,4838,1,5,0)
- ;;=5^Actinic Keratosis
- ;;^UTILITY(U,$J,358.3,4838,2)
- ;;=^66900
- ;;^UTILITY(U,$J,358.3,4839,0)
- ;;=757.39^^39^376^4
- ;;^UTILITY(U,$J,358.3,4839,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4839,1,2,0)
- ;;=2^757.39
- ;;^UTILITY(U,$J,358.3,4839,1,5,0)
- ;;=5^Pilaris Keratosis
- ;;^UTILITY(U,$J,358.3,4839,2)
- ;;=^87938
- ;;^UTILITY(U,$J,358.3,4840,0)
- ;;=702.19^^39^376^5
+ ;;^UTILITY(U,$J,358.3,4322,2)
+ ;;=^5059807
+ ;;^UTILITY(U,$J,358.3,4323,0)
+ ;;=W11.XXXD^^28^265^14
+ ;;^UTILITY(U,$J,358.3,4323,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4323,1,3,0)
+ ;;=3^Fall from Ladder,Subsequent
+ ;;^UTILITY(U,$J,358.3,4323,1,4,0)
+ ;;=4^W11.XXXD
+ ;;^UTILITY(U,$J,358.3,4323,2)
+ ;;=^5059596
+ ;;^UTILITY(U,$J,358.3,4324,0)
+ ;;=W01.10XD^^28^265^2
+ ;;^UTILITY(U,$J,358.3,4324,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4324,1,3,0)
+ ;;=3^Fall Same Level w/ Strike Against Object,Subsequent
+ ;;^UTILITY(U,$J,358.3,4324,1,4,0)
+ ;;=4^W01.10XD
+ ;;^UTILITY(U,$J,358.3,4324,2)
+ ;;=^5059526
+ ;;^UTILITY(U,$J,358.3,4325,0)
+ ;;=W01.0XXD^^28^265^3
+ ;;^UTILITY(U,$J,358.3,4325,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4325,1,3,0)
+ ;;=3^Fall Same Level w/o Strike Against Object,Subsequent
+ ;;^UTILITY(U,$J,358.3,4325,1,4,0)
+ ;;=4^W01.0XXD
+ ;;^UTILITY(U,$J,358.3,4325,2)
+ ;;=^5059523
+ ;;^UTILITY(U,$J,358.3,4326,0)
+ ;;=W18.30XD^^28^265^4
+ ;;^UTILITY(U,$J,358.3,4326,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4326,1,3,0)
+ ;;=3^Fall Same Level,Unspec,Subsequent
+ ;;^UTILITY(U,$J,358.3,4326,1,4,0)
+ ;;=4^W18.30XD
+ ;;^UTILITY(U,$J,358.3,4326,2)
+ ;;=^5059810
+ ;;^UTILITY(U,$J,358.3,4327,0)
+ ;;=W04.XXXD^^28^265^6
+ ;;^UTILITY(U,$J,358.3,4327,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4327,1,3,0)
+ ;;=3^Fall While Being Carried by Oth Persons,Subsequent
+ ;;^UTILITY(U,$J,358.3,4327,1,4,0)
+ ;;=4^W04.XXXD
+ ;;^UTILITY(U,$J,358.3,4327,2)
+ ;;=^5059548
+ ;;^UTILITY(U,$J,358.3,4328,0)
+ ;;=W17.89XD^^28^265^18
+ ;;^UTILITY(U,$J,358.3,4328,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4328,1,3,0)
+ ;;=3^Fall from One Level to Another,Subsequent
+ ;;^UTILITY(U,$J,358.3,4328,1,4,0)
+ ;;=4^W17.89XD
+ ;;^UTILITY(U,$J,358.3,4328,2)
+ ;;=^5059788
+ ;;^UTILITY(U,$J,358.3,4329,0)
+ ;;=W03.XXXD^^28^265^1
+ ;;^UTILITY(U,$J,358.3,4329,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4329,1,3,0)
+ ;;=3^Fall Same Level d/t Collision w/ Another Person,Subsequent
+ ;;^UTILITY(U,$J,358.3,4329,1,4,0)
+ ;;=4^W03.XXXD
+ ;;^UTILITY(U,$J,358.3,4329,2)
+ ;;=^5059545
+ ;;^UTILITY(U,$J,358.3,4330,0)
+ ;;=W18.00XD^^28^265^8
+ ;;^UTILITY(U,$J,358.3,4330,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4330,1,3,0)
+ ;;=3^Fall d/t Striking Unspec Object,Subsequent
+ ;;^UTILITY(U,$J,358.3,4330,1,4,0)
+ ;;=4^W18.00XD
+ ;;^UTILITY(U,$J,358.3,4330,2)
+ ;;=^5059791
+ ;;^UTILITY(U,$J,358.3,4331,0)
+ ;;=W00.9XXD^^28^265^7
+ ;;^UTILITY(U,$J,358.3,4331,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4331,1,3,0)
+ ;;=3^Fall d/t Snow/Ice,Subsequent
+ ;;^UTILITY(U,$J,358.3,4331,1,4,0)
+ ;;=4^W00.9XXD
+ ;;^UTILITY(U,$J,358.3,4331,2)
+ ;;=^5059520
+ ;;^UTILITY(U,$J,358.3,4332,0)
+ ;;=W19.XXXD^^28^265^5
+ ;;^UTILITY(U,$J,358.3,4332,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4332,1,3,0)
+ ;;=3^Fall Unspec,Subsequent
+ ;;^UTILITY(U,$J,358.3,4332,1,4,0)
+ ;;=4^W19.XXXD
+ ;;^UTILITY(U,$J,358.3,4332,2)
+ ;;=^5059834
+ ;;^UTILITY(U,$J,358.3,4333,0)
+ ;;=W18.40XD^^28^265^24
+ ;;^UTILITY(U,$J,358.3,4333,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4333,1,3,0)
+ ;;=3^Slip/Trip/Stumble w/o Falling,Subsequent
+ ;;^UTILITY(U,$J,358.3,4333,1,4,0)
+ ;;=4^W18.40XD
+ ;;^UTILITY(U,$J,358.3,4333,2)
+ ;;=^5059819
+ ;;^UTILITY(U,$J,358.3,4334,0)
+ ;;=R27.0^^28^266^2
+ ;;^UTILITY(U,$J,358.3,4334,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4334,1,3,0)
+ ;;=3^Ataxia,Unspec
+ ;;^UTILITY(U,$J,358.3,4334,1,4,0)
+ ;;=4^R27.0
+ ;;^UTILITY(U,$J,358.3,4334,2)
+ ;;=^5019310
+ ;;^UTILITY(U,$J,358.3,4335,0)
+ ;;=Z74.1^^28^266^1
+ ;;^UTILITY(U,$J,358.3,4335,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4335,1,3,0)
+ ;;=3^Assistance Needed for Personal Care

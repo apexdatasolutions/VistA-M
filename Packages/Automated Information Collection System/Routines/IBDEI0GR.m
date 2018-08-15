@@ -1,142 +1,130 @@
-IBDEI0GR ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0GR ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,8139,1,0)
+ ;;^UTILITY(U,$J,358.3,7477,1,4,0)
+ ;;=4^T85.631D
+ ;;^UTILITY(U,$J,358.3,7477,2)
+ ;;=^5055644
+ ;;^UTILITY(U,$J,358.3,7478,0)
+ ;;=H54.8^^52^501^25
+ ;;^UTILITY(U,$J,358.3,7478,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8139,1,3,0)
- ;;=3^Cataract, Diabetic
- ;;^UTILITY(U,$J,358.3,8139,1,4,0)
- ;;=4^366.41
- ;;^UTILITY(U,$J,358.3,8139,2)
- ;;=^33638^250.00
- ;;^UTILITY(U,$J,358.3,8140,0)
- ;;=366.00^^58^606^9
- ;;^UTILITY(U,$J,358.3,8140,1,0)
+ ;;^UTILITY(U,$J,358.3,7478,1,3,0)
+ ;;=3^Legal Blindness,USA Definition
+ ;;^UTILITY(U,$J,358.3,7478,1,4,0)
+ ;;=4^H54.8
+ ;;^UTILITY(U,$J,358.3,7478,2)
+ ;;=^5006369
+ ;;^UTILITY(U,$J,358.3,7479,0)
+ ;;=N25.89^^52^501^18
+ ;;^UTILITY(U,$J,358.3,7479,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8140,1,3,0)
- ;;=3^Cataract, Nonsenile NOS
- ;;^UTILITY(U,$J,358.3,8140,1,4,0)
- ;;=4^366.00
- ;;^UTILITY(U,$J,358.3,8140,2)
- ;;=^268786
- ;;^UTILITY(U,$J,358.3,8141,0)
- ;;=366.02^^58^606^26
- ;;^UTILITY(U,$J,358.3,8141,1,0)
+ ;;^UTILITY(U,$J,358.3,7479,1,3,0)
+ ;;=3^Impaired Renal Tubular Function Disorders,Other
+ ;;^UTILITY(U,$J,358.3,7479,1,4,0)
+ ;;=4^N25.89
+ ;;^UTILITY(U,$J,358.3,7479,2)
+ ;;=^5015618
+ ;;^UTILITY(U,$J,358.3,7480,0)
+ ;;=T82.590A^^52^501^28
+ ;;^UTILITY(U,$J,358.3,7480,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8141,1,3,0)
- ;;=3^Presenile Cataract,Post Subcap
- ;;^UTILITY(U,$J,358.3,8141,1,4,0)
- ;;=4^366.02
- ;;^UTILITY(U,$J,358.3,8141,2)
- ;;=^268788
- ;;^UTILITY(U,$J,358.3,8142,0)
- ;;=366.03^^58^606^24
- ;;^UTILITY(U,$J,358.3,8142,1,0)
+ ;;^UTILITY(U,$J,358.3,7480,1,3,0)
+ ;;=3^Mech Comp,Surgically Created AV Fistula,Init Encntr
+ ;;^UTILITY(U,$J,358.3,7480,1,4,0)
+ ;;=4^T82.590A
+ ;;^UTILITY(U,$J,358.3,7480,2)
+ ;;=^5054884
+ ;;^UTILITY(U,$J,358.3,7481,0)
+ ;;=T82.590D^^52^501^29
+ ;;^UTILITY(U,$J,358.3,7481,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8142,1,3,0)
- ;;=3^Presenile Cataract,Cortical,Lemellar
- ;;^UTILITY(U,$J,358.3,8142,1,4,0)
- ;;=4^366.03
- ;;^UTILITY(U,$J,358.3,8142,2)
- ;;=^268789
- ;;^UTILITY(U,$J,358.3,8143,0)
- ;;=366.04^^58^606^25
- ;;^UTILITY(U,$J,358.3,8143,1,0)
+ ;;^UTILITY(U,$J,358.3,7481,1,3,0)
+ ;;=3^Mech Comp,Surgically Created AV Fistula,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,7481,1,4,0)
+ ;;=4^T82.590D
+ ;;^UTILITY(U,$J,358.3,7481,2)
+ ;;=^5054885
+ ;;^UTILITY(U,$J,358.3,7482,0)
+ ;;=T85.691A^^52^501^26
+ ;;^UTILITY(U,$J,358.3,7482,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8143,1,3,0)
- ;;=3^Presenile Cataract,Nuclear
- ;;^UTILITY(U,$J,358.3,8143,1,4,0)
- ;;=4^366.04
- ;;^UTILITY(U,$J,358.3,8143,2)
- ;;=^268790
- ;;^UTILITY(U,$J,358.3,8144,0)
- ;;=366.10^^58^606^16
- ;;^UTILITY(U,$J,358.3,8144,1,0)
+ ;;^UTILITY(U,$J,358.3,7482,1,3,0)
+ ;;=3^Mech Comp,Intraperitoneal Dialysis Catheter,Init Encntr
+ ;;^UTILITY(U,$J,358.3,7482,1,4,0)
+ ;;=4^T85.691A
+ ;;^UTILITY(U,$J,358.3,7482,2)
+ ;;=^5055655
+ ;;^UTILITY(U,$J,358.3,7483,0)
+ ;;=T85.691D^^52^501^27
+ ;;^UTILITY(U,$J,358.3,7483,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8144,1,3,0)
- ;;=3^Cataract, Senile NOS
- ;;^UTILITY(U,$J,358.3,8144,1,4,0)
- ;;=4^366.10
- ;;^UTILITY(U,$J,358.3,8144,2)
- ;;=^109203
- ;;^UTILITY(U,$J,358.3,8145,0)
- ;;=379.32^^58^606^29
- ;;^UTILITY(U,$J,358.3,8145,1,0)
+ ;;^UTILITY(U,$J,358.3,7483,1,3,0)
+ ;;=3^Mech Comp,Intraperitoneal Dialysis Catheter,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,7483,1,4,0)
+ ;;=4^T85.691D
+ ;;^UTILITY(U,$J,358.3,7483,2)
+ ;;=^5055656
+ ;;^UTILITY(U,$J,358.3,7484,0)
+ ;;=T82.898A^^52^501^6
+ ;;^UTILITY(U,$J,358.3,7484,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8145,1,3,0)
- ;;=3^Subluxation of Lens
- ;;^UTILITY(U,$J,358.3,8145,1,4,0)
- ;;=4^379.32
- ;;^UTILITY(U,$J,358.3,8145,2)
- ;;=^69116
- ;;^UTILITY(U,$J,358.3,8146,0)
- ;;=366.22^^58^606^18
- ;;^UTILITY(U,$J,358.3,8146,1,0)
+ ;;^UTILITY(U,$J,358.3,7484,1,3,0)
+ ;;=3^Complication of Vascular Graft,Init Encntr
+ ;;^UTILITY(U,$J,358.3,7484,1,4,0)
+ ;;=4^T82.898A
+ ;;^UTILITY(U,$J,358.3,7484,2)
+ ;;=^5054953
+ ;;^UTILITY(U,$J,358.3,7485,0)
+ ;;=T82.898D^^52^501^7
+ ;;^UTILITY(U,$J,358.3,7485,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8146,1,3,0)
- ;;=3^Cataract, Total Traumatic
- ;;^UTILITY(U,$J,358.3,8146,1,4,0)
- ;;=4^366.22
- ;;^UTILITY(U,$J,358.3,8146,2)
- ;;=^268805
- ;;^UTILITY(U,$J,358.3,8147,0)
- ;;=366.13^^58^606^2
- ;;^UTILITY(U,$J,358.3,8147,1,0)
+ ;;^UTILITY(U,$J,358.3,7485,1,3,0)
+ ;;=3^Complication of Vascular Graft,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,7485,1,4,0)
+ ;;=4^T82.898D
+ ;;^UTILITY(U,$J,358.3,7485,2)
+ ;;=^5054954
+ ;;^UTILITY(U,$J,358.3,7486,0)
+ ;;=N25.81^^52^501^36
+ ;;^UTILITY(U,$J,358.3,7486,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8147,1,3,0)
- ;;=3^Cataract, Ant Subcaps Senile
- ;;^UTILITY(U,$J,358.3,8147,1,4,0)
- ;;=4^366.13
- ;;^UTILITY(U,$J,358.3,8147,2)
- ;;=^268795
- ;;^UTILITY(U,$J,358.3,8148,0)
- ;;=366.45^^58^606^17
- ;;^UTILITY(U,$J,358.3,8148,1,0)
+ ;;^UTILITY(U,$J,358.3,7486,1,3,0)
+ ;;=3^Secondary Hyperparathyroidism of Renal Origin
+ ;;^UTILITY(U,$J,358.3,7486,1,4,0)
+ ;;=4^N25.81
+ ;;^UTILITY(U,$J,358.3,7486,2)
+ ;;=^5015617
+ ;;^UTILITY(U,$J,358.3,7487,0)
+ ;;=T82.858A^^52^501^37
+ ;;^UTILITY(U,$J,358.3,7487,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8148,1,3,0)
- ;;=3^Cataract, Steroid Induced
- ;;^UTILITY(U,$J,358.3,8148,1,4,0)
- ;;=4^366.45
- ;;^UTILITY(U,$J,358.3,8148,2)
- ;;=^268819^E932.0
- ;;^UTILITY(U,$J,358.3,8149,0)
- ;;=366.18^^58^606^7
- ;;^UTILITY(U,$J,358.3,8149,1,0)
+ ;;^UTILITY(U,$J,358.3,7487,1,3,0)
+ ;;=3^Stenosis of Vascular Graft,Init Encntr
+ ;;^UTILITY(U,$J,358.3,7487,1,4,0)
+ ;;=4^T82.858A
+ ;;^UTILITY(U,$J,358.3,7487,2)
+ ;;=^5054941
+ ;;^UTILITY(U,$J,358.3,7488,0)
+ ;;=T82.858D^^52^501^38
+ ;;^UTILITY(U,$J,358.3,7488,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8149,1,3,0)
- ;;=3^Cataract, Hypermature
- ;;^UTILITY(U,$J,358.3,8149,1,4,0)
- ;;=4^366.18
- ;;^UTILITY(U,$J,358.3,8149,2)
- ;;=^265532
- ;;^UTILITY(U,$J,358.3,8150,0)
- ;;=996.53^^58^606^22
- ;;^UTILITY(U,$J,358.3,8150,1,0)
+ ;;^UTILITY(U,$J,358.3,7488,1,3,0)
+ ;;=3^Stenosis of Vascular Graft,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,7488,1,4,0)
+ ;;=4^T82.858D
+ ;;^UTILITY(U,$J,358.3,7488,2)
+ ;;=^5054942
+ ;;^UTILITY(U,$J,358.3,7489,0)
+ ;;=T82.868A^^52^501^39
+ ;;^UTILITY(U,$J,358.3,7489,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8150,1,3,0)
- ;;=3^Mech Compl IOL
- ;;^UTILITY(U,$J,358.3,8150,1,4,0)
- ;;=4^996.53
- ;;^UTILITY(U,$J,358.3,8150,2)
- ;;=^276279
- ;;^UTILITY(U,$J,358.3,8151,0)
- ;;=379.39^^58^606^27
- ;;^UTILITY(U,$J,358.3,8151,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8151,1,3,0)
- ;;=3^Pseudophakia
- ;;^UTILITY(U,$J,358.3,8151,1,4,0)
- ;;=4^379.39
- ;;^UTILITY(U,$J,358.3,8151,2)
- ;;=^87515
- ;;^UTILITY(U,$J,358.3,8152,0)
- ;;=362.36^^58^607^7
- ;;^UTILITY(U,$J,358.3,8152,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8152,1,3,0)
- ;;=3^Brvo/Branch Retinal Vein Occlusion
- ;;^UTILITY(U,$J,358.3,8152,1,4,0)
- ;;=4^362.36
- ;;^UTILITY(U,$J,358.3,8152,2)
- ;;=Branch Retina Vein Occlusion^268626
+ ;;^UTILITY(U,$J,358.3,7489,1,3,0)
+ ;;=3^Thrombosis of Vascular Graft,Init Encntr
+ ;;^UTILITY(U,$J,358.3,7489,1,4,0)
+ ;;=4^T82.868A
+ ;;^UTILITY(U,$J,358.3,7489,2)
+ ;;=^5054947
+ ;;^UTILITY(U,$J,358.3,7490,0)
+ ;;=T82.868D^^52^501^40

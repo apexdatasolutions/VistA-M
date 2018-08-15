@@ -1,7 +1,8 @@
-FBAAPIE ;AISC/GRR-ENTER FEE PHARMACY INVOICE ;7/8/2003
- ;;3.5;FEE BASIS;**61,124**;JAN 30, 1995;Build 20
- ;;Per VHA Directive 10-93-142, this routine should not be modified.
+FBAAPIE ;AISC/GRR - ENTER FEE PHARMACY INVOICE ;9/25/2014
+ ;;3.5;FEE BASIS;**61,124,123,154**;JAN 30, 1995;Build 12
+ ;;Per VA Directive 6402, this routine should not be modified.
  D SITEP^FBAAUTL W:FBPOP !!,*7,"Fee site parameters must be initialized!!" Q:FBPOP  S FBMDF=$P(FBSITE(0),"^",10),FBAAPTC=$S($D(FBAAPTC):FBAAPTC,1:"V")
+ N FBIA,FBDODINV
 RD1 W ! S DIR("A")="Are you sure you want to enter a new invoice",DIR("B")="Yes",DIR(0)="Y" D ^DIR K DIR G Q^FBAAPIE1:$D(DIRUT),RDM^FBAAPIE1:'Y
 ENTER S (LCNT,TAC,FBINTOT)=0,STAT(0)="",FBAAOUT=1 K FBTOUT
  D GETNXI^FBAAUTL S X=FBAAIN
@@ -12,6 +13,10 @@ RDV I '$D(FB583) W !! S DLAYGO=161.2,(DIE,DIC)="^FBAAV(",DIC(0)="AEQLM" D ^DIC K
  D EN1^FBAAVD:$P(FBSITE(0),"^",12)="Y" S VIN=DA
 RDV1 I $D(^XUSEC("FBAA ESTABLISH VENDOR",DUZ)) W ! S DIR("A")="Want to edit Vendor data",DIR("B")="No",DIR(0)="Y" D ^DIR K DIR G CHK:$D(DIRUT) D:Y EDITV^FBAAVD S VIN=DA
  S FBAR(DA)="" D ^FBAACO4
+ ;
+ ; FB*3.5*123 - check for IPAC agreement for Federal Vendor
+ S FBIA=$$IPAC^FBAAMP($G(VIN)) I FBIA=-1 G CHK
+ ;
  W !! S %DT="AEQXP",%DT(0)=-DT,%DT("A")="Date Correct Invoice Received: " D ^%DT K %DT(0),%DT("A") G CHK:Y<0 S INVDATE=Y
  W !! S %DT="AEQXP",%DT(0)=-INVDATE,%DT("A")="Vendor Invoice Date:  " D ^%DT K %DT(0),%DT("A") G CHK:Y<0 S FBVINVDT=Y
  ; if U/C then get FPPS Claim ID else ask user
@@ -19,12 +24,18 @@ RDV1 I $D(^XUSEC("FBAA ESTABLISH VENDOR",DUZ)) W ! S DIR("A")="Want to edit Vend
  E  S FBFPPSC=$$FPPSC^FBUTL5() I FBFPPSC=-1 K FBFPPSC G CHK
  S (DIE,DIC)="^FBAA(162.1,",DA=IN
  S DR="1////^S X=INVDATE;1.5////^S X=DT;2////^S X=DUZ;3////^S X=VIN;5////^S X=1;12////^S X=FBVINVDT;13///^S X=FBFPPSC"
+ I $G(FBIA) S DR=DR_";14////^S X=FBIA"    ; FB*3.5*123 file IPAC agreement ptr if it exists
  D ^DIE
  I '$D(^FBAA(162.1,IN,"RX",0)) S ^FBAA(162.1,IN,"RX",0)="^162.11A^^"
 RDP S FBPHARM=1 W:FBINTOT>0 !,?15,"Pharmacy Invoice #: "_IN_"  Totals: $ "_$J(FBINTOT,1,2)
  ; if EDI then ask FPPS Line Item
  I FBFPPSC]"" W !!! S FBFPPSL=$$FPPSL^FBUTL5() I FBFPPSL=-1 K FBFPPSL G CHK
  D ^FBAASAP K FBPHARM I 'DFN K DFN G CHK
+ ;
+ I '$D(FB583),'$$UOKPAY^FBUTL9(DFN,FTP) D  G RDP
+ . W !!,"You cannot process a payment associated with authorization ",DFN,"-",FTP
+ . W !,"due to separation of duties."
+ ;
  I FBTT=1 S FBMST="Y",FBTTYPE="A",FBFDC="",FBD1=FTP D ENT^FBAAAUT
  D HOME^%ZIS,FBPH^FBAAUTL2 I $D(DIRUT),$D(FB583) G CHK
 RDD W !! S %DT(0)=-DT,%DT="AEXP",%DT("A")="DATE PRESCRIPTION FILLED: " D ^%DT K %DT G:X["^"!(X="") RDP G RDD:Y<0 S DATEF=Y
@@ -32,6 +43,11 @@ RDD W !! S %DT(0)=-DT,%DT="AEXP",%DT("A")="DATE PRESCRIPTION FILLED: " D ^%DT K 
  I INVDATE]"",DATEF>INVDATE D  G RDD
  .N SHOINVDT S SHOINVDT=$E(INVDATE,4,5)_"/"_$E(INVDATE,6,7)_"/"_$E(INVDATE,2,3)
  .W !!,*7,?5,"*** Date Prescription Filled cannot be later than",!?8," Invoice Received Date (",SHOINVDT,") !!!"
+ ;
+ ; FB*3.5*123 - for IPAC capture the DoD Invoice number
+ I $G(FBIA),'$$IPACINV^FBAAMP(.FBDODINV) G RDD
+ I '$G(FBIA) S FBDODINV=""
+ ;
  I '$D(^FBAA(162.1,IN,"RX",0)) S ^FBAA(162.1,IN,"RX",0)="^162.11A^^"
 RDRX S DIR(0)="162.11,.01",DIR("A")="Select PRESCRIPTION NUMBER" D ^DIR K DIR G CHK:Y="^"!(Y="") S PSRX=Y,AC=0
  I $D(^FBAA(162.1,IN,"RX","B",PSRX)) G RX2^FBAAPIE1

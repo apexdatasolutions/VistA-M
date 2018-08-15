@@ -1,20 +1,21 @@
 IBCECOB ;ALB/CXW - IB COB MANAGEMENT SCREEN ;16-JUN-1999
- ;;2.0;INTEGRATED BILLING;**137,155,288,432,488**;21-MAR-1994;Build 184
- ;;Per VHA Directive 2004-038, this routine should not be modified.
+ ;;2.0;INTEGRATED BILLING;**137,155,288,432,488,516,547,576**;21-MAR-94;Build 45
+ ;;Per VA Directive 6402, this routine should not be modified.
  ;
 EN ; -- main entry point for COB management
- K IBSRT,IBMRADUP
+ K IBSRT,IBMRADUP,IBSRCH
  I $G(IBMRANOT) D EN^VALM("IBCEM COB MANAGEMENT") ;WCJ;IB*2.0*432
  I '$G(IBMRANOT) D EN^VALM("IBCEM MRA MANAGEMENT") ;WCJ;IB*2.0*432
  Q
  ;
 HDR ; -- header code
- I '$G(IBMRANOT) S VALMSG="!=Data Mismatch/MSE      Enter ?? for more actions"
+ ;I '$G(IBMRANOT) S VALMSG="!=Data Mismatch/MSE      Enter ?? for more actions"
+ I '$G(IBMRANOT) S VALMSG="!=Data Mismatch/MSE | *=Review in Process"  ;IB*2*576 - vd
  Q
  ;
 INIT ; -- init variables and list array
- N DIC,DIRUT,DIROUT,DTOUT,DUOUT,X,Y,DIR,IB1
- K ^TMP("IBBIL",$J)
+ N DIC,DIRUT,DIROUT,DTOUT,DUOUT,X,Y,DIR,IB1,IBQUIT
+ K ^TMP("IBBIL",$J),^TMP("IBBIL-DIV",$J)
  S IBSRT=""
  S IB1=1
  W !
@@ -25,9 +26,55 @@ INIT ; -- init variables and list array
  . S IB1=0
  I $D(DTOUT)!$D(DUOUT) S VALMQUIT=1 G INITQ
  ;
- S DIR("A")="Sort By: ",DIR("B")="BILLER"
+ I '$G(IBMRANOT) G DIVX
+ ;
+DIV ; division
+ W !
+ S DIR(0)="SA^A:All Divisions;S:Selected Divisions"
+ S DIR("A")="Include All Divisions or Selected Divisions? "
+ S DIR("B")="All"
+ D ^DIR K DIR
+ I $D(DIROUT)!$D(DIRUT) S VALMQUIT=1 G INITQ  ;Timeout or User "^"
+ I Y="A" G DIVX
+ ;
+ W !
+ S IBQUIT=0
+ F  D  I IBQUIT S IBQUIT=IBQUIT-1 Q
+ . S DIC=40.8,DIC(0)="AEMQ",DIC("A")="   Select Division: "
+ . I $O(^TMP("IBBIL-DIV",$J,"")) S DIC("A")="   Select Another Division: "
+ . D ^DIC K DIC                ; lookup
+ . I X="^^" S IBQUIT=2 Q       ; user entered ^^
+ . I +Y'>0 S IBQUIT=1 Q        ; user is done
+ . S ^TMP("IBBIL-DIV",$J,+Y)=$P(Y,U,2)
+ . Q
+ ;
+ I IBQUIT S VALMQUIT=1 G INITQ  ;User "^" out of the selection
+ ;
+ I '$O(^TMP("IBBIL-DIV",$J,"")) D  G DIV
+ . W *7,!!?3,"No divisions have been selected.  Please try again."
+ . Q
+ ;
+DIVX ; Exit Division selection.
+ ;
+ W !
+ I '$G(IBMRANOT) S DIR("A")="Within Division " G SRT
+ ;
+CLM ; patch 547 - new claim prompt for CBW
+ ;
+ S DIR("A")="(P)rimary Claims,(S)econdary Claims or (B)oth: ",DIR("B")="Both"
+ S DIR(0)="SBA^P -:Primary Claims;S -:Secondary Claims;B -:Both"
+ S DIR("?")="This field determines whether you want to search for just primary claims, just secondary/tertiary claims or both."
+ D ^DIR K DIR S DIR("A")=""
+ I $D(DTOUT)!$D(DUOUT) S VALMQUIT=1 G INITQ
+ S IBSRCH=$E(Y)
+ W !
+ ;
+SRT ;
+ S DIR("A")=DIR("A")_"Sort By: ",DIR("B")="BILLER"
  S DIR(0)="SBA^B:BILLER;D:DAYS SINCE TRANSMISSION OF LATEST BILL;L:DATE LAST "_$S($G(IBMRANOT):"EOB",1:"MRA")_" RECEIVED;"
- S DIR(0)=DIR(0)_"I:SECONDARY INSURANCE COMPANY;M:"_$S($G(IBMRANOT):"EOB",1:"MRA")_" STATUS;P:PATIENT NAME;R:PATIENT RESPONSIBILITY;S:SERVICE DATE"
+ ; IB*2.0*547 add Tertiary and Primary Insurance Company sorts for CBW
+ S:'$G(IBMRANOT) DIR(0)=DIR(0)_"I:SECONDARY INSURANCE COMPANY;M:"_$S($G(IBMRANOT):"EOB",1:"MRA")_" STATUS;P:PATIENT NAME;R:PATIENT RESPONSIBILITY;S:SERVICE DATE"
+ S:$G(IBMRANOT)=1 DIR(0)=DIR(0)_"I:SECONDARY INSURANCE COMPANY;M:"_$S($G(IBMRANOT):"EOB",1:"MRA")_" STATUS;P:PATIENT NAME;R:PATIENT RESPONSIBILITY;S:SERVICE DATE;K:PRIMARY INSURANCE COMPANY"
  S DIR("?")="Enter the code to indicate how the list should be sorted." D ^DIR K DIR
  I $D(DTOUT)!$D(DUOUT) S VALMQUIT=1 G INITQ
  S IBSRT=Y
@@ -40,6 +87,7 @@ INIT ; -- init variables and list array
  I Y S IBMRADUP=1
  ;
  D BLD^IBCECOB1
+ ;
 INITQ Q
  ;
 HELP ; -- help code
@@ -47,8 +95,9 @@ HELP ; -- help code
  Q
  ;
 EXIT ; -- exit code
- K ^TMP("IBCECOB",$J),^TMP("IBCOBST",$J),^TMP("IBBIL",$J)
- K ^TMP("IBCECOB1",$J),^TMP("IBCOBSTX",$J)
+ K ^TMP("IBBIL",$J),^TMP("IBBIL-DIV",$J)
+ K ^TMP("IBCECOB",$J),^TMP("IBCECOB1",$J)
+ K ^TMP("IBCOBST",$J),^TMP("IBCOBSTX",$J)
  D CLEAN^VALM10
  Q
  ;

@@ -1,132 +1,124 @@
-IBDEI1BT ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1BT ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,23754,0)
- ;;=51720^^151^1513^6^^^^1
- ;;^UTILITY(U,$J,358.3,23754,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23754,1,2,0)
- ;;=2^51720
- ;;^UTILITY(U,$J,358.3,23754,1,3,0)
- ;;=3^Bladder Instill Anticarc
- ;;^UTILITY(U,$J,358.3,23755,0)
- ;;=J0897^^151^1513^11^^^^1
- ;;^UTILITY(U,$J,358.3,23755,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23755,1,2,0)
- ;;=2^J0897
- ;;^UTILITY(U,$J,358.3,23755,1,3,0)
- ;;=3^Denosumab Inj 1 mg
- ;;^UTILITY(U,$J,358.3,23756,0)
- ;;=J1950^^151^1513^18^^^^1
- ;;^UTILITY(U,$J,358.3,23756,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23756,1,2,0)
- ;;=2^J1950
- ;;^UTILITY(U,$J,358.3,23756,1,3,0)
- ;;=3^Leuprolide Acetate Susp 3.75 mg
- ;;^UTILITY(U,$J,358.3,23757,0)
- ;;=J3489^^151^1513^27^^^^1
- ;;^UTILITY(U,$J,358.3,23757,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23757,1,2,0)
- ;;=2^J3489
- ;;^UTILITY(U,$J,358.3,23757,1,3,0)
- ;;=3^Zoledronic Acid 1 mg
- ;;^UTILITY(U,$J,358.3,23758,0)
- ;;=J3490^^151^1513^23^^^^1
- ;;^UTILITY(U,$J,358.3,23758,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23758,1,2,0)
- ;;=2^J3490
- ;;^UTILITY(U,$J,358.3,23758,1,3,0)
- ;;=3^Unclassified Biologics
- ;;^UTILITY(U,$J,358.3,23759,0)
- ;;=J9031^^151^1513^4^^^^1
- ;;^UTILITY(U,$J,358.3,23759,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23759,1,2,0)
- ;;=2^J9031
- ;;^UTILITY(U,$J,358.3,23759,1,3,0)
- ;;=3^BCG
- ;;^UTILITY(U,$J,358.3,23760,0)
- ;;=J9155^^151^1513^10^^^^1
- ;;^UTILITY(U,$J,358.3,23760,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23760,1,2,0)
- ;;=2^J9155
- ;;^UTILITY(U,$J,358.3,23760,1,3,0)
- ;;=3^Degarelix 1 mg
- ;;^UTILITY(U,$J,358.3,23761,0)
- ;;=J9217^^151^1513^19^^^^1
- ;;^UTILITY(U,$J,358.3,23761,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23761,1,2,0)
- ;;=2^J9217
- ;;^UTILITY(U,$J,358.3,23761,1,3,0)
- ;;=3^Leuprolide Acetate Susp 7.5 mg
- ;;^UTILITY(U,$J,358.3,23762,0)
- ;;=J9218^^151^1513^16^^^^1
- ;;^UTILITY(U,$J,358.3,23762,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23762,1,2,0)
- ;;=2^J9218
- ;;^UTILITY(U,$J,358.3,23762,1,3,0)
- ;;=3^Leuprolide Acetate 1 mg
- ;;^UTILITY(U,$J,358.3,23763,0)
- ;;=J9219^^151^1513^17^^^^1
- ;;^UTILITY(U,$J,358.3,23763,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23763,1,2,0)
- ;;=2^J9219
- ;;^UTILITY(U,$J,358.3,23763,1,3,0)
- ;;=3^Leuprolide Acetate Implant 65 mg
- ;;^UTILITY(U,$J,358.3,23764,0)
- ;;=J0270^^151^1513^2^^^^1
- ;;^UTILITY(U,$J,358.3,23764,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23764,1,2,0)
- ;;=2^J0270
- ;;^UTILITY(U,$J,358.3,23764,1,3,0)
- ;;=3^Alprostadil 1.25 mcg
- ;;^UTILITY(U,$J,358.3,23765,0)
- ;;=J0275^^151^1513^3^^^^1
- ;;^UTILITY(U,$J,358.3,23765,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23765,1,2,0)
- ;;=2^J0275
- ;;^UTILITY(U,$J,358.3,23765,1,3,0)
- ;;=3^Alprostadil Urethral Suppository
- ;;^UTILITY(U,$J,358.3,23766,0)
- ;;=J2370^^151^1513^21^^^^1
- ;;^UTILITY(U,$J,358.3,23766,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23766,1,2,0)
- ;;=2^J2370
- ;;^UTILITY(U,$J,358.3,23766,1,3,0)
- ;;=3^Phenyleprhine HCL 1 mg
- ;;^UTILITY(U,$J,358.3,23767,0)
- ;;=J1212^^151^1513^8^^^^1
- ;;^UTILITY(U,$J,358.3,23767,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23767,1,2,0)
- ;;=2^J1212
- ;;^UTILITY(U,$J,358.3,23767,1,3,0)
- ;;=3^DMSO per 50 ml
- ;;^UTILITY(U,$J,358.3,23768,0)
- ;;=J9031^^151^1513^5^^^^1
- ;;^UTILITY(U,$J,358.3,23768,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23768,1,2,0)
- ;;=2^J9031
- ;;^UTILITY(U,$J,358.3,23768,1,3,0)
- ;;=3^BCG Intravesical per Instillation
- ;;^UTILITY(U,$J,358.3,23769,0)
- ;;=J9280^^151^1513^20^^^^1
- ;;^UTILITY(U,$J,358.3,23769,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23769,1,2,0)
- ;;=2^J9280
- ;;^UTILITY(U,$J,358.3,23769,1,3,0)
- ;;=3^Mitomycin 5 mg
+ ;;^UTILITY(U,$J,358.3,22113,1,4,0)
+ ;;=4^S42.031S
+ ;;^UTILITY(U,$J,358.3,22113,2)
+ ;;=^5026494
+ ;;^UTILITY(U,$J,358.3,22114,0)
+ ;;=S42.022S^^101^1037^43
+ ;;^UTILITY(U,$J,358.3,22114,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22114,1,3,0)
+ ;;=3^Disp fx of shaft of left clavicle, sequela    
+ ;;^UTILITY(U,$J,358.3,22114,1,4,0)
+ ;;=4^S42.022S
+ ;;^UTILITY(U,$J,358.3,22114,2)
+ ;;=^5026459
+ ;;^UTILITY(U,$J,358.3,22115,0)
+ ;;=S42.021S^^101^1037^44
+ ;;^UTILITY(U,$J,358.3,22115,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22115,1,3,0)
+ ;;=3^Disp fx of shaft of right clavicle, sequela   
+ ;;^UTILITY(U,$J,358.3,22115,1,4,0)
+ ;;=4^S42.021S
+ ;;^UTILITY(U,$J,358.3,22115,2)
+ ;;=^5026452
+ ;;^UTILITY(U,$J,358.3,22116,0)
+ ;;=S42.035S^^101^1037^72
+ ;;^UTILITY(U,$J,358.3,22116,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22116,1,3,0)
+ ;;=3^Nondisp fx of lateral end of left clavicle, sequela
+ ;;^UTILITY(U,$J,358.3,22116,1,4,0)
+ ;;=4^S42.035S
+ ;;^UTILITY(U,$J,358.3,22116,2)
+ ;;=^5026522
+ ;;^UTILITY(U,$J,358.3,22117,0)
+ ;;=S42.034S^^101^1037^73
+ ;;^UTILITY(U,$J,358.3,22117,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22117,1,3,0)
+ ;;=3^Nondisp fx of lateral end of right clavicle, sequela
+ ;;^UTILITY(U,$J,358.3,22117,1,4,0)
+ ;;=4^S42.034S
+ ;;^UTILITY(U,$J,358.3,22117,2)
+ ;;=^5026515
+ ;;^UTILITY(U,$J,358.3,22118,0)
+ ;;=S42.025S^^101^1037^89
+ ;;^UTILITY(U,$J,358.3,22118,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22118,1,3,0)
+ ;;=3^Nondisp fx of shaft of left clavicle, sequela 
+ ;;^UTILITY(U,$J,358.3,22118,1,4,0)
+ ;;=4^S42.025S
+ ;;^UTILITY(U,$J,358.3,22118,2)
+ ;;=^5026480
+ ;;^UTILITY(U,$J,358.3,22119,0)
+ ;;=S42.024S^^101^1037^90
+ ;;^UTILITY(U,$J,358.3,22119,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22119,1,3,0)
+ ;;=3^Nondisp fx of shaft of right clavicle, sequela
+ ;;^UTILITY(U,$J,358.3,22119,1,4,0)
+ ;;=4^S42.024S
+ ;;^UTILITY(U,$J,358.3,22119,2)
+ ;;=^5026473
+ ;;^UTILITY(U,$J,358.3,22120,0)
+ ;;=S42.018S^^101^1037^95
+ ;;^UTILITY(U,$J,358.3,22120,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22120,1,3,0)
+ ;;=3^Nondisp fx of sternal end of left clavicle, sequela
+ ;;^UTILITY(U,$J,358.3,22120,1,4,0)
+ ;;=4^S42.018S
+ ;;^UTILITY(U,$J,358.3,22120,2)
+ ;;=^5026438
+ ;;^UTILITY(U,$J,358.3,22121,0)
+ ;;=S42.017S^^101^1037^96
+ ;;^UTILITY(U,$J,358.3,22121,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22121,1,3,0)
+ ;;=3^Nondisp fx of sternal end of right clavicle, sequela
+ ;;^UTILITY(U,$J,358.3,22121,1,4,0)
+ ;;=4^S42.017S
+ ;;^UTILITY(U,$J,358.3,22121,2)
+ ;;=^5026431
+ ;;^UTILITY(U,$J,358.3,22122,0)
+ ;;=S42.015S^^101^1037^105
+ ;;^UTILITY(U,$J,358.3,22122,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22122,1,3,0)
+ ;;=3^Posterior disp fx of sternal end of left clavicle, sequela
+ ;;^UTILITY(U,$J,358.3,22122,1,4,0)
+ ;;=4^S42.015S
+ ;;^UTILITY(U,$J,358.3,22122,2)
+ ;;=^5026417
+ ;;^UTILITY(U,$J,358.3,22123,0)
+ ;;=S42.014S^^101^1037^106
+ ;;^UTILITY(U,$J,358.3,22123,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22123,1,3,0)
+ ;;=3^Posterior disp fx of sternal end of right clavicle, sequela
+ ;;^UTILITY(U,$J,358.3,22123,1,4,0)
+ ;;=4^S42.014S
+ ;;^UTILITY(U,$J,358.3,22123,2)
+ ;;=^5026410
+ ;;^UTILITY(U,$J,358.3,22124,0)
+ ;;=S82.142S^^101^1038^1
+ ;;^UTILITY(U,$J,358.3,22124,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22124,1,3,0)
+ ;;=3^Disp fx of bicondylar left tibia, sequela 
+ ;;^UTILITY(U,$J,358.3,22124,1,4,0)
+ ;;=4^S82.142S
+ ;;^UTILITY(U,$J,358.3,22124,2)
+ ;;=^5040902
+ ;;^UTILITY(U,$J,358.3,22125,0)
+ ;;=S82.141S^^101^1038^2
+ ;;^UTILITY(U,$J,358.3,22125,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22125,1,3,0)
+ ;;=3^Disp fx of bicondylar right tibia, sequela

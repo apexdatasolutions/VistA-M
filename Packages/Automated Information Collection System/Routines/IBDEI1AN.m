@@ -1,128 +1,124 @@
-IBDEI1AN ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1AN ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,23162,1,3,0)
- ;;=3^TD Vaccine
- ;;^UTILITY(U,$J,358.3,23163,0)
- ;;=90656^^145^1423^3^^^^1
- ;;^UTILITY(U,$J,358.3,23163,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23163,1,2,0)
- ;;=2^90656
- ;;^UTILITY(U,$J,358.3,23163,1,3,0)
- ;;=3^Flu Vaccine Single Dose Syringe (Afluria)
- ;;^UTILITY(U,$J,358.3,23164,0)
- ;;=90662^^145^1423^1^^^^1
- ;;^UTILITY(U,$J,358.3,23164,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23164,1,2,0)
- ;;=2^90662
- ;;^UTILITY(U,$J,358.3,23164,1,3,0)
- ;;=3^Flu Vaccine High Dose Syringe (Fluzone)
- ;;^UTILITY(U,$J,358.3,23165,0)
- ;;=90887^^145^1424^1^^^^1
- ;;^UTILITY(U,$J,358.3,23165,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23165,1,2,0)
- ;;=2^90887
- ;;^UTILITY(U,$J,358.3,23165,1,3,0)
- ;;=3^Consultation w/Family
- ;;^UTILITY(U,$J,358.3,23166,0)
- ;;=90791^^145^1424^2^^^^1
- ;;^UTILITY(U,$J,358.3,23166,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23166,1,2,0)
- ;;=2^90791
- ;;^UTILITY(U,$J,358.3,23166,1,3,0)
- ;;=3^Psych Diagnostic Interview
- ;;^UTILITY(U,$J,358.3,23167,0)
- ;;=90846^^145^1424^3^^^^1
- ;;^UTILITY(U,$J,358.3,23167,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23167,1,2,0)
- ;;=2^90846
- ;;^UTILITY(U,$J,358.3,23167,1,3,0)
- ;;=3^Family Psytx w/o Patient
- ;;^UTILITY(U,$J,358.3,23168,0)
- ;;=99401^^145^1424^4^^^^1
- ;;^UTILITY(U,$J,358.3,23168,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23168,1,2,0)
- ;;=2^99401
- ;;^UTILITY(U,$J,358.3,23168,1,3,0)
- ;;=3^Preventive Counseling, IND 15Min
- ;;^UTILITY(U,$J,358.3,23169,0)
- ;;=99402^^145^1424^5^^^^1
- ;;^UTILITY(U,$J,358.3,23169,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23169,1,2,0)
- ;;=2^99402
- ;;^UTILITY(U,$J,358.3,23169,1,3,0)
- ;;=3^Preventive Counseling, IND 30Min
- ;;^UTILITY(U,$J,358.3,23170,0)
- ;;=99403^^145^1424^6^^^^1
- ;;^UTILITY(U,$J,358.3,23170,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23170,1,2,0)
- ;;=2^99403
- ;;^UTILITY(U,$J,358.3,23170,1,3,0)
- ;;=3^Preventive Counseling, IND 45Min
- ;;^UTILITY(U,$J,358.3,23171,0)
- ;;=99404^^145^1424^7^^^^1
- ;;^UTILITY(U,$J,358.3,23171,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23171,1,2,0)
- ;;=2^99404
- ;;^UTILITY(U,$J,358.3,23171,1,3,0)
- ;;=3^Preventive Counseling, IND 60Min
- ;;^UTILITY(U,$J,358.3,23172,0)
- ;;=99411^^145^1424^8^^^^1
- ;;^UTILITY(U,$J,358.3,23172,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23172,1,2,0)
- ;;=2^99411
- ;;^UTILITY(U,$J,358.3,23172,1,3,0)
- ;;=3^Preventive Counseling, Group 30Min
- ;;^UTILITY(U,$J,358.3,23173,0)
- ;;=99412^^145^1424^9^^^^1
- ;;^UTILITY(U,$J,358.3,23173,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23173,1,2,0)
- ;;=2^99412
- ;;^UTILITY(U,$J,358.3,23173,1,3,0)
- ;;=3^Preventive Counseling, Group 60Min
- ;;^UTILITY(U,$J,358.3,23174,0)
- ;;=99366^^145^1424^10^^^^1
- ;;^UTILITY(U,$J,358.3,23174,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23174,1,2,0)
- ;;=2^99366
- ;;^UTILITY(U,$J,358.3,23174,1,3,0)
- ;;=3^Team Conf w/ Pat by HC Pro 30Min
- ;;^UTILITY(U,$J,358.3,23175,0)
- ;;=99367^^145^1424^11^^^^1
- ;;^UTILITY(U,$J,358.3,23175,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23175,1,2,0)
- ;;=2^99367
- ;;^UTILITY(U,$J,358.3,23175,1,3,0)
- ;;=3^Team Conf w/o Pat by Phys 30Min
- ;;^UTILITY(U,$J,358.3,23176,0)
- ;;=99368^^145^1424^12^^^^1
- ;;^UTILITY(U,$J,358.3,23176,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23176,1,2,0)
- ;;=2^99368
- ;;^UTILITY(U,$J,358.3,23176,1,3,0)
- ;;=3^Team Conf w/o Pat by HC Pro 30Min
- ;;^UTILITY(U,$J,358.3,23177,0)
- ;;=99078^^145^1425^1^^^^1
- ;;^UTILITY(U,$J,358.3,23177,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23177,1,2,0)
- ;;=2^99078
- ;;^UTILITY(U,$J,358.3,23177,1,3,0)
- ;;=3^Group Health Education
- ;;^UTILITY(U,$J,358.3,23178,0)
- ;;=98960^^145^1425^2^^^^1
+ ;;^UTILITY(U,$J,358.3,21612,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21612,1,3,0)
+ ;;=3^Nondisp articular fx of head of right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21612,1,4,0)
+ ;;=4^S72.064S
+ ;;^UTILITY(U,$J,358.3,21612,2)
+ ;;=^5037509
+ ;;^UTILITY(U,$J,358.3,21613,0)
+ ;;=S72.065S^^101^1033^49
+ ;;^UTILITY(U,$J,358.3,21613,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21613,1,3,0)
+ ;;=3^Nondisp articular fx of head of left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21613,1,4,0)
+ ;;=4^S72.065S
+ ;;^UTILITY(U,$J,358.3,21613,2)
+ ;;=^5037525
+ ;;^UTILITY(U,$J,358.3,21614,0)
+ ;;=S72.111S^^101^1033^14
+ ;;^UTILITY(U,$J,358.3,21614,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21614,1,3,0)
+ ;;=3^Displaced greater trochanter fx of right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21614,1,4,0)
+ ;;=4^S72.111S
+ ;;^UTILITY(U,$J,358.3,21614,2)
+ ;;=^5037642
+ ;;^UTILITY(U,$J,358.3,21615,0)
+ ;;=S72.112S^^101^1033^13
+ ;;^UTILITY(U,$J,358.3,21615,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21615,1,3,0)
+ ;;=3^Displaced greater trochanter fx of left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21615,1,4,0)
+ ;;=4^S72.112S
+ ;;^UTILITY(U,$J,358.3,21615,2)
+ ;;=^5037658
+ ;;^UTILITY(U,$J,358.3,21616,0)
+ ;;=S72.114S^^101^1033^60
+ ;;^UTILITY(U,$J,358.3,21616,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21616,1,3,0)
+ ;;=3^Nondisp greater trochanter fx of right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21616,1,4,0)
+ ;;=4^S72.114S
+ ;;^UTILITY(U,$J,358.3,21616,2)
+ ;;=^5037690
+ ;;^UTILITY(U,$J,358.3,21617,0)
+ ;;=S72.115S^^101^1033^59
+ ;;^UTILITY(U,$J,358.3,21617,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21617,1,3,0)
+ ;;=3^Nondisp greater trochanter fx of left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21617,1,4,0)
+ ;;=4^S72.115S
+ ;;^UTILITY(U,$J,358.3,21617,2)
+ ;;=^5037706
+ ;;^UTILITY(U,$J,358.3,21618,0)
+ ;;=S72.121S^^101^1033^20
+ ;;^UTILITY(U,$J,358.3,21618,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21618,1,3,0)
+ ;;=3^Displaced lesser trochanter fx of right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21618,1,4,0)
+ ;;=4^S72.121S
+ ;;^UTILITY(U,$J,358.3,21618,2)
+ ;;=^5037738
+ ;;^UTILITY(U,$J,358.3,21619,0)
+ ;;=S72.122S^^101^1033^19
+ ;;^UTILITY(U,$J,358.3,21619,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21619,1,3,0)
+ ;;=3^Displaced lesser trochanter fx of left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21619,1,4,0)
+ ;;=4^S72.122S
+ ;;^UTILITY(U,$J,358.3,21619,2)
+ ;;=^5037754
+ ;;^UTILITY(U,$J,358.3,21620,0)
+ ;;=S72.124S^^101^1033^66
+ ;;^UTILITY(U,$J,358.3,21620,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21620,1,3,0)
+ ;;=3^Nondisp lesser trochanter fx of right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21620,1,4,0)
+ ;;=4^S72.124S
+ ;;^UTILITY(U,$J,358.3,21620,2)
+ ;;=^5037786
+ ;;^UTILITY(U,$J,358.3,21621,0)
+ ;;=S72.125S^^101^1033^65
+ ;;^UTILITY(U,$J,358.3,21621,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21621,1,3,0)
+ ;;=3^Nondisp lesser trochanter fx of left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21621,1,4,0)
+ ;;=4^S72.125S
+ ;;^UTILITY(U,$J,358.3,21621,2)
+ ;;=^5037802
+ ;;^UTILITY(U,$J,358.3,21622,0)
+ ;;=S72.131S^^101^1033^2
+ ;;^UTILITY(U,$J,358.3,21622,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21622,1,3,0)
+ ;;=3^Displaced apophyseal fx of right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21622,1,4,0)
+ ;;=4^S72.131S
+ ;;^UTILITY(U,$J,358.3,21622,2)
+ ;;=^5037834
+ ;;^UTILITY(U,$J,358.3,21623,0)
+ ;;=S72.132S^^101^1033^1
+ ;;^UTILITY(U,$J,358.3,21623,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21623,1,3,0)
+ ;;=3^Displaced apophyseal fx of left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21623,1,4,0)
+ ;;=4^S72.132S
+ ;;^UTILITY(U,$J,358.3,21623,2)
+ ;;=^5037850
+ ;;^UTILITY(U,$J,358.3,21624,0)
+ ;;=S72.134S^^101^1033^48

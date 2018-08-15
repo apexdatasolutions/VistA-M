@@ -1,138 +1,126 @@
-IBDEI0H9 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0H9 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,8384,0)
- ;;=695.3^^58^609^2
- ;;^UTILITY(U,$J,358.3,8384,1,0)
+ ;;^UTILITY(U,$J,358.3,7717,1,3,0)
+ ;;=3^Nephritic syndrome unspec w/ focal & segmental glomerular lesions
+ ;;^UTILITY(U,$J,358.3,7717,1,4,0)
+ ;;=4^N05.1
+ ;;^UTILITY(U,$J,358.3,7717,2)
+ ;;=^5015542
+ ;;^UTILITY(U,$J,358.3,7718,0)
+ ;;=N05.2^^52^518^46
+ ;;^UTILITY(U,$J,358.3,7718,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8384,1,3,0)
- ;;=3^Acne Rosacea
- ;;^UTILITY(U,$J,358.3,8384,1,4,0)
- ;;=4^695.3
- ;;^UTILITY(U,$J,358.3,8384,2)
- ;;=Acne Rosacea^107114
- ;;^UTILITY(U,$J,358.3,8385,0)
- ;;=250.00^^58^609^22
- ;;^UTILITY(U,$J,358.3,8385,1,0)
+ ;;^UTILITY(U,$J,358.3,7718,1,3,0)
+ ;;=3^Nephritic syndrome unspec w/ diffuse membranous glomrlneph
+ ;;^UTILITY(U,$J,358.3,7718,1,4,0)
+ ;;=4^N05.2
+ ;;^UTILITY(U,$J,358.3,7718,2)
+ ;;=^5015543
+ ;;^UTILITY(U,$J,358.3,7719,0)
+ ;;=N05.3^^52^518^47
+ ;;^UTILITY(U,$J,358.3,7719,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8385,1,3,0)
- ;;=3^DM type II w/o Eye Disease
- ;;^UTILITY(U,$J,358.3,8385,1,4,0)
- ;;=4^250.00
- ;;^UTILITY(U,$J,358.3,8385,2)
- ;;=DM type II w/o Eye Disease^33605
- ;;^UTILITY(U,$J,358.3,8386,0)
- ;;=346.90^^58^609^41
- ;;^UTILITY(U,$J,358.3,8386,1,0)
+ ;;^UTILITY(U,$J,358.3,7719,1,3,0)
+ ;;=3^Nephritic syndrome unspec w/ diffuse mesangial prolif glomrlneph
+ ;;^UTILITY(U,$J,358.3,7719,1,4,0)
+ ;;=4^N05.3
+ ;;^UTILITY(U,$J,358.3,7719,2)
+ ;;=^5015544
+ ;;^UTILITY(U,$J,358.3,7720,0)
+ ;;=N05.4^^52^518^45
+ ;;^UTILITY(U,$J,358.3,7720,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8386,1,3,0)
- ;;=3^Headache,Migraine-Not Intractable
- ;;^UTILITY(U,$J,358.3,8386,1,4,0)
- ;;=4^346.90
- ;;^UTILITY(U,$J,358.3,8386,2)
- ;;=Migraine without Intract^293880
- ;;^UTILITY(U,$J,358.3,8387,0)
- ;;=376.30^^58^609^30
- ;;^UTILITY(U,$J,358.3,8387,1,0)
+ ;;^UTILITY(U,$J,358.3,7720,1,3,0)
+ ;;=3^Nephritic syndrome unspec w/ diffuse endocaplry prolif glomrlneph
+ ;;^UTILITY(U,$J,358.3,7720,1,4,0)
+ ;;=4^N05.4
+ ;;^UTILITY(U,$J,358.3,7720,2)
+ ;;=^5015545
+ ;;^UTILITY(U,$J,358.3,7721,0)
+ ;;=N05.5^^52^518^48
+ ;;^UTILITY(U,$J,358.3,7721,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8387,1,3,0)
- ;;=3^Exophthalmos,NOS
- ;;^UTILITY(U,$J,358.3,8387,1,4,0)
- ;;=4^376.30
- ;;^UTILITY(U,$J,358.3,8387,2)
- ;;=Exophthalmos NOS^43683
- ;;^UTILITY(U,$J,358.3,8388,0)
- ;;=368.8^^58^609^7
- ;;^UTILITY(U,$J,358.3,8388,1,0)
+ ;;^UTILITY(U,$J,358.3,7721,1,3,0)
+ ;;=3^Nephritic syndrome unspec w/ diffuse mesangiocap glomrlneph
+ ;;^UTILITY(U,$J,358.3,7721,1,4,0)
+ ;;=4^N05.5
+ ;;^UTILITY(U,$J,358.3,7721,2)
+ ;;=^5015546
+ ;;^UTILITY(U,$J,358.3,7722,0)
+ ;;=N05.6^^52^518^43
+ ;;^UTILITY(U,$J,358.3,7722,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8388,1,3,0)
- ;;=3^Blurred Vision
- ;;^UTILITY(U,$J,358.3,8388,1,4,0)
- ;;=4^368.8
- ;;^UTILITY(U,$J,358.3,8388,2)
- ;;=Blurred Vision^88172
- ;;^UTILITY(U,$J,358.3,8389,0)
- ;;=362.34^^58^609^5
- ;;^UTILITY(U,$J,358.3,8389,1,0)
+ ;;^UTILITY(U,$J,358.3,7722,1,3,0)
+ ;;=3^Nephritic syndrome unspec w/ dense deposit disease
+ ;;^UTILITY(U,$J,358.3,7722,1,4,0)
+ ;;=4^N05.6
+ ;;^UTILITY(U,$J,358.3,7722,2)
+ ;;=^5015547
+ ;;^UTILITY(U,$J,358.3,7723,0)
+ ;;=N05.7^^52^518^44
+ ;;^UTILITY(U,$J,358.3,7723,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8389,1,3,0)
- ;;=3^Amaurosis Fugax
- ;;^UTILITY(U,$J,358.3,8389,1,4,0)
- ;;=4^362.34
- ;;^UTILITY(U,$J,358.3,8389,2)
- ;;=^268622
- ;;^UTILITY(U,$J,358.3,8390,0)
- ;;=368.13^^58^609^88
- ;;^UTILITY(U,$J,358.3,8390,1,0)
+ ;;^UTILITY(U,$J,358.3,7723,1,3,0)
+ ;;=3^Nephritic syndrome unspec w/ diffuse crescentic glomrlneph
+ ;;^UTILITY(U,$J,358.3,7723,1,4,0)
+ ;;=4^N05.7
+ ;;^UTILITY(U,$J,358.3,7723,2)
+ ;;=^5015548
+ ;;^UTILITY(U,$J,358.3,7724,0)
+ ;;=N05.8^^52^518^51
+ ;;^UTILITY(U,$J,358.3,7724,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8390,1,3,0)
- ;;=3^Photophobia
- ;;^UTILITY(U,$J,358.3,8390,1,4,0)
- ;;=4^368.13
- ;;^UTILITY(U,$J,358.3,8390,2)
- ;;=^126851
- ;;^UTILITY(U,$J,358.3,8391,0)
- ;;=368.40^^58^609^113
- ;;^UTILITY(U,$J,358.3,8391,1,0)
+ ;;^UTILITY(U,$J,358.3,7724,1,3,0)
+ ;;=3^Nephritic syndrome unspec w/ oth morphologic changes
+ ;;^UTILITY(U,$J,358.3,7724,1,4,0)
+ ;;=4^N05.8
+ ;;^UTILITY(U,$J,358.3,7724,2)
+ ;;=^5134085
+ ;;^UTILITY(U,$J,358.3,7725,0)
+ ;;=N05.9^^52^518^52
+ ;;^UTILITY(U,$J,358.3,7725,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8391,1,3,0)
- ;;=3^Vis Field Defect
- ;;^UTILITY(U,$J,358.3,8391,1,4,0)
- ;;=4^368.40
- ;;^UTILITY(U,$J,358.3,8391,2)
- ;;=^126859
- ;;^UTILITY(U,$J,358.3,8392,0)
- ;;=369.4^^58^609^58
- ;;^UTILITY(U,$J,358.3,8392,1,0)
+ ;;^UTILITY(U,$J,358.3,7725,1,3,0)
+ ;;=3^Nephritic syndrome unspec w/ unspec morphologic changes
+ ;;^UTILITY(U,$J,358.3,7725,1,4,0)
+ ;;=4^N05.9
+ ;;^UTILITY(U,$J,358.3,7725,2)
+ ;;=^5134086
+ ;;^UTILITY(U,$J,358.3,7726,0)
+ ;;=N06.0^^52^518^40
+ ;;^UTILITY(U,$J,358.3,7726,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8392,1,3,0)
- ;;=3^Legally Blind,USA Definition
- ;;^UTILITY(U,$J,358.3,8392,1,4,0)
- ;;=4^369.4
- ;;^UTILITY(U,$J,358.3,8392,2)
- ;;=Legal Blindness^268887
- ;;^UTILITY(U,$J,358.3,8393,0)
- ;;=250.01^^58^609^21
- ;;^UTILITY(U,$J,358.3,8393,1,0)
+ ;;^UTILITY(U,$J,358.3,7726,1,3,0)
+ ;;=3^Isolated proteinuria w/ minor glomerular abnormality
+ ;;^UTILITY(U,$J,358.3,7726,1,4,0)
+ ;;=4^N06.0
+ ;;^UTILITY(U,$J,358.3,7726,2)
+ ;;=^5015549
+ ;;^UTILITY(U,$J,358.3,7727,0)
+ ;;=N06.1^^52^518^39
+ ;;^UTILITY(U,$J,358.3,7727,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8393,1,3,0)
- ;;=3^DM Type I w/o Eye Disease
- ;;^UTILITY(U,$J,358.3,8393,1,4,0)
- ;;=4^250.01
- ;;^UTILITY(U,$J,358.3,8393,2)
- ;;=Diabetes Mellitus Type I^33586
- ;;^UTILITY(U,$J,358.3,8394,0)
- ;;=V08.^^58^609^40
- ;;^UTILITY(U,$J,358.3,8394,1,0)
+ ;;^UTILITY(U,$J,358.3,7727,1,3,0)
+ ;;=3^Isolated proteinuria w/ focal & segmental glomerular lesions
+ ;;^UTILITY(U,$J,358.3,7727,1,4,0)
+ ;;=4^N06.1
+ ;;^UTILITY(U,$J,358.3,7727,2)
+ ;;=^5015550
+ ;;^UTILITY(U,$J,358.3,7728,0)
+ ;;=N06.2^^52^518^36
+ ;;^UTILITY(U,$J,358.3,7728,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8394,1,3,0)
- ;;=3^HIV Positive
- ;;^UTILITY(U,$J,358.3,8394,1,4,0)
- ;;=4^V08.
- ;;^UTILITY(U,$J,358.3,8394,2)
- ;;=Asymptomatic HIV Status^303392
- ;;^UTILITY(U,$J,358.3,8395,0)
- ;;=921.0^^58^609^16
- ;;^UTILITY(U,$J,358.3,8395,1,0)
+ ;;^UTILITY(U,$J,358.3,7728,1,3,0)
+ ;;=3^Isolated proteinuria w/ diffuse membranous glomerulonephritis
+ ;;^UTILITY(U,$J,358.3,7728,1,4,0)
+ ;;=4^N06.2
+ ;;^UTILITY(U,$J,358.3,7728,2)
+ ;;=^5015551
+ ;;^UTILITY(U,$J,358.3,7729,0)
+ ;;=N06.3^^52^518^37
+ ;;^UTILITY(U,$J,358.3,7729,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8395,1,3,0)
- ;;=3^Contusion of Eye
- ;;^UTILITY(U,$J,358.3,8395,1,4,0)
- ;;=4^921.0
- ;;^UTILITY(U,$J,358.3,8395,2)
- ;;=^15052
- ;;^UTILITY(U,$J,358.3,8396,0)
- ;;=379.91^^58^609^87
- ;;^UTILITY(U,$J,358.3,8396,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8396,1,3,0)
- ;;=3^Pain in/around the Eye
- ;;^UTILITY(U,$J,358.3,8396,1,4,0)
- ;;=4^379.91
- ;;^UTILITY(U,$J,358.3,8396,2)
- ;;=Pain in or around eye^89093
- ;;^UTILITY(U,$J,358.3,8397,0)
- ;;=V58.69^^58^609^44
- ;;^UTILITY(U,$J,358.3,8397,1,0)
- ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,7729,1,3,0)
+ ;;=3^Isolated proteinuria w/ diffuse mesangial prolif glomrlneph

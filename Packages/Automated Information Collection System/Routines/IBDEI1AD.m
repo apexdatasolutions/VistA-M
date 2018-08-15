@@ -1,138 +1,122 @@
-IBDEI1AD ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1AD ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,23026,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23026,1,4,0)
- ;;=4^794.31
- ;;^UTILITY(U,$J,358.3,23026,1,5,0)
- ;;=5^Abnormal EKG
- ;;^UTILITY(U,$J,358.3,23026,2)
- ;;=Abnormal EKG^83844
- ;;^UTILITY(U,$J,358.3,23027,0)
- ;;=790.1^^144^1419^62
- ;;^UTILITY(U,$J,358.3,23027,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23027,1,4,0)
- ;;=4^790.1
- ;;^UTILITY(U,$J,358.3,23027,1,5,0)
- ;;=5^Elevated Sedimentation Rate
- ;;^UTILITY(U,$J,358.3,23027,2)
- ;;=Elevated Sedimentation Rate^39339
- ;;^UTILITY(U,$J,358.3,23028,0)
- ;;=790.93^^144^1419^61
- ;;^UTILITY(U,$J,358.3,23028,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23028,1,4,0)
- ;;=4^790.93
- ;;^UTILITY(U,$J,358.3,23028,1,5,0)
- ;;=5^Elevated PSA
- ;;^UTILITY(U,$J,358.3,23028,2)
- ;;=Elevated PSA^295772
- ;;^UTILITY(U,$J,358.3,23029,0)
- ;;=791.0^^144^1419^122
- ;;^UTILITY(U,$J,358.3,23029,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23029,1,4,0)
- ;;=4^791.0
- ;;^UTILITY(U,$J,358.3,23029,1,5,0)
- ;;=5^Proteinuria
- ;;^UTILITY(U,$J,358.3,23029,2)
- ;;=Proteinuria^99873
- ;;^UTILITY(U,$J,358.3,23030,0)
- ;;=791.9^^144^1419^14
- ;;^UTILITY(U,$J,358.3,23030,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23030,1,4,0)
- ;;=4^791.9
- ;;^UTILITY(U,$J,358.3,23030,1,5,0)
- ;;=5^Abnormal UA
- ;;^UTILITY(U,$J,358.3,23030,2)
- ;;=Abnormal UA^273408
- ;;^UTILITY(U,$J,358.3,23031,0)
- ;;=789.01^^144^1419^7
- ;;^UTILITY(U,$J,358.3,23031,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23031,1,4,0)
- ;;=4^789.01
- ;;^UTILITY(U,$J,358.3,23031,1,5,0)
- ;;=5^Abdominal pain, RUQ
- ;;^UTILITY(U,$J,358.3,23031,2)
- ;;=^303318
- ;;^UTILITY(U,$J,358.3,23032,0)
- ;;=789.02^^144^1419^4
- ;;^UTILITY(U,$J,358.3,23032,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23032,1,4,0)
- ;;=4^789.02
- ;;^UTILITY(U,$J,358.3,23032,1,5,0)
- ;;=5^Abdominal pain, LUQ
- ;;^UTILITY(U,$J,358.3,23032,2)
- ;;=^303319
- ;;^UTILITY(U,$J,358.3,23033,0)
- ;;=789.03^^144^1419^6
- ;;^UTILITY(U,$J,358.3,23033,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23033,1,4,0)
- ;;=4^789.03
- ;;^UTILITY(U,$J,358.3,23033,1,5,0)
- ;;=5^Abdominal pain, RLQ
- ;;^UTILITY(U,$J,358.3,23033,2)
- ;;=^303320
- ;;^UTILITY(U,$J,358.3,23034,0)
- ;;=789.04^^144^1419^3
- ;;^UTILITY(U,$J,358.3,23034,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23034,1,4,0)
- ;;=4^789.04
- ;;^UTILITY(U,$J,358.3,23034,1,5,0)
- ;;=5^Abdominal pain, LLQ
- ;;^UTILITY(U,$J,358.3,23034,2)
- ;;=^303321
- ;;^UTILITY(U,$J,358.3,23035,0)
- ;;=789.06^^144^1419^2
- ;;^UTILITY(U,$J,358.3,23035,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23035,1,4,0)
- ;;=4^789.06
- ;;^UTILITY(U,$J,358.3,23035,1,5,0)
- ;;=5^Abdominal pain, Epigastric
- ;;^UTILITY(U,$J,358.3,23035,2)
- ;;=^303323
- ;;^UTILITY(U,$J,358.3,23036,0)
- ;;=789.05^^144^1419^5
- ;;^UTILITY(U,$J,358.3,23036,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23036,1,4,0)
- ;;=4^789.05
- ;;^UTILITY(U,$J,358.3,23036,1,5,0)
- ;;=5^Abdominal pain, Periumbilical
- ;;^UTILITY(U,$J,358.3,23036,2)
- ;;=^303322
- ;;^UTILITY(U,$J,358.3,23037,0)
- ;;=789.40^^144^1419^8
- ;;^UTILITY(U,$J,358.3,23037,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23037,1,4,0)
- ;;=4^789.40
- ;;^UTILITY(U,$J,358.3,23037,1,5,0)
- ;;=5^Abdominal rigidity, unsp site
- ;;^UTILITY(U,$J,358.3,23037,2)
- ;;=^273393
- ;;^UTILITY(U,$J,358.3,23038,0)
- ;;=789.1^^144^1419^75
- ;;^UTILITY(U,$J,358.3,23038,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23038,1,4,0)
- ;;=4^789.1
- ;;^UTILITY(U,$J,358.3,23038,1,5,0)
- ;;=5^Hepatomegaly
- ;;^UTILITY(U,$J,358.3,23038,2)
- ;;=Hepatomegaly^56494
- ;;^UTILITY(U,$J,358.3,23039,0)
- ;;=789.30^^144^1419^1
- ;;^UTILITY(U,$J,358.3,23039,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23039,1,4,0)
- ;;=4^789.30
+ ;;^UTILITY(U,$J,358.3,21492,2)
+ ;;=^5020821
+ ;;^UTILITY(U,$J,358.3,21493,0)
+ ;;=S06.322S^^101^1032^17
+ ;;^UTILITY(U,$J,358.3,21493,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21493,1,3,0)
+ ;;=3^Contus/lac left cerebrum w LOC of 31-59 min, sequela
+ ;;^UTILITY(U,$J,358.3,21493,1,4,0)
+ ;;=4^S06.322S
+ ;;^UTILITY(U,$J,358.3,21493,2)
+ ;;=^5020824
+ ;;^UTILITY(U,$J,358.3,21494,0)
+ ;;=S06.324S^^101^1032^18
+ ;;^UTILITY(U,$J,358.3,21494,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21494,1,3,0)
+ ;;=3^Contus/lac left cerebrum w LOC of 6-24 hrs, sequela
+ ;;^UTILITY(U,$J,358.3,21494,1,4,0)
+ ;;=4^S06.324S
+ ;;^UTILITY(U,$J,358.3,21494,2)
+ ;;=^5020830
+ ;;^UTILITY(U,$J,358.3,21495,0)
+ ;;=S06.329S^^101^1032^19
+ ;;^UTILITY(U,$J,358.3,21495,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21495,1,3,0)
+ ;;=3^Contus/lac left cerebrum w LOC of unsp duration, sequela
+ ;;^UTILITY(U,$J,358.3,21495,1,4,0)
+ ;;=4^S06.329S
+ ;;^UTILITY(U,$J,358.3,21495,2)
+ ;;=^5020845
+ ;;^UTILITY(U,$J,358.3,21496,0)
+ ;;=S06.320S^^101^1032^20
+ ;;^UTILITY(U,$J,358.3,21496,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21496,1,3,0)
+ ;;=3^Contus/lac left cerebrum w/o LOC, sequela
+ ;;^UTILITY(U,$J,358.3,21496,1,4,0)
+ ;;=4^S06.320S
+ ;;^UTILITY(U,$J,358.3,21496,2)
+ ;;=^5020818
+ ;;^UTILITY(U,$J,358.3,21497,0)
+ ;;=S06.315S^^101^1032^21
+ ;;^UTILITY(U,$J,358.3,21497,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21497,1,3,0)
+ ;;=3^Contus/lac right cerebrum w LOC >24 hr w ret consc lev, sequela
+ ;;^UTILITY(U,$J,358.3,21497,1,4,0)
+ ;;=4^S06.315S
+ ;;^UTILITY(U,$J,358.3,21497,2)
+ ;;=^5020803
+ ;;^UTILITY(U,$J,358.3,21498,0)
+ ;;=S06.316S^^101^1032^22
+ ;;^UTILITY(U,$J,358.3,21498,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21498,1,3,0)
+ ;;=3^Contus/lac right cerebrum w LOC >24 hr w/o ret consc w surv, sqla
+ ;;^UTILITY(U,$J,358.3,21498,1,4,0)
+ ;;=4^S06.316S
+ ;;^UTILITY(U,$J,358.3,21498,2)
+ ;;=^5020806
+ ;;^UTILITY(U,$J,358.3,21499,0)
+ ;;=S06.313S^^101^1032^23
+ ;;^UTILITY(U,$J,358.3,21499,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21499,1,3,0)
+ ;;=3^Contus/lac right cerebrum w LOC of 1-5 hrs 59 min, sequela
+ ;;^UTILITY(U,$J,358.3,21499,1,4,0)
+ ;;=4^S06.313S
+ ;;^UTILITY(U,$J,358.3,21499,2)
+ ;;=^5020797
+ ;;^UTILITY(U,$J,358.3,21500,0)
+ ;;=S06.311S^^101^1032^24
+ ;;^UTILITY(U,$J,358.3,21500,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21500,1,3,0)
+ ;;=3^Contus/lac right cerebrum w LOC of 30 minutes or less, sequela
+ ;;^UTILITY(U,$J,358.3,21500,1,4,0)
+ ;;=4^S06.311S
+ ;;^UTILITY(U,$J,358.3,21500,2)
+ ;;=^5020791
+ ;;^UTILITY(U,$J,358.3,21501,0)
+ ;;=S06.312S^^101^1032^25
+ ;;^UTILITY(U,$J,358.3,21501,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21501,1,3,0)
+ ;;=3^Contus/lac right cerebrum w LOC of 31-59 min, sequela
+ ;;^UTILITY(U,$J,358.3,21501,1,4,0)
+ ;;=4^S06.312S
+ ;;^UTILITY(U,$J,358.3,21501,2)
+ ;;=^5020794
+ ;;^UTILITY(U,$J,358.3,21502,0)
+ ;;=S06.314S^^101^1032^26
+ ;;^UTILITY(U,$J,358.3,21502,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21502,1,3,0)
+ ;;=3^Contus/lac right cerebrum w LOC of 6-24 hrs, sequela
+ ;;^UTILITY(U,$J,358.3,21502,1,4,0)
+ ;;=4^S06.314S
+ ;;^UTILITY(U,$J,358.3,21502,2)
+ ;;=^5020800
+ ;;^UTILITY(U,$J,358.3,21503,0)
+ ;;=S06.319S^^101^1032^27
+ ;;^UTILITY(U,$J,358.3,21503,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21503,1,3,0)
+ ;;=3^Contus/lac right cerebrum w LOC of unsp duration, sequela
+ ;;^UTILITY(U,$J,358.3,21503,1,4,0)
+ ;;=4^S06.319S
+ ;;^UTILITY(U,$J,358.3,21503,2)
+ ;;=^5020815
+ ;;^UTILITY(U,$J,358.3,21504,0)
+ ;;=S06.310S^^101^1032^28
+ ;;^UTILITY(U,$J,358.3,21504,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21504,1,3,0)
+ ;;=3^Contus/lac right cerebrum w/o LOC, sequela

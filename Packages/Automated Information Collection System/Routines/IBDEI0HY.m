@@ -1,136 +1,134 @@
-IBDEI0HY ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0HY ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,8730,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,8730,1,1,0)
- ;;=1^Detailed
- ;;^UTILITY(U,$J,358.3,8730,1,2,0)
- ;;=2^99243
- ;;^UTILITY(U,$J,358.3,8731,0)
- ;;=99244^^59^616^4
- ;;^UTILITY(U,$J,358.3,8731,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,8731,1,1,0)
- ;;=1^Comprehensive, Moderate
- ;;^UTILITY(U,$J,358.3,8731,1,2,0)
- ;;=2^99244
- ;;^UTILITY(U,$J,358.3,8732,0)
- ;;=99245^^59^616^5
- ;;^UTILITY(U,$J,358.3,8732,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,8732,1,1,0)
- ;;=1^Comprehensive, High
- ;;^UTILITY(U,$J,358.3,8732,1,2,0)
- ;;=2^99245
- ;;^UTILITY(U,$J,358.3,8733,0)
- ;;=19100^^60^617^1
- ;;^UTILITY(U,$J,358.3,8733,1,0)
+ ;;^UTILITY(U,$J,358.3,8044,2)
+ ;;=^5006571
+ ;;^UTILITY(U,$J,358.3,8045,0)
+ ;;=H65.01^^55^534^11
+ ;;^UTILITY(U,$J,358.3,8045,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8733,1,2,0)
- ;;=2^Bx,Breast,needle,w/o imaging
- ;;^UTILITY(U,$J,358.3,8733,1,4,0)
- ;;=4^19100
- ;;^UTILITY(U,$J,358.3,8734,0)
- ;;=11100^^60^617^2
- ;;^UTILITY(U,$J,358.3,8734,1,0)
+ ;;^UTILITY(U,$J,358.3,8045,1,3,0)
+ ;;=3^Acute serous otitis media, right ear
+ ;;^UTILITY(U,$J,358.3,8045,1,4,0)
+ ;;=4^H65.01
+ ;;^UTILITY(U,$J,358.3,8045,2)
+ ;;=^5006570
+ ;;^UTILITY(U,$J,358.3,8046,0)
+ ;;=H65.23^^55^534^46
+ ;;^UTILITY(U,$J,358.3,8046,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8734,1,2,0)
- ;;=2^Bx,Skin,first lesion
- ;;^UTILITY(U,$J,358.3,8734,1,4,0)
- ;;=4^11100
- ;;^UTILITY(U,$J,358.3,8735,0)
- ;;=11101^^60^617^3
- ;;^UTILITY(U,$J,358.3,8735,1,0)
+ ;;^UTILITY(U,$J,358.3,8046,1,3,0)
+ ;;=3^Chronic serous otitis media, bilateral
+ ;;^UTILITY(U,$J,358.3,8046,1,4,0)
+ ;;=4^H65.23
+ ;;^UTILITY(U,$J,358.3,8046,2)
+ ;;=^5006596
+ ;;^UTILITY(U,$J,358.3,8047,0)
+ ;;=H65.22^^55^534^47
+ ;;^UTILITY(U,$J,358.3,8047,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8735,1,2,0)
- ;;=2^Bx,Skin,Ea Addl Lesion
- ;;^UTILITY(U,$J,358.3,8735,1,4,0)
- ;;=4^11101
- ;;^UTILITY(U,$J,358.3,8736,0)
- ;;=11042^^60^617^4^^^^1
- ;;^UTILITY(U,$J,358.3,8736,1,0)
+ ;;^UTILITY(U,$J,358.3,8047,1,3,0)
+ ;;=3^Chronic serous otitis media, left ear
+ ;;^UTILITY(U,$J,358.3,8047,1,4,0)
+ ;;=4^H65.22
+ ;;^UTILITY(U,$J,358.3,8047,2)
+ ;;=^5006595
+ ;;^UTILITY(U,$J,358.3,8048,0)
+ ;;=H65.21^^55^534^48
+ ;;^UTILITY(U,$J,358.3,8048,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8736,1,2,0)
- ;;=2^Debride skin/SQ 20sq cm or <
- ;;^UTILITY(U,$J,358.3,8736,1,4,0)
- ;;=4^11042
- ;;^UTILITY(U,$J,358.3,8737,0)
- ;;=11043^^60^617^6^^^^1
- ;;^UTILITY(U,$J,358.3,8737,1,0)
+ ;;^UTILITY(U,$J,358.3,8048,1,3,0)
+ ;;=3^Chronic serous otitis media, right ear
+ ;;^UTILITY(U,$J,358.3,8048,1,4,0)
+ ;;=4^H65.21
+ ;;^UTILITY(U,$J,358.3,8048,2)
+ ;;=^5006594
+ ;;^UTILITY(U,$J,358.3,8049,0)
+ ;;=H66.013^^55^534^14
+ ;;^UTILITY(U,$J,358.3,8049,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8737,1,2,0)
- ;;=2^Debride skin-SQ/Muscle 20sq cm or <
- ;;^UTILITY(U,$J,358.3,8737,1,4,0)
- ;;=4^11043
- ;;^UTILITY(U,$J,358.3,8738,0)
- ;;=11045^^60^617^5^^^^1
- ;;^UTILITY(U,$J,358.3,8738,1,0)
+ ;;^UTILITY(U,$J,358.3,8049,1,3,0)
+ ;;=3^Acute suppr otitis media w spon rupt ear drum, bilateral
+ ;;^UTILITY(U,$J,358.3,8049,1,4,0)
+ ;;=4^H66.013
+ ;;^UTILITY(U,$J,358.3,8049,2)
+ ;;=^5006622
+ ;;^UTILITY(U,$J,358.3,8050,0)
+ ;;=H66.012^^55^534^15
+ ;;^UTILITY(U,$J,358.3,8050,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8738,1,2,0)
- ;;=2^Debride skin/SQ,ea addl 20sq cm
- ;;^UTILITY(U,$J,358.3,8738,1,4,0)
- ;;=4^11045
- ;;^UTILITY(U,$J,358.3,8739,0)
- ;;=11046^^60^617^7^^^^1
- ;;^UTILITY(U,$J,358.3,8739,1,0)
+ ;;^UTILITY(U,$J,358.3,8050,1,3,0)
+ ;;=3^Acute suppr otitis media w spon rupt ear drum, left ear
+ ;;^UTILITY(U,$J,358.3,8050,1,4,0)
+ ;;=4^H66.012
+ ;;^UTILITY(U,$J,358.3,8050,2)
+ ;;=^5133534
+ ;;^UTILITY(U,$J,358.3,8051,0)
+ ;;=H66.011^^55^534^16
+ ;;^UTILITY(U,$J,358.3,8051,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8739,1,2,0)
- ;;=2^Deb skin-SQ/Musc,ea adl 20sq cm
- ;;^UTILITY(U,$J,358.3,8739,1,4,0)
- ;;=4^11046
- ;;^UTILITY(U,$J,358.3,8740,0)
- ;;=10060^^60^618^9
- ;;^UTILITY(U,$J,358.3,8740,1,0)
+ ;;^UTILITY(U,$J,358.3,8051,1,3,0)
+ ;;=3^Acute suppr otitis media w spon rupt ear drum, right ear
+ ;;^UTILITY(U,$J,358.3,8051,1,4,0)
+ ;;=4^H66.011
+ ;;^UTILITY(U,$J,358.3,8051,2)
+ ;;=^5006621
+ ;;^UTILITY(U,$J,358.3,8052,0)
+ ;;=H66.91^^55^534^107
+ ;;^UTILITY(U,$J,358.3,8052,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8740,1,2,0)
- ;;=2^I&D Abscess,simple or single
- ;;^UTILITY(U,$J,358.3,8740,1,4,0)
- ;;=4^10060
- ;;^UTILITY(U,$J,358.3,8741,0)
- ;;=10061^^60^618^8
- ;;^UTILITY(U,$J,358.3,8741,1,0)
+ ;;^UTILITY(U,$J,358.3,8052,1,3,0)
+ ;;=3^Otitis Media,Right Ear,Unspec
+ ;;^UTILITY(U,$J,358.3,8052,1,4,0)
+ ;;=4^H66.91
+ ;;^UTILITY(U,$J,358.3,8052,2)
+ ;;=^5006640
+ ;;^UTILITY(U,$J,358.3,8053,0)
+ ;;=H66.92^^55^534^106
+ ;;^UTILITY(U,$J,358.3,8053,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8741,1,2,0)
- ;;=2^I&D Abscess,complic or multip
- ;;^UTILITY(U,$J,358.3,8741,1,4,0)
- ;;=4^10061
- ;;^UTILITY(U,$J,358.3,8742,0)
- ;;=10160^^60^618^14
- ;;^UTILITY(U,$J,358.3,8742,1,0)
+ ;;^UTILITY(U,$J,358.3,8053,1,3,0)
+ ;;=3^Otitis Media,Left Ear,Unspec
+ ;;^UTILITY(U,$J,358.3,8053,1,4,0)
+ ;;=4^H66.92
+ ;;^UTILITY(U,$J,358.3,8053,2)
+ ;;=^5006641
+ ;;^UTILITY(U,$J,358.3,8054,0)
+ ;;=H66.93^^55^534^105
+ ;;^UTILITY(U,$J,358.3,8054,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8742,1,2,0)
- ;;=2^Needle asp absc/cyst/hematoma
- ;;^UTILITY(U,$J,358.3,8742,1,4,0)
- ;;=4^10160
- ;;^UTILITY(U,$J,358.3,8743,0)
- ;;=10140^^60^618^11
- ;;^UTILITY(U,$J,358.3,8743,1,0)
+ ;;^UTILITY(U,$J,358.3,8054,1,3,0)
+ ;;=3^Otitis Media,Bilateral,Unspec
+ ;;^UTILITY(U,$J,358.3,8054,1,4,0)
+ ;;=4^H66.93
+ ;;^UTILITY(U,$J,358.3,8054,2)
+ ;;=^5006642
+ ;;^UTILITY(U,$J,358.3,8055,0)
+ ;;=H81.01^^55^534^93
+ ;;^UTILITY(U,$J,358.3,8055,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8743,1,2,0)
- ;;=2^I&D hematoma/seroma,skin
- ;;^UTILITY(U,$J,358.3,8743,1,4,0)
- ;;=4^10140
- ;;^UTILITY(U,$J,358.3,8744,0)
- ;;=19000^^60^618^1
- ;;^UTILITY(U,$J,358.3,8744,1,0)
+ ;;^UTILITY(U,$J,358.3,8055,1,3,0)
+ ;;=3^Meniere's disease, right ear
+ ;;^UTILITY(U,$J,358.3,8055,1,4,0)
+ ;;=4^H81.01
+ ;;^UTILITY(U,$J,358.3,8055,2)
+ ;;=^5006860
+ ;;^UTILITY(U,$J,358.3,8056,0)
+ ;;=H81.02^^55^534^92
+ ;;^UTILITY(U,$J,358.3,8056,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8744,1,2,0)
- ;;=2^Aspirate breast cyst, first
- ;;^UTILITY(U,$J,358.3,8744,1,4,0)
- ;;=4^19000
- ;;^UTILITY(U,$J,358.3,8745,0)
- ;;=19001^^60^618^2
- ;;^UTILITY(U,$J,358.3,8745,1,0)
+ ;;^UTILITY(U,$J,358.3,8056,1,3,0)
+ ;;=3^Meniere's disease, left ear
+ ;;^UTILITY(U,$J,358.3,8056,1,4,0)
+ ;;=4^H81.02
+ ;;^UTILITY(U,$J,358.3,8056,2)
+ ;;=^5006861
+ ;;^UTILITY(U,$J,358.3,8057,0)
+ ;;=H81.03^^55^534^91
+ ;;^UTILITY(U,$J,358.3,8057,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8745,1,2,0)
- ;;=2^Aspirate Breast Cyst,Ea Addl Cyst
- ;;^UTILITY(U,$J,358.3,8745,1,4,0)
- ;;=4^19001
- ;;^UTILITY(U,$J,358.3,8746,0)
- ;;=26011^^60^618^4
- ;;^UTILITY(U,$J,358.3,8746,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8746,1,2,0)
- ;;=2^Drain abscess finger,complic
+ ;;^UTILITY(U,$J,358.3,8057,1,3,0)
+ ;;=3^Meniere's disease, bilateral
+ ;;^UTILITY(U,$J,358.3,8057,1,4,0)
+ ;;=4^H81.03

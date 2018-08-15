@@ -1,136 +1,124 @@
-IBDEI1CF ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1CF ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,24071,0)
- ;;=729.5^^155^1534^14
- ;;^UTILITY(U,$J,358.3,24071,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,24071,1,4,0)
- ;;=4^Leg Pain
- ;;^UTILITY(U,$J,358.3,24071,1,5,0)
- ;;=5^729.5
- ;;^UTILITY(U,$J,358.3,24071,2)
- ;;=Leg Pain^89086
- ;;^UTILITY(U,$J,358.3,24072,0)
- ;;=433.30^^155^1534^15
- ;;^UTILITY(U,$J,358.3,24072,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,24072,1,4,0)
- ;;=4^Occ&Sten Mult/Bil Art w/o CRB
- ;;^UTILITY(U,$J,358.3,24072,1,5,0)
- ;;=5
- ;;^UTILITY(U,$J,358.3,24072,2)
- ;;=^295803
- ;;^UTILITY(U,$J,358.3,24073,0)
- ;;=414.00^^155^1534^11
- ;;^UTILITY(U,$J,358.3,24073,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,24073,1,4,0)
- ;;=4^Cor Atheroscl Unsp Typ Ves
- ;;^UTILITY(U,$J,358.3,24073,1,5,0)
- ;;=5^414.00
- ;;^UTILITY(U,$J,358.3,24073,2)
- ;;=^28512
- ;;^UTILITY(U,$J,358.3,24074,0)
- ;;=V81.2^^155^1534^9
- ;;^UTILITY(U,$J,358.3,24074,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,24074,1,4,0)
- ;;=4^Cardiovascular Screen NEC
- ;;^UTILITY(U,$J,358.3,24074,1,5,0)
- ;;=5^V81.2
- ;;^UTILITY(U,$J,358.3,24074,2)
- ;;=^295689
- ;;^UTILITY(U,$J,358.3,24075,0)
- ;;=435.2^^155^1534^19
- ;;^UTILITY(U,$J,358.3,24075,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,24075,1,4,0)
- ;;=4^Subclavian Steal Syndrome
- ;;^UTILITY(U,$J,358.3,24075,1,5,0)
- ;;=5^435.2
- ;;^UTILITY(U,$J,358.3,24075,2)
- ;;=^115012
- ;;^UTILITY(U,$J,358.3,24076,0)
- ;;=435.8^^155^1534^20
- ;;^UTILITY(U,$J,358.3,24076,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,24076,1,4,0)
- ;;=4^Transient Cerebral Ischemia
- ;;^UTILITY(U,$J,358.3,24076,1,5,0)
- ;;=5^435.8
- ;;^UTILITY(U,$J,358.3,24076,2)
- ;;=^269752
- ;;^UTILITY(U,$J,358.3,24077,0)
- ;;=440.20^^155^1534^6
- ;;^UTILITY(U,$J,358.3,24077,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,24077,1,4,0)
- ;;=4^Atheroscl,Nat Art Extrem,Unspec
- ;;^UTILITY(U,$J,358.3,24077,1,5,0)
- ;;=5^440.20
- ;;^UTILITY(U,$J,358.3,24077,2)
- ;;=^294064
- ;;^UTILITY(U,$J,358.3,24078,0)
- ;;=440.30^^155^1534^7
- ;;^UTILITY(U,$J,358.3,24078,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,24078,1,4,0)
- ;;=4^Atheroscl,Unspec Bypass Graft,Extrem
- ;;^UTILITY(U,$J,358.3,24078,1,5,0)
- ;;=5^440.30
- ;;^UTILITY(U,$J,358.3,24078,2)
- ;;=^303286
- ;;^UTILITY(U,$J,358.3,24079,0)
- ;;=440.31^^155^1534^4
- ;;^UTILITY(U,$J,358.3,24079,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,24079,1,4,0)
- ;;=4^Atheroscl Autol Vein Bypass Graft,Extrem
- ;;^UTILITY(U,$J,358.3,24079,1,5,0)
- ;;=5^440.31
- ;;^UTILITY(U,$J,358.3,24079,2)
- ;;=^303287
- ;;^UTILITY(U,$J,358.3,24080,0)
- ;;=447.0^^155^1534^3
- ;;^UTILITY(U,$J,358.3,24080,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,24080,1,4,0)
- ;;=4^Arteriovenous Fistula
- ;;^UTILITY(U,$J,358.3,24080,1,5,0)
- ;;=5^447.0
- ;;^UTILITY(U,$J,358.3,24080,2)
- ;;=^10362
- ;;^UTILITY(U,$J,358.3,24081,0)
- ;;=440.32^^155^1534^5
- ;;^UTILITY(U,$J,358.3,24081,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,24081,1,4,0)
- ;;=4^Atheroscl NonAuto Bio Bypass Grft,Extrem
- ;;^UTILITY(U,$J,358.3,24081,1,5,0)
- ;;=5^440.32
- ;;^UTILITY(U,$J,358.3,24081,2)
- ;;=^303288
- ;;^UTILITY(U,$J,358.3,24082,0)
- ;;=789.06^^155^1535^3
- ;;^UTILITY(U,$J,358.3,24082,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,24082,1,4,0)
- ;;=4^Epigastric Pain
- ;;^UTILITY(U,$J,358.3,24082,1,5,0)
- ;;=5^789.06
- ;;^UTILITY(U,$J,358.3,24082,2)
- ;;=Epigastric Pain^303323
- ;;^UTILITY(U,$J,358.3,24083,0)
- ;;=789.07^^155^1535^4
- ;;^UTILITY(U,$J,358.3,24083,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,24083,1,4,0)
- ;;=4^Generalized Abdominal Pain
- ;;^UTILITY(U,$J,358.3,24083,1,5,0)
- ;;=5^789.07
- ;;^UTILITY(U,$J,358.3,24083,2)
- ;;=Generalized Abdominal Pain^303324
- ;;^UTILITY(U,$J,358.3,24084,0)
- ;;=789.04^^155^1535^5
+ ;;^UTILITY(U,$J,358.3,22375,1,4,0)
+ ;;=4^S59.142S
+ ;;^UTILITY(U,$J,358.3,22375,2)
+ ;;=^5032128
+ ;;^UTILITY(U,$J,358.3,22376,0)
+ ;;=S59.141S^^101^1040^156
+ ;;^UTILITY(U,$J,358.3,22376,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22376,1,3,0)
+ ;;=3^Sltr-haris Type IV physl fx upper end rad, right arm, sqla
+ ;;^UTILITY(U,$J,358.3,22376,1,4,0)
+ ;;=4^S59.141S
+ ;;^UTILITY(U,$J,358.3,22376,2)
+ ;;=^5032122
+ ;;^UTILITY(U,$J,358.3,22377,0)
+ ;;=S52.542S^^101^1040^157
+ ;;^UTILITY(U,$J,358.3,22377,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22377,1,3,0)
+ ;;=3^Smith's fracture of left radius, sequela
+ ;;^UTILITY(U,$J,358.3,22377,1,4,0)
+ ;;=4^S52.542S
+ ;;^UTILITY(U,$J,358.3,22377,2)
+ ;;=^5030800
+ ;;^UTILITY(U,$J,358.3,22378,0)
+ ;;=S52.541S^^101^1040^158
+ ;;^UTILITY(U,$J,358.3,22378,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22378,1,3,0)
+ ;;=3^Smith's fracture of right radius, sequela
+ ;;^UTILITY(U,$J,358.3,22378,1,4,0)
+ ;;=4^S52.541S
+ ;;^UTILITY(U,$J,358.3,22378,2)
+ ;;=^5030784
+ ;;^UTILITY(U,$J,358.3,22379,0)
+ ;;=M84.334S^^101^1040^159
+ ;;^UTILITY(U,$J,358.3,22379,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22379,1,3,0)
+ ;;=3^Stress fracture, left radius, sequela
+ ;;^UTILITY(U,$J,358.3,22379,1,4,0)
+ ;;=4^M84.334S
+ ;;^UTILITY(U,$J,358.3,22379,2)
+ ;;=^5013631
+ ;;^UTILITY(U,$J,358.3,22380,0)
+ ;;=M84.333S^^101^1040^161
+ ;;^UTILITY(U,$J,358.3,22380,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22380,1,3,0)
+ ;;=3^Stress fracture, right radius, sequela
+ ;;^UTILITY(U,$J,358.3,22380,1,4,0)
+ ;;=4^M84.333S
+ ;;^UTILITY(U,$J,358.3,22380,2)
+ ;;=^5013625
+ ;;^UTILITY(U,$J,358.3,22381,0)
+ ;;=S52.522S^^101^1040^163
+ ;;^UTILITY(U,$J,358.3,22381,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22381,1,3,0)
+ ;;=3^Torus fracture of lower end of left radius, sequela
+ ;;^UTILITY(U,$J,358.3,22381,1,4,0)
+ ;;=4^S52.522S
+ ;;^UTILITY(U,$J,358.3,22381,2)
+ ;;=^5135272
+ ;;^UTILITY(U,$J,358.3,22382,0)
+ ;;=S52.521S^^101^1040^165
+ ;;^UTILITY(U,$J,358.3,22382,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22382,1,3,0)
+ ;;=3^Torus fracture of lower end of right radius, sequela
+ ;;^UTILITY(U,$J,358.3,22382,1,4,0)
+ ;;=4^S52.521S
+ ;;^UTILITY(U,$J,358.3,22382,2)
+ ;;=^5030720
+ ;;^UTILITY(U,$J,358.3,22383,0)
+ ;;=S52.111S^^101^1040^169
+ ;;^UTILITY(U,$J,358.3,22383,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22383,1,3,0)
+ ;;=3^Torus fracture of upper end of right radius, sequela
+ ;;^UTILITY(U,$J,358.3,22383,1,4,0)
+ ;;=4^S52.111S
+ ;;^UTILITY(U,$J,358.3,22383,2)
+ ;;=^5029034
+ ;;^UTILITY(U,$J,358.3,22384,0)
+ ;;=S52.112S^^101^1040^167
+ ;;^UTILITY(U,$J,358.3,22384,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22384,1,3,0)
+ ;;=3^Torus fracture of upper end of left radius, sequela
+ ;;^UTILITY(U,$J,358.3,22384,1,4,0)
+ ;;=4^S52.112S
+ ;;^UTILITY(U,$J,358.3,22384,2)
+ ;;=^5029040
+ ;;^UTILITY(U,$J,358.3,22385,0)
+ ;;=S62.142S^^101^1040^9
+ ;;^UTILITY(U,$J,358.3,22385,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22385,1,3,0)
+ ;;=3^Disp fx of body of hamate bone, left wrist, sequela
+ ;;^UTILITY(U,$J,358.3,22385,1,4,0)
+ ;;=4^S62.142S
+ ;;^UTILITY(U,$J,358.3,22385,2)
+ ;;=^5033352
+ ;;^UTILITY(U,$J,358.3,22386,0)
+ ;;=S62.141S^^101^1040^10
+ ;;^UTILITY(U,$J,358.3,22386,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22386,1,3,0)
+ ;;=3^Disp fx of body of hamate bone, right wrist, sequela
+ ;;^UTILITY(U,$J,358.3,22386,1,4,0)
+ ;;=4^S62.141S
+ ;;^UTILITY(U,$J,358.3,22386,2)
+ ;;=^5033345
+ ;;^UTILITY(U,$J,358.3,22387,0)
+ ;;=S62.132S^^101^1040^11
+ ;;^UTILITY(U,$J,358.3,22387,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22387,1,3,0)
+ ;;=3^Disp fx of capitate bone, left wrist, sequela 

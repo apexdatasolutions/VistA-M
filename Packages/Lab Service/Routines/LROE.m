@@ -1,12 +1,15 @@
-LROE ;DALOI/CJS/FHS-LAB ORDER ENTRY AND ACCESSION ;8/11/97
- ;;5.2;LAB SERVICE;**100,121,201,221,263,286,360,423,432**;Sep 27, 1994;Build 2
+LROE ;DALOI/CJS/FHS-LAB ORDER ENTRY AND ACCESSION ;01/23/17  07:34
+ ;;5.2;LAB SERVICE;**100,121,201,221,263,286,360,423,432,438,450,479**;Sep 27, 1994;Build 8
  K LRORIFN,LRNATURE,LREND,LRORDRR
- S LRLWC="WC"
+ ;;*
+ N LRSVODT,LRORDR
+ S (LRORDR,LRLWC)="WC"
+ ;;;*
  D ^LRPARAM
  I $G(LREND) S LREND=0 Q
 L5 ;
 NEXT ;from LROE1
- K DIR
+ K DIR,LRSVODT
  I $D(LROESTAT) D:$P(LRPARAM,U,14) ^LRCAPV I $G(LREND) K LRLONG,LRPANEL Q
  S (LRODT,X,DT)=$$DT^XLFDT(),LRODT0=$$FMTE^XLFDT(DT,5)
  I '$D(^LRO(69,DT,1,0)) S ^LRO(69,DT,0)=DT,^LRO(69,DT,1,0)="^69.01PA^^",^LRO(69,"B",DT,DT)=""
@@ -25,7 +28,14 @@ NEXT ;from LROE1
  S (LRCHK,LRNONE)=1,(M9,LRODT)=0
  F  S LRODT=+$O(^LRO(69,"C",LRORD,LRODT)) Q:LRODT<1  D
  . S DA=0 F  S DA=$O(^LRO(69,"C",LRORD,LRODT,DA)) Q:DA<1  S LRCHK=LRCHK-1 S:LRNONE'=2 LRNONE=0 D LROE2
+ ;;*
+ I $G(LRSN),$G(LRSVODT),$O(^LRO(69,LRSVODT,1,LRSN,13,0)) D  G NEXT
+ . W !,$$CJ^XLFSTR("This is an Anatomic Path order",IOM),!
+ . W !,$$CJ^XLFSTR("Must use 'Log-in, anat path' Option to accession this Order",IOM),!
+ . H 5
+ ;;;*
  I DOD'="" S Y=DOD D DD^LRX W !,!,?5,@LRVIDO,"Patient ",PNM," died on: ",Y,@LRVIDOF W !
+ I '$$GOT(LRORD,LRODT) W !,"All tests for this order have been canceled." H 1 G NEXT
  I DOD'="" D  I Y=0!($D(DIRUT)) K DIRUT,DTOUT,DUOUT,Y D KVAR^LRX G NEXT
  . K Y
  . S DIR(0)="Y"
@@ -35,7 +45,7 @@ NEXT ;from LROE1
  I LRNONE=2,LRCHK<1 W !,"The order has already been partially accessioned." H 1
  I LRNONE=2,LRCHK>0 W !,"The order has already been accessioned." H 1 G NEXT
  I LRNONE=1 W !,"No order exists with that number." H 1 G NEXT
- I '$$GOT(LRORD,LRODT) G NEXT ;W !!,"All tests for this order have been canceled.",!,"Are you sure you want to accession it" S %=1 D YN^DICN I %'=1 G NEXT
+ ;I '$$GOT(LRORD,LRODT) G NEXT ;W !!,"All tests for this order have been canceled.",!,"Are you sure you want to accession it" S %=1 D YN^DICN I %'=1 G NEXT
  K DIR S DIR("A")="Is this the correct order",DIR(0)="Y"
  S DIR("B")="Yes"
  D ^DIR K DIR
@@ -73,7 +83,11 @@ LROE2 ;
  I '$D(^LRO(69,LRODT,1,LRSN,0)) Q
  S M9=$G(M9)+1,LRZX=^LRO(69,LRODT,1,LRSN,0),LRDFN=+LRZX,LRDPF=$P(^LR(LRDFN,0),U,2),DFN=$P(^(0),U,3) D PT^LRX W !,PNM,?30,SSN S LRWRDS=LRWRD
  W ?45,"Requesting location: ",$P(LRZX,U,7) S Y=$P(LRZX,U,5) D DD^LRX W !,"Date/Time Ordered: ",Y,?45,"By: ",$S($D(^VA(200,+$P(LRZX,U,2),0)):$P(^(0),U),1:"")
- S LRSVSN=LRSN D ORDER^LROS S LRSN=LRSVSN
+ ;;*
+ ;
+ S LRSVODT=LRODT
+ D ORDER^LROS
+ ;;;*
  Q
  ;
  ;
@@ -147,7 +161,7 @@ GOT(ORD,ODT) ;See if all tests have been canceled
  F  S ODT=$O(^LRO(69,"C",ORD,ODT)) Q:ODT<1  D
  . S SN=0 F  S SN=$O(^LRO(69,"C",ORD,ODT,SN)) Q:SN<1!(GOT)  D
  . . Q:'$D(^LRO(69,ODT,1,SN,0))
- . . S I=0 F  S I=$O(^LRO(69,ODT,1,SN,2,I)) Q:I<1  I $D(^(I,0)),'$P(^(0),"^",11) S GOT=1 Q
+ . . S I=0 F  S I=$O(^LRO(69,ODT,1,SN,2,I)) Q:I<1  I $D(^(I,0)),'$P(^(0),"^",11),$P(^(0),U,9)'="CA" S GOT=1 Q
  Q GOT
  ;
  ;

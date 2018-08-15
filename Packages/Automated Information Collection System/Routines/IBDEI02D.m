@@ -1,148 +1,134 @@
-IBDEI02D ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI02D ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,692,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,692,1,4,0)
- ;;=4^Convulsions Unspec
- ;;^UTILITY(U,$J,358.3,692,1,5,0)
- ;;=5^780.39
- ;;^UTILITY(U,$J,358.3,692,2)
- ;;=^28162
- ;;^UTILITY(U,$J,358.3,693,0)
- ;;=996.59^^9^87^12
- ;;^UTILITY(U,$J,358.3,693,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,693,1,4,0)
- ;;=4^Mech Compl ET Tube
- ;;^UTILITY(U,$J,358.3,693,1,5,0)
- ;;=5^996.59
- ;;^UTILITY(U,$J,358.3,693,2)
- ;;=^276281
- ;;^UTILITY(U,$J,358.3,694,0)
- ;;=478.19^^9^87^13
- ;;^UTILITY(U,$J,358.3,694,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,694,1,4,0)
- ;;=4^Nasal Sinus Disease
- ;;^UTILITY(U,$J,358.3,694,1,5,0)
- ;;=5^478.19
- ;;^UTILITY(U,$J,358.3,694,2)
- ;;=^334090
- ;;^UTILITY(U,$J,358.3,695,0)
- ;;=277.39^^9^87^4
- ;;^UTILITY(U,$J,358.3,695,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,695,1,4,0)
- ;;=4^Amyloidosis
- ;;^UTILITY(U,$J,358.3,695,1,5,0)
- ;;=5^277.39
- ;;^UTILITY(U,$J,358.3,695,2)
- ;;=^334034
- ;;^UTILITY(U,$J,358.3,696,0)
- ;;=745.5^^9^87^14
- ;;^UTILITY(U,$J,358.3,696,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,696,1,4,0)
- ;;=4^Patent Foramen Ovale
- ;;^UTILITY(U,$J,358.3,696,1,5,0)
- ;;=5^745.5
- ;;^UTILITY(U,$J,358.3,696,2)
- ;;=^87222
- ;;^UTILITY(U,$J,358.3,697,0)
- ;;=276.52^^9^87^11
- ;;^UTILITY(U,$J,358.3,697,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,697,1,4,0)
- ;;=4^Hypovolemia
- ;;^UTILITY(U,$J,358.3,697,1,5,0)
- ;;=5^276.52
- ;;^UTILITY(U,$J,358.3,697,2)
- ;;=^332744
- ;;^UTILITY(U,$J,358.3,698,0)
- ;;=785.51^^9^87^6
- ;;^UTILITY(U,$J,358.3,698,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,698,1,4,0)
- ;;=4^Cardiogenic Shock
- ;;^UTILITY(U,$J,358.3,698,1,5,0)
- ;;=5^785.51
- ;;^UTILITY(U,$J,358.3,698,2)
- ;;=^110169
- ;;^UTILITY(U,$J,358.3,699,0)
- ;;=518.51^^9^88^8
- ;;^UTILITY(U,$J,358.3,699,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,699,1,4,0)
- ;;=4^Resp Distress Following Surg
- ;;^UTILITY(U,$J,358.3,699,1,5,0)
- ;;=5^518.51
- ;;^UTILITY(U,$J,358.3,699,2)
- ;;=^340548
- ;;^UTILITY(U,$J,358.3,700,0)
- ;;=799.1^^9^88^9
- ;;^UTILITY(U,$J,358.3,700,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,700,1,4,0)
- ;;=4^Respiratory Arrest
- ;;^UTILITY(U,$J,358.3,700,1,5,0)
- ;;=5^799.1
- ;;^UTILITY(U,$J,358.3,700,2)
- ;;=^276886
- ;;^UTILITY(U,$J,358.3,701,0)
- ;;=518.81^^9^88^2
- ;;^UTILITY(U,$J,358.3,701,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,701,1,4,0)
- ;;=4^AC Respiratory Failure
- ;;^UTILITY(U,$J,358.3,701,1,5,0)
- ;;=5^518.81
- ;;^UTILITY(U,$J,358.3,701,2)
- ;;=^328757
- ;;^UTILITY(U,$J,358.3,702,0)
- ;;=518.83^^9^88^4
- ;;^UTILITY(U,$J,358.3,702,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,702,1,4,0)
- ;;=4^Chr Respiratory Failure
- ;;^UTILITY(U,$J,358.3,702,1,5,0)
- ;;=5^518.83
- ;;^UTILITY(U,$J,358.3,702,2)
- ;;=^321182
- ;;^UTILITY(U,$J,358.3,703,0)
- ;;=518.84^^9^88^1
- ;;^UTILITY(U,$J,358.3,703,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,703,1,4,0)
- ;;=4^AC & Chr Resp Failure
- ;;^UTILITY(U,$J,358.3,703,1,5,0)
- ;;=5^518.84
- ;;^UTILITY(U,$J,358.3,703,2)
- ;;=^321183
- ;;^UTILITY(U,$J,358.3,704,0)
- ;;=790.91^^9^88^3
- ;;^UTILITY(U,$J,358.3,704,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,704,1,4,0)
- ;;=4^Abn Arterial Blood Gases
- ;;^UTILITY(U,$J,358.3,704,1,5,0)
- ;;=5^790.91
- ;;^UTILITY(U,$J,358.3,704,2)
- ;;=^295770
- ;;^UTILITY(U,$J,358.3,705,0)
- ;;=V12.60^^9^88^6
- ;;^UTILITY(U,$J,358.3,705,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,705,1,4,0)
- ;;=4^HX Resp Sys Dis NOS
- ;;^UTILITY(U,$J,358.3,705,1,5,0)
- ;;=5^V12.60
- ;;^UTILITY(U,$J,358.3,705,2)
- ;;=^332854
- ;;^UTILITY(U,$J,358.3,706,0)
- ;;=V12.61^^9^88^7
- ;;^UTILITY(U,$J,358.3,706,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,706,1,4,0)
- ;;=4^Pers HX Recur Pneumonia
+ ;;^UTILITY(U,$J,358.3,340,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,340,1,3,0)
+ ;;=3^Problems Related to Release from Prison
+ ;;^UTILITY(U,$J,358.3,340,1,4,0)
+ ;;=4^Z65.2
+ ;;^UTILITY(U,$J,358.3,340,2)
+ ;;=^5063181
+ ;;^UTILITY(U,$J,358.3,341,0)
+ ;;=Z65.3^^3^43^2
+ ;;^UTILITY(U,$J,358.3,341,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,341,1,3,0)
+ ;;=3^Problems Related to Oth Legal Circumstances
+ ;;^UTILITY(U,$J,358.3,341,1,4,0)
+ ;;=4^Z65.3
+ ;;^UTILITY(U,$J,358.3,341,2)
+ ;;=^5063182
+ ;;^UTILITY(U,$J,358.3,342,0)
+ ;;=Z65.8^^3^44^5
+ ;;^UTILITY(U,$J,358.3,342,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,342,1,3,0)
+ ;;=3^Religious/Spiritual Problem;Oth Problem Related to Psychosocial Circumstances
+ ;;^UTILITY(U,$J,358.3,342,1,4,0)
+ ;;=4^Z65.8
+ ;;^UTILITY(U,$J,358.3,342,2)
+ ;;=^5063185
+ ;;^UTILITY(U,$J,358.3,343,0)
+ ;;=Z64.0^^3^44^4
+ ;;^UTILITY(U,$J,358.3,343,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,343,1,3,0)
+ ;;=3^Problems Related to Unwanted Pregnancy
+ ;;^UTILITY(U,$J,358.3,343,1,4,0)
+ ;;=4^Z64.0
+ ;;^UTILITY(U,$J,358.3,343,2)
+ ;;=^5063176
+ ;;^UTILITY(U,$J,358.3,344,0)
+ ;;=Z64.1^^3^44^3
+ ;;^UTILITY(U,$J,358.3,344,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,344,1,3,0)
+ ;;=3^Problems Related to Multiparity
+ ;;^UTILITY(U,$J,358.3,344,1,4,0)
+ ;;=4^Z64.1
+ ;;^UTILITY(U,$J,358.3,344,2)
+ ;;=^5063177
+ ;;^UTILITY(U,$J,358.3,345,0)
+ ;;=Z64.4^^3^44^1
+ ;;^UTILITY(U,$J,358.3,345,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,345,1,3,0)
+ ;;=3^Discord w/ Social Service Provider,Including Probation Officer,Case Manager,Social Worker
+ ;;^UTILITY(U,$J,358.3,345,1,4,0)
+ ;;=4^Z64.4
+ ;;^UTILITY(U,$J,358.3,345,2)
+ ;;=^5063178
+ ;;^UTILITY(U,$J,358.3,346,0)
+ ;;=Z65.5^^3^44^2
+ ;;^UTILITY(U,$J,358.3,346,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,346,1,3,0)
+ ;;=3^Exposure to Disaster,War or Other Hostilities
+ ;;^UTILITY(U,$J,358.3,346,1,4,0)
+ ;;=4^Z65.5
+ ;;^UTILITY(U,$J,358.3,346,2)
+ ;;=^5063184
+ ;;^UTILITY(U,$J,358.3,347,0)
+ ;;=Z62.820^^3^45^4
+ ;;^UTILITY(U,$J,358.3,347,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,347,1,3,0)
+ ;;=3^Parent-Child Relational Problem
+ ;;^UTILITY(U,$J,358.3,347,1,4,0)
+ ;;=4^Z62.820
+ ;;^UTILITY(U,$J,358.3,347,2)
+ ;;=^5063157
+ ;;^UTILITY(U,$J,358.3,348,0)
+ ;;=Z62.891^^3^45^6
+ ;;^UTILITY(U,$J,358.3,348,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,348,1,3,0)
+ ;;=3^Sibling Relational Problem
+ ;;^UTILITY(U,$J,358.3,348,1,4,0)
+ ;;=4^Z62.891
+ ;;^UTILITY(U,$J,358.3,348,2)
+ ;;=^5063161
+ ;;^UTILITY(U,$J,358.3,349,0)
+ ;;=Z62.898^^3^45^1
+ ;;^UTILITY(U,$J,358.3,349,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,349,1,3,0)
+ ;;=3^Child Affected by Parental Relationship Distress
+ ;;^UTILITY(U,$J,358.3,349,1,4,0)
+ ;;=4^Z62.898
+ ;;^UTILITY(U,$J,358.3,349,2)
+ ;;=^5063162
+ ;;^UTILITY(U,$J,358.3,350,0)
+ ;;=Z63.0^^3^45^5
+ ;;^UTILITY(U,$J,358.3,350,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,350,1,3,0)
+ ;;=3^Relationship Distress w/ Spouse/Partner
+ ;;^UTILITY(U,$J,358.3,350,1,4,0)
+ ;;=4^Z63.0
+ ;;^UTILITY(U,$J,358.3,350,2)
+ ;;=^5063164
+ ;;^UTILITY(U,$J,358.3,351,0)
+ ;;=Z63.5^^3^45^2
+ ;;^UTILITY(U,$J,358.3,351,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,351,1,3,0)
+ ;;=3^Disruption of Family by Separation or Divorce
+ ;;^UTILITY(U,$J,358.3,351,1,4,0)
+ ;;=4^Z63.5
+ ;;^UTILITY(U,$J,358.3,351,2)
+ ;;=^5063169
+ ;;^UTILITY(U,$J,358.3,352,0)
+ ;;=Z63.8^^3^45^3
+ ;;^UTILITY(U,$J,358.3,352,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,352,1,3,0)
+ ;;=3^High Exporessed Emotion Level w/in Family
+ ;;^UTILITY(U,$J,358.3,352,1,4,0)
+ ;;=4^Z63.8
+ ;;^UTILITY(U,$J,358.3,352,2)
+ ;;=^5063174
+ ;;^UTILITY(U,$J,358.3,353,0)
+ ;;=Z63.4^^3^45^7

@@ -1,6 +1,8 @@
-PSOUTIL ;IHS/DSD/JCM - outpatient pharmacy utility routine ; 03/28/93 20:46
- ;;7.0;OUTPATIENT PHARMACY;**64**;DEC 1997
- W !!,$C(7),"This routine not callable from PSOUTIL.."
+PSOUTIL ;IHS/DSD/JCM - outpatient pharmacy utility routine ;12/28/15 4:01pm
+ ;;7.0;OUTPATIENT PHARMACY;**64,456,444,469,504**;DEC 1997;Build 15
+ ;External reference $$MXDAYSUP^PSSUTIL1 supported by DBIA 6229
+ ;External reference to ^ORDEA is supported by DBIA 5709
+ ;
  Q
  ;
 NPSOSD(PSORX) ; Entry point to add newly added rx to patients PSOSD array
@@ -27,13 +29,15 @@ RNPSOSD ;update PSOSD array for renewals
  ;
 PROV(PSORENW) ;called from psoornew
 CHKPRV ;check inactive providers and cosinging providers called from PSORENW (renew rx)
- I '$D(^VA(200,PSORENW("PROVIDER"),0)) D   G:PSORENW("DFLG") CHKPRVX
+ N OK
+ I '$D(^VA(200,PSORENW("PROVIDER"),0)) D  I 'OK G:PSORENW("DFLG") CHKPRVX
  .W !,$C(7),"Provider not in New Person File .. You must select a new provider"
  .S PSODIR("FIELD")=0 K PSORENW("PROVIDER") D PROV^PSODIR(.PSORENW)
  .S:$G(PSORENW("PROVIDER"))']"" PSORENW("DFLG")=1
  ;
  I '$G(^VA(200,PSORENW("PROVIDER"),"PS")) D   G:PSORENW("DFLG") CHKPRVX
- .W !,$C(7),$P(^VA(200,PSORENW("PROVIDER"),0),"^")_" is not a Valid provider .. You must select a new provider"
+ .I $$ISSPLY(),$D(^XUSEC("ORSUPPLY",PSORENW("PROVIDER"))) S OK=1 Q
+ .S OK=0 W !,$C(7),$P(^VA(200,PSORENW("PROVIDER"),0),"^")_" is not a Valid provider .. You must select a new provider"
  .S PSODIR("FIELD")=0 K PSORENW("PROVIDER") D PROV^PSODIR(.PSORENW)
  .S:$G(PSORENW("PROVIDER"))']"" PSORENW("DFLG")=1
  ;
@@ -164,3 +168,136 @@ GFDT ;
  S PSOX("FILL DATE")=$P(PSOX("RX3"),"^")
  Q
  ;
+ISSPLY() ;is the drug a supply item
+ ;assumes the existence of the PSODRUG array
+ I $G(PSODRUG("DEA"))="" Q 0
+ I $G(PSODRUG("VA CLASS"))="" Q 0
+ I PSODRUG("VA CLASS")?1"XA".E!(PSODRUG("VA CLASS")?1"XX".E)!(PSODRUG("VA CLASS")="DX900"&(PSODRUG("DEA")["S")) Q 1
+ Q 0
+ ;
+DAYSUP(DRUG,RXARR,RCLQTY) ; Adjusts DAYS SUPPLY and QUANTITY based on the maximum allowed
+ ; Input: DRUG   - DRUG file (#50) IEN
+ ;        RXARR  - Array containing prescription information
+ ;        RVWQTY - Re-calculate Quantity (1: YES / 0: NO) 
+ ;Output: RXARR  - Array with "DAYS SUPPLY" and "QTY" values modified
+ ;
+ ; - Invalid Dispense Drug
+ I '$D(^PSDRUG(+$G(DRUG),0))!'$D(RXARR) Q
+ N MXDAYSUP,RXDAYSUP,RXQTY,NEWQTY
+ S MXDAYSUP=$$MXDAYSUP^PSSUTIL1(DRUG)
+ S RXDAYSUP=+$G(RXARR("DAYS SUPPLY"))
+ I RXDAYSUP>MXDAYSUP D
+ . W !!,"The current DAYS SUPPLY value (",RXDAYSUP,") exceeds the Maximum allowed"
+ . W !,"for ",$$GET1^DIQ(50,DRUG,.01)," (",MXDAYSUP,") and will be reset.",$C(7)
+ . S RXARR("DAYS SUPPLY")=MXDAYSUP
+ . S RXQTY=+$G(RXARR("QTY"))
+ . I $G(RCLQTY),RXQTY,RCLQTY'=RXQTY D
+ . . S NEWQTY=((RXQTY*MXDAYSUP)/RXDAYSUP)+.5\1
+ . . W !!,"The Quantity was changed from ",RXQTY," to ",NEWQTY,"."
+ . . S RXARR("QTY")=NEWQTY
+ . W !!,"Please, review the modified order before accepting it."
+ . W ! N DIR S DIR(0)="E",DIR("A")="Press Return to continue" D ^DIR
+ Q
+ ;
+MAXNUMRF(DRUG,DAYSUP,PTST,CLOZPAT) ; Returns the Maximum Number of Refills Allowed
+ ; Input: DRUG     - DRUG file (#50) IEN
+ ;        DAYSUP   - Number of DAYS SUPPLY per fill
+ ;        PTST     - RX PATIENT STATUES (#53) IEN
+ ;        CLOZPAT  - Clozapine Indicator Variable (used throughout PSO)
+ ;Output: MAXNUMRF - Maximum Number of Refills
+ ;
+ N MAXNUMRF,DEAHDLG,CSDRUG,MAXPTST
+ ; - Invalid Drug or DAYS SUPPLY value
+ I '$D(^PSDRUG(+$G(DRUG),0)),'$G(DAYSUP) Q 0
+ ;
+ ; - Calculating Maximum for Clozapine Drug
+ I $D(CLOZPAT) Q $S(CLOZPAT=2&(DAYSUP=14):1,CLOZPAT=2&(DAYSUP=7):3,CLOZPAT=1&(DAYSUP=7):1,1:0)
+ ;
+ ; - Non-Refillable Drugs based on DEA SPECIAL HDLG field
+ S DEAHDLG=""
+ I $G(DRUG) S DEAHDLG=$$GET1^DIQ(50,DRUG,3) I DEAHDLG["A"&(DEAHDLG'["B")!(DEAHDLG["F")!(DEAHDLG[1)!(DEAHDLG[2) Q 0
+ S CSDRUG=0 I (DEAHDLG[3)!(DEAHDLG[4)!(DEAHDLG[5) S CSDRUG=1
+ ;
+ ; - The Maximum Number of Refills Calculation is different for up to 90 Days Supply Vs. Above 90 Days Supply
+ I $G(CSDRUG) D
+ . I DAYSUP'>90 D
+ . . S MAXNUMRF=$S(DAYSUP<60:5,DAYSUP'<60&(DAYSUP'>89):2,DAYSUP=90:1,1:0)
+ . E  D
+ . . S MAXNUMRF=182\DAYSUP-1
+ E  D
+ . I DAYSUP'>90 D
+ . . S MAXNUMRF=$S(DAYSUP<60:11,DAYSUP'<60&(DAYSUP'>89):5,DAYSUP=90:3,1:0)
+ . E  D
+ . . S MAXNUMRF=365\DAYSUP-1
+ ;
+ ; - Adjusting Maximum based Rx Patient Status 
+ I $G(PTST) S MAXPTST=$$GET1^DIQ(53,PTST,4) I MAXNUMRF>MAXPTST S MAXNUMRF=MAXPTST
+ ;
+ Q MAXNUMRF
+ ;
+BADADDFL(RXIEN) ; Indicate whether an Rx should be flagged with a Bad Address
+ ; Input: RXIEN    - Rx IEN (#52) to be checked
+ ;Output: BADADDFL - 1: Rx Flagged for Bad Address / 0: Rx NOT Flagged Bad Address 
+ N BADADDFL,LSTLBLSQ,LSTLBLTX
+ S BADADDFL=0
+ I '$G(^PSRX(+$G(RXIEN),0)) Q BADADDFL
+ S LSTLBLSQ=$O(^PSRX(+RXIEN,"L",9999),-1)
+ I LSTLBLSQ D
+ . S LSTLBLTX=$G(^PSRX(+RXIEN,"L",LSTLBLSQ,0)) I LSTLBLTX["(BAD ADDRESS)" S BADADDFL=1
+ Q BADADDFL
+ ;
+PRVDETOX(PRVIEN) ; Returns the Provider DETOX#, if available and not not expired
+ ; Input: (r) PRVIEN   - Provider IEN (Pointer to VA PERSON file (#200))
+ ;Output:     PRVDETOX - Provider Detox #
+ N PRVDETOX
+ S PRVDETOX=$$DETOX^XUSER(PRVIEN) I PRVDETOX?1"X"1A7N Q PRVDETOX
+ Q ""
+ ;
+RXDEA(RXIEN,ORIEN) ; Returns the Provider DEA# associated with the Prescription/CPRS Order (At least one of RXIEN or ORIEN is required)
+ ; Input: (o) RXIEN - Prescription IEN (Pointer to the PRESCRIPTION file (#52))
+ ;        (o) ORIEN - CPRS Order IEN (Pointer to ORDER file (#100))
+ ;Output:     RXDEA - Provider DEA# associated with the Prescription
+ N RXDEA
+ I $G(RXIEN) S ORIEN=+$$GET1^DIQ(52,RXIEN,39.3,"I")
+ I $G(ORIEN) K ^TMP($J,"ORDEA") D ARCHIVE^ORDEA(ORIEN) S RXDEA=$P($G(^TMP($J,"ORDEA",ORIEN,2)),"^",1) K ^TMP($J,"ORDEA")
+ Q $G(RXDEA)
+ ;
+RXDETOX(RXIEN,ORIEN) ; Returns the Provider DETOX# associated with the Prescription/CPRS Order (At least one of RXIEN or ORIEN is required)
+ ; Input: (o) RXIEN   - Prescription IEN (Pointer to the PRESCRIPTION file (#52))
+ ;        (o) ORIEN   - CPRS Order IEN (Pointer to the ORDER file (#100))
+ ;Output:     RXDETOX - Provider DETOX# associated with the Prescription
+ N RXDETOX
+ I $G(RXIEN) S ORIEN=+$$GET1^DIQ(52,RXIEN,39.3,"I")
+ I $G(ORIEN) K ^TMP($J,"ORDEA") D ARCHIVE^ORDEA(ORIEN) S RXDETOX=$P($G(^TMP($J,"ORDEA",ORIEN,2)),"^",2) K ^TMP($J,"ORDEA")
+ Q $G(RXDETOX)
+ ;
+CHKRXPRV(RXIEN,PRVIEN) ; Check if the Provider can be assigned to a specific Prescription (Used for Rx Copy, Rx Renewal, etc.)
+ ; Input: (r) RXIEN  - Prescription IEN (Pointer to the PRESCRIPTION file (#52))
+ ;        (o) PRVIEN - Provider IEN (Pointer to the NEW PERSON file (#200))
+ ;Output: $CHKRXPRV  - 1: YES / 0: NO^Short Reason (Listman)^Long Reason (Write to screen)
+ N CHKRXPRV,DRUGIEN,CLOZDRUG,DRUGDEA,REASON
+ I '$D(^PSRX(+$G(RXIEN),0)) Q "0^Prescription not found^Prescription not found"
+ I '$G(PRVIEN) S PRVIEN=$$GET1^DIQ(52,RXIEN,4,"I")
+ I '$D(^VA(200,+$G(PRVIEN),0)) Q "0^Provider not found^Provider not found"
+ S DRUGIEN=$$GET1^DIQ(52,RXIEN,6,"I") I 'DRUGIEN Q "0^Invalid Dispense Drug^Invalid Dispense Drug"
+ S CLOZDRUG=$S($D(^PSDRUG("ACLOZ",DRUGIEN)):1,1:0)
+ I CLOZDRUG,'$D(^XUSEC("YSCL AUTHORIZED",PRVIEN)) Q "0^Provider does not hold YSCL AUTHORIZED key^Provider on the Rx does not hold the YSCL AUTHORIZED key required for clozapine prescriptions."
+ S DRUGDEA=$$DRUGSCHD(DRUGIEN)
+ I DRUGDEA'="" S REASON="" D  I REASON'="" Q REASON
+ . N PRVDEA S PRVDEA=$P($$SDEA^XUSER(0,PRVIEN,DRUGDEA),"^",1)
+ . I $L(PRVDEA)<3 D
+ . . I PRVDEA=2 S REASON="0^Provider not authorized to write Schedule "_DRUGDEA_" Rx^Provider is not authorized to write Federal Schedule "_DRUGDEA_" prescriptions" Q
+ . . S REASON="0^Provider must have a valid DEA# or VA# for this Rx^Provider does not have a valid DEA# or VA# required for this Rx"
+ I $$DETOX^PSSOPKI(DRUGIEN),$$PRVDETOX^PSOUTIL(PRVIEN)="" Q "0^Provider must have a valid DETOX# for this Rx^Provider does not have a valid DETOX# required for this Rx"
+ Q 1
+ ; 
+DRUGSCHD(DRUGIEN) ; Return Drug DEA Schedule or "" (blank) for non-controlled substances
+ ; Input: (r) DRUGIEN - Dispense Drug IEN (Pointer to the DRUG file (#50))
+ ;Output: $DRUGSCHD   - DEA Schedule or "" (blank) for non-controlled substances
+ N NDFSCHD,DRUGDEA,NDFIEN
+ S NDFSCHD="",DRUGDEA=$$GET1^DIQ(50,DRUGIEN,3)
+ S NDFIEN=+$$GET1^DIQ(50,DRUGIEN,22,"I") I NDFIEN S NDFSCHD=$$GET1^DIQ(50.68,NDFIEN,19,"I")
+ I +NDFIEN>0!(DRUGDEA="") Q $S('NDFSCHD:"",1:NDFSCHD)
+ I "^2^3^"[+DRUGDEA Q $S(DRUGDEA["A":+DRUGDEA,1:+DRUGDEA_"n")
+ I "^4^5^"[+DRUGDEA Q +DRUGDEA
+ Q ""

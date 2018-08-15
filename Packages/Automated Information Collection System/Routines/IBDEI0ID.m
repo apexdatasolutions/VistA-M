@@ -1,136 +1,136 @@
-IBDEI0ID ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0ID ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,8946,2)
- ;;=Laceration, Buttock^274999
- ;;^UTILITY(U,$J,358.3,8947,0)
- ;;=879.4^^61^630^12
- ;;^UTILITY(U,$J,358.3,8947,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8947,1,4,0)
- ;;=4^Laceration, Groin/Inguinal
- ;;^UTILITY(U,$J,358.3,8947,1,5,0)
- ;;=5^879.4
- ;;^UTILITY(U,$J,358.3,8947,2)
- ;;=Laceration, Groin/Inguinal^275017
- ;;^UTILITY(U,$J,358.3,8948,0)
- ;;=884.0^^61^630^1
- ;;^UTILITY(U,$J,358.3,8948,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8948,1,4,0)
- ;;=4^Laceration, Arm Nos
- ;;^UTILITY(U,$J,358.3,8948,1,5,0)
- ;;=5^884.0
- ;;^UTILITY(U,$J,358.3,8948,2)
- ;;=Laceration, Arm NOS^275064
- ;;^UTILITY(U,$J,358.3,8949,0)
- ;;=883.0^^61^630^9
- ;;^UTILITY(U,$J,358.3,8949,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8949,1,4,0)
- ;;=4^Laceration, Finger
- ;;^UTILITY(U,$J,358.3,8949,1,5,0)
- ;;=5^883.0
- ;;^UTILITY(U,$J,358.3,8949,2)
- ;;=Laceration, Finger^275060
- ;;^UTILITY(U,$J,358.3,8950,0)
- ;;=881.01^^61^630^7
- ;;^UTILITY(U,$J,358.3,8950,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8950,1,4,0)
- ;;=4^Laceration, Elbow
- ;;^UTILITY(U,$J,358.3,8950,1,5,0)
- ;;=5^881.01
- ;;^UTILITY(U,$J,358.3,8950,2)
- ;;=Laceration, Elbow^275045
- ;;^UTILITY(U,$J,358.3,8951,0)
- ;;=882.0^^61^630^13
- ;;^UTILITY(U,$J,358.3,8951,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8951,1,4,0)
- ;;=4^Laceration, Hand
- ;;^UTILITY(U,$J,358.3,8951,1,5,0)
- ;;=5^882.0
- ;;^UTILITY(U,$J,358.3,8951,2)
- ;;=Laceration, Hand^275056
- ;;^UTILITY(U,$J,358.3,8952,0)
- ;;=881.02^^61^630^23
- ;;^UTILITY(U,$J,358.3,8952,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8952,1,4,0)
- ;;=4^Laceration, Wrist
- ;;^UTILITY(U,$J,358.3,8952,1,5,0)
- ;;=5^881.02
- ;;^UTILITY(U,$J,358.3,8952,2)
- ;;=Laceration, Wrist^275046
- ;;^UTILITY(U,$J,358.3,8953,0)
- ;;=880.00^^61^630^21
- ;;^UTILITY(U,$J,358.3,8953,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8953,1,4,0)
- ;;=4^Laceration, Shoulder
- ;;^UTILITY(U,$J,358.3,8953,1,5,0)
- ;;=5^880.00
- ;;^UTILITY(U,$J,358.3,8953,2)
- ;;=Laceration, Shoulder^275025
- ;;^UTILITY(U,$J,358.3,8954,0)
- ;;=890.0^^61^630^15
- ;;^UTILITY(U,$J,358.3,8954,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8954,1,4,0)
- ;;=4^Laceration, Hip/Thigh
- ;;^UTILITY(U,$J,358.3,8954,1,5,0)
- ;;=5^890.0
- ;;^UTILITY(U,$J,358.3,8954,2)
- ;;=Laceration, Hip/Thigh^275083
- ;;^UTILITY(U,$J,358.3,8955,0)
- ;;=891.0^^61^630^17
- ;;^UTILITY(U,$J,358.3,8955,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8955,1,4,0)
- ;;=4^Laceration, Knee/Leg/Ankle
- ;;^UTILITY(U,$J,358.3,8955,1,5,0)
- ;;=5^891.0
- ;;^UTILITY(U,$J,358.3,8955,2)
- ;;=Laceration, Knee/Leg/Ankle^275087
- ;;^UTILITY(U,$J,358.3,8956,0)
- ;;=893.0^^61^630^22
- ;;^UTILITY(U,$J,358.3,8956,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8956,1,4,0)
- ;;=4^Laceration, Toe
- ;;^UTILITY(U,$J,358.3,8956,1,5,0)
- ;;=5^893.0
- ;;^UTILITY(U,$J,358.3,8956,2)
- ;;=Laceration, Toe^275095
- ;;^UTILITY(U,$J,358.3,8957,0)
- ;;=892.0^^61^630^10
- ;;^UTILITY(U,$J,358.3,8957,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8957,1,4,0)
- ;;=4^Laceration, Foot
- ;;^UTILITY(U,$J,358.3,8957,1,5,0)
- ;;=5^892.0
- ;;^UTILITY(U,$J,358.3,8957,2)
- ;;=Laceration, Fott^275091
- ;;^UTILITY(U,$J,358.3,8958,0)
- ;;=209.31^^61^631^1
- ;;^UTILITY(U,$J,358.3,8958,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8958,1,4,0)
- ;;=4^Merkel Cell CA-Face
- ;;^UTILITY(U,$J,358.3,8958,1,5,0)
- ;;=5^209.31
- ;;^UTILITY(U,$J,358.3,8958,2)
- ;;=^338212
- ;;^UTILITY(U,$J,358.3,8959,0)
- ;;=209.32^^61^631^2
- ;;^UTILITY(U,$J,358.3,8959,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8959,1,4,0)
- ;;=4^Merkel Cell CA-Sclp/Neck
- ;;^UTILITY(U,$J,358.3,8959,1,5,0)
- ;;=5^209.32
- ;;^UTILITY(U,$J,358.3,8959,2)
- ;;=^338213
+ ;;^UTILITY(U,$J,358.3,8244,2)
+ ;;=^5019224
+ ;;^UTILITY(U,$J,358.3,8245,0)
+ ;;=R10.816^^55^536^41
+ ;;^UTILITY(U,$J,358.3,8245,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8245,1,3,0)
+ ;;=3^Epigastric abdominal tenderness
+ ;;^UTILITY(U,$J,358.3,8245,1,4,0)
+ ;;=4^R10.816
+ ;;^UTILITY(U,$J,358.3,8245,2)
+ ;;=^5019218
+ ;;^UTILITY(U,$J,358.3,8246,0)
+ ;;=R10.826^^55^536^43
+ ;;^UTILITY(U,$J,358.3,8246,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8246,1,3,0)
+ ;;=3^Epigastric rebound abdominal tenderness
+ ;;^UTILITY(U,$J,358.3,8246,1,4,0)
+ ;;=4^R10.826
+ ;;^UTILITY(U,$J,358.3,8246,2)
+ ;;=^5019225
+ ;;^UTILITY(U,$J,358.3,8247,0)
+ ;;=R74.8^^55^536^2
+ ;;^UTILITY(U,$J,358.3,8247,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8247,1,3,0)
+ ;;=3^Abnormal levels of other serum enzymes
+ ;;^UTILITY(U,$J,358.3,8247,1,4,0)
+ ;;=4^R74.8
+ ;;^UTILITY(U,$J,358.3,8247,2)
+ ;;=^5019566
+ ;;^UTILITY(U,$J,358.3,8248,0)
+ ;;=R79.89^^55^536^1
+ ;;^UTILITY(U,$J,358.3,8248,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8248,1,3,0)
+ ;;=3^Abnormal Findings of Blood Chemistry NEC
+ ;;^UTILITY(U,$J,358.3,8248,1,4,0)
+ ;;=4^R79.89
+ ;;^UTILITY(U,$J,358.3,8248,2)
+ ;;=^5019593
+ ;;^UTILITY(U,$J,358.3,8249,0)
+ ;;=R19.5^^55^536^49
+ ;;^UTILITY(U,$J,358.3,8249,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8249,1,3,0)
+ ;;=3^Fecal Abnormalites NEC
+ ;;^UTILITY(U,$J,358.3,8249,1,4,0)
+ ;;=4^R19.5
+ ;;^UTILITY(U,$J,358.3,8249,2)
+ ;;=^5019274
+ ;;^UTILITY(U,$J,358.3,8250,0)
+ ;;=Z87.11^^55^536^83
+ ;;^UTILITY(U,$J,358.3,8250,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8250,1,3,0)
+ ;;=3^Personal history of peptic ulcer disease
+ ;;^UTILITY(U,$J,358.3,8250,1,4,0)
+ ;;=4^Z87.11
+ ;;^UTILITY(U,$J,358.3,8250,2)
+ ;;=^5063482
+ ;;^UTILITY(U,$J,358.3,8251,0)
+ ;;=Z86.010^^55^536^82
+ ;;^UTILITY(U,$J,358.3,8251,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8251,1,3,0)
+ ;;=3^Personal history of colonic polyps
+ ;;^UTILITY(U,$J,358.3,8251,1,4,0)
+ ;;=4^Z86.010
+ ;;^UTILITY(U,$J,358.3,8251,2)
+ ;;=^5063456
+ ;;^UTILITY(U,$J,358.3,8252,0)
+ ;;=Z83.71^^55^536^46
+ ;;^UTILITY(U,$J,358.3,8252,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8252,1,3,0)
+ ;;=3^Family history of colonic polyps
+ ;;^UTILITY(U,$J,358.3,8252,1,4,0)
+ ;;=4^Z83.71
+ ;;^UTILITY(U,$J,358.3,8252,2)
+ ;;=^5063386
+ ;;^UTILITY(U,$J,358.3,8253,0)
+ ;;=Z83.79^^55^536^47
+ ;;^UTILITY(U,$J,358.3,8253,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8253,1,3,0)
+ ;;=3^Family history of other diseases of the digestive system
+ ;;^UTILITY(U,$J,358.3,8253,1,4,0)
+ ;;=4^Z83.79
+ ;;^UTILITY(U,$J,358.3,8253,2)
+ ;;=^5063387
+ ;;^UTILITY(U,$J,358.3,8254,0)
+ ;;=A54.00^^55^537^21
+ ;;^UTILITY(U,$J,358.3,8254,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8254,1,3,0)
+ ;;=3^Gonococcal infection of lower genitourinary tract, unsp
+ ;;^UTILITY(U,$J,358.3,8254,1,4,0)
+ ;;=4^A54.00
+ ;;^UTILITY(U,$J,358.3,8254,2)
+ ;;=^5000311
+ ;;^UTILITY(U,$J,358.3,8255,0)
+ ;;=B37.42^^55^537^10
+ ;;^UTILITY(U,$J,358.3,8255,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8255,1,3,0)
+ ;;=3^Candidal balanitis
+ ;;^UTILITY(U,$J,358.3,8255,1,4,0)
+ ;;=4^B37.42
+ ;;^UTILITY(U,$J,358.3,8255,2)
+ ;;=^5000617
+ ;;^UTILITY(U,$J,358.3,8256,0)
+ ;;=A59.03^^55^537^60
+ ;;^UTILITY(U,$J,358.3,8256,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8256,1,3,0)
+ ;;=3^Trichomonal cystitis and urethritis
+ ;;^UTILITY(U,$J,358.3,8256,1,4,0)
+ ;;=4^A59.03
+ ;;^UTILITY(U,$J,358.3,8256,2)
+ ;;=^5000349
+ ;;^UTILITY(U,$J,358.3,8257,0)
+ ;;=C61.^^55^537^41
+ ;;^UTILITY(U,$J,358.3,8257,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8257,1,3,0)
+ ;;=3^Malignant neoplasm of prostate
+ ;;^UTILITY(U,$J,358.3,8257,1,4,0)
+ ;;=4^C61.
+ ;;^UTILITY(U,$J,358.3,8257,2)
+ ;;=^267239

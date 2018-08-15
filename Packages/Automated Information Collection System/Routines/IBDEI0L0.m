@@ -1,138 +1,124 @@
-IBDEI0L0 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0L0 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,10297,0)
- ;;=707.12^^67^674^74
- ;;^UTILITY(U,$J,358.3,10297,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10297,1,4,0)
- ;;=4^707.12
- ;;^UTILITY(U,$J,358.3,10297,1,5,0)
- ;;=5^Ulcer of Calf
- ;;^UTILITY(U,$J,358.3,10297,2)
- ;;=Ulcer of Calf, non-diabetic^322144
- ;;^UTILITY(U,$J,358.3,10298,0)
- ;;=707.15^^67^674^75
- ;;^UTILITY(U,$J,358.3,10298,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10298,1,4,0)
- ;;=4^707.15
- ;;^UTILITY(U,$J,358.3,10298,1,5,0)
- ;;=5^Ulcer of Foot
- ;;^UTILITY(U,$J,358.3,10298,2)
- ;;=Ulcer of Foot, non-diabetic^322148
- ;;^UTILITY(U,$J,358.3,10299,0)
- ;;=707.14^^67^674^76
- ;;^UTILITY(U,$J,358.3,10299,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10299,1,4,0)
- ;;=4^707.14
- ;;^UTILITY(U,$J,358.3,10299,1,5,0)
- ;;=5^Ulcer of Heel/Midfoot
- ;;^UTILITY(U,$J,358.3,10299,2)
- ;;=Ulcer of Heel/Midfoot, non-d-diabetic^322146
- ;;^UTILITY(U,$J,358.3,10300,0)
- ;;=707.10^^67^674^72
- ;;^UTILITY(U,$J,358.3,10300,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10300,1,4,0)
- ;;=4^707.10
- ;;^UTILITY(U,$J,358.3,10300,1,5,0)
- ;;=5^Ulcer Lower Extremity
- ;;^UTILITY(U,$J,358.3,10300,2)
- ;;=Ulcer, LE, non-diabetic^322142
- ;;^UTILITY(U,$J,358.3,10301,0)
- ;;=707.11^^67^674^77
- ;;^UTILITY(U,$J,358.3,10301,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10301,1,4,0)
- ;;=4^707.11
- ;;^UTILITY(U,$J,358.3,10301,1,5,0)
- ;;=5^Ulcer of Thigh
- ;;^UTILITY(U,$J,358.3,10301,2)
- ;;=Ulcer of Thigh, non-diabetic^322143
- ;;^UTILITY(U,$J,358.3,10302,0)
- ;;=695.3^^67^674^58
- ;;^UTILITY(U,$J,358.3,10302,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10302,1,4,0)
- ;;=4^695.3
- ;;^UTILITY(U,$J,358.3,10302,1,5,0)
- ;;=5^Rosacea
- ;;^UTILITY(U,$J,358.3,10302,2)
- ;;=^107114
- ;;^UTILITY(U,$J,358.3,10303,0)
- ;;=706.1^^67^674^1
- ;;^UTILITY(U,$J,358.3,10303,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10303,1,4,0)
- ;;=4^706.1
- ;;^UTILITY(U,$J,358.3,10303,1,5,0)
- ;;=5^Acne Vulgaris
- ;;^UTILITY(U,$J,358.3,10303,2)
- ;;=^87239
- ;;^UTILITY(U,$J,358.3,10304,0)
- ;;=702.0^^67^674^2
- ;;^UTILITY(U,$J,358.3,10304,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10304,1,4,0)
- ;;=4^702.0
- ;;^UTILITY(U,$J,358.3,10304,1,5,0)
- ;;=5^Actinic Keratosis
- ;;^UTILITY(U,$J,358.3,10304,2)
- ;;=^66900
- ;;^UTILITY(U,$J,358.3,10305,0)
- ;;=704.00^^67^674^3
- ;;^UTILITY(U,$J,358.3,10305,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10305,1,4,0)
- ;;=4^704.00
- ;;^UTILITY(U,$J,358.3,10305,1,5,0)
- ;;=5^Alopecia NOS
- ;;^UTILITY(U,$J,358.3,10305,2)
- ;;=^5078
- ;;^UTILITY(U,$J,358.3,10306,0)
- ;;=680.9^^67^674^5
- ;;^UTILITY(U,$J,358.3,10306,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10306,1,4,0)
- ;;=4^680.9
- ;;^UTILITY(U,$J,358.3,10306,1,5,0)
- ;;=5^Carbuncle/Furuncle
- ;;^UTILITY(U,$J,358.3,10306,2)
- ;;=^19191
- ;;^UTILITY(U,$J,358.3,10307,0)
- ;;=680.5^^67^674^4
- ;;^UTILITY(U,$J,358.3,10307,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10307,1,4,0)
- ;;=4^680.5
- ;;^UTILITY(U,$J,358.3,10307,1,5,0)
- ;;=5^Carbuncle Of Buttock
- ;;^UTILITY(U,$J,358.3,10307,2)
- ;;=^271878
- ;;^UTILITY(U,$J,358.3,10308,0)
- ;;=709.9^^67^674^66
- ;;^UTILITY(U,$J,358.3,10308,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10308,1,4,0)
- ;;=4^709.9
- ;;^UTILITY(U,$J,358.3,10308,1,5,0)
- ;;=5^Skin Lesion, Unsp
- ;;^UTILITY(U,$J,358.3,10308,2)
- ;;=^111083
- ;;^UTILITY(U,$J,358.3,10309,0)
- ;;=078.11^^67^674^15
- ;;^UTILITY(U,$J,358.3,10309,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10309,1,4,0)
- ;;=4^078.11
- ;;^UTILITY(U,$J,358.3,10309,1,5,0)
- ;;=5^Condyloma Acuminatum
- ;;^UTILITY(U,$J,358.3,10309,2)
- ;;=^295788
- ;;^UTILITY(U,$J,358.3,10310,0)
- ;;=700.^^67^674^16
- ;;^UTILITY(U,$J,358.3,10310,1,0)
- ;;=^358.31IA^5^2
+ ;;^UTILITY(U,$J,358.3,9515,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9515,1,3,0)
+ ;;=3^Absence Seizures Not Intractable w/ Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9515,1,4,0)
+ ;;=4^G40.A01
+ ;;^UTILITY(U,$J,358.3,9515,2)
+ ;;=^5003868
+ ;;^UTILITY(U,$J,358.3,9516,0)
+ ;;=G40.A09^^65^617^4
+ ;;^UTILITY(U,$J,358.3,9516,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9516,1,3,0)
+ ;;=3^Absence Seizures Not Intractable w/o Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9516,1,4,0)
+ ;;=4^G40.A09
+ ;;^UTILITY(U,$J,358.3,9516,2)
+ ;;=^5003869
+ ;;^UTILITY(U,$J,358.3,9517,0)
+ ;;=G40.A11^^65^617^1
+ ;;^UTILITY(U,$J,358.3,9517,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9517,1,3,0)
+ ;;=3^Absence Seizures Intractable w/ Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9517,1,4,0)
+ ;;=4^G40.A11
+ ;;^UTILITY(U,$J,358.3,9517,2)
+ ;;=^5003870
+ ;;^UTILITY(U,$J,358.3,9518,0)
+ ;;=G40.A19^^65^617^2
+ ;;^UTILITY(U,$J,358.3,9518,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9518,1,3,0)
+ ;;=3^Absence Seizures Intractable w/o Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9518,1,4,0)
+ ;;=4^G40.A19
+ ;;^UTILITY(U,$J,358.3,9518,2)
+ ;;=^5003871
+ ;;^UTILITY(U,$J,358.3,9519,0)
+ ;;=G40.309^^65^617^16
+ ;;^UTILITY(U,$J,358.3,9519,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9519,1,3,0)
+ ;;=3^Generalized Seizures Not Intractable w/o Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9519,1,4,0)
+ ;;=4^G40.309
+ ;;^UTILITY(U,$J,358.3,9519,2)
+ ;;=^5003842
+ ;;^UTILITY(U,$J,358.3,9520,0)
+ ;;=G40.311^^65^617^14
+ ;;^UTILITY(U,$J,358.3,9520,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9520,1,3,0)
+ ;;=3^Generalized Seizures Intractable w/ Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9520,1,4,0)
+ ;;=4^G40.311
+ ;;^UTILITY(U,$J,358.3,9520,2)
+ ;;=^5003843
+ ;;^UTILITY(U,$J,358.3,9521,0)
+ ;;=G40.319^^65^617^15
+ ;;^UTILITY(U,$J,358.3,9521,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9521,1,3,0)
+ ;;=3^Generalized Seizures Intractable w/o Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9521,1,4,0)
+ ;;=4^G40.319
+ ;;^UTILITY(U,$J,358.3,9521,2)
+ ;;=^5003844
+ ;;^UTILITY(U,$J,358.3,9522,0)
+ ;;=G40.409^^65^617^19
+ ;;^UTILITY(U,$J,358.3,9522,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9522,1,3,0)
+ ;;=3^Generalized Seizures,Other, Not Intractable w/o Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9522,1,4,0)
+ ;;=4^G40.409
+ ;;^UTILITY(U,$J,358.3,9522,2)
+ ;;=^5003846
+ ;;^UTILITY(U,$J,358.3,9523,0)
+ ;;=G40.411^^65^617^17
+ ;;^UTILITY(U,$J,358.3,9523,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9523,1,3,0)
+ ;;=3^Generalized Seizures,Other, Intractable w/ Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9523,1,4,0)
+ ;;=4^G40.411
+ ;;^UTILITY(U,$J,358.3,9523,2)
+ ;;=^5003847
+ ;;^UTILITY(U,$J,358.3,9524,0)
+ ;;=G40.419^^65^617^18
+ ;;^UTILITY(U,$J,358.3,9524,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9524,1,3,0)
+ ;;=3^Generalized Seizures,Other, Intractable w/o Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9524,1,4,0)
+ ;;=4^G40.419
+ ;;^UTILITY(U,$J,358.3,9524,2)
+ ;;=^5003848
+ ;;^UTILITY(U,$J,358.3,9525,0)
+ ;;=G40.209^^65^617^7
+ ;;^UTILITY(U,$J,358.3,9525,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9525,1,3,0)
+ ;;=3^Complex Partial Seizures Not Intractable w/o Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9525,1,4,0)
+ ;;=4^G40.209
+ ;;^UTILITY(U,$J,358.3,9525,2)
+ ;;=^5003838
+ ;;^UTILITY(U,$J,358.3,9526,0)
+ ;;=G40.211^^65^617^5
+ ;;^UTILITY(U,$J,358.3,9526,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9526,1,3,0)
+ ;;=3^Complex Partial Seizures Intractable w/ Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9526,1,4,0)
+ ;;=4^G40.211
+ ;;^UTILITY(U,$J,358.3,9526,2)
+ ;;=^5003839
+ ;;^UTILITY(U,$J,358.3,9527,0)
+ ;;=G40.219^^65^617^6

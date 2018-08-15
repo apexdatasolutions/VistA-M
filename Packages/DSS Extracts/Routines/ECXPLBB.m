@@ -1,6 +1,6 @@
-ECXPLBB ;DALOI/KML - DSS BLOOD BANK PRE-EXTRACT AUDIT REPORT ;11/12/14  13:29
- ;;3.0;DSS EXTRACTS;**78,92,105,136,143,149,153**;Dec 22, 1997;Build 2
- ;Per VHA Directive 97-033 this routine should not be modified.  Medical Device # BK970021
+ECXPLBB ;DALOI/KML - DSS BLOOD BANK PRE-EXTRACT AUDIT REPORT ;5/31/17  16:32
+ ;;3.0;DSS EXTRACTS;**78,92,105,136,143,149,153,156,166**;Dec 22, 1997;Build 24
+ ;Per VA Directive 6402, this routine should not be modified.  Medical Device # BK970021
  ;entry point from option
  D SETUP^ECXLBB1 I ECFILE="" Q  ;149
  N ECXINST,ECXPORT,CNT ;149
@@ -20,7 +20,7 @@ START ;  entry point from tasked job
  ; get LAB DATA and build temporary global ^TMP("ECXLBB",$J)
  N ECTRSP,ECADMT,ECTODT,ECXRPT,ECOUT,ECXSTR,ECRDT,ECLINE,ECPG,ECQUIT
  N ECD,ECXDFN,ECARRY,EC66,ECERR,ECTRFDT,ECTRFTM,ECX,ECINOUT,ECXJOB
- N ECXLOGIC
+ N ECXLOGIC,ECXREC ;156
  S ECXJOB=$J
  K ^TMP("ECXLBB",ECXJOB)
  U IO
@@ -28,10 +28,12 @@ START ;  entry point from tasked job
  S ECXRPT=1 D AUDRPT^ECXLBB1 ;149
 OUTPUT ; entry point called by EN tag
  I '$D(^TMP("ECXLBB",ECXJOB)) W:'$G(ECXPORT) !,"There were no records that met the date range criteria" Q  ;149
- S (ECPG,ECDATE,ECQUIT,ECXDFN)=0,ECLINE="",$P(ECLINE,"=",80)="="
+ S (ECPG,ECDATE,ECQUIT,ECXDFN,ECXREC)=0,ECLINE="",$P(ECLINE,"=",80)="="
  S ECSDN=$$FMTE^XLFDT(ECSD,9),ECEDN=$$FMTE^XLFDT(ECED,9),ECRDT=$$FMTE^XLFDT(DT,9)
  I '$G(ECXPORT) W:$E(IOST,1,2)="C-" @IOF D HED ;149
- F  S ECXDFN=$O(^TMP("ECXLBB",ECXJOB,ECXDFN)) Q:'ECXDFN  F  S ECDATE=$O(^TMP("ECXLBB",ECXJOB,ECXDFN,ECDATE))  Q:'ECDATE  Q:ECQUIT  S ECXSTR=^(ECDATE) D PRINT ;143 Put correct code back into routine
+ F  S ECXDFN=$O(^TMP("ECXLBB",ECXJOB,ECXDFN)) Q:'ECXDFN  D  Q:ECQUIT
+ .F  S ECDATE=$O(^TMP("ECXLBB",ECXJOB,ECXDFN,ECDATE))  Q:'ECDATE  D  Q:ECQUIT
+ ..F  S ECXREC=$O(^TMP("ECXLBB",ECXJOB,ECXDFN,ECDATE,ECXREC)) Q:'+ECXREC  S ECXSTR=^(ECXREC) D PRINT Q:ECQUIT  ;143,156-added additional for loop
  I '$G(ECXPORT) D ^ECXKILL ;149
  Q
  ;
@@ -47,7 +49,7 @@ PRINT ;
  ;
 HED ;
  S ECPG=ECPG+1
- W !,"LBB Pre-Extract Audit Report",?72,"Page",$J(ECPG,3) ;136
+ W !,"Laboratory Blood Bank (LBB) Pre-Extract Audit Report",?72,"Page",$J(ECPG,3) ;136,166 tjl - Changed report title
  W !,ECSDN," - ",ECEDN,?58,"Run Date:",$J(ECRDT,12)
  W !,?37,"Transf",?57,"Number"
  W !,"Name",?14,"SSN",?25,"FDR LOC",?37,"Date",?49,"COMP"
@@ -58,7 +60,7 @@ DATES ;
  N OUT,CHKFLG
  I '$D(ECNODE) S ECNODE=7
  I '$D(ECHEAD) S ECHEAD=" "
- W @IOF,!,"LBB Pre-Extract Audit Report Information for DSS",!! ;136
+ W @IOF,!,"Laboratory Blood Bank (LBB) Pre-Extract Audit Report Information for DSS",!! ;136,166 tjl - Changed report title
  ;Added descriptive text DSS FY13 Logic
  W !,"**NOTE: This audit can only be run prior to the LBB Extract being generated." ;136
  W !,"If you have already generated your LBB Extract, refer to the Processing "

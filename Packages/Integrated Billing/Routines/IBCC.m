@@ -1,6 +1,6 @@
-IBCC ;ALB/MJB - CANCEL THIRD PARTY BILL ;14 JUN 88  10:12
- ;;2.0;INTEGRATED BILLING;**2,19,77,80,51,142,137,161,199,241,155,276,320,358,433,432,447**;21-MAR-94;Build 80
- ;;Per VHA Directive 2004-038, this routine should not be modified.
+IBCC ;ALB/MJB - CANCEL THIRD PARTY BILL ;Feb 09, 2018@10:11:43
+ ;;2.0;INTEGRATED BILLING;**2,19,77,80,51,142,137,161,199,241,155,276,320,358,433,432,447,516,547,597**;21-MAR-94;Build 11
+ ;;Per VA Directive 6402, this routine should not be modified.
  ;
  ;MAP TO DGCRC
  ;
@@ -18,10 +18,17 @@ ASK ;
  ;
  G Q:$G(IBCE("EDI"))
  D Q
+ ; Release currently locked record IB*2.0*597
+ I $G(IBLOCK)'<1 L -^DGCR(399,IBLOCK) K IBLOCK
+ ;
  S IBQUIT=0
  N DPTNOFZY S DPTNOFZY=1  ;Suppress PATIENT file fuzzy lookups
  I '$G(IBNOASK) S DIC="^DGCR(399,",DIC(0)="AEMQZ",DIC("A")="Enter BILL NUMBER or Patient NAME: " W !! D ^DIC I Y<1 S IBQUIT=1 G Q1
  K IB364
+ ; Lock file entry and display message if lock can't be obtained. IB*2.0*597
+ S IBLOCK=Y
+ L +^DGCR(399,IBLOCK):$G(DILOCKTM,5) I '$T D LOCKED G ASK
+ ;
 NOPTF ; Note if IB364 is >0 it will be used as the ien to update in file 364
  N DA,I
  I '$G(IBNOASK) S IBIFN=+$G(Y)
@@ -31,6 +38,7 @@ NOPTF ; Note if IB364 is >0 it will be used as the ien to update in file 364
  I $G(IBCNCRD)=1,$P($P($G(^DGCR(399,IBIFN,0)),U),"-",2)>98 D  Q
  .W !!,"Please note that you have exceeded the maximum number of iterations (99) for this claim."
  .W "Copy and cancel (CLON) must be used to correct this bill."
+ .I $G(IBLOCK)'<1 L -^DGCR(399,IBLOCK) ; IB*2.0*597
  .S IBQUIT=1 H 3
  ; Check if bill has been referred to Counsel
  I $P($G(^PRCA(430,IBIFN,6)),U,4) D  G ASK
@@ -64,29 +72,47 @@ NOPTF ; Note if IB364 is >0 it will be used as the ien to update in file 364
  ; Check if this is a paper claim. If not, check for split EOB.  If split, don't allow CRD unless more than 1 EOB has been returned
  I $G(IBCNCRD)=1,$P($G(^DGCR(399,IBIFN,"TX")),U,8)'=1,$$SPLTMRA^IBCEMU1(IBIFN)=1 D  Q
  .W !!,"There is a split EOB associated with this claim.  You cannot use this option to Correct this claim until the second EOB has been received."
+ .I $G(IBLOCK)'<1 L -^DGCR(399,IBLOCK) ; IB*2.0*597
  .S IBQUIT=1 H 3
  .Q
  ;
  ; Warning message if in a REQUEST MRA status with no MRA on file
- I IBSTAT=2,'$$MRACNT^IBCEMU1(IBIFN) D
+ ; IB*2.0*516/TAZ,MRD - Forbid the user from using the option CRD
+ ; (Correct Rejected/Denied Bill) on an MRA claim if the status is
+ ; REQUEST MRA (IBSTAT=2).
+ I IBSTAT=2,'$$MRACNT^IBCEMU1(IBIFN) D  I $G(IBQUIT) H 3 Q
  . N REJ
  . D TXSTS^IBCEMU2(IBIFN,,.REJ)
- . W *7,!!?4,"Warning!  This bill is in a status of REQUEST MRA."
+ . ;IB*2.0*516/TAZ - If CRD is from CSA allow a REJected claim to be CRD'ed without displaying a warning.
+ . I $G(IBCNCSA),REJ Q
+ . W *7,!!?4,$S('$G(IBCNCRD):"Warning!  ",1:""),"This bill is in a status of REQUEST MRA."
  . W !?4,"No MRAs have been received"
  . I REJ W ", but the most recent transmission of this",!?4,"MRA request bill was rejected."
  . I 'REJ W " and there are no rejection messages on file",!?4,"for the most recent transmission of this MRA request bill."
+ . I $G(IBCNCRD) S IBQUIT=1 I $G(IBLOCK)'<1 L -^DGCR(399,IBLOCK) ; IB*2.0*597
  . Q
  ;
  I IBCAN=2,IB("S")]"",+$P(IB("S"),U,16),$P(IB("S"),U,17)]"" D  G 1
  . W !!,"This bill was cancelled on " S Y=$P(IB("S"),U,17) X ^DD("DD") W Y," by ",$S($P(IB("S"),U,18)']"":IBU,$D(^VA(200,$P(IB("S"),U,18),0)):$P(^(0),U,1),1:IBU),"."
  . S IBQUIT=1
+ ;
+ ; IB*2.0*516/TAZ,MRD - Forbid the user from using the option CRD
+ ; (Correct Rejected/Denied Bill) on all but primary claims.
+ I $G(IBCNCRD),($$COB^IBCEF(IBIFN)'="P") D  Q
+ . W !!,"Please note that COB data may exist for this bill."
+ . W !,"Copy and cancel (CLON) must be used to correct this bill."
+ . I $G(IBLOCK)'<1 L -^DGCR(399,IBLOCK) ; IB*2.0*597
+ . S IBQUIT=1
+ . H 3
+ . Q
+ ;
  ; Notify if a payment has been posted to this bill before cancel
  N PRCABILL
  S PRCABILL=$$TPR^PRCAFN(IBIFN)
- I PRCABILL=-1 W !!,"Please note: PRCA was unable to determine if a payment has been posted." I $G(IBCNCRD)=1 W !,"Copy and cancel (CLON) must be used to correct this bill." S IBQUIT=1 H 3 Q
+ I PRCABILL=-1 W !!,"Please note: PRCA was unable to determine if a payment has been posted." I $G(IBCNCRD)=1 W !,"Copy and cancel (CLON) must be used to correct this bill." I $G(IBLOCK)'<1 L -^DGCR(399,IBLOCK) S IBQUIT=1 H 3 Q
  I PRCABILL>0 W !!,"Please note a PAYMENT of **$"_$$TPR^PRCAFN(IBIFN)_"** has been POSTED to this bill."
  ; New message for CRD option
- I $G(IBCNCRD)=1,PRCABILL>0 W !,"Copy and cancel (CLON) must be used to correct this bill." S IBQUIT=1 H 3 Q
+ I $G(IBCNCRD)=1,PRCABILL>0 W !,"Copy and cancel (CLON) must be used to correct this bill." I $G(IBLOCK)'<1 L -^DGCR(399,IBLOCK) S IBQUIT=1 H 3 Q
  ;
  ; If bill was created via Electronic claims process then notify
  ; user that cancellation should occur using ECME package
@@ -128,7 +154,8 @@ NO I 'IBCCCC W !!,"<NO ACTION TAKEN>",*7 S IBQUIT=1 G ASK:IBCAN<2,Q
  ;
  S IBEDI=$G(IB364)
  I 'IBEDI S IBEDI=+$$LAST364^IBCEF4(IBIFN)
- I IBEDI D UPDEDI^IBCEM(IBEDI,"C") ;Update EDI files, if needed
+ ; ib*2.0*547 don't cancel MRA if cloning a bill that is secondary to MRA (share the same claim#)
+ I IBEDI D UPDEDI^IBCEM(IBEDI,"C",,$S($$MRASEC^IBCEF4(IBIFN):2,1:"")) ;Update EDI files, if needed
  ;
  F I="S","U1" S IB(I)=$S($D(^DGCR(399,IBIFN,I)):^(I),1:"")
  S PRCASV("ARREC")=IBIFN,PRCASV("AMT")=$S(IB("U1")']"":0,1:$P(IB("U1"),"^")),PRCASV("DATE")=$P(IB("S"),"^",17),PRCASV("BY")=$P(IB("S"),"^",18)
@@ -149,6 +176,7 @@ HELP W !,?3,"Answer 'YES' or 'Y' if you wish to cancel this bill.",!,?3,"Answer 
  G ASK
 Q1 K:IBCAN=1 IBQUIT K IBCAN
 Q K %,IBEPAR,IBSTAT,IBARST,IBAC1,IB,DFN,IBX,IBZ,DIC,DIE,DR,PRCASV,PRCASVC,X,Y,IBEDI
+ I $G(IBLOCK)'<1 L -^DGCR(399,IBLOCK) K IBLOCK ; IB*2.0*597
  ;***
  ;I $D(XRT0) S:'$D(XRTN) XRTN="IBCC" D T1^%ZOSV ;stop rt clock
  Q
@@ -175,4 +203,9 @@ PROCESS(IBIFN,IBCAN) ;
  S IBCAN=$G(IBCAN,1)
  G ASK
  ;
+LOCKED ; -- write record locked message IB*2.0*597
+ W !!,"Sorry, another user currently editing this entry."
+ W !,"Try again later."
+ D PAUSE^VALM1
+ Q
  ;IBCC

@@ -1,134 +1,130 @@
-IBDEI05M ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI05M ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,2392,1,2,0)
- ;;=2^Electrical Stimulation
- ;;^UTILITY(U,$J,358.3,2392,1,3,0)
- ;;=3^97032
- ;;^UTILITY(U,$J,358.3,2393,0)
- ;;=97010^^24^223^4^^^^1
- ;;^UTILITY(U,$J,358.3,2393,1,0)
+ ;;^UTILITY(U,$J,358.3,1999,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,2393,1,2,0)
- ;;=2^Hot Or Cold Packs Therapy
- ;;^UTILITY(U,$J,358.3,2393,1,3,0)
- ;;=3^97010
- ;;^UTILITY(U,$J,358.3,2394,0)
- ;;=97036^^24^223^5^^^^1
- ;;^UTILITY(U,$J,358.3,2394,1,0)
+ ;;^UTILITY(U,$J,358.3,1999,1,2,0)
+ ;;=2^93561
+ ;;^UTILITY(U,$J,358.3,1999,1,3,0)
+ ;;=3^Thermal Dilution Study W/Cardiac Output
+ ;;^UTILITY(U,$J,358.3,2000,0)
+ ;;=93571^^17^177^10^^^^1
+ ;;^UTILITY(U,$J,358.3,2000,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,2394,1,2,0)
- ;;=2^Hydrotherapy
- ;;^UTILITY(U,$J,358.3,2394,1,3,0)
- ;;=3^97036
- ;;^UTILITY(U,$J,358.3,2395,0)
- ;;=97124^^24^223^7^^^^1
- ;;^UTILITY(U,$J,358.3,2395,1,0)
+ ;;^UTILITY(U,$J,358.3,2000,1,2,0)
+ ;;=2^93571
+ ;;^UTILITY(U,$J,358.3,2000,1,3,0)
+ ;;=3^Intravascular Dopplar Add-On, First Vessel
+ ;;^UTILITY(U,$J,358.3,2001,0)
+ ;;=93572^^17^177^11^^^^1
+ ;;^UTILITY(U,$J,358.3,2001,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,2395,1,2,0)
- ;;=2^Massage Therapy
- ;;^UTILITY(U,$J,358.3,2395,1,3,0)
- ;;=3^97124
- ;;^UTILITY(U,$J,358.3,2396,0)
- ;;=64550^^24^223^1^^^^1
- ;;^UTILITY(U,$J,358.3,2396,1,0)
+ ;;^UTILITY(U,$J,358.3,2001,1,2,0)
+ ;;=2^93572
+ ;;^UTILITY(U,$J,358.3,2001,1,3,0)
+ ;;=3^Intravascular Dopplar, Each Addl Vessel
+ ;;^UTILITY(U,$J,358.3,2002,0)
+ ;;=93740^^17^177^14^^^^1
+ ;;^UTILITY(U,$J,358.3,2002,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,2396,1,2,0)
- ;;=2^Apply Neurostimulator
- ;;^UTILITY(U,$J,358.3,2396,1,3,0)
- ;;=3^64550
- ;;^UTILITY(U,$J,358.3,2397,0)
- ;;=97012^^24^223^8^^^^1
- ;;^UTILITY(U,$J,358.3,2397,1,0)
+ ;;^UTILITY(U,$J,358.3,2002,1,2,0)
+ ;;=2^93740
+ ;;^UTILITY(U,$J,358.3,2002,1,3,0)
+ ;;=3^Temperature Gradient Studies
+ ;;^UTILITY(U,$J,358.3,2003,0)
+ ;;=93784^^17^177^2^^^^1
+ ;;^UTILITY(U,$J,358.3,2003,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,2397,1,2,0)
- ;;=2^Mechanical Traction Therapy 
- ;;^UTILITY(U,$J,358.3,2397,1,3,0)
- ;;=3^97012
- ;;^UTILITY(U,$J,358.3,2398,0)
- ;;=97035^^24^223^11^^^^1
- ;;^UTILITY(U,$J,358.3,2398,1,0)
+ ;;^UTILITY(U,$J,358.3,2003,1,2,0)
+ ;;=2^93784
+ ;;^UTILITY(U,$J,358.3,2003,1,3,0)
+ ;;=3^Amb BP Monitor 24+ hrs,Int&Rpt
+ ;;^UTILITY(U,$J,358.3,2004,0)
+ ;;=93786^^17^177^3^^^^1
+ ;;^UTILITY(U,$J,358.3,2004,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,2398,1,2,0)
- ;;=2^Ultrasound Therapy
- ;;^UTILITY(U,$J,358.3,2398,1,3,0)
- ;;=3^97035
- ;;^UTILITY(U,$J,358.3,2399,0)
- ;;=97028^^24^223^12^^^^1
- ;;^UTILITY(U,$J,358.3,2399,1,0)
+ ;;^UTILITY(U,$J,358.3,2004,1,2,0)
+ ;;=2^93786
+ ;;^UTILITY(U,$J,358.3,2004,1,3,0)
+ ;;=3^Amb BP Monitor 24+ hrs,Record Only
+ ;;^UTILITY(U,$J,358.3,2005,0)
+ ;;=93788^^17^177^1^^^^1
+ ;;^UTILITY(U,$J,358.3,2005,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,2399,1,2,0)
- ;;=2^Ultraviolet Therapy
- ;;^UTILITY(U,$J,358.3,2399,1,3,0)
- ;;=3^97028
- ;;^UTILITY(U,$J,358.3,2400,0)
- ;;=97110^^24^223^10^^^^1
- ;;^UTILITY(U,$J,358.3,2400,1,0)
+ ;;^UTILITY(U,$J,358.3,2005,1,2,0)
+ ;;=2^93788
+ ;;^UTILITY(U,$J,358.3,2005,1,3,0)
+ ;;=3^Amb BP Analysis & Rpt
+ ;;^UTILITY(U,$J,358.3,2006,0)
+ ;;=93790^^17^177^4^^^^1
+ ;;^UTILITY(U,$J,358.3,2006,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,2400,1,2,0)
- ;;=2^Therapeutic Exercises,Ea 15min
- ;;^UTILITY(U,$J,358.3,2400,1,3,0)
- ;;=3^97110
- ;;^UTILITY(U,$J,358.3,2401,0)
- ;;=97112^^24^223^9^^^^1
- ;;^UTILITY(U,$J,358.3,2401,1,0)
+ ;;^UTILITY(U,$J,358.3,2006,1,2,0)
+ ;;=2^93790
+ ;;^UTILITY(U,$J,358.3,2006,1,3,0)
+ ;;=3^Amb BP Review w/ Int&Rpt
+ ;;^UTILITY(U,$J,358.3,2007,0)
+ ;;=34800^^17^178^1^^^^1
+ ;;^UTILITY(U,$J,358.3,2007,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,2401,1,2,0)
- ;;=2^Neuromuscular Re-Education
- ;;^UTILITY(U,$J,358.3,2401,1,3,0)
- ;;=3^97112
- ;;^UTILITY(U,$J,358.3,2402,0)
- ;;=97140^^24^223^6^^^^1
- ;;^UTILITY(U,$J,358.3,2402,1,0)
+ ;;^UTILITY(U,$J,358.3,2007,1,2,0)
+ ;;=2^34800
+ ;;^UTILITY(U,$J,358.3,2007,1,3,0)
+ ;;=3^Endovasc Abd Repair,Infrarenal AAA w/Tube
+ ;;^UTILITY(U,$J,358.3,2008,0)
+ ;;=34802^^17^178^2^^^^1
+ ;;^UTILITY(U,$J,358.3,2008,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,2402,1,2,0)
- ;;=2^Manual Therapy,Ea 15min
- ;;^UTILITY(U,$J,358.3,2402,1,3,0)
- ;;=3^97140
- ;;^UTILITY(U,$J,358.3,2403,0)
- ;;=98940^^24^224^1^^^^1
- ;;^UTILITY(U,$J,358.3,2403,1,0)
+ ;;^UTILITY(U,$J,358.3,2008,1,2,0)
+ ;;=2^34802
+ ;;^UTILITY(U,$J,358.3,2008,1,3,0)
+ ;;=3^Endovasc Abd Repr,Infrarenal AAA w/Bifurc,1 Dock Limb
+ ;;^UTILITY(U,$J,358.3,2009,0)
+ ;;=34803^^17^178^3^^^^1
+ ;;^UTILITY(U,$J,358.3,2009,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,2403,1,2,0)
- ;;=2^CMT; Spinal, one to two regions
- ;;^UTILITY(U,$J,358.3,2403,1,3,0)
- ;;=3^98940
- ;;^UTILITY(U,$J,358.3,2404,0)
- ;;=98941^^24^224^2^^^^1
- ;;^UTILITY(U,$J,358.3,2404,1,0)
+ ;;^UTILITY(U,$J,358.3,2009,1,2,0)
+ ;;=2^34803
+ ;;^UTILITY(U,$J,358.3,2009,1,3,0)
+ ;;=3^Endovasc Abd Repr,Infrarenal AAA w/Bifurc,2 Dock Limbs
+ ;;^UTILITY(U,$J,358.3,2010,0)
+ ;;=93279^^17^179^11^^^^1
+ ;;^UTILITY(U,$J,358.3,2010,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,2404,1,2,0)
- ;;=2^CMT; Spinal, three to four regions
- ;;^UTILITY(U,$J,358.3,2404,1,3,0)
- ;;=3^98941
- ;;^UTILITY(U,$J,358.3,2405,0)
- ;;=98942^^24^224^3^^^^1
- ;;^UTILITY(U,$J,358.3,2405,1,0)
+ ;;^UTILITY(U,$J,358.3,2010,1,2,0)
+ ;;=2^93279
+ ;;^UTILITY(U,$J,358.3,2010,1,3,0)
+ ;;=3^PM DEVICE PROGR EVAL, SNGL
+ ;;^UTILITY(U,$J,358.3,2011,0)
+ ;;=93280^^17^179^9^^^^1
+ ;;^UTILITY(U,$J,358.3,2011,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,2405,1,2,0)
- ;;=2^CMT; Spinal, five regions
- ;;^UTILITY(U,$J,358.3,2405,1,3,0)
- ;;=3^98942
- ;;^UTILITY(U,$J,358.3,2406,0)
- ;;=98943^^24^224^4^^^^1
- ;;^UTILITY(U,$J,358.3,2406,1,0)
+ ;;^UTILITY(U,$J,358.3,2011,1,2,0)
+ ;;=2^93280
+ ;;^UTILITY(U,$J,358.3,2011,1,3,0)
+ ;;=3^PM DEVICE PROGR EVAL, DUAL
+ ;;^UTILITY(U,$J,358.3,2012,0)
+ ;;=93281^^17^179^10^^^^1
+ ;;^UTILITY(U,$J,358.3,2012,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,2406,1,2,0)
- ;;=2^CMT; Extraspinal, one or more regions
- ;;^UTILITY(U,$J,358.3,2406,1,3,0)
- ;;=3^98943
- ;;^UTILITY(U,$J,358.3,2407,0)
- ;;=98925^^24^225^1^^^^1
- ;;^UTILITY(U,$J,358.3,2407,1,0)
+ ;;^UTILITY(U,$J,358.3,2012,1,2,0)
+ ;;=2^93281
+ ;;^UTILITY(U,$J,358.3,2012,1,3,0)
+ ;;=3^PM DEVICE PROGR EVAL, MULTI
+ ;;^UTILITY(U,$J,358.3,2013,0)
+ ;;=93282^^17^179^3^^^^1
+ ;;^UTILITY(U,$J,358.3,2013,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,2407,1,2,0)
- ;;=2^OMT, 1-2 body regions involved
- ;;^UTILITY(U,$J,358.3,2407,1,3,0)
- ;;=3^98925
- ;;^UTILITY(U,$J,358.3,2408,0)
- ;;=98926^^24^225^2^^^^1
- ;;^UTILITY(U,$J,358.3,2408,1,0)
+ ;;^UTILITY(U,$J,358.3,2013,1,2,0)
+ ;;=2^93282
+ ;;^UTILITY(U,$J,358.3,2013,1,3,0)
+ ;;=3^ICD DEVICE PROG EVAL, 1 SNGL
+ ;;^UTILITY(U,$J,358.3,2014,0)
+ ;;=93283^^17^179^4^^^^1
+ ;;^UTILITY(U,$J,358.3,2014,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,2408,1,2,0)
- ;;=2^OMT, 3-4 body regions involved
+ ;;^UTILITY(U,$J,358.3,2014,1,2,0)
+ ;;=2^93283
+ ;;^UTILITY(U,$J,358.3,2014,1,3,0)
+ ;;=3^ICD DEVICE PROGR EVAL, DUAL

@@ -1,11 +1,11 @@
-SDAMWI1 ;ALB/MJK - Walk-Ins (cont.) ; 6/17/09 4:00pm
- ;;5.3;Scheduling;**94,167,206,168,544**;Aug 13, 1993;Build 11
+SDAMWI1 ;ALB/MJK - Walk-Ins (cont.) ;JUN 21, 2017
+ ;;5.3;Scheduling;**94,167,206,168,544,627,651,665**;Aug 13, 1993;Build 14
  ;
 MAKE(DFN,SDCL,SDT) ; -- set globals for appt
  ;    input:     DFN ; SDCL := clinic# ; SDT := appt d/t
  ; returned: success := 1
  ;
- N SD,SDINP,SC,DA,DIK
+ N SD,SDAP,SDINP,SC,DA,DIK
  S SC=SDCL,X=SDT,SDINP=$$INP^SDAM2(DFN,SDT)
  S SD=SDT D EN1^SDM3
  S:'$D(^DPT(DFN,"S",0)) ^(0)="^2.98P^^"
@@ -16,6 +16,8 @@ MAKE(DFN,SDCL,SDT) ; -- set globals for appt
  .S DA=SDT,DA(1)=DFN,DIK="^DPT(DA(1),""S"",",DIK(1)=20 D EN1^DIK
  .Q
  F I=1:1 I '$D(^SC(SC,"S",SDT,1,I)) S:'$D(^(0)) ^(0)="^44.003PA^^" S ^(I,0)=DFN_"^"_SDSL_"^^^^"_DUZ_"^"_DT,^SC(SC,"S",SDT,0)=SDT,SDDA=I D RT,EVT,DUAL,ROUT(DFN) Q
+ S SDAP=$$APPTGET^SDECUTL(DFN,SDT,SDCL)  ;get SDEC APPOINTMENT ien  alb/sat 627
+ I SDAP="" D SDEC   ;alb/sat 627
  ;update availability grid
  N HSI,SDDIF,SI,SL,STARTDAY,STR,SDNOT,X,SB,Y,S,I,ST,SS,SM
  S SD=SDT,SC=SDCL
@@ -29,6 +31,20 @@ SP I ST+ST>$L(S) S S=S_"  " G SP
  S ^SC(+SC,"ST",$P(SD,"."),1)=S
 C L -^SC(+SC,"ST",$P(SD,"."),1)
  Q 1
+ ;
+SDEC  ;update SDEC APPOINTMENT file 409.84  ;alb/sat 627
+ N SDAPPT,SDECSL,SDRES  ;alb/sat 627 - add SDAPPT  ;alb/sat 651 add SDECSL
+ S SDAPTYP=$G(SDAPTYP)
+ S:SDAPTYP="" SDAPTYP=$$GET1^DIQ(44,SDCL_",",2507,"I")
+ S SDECANS=$G(SDECANS)  ;alb/sat 665
+ I $G(SDWL)="" N SDCLN S SDCLN=$$GET1^DIQ(44,SDCL_",",.01) S SDAPPT=$$SDWLA^SDM1A(DFN,SDT,SDCLN,$P(SDT,".",1),SDAPTYP,SDECANS)  ;alb/sat 665 add SDECANS
+ K SDECANS  ;alb/sat 665
+ S SDRES=$$GETRES^SDECUTL(SDCL)
+ S SDECSL=$G(SL)   ;alb/sat 651
+ I '+SDECSL S SDECSL=$G(^SC(SDCL,"SL"))  ;alb/sat 651
+ D SDECADD^SDEC07(SDT,$S(+SDECSL:$$FMADD^XLFDT(SDT,,,+SDECSL),1:""),DFN,SDRES,"WALKIN",$P(SDT,".",1),"",$S($G(SDWL)'="":"E|"_SDWL,1:"A|"_SDAPPT),,SDCL,,,,SDAPTYP) ;ADD SDEC APPOINTMENT ENTRY  ;alb/sat 651 use SDECSL
+ Q
+ ;end addition/modification  ;alb/sat 627
  ;
 RT ; -- request record
  S SDRT="A",SDTTM=SDT,SDPL=I,SDSC=SC D RT^SDUTL

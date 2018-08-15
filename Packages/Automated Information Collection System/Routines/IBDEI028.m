@@ -1,138 +1,144 @@
-IBDEI028 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI028 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,620,1,0)
+ ;;^UTILITY(U,$J,358.3,270,1,4,0)
+ ;;=4^G24.02
+ ;;^UTILITY(U,$J,358.3,270,2)
+ ;;=^5003785
+ ;;^UTILITY(U,$J,358.3,271,0)
+ ;;=G24.01^^3^34^7
+ ;;^UTILITY(U,$J,358.3,271,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,620,1,2,0)
- ;;=2^VENOUS ANGIO UPPER ARM/ELBOW,ANESTH
- ;;^UTILITY(U,$J,358.3,620,1,4,0)
- ;;=4^01780
- ;;^UTILITY(U,$J,358.3,621,0)
- ;;=01260^^8^81^1^^^^1
- ;;^UTILITY(U,$J,358.3,621,1,0)
+ ;;^UTILITY(U,$J,358.3,271,1,3,0)
+ ;;=3^Tardive Dyskinesia
+ ;;^UTILITY(U,$J,358.3,271,1,4,0)
+ ;;=4^G24.01
+ ;;^UTILITY(U,$J,358.3,271,2)
+ ;;=^5003784
+ ;;^UTILITY(U,$J,358.3,272,0)
+ ;;=G24.09^^3^34^8
+ ;;^UTILITY(U,$J,358.3,272,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,621,1,2,0)
- ;;=2^VENOUS ANGIO UPPER LEG,ANESTH
- ;;^UTILITY(U,$J,358.3,621,1,4,0)
- ;;=4^01260
- ;;^UTILITY(U,$J,358.3,622,0)
- ;;=789.06^^9^82^1
- ;;^UTILITY(U,$J,358.3,622,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,622,1,4,0)
- ;;=4^Epigastric Pain
- ;;^UTILITY(U,$J,358.3,622,1,5,0)
- ;;=5^789.06
- ;;^UTILITY(U,$J,358.3,622,2)
- ;;=Epigastric Pain^303323
- ;;^UTILITY(U,$J,358.3,623,0)
- ;;=789.07^^9^82^2
- ;;^UTILITY(U,$J,358.3,623,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,623,1,4,0)
- ;;=4^Generalized Abdominal Pain
- ;;^UTILITY(U,$J,358.3,623,1,5,0)
- ;;=5^789.07
- ;;^UTILITY(U,$J,358.3,623,2)
- ;;=Generalized Abdominal Pain^303324
- ;;^UTILITY(U,$J,358.3,624,0)
- ;;=789.04^^9^82^3
- ;;^UTILITY(U,$J,358.3,624,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,624,1,4,0)
- ;;=4^LL Quad Abdominal
- ;;^UTILITY(U,$J,358.3,624,1,5,0)
- ;;=5^789.04
- ;;^UTILITY(U,$J,358.3,624,2)
- ;;=LL Quad Abdominal^303321
- ;;^UTILITY(U,$J,358.3,625,0)
- ;;=789.02^^9^82^4
- ;;^UTILITY(U,$J,358.3,625,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,625,1,4,0)
- ;;=4^LU Quadrant Abdominal Pain
- ;;^UTILITY(U,$J,358.3,625,1,5,0)
- ;;=5^789.02
- ;;^UTILITY(U,$J,358.3,625,2)
- ;;=LU Quadrant Abdominal Pain^303319
- ;;^UTILITY(U,$J,358.3,626,0)
- ;;=789.09^^9^82^5
- ;;^UTILITY(U,$J,358.3,626,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,626,1,4,0)
- ;;=4^Abdominal Pain, Mult Sites
- ;;^UTILITY(U,$J,358.3,626,1,5,0)
- ;;=5^789.09
- ;;^UTILITY(U,$J,358.3,626,2)
- ;;=Abdominal Pain, Mult Sites^303325
- ;;^UTILITY(U,$J,358.3,627,0)
- ;;=789.05^^9^82^6
- ;;^UTILITY(U,$J,358.3,627,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,627,1,4,0)
- ;;=4^Periumbilical Pain
- ;;^UTILITY(U,$J,358.3,627,1,5,0)
- ;;=5^789.05
- ;;^UTILITY(U,$J,358.3,627,2)
- ;;=Periumbilical Pain^303322
- ;;^UTILITY(U,$J,358.3,628,0)
- ;;=789.03^^9^82^7
- ;;^UTILITY(U,$J,358.3,628,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,628,1,4,0)
- ;;=4^RL Quadrant Abdominal Pain
- ;;^UTILITY(U,$J,358.3,628,1,5,0)
- ;;=5^789.03
- ;;^UTILITY(U,$J,358.3,628,2)
- ;;=RL Quadrant Abdominal Pain^303320
- ;;^UTILITY(U,$J,358.3,629,0)
- ;;=789.01^^9^82^8
- ;;^UTILITY(U,$J,358.3,629,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,629,1,4,0)
- ;;=4^RU Quadrant Abdominal Pain
- ;;^UTILITY(U,$J,358.3,629,1,5,0)
- ;;=5^789.01
- ;;^UTILITY(U,$J,358.3,629,2)
- ;;=RU Quadrant Abdominal Pain^303318
- ;;^UTILITY(U,$J,358.3,630,0)
- ;;=789.00^^9^82^9
- ;;^UTILITY(U,$J,358.3,630,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,630,1,4,0)
- ;;=4^Abdominal Pain, Unspec
- ;;^UTILITY(U,$J,358.3,630,1,5,0)
- ;;=5^789.00
- ;;^UTILITY(U,$J,358.3,630,2)
- ;;=Abdominal Pain, Unspec^303317
- ;;^UTILITY(U,$J,358.3,631,0)
- ;;=V72.83^^9^83^10
- ;;^UTILITY(U,$J,358.3,631,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,631,1,4,0)
- ;;=4^PRE-OP EVALUATION
- ;;^UTILITY(U,$J,358.3,631,1,5,0)
- ;;=5^V72.83
- ;;^UTILITY(U,$J,358.3,631,2)
- ;;=^321505
- ;;^UTILITY(U,$J,358.3,632,0)
- ;;=V58.49^^9^83^11
- ;;^UTILITY(U,$J,358.3,632,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,632,1,4,0)
- ;;=4^POST-OP AFTERCARE/EXAM
- ;;^UTILITY(U,$J,358.3,632,1,5,0)
- ;;=5^V58.49
- ;;^UTILITY(U,$J,358.3,632,2)
- ;;=^295530
- ;;^UTILITY(U,$J,358.3,633,0)
- ;;=788.99^^9^84^7
- ;;^UTILITY(U,$J,358.3,633,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,633,1,4,0)
- ;;=4^Urinary Sys Sym Other
- ;;^UTILITY(U,$J,358.3,633,1,5,0)
- ;;=5^788.99
- ;;^UTILITY(U,$J,358.3,633,2)
- ;;=^273391
+ ;;^UTILITY(U,$J,358.3,272,1,3,0)
+ ;;=3^Tardive Dystonia
+ ;;^UTILITY(U,$J,358.3,272,1,4,0)
+ ;;=4^G24.09
+ ;;^UTILITY(U,$J,358.3,272,2)
+ ;;=^5003786
+ ;;^UTILITY(U,$J,358.3,273,0)
+ ;;=G25.1^^3^34^4
+ ;;^UTILITY(U,$J,358.3,273,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,273,1,3,0)
+ ;;=3^Medication-Induced Postural Tremor
+ ;;^UTILITY(U,$J,358.3,273,1,4,0)
+ ;;=4^G25.1
+ ;;^UTILITY(U,$J,358.3,273,2)
+ ;;=^5003792
+ ;;^UTILITY(U,$J,358.3,274,0)
+ ;;=G25.71^^3^34^6
+ ;;^UTILITY(U,$J,358.3,274,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,274,1,3,0)
+ ;;=3^Tardive Akathisia/Medication-Induced Acute Akatisia
+ ;;^UTILITY(U,$J,358.3,274,1,4,0)
+ ;;=4^G25.71
+ ;;^UTILITY(U,$J,358.3,274,2)
+ ;;=^5003799
+ ;;^UTILITY(U,$J,358.3,275,0)
+ ;;=G25.79^^3^34^2
+ ;;^UTILITY(U,$J,358.3,275,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,275,1,3,0)
+ ;;=3^Medication-Induced Movement Disorder NEC
+ ;;^UTILITY(U,$J,358.3,275,1,4,0)
+ ;;=4^G25.79
+ ;;^UTILITY(U,$J,358.3,275,2)
+ ;;=^5003800
+ ;;^UTILITY(U,$J,358.3,276,0)
+ ;;=F42.^^3^35^6
+ ;;^UTILITY(U,$J,358.3,276,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,276,1,3,0)
+ ;;=3^Obsessive-Compulsive Disorder
+ ;;^UTILITY(U,$J,358.3,276,1,4,0)
+ ;;=4^F42.
+ ;;^UTILITY(U,$J,358.3,276,2)
+ ;;=^5003568
+ ;;^UTILITY(U,$J,358.3,277,0)
+ ;;=F45.22^^3^35^1
+ ;;^UTILITY(U,$J,358.3,277,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,277,1,3,0)
+ ;;=3^Body Dysmorphic Disorder
+ ;;^UTILITY(U,$J,358.3,277,1,4,0)
+ ;;=4^F45.22
+ ;;^UTILITY(U,$J,358.3,277,2)
+ ;;=^5003588
+ ;;^UTILITY(U,$J,358.3,278,0)
+ ;;=F63.3^^3^35^7
+ ;;^UTILITY(U,$J,358.3,278,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,278,1,3,0)
+ ;;=3^Trichotillomania
+ ;;^UTILITY(U,$J,358.3,278,1,4,0)
+ ;;=4^F63.3
+ ;;^UTILITY(U,$J,358.3,278,2)
+ ;;=^5003643
+ ;;^UTILITY(U,$J,358.3,279,0)
+ ;;=L98.1^^3^35^2
+ ;;^UTILITY(U,$J,358.3,279,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,279,1,3,0)
+ ;;=3^Excoriation (Skin-Picking) Disorder
+ ;;^UTILITY(U,$J,358.3,279,1,4,0)
+ ;;=4^L98.1
+ ;;^UTILITY(U,$J,358.3,279,2)
+ ;;=^186781
+ ;;^UTILITY(U,$J,358.3,280,0)
+ ;;=F63.0^^3^35^4
+ ;;^UTILITY(U,$J,358.3,280,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,280,1,3,0)
+ ;;=3^Gambling Disorder
+ ;;^UTILITY(U,$J,358.3,280,1,4,0)
+ ;;=4^F63.0
+ ;;^UTILITY(U,$J,358.3,280,2)
+ ;;=^5003640
+ ;;^UTILITY(U,$J,358.3,281,0)
+ ;;=F68.10^^3^35^3
+ ;;^UTILITY(U,$J,358.3,281,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,281,1,3,0)
+ ;;=3^Factitious Disorder
+ ;;^UTILITY(U,$J,358.3,281,1,4,0)
+ ;;=4^F68.10
+ ;;^UTILITY(U,$J,358.3,281,2)
+ ;;=^5003663
+ ;;^UTILITY(U,$J,358.3,282,0)
+ ;;=F63.9^^3^35^5
+ ;;^UTILITY(U,$J,358.3,282,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,282,1,3,0)
+ ;;=3^Impulse Disorder,Unspec
+ ;;^UTILITY(U,$J,358.3,282,1,4,0)
+ ;;=4^F63.9
+ ;;^UTILITY(U,$J,358.3,282,2)
+ ;;=^5003646
+ ;;^UTILITY(U,$J,358.3,283,0)
+ ;;=F06.2^^3^36^5
+ ;;^UTILITY(U,$J,358.3,283,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,283,1,3,0)
+ ;;=3^Psychotic Disorder w/ Delusions d/t Another Medical Condition
+ ;;^UTILITY(U,$J,358.3,283,1,4,0)
+ ;;=4^F06.2
+ ;;^UTILITY(U,$J,358.3,283,2)
+ ;;=^5003055
+ ;;^UTILITY(U,$J,358.3,284,0)
+ ;;=F06.0^^3^36^6
+ ;;^UTILITY(U,$J,358.3,284,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,284,1,3,0)
+ ;;=3^Psychotic Disorder w/ Hallucinations d/t Another Medical Condition

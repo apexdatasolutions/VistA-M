@@ -1,0 +1,134 @@
+IBDEI1W3 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,31643,1,4,0)
+ ;;=4^F90.2
+ ;;^UTILITY(U,$J,358.3,31643,2)
+ ;;=^5003694
+ ;;^UTILITY(U,$J,358.3,31644,0)
+ ;;=F90.1^^138^1440^2
+ ;;^UTILITY(U,$J,358.3,31644,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31644,1,3,0)
+ ;;=3^ADHD,Hyperactive/Impulsive Type
+ ;;^UTILITY(U,$J,358.3,31644,1,4,0)
+ ;;=4^F90.1
+ ;;^UTILITY(U,$J,358.3,31644,2)
+ ;;=^5003693
+ ;;^UTILITY(U,$J,358.3,31645,0)
+ ;;=Z70.9^^138^1441^4
+ ;;^UTILITY(U,$J,358.3,31645,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31645,1,3,0)
+ ;;=3^Sex Counseling
+ ;;^UTILITY(U,$J,358.3,31645,1,4,0)
+ ;;=4^Z70.9
+ ;;^UTILITY(U,$J,358.3,31645,2)
+ ;;=^5063241
+ ;;^UTILITY(U,$J,358.3,31646,0)
+ ;;=Z71.9^^138^1441^1
+ ;;^UTILITY(U,$J,358.3,31646,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31646,1,3,0)
+ ;;=3^Counseling/Consultation NEC
+ ;;^UTILITY(U,$J,358.3,31646,1,4,0)
+ ;;=4^Z71.9
+ ;;^UTILITY(U,$J,358.3,31646,2)
+ ;;=^5063254
+ ;;^UTILITY(U,$J,358.3,31647,0)
+ ;;=Z51.81^^138^1441^5
+ ;;^UTILITY(U,$J,358.3,31647,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31647,1,3,0)
+ ;;=3^Therapeutic Drug Level Monitoring
+ ;;^UTILITY(U,$J,358.3,31647,1,4,0)
+ ;;=4^Z51.81
+ ;;^UTILITY(U,$J,358.3,31647,2)
+ ;;=^5063064
+ ;;^UTILITY(U,$J,358.3,31648,0)
+ ;;=Z69.12^^138^1441^2
+ ;;^UTILITY(U,$J,358.3,31648,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31648,1,3,0)
+ ;;=3^Mental Health Svcs for Perpetrator of Spousal/Partner Abuse
+ ;;^UTILITY(U,$J,358.3,31648,1,4,0)
+ ;;=4^Z69.12
+ ;;^UTILITY(U,$J,358.3,31648,2)
+ ;;=^5063233
+ ;;^UTILITY(U,$J,358.3,31649,0)
+ ;;=Z69.11^^138^1441^3
+ ;;^UTILITY(U,$J,358.3,31649,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31649,1,3,0)
+ ;;=3^Mental Health Svcs for Victim of Spousal/Partner Abuse
+ ;;^UTILITY(U,$J,358.3,31649,1,4,0)
+ ;;=4^Z69.11
+ ;;^UTILITY(U,$J,358.3,31649,2)
+ ;;=^5063232
+ ;;^UTILITY(U,$J,358.3,31650,0)
+ ;;=Z60.0^^138^1442^2
+ ;;^UTILITY(U,$J,358.3,31650,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31650,1,3,0)
+ ;;=3^Phase of Life Problem
+ ;;^UTILITY(U,$J,358.3,31650,1,4,0)
+ ;;=4^Z60.0
+ ;;^UTILITY(U,$J,358.3,31650,2)
+ ;;=^5063139
+ ;;^UTILITY(U,$J,358.3,31651,0)
+ ;;=Z60.2^^138^1442^3
+ ;;^UTILITY(U,$J,358.3,31651,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31651,1,3,0)
+ ;;=3^Problem Related to Living Alone
+ ;;^UTILITY(U,$J,358.3,31651,1,4,0)
+ ;;=4^Z60.2
+ ;;^UTILITY(U,$J,358.3,31651,2)
+ ;;=^5063140
+ ;;^UTILITY(U,$J,358.3,31652,0)
+ ;;=Z60.3^^138^1442^1
+ ;;^UTILITY(U,$J,358.3,31652,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31652,1,3,0)
+ ;;=3^Acculturation Difficulty
+ ;;^UTILITY(U,$J,358.3,31652,1,4,0)
+ ;;=4^Z60.3
+ ;;^UTILITY(U,$J,358.3,31652,2)
+ ;;=^5063141
+ ;;^UTILITY(U,$J,358.3,31653,0)
+ ;;=Z60.4^^138^1442^5
+ ;;^UTILITY(U,$J,358.3,31653,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31653,1,3,0)
+ ;;=3^Social Exclusion or Rejection
+ ;;^UTILITY(U,$J,358.3,31653,1,4,0)
+ ;;=4^Z60.4
+ ;;^UTILITY(U,$J,358.3,31653,2)
+ ;;=^5063142
+ ;;^UTILITY(U,$J,358.3,31654,0)
+ ;;=Z60.5^^138^1442^6
+ ;;^UTILITY(U,$J,358.3,31654,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31654,1,3,0)
+ ;;=3^Target of (Perceived) Adverse Discrimination or Persecution
+ ;;^UTILITY(U,$J,358.3,31654,1,4,0)
+ ;;=4^Z60.5
+ ;;^UTILITY(U,$J,358.3,31654,2)
+ ;;=^5063143
+ ;;^UTILITY(U,$J,358.3,31655,0)
+ ;;=Z60.9^^138^1442^4
+ ;;^UTILITY(U,$J,358.3,31655,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31655,1,3,0)
+ ;;=3^Problem Related to Social Environment,Unspec
+ ;;^UTILITY(U,$J,358.3,31655,1,4,0)
+ ;;=4^Z60.9
+ ;;^UTILITY(U,$J,358.3,31655,2)
+ ;;=^5063145
+ ;;^UTILITY(U,$J,358.3,31656,0)
+ ;;=F65.4^^138^1443^6
+ ;;^UTILITY(U,$J,358.3,31656,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31656,1,3,0)
+ ;;=3^Pedophilia Disorder

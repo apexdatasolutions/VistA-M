@@ -1,5 +1,5 @@
-PSBCSUTL ;BIRMINGHAM/TEJ- BCMA-HSC COVER SHEET UTILITIES ;11/15/12 2:40pm
- ;;3.0;BAR CODE MED ADMIN;**16,13,38,32,50,60,58,68,70**;Mar 2004;Build 101
+PSBCSUTL ;BIRMINGHAM/TEJ- BCMA-HSC COVER SHEET UTILITIES ;03/06/16 3:06pm
+ ;;3.0;BAR CODE MED ADMIN;**16,13,38,32,50,60,58,68,70,80,83**;Mar 2004;Build 89
  ;Per VHA Directive 2004-038 (or future revisions regarding same), this routine should not be modified.
  ;
  ; Reference/IA
@@ -19,11 +19,13 @@ PSBCSUTL ;BIRMINGHAM/TEJ- BCMA-HSC COVER SHEET UTILITIES ;11/15/12 2:40pm
  ;      also add to return array ORD line 32 piece Clinic name for CO.
  ;      for CO mode: set to -7 days for pulling pull meds & viewing
  ;       Expired/DC'd orders; set to +7 days to view future orders.
+ ;*83 - call new PSBVDLRM, new call FIXADM^PSBUTL for Inserting G
+ ;      action code in Results back to coversheet to trigger Removal.
  ;
  ; ** Warning: PSBSIOPI & PSBCLINORD will be used as global variables
- ;             for all down stream calls from this RPC tag.
  ;
 RPC(RESULTS,DFN,EXPWIN,PSBSIOPI,PSBCLINORD) ;
+ N PSBONVDL  ;*83 used by psbvdlpa & psbvdlrm
  K RESULTS,^TMP("PSB",$J),^TMP("PSJ",$J)
  S EXPWIN=+$G(EXPWIN)       ;*70
  S PSBSIOPI=+$G(PSBSIOPI)   ;*68 init to 0 if not present or 1 if sent
@@ -173,10 +175,12 @@ RPC(RESULTS,DFN,EXPWIN,PSBSIOPI,PSBCLINORD) ;
  .I ('PSBGOT1)&(PSBOSP'<PSBWBEG) D ADD^PSBVDLU1(PSBREC,PSBOTXT,+(PSBWEND\1_"."_$P(PSBADST,"-")),PSBDDS,PSBSOLS,PSBADDS,"CVRSHT")
  .K PSBSTUS
  D EN^PSBVDLPA
+ D EN^PSBVDLRM    ;*83 new rtn
  I $G(^TMP("PSB",$J,PSBTAB,2))]"" S PSBI1=$O(^TMP("PSB",$J,PSBTAB,""),-1) I ^TMP("PSB",$J,PSBTAB,PSBI1)'="END" S ^TMP("PSB",$J,PSBTAB,PSBI1+1)="END"
  S ^TMP("PSB",$J,PSBTAB,0)=$O(^TMP("PSB",$J,PSBTAB,""),-1)
  I $G(^TMP("PSB",$J,PSBTAB,2))']"" S $P(^TMP("PSB",$J,PSBTAB,1),U,4)="-1^No orders to display on Coversheet"     ;*70 was "To" now "to"
  I $G(^TMP("PSB",$J,PSBTAB,2))]"" S $P(^TMP("PSB",$J,PSBTAB,1),U,4)="1^COVERSHEET DATA FOLLOWS" D ADD^PSBCSUTX
+ D FIXADM^PSBUTL                                                  ;*83
  D CLEAN
  Q
 LASTG(PSBPATPT,PSBOIPT) ;LstGvn-(inpt: DFN,OrItm IEN)
@@ -195,7 +199,7 @@ LASTG(PSBPATPT,PSBOIPT) ;LstGvn-(inpt: DFN,OrItm IEN)
 PAINCMT(DFN) ;;Add comment if Pain Score entered in BCMA was marked "Entered in Error" in Vitals.
  ;;This will run through all the patients appointments, check their comments to see if they had a Pain Vital entered  through BCMA, and check if that Vital was marked "Entered in Error."
  Q:'$D(^DPT(DFN,0))
- N PSBCMT,PSBGMR,PSBCMTGLB,PSBIEN,PSBCMTM,PSBVITM,PSBTMDF,PSBBDT,PSBEDT,PSBEFTM,PSBCMFL,PSBEXTM,PSBERFL,PSBPNSC,PSBNOW,PSBDFN,PSBPRNDT,PSBSTRTDT,PSBMDHST,PSBEFFL,PSBCOMMENT,X,X1,X2
+ N PSBCMT,PSBGMR,PSBCMTGLB,PSBIEN,PSBCMTM,PSBVITM,PSBTMDF,PSBBDT,PSBEDT,PSBEFTM,PSBCMFL,PSBEXTM,PSBERFL,PSBPNSC,PSBNOW,PSBDFN,PSBPRNDT,PSBSTRTDT,PSBMDHST,PSBEFFL,PSBCOMMENT,X,X1,X2,PSBDUZ,PSBPAIN
  K ^TMP("PSBGMV",$J)
  D NOW^%DTC S PSBEDT=%
  S PSBMDHST=+($$GET^XPAR("ALL","PSB MED HIST DAYS BACK",,"B")) S:+$G(PSBMDHST)=0 PSBMDHST=30
@@ -204,7 +208,7 @@ PAINCMT(DFN) ;;Add comment if Pain Score entered in BCMA was marked "Entered in 
  S PSBPRNDT=PSBSTRTDT F  S PSBPRNDT=$O(^PSB(53.79,"APRN",DFN,PSBPRNDT)) Q:'PSBPRNDT  D
  .S PSBIEN=0 F  S PSBIEN=$O(^PSB(53.79,"APRN",DFN,PSBPRNDT,PSBIEN)) Q:'PSBIEN  D
  ..S PSBCMT=0 F  S PSBCMT=$O(^PSB(53.79,PSBIEN,.3,PSBCMT)) Q:'PSBCMT  S PSBCMTGLB=^PSB(53.79,PSBIEN,.3,PSBCMT,0) D
- ...I $P($G(PSBCMTGLB),U)["Pain Score of" D
+ ...I $P($G(PSBCMTGLB),U)["Pain Score of" S PSBPAIN=$E($P(PSBCMTGLB,U),15) D
  ....I $E($P($G(PSBCMTGLB),U),1,14)="*Pain Score of" S PSBCMFL=""
  ....I $E($P($G(PSBCMTGLB),U),1,15)="**Pain Score of" S PSBEFFL=""
  ....S PSBCMTM=$P($G(PSBCMTGLB),U,3)
@@ -214,22 +218,33 @@ PAINCMT(DFN) ;;Add comment if Pain Score entered in BCMA was marked "Entered in 
  ....S PSBGMR=0 F  S PSBGMR=$O(^TMP("PSBGMV",$J,PSBGMR)) Q:PSBGMR=""  I $P(^TMP("PSBGMV",$J,PSBGMR),U,4)="PN" D
  .....S PSBVITM=$P(^TMP("PSBGMV",$J,PSBGMR),U,5)
  .....S PSBTMDF=$$FMDIFF^XLFDT(PSBVITM,PSBCMTM,2)
- .....I PSBTMDF>=-($S($G(DILOCKTM)>0:DILOCKTM,1:3)),PSBTMDF<=$S($G(DILOCKTM)>0:DILOCKTM,1:3) D
- ......I $P(^TMP("PSBGMV",$J,PSBGMR),U,9)=1 S PSBPNSC=$P(^TMP("PSBGMV",$J,PSBGMR),U,8),PSBERFL=""
- ..I $D(PSBERFL),'$D(PSBCMFL) S PSBCOMMENT="*Pain Score of "_PSBPNSC_" entered in Vitals via BCMA at "_PSBEXTM_" may have been marked 'Entered in Error'. See Vitals Package for an updated Score." D COMMENT^PSBML(PSBIEN,PSBCOMMENT)
+ .....I PSBTMDF>=-($S($G(DILOCKTM)>0:DILOCKTM,1:3)),PSBTMDF<=$S($G(DILOCKTM)>0:DILOCKTM,1:3) S PSBDUZ=$P(^TMP("PSBGMV",$J,PSBGMR),U,10) D  ;User who marked Pain Score Entered in error, PSB*3*80
+ ......I $P(^TMP("PSBGMV",$J,PSBGMR),U,9)=1 S PSBPNSC=$P(^TMP("PSBGMV",$J,PSBGMR),U,8),PSBERFL="" D
+ .......I $D(PSBERFL),'$D(PSBCMFL),$G(PSBDUZ),PSBPAIN=PSBPNSC D
+ ........S PSBCOMMENT="*Pain Score of "_PSBPNSC_" entered in Vitals via BCMA at "_PSBEXTM_" may have been marked 'Entered in Error'. See Vitals Package for an updated Score." D PNCMNT(PSBIEN,PSBCOMMENT,PSBDUZ) S PSBCMFL=""
  ..K PSBCMFL,PSBERFL
  ..S PSBEFTM=$P($G(^PSB(53.79,PSBIEN,.2)),U,4) Q:PSBEFTM=""
- ..S PSBBDT=$E(PSBEFTM,1,12)
+ ..S PSBBDT=$E(PSBEFTM,1,12),PSBPAIN=$E($P(^PSB(53.79,PSBIEN,.2),U,2),15)
  ..S PSBEXTM=$$FMTE^XLFDT(PSBBDT,"5Z")
  ..D:'$D(^TMP("PSBGMV",$J)) EN1^GMVDCEXT("^TMP(""PSBGMV"",$J)",DFN,2,,1,PSBSTRTDT,PSBEDT,,1)
  ..S PSBGMR=0 F  S PSBGMR=$O(^TMP("PSBGMV",$J,PSBGMR)) Q:PSBGMR=""  I $P(^TMP("PSBGMV",$J,PSBGMR),U,4)="PN" D
  ...S PSBVITM=$P(^TMP("PSBGMV",$J,PSBGMR),U,5)
  ...S PSBTMDF=$$FMDIFF^XLFDT(PSBVITM,PSBEFTM,2)
- ...I PSBTMDF>=-($S($G(DILOCKTM)>0:DILOCKTM,1:3)),PSBTMDF<=$S($G(DILOCKTM)>0:DILOCKTM,1:3)  D
- ....I $P(^TMP("PSBGMV",$J,PSBGMR),U,9)=1 S PSBPNSC=$P(^TMP("PSBGMV",$J,PSBGMR),U,8),PSBERFL=""
- ..I $D(PSBERFL),'$D(PSBEFFL) S PSBCOMMENT="**Pain Score of "_PSBPNSC_" entered in Vitals via BCMA at "_PSBEXTM_" may have been marked 'Entered in Error'. See Vitals Package for an updated Score." D COMMENT^PSBML(PSBIEN,PSBCOMMENT)
+ ...I PSBTMDF>=-($S($G(DILOCKTM)>0:DILOCKTM,1:3)),PSBTMDF<=$S($G(DILOCKTM)>0:DILOCKTM,1:3)  S PSBDUZ=$P(^TMP("PSBGMV",$J,PSBGMR),U,10) D  ;User who marked Pain Score Entered in error, PSB*3*80
+ ....I $P(^TMP("PSBGMV",$J,PSBGMR),U,9)=1 S PSBPNSC=$P(^TMP("PSBGMV",$J,PSBGMR),U,8),PSBERFL="" D
+ .....I $D(PSBERFL),'$D(PSBEFFL),$G(PSBDUZ),PSBPAIN=PSBPNSC D
+ ......S PSBCOMMENT="**Pain Score of "_PSBPNSC_" entered in Vitals via BCMA at "_PSBEXTM_" may have been marked 'Entered in Error'. See Vitals Package for an updated Score." D PNCMNT(PSBIEN,PSBCOMMENT,PSBDUZ) S PSBEFFL=""
  ..K PSBERFL,PSBEFFL
  K ^TMP("PSBGMV",$J)
+ Q
+PNCMNT(DA,PSBCMT,PSBDUZ) ;Add pain score comment, PSB*3*80
+ N PSBFDA,PSBIEN,PSBNOW
+ S PSBIEN="+1,"_DA_","
+ D NOW^%DTC S PSBNOW=%
+ D VAL^PSBML(53.793,PSBIEN,.01,PSBCMT)
+ S PSBFDA(53.793,PSBIEN,.02)=PSBDUZ
+ S PSBFDA(53.793,PSBIEN,.03)=PSBNOW
+ D FILEIT^PSBML
  Q
 LIGHTS(PSBDFN) ;
  D RPC^PSBVDLTB(,PSBDFN,"NO TAB",,PSBSIOPI,PSBCLINORD) S PSBTAB="CVRSHT"

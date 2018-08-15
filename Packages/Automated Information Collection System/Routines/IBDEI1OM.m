@@ -1,0 +1,130 @@
+IBDEI1OM ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,28141,2)
+ ;;=^5010817
+ ;;^UTILITY(U,$J,358.3,28142,0)
+ ;;=M19.042^^132^1326^108
+ ;;^UTILITY(U,$J,358.3,28142,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28142,1,3,0)
+ ;;=3^Primary Osteoarthritis of Left Hand
+ ;;^UTILITY(U,$J,358.3,28142,1,4,0)
+ ;;=4^M19.042
+ ;;^UTILITY(U,$J,358.3,28142,2)
+ ;;=^5010818
+ ;;^UTILITY(U,$J,358.3,28143,0)
+ ;;=M19.90^^132^1326^68
+ ;;^UTILITY(U,$J,358.3,28143,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28143,1,3,0)
+ ;;=3^Osteoarthritis,Unspec
+ ;;^UTILITY(U,$J,358.3,28143,1,4,0)
+ ;;=4^M19.90
+ ;;^UTILITY(U,$J,358.3,28143,2)
+ ;;=^5010853
+ ;;^UTILITY(U,$J,358.3,28144,0)
+ ;;=M25.40^^132^1326^37
+ ;;^UTILITY(U,$J,358.3,28144,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28144,1,3,0)
+ ;;=3^Effusion,Unspec
+ ;;^UTILITY(U,$J,358.3,28144,1,4,0)
+ ;;=4^M25.40
+ ;;^UTILITY(U,$J,358.3,28144,2)
+ ;;=^5011575
+ ;;^UTILITY(U,$J,358.3,28145,0)
+ ;;=M45.0^^132^1326^6
+ ;;^UTILITY(U,$J,358.3,28145,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28145,1,3,0)
+ ;;=3^Ankylosing Spondylitis of Spine,Mult Sites
+ ;;^UTILITY(U,$J,358.3,28145,1,4,0)
+ ;;=4^M45.0
+ ;;^UTILITY(U,$J,358.3,28145,2)
+ ;;=^5011960
+ ;;^UTILITY(U,$J,358.3,28146,0)
+ ;;=M45.2^^132^1326^3
+ ;;^UTILITY(U,$J,358.3,28146,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28146,1,3,0)
+ ;;=3^Ankylosing Spondylitis of Cervical Region
+ ;;^UTILITY(U,$J,358.3,28146,1,4,0)
+ ;;=4^M45.2
+ ;;^UTILITY(U,$J,358.3,28146,2)
+ ;;=^5011962
+ ;;^UTILITY(U,$J,358.3,28147,0)
+ ;;=M45.4^^132^1326^7
+ ;;^UTILITY(U,$J,358.3,28147,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28147,1,3,0)
+ ;;=3^Ankylosing Spondylitis of Thoracic Region
+ ;;^UTILITY(U,$J,358.3,28147,1,4,0)
+ ;;=4^M45.4
+ ;;^UTILITY(U,$J,358.3,28147,2)
+ ;;=^5011964
+ ;;^UTILITY(U,$J,358.3,28148,0)
+ ;;=M45.7^^132^1326^4
+ ;;^UTILITY(U,$J,358.3,28148,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28148,1,3,0)
+ ;;=3^Ankylosing Spondylitis of Lumbosacral Region
+ ;;^UTILITY(U,$J,358.3,28148,1,4,0)
+ ;;=4^M45.7
+ ;;^UTILITY(U,$J,358.3,28148,2)
+ ;;=^5011967
+ ;;^UTILITY(U,$J,358.3,28149,0)
+ ;;=M45.8^^132^1326^5
+ ;;^UTILITY(U,$J,358.3,28149,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28149,1,3,0)
+ ;;=3^Ankylosing Spondylitis of Sacral/Sacrococcygeal Region
+ ;;^UTILITY(U,$J,358.3,28149,1,4,0)
+ ;;=4^M45.8
+ ;;^UTILITY(U,$J,358.3,28149,2)
+ ;;=^5011968
+ ;;^UTILITY(U,$J,358.3,28150,0)
+ ;;=M47.22^^132^1326^155
+ ;;^UTILITY(U,$J,358.3,28150,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28150,1,3,0)
+ ;;=3^Sponylosis w/ Radiculopathy,Cervical Region NEC
+ ;;^UTILITY(U,$J,358.3,28150,1,4,0)
+ ;;=4^M47.22
+ ;;^UTILITY(U,$J,358.3,28150,2)
+ ;;=^5012061
+ ;;^UTILITY(U,$J,358.3,28151,0)
+ ;;=M47.24^^132^1326^157
+ ;;^UTILITY(U,$J,358.3,28151,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28151,1,3,0)
+ ;;=3^Sponylosis w/ Radiculopathy,Thoracic Region NEC
+ ;;^UTILITY(U,$J,358.3,28151,1,4,0)
+ ;;=4^M47.24
+ ;;^UTILITY(U,$J,358.3,28151,2)
+ ;;=^5012063
+ ;;^UTILITY(U,$J,358.3,28152,0)
+ ;;=M47.27^^132^1326^156
+ ;;^UTILITY(U,$J,358.3,28152,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28152,1,3,0)
+ ;;=3^Sponylosis w/ Radiculopathy,Lumbosacral Region NEC
+ ;;^UTILITY(U,$J,358.3,28152,1,4,0)
+ ;;=4^M47.27
+ ;;^UTILITY(U,$J,358.3,28152,2)
+ ;;=^5012066
+ ;;^UTILITY(U,$J,358.3,28153,0)
+ ;;=M47.812^^132^1326^152
+ ;;^UTILITY(U,$J,358.3,28153,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28153,1,3,0)
+ ;;=3^Spondylosis w/o Myelopathy/Radiculopathy,Cervical Region
+ ;;^UTILITY(U,$J,358.3,28153,1,4,0)
+ ;;=4^M47.812
+ ;;^UTILITY(U,$J,358.3,28153,2)
+ ;;=^5012069
+ ;;^UTILITY(U,$J,358.3,28154,0)
+ ;;=M47.814^^132^1326^153
+ ;;^UTILITY(U,$J,358.3,28154,1,0)
+ ;;=^358.31IA^4^2

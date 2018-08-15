@@ -1,0 +1,134 @@
+IBDEI1MZ ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,27380,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27380,1,3,0)
+ ;;=3^Benign Neop of Sigmoid Colon
+ ;;^UTILITY(U,$J,358.3,27380,1,4,0)
+ ;;=4^D12.5
+ ;;^UTILITY(U,$J,358.3,27380,2)
+ ;;=^5001968
+ ;;^UTILITY(U,$J,358.3,27381,0)
+ ;;=D12.4^^132^1315^14
+ ;;^UTILITY(U,$J,358.3,27381,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27381,1,3,0)
+ ;;=3^Benign Neop of Descending Colon
+ ;;^UTILITY(U,$J,358.3,27381,1,4,0)
+ ;;=4^D12.4
+ ;;^UTILITY(U,$J,358.3,27381,2)
+ ;;=^5001967
+ ;;^UTILITY(U,$J,358.3,27382,0)
+ ;;=D73.2^^132^1315^19
+ ;;^UTILITY(U,$J,358.3,27382,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27382,1,3,0)
+ ;;=3^Congestive Splenomegaly,Chronic
+ ;;^UTILITY(U,$J,358.3,27382,1,4,0)
+ ;;=4^D73.2
+ ;;^UTILITY(U,$J,358.3,27382,2)
+ ;;=^268000
+ ;;^UTILITY(U,$J,358.3,27383,0)
+ ;;=I85.00^^132^1315^46
+ ;;^UTILITY(U,$J,358.3,27383,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27383,1,3,0)
+ ;;=3^Esophageal Varices w/o Bleeding
+ ;;^UTILITY(U,$J,358.3,27383,1,4,0)
+ ;;=4^I85.00
+ ;;^UTILITY(U,$J,358.3,27383,2)
+ ;;=^5008023
+ ;;^UTILITY(U,$J,358.3,27384,0)
+ ;;=K20.9^^132^1315^47
+ ;;^UTILITY(U,$J,358.3,27384,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27384,1,3,0)
+ ;;=3^Esophagitis,Unspec
+ ;;^UTILITY(U,$J,358.3,27384,1,4,0)
+ ;;=4^K20.9
+ ;;^UTILITY(U,$J,358.3,27384,2)
+ ;;=^295809
+ ;;^UTILITY(U,$J,358.3,27385,0)
+ ;;=K21.9^^132^1315^55
+ ;;^UTILITY(U,$J,358.3,27385,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27385,1,3,0)
+ ;;=3^Gastroesophageal Reflux Disease w/o Esophagitis
+ ;;^UTILITY(U,$J,358.3,27385,1,4,0)
+ ;;=4^K21.9
+ ;;^UTILITY(U,$J,358.3,27385,2)
+ ;;=^5008505
+ ;;^UTILITY(U,$J,358.3,27386,0)
+ ;;=K25.7^^132^1315^50
+ ;;^UTILITY(U,$J,358.3,27386,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27386,1,3,0)
+ ;;=3^Gastric Ulcer w/o Hemorrhage/Perforation,Chronic
+ ;;^UTILITY(U,$J,358.3,27386,1,4,0)
+ ;;=4^K25.7
+ ;;^UTILITY(U,$J,358.3,27386,2)
+ ;;=^5008521
+ ;;^UTILITY(U,$J,358.3,27387,0)
+ ;;=K26.9^^132^1315^44
+ ;;^UTILITY(U,$J,358.3,27387,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27387,1,3,0)
+ ;;=3^Duadenal Ulcer w/o Hemorrhage/Perforation,Unspec
+ ;;^UTILITY(U,$J,358.3,27387,1,4,0)
+ ;;=4^K26.9
+ ;;^UTILITY(U,$J,358.3,27387,2)
+ ;;=^5008527
+ ;;^UTILITY(U,$J,358.3,27388,0)
+ ;;=K27.9^^132^1315^72
+ ;;^UTILITY(U,$J,358.3,27388,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27388,1,3,0)
+ ;;=3^Peptic Ulcer w/o Hemorrhage/Perforation,Unspec
+ ;;^UTILITY(U,$J,358.3,27388,1,4,0)
+ ;;=4^K27.9
+ ;;^UTILITY(U,$J,358.3,27388,2)
+ ;;=^5008536
+ ;;^UTILITY(U,$J,358.3,27389,0)
+ ;;=K29.70^^132^1315^51
+ ;;^UTILITY(U,$J,358.3,27389,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27389,1,3,0)
+ ;;=3^Gastritis w/o Bleeding,Unspec
+ ;;^UTILITY(U,$J,358.3,27389,1,4,0)
+ ;;=4^K29.70
+ ;;^UTILITY(U,$J,358.3,27389,2)
+ ;;=^5008552
+ ;;^UTILITY(U,$J,358.3,27390,0)
+ ;;=K29.90^^132^1315^52
+ ;;^UTILITY(U,$J,358.3,27390,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27390,1,3,0)
+ ;;=3^Gastroduodenitis w/o Bleeding,Unspec
+ ;;^UTILITY(U,$J,358.3,27390,1,4,0)
+ ;;=4^K29.90
+ ;;^UTILITY(U,$J,358.3,27390,2)
+ ;;=^5008556
+ ;;^UTILITY(U,$J,358.3,27391,0)
+ ;;=K30.^^132^1315^45
+ ;;^UTILITY(U,$J,358.3,27391,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27391,1,3,0)
+ ;;=3^Dyspepsia,Functional
+ ;;^UTILITY(U,$J,358.3,27391,1,4,0)
+ ;;=4^K30.
+ ;;^UTILITY(U,$J,358.3,27391,2)
+ ;;=^5008558
+ ;;^UTILITY(U,$J,358.3,27392,0)
+ ;;=K31.89^^132^1315^34
+ ;;^UTILITY(U,$J,358.3,27392,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27392,1,3,0)
+ ;;=3^Diseases of Stomach & Duodenum,Other
+ ;;^UTILITY(U,$J,358.3,27392,1,4,0)
+ ;;=4^K31.89
+ ;;^UTILITY(U,$J,358.3,27392,2)
+ ;;=^5008569
+ ;;^UTILITY(U,$J,358.3,27393,0)
+ ;;=K31.9^^132^1315^33

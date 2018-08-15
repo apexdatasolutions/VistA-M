@@ -1,136 +1,130 @@
-IBDEI12N ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI12N ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,19188,0)
- ;;=V54.89^^125^1232^38
- ;;^UTILITY(U,$J,358.3,19188,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19188,1,3,0)
- ;;=3^V54.89
- ;;^UTILITY(U,$J,358.3,19188,1,5,0)
- ;;=5^Other Aftercare
- ;;^UTILITY(U,$J,358.3,19188,2)
- ;;=^328685
- ;;^UTILITY(U,$J,358.3,19189,0)
- ;;=V67.09^^125^1232^39
- ;;^UTILITY(U,$J,358.3,19189,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19189,1,3,0)
- ;;=3^V67.09
- ;;^UTILITY(U,$J,358.3,19189,1,5,0)
- ;;=5^F/U Visit After Surgery
- ;;^UTILITY(U,$J,358.3,19189,2)
- ;;=^322080
- ;;^UTILITY(U,$J,358.3,19190,0)
- ;;=V54.01^^125^1232^37
- ;;^UTILITY(U,$J,358.3,19190,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19190,1,3,0)
- ;;=3^V54.01
- ;;^UTILITY(U,$J,358.3,19190,1,5,0)
- ;;=5^Removal Int Fixation Dev
- ;;^UTILITY(U,$J,358.3,19190,2)
- ;;=^329975
- ;;^UTILITY(U,$J,358.3,19191,0)
- ;;=337.22^^125^1233^2
- ;;^UTILITY(U,$J,358.3,19191,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19191,1,3,0)
- ;;=3^337.22
- ;;^UTILITY(U,$J,358.3,19191,1,5,0)
- ;;=5^Reflex Sympathetic Dystrophy LE
- ;;^UTILITY(U,$J,358.3,19191,2)
- ;;=^295725
- ;;^UTILITY(U,$J,358.3,19192,0)
- ;;=845.09^^125^1233^3
- ;;^UTILITY(U,$J,358.3,19192,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19192,1,3,0)
- ;;=3^845.09
- ;;^UTILITY(U,$J,358.3,19192,1,5,0)
- ;;=5^Rupture of Achilles Tendon
- ;;^UTILITY(U,$J,358.3,19192,2)
- ;;=Rupture of Achilles Tendon^274511
- ;;^UTILITY(U,$J,358.3,19193,0)
- ;;=845.00^^125^1233^4
- ;;^UTILITY(U,$J,358.3,19193,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19193,1,3,0)
- ;;=3^845.00
- ;;^UTILITY(U,$J,358.3,19193,1,5,0)
- ;;=5^Rupture of Ankle Tendon
- ;;^UTILITY(U,$J,358.3,19193,2)
- ;;=Rupture of Ankle Tendon^274507
- ;;^UTILITY(U,$J,358.3,19194,0)
- ;;=.5^1^125^1234^.5^Traumatic- See Sprains^^1
- ;;^UTILITY(U,$J,358.3,19194,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19194,1,3,0)
- ;;=3
- ;;^UTILITY(U,$J,358.3,19194,1,5,0)
- ;;=5
- ;;^UTILITY(U,$J,358.3,19195,0)
- ;;=709.2^^125^1234^2
- ;;^UTILITY(U,$J,358.3,19195,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19195,1,3,0)
- ;;=3^709.2
- ;;^UTILITY(U,$J,358.3,19195,1,5,0)
- ;;=5^Scarring
- ;;^UTILITY(U,$J,358.3,19195,2)
- ;;=^108131
- ;;^UTILITY(U,$J,358.3,19196,0)
- ;;=733.99^^125^1234^3
- ;;^UTILITY(U,$J,358.3,19196,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19196,1,3,0)
- ;;=3^733.99
- ;;^UTILITY(U,$J,358.3,19196,1,5,0)
- ;;=5^Sesamoiditis
- ;;^UTILITY(U,$J,358.3,19196,2)
- ;;=Sesamoiditisi^87503
- ;;^UTILITY(U,$J,358.3,19197,0)
- ;;=844.9^^125^1234^5
- ;;^UTILITY(U,$J,358.3,19197,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19197,1,3,0)
- ;;=3^844.9
- ;;^UTILITY(U,$J,358.3,19197,1,5,0)
- ;;=5^Sprain of Knee/Loower Leg
- ;;^UTILITY(U,$J,358.3,19197,2)
- ;;=Sprain of Knee/Leg NOS^274504
- ;;^UTILITY(U,$J,358.3,19198,0)
- ;;=845.00^^125^1234^6
- ;;^UTILITY(U,$J,358.3,19198,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19198,1,3,0)
- ;;=3^845.00
- ;;^UTILITY(U,$J,358.3,19198,1,5,0)
- ;;=5^Sprain of Ankle, NOS
- ;;^UTILITY(U,$J,358.3,19198,2)
- ;;=^274507
- ;;^UTILITY(U,$J,358.3,19199,0)
- ;;=845.09^^125^1234^7
- ;;^UTILITY(U,$J,358.3,19199,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19199,1,3,0)
- ;;=3^845.09
- ;;^UTILITY(U,$J,358.3,19199,1,5,0)
- ;;=5^Sprain of Achilles Tendon (Rupture)
- ;;^UTILITY(U,$J,358.3,19199,2)
- ;;=^274511
- ;;^UTILITY(U,$J,358.3,19200,0)
- ;;=845.10^^125^1234^8
- ;;^UTILITY(U,$J,358.3,19200,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19200,1,3,0)
- ;;=3^845.10
- ;;^UTILITY(U,$J,358.3,19200,1,5,0)
- ;;=5^Sprain of Foot, NOS
- ;;^UTILITY(U,$J,358.3,19200,2)
- ;;=Sprain of Foot^274513
- ;;^UTILITY(U,$J,358.3,19201,0)
- ;;=845.11^^125^1234^9
- ;;^UTILITY(U,$J,358.3,19201,1,0)
- ;;=^358.31IA^5^2
+ ;;^UTILITY(U,$J,358.3,17875,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17875,1,3,0)
+ ;;=3^Celiac disease
+ ;;^UTILITY(U,$J,358.3,17875,1,4,0)
+ ;;=4^K90.0
+ ;;^UTILITY(U,$J,358.3,17875,2)
+ ;;=^20828
+ ;;^UTILITY(U,$J,358.3,17876,0)
+ ;;=B96.81^^91^886^22
+ ;;^UTILITY(U,$J,358.3,17876,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17876,1,3,0)
+ ;;=3^Helicobacter pylori as the cause of diseases classd elswhr
+ ;;^UTILITY(U,$J,358.3,17876,1,4,0)
+ ;;=4^B96.81
+ ;;^UTILITY(U,$J,358.3,17876,2)
+ ;;=^5000857
+ ;;^UTILITY(U,$J,358.3,17877,0)
+ ;;=C16.9^^91^886^23
+ ;;^UTILITY(U,$J,358.3,17877,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17877,1,3,0)
+ ;;=3^Malignant neoplasm of stomach, unspecified
+ ;;^UTILITY(U,$J,358.3,17877,1,4,0)
+ ;;=4^C16.9
+ ;;^UTILITY(U,$J,358.3,17877,2)
+ ;;=^5000923
+ ;;^UTILITY(U,$J,358.3,17878,0)
+ ;;=I86.4^^91^886^15
+ ;;^UTILITY(U,$J,358.3,17878,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17878,1,3,0)
+ ;;=3^Gastric varices
+ ;;^UTILITY(U,$J,358.3,17878,1,4,0)
+ ;;=4^I86.4
+ ;;^UTILITY(U,$J,358.3,17878,2)
+ ;;=^49382
+ ;;^UTILITY(U,$J,358.3,17879,0)
+ ;;=K25.0^^91^886^2
+ ;;^UTILITY(U,$J,358.3,17879,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17879,1,3,0)
+ ;;=3^Acute gastric ulcer with hemorrhage
+ ;;^UTILITY(U,$J,358.3,17879,1,4,0)
+ ;;=4^K25.0
+ ;;^UTILITY(U,$J,358.3,17879,2)
+ ;;=^270064
+ ;;^UTILITY(U,$J,358.3,17880,0)
+ ;;=K25.9^^91^886^14
+ ;;^UTILITY(U,$J,358.3,17880,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17880,1,3,0)
+ ;;=3^Gastric ulcer, unsp as acute or chronic, w/o hemor or perf
+ ;;^UTILITY(U,$J,358.3,17880,1,4,0)
+ ;;=4^K25.9
+ ;;^UTILITY(U,$J,358.3,17880,2)
+ ;;=^5008522
+ ;;^UTILITY(U,$J,358.3,17881,0)
+ ;;=K26.0^^91^886^1
+ ;;^UTILITY(U,$J,358.3,17881,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17881,1,3,0)
+ ;;=3^Acute duodenal ulcer with hemorrhage
+ ;;^UTILITY(U,$J,358.3,17881,1,4,0)
+ ;;=4^K26.0
+ ;;^UTILITY(U,$J,358.3,17881,2)
+ ;;=^270089
+ ;;^UTILITY(U,$J,358.3,17882,0)
+ ;;=K26.9^^91^886^12
+ ;;^UTILITY(U,$J,358.3,17882,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17882,1,3,0)
+ ;;=3^Duodenal ulcer, unsp as acute or chronic, w/o hemor or perf
+ ;;^UTILITY(U,$J,358.3,17882,1,4,0)
+ ;;=4^K26.9
+ ;;^UTILITY(U,$J,358.3,17882,2)
+ ;;=^5008527
+ ;;^UTILITY(U,$J,358.3,17883,0)
+ ;;=K27.9^^91^886^25
+ ;;^UTILITY(U,$J,358.3,17883,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17883,1,3,0)
+ ;;=3^Peptic ulc, site unsp, unsp as ac or chr, w/o hemor or perf
+ ;;^UTILITY(U,$J,358.3,17883,1,4,0)
+ ;;=4^K27.9
+ ;;^UTILITY(U,$J,358.3,17883,2)
+ ;;=^5008536
+ ;;^UTILITY(U,$J,358.3,17884,0)
+ ;;=K29.40^^91^886^7
+ ;;^UTILITY(U,$J,358.3,17884,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17884,1,3,0)
+ ;;=3^Chronic atrophic gastritis without bleeding
+ ;;^UTILITY(U,$J,358.3,17884,1,4,0)
+ ;;=4^K29.40
+ ;;^UTILITY(U,$J,358.3,17884,2)
+ ;;=^5008548
+ ;;^UTILITY(U,$J,358.3,17885,0)
+ ;;=K29.50^^91^886^6
+ ;;^UTILITY(U,$J,358.3,17885,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17885,1,3,0)
+ ;;=3^Chronic Gastritis w/o Bleeding,Unspec
+ ;;^UTILITY(U,$J,358.3,17885,1,4,0)
+ ;;=4^K29.50
+ ;;^UTILITY(U,$J,358.3,17885,2)
+ ;;=^5008550
+ ;;^UTILITY(U,$J,358.3,17886,0)
+ ;;=K29.30^^91^886^8
+ ;;^UTILITY(U,$J,358.3,17886,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17886,1,3,0)
+ ;;=3^Chronic superficial gastritis without bleeding
+ ;;^UTILITY(U,$J,358.3,17886,1,4,0)
+ ;;=4^K29.30
+ ;;^UTILITY(U,$J,358.3,17886,2)
+ ;;=^5008546
+ ;;^UTILITY(U,$J,358.3,17887,0)
+ ;;=K29.20^^91^886^3
+ ;;^UTILITY(U,$J,358.3,17887,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17887,1,3,0)
+ ;;=3^Alcoholic gastritis without bleeding
+ ;;^UTILITY(U,$J,358.3,17887,1,4,0)
+ ;;=4^K29.20

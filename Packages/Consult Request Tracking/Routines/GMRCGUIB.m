@@ -1,5 +1,6 @@
-GMRCGUIB ;SLC/DCM,JFR,MA - GUI actions for consults ;8/19/03 07:31
- ;;3.0;CONSULT/REQUEST TRACKING;**4,12,18,20,17,22,29,30,35,45,53,55,64,46**;DEC 27, 1997;Build 23
+GMRCGUIB ;SLC/DCM,JFR,MA - GUI actions for consults ;5/23/16
+ ;;3.0;CONSULT/REQUEST TRACKING;**4,12,18,20,17,22,29,30,35,45,53,55,64,46,75,86**;DEC 27, 1997;Build 18
+ ;
  ; This routine invokes IA #2980
  ;
 SETDA() ;set DA of where audit actions are to be filed
@@ -24,6 +25,7 @@ SETCOM(COMMENT,WHO) ;Set comment array into tracking actions
  S ^GMR(123,GMRCO,40,DA,1,0)="^^^^"_GMRCAD_"^"
  S (GMRCND,GMRCND1)=0 F  S GMRCND1=$O(COMMENT(GMRCND1)) Q:GMRCND1=""  S GMRCND=GMRCND+1,^GMR(123,GMRCO,40,DA,1,GMRCND,0)=COMMENT(GMRCND)
  S $P(^GMR(123,GMRCO,40,DA,1,0),"^",3)=GMRCND,$P(^(0),"^",4)=GMRCND,^GMR(123,GMRCO,40,"B",GMRCNOW,DA)=""
+ D:$D(^GMR(123,+GMRCO,0)) AG123S1^GMRCXR(+GMRCO)  ;alb/sat 86 - update AG xref
  ;
  ; if an IFC, call event handler to generate a msg to remote site
  I $D(^GMR(123,+GMRCO,12)),$D(^(40,DA)) D TRIGR^GMRCIEVT(GMRCO,DA)
@@ -41,6 +43,8 @@ CMT(GMRCO,GMRCOM,GMRCADUZ,GMRCWHN,GMRCWHO) ;add comment to consult
  S DA=$$SETDA ; get next activity tracking entry
  S GMRCA=20,GMRCAD=GMRCWHN S:$G(GMRCWHO) GMRCORNP=GMRCWHO
  D SETCOM(.GMRCOM,$G(GMRCWHO))
+ ;if a Non VA Care consult, notify HCP of the comment
+ I $$FEE^GMRCHL7H($$GET1^DIQ(123,+GMRCO,1,"I")) D COMMENT^GMRCHL7H(+GMRCO)
  D  ;update LAST ACTION field even though no status change
  . N GMRCDR,GMRCSTS
  . S GMRCSTS="",GMRCDR="9////20"

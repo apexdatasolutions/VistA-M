@@ -1,10 +1,11 @@
 SROSCH1 ;B'HAM ISC/MAM - OR SCHEDULE ; [ 09/22/98  11:49 AM ]
- ;;3.0; Surgery ;**63,77,50**;24 Jun 93
+ ;;3.0;Surgery;**63,77,50,182,184**;24 Jun 93;Build 35
 EN I '$D(SRSITE) W @IOF D ^SROVAR I '$D(SRSITE) Q
  W @IOF S %DT="AEFX",%DT("A")="Print Schedule of Operations for which date ?   " D ^%DT K %DT Q:Y<1  S SRDT=Y D D^DIQ S SRDT1=Y
- D ALL G:SRYN["^" END I "Yy"[SRYN W !!,"Schedule will be queued to print at all locations defined in the SURGERY",!,"SITE PARAMETERS file...." D ^SROSCH2 W !!,"Press RETURN to continue  " R X:DTIME G END
+ D ALL G:SRYN["^" END
+ D FORM G:SRFORM["^" END I "Yy"[SRYN W !!,"Schedule will be queued to print at all locations defined in the SURGERY",!,"SITE PARAMETERS file...." D ^SROSCH2 W !!,"Press RETURN to continue  " R X:DTIME G END
  K IOP,%ZIS,POP,IO("Q") S %ZIS("A")="Print the Report on which Device: ",%ZIS="QM" W !!,"This report is designed to use a 132 column format.",! D ^%ZIS G:POP END
- I $D(IO("Q")) K IO("Q") S ZTDESC="SCHEDULE OF OPERATIONS",ZTRTN="SROSCH",(ZTSAVE("SRDT"),ZTSAVE("SRDT1"),ZTSAVE("SRSITE*"))="" D ^%ZTLOAD G END
+ I $D(IO("Q")) K IO("Q") S ZTDESC="SCHEDULE OF OPERATIONS",ZTRTN="SROSCH",(ZTSAVE("SRDT"),ZTSAVE("SRDT1"),ZTSAVE("SRSITE*"),ZTSAVE("SRFORM"))="" D ^%ZTLOAD G END
  G ^SROSCH
 END D ^SRSKILL,^%ZISC W @IOF
  Q
@@ -20,7 +21,7 @@ HDR ; print heading
  W !,?58,"SURGICAL SERVICE",!,?55,"SCHEDULE OF OPERATIONS",?90,"SIGNATURE OF CHIEF: ",SRCHF,!
  D NOW^%DTC S Y=% D DD^%DT W "PRINTED: ",$P(Y,"@")_" "_$E($P(Y,"@",2),1,5),?58,"FOR: ",SRDT1,?110,"____________________"
  W !!!,"PATIENT",?23,"DISPOSITION",?40,"PREOPERATIVE DIAGNOSIS",?92,"REQ ANESTHESIA"
- W ?116,"SURGEON",!,"ID#",?15,"AGE",?23,"START TIME",?40,"OPERATION(S)",?92,"ANESTHESIOLOGIST",?115,"FIRST ASST.",!,"WARD",?24,"END TIME",?92,"PRIN. ANESTHETIST",?115,"ATT SURGEON",! F LINE=1:1:132 W "="
+ W ?116,"PRIMARY SURGEON",!,"ID#",?15,"AGE",?23,"START TIME",?40,"OPERATION(S)",?92,"ANESTHESIOLOGIST",?115,"FIRST ASST.",!,"WARD",?24,"END TIME",?92,"PRIN. ANESTHETIST",?115,"ATT SURGEON",! F LINE=1:1:132 W "="
  S SRPAGE=SRPAGE+1
  Q
 CON ; print concurrent procedure
@@ -46,3 +47,6 @@ OUT ; outpatient ?
  I $P(^SRF(SRTN,0),"^",12)="I" S SRSLOC="TO BE ADMITTED" Q
  I $D(^SRF(SRTN,.4)),$P(^(.4),"^",3)'="O" S SRSLOC="TO BE ADMITTED"
  Q
+FORM ; short/long report
+ W ! K DIR S DIR("A")="Print the long form or the short form ? ",DIR("B")="SHORT",DIR(0)="SAM^L:LONG;S:SHORT" D ^DIR K DIR I $D(DTOUT)!$D(DUOUT) S SRFORM="^" Q
+ S SRFORM=Y Q

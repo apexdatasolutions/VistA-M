@@ -1,5 +1,5 @@
-MAGDHOW1 ;WOIFO/PMK - Capture Consult/Procedure Request data ; 16 Feb 2013 1:04 PM
- ;;3.0;IMAGING;**138**;Mar 19, 2002;Build 5380;Sep 03, 2013
+MAGDHOW1 ;WOIFO/PMK/DAC - Capture Consult/Procedure Request data ; Aug 28, 2017
+ ;;3.0;IMAGING;**138,174,180**;Mar 19, 2002;Build 16
  ;; Per VHA Directive 2004-038, this routine should not be modified.
  ;; +---------------------------------------------------------------+
  ;; | Property of the US Government.                                |
@@ -37,6 +37,7 @@ MSGSETUP(GMRCIEN,SERVICE,ORC1,ORC5,APTSCHED) ; called by ^MAGDHOWC and ^MAGDHOWS
  . ;
  . ; check for a cancelled or discontinued request
  . E  I " CA CR DR OC OD "[(" "_ORC1_" ") D
+ . . K FILLER2 ; P174 DAC - remove any preset status like GMRC-SCHEDULED set in CHECKAPT^MAGDHOWC
  . . S ORCTRL="CA" ; order control
  . . S ORSTATUS="CA" ; order status
  . . Q
@@ -51,12 +52,13 @@ MSGSETUP(GMRCIEN,SERVICE,ORC1,ORC5,APTSCHED) ; called by ^MAGDHOWC and ^MAGDHOWS
  . E  I ORC1="RE" D  ; result
  . . S MSGTYPE="ORU" ; HL7 message type for results
  . . ;
- . . I ORC5="A" D  ; unsigned TIU note
+ . . I (ORC5="A")!($$UNSIGNED^MAGDGMRC(GMRCIEN)) D  ; P180 DAC - Process unsigned TIU notes
  . . . S FILLER2="GMRC-NEW UNSIGNED RESULT"
  . . . S ORCTRL="RE" ; order control
  . . . S ORSTATUS="A" ; order status
  . . . Q
  . . E  D  ; new signed TIU note
+ . . . K FILLER2 ; P174 DAC - remove any preset status like GMRC-SCHEDULED set in CHECKAPT^MAGDHOWC
  . . . S ORCTRL="RE" ; order control
  . . . S ORSTATUS="CM" ; order status
  . . . Q

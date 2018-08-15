@@ -1,140 +1,118 @@
-IBDEI0SX ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0SX ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,14280,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14280,1,4,0)
- ;;=4^285.21
- ;;^UTILITY(U,$J,358.3,14280,1,5,0)
- ;;=5^Anemia In Renal Dis
- ;;^UTILITY(U,$J,358.3,14280,2)
- ;;=^321977
- ;;^UTILITY(U,$J,358.3,14281,0)
- ;;=285.29^^90^858^11
- ;;^UTILITY(U,$J,358.3,14281,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14281,1,4,0)
- ;;=4^285.29
- ;;^UTILITY(U,$J,358.3,14281,1,5,0)
- ;;=5^Anemia Of Chronic Dis
- ;;^UTILITY(U,$J,358.3,14281,2)
- ;;=^321979
- ;;^UTILITY(U,$J,358.3,14282,0)
- ;;=284.9^^90^858^12
- ;;^UTILITY(U,$J,358.3,14282,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14282,1,4,0)
- ;;=4^284.9
- ;;^UTILITY(U,$J,358.3,14282,1,5,0)
- ;;=5^Aplastic Anemia NOS
- ;;^UTILITY(U,$J,358.3,14282,2)
- ;;=^7020
- ;;^UTILITY(U,$J,358.3,14283,0)
- ;;=282.61^^90^858^78
- ;;^UTILITY(U,$J,358.3,14283,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14283,1,4,0)
- ;;=4^282.61
- ;;^UTILITY(U,$J,358.3,14283,1,5,0)
- ;;=5^Hemoglobin S Disease
- ;;^UTILITY(U,$J,358.3,14283,2)
- ;;=^267981
- ;;^UTILITY(U,$J,358.3,14284,0)
- ;;=282.7^^90^858^77
- ;;^UTILITY(U,$J,358.3,14284,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14284,1,4,0)
- ;;=4^282.7
- ;;^UTILITY(U,$J,358.3,14284,1,5,0)
- ;;=5^Hemoglobin C Disease
- ;;^UTILITY(U,$J,358.3,14284,2)
- ;;=^87629
- ;;^UTILITY(U,$J,358.3,14285,0)
- ;;=283.9^^90^858^79
- ;;^UTILITY(U,$J,358.3,14285,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14285,1,4,0)
- ;;=4^283.9
- ;;^UTILITY(U,$J,358.3,14285,1,5,0)
- ;;=5^Hemolytic Anemia,Acquired
- ;;^UTILITY(U,$J,358.3,14285,2)
- ;;=^7071
- ;;^UTILITY(U,$J,358.3,14286,0)
- ;;=283.0^^90^858^80
- ;;^UTILITY(U,$J,358.3,14286,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14286,1,4,0)
- ;;=4^283.0
- ;;^UTILITY(U,$J,358.3,14286,1,5,0)
- ;;=5^Hemolytic Anemia,Autoimmune
- ;;^UTILITY(U,$J,358.3,14286,2)
- ;;=^7079
- ;;^UTILITY(U,$J,358.3,14287,0)
- ;;=282.9^^90^858^81
- ;;^UTILITY(U,$J,358.3,14287,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14287,1,4,0)
- ;;=4^282.9
- ;;^UTILITY(U,$J,358.3,14287,1,5,0)
- ;;=5^Hemolytic Anemia,Hereditary
- ;;^UTILITY(U,$J,358.3,14287,2)
- ;;=^56578
- ;;^UTILITY(U,$J,358.3,14288,0)
- ;;=283.19^^90^858^82
- ;;^UTILITY(U,$J,358.3,14288,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14288,1,4,0)
- ;;=4^283.19
- ;;^UTILITY(U,$J,358.3,14288,1,5,0)
- ;;=5^Hemolytic Anemia,Microang
- ;;^UTILITY(U,$J,358.3,14288,2)
- ;;=^293664
- ;;^UTILITY(U,$J,358.3,14289,0)
- ;;=280.9^^90^858^86
- ;;^UTILITY(U,$J,358.3,14289,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14289,1,4,0)
- ;;=4^280.9
- ;;^UTILITY(U,$J,358.3,14289,1,5,0)
- ;;=5^Iron Defic Anemia,Unspec
- ;;^UTILITY(U,$J,358.3,14289,2)
- ;;=^276946
- ;;^UTILITY(U,$J,358.3,14290,0)
- ;;=285.1^^90^858^84
- ;;^UTILITY(U,$J,358.3,14290,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14290,1,4,0)
- ;;=4^285.1
- ;;^UTILITY(U,$J,358.3,14290,1,5,0)
- ;;=5^Iron Defic Anemia d/t Acute Blood Loss
- ;;^UTILITY(U,$J,358.3,14290,2)
- ;;=^267986
- ;;^UTILITY(U,$J,358.3,14291,0)
- ;;=280.0^^90^858^85
- ;;^UTILITY(U,$J,358.3,14291,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14291,1,4,0)
- ;;=4^280.0
- ;;^UTILITY(U,$J,358.3,14291,1,5,0)
- ;;=5^Iron Defic Anemia d/t Chronic Blood Loss
- ;;^UTILITY(U,$J,358.3,14291,2)
- ;;=^267971
- ;;^UTILITY(U,$J,358.3,14292,0)
- ;;=281.9^^90^858^107
- ;;^UTILITY(U,$J,358.3,14292,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14292,1,4,0)
- ;;=4^281.9
- ;;^UTILITY(U,$J,358.3,14292,1,5,0)
- ;;=5^Nutritional Anemia
- ;;^UTILITY(U,$J,358.3,14292,2)
- ;;=^123801
- ;;^UTILITY(U,$J,358.3,14293,0)
- ;;=281.0^^90^858^123
- ;;^UTILITY(U,$J,358.3,14293,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14293,1,4,0)
- ;;=4^281.0
- ;;^UTILITY(U,$J,358.3,14293,1,5,0)
- ;;=5^Vit B12 Deficiency (Pernicious Anemia)
+ ;;^UTILITY(U,$J,358.3,13302,2)
+ ;;=^5002510
+ ;;^UTILITY(U,$J,358.3,13303,0)
+ ;;=E08.319^^80^758^34
+ ;;^UTILITY(U,$J,358.3,13303,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13303,1,3,0)
+ ;;=3^Diab d/t Undrl Cond w/ Diab Retinopathy w/o Macular Edema
+ ;;^UTILITY(U,$J,358.3,13303,1,4,0)
+ ;;=4^E08.319
+ ;;^UTILITY(U,$J,358.3,13303,2)
+ ;;=^5002511
+ ;;^UTILITY(U,$J,358.3,13304,0)
+ ;;=E08.321^^80^758^35
+ ;;^UTILITY(U,$J,358.3,13304,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13304,1,3,0)
+ ;;=3^Diab d/t Undrl Cond w/ Mild Nonprolif Diab Retinopathy w/ Macular Edema
+ ;;^UTILITY(U,$J,358.3,13304,1,4,0)
+ ;;=4^E08.321
+ ;;^UTILITY(U,$J,358.3,13304,2)
+ ;;=^5002512
+ ;;^UTILITY(U,$J,358.3,13305,0)
+ ;;=E08.329^^80^758^36
+ ;;^UTILITY(U,$J,358.3,13305,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13305,1,3,0)
+ ;;=3^Diab d/t Undrl Cond w/ Mild Nonprolif Diab Retinopathy w/o Macular Edema
+ ;;^UTILITY(U,$J,358.3,13305,1,4,0)
+ ;;=4^E08.329
+ ;;^UTILITY(U,$J,358.3,13305,2)
+ ;;=^5002513
+ ;;^UTILITY(U,$J,358.3,13306,0)
+ ;;=E08.331^^80^758^37
+ ;;^UTILITY(U,$J,358.3,13306,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13306,1,3,0)
+ ;;=3^Diab d/t Undrl Cond w/ Moderate Nonprolif Diab Retinopathy w/ Macular Edema
+ ;;^UTILITY(U,$J,358.3,13306,1,4,0)
+ ;;=4^E08.331
+ ;;^UTILITY(U,$J,358.3,13306,2)
+ ;;=^5002514
+ ;;^UTILITY(U,$J,358.3,13307,0)
+ ;;=E08.339^^80^758^38
+ ;;^UTILITY(U,$J,358.3,13307,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13307,1,3,0)
+ ;;=3^Diab d/t Undrl Cond w/ Moderate Nonprolif Diab Retinopathy w/o Macular Edema
+ ;;^UTILITY(U,$J,358.3,13307,1,4,0)
+ ;;=4^E08.339
+ ;;^UTILITY(U,$J,358.3,13307,2)
+ ;;=^5002515
+ ;;^UTILITY(U,$J,358.3,13308,0)
+ ;;=E08.341^^80^758^39
+ ;;^UTILITY(U,$J,358.3,13308,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13308,1,3,0)
+ ;;=3^Diab d/t Undrl Cond w/ Severe Nonprolif Diab Retinopathy w/ Macular Edema
+ ;;^UTILITY(U,$J,358.3,13308,1,4,0)
+ ;;=4^E08.341
+ ;;^UTILITY(U,$J,358.3,13308,2)
+ ;;=^5002516
+ ;;^UTILITY(U,$J,358.3,13309,0)
+ ;;=E08.349^^80^758^40
+ ;;^UTILITY(U,$J,358.3,13309,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13309,1,3,0)
+ ;;=3^Diab d/t Undrl Cond w/ Severe Nonprolif Diab Retinopathy w/o Macular Edema
+ ;;^UTILITY(U,$J,358.3,13309,1,4,0)
+ ;;=4^E08.349
+ ;;^UTILITY(U,$J,358.3,13309,2)
+ ;;=^5002517
+ ;;^UTILITY(U,$J,358.3,13310,0)
+ ;;=E09.311^^80^758^31
+ ;;^UTILITY(U,$J,358.3,13310,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13310,1,3,0)
+ ;;=3^Diab d/t Drug/Chem w/ Unspec Diab Retinopathy w/ Macular Edema
+ ;;^UTILITY(U,$J,358.3,13310,1,4,0)
+ ;;=4^E09.311
+ ;;^UTILITY(U,$J,358.3,13310,2)
+ ;;=^5002552
+ ;;^UTILITY(U,$J,358.3,13311,0)
+ ;;=E09.319^^80^758^32
+ ;;^UTILITY(U,$J,358.3,13311,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13311,1,3,0)
+ ;;=3^Diab d/t Drug/Chem w/ Unspec Diab Retinopathy w/o Macular Edema
+ ;;^UTILITY(U,$J,358.3,13311,1,4,0)
+ ;;=4^E09.319
+ ;;^UTILITY(U,$J,358.3,13311,2)
+ ;;=^5002553
+ ;;^UTILITY(U,$J,358.3,13312,0)
+ ;;=E09.321^^80^758^27
+ ;;^UTILITY(U,$J,358.3,13312,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13312,1,3,0)
+ ;;=3^Diab d/t Drug/Chem w/ Mild Nonprolif Diab Retinopathy w/ Macular Edema
+ ;;^UTILITY(U,$J,358.3,13312,1,4,0)
+ ;;=4^E09.321
+ ;;^UTILITY(U,$J,358.3,13312,2)
+ ;;=^5002554
+ ;;^UTILITY(U,$J,358.3,13313,0)
+ ;;=E09.329^^80^758^28
+ ;;^UTILITY(U,$J,358.3,13313,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13313,1,3,0)
+ ;;=3^Diab d/t Drug/Chem w/ Mild Nonprolif Diab Retinopathy w/o Macular Edema
+ ;;^UTILITY(U,$J,358.3,13313,1,4,0)
+ ;;=4^E09.329
+ ;;^UTILITY(U,$J,358.3,13313,2)
+ ;;=^5002555
+ ;;^UTILITY(U,$J,358.3,13314,0)
+ ;;=E09.351^^80^758^29

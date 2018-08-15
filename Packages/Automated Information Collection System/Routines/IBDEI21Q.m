@@ -1,0 +1,132 @@
+IBDEI21Q ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,34301,1,4,0)
+ ;;=4^G44.001
+ ;;^UTILITY(U,$J,358.3,34301,2)
+ ;;=^5003920
+ ;;^UTILITY(U,$J,358.3,34302,0)
+ ;;=G44.009^^157^1743^2
+ ;;^UTILITY(U,$J,358.3,34302,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34302,1,3,0)
+ ;;=3^Cluster Headache Syndrome Not Intractable,Unspec
+ ;;^UTILITY(U,$J,358.3,34302,1,4,0)
+ ;;=4^G44.009
+ ;;^UTILITY(U,$J,358.3,34302,2)
+ ;;=^5003921
+ ;;^UTILITY(U,$J,358.3,34303,0)
+ ;;=G44.301^^157^1743^19
+ ;;^UTILITY(U,$J,358.3,34303,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34303,1,3,0)
+ ;;=3^Post-Traumatic Headache Intractable,Unspec
+ ;;^UTILITY(U,$J,358.3,34303,1,4,0)
+ ;;=4^G44.301
+ ;;^UTILITY(U,$J,358.3,34303,2)
+ ;;=^5003941
+ ;;^UTILITY(U,$J,358.3,34304,0)
+ ;;=G44.41^^157^1743^3
+ ;;^UTILITY(U,$J,358.3,34304,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34304,1,3,0)
+ ;;=3^Drug-Induced Headache Intractable NEC
+ ;;^UTILITY(U,$J,358.3,34304,1,4,0)
+ ;;=4^G44.41
+ ;;^UTILITY(U,$J,358.3,34304,2)
+ ;;=^5003948
+ ;;^UTILITY(U,$J,358.3,34305,0)
+ ;;=G44.51^^157^1743^6
+ ;;^UTILITY(U,$J,358.3,34305,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34305,1,3,0)
+ ;;=3^Hemicrania Continua
+ ;;^UTILITY(U,$J,358.3,34305,1,4,0)
+ ;;=4^G44.51
+ ;;^UTILITY(U,$J,358.3,34305,2)
+ ;;=^5003949
+ ;;^UTILITY(U,$J,358.3,34306,0)
+ ;;=G50.0^^157^1743^23
+ ;;^UTILITY(U,$J,358.3,34306,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34306,1,3,0)
+ ;;=3^Trigeminal Neuralgia
+ ;;^UTILITY(U,$J,358.3,34306,1,4,0)
+ ;;=4^G50.0
+ ;;^UTILITY(U,$J,358.3,34306,2)
+ ;;=^121978
+ ;;^UTILITY(U,$J,358.3,34307,0)
+ ;;=G44.40^^157^1743^4
+ ;;^UTILITY(U,$J,358.3,34307,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34307,1,3,0)
+ ;;=3^Drug-Induced Headache Not Intractable NEC
+ ;;^UTILITY(U,$J,358.3,34307,1,4,0)
+ ;;=4^G44.40
+ ;;^UTILITY(U,$J,358.3,34307,2)
+ ;;=^5003947
+ ;;^UTILITY(U,$J,358.3,34308,0)
+ ;;=G43.901^^157^1743^9
+ ;;^UTILITY(U,$J,358.3,34308,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34308,1,3,0)
+ ;;=3^Migraine Not Intractable w/ Status Migrainosus
+ ;;^UTILITY(U,$J,358.3,34308,1,4,0)
+ ;;=4^G43.901
+ ;;^UTILITY(U,$J,358.3,34308,2)
+ ;;=^5003908
+ ;;^UTILITY(U,$J,358.3,34309,0)
+ ;;=G43.101^^157^1743^14
+ ;;^UTILITY(U,$J,358.3,34309,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34309,1,3,0)
+ ;;=3^Migraine w/ Aura Not Intractable w/ Status Migrainosus
+ ;;^UTILITY(U,$J,358.3,34309,1,4,0)
+ ;;=4^G43.101
+ ;;^UTILITY(U,$J,358.3,34309,2)
+ ;;=^5003880
+ ;;^UTILITY(U,$J,358.3,34310,0)
+ ;;=G43.001^^157^1743^18
+ ;;^UTILITY(U,$J,358.3,34310,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34310,1,3,0)
+ ;;=3^Migraine w/o Aura Not Intractable w/ Status Migrainosus
+ ;;^UTILITY(U,$J,358.3,34310,1,4,0)
+ ;;=4^G43.001
+ ;;^UTILITY(U,$J,358.3,34310,2)
+ ;;=^5003876
+ ;;^UTILITY(U,$J,358.3,34311,0)
+ ;;=G44.309^^157^1743^20
+ ;;^UTILITY(U,$J,358.3,34311,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34311,1,3,0)
+ ;;=3^Post-Traumatic Headache Not Intractable,Unspec
+ ;;^UTILITY(U,$J,358.3,34311,1,4,0)
+ ;;=4^G44.309
+ ;;^UTILITY(U,$J,358.3,34311,2)
+ ;;=^5003942
+ ;;^UTILITY(U,$J,358.3,34312,0)
+ ;;=G44.201^^157^1743^21
+ ;;^UTILITY(U,$J,358.3,34312,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34312,1,3,0)
+ ;;=3^Tension-Type Headache Intractable,Unspec
+ ;;^UTILITY(U,$J,358.3,34312,1,4,0)
+ ;;=4^G44.201
+ ;;^UTILITY(U,$J,358.3,34312,2)
+ ;;=^5003935
+ ;;^UTILITY(U,$J,358.3,34313,0)
+ ;;=G20.^^157^1744^13
+ ;;^UTILITY(U,$J,358.3,34313,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34313,1,3,0)
+ ;;=3^Parkinson's Disease
+ ;;^UTILITY(U,$J,358.3,34313,1,4,0)
+ ;;=4^G20.
+ ;;^UTILITY(U,$J,358.3,34313,2)
+ ;;=^5003770
+ ;;^UTILITY(U,$J,358.3,34314,0)
+ ;;=G21.8^^157^1744^18
+ ;;^UTILITY(U,$J,358.3,34314,1,0)
+ ;;=^358.31IA^4^2

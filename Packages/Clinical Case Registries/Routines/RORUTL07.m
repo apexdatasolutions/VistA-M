@@ -1,7 +1,18 @@
-RORUTL07 ;HCIOFO/SG - TEST ENTRY POINTS ; 11/1/05 1:12pm
- ;;1.5;CLINICAL CASE REGISTRIES;;Feb 17, 2006
+RORUTL07 ;HCIOFO/SG - TEST ENTRY POINTS ; 26 May 2015  3:44 PM
+ ;;1.5;CLINICAL CASE REGISTRIES;**21,26**;Feb 17, 2006;Build 53
  ;
  Q
+ ;******************************************************************************
+ ;******************************************************************************
+ ;                       --- ROUTINE MODIFICATION LOG ---
+ ;        
+ ;PKG/PATCH    DATE        DEVELOPER    MODIFICATION
+ ;-----------  ----------  -----------  ----------------------------------------
+ ;ROR*1.5*26   APR  2015   T KOPP       UPDATE updated to ask for start date
+ ;                                      and set IO variable 
+ ;
+ ;******************************************************************************
+ ;******************************************************************************
  ;
  ;***** DISPLAYS THE ERRORS
 ERROR ;
@@ -76,7 +87,8 @@ UPDATE ;
  N RORERROR      ; Error processing data
  N RORPARM       ; Application parameters
  ;
- N RC,REGLST,REGNAME
+ N RC,REGLST,REGNAME,DSBEG
+ D HOME^%ZIS
  W !,"REGISTRY UPDATE IN DEBUG MODE",!
  D KILL^XUSCLEAN
  S RORPARM("DEBUG")=2
@@ -84,6 +96,34 @@ UPDATE ;
  D CLEAR^RORERR("UPDATE^RORUTL07")
  ;--- Select registries
  Q:$$SELREG(.REGLST)'>0
+ ;--- Request a start date
+ S DSBEG=$$GETSDT()
+ Q:DSBEG<0
  ;--- Update the registry
  S RC=$$UPDATE^RORUPD(.REGLST)  G:RC<0 ERROR
  Q
+  ;DEFINE ENTRY POINT TO CLEAR AND RESTART REGISTRY UPDATE
+DEL(REGLST) ;
+ ;Select new registry to delete
+ ;delete any records in 798 for that registry
+ ;delete enable protocols,hdt,registry updated until
+ N REGNAME,REGIEN,IEN,DA,DIK,RORFDA,IENS,RORMSG,DIERR
+ N FILE,ROOT,IX,RORPARM,FLD
+ S (REGNAME,IEN)=""
+ S RORPARM("DEVELOPER")=1
+ F  S REGNAME=$O(REGLST(REGNAME)) Q:REGNAME=""  D
+ . S REGIEN=$$REGIEN^RORUTL02(REGNAME) Q:REGIEN=""
+ . ; Only local registries
+ . Q:$P($G(^ROR(798.1,REGIEN,0)),U,11)
+ . S IENS=REGIEN_","
+ . F FLD=6.1,6.2,7,10,13,13.1,19.1,19.2,19.3,21.01,21.04,21.05 D
+ . . S RORFDA(798.1,IENS,FLD)="@"
+ . S RORFDA(798.1,IENS,1)=2850101
+ . D FILE^DIE(,"RORFDA","RORMSG")
+ . I $G(DIERR) W !!,"<<ERROR - restoring "_REGNAME_" registry parameters>>" Q
+ . F  S IEN=$O(^RORDATA(798,"AC",REGIEN,IEN)) Q:IEN=""  D
+ . . N DA,DIK
+ . . S DIK=$$ROOT^DILFD(798),DA=IEN  D ^DIK
+ . . W !,"<< "_IEN_" >> Deleted"
+ Q
+ ;

@@ -1,9 +1,10 @@
-SDCNSLT ;ALB/HAG-LINK APPOINTMENTS TO CONSULTS; 4/12/05 3:44pm
- ;;5.3;Scheduling;**478,496,605**;Aug 13, 1993;Build 9
+SDCNSLT ;ALB/HAG - LINK APPOINTMENTS TO CONSULTS ;JAN 15, 2016
+ ;;5.3;Scheduling;**478,496,630,627**;Aug 13, 1993;Build 249
 A ;===GET ACTIVE AND PENDING CONSULT
  N A,ND,CNT,CONS,CPRSTAT,DTENTR,DTIN,DTLMT,DTR,NOS,NOSHOW,SENDER,SERVICE,SRV,P8,PROC,PT,PTNM,STATUS
  K TMP S NOSHOW="no-show",CNT=0,$P(DSH,"-",IOM-1)="",PT=DFN,X1=DT,X2=-365 D C^%DTC S DTLMT=X
  S A=":" F  S A=$O(^GMR(123,"F",PT,A),-1) Q:'+A  S ND=$G(^GMR(123,A,0)) Q:ND=""  S PROC=$P($G(^GMR(123,A,1.11)),U),DTENTR=$P(ND,U) I DTENTR>DTLMT S CPRSTAT=$P(ND,U,12) D:CPRSTAT=5!(CPRSTAT=6)!(CPRSTAT=8)!(CPRSTAT=13)
+ .Q:$D(^XTMP("SDECLKC-"_A))  ;do not display consult if locked by VS GUI  ;alb/sat 627
  .I STPCOD'="" S SRV=$P(ND,U,5) Q:'+SRV  I $D(^GMR(123.5,"AB1",STPCOD,SRV)) S PTIEN=$P(ND,U,2) D
  ..I CPRSTAT=8 S SHOW=0 Q:$D(^SC("AWAS1",A))  S NOS=$O(^GMR(123,A,40,":"),-1) Q:'+NOS  S X2=$P($G(^GMR(123,A,40,NOS,0)),U),X1=DT D ^%DTC Q:X'=""&(X>180)  D SCHED(PTIEN,STPCOD,.SHOW) Q:'SHOW
  ..;CPRSTAT 13 is a cancel
@@ -15,10 +16,10 @@ A ;===GET ACTIVE AND PENDING CONSULT
 QST N DIR,DTOUT,DUOUT,CNSULT
  S DIR(0)="Y",DIR("A")="Will this appointment be for a CONSULT/PROCEDURE",DIR("B")="YES",DIR("?")="Answer 'Y'es if appointment is for a Consult or Procedure." W ! D ^DIR S CNSULT=Y
  I CNSULT[U!(CNSULT=0)!(CNSULT="") K TMP Q
-HDR W !!,"Please select from the list of consult(s), press 0 for none.",! ;LLS 12-MAR-2014 SD*5.3*605
- W !,PTNM,!!,"# Service",?68,"Cons #",!,DSH ;LLS 12-MAR-2014 SD*5.3*605
- S A=0 F  S A=$O(TMP(A)) Q:'+A  S ND=TMP(A),P8=$P(ND,U,8) D  ;LLS - 12-MAR-2014 SD*5.3*605
- . W !,A,".",?3,$S(P8="P":$E($P(ND,U,9),1,63),1:$E($P(ND,U,2),1,63)),?68,$P(ND,U,6) W !,?4,"Request DT: ",$E($P(ND,U,5),1,14),?31,"FROM: ",$E($P(ND,U,3),1,33),?71,"TYPE: ",$S(P8="P":"P",P8="C":"C",1:"") ;LLS 12-MAR-2014 SD*5.3*605
+HDR W !!,"Please select from the list of consult(s), press 0 for none.",! ;LLS 05-JAN-2015 SD*5.3*630
+ W !,PTNM,!!,"# Service",?68,"Cons #",!,DSH ;LLS 05-JAN-2015 SD*5.3*630
+ S A=0 F  S A=$O(TMP(A)) Q:'+A  S ND=TMP(A),P8=$P(ND,U,8) D  ;LLS 05-JAN-2015 SD*5.3*630
+ . W !,A,".",?3,$S(P8="P":$E($P(ND,U,9),1,63),1:$E($P(ND,U,2),1,63)),?68,$P(ND,U,6) W !,?4,"Request DT: ",$E($P(ND,U,5),1,14),?31,"FROM: ",$E($P(ND,U,3),1,33),?71,"TYPE: ",$S(P8="P":"P",P8="C":"C",1:"") ;LLS 05-JAN-2015 SD*5.3*630
  W !
 READ R !,"Select Consult: ",CONS:DTIME G:CONS="" A
  I CONS=0!(CONS[U) W " ... NONE." K TMP Q

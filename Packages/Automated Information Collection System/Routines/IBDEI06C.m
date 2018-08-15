@@ -1,140 +1,134 @@
-IBDEI06C ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI06C ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,2763,2)
- ;;=^71885
- ;;^UTILITY(U,$J,358.3,2764,0)
- ;;=997.1^^27^244^10
- ;;^UTILITY(U,$J,358.3,2764,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2764,1,4,0)
- ;;=4^997.1
- ;;^UTILITY(U,$J,358.3,2764,1,5,0)
- ;;=5^Complication of Cardiac System
- ;;^UTILITY(U,$J,358.3,2764,2)
- ;;=^276321
- ;;^UTILITY(U,$J,358.3,2765,0)
- ;;=996.61^^27^244^26
- ;;^UTILITY(U,$J,358.3,2765,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2765,1,4,0)
- ;;=4^996.61
- ;;^UTILITY(U,$J,358.3,2765,1,5,0)
- ;;=5^Reaction to Cardiac Graft/Implant
- ;;^UTILITY(U,$J,358.3,2765,2)
- ;;=^276284
- ;;^UTILITY(U,$J,358.3,2766,0)
- ;;=996.72^^27^244^1
- ;;^UTILITY(U,$J,358.3,2766,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2766,1,4,0)
- ;;=4^996.72
- ;;^UTILITY(U,$J,358.3,2766,1,5,0)
- ;;=5^Complication from Cardiac Graft/Implant
- ;;^UTILITY(U,$J,358.3,2766,2)
- ;;=^276295
- ;;^UTILITY(U,$J,358.3,2767,0)
- ;;=996.01^^27^244^16
- ;;^UTILITY(U,$J,358.3,2767,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2767,1,4,0)
- ;;=4^996.01
- ;;^UTILITY(U,$J,358.3,2767,1,5,0)
- ;;=5^Malfunction of Cardiac Pacemaker
- ;;^UTILITY(U,$J,358.3,2767,2)
- ;;=^276264
- ;;^UTILITY(U,$J,358.3,2768,0)
- ;;=997.49^^27^244^11
- ;;^UTILITY(U,$J,358.3,2768,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2768,1,4,0)
- ;;=4^997.49
- ;;^UTILITY(U,$J,358.3,2768,1,5,0)
- ;;=5^Complication of Digestive System
- ;;^UTILITY(U,$J,358.3,2768,2)
- ;;=^340579
- ;;^UTILITY(U,$J,358.3,2769,0)
- ;;=998.6^^27^244^22
- ;;^UTILITY(U,$J,358.3,2769,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2769,1,4,0)
- ;;=4^998.6
- ;;^UTILITY(U,$J,358.3,2769,1,5,0)
- ;;=5^Persistent Post-Op Fistula
- ;;^UTILITY(U,$J,358.3,2769,2)
- ;;=^276340
- ;;^UTILITY(U,$J,358.3,2770,0)
- ;;=996.30^^27^244^17
- ;;^UTILITY(U,$J,358.3,2770,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2770,1,4,0)
- ;;=4^996.30
- ;;^UTILITY(U,$J,358.3,2770,1,5,0)
- ;;=5^Malfunction of GU Device/Graft
- ;;^UTILITY(U,$J,358.3,2770,2)
- ;;=^276271
- ;;^UTILITY(U,$J,358.3,2771,0)
- ;;=996.65^^27^244^27
- ;;^UTILITY(U,$J,358.3,2771,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2771,1,4,0)
- ;;=4^996.65
- ;;^UTILITY(U,$J,358.3,2771,1,5,0)
- ;;=5^Reaction to GU Device
- ;;^UTILITY(U,$J,358.3,2771,2)
- ;;=^276288
- ;;^UTILITY(U,$J,358.3,2772,0)
- ;;=996.76^^27^244^2
- ;;^UTILITY(U,$J,358.3,2772,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2772,1,4,0)
- ;;=4^996.76
- ;;^UTILITY(U,$J,358.3,2772,1,5,0)
- ;;=5^Complication from GU Device/Graft
- ;;^UTILITY(U,$J,358.3,2772,2)
- ;;=^276299
- ;;^UTILITY(U,$J,358.3,2773,0)
- ;;=996.71^^27^244^3
- ;;^UTILITY(U,$J,358.3,2773,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2773,1,4,0)
- ;;=4^996.71
- ;;^UTILITY(U,$J,358.3,2773,1,5,0)
- ;;=5^Complication from Hrt Valve Prosth
- ;;^UTILITY(U,$J,358.3,2773,2)
- ;;=^276294
- ;;^UTILITY(U,$J,358.3,2774,0)
- ;;=998.12^^27^244^14
- ;;^UTILITY(U,$J,358.3,2774,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2774,1,4,0)
- ;;=4^998.12
- ;;^UTILITY(U,$J,358.3,2774,1,5,0)
- ;;=5^Hematoma Complicating Procedure
- ;;^UTILITY(U,$J,358.3,2774,2)
- ;;=^304348
- ;;^UTILITY(U,$J,358.3,2775,0)
- ;;=998.11^^27^244^15
- ;;^UTILITY(U,$J,358.3,2775,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2775,1,4,0)
- ;;=4^998.11
- ;;^UTILITY(U,$J,358.3,2775,1,5,0)
- ;;=5^Hemorrhage Complicating Procedure
- ;;^UTILITY(U,$J,358.3,2775,2)
- ;;=^276334
- ;;^UTILITY(U,$J,358.3,2776,0)
- ;;=998.59^^27^244^24
- ;;^UTILITY(U,$J,358.3,2776,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2776,1,4,0)
- ;;=4^998.59
- ;;^UTILITY(U,$J,358.3,2776,1,5,0)
- ;;=5^Post-Op Infection
- ;;^UTILITY(U,$J,358.3,2776,2)
- ;;=^97081
- ;;^UTILITY(U,$J,358.3,2777,0)
- ;;=996.66^^27^244^30
- ;;^UTILITY(U,$J,358.3,2777,1,0)
- ;;=^358.31IA^5^2
+ ;;^UTILITY(U,$J,358.3,2369,1,4,0)
+ ;;=4^I36.1
+ ;;^UTILITY(U,$J,358.3,2369,2)
+ ;;=^5007180
+ ;;^UTILITY(U,$J,358.3,2370,0)
+ ;;=I37.0^^19^200^3
+ ;;^UTILITY(U,$J,358.3,2370,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2370,1,3,0)
+ ;;=3^Nonrheumatic Pulmonary Valve Stenosis
+ ;;^UTILITY(U,$J,358.3,2370,1,4,0)
+ ;;=4^I37.0
+ ;;^UTILITY(U,$J,358.3,2370,2)
+ ;;=^5007184
+ ;;^UTILITY(U,$J,358.3,2371,0)
+ ;;=I51.1^^19^201^1
+ ;;^UTILITY(U,$J,358.3,2371,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2371,1,3,0)
+ ;;=3^Rupture of Chordae Tendineae NEC
+ ;;^UTILITY(U,$J,358.3,2371,1,4,0)
+ ;;=4^I51.1
+ ;;^UTILITY(U,$J,358.3,2371,2)
+ ;;=^5007253
+ ;;^UTILITY(U,$J,358.3,2372,0)
+ ;;=I51.2^^19^201^2
+ ;;^UTILITY(U,$J,358.3,2372,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2372,1,3,0)
+ ;;=3^Rupture of Papillary Muscle NEC
+ ;;^UTILITY(U,$J,358.3,2372,1,4,0)
+ ;;=4^I51.2
+ ;;^UTILITY(U,$J,358.3,2372,2)
+ ;;=^5007254
+ ;;^UTILITY(U,$J,358.3,2373,0)
+ ;;=I38.^^19^202^4
+ ;;^UTILITY(U,$J,358.3,2373,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2373,1,3,0)
+ ;;=3^Endocarditis Valve,Unspec
+ ;;^UTILITY(U,$J,358.3,2373,1,4,0)
+ ;;=4^I38.
+ ;;^UTILITY(U,$J,358.3,2373,2)
+ ;;=^40327
+ ;;^UTILITY(U,$J,358.3,2374,0)
+ ;;=T82.01XA^^19^202^1
+ ;;^UTILITY(U,$J,358.3,2374,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2374,1,3,0)
+ ;;=3^Breakdown of Heart Valve Prosthesis,Init Encntr
+ ;;^UTILITY(U,$J,358.3,2374,1,4,0)
+ ;;=4^T82.01XA
+ ;;^UTILITY(U,$J,358.3,2374,2)
+ ;;=^5054668
+ ;;^UTILITY(U,$J,358.3,2375,0)
+ ;;=T82.02XA^^19^202^2
+ ;;^UTILITY(U,$J,358.3,2375,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2375,1,3,0)
+ ;;=3^Displacement of Heart Valve Prosthesis,Init Encntr
+ ;;^UTILITY(U,$J,358.3,2375,1,4,0)
+ ;;=4^T82.02XA
+ ;;^UTILITY(U,$J,358.3,2375,2)
+ ;;=^5054671
+ ;;^UTILITY(U,$J,358.3,2376,0)
+ ;;=T82.03XA^^19^202^5
+ ;;^UTILITY(U,$J,358.3,2376,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2376,1,3,0)
+ ;;=3^Leakage of Heart Valve Prosthesis,Init Encntr
+ ;;^UTILITY(U,$J,358.3,2376,1,4,0)
+ ;;=4^T82.03XA
+ ;;^UTILITY(U,$J,358.3,2376,2)
+ ;;=^5054674
+ ;;^UTILITY(U,$J,358.3,2377,0)
+ ;;=T82.09XA^^19^202^7
+ ;;^UTILITY(U,$J,358.3,2377,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2377,1,3,0)
+ ;;=3^Mech Compl of Heart Valve Prosthesis,Init Encntr
+ ;;^UTILITY(U,$J,358.3,2377,1,4,0)
+ ;;=4^T82.09XA
+ ;;^UTILITY(U,$J,358.3,2377,2)
+ ;;=^5054677
+ ;;^UTILITY(U,$J,358.3,2378,0)
+ ;;=T82.817A^^19^202^3
+ ;;^UTILITY(U,$J,358.3,2378,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2378,1,3,0)
+ ;;=3^Embolism of Cardiac Prosthetic Device/Implant/Graft,Init Encntr
+ ;;^UTILITY(U,$J,358.3,2378,1,4,0)
+ ;;=4^T82.817A
+ ;;^UTILITY(U,$J,358.3,2378,2)
+ ;;=^5054914
+ ;;^UTILITY(U,$J,358.3,2379,0)
+ ;;=T82.867A^^19^202^10
+ ;;^UTILITY(U,$J,358.3,2379,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2379,1,3,0)
+ ;;=3^Thrombosis of Cardiac Prosthetic Device/Implant/Graft,Init Encntr
+ ;;^UTILITY(U,$J,358.3,2379,1,4,0)
+ ;;=4^T82.867A
+ ;;^UTILITY(U,$J,358.3,2379,2)
+ ;;=^5054944
+ ;;^UTILITY(U,$J,358.3,2380,0)
+ ;;=Z95.2^^19^202^9
+ ;;^UTILITY(U,$J,358.3,2380,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2380,1,3,0)
+ ;;=3^Presence of Prosthetic Heart Valve
+ ;;^UTILITY(U,$J,358.3,2380,1,4,0)
+ ;;=4^Z95.2
+ ;;^UTILITY(U,$J,358.3,2380,2)
+ ;;=^5063670
+ ;;^UTILITY(U,$J,358.3,2381,0)
+ ;;=Z98.89^^19^202^8
+ ;;^UTILITY(U,$J,358.3,2381,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2381,1,3,0)
+ ;;=3^Postprocedural States NEC
+ ;;^UTILITY(U,$J,358.3,2381,1,4,0)
+ ;;=4^Z98.89
+ ;;^UTILITY(U,$J,358.3,2381,2)
+ ;;=^5063754
+ ;;^UTILITY(U,$J,358.3,2382,0)
+ ;;=Z79.01^^19^202^6
+ ;;^UTILITY(U,$J,358.3,2382,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2382,1,3,0)
+ ;;=3^Long Term Current Use of Anticoagulants

@@ -1,11 +1,13 @@
 MDWSETUP ; HOIFO/NCA - Auto Study Check-In Setup ;3/18/08  14:14
- ;;1.0;CLINICAL PROCEDURES;**14,11**;Apr 01, 2004;Build 67
+ ;;1.0;CLINICAL PROCEDURES;**14,11,37,45**;Apr 01, 2004;Build 1
 EN1 ; [Procedure]
  ; This post conversion routine will place the Medicine Enter/Edit 
  ; options out of order
  ; Reference IA # 2263 [Supported] XPAR parameter calls
  ;               10040 [Supported] Accessing Hospital Location file (#44)
  ;               10103 [Supported] XLFDT call
+ ; 06/04/2014 KAM MD*1*37 Rem Ticket1007464 Clinical Proc Auto Check-in
+ ; 09/21/2015 KAM MD*1*45 CA/SDM Ticket I5605614FY15 clinic editing 
  ;
  N MDANS,MDAPT,MDAR,MDCL,MDCNOD,MDCP,MDCT,MDCTR,MDDEF,MDDFLT,MDERR,MDFLAG,MDFRST,MDLP,MDLAST,MDLST,MDLST1,MDLST2,MDNODE,MDNXT
  N MDPREC,MDS,MDSAP,MDSED,MDSEL,MDX,MDX1,MDX2,MDX3,MDY,MDY1 K ^TMP("MDOLD",$J)
@@ -62,7 +64,17 @@ A1 ; Ask for procedure parameter
  . . S MDCT=MDCT+1 W !,MDCT_") ",Y(0,0),"  ",MDLP S MDAR(MDCT)=MDLP
  . W ! K DIR S DIR(0)="NAO^1:"_MDCT,DIR("A")="Select 1-"_MDCT_": ",DIR("?")="Select from 1-"_MDCT D ^DIR
  . I X="" S MDSED=MDSEL,MDSAP=MDX1,MDFLAG=1 Q
- . K DIR G:$D(DIRUT)!$D(DIROUT)!(Y<1) KIL S MDS=Y
+ . ;
+ . ;06/04/2014 KAM MD*1*37 Rem Ticket1007464
+ . ;modified the next line to better handle "^"
+ . ;
+ . ;K DIR G:$D(DIRUT)!$D(DIROUT)!(Y<1) KIL S MDS=Y
+ . ;
+ . ;09/21/2015 KAM MD*1*45 CA/SDM Ticket I5605614FY15
+ . ;modified next line to correct clinic editing issue
+ . ;K DIR D:$D(DIRUT)!$D(DIROUT)!(Y<1) KIL S MDFLAG=1 Q  
+ . K DIR S MDS=Y I $D(DIRUT)!$D(DIROUT)!(Y<1) D KIL S MDFLAG=1 Q
+ . ;
  . S MDNODE=$G(MDAR(MDS))
  . S MDDFLT=$G(^TMP("MDPARAM",$J,$P(MDSEL,"^",2),MDNODE))
 E1 ; Edit the procedure

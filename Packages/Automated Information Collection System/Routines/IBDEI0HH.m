@@ -1,138 +1,140 @@
-IBDEI0HH ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0HH ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,8494,0)
- ;;=V60.0^^58^609^55
- ;;^UTILITY(U,$J,358.3,8494,1,0)
+ ;;^UTILITY(U,$J,358.3,7823,1,3,0)
+ ;;=3^End stage renal disease
+ ;;^UTILITY(U,$J,358.3,7823,1,4,0)
+ ;;=4^N18.6
+ ;;^UTILITY(U,$J,358.3,7823,2)
+ ;;=^303986
+ ;;^UTILITY(U,$J,358.3,7824,0)
+ ;;=N19.^^55^529^7
+ ;;^UTILITY(U,$J,358.3,7824,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8494,1,3,0)
- ;;=3^Lack of Housing
- ;;^UTILITY(U,$J,358.3,8494,1,4,0)
- ;;=4^V60.0
- ;;^UTILITY(U,$J,358.3,8494,2)
- ;;=^295539
- ;;^UTILITY(U,$J,358.3,8495,0)
- ;;=V65.5^^58^609^13
- ;;^UTILITY(U,$J,358.3,8495,1,0)
+ ;;^UTILITY(U,$J,358.3,7824,1,3,0)
+ ;;=3^Kidney Failure,Unspec
+ ;;^UTILITY(U,$J,358.3,7824,1,4,0)
+ ;;=4^N19.
+ ;;^UTILITY(U,$J,358.3,7824,2)
+ ;;=^5015607
+ ;;^UTILITY(U,$J,358.3,7825,0)
+ ;;=Z20.820^^55^530^5
+ ;;^UTILITY(U,$J,358.3,7825,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8495,1,3,0)
- ;;=3^Condition Not Found
- ;;^UTILITY(U,$J,358.3,8495,1,4,0)
- ;;=4^V65.5
- ;;^UTILITY(U,$J,358.3,8495,2)
- ;;=^295564
- ;;^UTILITY(U,$J,358.3,8496,0)
- ;;=V67.51^^58^609^12
- ;;^UTILITY(U,$J,358.3,8496,1,0)
+ ;;^UTILITY(U,$J,358.3,7825,1,3,0)
+ ;;=3^Contact/Exposure to Varicella
+ ;;^UTILITY(U,$J,358.3,7825,1,4,0)
+ ;;=4^Z20.820
+ ;;^UTILITY(U,$J,358.3,7825,2)
+ ;;=^5062773
+ ;;^UTILITY(U,$J,358.3,7826,0)
+ ;;=Z20.828^^55^530^6
+ ;;^UTILITY(U,$J,358.3,7826,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8496,1,3,0)
- ;;=3^Completed Trmt of High Risk Med
- ;;^UTILITY(U,$J,358.3,8496,1,4,0)
- ;;=4^V67.51
- ;;^UTILITY(U,$J,358.3,8496,2)
- ;;=^295577
- ;;^UTILITY(U,$J,358.3,8497,0)
- ;;=V87.39^^58^609^15
- ;;^UTILITY(U,$J,358.3,8497,1,0)
+ ;;^UTILITY(U,$J,358.3,7826,1,3,0)
+ ;;=3^Contact/Exposure to Viral Communicable Diseases NEC
+ ;;^UTILITY(U,$J,358.3,7826,1,4,0)
+ ;;=4^Z20.828
+ ;;^UTILITY(U,$J,358.3,7826,2)
+ ;;=^5062774
+ ;;^UTILITY(U,$J,358.3,7827,0)
+ ;;=Z20.6^^55^530^2
+ ;;^UTILITY(U,$J,358.3,7827,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8497,1,3,0)
- ;;=3^Cont/Exp Hazard Sub NEC
- ;;^UTILITY(U,$J,358.3,8497,1,4,0)
- ;;=4^V87.39
- ;;^UTILITY(U,$J,358.3,8497,2)
- ;;=^336815
- ;;^UTILITY(U,$J,358.3,8498,0)
- ;;=369.05^^58^609^76
- ;;^UTILITY(U,$J,358.3,8498,1,0)
+ ;;^UTILITY(U,$J,358.3,7827,1,3,0)
+ ;;=3^Contact/Exposure to HIV
+ ;;^UTILITY(U,$J,358.3,7827,1,4,0)
+ ;;=4^Z20.6
+ ;;^UTILITY(U,$J,358.3,7827,2)
+ ;;=^5062768
+ ;;^UTILITY(U,$J,358.3,7828,0)
+ ;;=Z20.01^^55^530^3
+ ;;^UTILITY(U,$J,358.3,7828,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8498,1,3,0)
- ;;=3^One Eye-Profound,Oth Eye-NOS
- ;;^UTILITY(U,$J,358.3,8498,1,4,0)
- ;;=4^369.05
- ;;^UTILITY(U,$J,358.3,8498,2)
- ;;=^268865
- ;;^UTILITY(U,$J,358.3,8499,0)
- ;;=365.11^^58^610^20
- ;;^UTILITY(U,$J,358.3,8499,1,0)
+ ;;^UTILITY(U,$J,358.3,7828,1,3,0)
+ ;;=3^Contact/Exposure to Intestnl Infct Dis d/t E Coli
+ ;;^UTILITY(U,$J,358.3,7828,1,4,0)
+ ;;=4^Z20.01
+ ;;^UTILITY(U,$J,358.3,7828,2)
+ ;;=^5062761
+ ;;^UTILITY(U,$J,358.3,7829,0)
+ ;;=Z20.811^^55^530^4
+ ;;^UTILITY(U,$J,358.3,7829,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8499,1,3,0)
- ;;=3^Glaucoma,Open Angle
- ;;^UTILITY(U,$J,358.3,8499,1,4,0)
- ;;=4^365.11
- ;;^UTILITY(U,$J,358.3,8499,2)
- ;;=Open Angle Glaucoma^51203
- ;;^UTILITY(U,$J,358.3,8500,0)
- ;;=365.12^^58^610^16
- ;;^UTILITY(U,$J,358.3,8500,1,0)
+ ;;^UTILITY(U,$J,358.3,7829,1,3,0)
+ ;;=3^Contact/Exposure to Meningococcus
+ ;;^UTILITY(U,$J,358.3,7829,1,4,0)
+ ;;=4^Z20.811
+ ;;^UTILITY(U,$J,358.3,7829,2)
+ ;;=^5062771
+ ;;^UTILITY(U,$J,358.3,7830,0)
+ ;;=Z20.89^^55^530^1
+ ;;^UTILITY(U,$J,358.3,7830,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8500,1,3,0)
- ;;=3^Glaucoma,Low Tension
- ;;^UTILITY(U,$J,358.3,8500,1,4,0)
- ;;=4^365.12
- ;;^UTILITY(U,$J,358.3,8500,2)
- ;;=Low Tension Glaucoma^265223
- ;;^UTILITY(U,$J,358.3,8501,0)
- ;;=365.63^^58^610^19
- ;;^UTILITY(U,$J,358.3,8501,1,0)
+ ;;^UTILITY(U,$J,358.3,7830,1,3,0)
+ ;;=3^Contact/Exposure to Communicable Diseases NEC
+ ;;^UTILITY(U,$J,358.3,7830,1,4,0)
+ ;;=4^Z20.89
+ ;;^UTILITY(U,$J,358.3,7830,2)
+ ;;=^5062775
+ ;;^UTILITY(U,$J,358.3,7831,0)
+ ;;=B07.9^^55^531^151
+ ;;^UTILITY(U,$J,358.3,7831,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8501,1,3,0)
- ;;=3^Glaucoma,Neovascular
- ;;^UTILITY(U,$J,358.3,8501,1,4,0)
- ;;=4^365.63
- ;;^UTILITY(U,$J,358.3,8501,2)
- ;;=Neovascular Glaucoma^268778
- ;;^UTILITY(U,$J,358.3,8502,0)
- ;;=365.10^^58^610^22
- ;;^UTILITY(U,$J,358.3,8502,1,0)
+ ;;^UTILITY(U,$J,358.3,7831,1,3,0)
+ ;;=3^Viral wart, unspecified
+ ;;^UTILITY(U,$J,358.3,7831,1,4,0)
+ ;;=4^B07.9
+ ;;^UTILITY(U,$J,358.3,7831,2)
+ ;;=^5000519
+ ;;^UTILITY(U,$J,358.3,7832,0)
+ ;;=A63.0^^55^531^6
+ ;;^UTILITY(U,$J,358.3,7832,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8502,1,3,0)
- ;;=3^Glaucoma,Open Angle Unspec
- ;;^UTILITY(U,$J,358.3,8502,1,4,0)
- ;;=4^365.10
- ;;^UTILITY(U,$J,358.3,8502,2)
- ;;=^51206
- ;;^UTILITY(U,$J,358.3,8503,0)
- ;;=365.13^^58^610^25
- ;;^UTILITY(U,$J,358.3,8503,1,0)
+ ;;^UTILITY(U,$J,358.3,7832,1,3,0)
+ ;;=3^Anogenital (venereal) warts
+ ;;^UTILITY(U,$J,358.3,7832,1,4,0)
+ ;;=4^A63.0
+ ;;^UTILITY(U,$J,358.3,7832,2)
+ ;;=^5000360
+ ;;^UTILITY(U,$J,358.3,7833,0)
+ ;;=B35.0^^55^531^144
+ ;;^UTILITY(U,$J,358.3,7833,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8503,1,3,0)
- ;;=3^Glaucoma,Pigmentary
- ;;^UTILITY(U,$J,358.3,8503,1,4,0)
- ;;=4^365.13
- ;;^UTILITY(U,$J,358.3,8503,2)
- ;;=Pigmentary Glaucoma^51211
- ;;^UTILITY(U,$J,358.3,8504,0)
- ;;=365.20^^58^610^26
- ;;^UTILITY(U,$J,358.3,8504,1,0)
+ ;;^UTILITY(U,$J,358.3,7833,1,3,0)
+ ;;=3^Tinea barbae and tinea capitis
+ ;;^UTILITY(U,$J,358.3,7833,1,4,0)
+ ;;=4^B35.0
+ ;;^UTILITY(U,$J,358.3,7833,2)
+ ;;=^5000604
+ ;;^UTILITY(U,$J,358.3,7834,0)
+ ;;=B35.1^^55^531^148
+ ;;^UTILITY(U,$J,358.3,7834,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8504,1,3,0)
- ;;=3^Glaucoma,Prim Angle Closure
- ;;^UTILITY(U,$J,358.3,8504,1,4,0)
- ;;=4^365.20
- ;;^UTILITY(U,$J,358.3,8504,2)
- ;;=^51195
- ;;^UTILITY(U,$J,358.3,8505,0)
- ;;=365.52^^58^610^27
- ;;^UTILITY(U,$J,358.3,8505,1,0)
+ ;;^UTILITY(U,$J,358.3,7834,1,3,0)
+ ;;=3^Tinea unguium
+ ;;^UTILITY(U,$J,358.3,7834,1,4,0)
+ ;;=4^B35.1
+ ;;^UTILITY(U,$J,358.3,7834,2)
+ ;;=^119748
+ ;;^UTILITY(U,$J,358.3,7835,0)
+ ;;=B35.6^^55^531^145
+ ;;^UTILITY(U,$J,358.3,7835,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8505,1,3,0)
- ;;=3^Glaucoma,Pseudoexfoliation
- ;;^UTILITY(U,$J,358.3,8505,1,4,0)
- ;;=4^365.52
- ;;^UTILITY(U,$J,358.3,8505,2)
- ;;=Pseudoexfoliation Glaucoma^268771
- ;;^UTILITY(U,$J,358.3,8506,0)
- ;;=365.15^^58^610^29
- ;;^UTILITY(U,$J,358.3,8506,1,0)
+ ;;^UTILITY(U,$J,358.3,7835,1,3,0)
+ ;;=3^Tinea cruris
+ ;;^UTILITY(U,$J,358.3,7835,1,4,0)
+ ;;=4^B35.6
+ ;;^UTILITY(U,$J,358.3,7835,2)
+ ;;=^119711
+ ;;^UTILITY(U,$J,358.3,7836,0)
+ ;;=B35.3^^55^531^147
+ ;;^UTILITY(U,$J,358.3,7836,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8506,1,3,0)
- ;;=3^Glaucoma,Residual Open Angle
- ;;^UTILITY(U,$J,358.3,8506,1,4,0)
- ;;=4^365.15
- ;;^UTILITY(U,$J,358.3,8506,2)
- ;;=Residual Open Angle Glaucoma^268751
- ;;^UTILITY(U,$J,358.3,8507,0)
- ;;=365.31^^58^610^32
- ;;^UTILITY(U,$J,358.3,8507,1,0)
- ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,7836,1,3,0)
+ ;;=3^Tinea pedis
+ ;;^UTILITY(U,$J,358.3,7836,1,4,0)
+ ;;=4^B35.3
+ ;;^UTILITY(U,$J,358.3,7836,2)
+ ;;=^119732

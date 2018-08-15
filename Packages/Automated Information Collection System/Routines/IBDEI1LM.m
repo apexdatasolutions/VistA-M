@@ -1,0 +1,130 @@
+IBDEI1LM ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,26740,1,4,0)
+ ;;=4^H54.51
+ ;;^UTILITY(U,$J,358.3,26740,2)
+ ;;=^5006365
+ ;;^UTILITY(U,$J,358.3,26741,0)
+ ;;=H54.52^^130^1297^8
+ ;;^UTILITY(U,$J,358.3,26741,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26741,1,3,0)
+ ;;=3^Low Vision OS,Normal OD
+ ;;^UTILITY(U,$J,358.3,26741,1,4,0)
+ ;;=4^H54.52
+ ;;^UTILITY(U,$J,358.3,26741,2)
+ ;;=^5133519
+ ;;^UTILITY(U,$J,358.3,26742,0)
+ ;;=H54.61^^130^1297^10
+ ;;^UTILITY(U,$J,358.3,26742,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26742,1,3,0)
+ ;;=3^Unqualified Visual Loss OD,Normal OS
+ ;;^UTILITY(U,$J,358.3,26742,1,4,0)
+ ;;=4^H54.61
+ ;;^UTILITY(U,$J,358.3,26742,2)
+ ;;=^5006367
+ ;;^UTILITY(U,$J,358.3,26743,0)
+ ;;=H54.62^^130^1297^11
+ ;;^UTILITY(U,$J,358.3,26743,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26743,1,3,0)
+ ;;=3^Unqualified Visual Loss OS,Normal OD
+ ;;^UTILITY(U,$J,358.3,26743,1,4,0)
+ ;;=4^H54.62
+ ;;^UTILITY(U,$J,358.3,26743,2)
+ ;;=^5133520
+ ;;^UTILITY(U,$J,358.3,26744,0)
+ ;;=H54.7^^130^1297^13
+ ;;^UTILITY(U,$J,358.3,26744,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26744,1,3,0)
+ ;;=3^Visual Loss,Unspec
+ ;;^UTILITY(U,$J,358.3,26744,1,4,0)
+ ;;=4^H54.7
+ ;;^UTILITY(U,$J,358.3,26744,2)
+ ;;=^5006368
+ ;;^UTILITY(U,$J,358.3,26745,0)
+ ;;=H54.8^^130^1297^1
+ ;;^UTILITY(U,$J,358.3,26745,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26745,1,3,0)
+ ;;=3^Legal Blind,USA Definition
+ ;;^UTILITY(U,$J,358.3,26745,1,4,0)
+ ;;=4^H54.8
+ ;;^UTILITY(U,$J,358.3,26745,2)
+ ;;=^5006369
+ ;;^UTILITY(U,$J,358.3,26746,0)
+ ;;=H47.611^^130^1297^14
+ ;;^UTILITY(U,$J,358.3,26746,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26746,1,3,0)
+ ;;=3^Cortical Blindness,Right Side of Brain
+ ;;^UTILITY(U,$J,358.3,26746,1,4,0)
+ ;;=4^H47.611
+ ;;^UTILITY(U,$J,358.3,26746,2)
+ ;;=^5006166
+ ;;^UTILITY(U,$J,358.3,26747,0)
+ ;;=H47.612^^130^1297^15
+ ;;^UTILITY(U,$J,358.3,26747,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26747,1,3,0)
+ ;;=3^Cortical Blindness,Left Side of Brain
+ ;;^UTILITY(U,$J,358.3,26747,1,4,0)
+ ;;=4^H47.612
+ ;;^UTILITY(U,$J,358.3,26747,2)
+ ;;=^5006167
+ ;;^UTILITY(U,$J,358.3,26748,0)
+ ;;=H47.619^^130^1297^16
+ ;;^UTILITY(U,$J,358.3,26748,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26748,1,3,0)
+ ;;=3^Cortical Blindness,Unspec Side of Brain
+ ;;^UTILITY(U,$J,358.3,26748,1,4,0)
+ ;;=4^H47.619
+ ;;^UTILITY(U,$J,358.3,26748,2)
+ ;;=^5006168
+ ;;^UTILITY(U,$J,358.3,26749,0)
+ ;;=H47.641^^130^1297^17
+ ;;^UTILITY(U,$J,358.3,26749,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26749,1,3,0)
+ ;;=3^Disord of Visual Cortex in Vasc Disorder,Right Side of Brain
+ ;;^UTILITY(U,$J,358.3,26749,1,4,0)
+ ;;=4^H47.641
+ ;;^UTILITY(U,$J,358.3,26749,2)
+ ;;=^5006175
+ ;;^UTILITY(U,$J,358.3,26750,0)
+ ;;=H47.642^^130^1297^18
+ ;;^UTILITY(U,$J,358.3,26750,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26750,1,3,0)
+ ;;=3^Disord of Visual Cortex in Vasc Disorder,Left Side of Brain
+ ;;^UTILITY(U,$J,358.3,26750,1,4,0)
+ ;;=4^H47.642
+ ;;^UTILITY(U,$J,358.3,26750,2)
+ ;;=^5006176
+ ;;^UTILITY(U,$J,358.3,26751,0)
+ ;;=H47.649^^130^1297^19
+ ;;^UTILITY(U,$J,358.3,26751,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26751,1,3,0)
+ ;;=3^Disord of Visual Cortex in Vasc Disorder,Unspec Side of Brain
+ ;;^UTILITY(U,$J,358.3,26751,1,4,0)
+ ;;=4^H47.649
+ ;;^UTILITY(U,$J,358.3,26751,2)
+ ;;=^5006177
+ ;;^UTILITY(U,$J,358.3,26752,0)
+ ;;=H53.411^^130^1297^20
+ ;;^UTILITY(U,$J,358.3,26752,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26752,1,3,0)
+ ;;=3^Scotoma Involving Central Area OD
+ ;;^UTILITY(U,$J,358.3,26752,1,4,0)
+ ;;=4^H53.411
+ ;;^UTILITY(U,$J,358.3,26752,2)
+ ;;=^5006325
+ ;;^UTILITY(U,$J,358.3,26753,0)
+ ;;=H53.412^^130^1297^21

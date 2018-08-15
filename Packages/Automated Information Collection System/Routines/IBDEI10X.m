@@ -1,138 +1,122 @@
-IBDEI10X ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI10X ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,18361,0)
- ;;=99024^^120^1164^0
- ;;^UTILITY(U,$J,358.3,18361,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,18361,1,1,0)
- ;;=1^Post Op F/u in Global Per
- ;;^UTILITY(U,$J,358.3,18361,1,2,0)
- ;;=2^99024
- ;;^UTILITY(U,$J,358.3,18362,0)
- ;;=99241^^120^1165^1
- ;;^UTILITY(U,$J,358.3,18362,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,18362,1,1,0)
- ;;=1^Problems Focus
- ;;^UTILITY(U,$J,358.3,18362,1,2,0)
- ;;=2^99241
- ;;^UTILITY(U,$J,358.3,18363,0)
- ;;=99242^^120^1165^2
- ;;^UTILITY(U,$J,358.3,18363,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,18363,1,1,0)
- ;;=1^Expand Prob Focus
- ;;^UTILITY(U,$J,358.3,18363,1,2,0)
- ;;=2^99242
- ;;^UTILITY(U,$J,358.3,18364,0)
- ;;=99243^^120^1165^3
- ;;^UTILITY(U,$J,358.3,18364,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,18364,1,1,0)
- ;;=1^Detailed
- ;;^UTILITY(U,$J,358.3,18364,1,2,0)
- ;;=2^99243
- ;;^UTILITY(U,$J,358.3,18365,0)
- ;;=99244^^120^1165^4
- ;;^UTILITY(U,$J,358.3,18365,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,18365,1,1,0)
- ;;=1^Comprehensive,Mod Complex
- ;;^UTILITY(U,$J,358.3,18365,1,2,0)
- ;;=2^99244
- ;;^UTILITY(U,$J,358.3,18366,0)
- ;;=99245^^120^1165^5
- ;;^UTILITY(U,$J,358.3,18366,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,18366,1,1,0)
- ;;=1^Comprehensive,High Complex
- ;;^UTILITY(U,$J,358.3,18366,1,2,0)
- ;;=2^99245
- ;;^UTILITY(U,$J,358.3,18367,0)
- ;;=755.69^^121^1166^1
- ;;^UTILITY(U,$J,358.3,18367,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,18367,1,3,0)
- ;;=3^755.69
- ;;^UTILITY(U,$J,358.3,18367,1,5,0)
- ;;=5^Abnormal ankle- congenital
- ;;^UTILITY(U,$J,358.3,18367,2)
- ;;=^273054
- ;;^UTILITY(U,$J,358.3,18368,0)
- ;;=755.67^^121^1166^2
- ;;^UTILITY(U,$J,358.3,18368,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,18368,1,3,0)
- ;;=3^755.67
- ;;^UTILITY(U,$J,358.3,18368,1,5,0)
- ;;=5^Abnormal foot- congenital
- ;;^UTILITY(U,$J,358.3,18368,2)
- ;;=^273060
- ;;^UTILITY(U,$J,358.3,18369,0)
- ;;=917.0^^121^1166^7
- ;;^UTILITY(U,$J,358.3,18369,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,18369,1,3,0)
- ;;=3^917.0
- ;;^UTILITY(U,$J,358.3,18369,1,5,0)
- ;;=5^Abrasion- foot
- ;;^UTILITY(U,$J,358.3,18369,2)
- ;;=^275341
- ;;^UTILITY(U,$J,358.3,18370,0)
- ;;=916.0^^121^1166^6
- ;;^UTILITY(U,$J,358.3,18370,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,18370,1,3,0)
- ;;=3^916.0
- ;;^UTILITY(U,$J,358.3,18370,1,5,0)
- ;;=5^Abrasion- ankle or leg
- ;;^UTILITY(U,$J,358.3,18370,2)
- ;;=^275330
- ;;^UTILITY(U,$J,358.3,18371,0)
- ;;=892.0^^121^1166^4
- ;;^UTILITY(U,$J,358.3,18371,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,18371,1,3,0)
- ;;=3^892.0
- ;;^UTILITY(U,$J,358.3,18371,1,5,0)
- ;;=5^Abrasion with open wound of foot
- ;;^UTILITY(U,$J,358.3,18371,2)
- ;;=^275091
- ;;^UTILITY(U,$J,358.3,18372,0)
- ;;=893.0^^121^1166^5
- ;;^UTILITY(U,$J,358.3,18372,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,18372,1,3,0)
- ;;=3^893.0
- ;;^UTILITY(U,$J,358.3,18372,1,5,0)
- ;;=5^Abrasion with open wound of toe
- ;;^UTILITY(U,$J,358.3,18372,2)
- ;;=^275095
- ;;^UTILITY(U,$J,358.3,18373,0)
- ;;=891.0^^121^1166^3
- ;;^UTILITY(U,$J,358.3,18373,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,18373,1,3,0)
- ;;=3^891.0
- ;;^UTILITY(U,$J,358.3,18373,1,5,0)
- ;;=5^Abrasion with open wound of ankle
- ;;^UTILITY(U,$J,358.3,18373,2)
- ;;=^275087
- ;;^UTILITY(U,$J,358.3,18374,0)
- ;;=682.7^^121^1166^9
- ;;^UTILITY(U,$J,358.3,18374,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,18374,1,3,0)
- ;;=3^682.7
- ;;^UTILITY(U,$J,358.3,18374,1,5,0)
- ;;=5^Abscess- foot
- ;;^UTILITY(U,$J,358.3,18374,2)
- ;;=^271895
- ;;^UTILITY(U,$J,358.3,18375,0)
- ;;=681.10^^121^1166^10
- ;;^UTILITY(U,$J,358.3,18375,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,18375,1,3,0)
- ;;=3^681.10
+ ;;^UTILITY(U,$J,358.3,17035,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17035,1,3,0)
+ ;;=3^Cerebrovascular Disease,Dysphasia
+ ;;^UTILITY(U,$J,358.3,17035,1,4,0)
+ ;;=4^I69.921
+ ;;^UTILITY(U,$J,358.3,17035,2)
+ ;;=^5007554
+ ;;^UTILITY(U,$J,358.3,17036,0)
+ ;;=I69.992^^88^857^22
+ ;;^UTILITY(U,$J,358.3,17036,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17036,1,3,0)
+ ;;=3^Cerebrovascular Disease,Facial Weakness
+ ;;^UTILITY(U,$J,358.3,17036,1,4,0)
+ ;;=4^I69.992
+ ;;^UTILITY(U,$J,358.3,17036,2)
+ ;;=^5007570
+ ;;^UTILITY(U,$J,358.3,17037,0)
+ ;;=I69.923^^88^857^23
+ ;;^UTILITY(U,$J,358.3,17037,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17037,1,3,0)
+ ;;=3^Cerebrovascular Disease,Fluency Disorder
+ ;;^UTILITY(U,$J,358.3,17037,1,4,0)
+ ;;=4^I69.923
+ ;;^UTILITY(U,$J,358.3,17037,2)
+ ;;=^5007556
+ ;;^UTILITY(U,$J,358.3,17038,0)
+ ;;=I69.952^^88^857^24
+ ;;^UTILITY(U,$J,358.3,17038,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17038,1,3,0)
+ ;;=3^Cerebrovascular Disease,Hemiplegia/Hemiparesis,Left Dominant Side
+ ;;^UTILITY(U,$J,358.3,17038,1,4,0)
+ ;;=4^I69.952
+ ;;^UTILITY(U,$J,358.3,17038,2)
+ ;;=^5133586
+ ;;^UTILITY(U,$J,358.3,17039,0)
+ ;;=I69.954^^88^857^25
+ ;;^UTILITY(U,$J,358.3,17039,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17039,1,3,0)
+ ;;=3^Cerebrovascular Disease,Hemiplegia/Hemiparesis,Left Nondominant Side
+ ;;^UTILITY(U,$J,358.3,17039,1,4,0)
+ ;;=4^I69.954
+ ;;^UTILITY(U,$J,358.3,17039,2)
+ ;;=^5133587
+ ;;^UTILITY(U,$J,358.3,17040,0)
+ ;;=I69.951^^88^857^26
+ ;;^UTILITY(U,$J,358.3,17040,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17040,1,3,0)
+ ;;=3^Cerebrovascular Disease,Hemiplegia/Hemiparesis,Right Dominant Side
+ ;;^UTILITY(U,$J,358.3,17040,1,4,0)
+ ;;=4^I69.951
+ ;;^UTILITY(U,$J,358.3,17040,2)
+ ;;=^5007561
+ ;;^UTILITY(U,$J,358.3,17041,0)
+ ;;=I69.953^^88^857^27
+ ;;^UTILITY(U,$J,358.3,17041,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17041,1,3,0)
+ ;;=3^Cerebrovascular Disease,Hemiplegia/Hemiparesis,Right Nondominant Side
+ ;;^UTILITY(U,$J,358.3,17041,1,4,0)
+ ;;=4^I69.953
+ ;;^UTILITY(U,$J,358.3,17041,2)
+ ;;=^5007562
+ ;;^UTILITY(U,$J,358.3,17042,0)
+ ;;=I69.942^^88^857^28
+ ;;^UTILITY(U,$J,358.3,17042,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17042,1,3,0)
+ ;;=3^Cerebrovascular Disease,Monoplegia,Lt Lower Dominant Side
+ ;;^UTILITY(U,$J,358.3,17042,1,4,0)
+ ;;=4^I69.942
+ ;;^UTILITY(U,$J,358.3,17042,2)
+ ;;=^5133582
+ ;;^UTILITY(U,$J,358.3,17043,0)
+ ;;=I69.944^^88^857^29
+ ;;^UTILITY(U,$J,358.3,17043,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17043,1,3,0)
+ ;;=3^Cerebrovascular Disease,Monoplegia,Lt Lower Nondominant Side
+ ;;^UTILITY(U,$J,358.3,17043,1,4,0)
+ ;;=4^I69.944
+ ;;^UTILITY(U,$J,358.3,17043,2)
+ ;;=^5133585
+ ;;^UTILITY(U,$J,358.3,17044,0)
+ ;;=I69.932^^88^857^30
+ ;;^UTILITY(U,$J,358.3,17044,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17044,1,3,0)
+ ;;=3^Cerebrovascular Disease,Monoplegia,Lt Upper Dominant Side
+ ;;^UTILITY(U,$J,358.3,17044,1,4,0)
+ ;;=4^I69.932
+ ;;^UTILITY(U,$J,358.3,17044,2)
+ ;;=^5133580
+ ;;^UTILITY(U,$J,358.3,17045,0)
+ ;;=I69.934^^88^857^31
+ ;;^UTILITY(U,$J,358.3,17045,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17045,1,3,0)
+ ;;=3^Cerebrovascular Disease,Monoplegia,Lt Upper Nondominant Side
+ ;;^UTILITY(U,$J,358.3,17045,1,4,0)
+ ;;=4^I69.934
+ ;;^UTILITY(U,$J,358.3,17045,2)
+ ;;=^5133583
+ ;;^UTILITY(U,$J,358.3,17046,0)
+ ;;=I69.941^^88^857^32
+ ;;^UTILITY(U,$J,358.3,17046,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17046,1,3,0)
+ ;;=3^Cerebrovascular Disease,Monoplegia,Rt Lower Dominant Side
+ ;;^UTILITY(U,$J,358.3,17046,1,4,0)
+ ;;=4^I69.941
+ ;;^UTILITY(U,$J,358.3,17046,2)
+ ;;=^5133581

@@ -1,5 +1,5 @@
 RORX007A ;HOIFO/BH,SG,VAC - RADIOLOGY UTILIZATION (OVERFLOW) ;4/7/09 2:07pm
- ;;1.5;CLINICAL CASE REGISTRIES;**1,8,13,19**;Feb 17, 2006;Build 43
+ ;;1.5;CLINICAL CASE REGISTRIES;**1,8,13,19,21,31**;Feb 17, 2006;Build 62
  ;
  ; This routine uses the following IAs:
  ;
@@ -16,7 +16,11 @@ RORX007A ;HOIFO/BH,SG,VAC - RADIOLOGY UTILIZATION (OVERFLOW) ;4/7/09 2:07pm
  ;ROR*1.5*13   DEC  2010   A SAUNDERS   User can select specific patients,
  ;                                      clinics, or divisions for the report.
  ;ROR*1.5*19   FEB  2012   K GUPTA      Support for ICD-10 Coding System
- ;                                      
+ ;ROR*1.5*21   SEP 2013    T KOPP       Added ICN as last report column if
+ ;                                      additional identifier option selected
+ ;ROR*1.5*31   MAY 2017    M FERRARESE  Adding PACT, PCP, and AGE/DOB as additional
+ ;                                      identifiers.
+ ;                                   
  ;******************************************************************************
  ;******************************************************************************
  Q
@@ -49,7 +53,7 @@ GETDATA(DFN) ;
  ;--- Get the data
  D EN1^RAO7PC1(DFN,RORSDT,ROREDT,999999)
  ;data returned from radiology/nuclear medicine API in ^TMP($J,"RAE1"
- Q:'$D(^TMP($J,"RAE1",PATIEN)) 0
+ Q:'$D(^TMP($J,"RAE1",DFN)) 0
  ;
  ;--- Process the data
  S EXAMID=""
@@ -76,7 +80,9 @@ GETDATA(DFN) ;
  ;        0  Ok
  ;
 HEADER(PARTAG) ;
- ;;PATIENTS(#,NAME,LAST4,DOD,TOTAL,UNIQUE)
+ ;;PATIENTS(#,NAME,LAST4,DOD,TOTAL,UNIQUE,ICN,PACT,PCP)^I $$PARAM^RORTSK01("AGE_RANGE","TYPE")="ALL"
+ ;;PATIENTS(#,NAME,LAST4,AGE,DOD,TOTAL,UNIQUE,ICN,PACT,PCP)^I $$PARAM^RORTSK01("AGE_RANGE","TYPE")="AGE"
+ ;;PATIENTS(#,NAME,LAST4,DOB,DOD,TOTAL,UNIQUE,ICN,PACT,PCP)^I $$PARAM^RORTSK01("AGE_RANGE","TYPE")="DOB"
  ;;PROCEDURES(#,NAME,CPT,PATIENTS,TOTAL)
  ;
  N HEADER,RC

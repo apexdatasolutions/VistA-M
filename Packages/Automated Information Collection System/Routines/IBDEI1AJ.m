@@ -1,140 +1,120 @@
-IBDEI1AJ ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1AJ ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,23107,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23107,1,4,0)
- ;;=4^788.30
- ;;^UTILITY(U,$J,358.3,23107,1,5,0)
- ;;=5^Incontinence, other
- ;;^UTILITY(U,$J,358.3,23107,2)
- ;;=Incontinence, other^124400
- ;;^UTILITY(U,$J,358.3,23108,0)
- ;;=788.32^^144^1419^88
- ;;^UTILITY(U,$J,358.3,23108,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23108,1,4,0)
- ;;=4^788.32
- ;;^UTILITY(U,$J,358.3,23108,1,5,0)
- ;;=5^Incontinence, stress, male
- ;;^UTILITY(U,$J,358.3,23108,2)
- ;;=^293934
- ;;^UTILITY(U,$J,358.3,23109,0)
- ;;=625.6^^144^1419^87
- ;;^UTILITY(U,$J,358.3,23109,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23109,1,4,0)
- ;;=4^625.6
- ;;^UTILITY(U,$J,358.3,23109,1,5,0)
- ;;=5^Incontinence, stress, female
- ;;^UTILITY(U,$J,358.3,23109,2)
- ;;=^114717
- ;;^UTILITY(U,$J,358.3,23110,0)
- ;;=788.31^^144^1419^89
- ;;^UTILITY(U,$J,358.3,23110,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23110,1,4,0)
- ;;=4^788.31
- ;;^UTILITY(U,$J,358.3,23110,1,5,0)
- ;;=5^Incontinence, urge
- ;;^UTILITY(U,$J,358.3,23110,2)
- ;;=^260046
- ;;^UTILITY(U,$J,358.3,23111,0)
- ;;=788.43^^144^1419^106
- ;;^UTILITY(U,$J,358.3,23111,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23111,1,4,0)
- ;;=4^788.43
- ;;^UTILITY(U,$J,358.3,23111,1,5,0)
- ;;=5^Nocturia
- ;;^UTILITY(U,$J,358.3,23111,2)
- ;;=Nocturia^84740
- ;;^UTILITY(U,$J,358.3,23112,0)
- ;;=788.5^^144^1419^109
- ;;^UTILITY(U,$J,358.3,23112,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23112,1,4,0)
- ;;=4^788.5
- ;;^UTILITY(U,$J,358.3,23112,1,5,0)
- ;;=5^Oliguria/Anuria
- ;;^UTILITY(U,$J,358.3,23112,2)
- ;;=Oliguria/Anuria^85458
- ;;^UTILITY(U,$J,358.3,23113,0)
- ;;=788.42^^144^1419^119
- ;;^UTILITY(U,$J,358.3,23113,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23113,1,4,0)
- ;;=4^788.42
- ;;^UTILITY(U,$J,358.3,23113,1,5,0)
- ;;=5^Polyuria
- ;;^UTILITY(U,$J,358.3,23113,2)
- ;;=Polyuria^96503
- ;;^UTILITY(U,$J,358.3,23114,0)
- ;;=788.0^^144^1419^123
- ;;^UTILITY(U,$J,358.3,23114,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23114,1,4,0)
- ;;=4^788.0
- ;;^UTILITY(U,$J,358.3,23114,1,5,0)
- ;;=5^Renal Colic
- ;;^UTILITY(U,$J,358.3,23114,2)
- ;;=Renal Colic^265306
- ;;^UTILITY(U,$J,358.3,23115,0)
- ;;=788.20^^144^1419^124
- ;;^UTILITY(U,$J,358.3,23115,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23115,1,4,0)
- ;;=4^788.20
- ;;^UTILITY(U,$J,358.3,23115,1,5,0)
- ;;=5^Retention, urinary
- ;;^UTILITY(U,$J,358.3,23115,2)
- ;;=^295812
- ;;^UTILITY(U,$J,358.3,23116,0)
- ;;=788.62^^144^1419^128
- ;;^UTILITY(U,$J,358.3,23116,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23116,1,4,0)
- ;;=4^788.62
- ;;^UTILITY(U,$J,358.3,23116,1,5,0)
- ;;=5^Slowing, urine stream
- ;;^UTILITY(U,$J,358.3,23116,2)
- ;;=^295769
- ;;^UTILITY(U,$J,358.3,23117,0)
- ;;=788.7^^144^1419^142
- ;;^UTILITY(U,$J,358.3,23117,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23117,1,4,0)
- ;;=4^788.7
- ;;^UTILITY(U,$J,358.3,23117,1,5,0)
- ;;=5^Urethral Discharge
- ;;^UTILITY(U,$J,358.3,23117,2)
- ;;=^265872
- ;;^UTILITY(U,$J,358.3,23118,0)
- ;;=599.0^^144^1419^143
- ;;^UTILITY(U,$J,358.3,23118,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23118,1,4,0)
- ;;=4^599.0
- ;;^UTILITY(U,$J,358.3,23118,1,5,0)
- ;;=5^Urinary tract infection
- ;;^UTILITY(U,$J,358.3,23118,2)
- ;;=^124436
- ;;^UTILITY(U,$J,358.3,23119,0)
- ;;=784.49^^144^1419^77
- ;;^UTILITY(U,$J,358.3,23119,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23119,1,4,0)
- ;;=4^784.49
- ;;^UTILITY(U,$J,358.3,23119,1,5,0)
- ;;=5^Hoarseness
- ;;^UTILITY(U,$J,358.3,23119,2)
- ;;=Hoarseness^88244
- ;;^UTILITY(U,$J,358.3,23120,0)
- ;;=525.10^^144^1419^94
- ;;^UTILITY(U,$J,358.3,23120,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23120,1,4,0)
- ;;=4^525.10
- ;;^UTILITY(U,$J,358.3,23120,1,5,0)
- ;;=5^Loss of Teeth
+ ;;^UTILITY(U,$J,358.3,21564,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21564,1,3,0)
+ ;;=3^Traum hemor left cerebrum w LOC >24 hr w/o ret consc w surv, sqla
+ ;;^UTILITY(U,$J,358.3,21564,1,4,0)
+ ;;=4^S06.356S
+ ;;^UTILITY(U,$J,358.3,21564,2)
+ ;;=^5020926
+ ;;^UTILITY(U,$J,358.3,21565,0)
+ ;;=S06.353S^^101^1032^84
+ ;;^UTILITY(U,$J,358.3,21565,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21565,1,3,0)
+ ;;=3^Traum hemor left cerebrum w LOC of 1-5 hrs 59 minutes, sequela
+ ;;^UTILITY(U,$J,358.3,21565,1,4,0)
+ ;;=4^S06.353S
+ ;;^UTILITY(U,$J,358.3,21565,2)
+ ;;=^5020917
+ ;;^UTILITY(U,$J,358.3,21566,0)
+ ;;=S06.351S^^101^1032^85
+ ;;^UTILITY(U,$J,358.3,21566,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21566,1,3,0)
+ ;;=3^Traum hemor left cerebrum w LOC of 30 minutes or less, sequela
+ ;;^UTILITY(U,$J,358.3,21566,1,4,0)
+ ;;=4^S06.351S
+ ;;^UTILITY(U,$J,358.3,21566,2)
+ ;;=^5020911
+ ;;^UTILITY(U,$J,358.3,21567,0)
+ ;;=S06.352S^^101^1032^86
+ ;;^UTILITY(U,$J,358.3,21567,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21567,1,3,0)
+ ;;=3^Traum hemor left cerebrum w LOC of 31-59 min, sequela
+ ;;^UTILITY(U,$J,358.3,21567,1,4,0)
+ ;;=4^S06.352S
+ ;;^UTILITY(U,$J,358.3,21567,2)
+ ;;=^5020914
+ ;;^UTILITY(U,$J,358.3,21568,0)
+ ;;=S06.354S^^101^1032^87
+ ;;^UTILITY(U,$J,358.3,21568,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21568,1,3,0)
+ ;;=3^Traum hemor left cerebrum w LOC of 6-24 hrs, sequela
+ ;;^UTILITY(U,$J,358.3,21568,1,4,0)
+ ;;=4^S06.354S
+ ;;^UTILITY(U,$J,358.3,21568,2)
+ ;;=^5020920
+ ;;^UTILITY(U,$J,358.3,21569,0)
+ ;;=S06.359S^^101^1032^88
+ ;;^UTILITY(U,$J,358.3,21569,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21569,1,3,0)
+ ;;=3^Traum hemor left cerebrum w LOC of unsp duration, sequela
+ ;;^UTILITY(U,$J,358.3,21569,1,4,0)
+ ;;=4^S06.359S
+ ;;^UTILITY(U,$J,358.3,21569,2)
+ ;;=^5020935
+ ;;^UTILITY(U,$J,358.3,21570,0)
+ ;;=S06.350S^^101^1032^89
+ ;;^UTILITY(U,$J,358.3,21570,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21570,1,3,0)
+ ;;=3^Traum hemor left cerebrum w/o LOC, sequela
+ ;;^UTILITY(U,$J,358.3,21570,1,4,0)
+ ;;=4^S06.350S
+ ;;^UTILITY(U,$J,358.3,21570,2)
+ ;;=^5020908
+ ;;^UTILITY(U,$J,358.3,21571,0)
+ ;;=S06.345S^^101^1032^90
+ ;;^UTILITY(U,$J,358.3,21571,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21571,1,3,0)
+ ;;=3^Traum hemor right cerebrum w LOC >24 hr w ret consc lev, sequela
+ ;;^UTILITY(U,$J,358.3,21571,1,4,0)
+ ;;=4^S06.345S
+ ;;^UTILITY(U,$J,358.3,21571,2)
+ ;;=^5020893
+ ;;^UTILITY(U,$J,358.3,21572,0)
+ ;;=S06.346S^^101^1032^91
+ ;;^UTILITY(U,$J,358.3,21572,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21572,1,3,0)
+ ;;=3^Traum hemor right cerebrum w LOC >24 hr w/o ret consc w surv, sqla
+ ;;^UTILITY(U,$J,358.3,21572,1,4,0)
+ ;;=4^S06.346S
+ ;;^UTILITY(U,$J,358.3,21572,2)
+ ;;=^5020896
+ ;;^UTILITY(U,$J,358.3,21573,0)
+ ;;=S06.343S^^101^1032^97
+ ;;^UTILITY(U,$J,358.3,21573,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21573,1,3,0)
+ ;;=3^Traum hemor right cerebrumb w LOC of 1-5 hrs 59 minutes, sequela
+ ;;^UTILITY(U,$J,358.3,21573,1,4,0)
+ ;;=4^S06.343S
+ ;;^UTILITY(U,$J,358.3,21573,2)
+ ;;=^5020887
+ ;;^UTILITY(U,$J,358.3,21574,0)
+ ;;=S06.341S^^101^1032^92
+ ;;^UTILITY(U,$J,358.3,21574,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21574,1,3,0)
+ ;;=3^Traum hemor right cerebrum w LOC of 30 minutes or less, sequela
+ ;;^UTILITY(U,$J,358.3,21574,1,4,0)
+ ;;=4^S06.341S
+ ;;^UTILITY(U,$J,358.3,21574,2)
+ ;;=^5020881
+ ;;^UTILITY(U,$J,358.3,21575,0)
+ ;;=S06.342S^^101^1032^93
+ ;;^UTILITY(U,$J,358.3,21575,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21575,1,3,0)
+ ;;=3^Traum hemor right cerebrum w LOC of 31-59 min, sequela
+ ;;^UTILITY(U,$J,358.3,21575,1,4,0)
+ ;;=4^S06.342S

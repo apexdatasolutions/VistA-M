@@ -1,136 +1,132 @@
-IBDEI104 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI104 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,17941,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,17941,1,2,0)
- ;;=2^296.35
- ;;^UTILITY(U,$J,358.3,17941,1,5,0)
- ;;=5^MDD, Recur, Part Remiss
- ;;^UTILITY(U,$J,358.3,17941,2)
- ;;=^268121
- ;;^UTILITY(U,$J,358.3,17942,0)
- ;;=296.36^^116^1113^6
- ;;^UTILITY(U,$J,358.3,17942,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,17942,1,2,0)
- ;;=2^296.36
- ;;^UTILITY(U,$J,358.3,17942,1,5,0)
- ;;=5^MDD, Recur, Full Remiss
- ;;^UTILITY(U,$J,358.3,17942,2)
- ;;=^268122
- ;;^UTILITY(U,$J,358.3,17943,0)
- ;;=311.^^116^1113^1
- ;;^UTILITY(U,$J,358.3,17943,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,17943,1,2,0)
- ;;=2^311.
- ;;^UTILITY(U,$J,358.3,17943,1,5,0)
- ;;=5^Depression, NOS
- ;;^UTILITY(U,$J,358.3,17943,2)
- ;;=^35603
- ;;^UTILITY(U,$J,358.3,17944,0)
- ;;=296.26^^116^1113^11
- ;;^UTILITY(U,$J,358.3,17944,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,17944,1,2,0)
- ;;=2^296.26
- ;;^UTILITY(U,$J,358.3,17944,1,5,0)
- ;;=5^MDD, Single, Full Remiss
- ;;^UTILITY(U,$J,358.3,17944,2)
- ;;=^268115
- ;;^UTILITY(U,$J,358.3,17945,0)
- ;;=301.13^^116^1114^1
- ;;^UTILITY(U,$J,358.3,17945,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,17945,1,2,0)
- ;;=2^301.13
- ;;^UTILITY(U,$J,358.3,17945,1,5,0)
- ;;=5^Cyclothymic Disorder
- ;;^UTILITY(U,$J,358.3,17945,2)
- ;;=^30028
- ;;^UTILITY(U,$J,358.3,17946,0)
- ;;=300.4^^116^1114^2
- ;;^UTILITY(U,$J,358.3,17946,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,17946,1,2,0)
- ;;=2^300.4
- ;;^UTILITY(U,$J,358.3,17946,1,5,0)
- ;;=5^Dysthymia
- ;;^UTILITY(U,$J,358.3,17946,2)
- ;;=^303478
- ;;^UTILITY(U,$J,358.3,17947,0)
- ;;=293.82^^116^1114^4
- ;;^UTILITY(U,$J,358.3,17947,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,17947,1,2,0)
- ;;=2^293.82
- ;;^UTILITY(U,$J,358.3,17947,1,5,0)
- ;;=5^Mood D/O,Transient,Hallucinator
- ;;^UTILITY(U,$J,358.3,17947,2)
- ;;=^331837
- ;;^UTILITY(U,$J,358.3,17948,0)
- ;;=293.83^^116^1114^3
- ;;^UTILITY(U,$J,358.3,17948,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,17948,1,2,0)
- ;;=2^293.83
- ;;^UTILITY(U,$J,358.3,17948,1,5,0)
- ;;=5^Mood D/O,Transient,Depressive
- ;;^UTILITY(U,$J,358.3,17948,2)
- ;;=^331838
- ;;^UTILITY(U,$J,358.3,17949,0)
- ;;=295.12^^116^1115^2
- ;;^UTILITY(U,$J,358.3,17949,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,17949,1,2,0)
- ;;=2^295.12
- ;;^UTILITY(U,$J,358.3,17949,1,5,0)
- ;;=5^Disorganized Schizophrenia, Chronic
- ;;^UTILITY(U,$J,358.3,17949,2)
- ;;=^268051
- ;;^UTILITY(U,$J,358.3,17950,0)
- ;;=295.14^^116^1115^3
- ;;^UTILITY(U,$J,358.3,17950,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,17950,1,2,0)
- ;;=2^295.14
- ;;^UTILITY(U,$J,358.3,17950,1,5,0)
- ;;=5^Disorganized Schizophrenia,Chr w/Exacerbation
- ;;^UTILITY(U,$J,358.3,17950,2)
- ;;=^268053
- ;;^UTILITY(U,$J,358.3,17951,0)
- ;;=295.52^^116^1115^6
- ;;^UTILITY(U,$J,358.3,17951,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,17951,1,2,0)
- ;;=2^295.52
- ;;^UTILITY(U,$J,358.3,17951,1,5,0)
- ;;=5^Latent Schizophrenia, Chronic
- ;;^UTILITY(U,$J,358.3,17951,2)
- ;;=Latent Schizophrenia, Chronic^268073
- ;;^UTILITY(U,$J,358.3,17952,0)
- ;;=295.54^^116^1115^5
- ;;^UTILITY(U,$J,358.3,17952,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,17952,1,2,0)
- ;;=2^295.54
- ;;^UTILITY(U,$J,358.3,17952,1,5,0)
- ;;=5^Latent Schizophrenia, Chr w/Exacerbation
- ;;^UTILITY(U,$J,358.3,17952,2)
- ;;=^268075
- ;;^UTILITY(U,$J,358.3,17953,0)
- ;;=295.32^^116^1115^8
- ;;^UTILITY(U,$J,358.3,17953,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,17953,1,2,0)
- ;;=2^295.32
- ;;^UTILITY(U,$J,358.3,17953,1,5,0)
- ;;=5^Paranoid Schizophrenia, Chronic
- ;;^UTILITY(U,$J,358.3,17953,2)
- ;;=Paranoid Schizophrenia, Chronic^268061
- ;;^UTILITY(U,$J,358.3,17954,0)
- ;;=295.34^^116^1115^9
- ;;^UTILITY(U,$J,358.3,17954,1,0)
- ;;=^358.31IA^5^2
+ ;;^UTILITY(U,$J,358.3,16653,1,4,0)
+ ;;=4^H54.3
+ ;;^UTILITY(U,$J,358.3,16653,2)
+ ;;=^268886
+ ;;^UTILITY(U,$J,358.3,16654,0)
+ ;;=W10.9XXA^^88^852^22
+ ;;^UTILITY(U,$J,358.3,16654,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16654,1,3,0)
+ ;;=3^Fall,Stairs/Steps,Init Encntr,Unspec
+ ;;^UTILITY(U,$J,358.3,16654,1,4,0)
+ ;;=4^W10.9XXA
+ ;;^UTILITY(U,$J,358.3,16654,2)
+ ;;=^5059592
+ ;;^UTILITY(U,$J,358.3,16655,0)
+ ;;=W10.0XXA^^88^852^19
+ ;;^UTILITY(U,$J,358.3,16655,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16655,1,3,0)
+ ;;=3^Fall,Escalator,Init Encntr
+ ;;^UTILITY(U,$J,358.3,16655,1,4,0)
+ ;;=4^W10.0XXA
+ ;;^UTILITY(U,$J,358.3,16655,2)
+ ;;=^5059580
+ ;;^UTILITY(U,$J,358.3,16656,0)
+ ;;=W10.2XXA^^88^852^20
+ ;;^UTILITY(U,$J,358.3,16656,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16656,1,3,0)
+ ;;=3^Fall,Incline,Init Encntr
+ ;;^UTILITY(U,$J,358.3,16656,1,4,0)
+ ;;=4^W10.2XXA
+ ;;^UTILITY(U,$J,358.3,16656,2)
+ ;;=^5059586
+ ;;^UTILITY(U,$J,358.3,16657,0)
+ ;;=W10.1XXA^^88^852^21
+ ;;^UTILITY(U,$J,358.3,16657,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16657,1,3,0)
+ ;;=3^Fall,Sidewalk/Curb,Init Encntr
+ ;;^UTILITY(U,$J,358.3,16657,1,4,0)
+ ;;=4^W10.1XXA
+ ;;^UTILITY(U,$J,358.3,16657,2)
+ ;;=^5059583
+ ;;^UTILITY(U,$J,358.3,16658,0)
+ ;;=W06.XXXA^^88^852^7
+ ;;^UTILITY(U,$J,358.3,16658,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16658,1,3,0)
+ ;;=3^Fall from Bed,Init Encntr
+ ;;^UTILITY(U,$J,358.3,16658,1,4,0)
+ ;;=4^W06.XXXA
+ ;;^UTILITY(U,$J,358.3,16658,2)
+ ;;=^5059559
+ ;;^UTILITY(U,$J,358.3,16659,0)
+ ;;=W07.XXXA^^88^852^8
+ ;;^UTILITY(U,$J,358.3,16659,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16659,1,3,0)
+ ;;=3^Fall from Chair,Init Encntr
+ ;;^UTILITY(U,$J,358.3,16659,1,4,0)
+ ;;=4^W07.XXXA
+ ;;^UTILITY(U,$J,358.3,16659,2)
+ ;;=^5059562
+ ;;^UTILITY(U,$J,358.3,16660,0)
+ ;;=W05.2XXA^^88^852^11
+ ;;^UTILITY(U,$J,358.3,16660,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16660,1,3,0)
+ ;;=3^Fall from Non-Moving Motorized Scooter,Init Encntr
+ ;;^UTILITY(U,$J,358.3,16660,1,4,0)
+ ;;=4^W05.2XXA
+ ;;^UTILITY(U,$J,358.3,16660,2)
+ ;;=^5059556
+ ;;^UTILITY(U,$J,358.3,16661,0)
+ ;;=W05.1XXA^^88^852^12
+ ;;^UTILITY(U,$J,358.3,16661,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16661,1,3,0)
+ ;;=3^Fall from Non-Moving Nonmotorized Scooter,Init Encntr
+ ;;^UTILITY(U,$J,358.3,16661,1,4,0)
+ ;;=4^W05.1XXA
+ ;;^UTILITY(U,$J,358.3,16661,2)
+ ;;=^5059553
+ ;;^UTILITY(U,$J,358.3,16662,0)
+ ;;=W05.0XXA^^88^852^13
+ ;;^UTILITY(U,$J,358.3,16662,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16662,1,3,0)
+ ;;=3^Fall from Non-Moving Wheelchair,Init Encntr
+ ;;^UTILITY(U,$J,358.3,16662,1,4,0)
+ ;;=4^W05.0XXA
+ ;;^UTILITY(U,$J,358.3,16662,2)
+ ;;=^5059550
+ ;;^UTILITY(U,$J,358.3,16663,0)
+ ;;=W18.12XA^^88^852^15
+ ;;^UTILITY(U,$J,358.3,16663,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16663,1,3,0)
+ ;;=3^Fall from Toilet w/ Strike Against Object,Init Encntr
+ ;;^UTILITY(U,$J,358.3,16663,1,4,0)
+ ;;=4^W18.12XA
+ ;;^UTILITY(U,$J,358.3,16663,2)
+ ;;=^5059804
+ ;;^UTILITY(U,$J,358.3,16664,0)
+ ;;=W18.11XA^^88^852^16
+ ;;^UTILITY(U,$J,358.3,16664,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16664,1,3,0)
+ ;;=3^Fall from Toilet,Init Encntr
+ ;;^UTILITY(U,$J,358.3,16664,1,4,0)
+ ;;=4^W18.11XA
+ ;;^UTILITY(U,$J,358.3,16664,2)
+ ;;=^5059801
+ ;;^UTILITY(U,$J,358.3,16665,0)
+ ;;=W08.XXXA^^88^852^9
+ ;;^UTILITY(U,$J,358.3,16665,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16665,1,3,0)
+ ;;=3^Fall from Furniture,Init Encntr
+ ;;^UTILITY(U,$J,358.3,16665,1,4,0)
+ ;;=4^W08.XXXA
+ ;;^UTILITY(U,$J,358.3,16665,2)
+ ;;=^5059565
+ ;;^UTILITY(U,$J,358.3,16666,0)
+ ;;=W18.2XXA^^88^852^17
+ ;;^UTILITY(U,$J,358.3,16666,1,0)
+ ;;=^358.31IA^4^2

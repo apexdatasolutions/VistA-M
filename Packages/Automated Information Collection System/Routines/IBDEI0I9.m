@@ -1,130 +1,138 @@
-IBDEI0I9 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0I9 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,8893,1,4,0)
- ;;=4^Benign Lesion, Neck
- ;;^UTILITY(U,$J,358.3,8893,1,5,0)
- ;;=5^216.4
- ;;^UTILITY(U,$J,358.3,8893,2)
- ;;=Benign Neoplasm of Skin of Neck^267633
- ;;^UTILITY(U,$J,358.3,8894,0)
- ;;=216.5^^61^627^8
- ;;^UTILITY(U,$J,358.3,8894,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8894,1,4,0)
- ;;=4^Benign Lesion, Trunk
- ;;^UTILITY(U,$J,358.3,8894,1,5,0)
- ;;=5^216.5
- ;;^UTILITY(U,$J,358.3,8894,2)
- ;;=Benign Neoplasm of Skin of Trunk^267634
- ;;^UTILITY(U,$J,358.3,8895,0)
- ;;=216.6^^61^627^9
- ;;^UTILITY(U,$J,358.3,8895,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8895,1,4,0)
- ;;=4^Benign Lesion, Upper Limb
- ;;^UTILITY(U,$J,358.3,8895,1,5,0)
- ;;=5^216.6
- ;;^UTILITY(U,$J,358.3,8895,2)
- ;;=Benign Neoplasm of Skin of Arm^267635
- ;;^UTILITY(U,$J,358.3,8896,0)
- ;;=216.7^^61^627^5
- ;;^UTILITY(U,$J,358.3,8896,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8896,1,4,0)
- ;;=4^Benign Lesion, Lower Limb
- ;;^UTILITY(U,$J,358.3,8896,1,5,0)
- ;;=5^216.7
- ;;^UTILITY(U,$J,358.3,8896,2)
- ;;=Benign Neoplasm of of skin of leg^267636
- ;;^UTILITY(U,$J,358.3,8897,0)
- ;;=216.8^^61^627^7
- ;;^UTILITY(U,$J,358.3,8897,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8897,1,4,0)
- ;;=4^Benign Lesion, Skin Other
- ;;^UTILITY(U,$J,358.3,8897,1,5,0)
- ;;=5^216.8
- ;;^UTILITY(U,$J,358.3,8897,2)
- ;;=Ben Neoplasm, Skin, Unspec^267637
- ;;^UTILITY(U,$J,358.3,8898,0)
- ;;=216.3^^61^627^3
- ;;^UTILITY(U,$J,358.3,8898,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8898,1,4,0)
- ;;=4^Benign Lesion, Face
- ;;^UTILITY(U,$J,358.3,8898,1,5,0)
- ;;=5^216.3
- ;;^UTILITY(U,$J,358.3,8898,2)
- ;;=^267632
- ;;^UTILITY(U,$J,358.3,8899,0)
- ;;=173.00^^61^628^15
- ;;^UTILITY(U,$J,358.3,8899,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8899,1,4,0)
- ;;=4^CA Skin Lip, Unspec
- ;;^UTILITY(U,$J,358.3,8899,1,5,0)
- ;;=5^173.00
- ;;^UTILITY(U,$J,358.3,8899,2)
- ;;=MALIG NEOPL SKIN LIP NOS^340596
- ;;^UTILITY(U,$J,358.3,8900,0)
- ;;=173.10^^61^628^12
- ;;^UTILITY(U,$J,358.3,8900,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8900,1,4,0)
- ;;=4^CA Skin Eyelid, Unspec
- ;;^UTILITY(U,$J,358.3,8900,1,5,0)
- ;;=5^173.10
- ;;^UTILITY(U,$J,358.3,8900,2)
- ;;=MAL NEO EYELID/CANTH NOS^340597
- ;;^UTILITY(U,$J,358.3,8901,0)
- ;;=173.20^^61^628^11
- ;;^UTILITY(U,$J,358.3,8901,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8901,1,4,0)
- ;;=4^CA Skin Ear, Unspec
- ;;^UTILITY(U,$J,358.3,8901,1,5,0)
- ;;=5^173.20
- ;;^UTILITY(U,$J,358.3,8901,2)
- ;;=MALIG NEO SKIN EAR NOS^340598
- ;;^UTILITY(U,$J,358.3,8902,0)
- ;;=173.30^^61^628^13
- ;;^UTILITY(U,$J,358.3,8902,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8902,1,4,0)
- ;;=4^CA Skin Face, Unspec
- ;;^UTILITY(U,$J,358.3,8902,1,5,0)
- ;;=5^173.30
- ;;^UTILITY(U,$J,358.3,8902,2)
- ;;=MAL NEO SKN FACE NEC/NOS^340599
- ;;^UTILITY(U,$J,358.3,8903,0)
- ;;=173.40^^61^628^16
- ;;^UTILITY(U,$J,358.3,8903,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8903,1,4,0)
- ;;=4^CA Skin Scalp/Neck, Unspec
- ;;^UTILITY(U,$J,358.3,8903,1,5,0)
- ;;=5^173.40
- ;;^UTILITY(U,$J,358.3,8903,2)
- ;;=MAL NEO SCLP/SKN NCK NOS^340600
- ;;^UTILITY(U,$J,358.3,8904,0)
- ;;=173.50^^61^628^17
- ;;^UTILITY(U,$J,358.3,8904,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8904,1,4,0)
- ;;=4^CA Skin Trunk, Unspec
- ;;^UTILITY(U,$J,358.3,8904,1,5,0)
- ;;=5^173.50
- ;;^UTILITY(U,$J,358.3,8904,2)
- ;;=MALIG NEO SKIN TRUNK NOS^340601
- ;;^UTILITY(U,$J,358.3,8905,0)
- ;;=173.60^^61^628^10
- ;;^UTILITY(U,$J,358.3,8905,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8905,1,4,0)
- ;;=4^CA Skin Arm/Shoulder, Unspec
- ;;^UTILITY(U,$J,358.3,8905,1,5,0)
- ;;=5^173.60
- ;;^UTILITY(U,$J,358.3,8905,2)
- ;;=MAL NEO SKIN UP LIMB NOS^340602
+ ;;^UTILITY(U,$J,358.3,8191,1,4,0)
+ ;;=4^K52.9
+ ;;^UTILITY(U,$J,358.3,8191,2)
+ ;;=^5008704
+ ;;^UTILITY(U,$J,358.3,8192,0)
+ ;;=K57.30^^55^536^38
+ ;;^UTILITY(U,$J,358.3,8192,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8192,1,3,0)
+ ;;=3^Dvrtclos of lg int w/o perforation or abscess w/o bleeding
+ ;;^UTILITY(U,$J,358.3,8192,1,4,0)
+ ;;=4^K57.30
+ ;;^UTILITY(U,$J,358.3,8192,2)
+ ;;=^5008723
+ ;;^UTILITY(U,$J,358.3,8193,0)
+ ;;=K57.32^^55^536^39
+ ;;^UTILITY(U,$J,358.3,8193,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8193,1,3,0)
+ ;;=3^Dvtrcli of lg int w/o perforation or abscess w/o bleeding
+ ;;^UTILITY(U,$J,358.3,8193,1,4,0)
+ ;;=4^K57.32
+ ;;^UTILITY(U,$J,358.3,8193,2)
+ ;;=^5008725
+ ;;^UTILITY(U,$J,358.3,8194,0)
+ ;;=K59.00^^55^536^31
+ ;;^UTILITY(U,$J,358.3,8194,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8194,1,3,0)
+ ;;=3^Constipation, unspecified
+ ;;^UTILITY(U,$J,358.3,8194,1,4,0)
+ ;;=4^K59.00
+ ;;^UTILITY(U,$J,358.3,8194,2)
+ ;;=^323537
+ ;;^UTILITY(U,$J,358.3,8195,0)
+ ;;=K58.9^^55^536^66
+ ;;^UTILITY(U,$J,358.3,8195,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8195,1,3,0)
+ ;;=3^Irritable bowel syndrome without diarrhea
+ ;;^UTILITY(U,$J,358.3,8195,1,4,0)
+ ;;=4^K58.9
+ ;;^UTILITY(U,$J,358.3,8195,2)
+ ;;=^5008740
+ ;;^UTILITY(U,$J,358.3,8196,0)
+ ;;=K59.1^^55^536^50
+ ;;^UTILITY(U,$J,358.3,8196,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8196,1,3,0)
+ ;;=3^Functional diarrhea
+ ;;^UTILITY(U,$J,358.3,8196,1,4,0)
+ ;;=4^K59.1
+ ;;^UTILITY(U,$J,358.3,8196,2)
+ ;;=^270281
+ ;;^UTILITY(U,$J,358.3,8197,0)
+ ;;=K61.1^^55^536^87
+ ;;^UTILITY(U,$J,358.3,8197,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8197,1,3,0)
+ ;;=3^Rectal abscess
+ ;;^UTILITY(U,$J,358.3,8197,1,4,0)
+ ;;=4^K61.1
+ ;;^UTILITY(U,$J,358.3,8197,2)
+ ;;=^259588
+ ;;^UTILITY(U,$J,358.3,8198,0)
+ ;;=K61.0^^55^536^10
+ ;;^UTILITY(U,$J,358.3,8198,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8198,1,3,0)
+ ;;=3^Anal abscess
+ ;;^UTILITY(U,$J,358.3,8198,1,4,0)
+ ;;=4^K61.0
+ ;;^UTILITY(U,$J,358.3,8198,2)
+ ;;=^5008749
+ ;;^UTILITY(U,$J,358.3,8199,0)
+ ;;=K61.3^^55^536^67
+ ;;^UTILITY(U,$J,358.3,8199,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8199,1,3,0)
+ ;;=3^Ischiorectal abscess
+ ;;^UTILITY(U,$J,358.3,8199,1,4,0)
+ ;;=4^K61.3
+ ;;^UTILITY(U,$J,358.3,8199,2)
+ ;;=^5008751
+ ;;^UTILITY(U,$J,358.3,8200,0)
+ ;;=K62.5^^55^536^59
+ ;;^UTILITY(U,$J,358.3,8200,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8200,1,3,0)
+ ;;=3^Hemorrhage of anus and rectum
+ ;;^UTILITY(U,$J,358.3,8200,1,4,0)
+ ;;=4^K62.5
+ ;;^UTILITY(U,$J,358.3,8200,2)
+ ;;=^5008755
+ ;;^UTILITY(U,$J,358.3,8201,0)
+ ;;=K70.0^^55^536^7
+ ;;^UTILITY(U,$J,358.3,8201,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8201,1,3,0)
+ ;;=3^Alcoholic fatty liver
+ ;;^UTILITY(U,$J,358.3,8201,1,4,0)
+ ;;=4^K70.0
+ ;;^UTILITY(U,$J,358.3,8201,2)
+ ;;=^5008784
+ ;;^UTILITY(U,$J,358.3,8202,0)
+ ;;=K70.10^^55^536^8
+ ;;^UTILITY(U,$J,358.3,8202,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8202,1,3,0)
+ ;;=3^Alcoholic hepatitis without ascites
+ ;;^UTILITY(U,$J,358.3,8202,1,4,0)
+ ;;=4^K70.10
+ ;;^UTILITY(U,$J,358.3,8202,2)
+ ;;=^5008785
+ ;;^UTILITY(U,$J,358.3,8203,0)
+ ;;=K70.30^^55^536^6
+ ;;^UTILITY(U,$J,358.3,8203,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8203,1,3,0)
+ ;;=3^Alcoholic cirrhosis of liver without ascites
+ ;;^UTILITY(U,$J,358.3,8203,1,4,0)
+ ;;=4^K70.30
+ ;;^UTILITY(U,$J,358.3,8203,2)
+ ;;=^5008788
+ ;;^UTILITY(U,$J,358.3,8204,0)
+ ;;=K70.9^^55^536^9
+ ;;^UTILITY(U,$J,358.3,8204,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8204,1,3,0)
+ ;;=3^Alcoholic liver disease, unspecified
+ ;;^UTILITY(U,$J,358.3,8204,1,4,0)
+ ;;=4^K70.9
+ ;;^UTILITY(U,$J,358.3,8204,2)
+ ;;=^5008792

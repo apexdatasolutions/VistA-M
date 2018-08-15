@@ -1,96 +1,132 @@
-IBDEI11Z ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI11Z ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,18868,1,3,0)
- ;;=3^27818
- ;;^UTILITY(U,$J,358.3,18869,0)
- ;;=27822^^122^1205^38^^^^1
- ;;^UTILITY(U,$J,358.3,18869,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18869,1,2,0)
- ;;=2^Open Tx of trimalleolar ankle fracture, with or w/o internal or external fixation of, medial and/or lateral malleolus; w/o fixation of posterior lip
- ;;^UTILITY(U,$J,358.3,18869,1,3,0)
- ;;=3^27822
- ;;^UTILITY(U,$J,358.3,18870,0)
- ;;=27823^^122^1205^39^^^^1
- ;;^UTILITY(U,$J,358.3,18870,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18870,1,2,0)
- ;;=2^Open Tx of trimalleolar ankle fracture, with or w/o internal or external fixation, medial and/or lateral malleolus; with fixation of posterior lip  
- ;;^UTILITY(U,$J,358.3,18870,1,3,0)
- ;;=3^27823
- ;;^UTILITY(U,$J,358.3,18871,0)
- ;;=27824^^122^1205^40^^^^1
- ;;^UTILITY(U,$J,358.3,18871,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18871,1,2,0)
- ;;=2^Closed Tx of fracture of weight bearing articular portion of distal tibia, with or w/o anesthesia; w/o manipulation 
- ;;^UTILITY(U,$J,358.3,18871,1,3,0)
- ;;=3^27824
- ;;^UTILITY(U,$J,358.3,18872,0)
- ;;=27825^^122^1205^41^^^^1
- ;;^UTILITY(U,$J,358.3,18872,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18872,1,2,0)
- ;;=2^Closed Tx of fracture of weight bearing articular portion of distal tibia, with or w/o anesthesia; with skeletal traction &/or requiring manipulation
- ;;^UTILITY(U,$J,358.3,18872,1,3,0)
- ;;=3^27825
- ;;^UTILITY(U,$J,358.3,18873,0)
- ;;=27826^^122^1205^42^^^^1
- ;;^UTILITY(U,$J,358.3,18873,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18873,1,2,0)
- ;;=2^Open Tx of fracture of weight bearing articular surface/portion of distal tibia, w/ internal or external fixation; of fibula only
- ;;^UTILITY(U,$J,358.3,18873,1,3,0)
- ;;=3^27826
- ;;^UTILITY(U,$J,358.3,18874,0)
- ;;=27827^^122^1205^43^^^^1
- ;;^UTILITY(U,$J,358.3,18874,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18874,1,2,0)
- ;;=2^Open Tx of fracture of weight bearing articular surface/portion of distal tibia, w/ internal or external fixation; of tibia only
- ;;^UTILITY(U,$J,358.3,18874,1,3,0)
- ;;=3^27827
- ;;^UTILITY(U,$J,358.3,18875,0)
- ;;=27828^^122^1205^44^^^^1
- ;;^UTILITY(U,$J,358.3,18875,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18875,1,2,0)
- ;;=2^Open Tx of fracture of weight bearing articular surface/portionof distal tibia, w/ internal or external fixation; of both tibia & fibula
- ;;^UTILITY(U,$J,358.3,18875,1,3,0)
- ;;=3^27828
- ;;^UTILITY(U,$J,358.3,18876,0)
- ;;=27829^^122^1205^45^^^^1
- ;;^UTILITY(U,$J,358.3,18876,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18876,1,2,0)
- ;;=2^Open Tx of distal tibiofibular joint disruption, with or w/o internal or external fixation
- ;;^UTILITY(U,$J,358.3,18876,1,3,0)
- ;;=3^27829
- ;;^UTILITY(U,$J,358.3,18877,0)
- ;;=28540^^122^1205^46^^^^1
- ;;^UTILITY(U,$J,358.3,18877,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18877,1,2,0)
- ;;=2^Closed Tx of tarsal bone dislocation, other than talotarsal; w/o anesthesia
- ;;^UTILITY(U,$J,358.3,18877,1,3,0)
- ;;=3^28540
- ;;^UTILITY(U,$J,358.3,18878,0)
- ;;=28545^^122^1205^47^^^^1
- ;;^UTILITY(U,$J,358.3,18878,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18878,1,2,0)
- ;;=2^Closed Tx of tarsal bone dislocation, other than talotarsal; requiring anesthesia
- ;;^UTILITY(U,$J,358.3,18878,1,3,0)
- ;;=3^28545
- ;;^UTILITY(U,$J,358.3,18879,0)
- ;;=28546^^122^1205^48^^^^1
- ;;^UTILITY(U,$J,358.3,18879,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18879,1,2,0)
- ;;=2^Perc Fixation Tarsal Bone Dislocation
- ;;^UTILITY(U,$J,358.3,18879,1,3,0)
- ;;=3^28546
- ;;^UTILITY(U,$J,358.3,18880,0)
- ;;=28555^^122^1205^49^^^^1
+ ;;^UTILITY(U,$J,358.3,17532,2)
+ ;;=^5059526
+ ;;^UTILITY(U,$J,358.3,17533,0)
+ ;;=W01.0XXD^^88^863^3
+ ;;^UTILITY(U,$J,358.3,17533,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17533,1,3,0)
+ ;;=3^Fall Same Level w/o Strike Against Object,Subsequent
+ ;;^UTILITY(U,$J,358.3,17533,1,4,0)
+ ;;=4^W01.0XXD
+ ;;^UTILITY(U,$J,358.3,17533,2)
+ ;;=^5059523
+ ;;^UTILITY(U,$J,358.3,17534,0)
+ ;;=W18.30XD^^88^863^4
+ ;;^UTILITY(U,$J,358.3,17534,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17534,1,3,0)
+ ;;=3^Fall Same Level,Unspec,Subsequent
+ ;;^UTILITY(U,$J,358.3,17534,1,4,0)
+ ;;=4^W18.30XD
+ ;;^UTILITY(U,$J,358.3,17534,2)
+ ;;=^5059810
+ ;;^UTILITY(U,$J,358.3,17535,0)
+ ;;=W04.XXXD^^88^863^6
+ ;;^UTILITY(U,$J,358.3,17535,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17535,1,3,0)
+ ;;=3^Fall While Being Carried by Oth Persons,Subsequent
+ ;;^UTILITY(U,$J,358.3,17535,1,4,0)
+ ;;=4^W04.XXXD
+ ;;^UTILITY(U,$J,358.3,17535,2)
+ ;;=^5059548
+ ;;^UTILITY(U,$J,358.3,17536,0)
+ ;;=W17.89XD^^88^863^18
+ ;;^UTILITY(U,$J,358.3,17536,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17536,1,3,0)
+ ;;=3^Fall from One Level to Another,Subsequent
+ ;;^UTILITY(U,$J,358.3,17536,1,4,0)
+ ;;=4^W17.89XD
+ ;;^UTILITY(U,$J,358.3,17536,2)
+ ;;=^5059788
+ ;;^UTILITY(U,$J,358.3,17537,0)
+ ;;=W03.XXXD^^88^863^1
+ ;;^UTILITY(U,$J,358.3,17537,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17537,1,3,0)
+ ;;=3^Fall Same Level d/t Collision w/ Another Person,Subsequent
+ ;;^UTILITY(U,$J,358.3,17537,1,4,0)
+ ;;=4^W03.XXXD
+ ;;^UTILITY(U,$J,358.3,17537,2)
+ ;;=^5059545
+ ;;^UTILITY(U,$J,358.3,17538,0)
+ ;;=W18.00XD^^88^863^8
+ ;;^UTILITY(U,$J,358.3,17538,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17538,1,3,0)
+ ;;=3^Fall d/t Striking Unspec Object,Subsequent
+ ;;^UTILITY(U,$J,358.3,17538,1,4,0)
+ ;;=4^W18.00XD
+ ;;^UTILITY(U,$J,358.3,17538,2)
+ ;;=^5059791
+ ;;^UTILITY(U,$J,358.3,17539,0)
+ ;;=W00.9XXD^^88^863^7
+ ;;^UTILITY(U,$J,358.3,17539,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17539,1,3,0)
+ ;;=3^Fall d/t Snow/Ice,Subsequent
+ ;;^UTILITY(U,$J,358.3,17539,1,4,0)
+ ;;=4^W00.9XXD
+ ;;^UTILITY(U,$J,358.3,17539,2)
+ ;;=^5059520
+ ;;^UTILITY(U,$J,358.3,17540,0)
+ ;;=W19.XXXD^^88^863^5
+ ;;^UTILITY(U,$J,358.3,17540,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17540,1,3,0)
+ ;;=3^Fall Unspec,Subsequent
+ ;;^UTILITY(U,$J,358.3,17540,1,4,0)
+ ;;=4^W19.XXXD
+ ;;^UTILITY(U,$J,358.3,17540,2)
+ ;;=^5059834
+ ;;^UTILITY(U,$J,358.3,17541,0)
+ ;;=W18.40XD^^88^863^24
+ ;;^UTILITY(U,$J,358.3,17541,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17541,1,3,0)
+ ;;=3^Slip/Trip/Stumble w/o Falling,Subsequent
+ ;;^UTILITY(U,$J,358.3,17541,1,4,0)
+ ;;=4^W18.40XD
+ ;;^UTILITY(U,$J,358.3,17541,2)
+ ;;=^5059819
+ ;;^UTILITY(U,$J,358.3,17542,0)
+ ;;=R27.0^^88^864^2
+ ;;^UTILITY(U,$J,358.3,17542,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17542,1,3,0)
+ ;;=3^Ataxia,Unspec
+ ;;^UTILITY(U,$J,358.3,17542,1,4,0)
+ ;;=4^R27.0
+ ;;^UTILITY(U,$J,358.3,17542,2)
+ ;;=^5019310
+ ;;^UTILITY(U,$J,358.3,17543,0)
+ ;;=Z74.1^^88^864^1
+ ;;^UTILITY(U,$J,358.3,17543,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17543,1,3,0)
+ ;;=3^Assistance Needed for Personal Care
+ ;;^UTILITY(U,$J,358.3,17543,1,4,0)
+ ;;=4^Z74.1
+ ;;^UTILITY(U,$J,358.3,17543,2)
+ ;;=^5063284
+ ;;^UTILITY(U,$J,358.3,17544,0)
+ ;;=R27.9^^88^864^3
+ ;;^UTILITY(U,$J,358.3,17544,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17544,1,3,0)
+ ;;=3^Coordination,Lack of,Unspec
+ ;;^UTILITY(U,$J,358.3,17544,1,4,0)
+ ;;=4^R27.9
+ ;;^UTILITY(U,$J,358.3,17544,2)
+ ;;=^5019312
+ ;;^UTILITY(U,$J,358.3,17545,0)
+ ;;=R26.9^^88^864^6
+ ;;^UTILITY(U,$J,358.3,17545,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17545,1,3,0)
+ ;;=3^Gait/Mobility,Abnormalities,Unspec

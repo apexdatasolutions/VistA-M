@@ -1,0 +1,134 @@
+IBDEI1NL ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,27663,1,4,0)
+ ;;=4^C81.90
+ ;;^UTILITY(U,$J,358.3,27663,2)
+ ;;=^5001451
+ ;;^UTILITY(U,$J,358.3,27664,0)
+ ;;=D89.2^^132^1320^88
+ ;;^UTILITY(U,$J,358.3,27664,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27664,1,3,0)
+ ;;=3^Hypergammaglobulenemia,Unspec
+ ;;^UTILITY(U,$J,358.3,27664,1,4,0)
+ ;;=4^D89.2
+ ;;^UTILITY(U,$J,358.3,27664,2)
+ ;;=^5002455
+ ;;^UTILITY(U,$J,358.3,27665,0)
+ ;;=D05.12^^132^1320^89
+ ;;^UTILITY(U,$J,358.3,27665,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27665,1,3,0)
+ ;;=3^Intraductal Carcinoma in Situ,Left Breast
+ ;;^UTILITY(U,$J,358.3,27665,1,4,0)
+ ;;=4^D05.12
+ ;;^UTILITY(U,$J,358.3,27665,2)
+ ;;=^5001931
+ ;;^UTILITY(U,$J,358.3,27666,0)
+ ;;=D05.11^^132^1320^90
+ ;;^UTILITY(U,$J,358.3,27666,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27666,1,3,0)
+ ;;=3^Intraductal Carcinoma in Situ,Right Breast
+ ;;^UTILITY(U,$J,358.3,27666,1,4,0)
+ ;;=4^D05.11
+ ;;^UTILITY(U,$J,358.3,27666,2)
+ ;;=^5001930
+ ;;^UTILITY(U,$J,358.3,27667,0)
+ ;;=D05.10^^132^1320^91
+ ;;^UTILITY(U,$J,358.3,27667,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27667,1,3,0)
+ ;;=3^Intraductal Carcinoma in Situ,Unspec Breast
+ ;;^UTILITY(U,$J,358.3,27667,1,4,0)
+ ;;=4^D05.10
+ ;;^UTILITY(U,$J,358.3,27667,2)
+ ;;=^5001929
+ ;;^UTILITY(U,$J,358.3,27668,0)
+ ;;=D50.0^^132^1320^92
+ ;;^UTILITY(U,$J,358.3,27668,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27668,1,3,0)
+ ;;=3^Iron Deficiency Anemia Secondary to Blood Loss
+ ;;^UTILITY(U,$J,358.3,27668,1,4,0)
+ ;;=4^D50.0
+ ;;^UTILITY(U,$J,358.3,27668,2)
+ ;;=^267971
+ ;;^UTILITY(U,$J,358.3,27669,0)
+ ;;=D50.9^^132^1320^93
+ ;;^UTILITY(U,$J,358.3,27669,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27669,1,3,0)
+ ;;=3^Iron Deficiency Anemia,Unspec
+ ;;^UTILITY(U,$J,358.3,27669,1,4,0)
+ ;;=4^D50.9
+ ;;^UTILITY(U,$J,358.3,27669,2)
+ ;;=^5002283
+ ;;^UTILITY(U,$J,358.3,27670,0)
+ ;;=C46.9^^132^1320^94
+ ;;^UTILITY(U,$J,358.3,27670,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27670,1,3,0)
+ ;;=3^Kaposi's Sarcoma,Unspec
+ ;;^UTILITY(U,$J,358.3,27670,1,4,0)
+ ;;=4^C46.9
+ ;;^UTILITY(U,$J,358.3,27670,2)
+ ;;=^5001108
+ ;;^UTILITY(U,$J,358.3,27671,0)
+ ;;=C22.0^^132^1320^95
+ ;;^UTILITY(U,$J,358.3,27671,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27671,1,3,0)
+ ;;=3^Liver Cell Carcinoma
+ ;;^UTILITY(U,$J,358.3,27671,1,4,0)
+ ;;=4^C22.0
+ ;;^UTILITY(U,$J,358.3,27671,2)
+ ;;=^5000933
+ ;;^UTILITY(U,$J,358.3,27672,0)
+ ;;=D05.02^^132^1320^96
+ ;;^UTILITY(U,$J,358.3,27672,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27672,1,3,0)
+ ;;=3^Lobular Carcinoma in Situ,Left Breast
+ ;;^UTILITY(U,$J,358.3,27672,1,4,0)
+ ;;=4^D05.02
+ ;;^UTILITY(U,$J,358.3,27672,2)
+ ;;=^5001928
+ ;;^UTILITY(U,$J,358.3,27673,0)
+ ;;=D05.01^^132^1320^97
+ ;;^UTILITY(U,$J,358.3,27673,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27673,1,3,0)
+ ;;=3^Lobular Carcinoma in Situ,Right Breast
+ ;;^UTILITY(U,$J,358.3,27673,1,4,0)
+ ;;=4^D05.01
+ ;;^UTILITY(U,$J,358.3,27673,2)
+ ;;=^5001927
+ ;;^UTILITY(U,$J,358.3,27674,0)
+ ;;=D05.00^^132^1320^98
+ ;;^UTILITY(U,$J,358.3,27674,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27674,1,3,0)
+ ;;=3^Lobular Carcinoma in Situ,Unspec Breast
+ ;;^UTILITY(U,$J,358.3,27674,1,4,0)
+ ;;=4^D05.00
+ ;;^UTILITY(U,$J,358.3,27674,2)
+ ;;=^5001926
+ ;;^UTILITY(U,$J,358.3,27675,0)
+ ;;=R59.0^^132^1320^59
+ ;;^UTILITY(U,$J,358.3,27675,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27675,1,3,0)
+ ;;=3^Enlarged Lymph Nodes,Localized
+ ;;^UTILITY(U,$J,358.3,27675,1,4,0)
+ ;;=4^R59.0
+ ;;^UTILITY(U,$J,358.3,27675,2)
+ ;;=^5019529
+ ;;^UTILITY(U,$J,358.3,27676,0)
+ ;;=C83.59^^132^1320^99
+ ;;^UTILITY(U,$J,358.3,27676,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27676,1,3,0)
+ ;;=3^Lymphoblastic Lymphoma,Extranodal/Solid Organ Sites

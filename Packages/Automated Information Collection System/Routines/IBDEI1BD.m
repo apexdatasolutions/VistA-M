@@ -1,144 +1,120 @@
-IBDEI1BD ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1BD ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,23528,1,2,0)
- ;;=2^V02.9
- ;;^UTILITY(U,$J,358.3,23528,1,5,0)
- ;;=5^Nasal Staph Carrier
- ;;^UTILITY(U,$J,358.3,23528,2)
- ;;=^295176
- ;;^UTILITY(U,$J,358.3,23529,0)
- ;;=709.3^^148^1488^2
- ;;^UTILITY(U,$J,358.3,23529,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23529,1,2,0)
- ;;=2^709.3
- ;;^UTILITY(U,$J,358.3,23529,1,5,0)
- ;;=5^Necrobiosis Lipidica
- ;;^UTILITY(U,$J,358.3,23529,2)
- ;;=^31460
- ;;^UTILITY(U,$J,358.3,23530,0)
- ;;=215.9^^148^1488^3
- ;;^UTILITY(U,$J,358.3,23530,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23530,1,2,0)
- ;;=2^215.9
- ;;^UTILITY(U,$J,358.3,23530,1,5,0)
- ;;=5^Neurofibroma
- ;;^UTILITY(U,$J,358.3,23530,2)
- ;;=^267620
- ;;^UTILITY(U,$J,358.3,23531,0)
- ;;=698.4^^148^1488^4
- ;;^UTILITY(U,$J,358.3,23531,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23531,1,2,0)
- ;;=2^698.4
- ;;^UTILITY(U,$J,358.3,23531,1,5,0)
- ;;=5^Neurotic Excoriation
- ;;^UTILITY(U,$J,358.3,23531,2)
- ;;=^186786
- ;;^UTILITY(U,$J,358.3,23532,0)
- ;;=448.1^^148^1488^5
- ;;^UTILITY(U,$J,358.3,23532,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23532,1,2,0)
- ;;=2^448.1
- ;;^UTILITY(U,$J,358.3,23532,1,5,0)
- ;;=5^Nevus (Birthmark), non-neoplastic
- ;;^UTILITY(U,$J,358.3,23532,2)
- ;;=^269807
- ;;^UTILITY(U,$J,358.3,23533,0)
- ;;=691.8^^148^1489^13
- ;;^UTILITY(U,$J,358.3,23533,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23533,1,2,0)
- ;;=2^691.8
- ;;^UTILITY(U,$J,358.3,23533,1,5,0)
- ;;=5^Prurigo Nodularis
- ;;^UTILITY(U,$J,358.3,23533,2)
- ;;=^87342
- ;;^UTILITY(U,$J,358.3,23534,0)
- ;;=696.2^^148^1489^2
- ;;^UTILITY(U,$J,358.3,23534,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23534,1,2,0)
- ;;=2^696.2
- ;;^UTILITY(U,$J,358.3,23534,1,5,0)
- ;;=5^PLEVA
- ;;^UTILITY(U,$J,358.3,23534,2)
- ;;=^90056
- ;;^UTILITY(U,$J,358.3,23535,0)
- ;;=681.9^^148^1489^4
- ;;^UTILITY(U,$J,358.3,23535,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23535,1,2,0)
- ;;=2^681.9
- ;;^UTILITY(U,$J,358.3,23535,1,5,0)
- ;;=5^Paronychia
- ;;^UTILITY(U,$J,358.3,23535,2)
- ;;=^21158
- ;;^UTILITY(U,$J,358.3,23536,0)
- ;;=694.5^^148^1489^5
- ;;^UTILITY(U,$J,358.3,23536,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23536,1,2,0)
- ;;=2^694.5
- ;;^UTILITY(U,$J,358.3,23536,1,5,0)
- ;;=5^Pemphigiod, cicatricial
- ;;^UTILITY(U,$J,358.3,23536,2)
- ;;=^91108
- ;;^UTILITY(U,$J,358.3,23537,0)
- ;;=694.4^^148^1489^6
- ;;^UTILITY(U,$J,358.3,23537,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23537,1,2,0)
- ;;=2^694.4
- ;;^UTILITY(U,$J,358.3,23537,1,5,0)
- ;;=5^Pemphigus
- ;;^UTILITY(U,$J,358.3,23537,2)
- ;;=^91124
- ;;^UTILITY(U,$J,358.3,23538,0)
- ;;=380.00^^148^1489^7
- ;;^UTILITY(U,$J,358.3,23538,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23538,1,2,0)
- ;;=2^380.00
- ;;^UTILITY(U,$J,358.3,23538,1,5,0)
- ;;=5^Perichondritis Pinna Nos
- ;;^UTILITY(U,$J,358.3,23538,2)
- ;;=^269337
- ;;^UTILITY(U,$J,358.3,23539,0)
- ;;=692.72^^148^1489^9
- ;;^UTILITY(U,$J,358.3,23539,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23539,1,2,0)
- ;;=2^692.72
- ;;^UTILITY(U,$J,358.3,23539,1,5,0)
- ;;=5^Polymophic Light Eruption
- ;;^UTILITY(U,$J,358.3,23539,2)
- ;;=^93951
- ;;^UTILITY(U,$J,358.3,23540,0)
- ;;=709.09^^148^1489^8
- ;;^UTILITY(U,$J,358.3,23540,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23540,1,2,0)
- ;;=2^709.09
- ;;^UTILITY(U,$J,358.3,23540,1,5,0)
- ;;=5^Poikiloderma
- ;;^UTILITY(U,$J,358.3,23540,2)
- ;;=^303313
- ;;^UTILITY(U,$J,358.3,23541,0)
- ;;=705.81^^148^1489^10
- ;;^UTILITY(U,$J,358.3,23541,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23541,1,2,0)
- ;;=2^705.81
- ;;^UTILITY(U,$J,358.3,23541,1,5,0)
- ;;=5^Pompholyx
- ;;^UTILITY(U,$J,358.3,23541,2)
- ;;=^96545
- ;;^UTILITY(U,$J,358.3,23542,0)
- ;;=277.1^^148^1489^11
- ;;^UTILITY(U,$J,358.3,23542,1,0)
- ;;=^358.31IA^5^2
+ ;;^UTILITY(U,$J,358.3,21924,0)
+ ;;=S62.655S^^101^1035^82
+ ;;^UTILITY(U,$J,358.3,21924,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21924,1,3,0)
+ ;;=3^Nondisp fx of medial phalanx of left ring finger, sequela
+ ;;^UTILITY(U,$J,358.3,21924,1,4,0)
+ ;;=4^S62.655S
+ ;;^UTILITY(U,$J,358.3,21924,2)
+ ;;=^5034773
+ ;;^UTILITY(U,$J,358.3,21925,0)
+ ;;=S62.650S^^101^1035^83
+ ;;^UTILITY(U,$J,358.3,21925,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21925,1,3,0)
+ ;;=3^Nondisp fx of medial phalanx of right index finger, sequela
+ ;;^UTILITY(U,$J,358.3,21925,1,4,0)
+ ;;=4^S62.650S
+ ;;^UTILITY(U,$J,358.3,21925,2)
+ ;;=^5034738
+ ;;^UTILITY(U,$J,358.3,21926,0)
+ ;;=S62.656S^^101^1035^84
+ ;;^UTILITY(U,$J,358.3,21926,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21926,1,3,0)
+ ;;=3^Nondisp fx of medial phalanx of right little finger, sequela
+ ;;^UTILITY(U,$J,358.3,21926,1,4,0)
+ ;;=4^S62.656S
+ ;;^UTILITY(U,$J,358.3,21926,2)
+ ;;=^5034780
+ ;;^UTILITY(U,$J,358.3,21927,0)
+ ;;=S62.652S^^101^1035^85
+ ;;^UTILITY(U,$J,358.3,21927,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21927,1,3,0)
+ ;;=3^Nondisp fx of medial phalanx of right middle finger, sequela
+ ;;^UTILITY(U,$J,358.3,21927,1,4,0)
+ ;;=4^S62.652S
+ ;;^UTILITY(U,$J,358.3,21927,2)
+ ;;=^5034752
+ ;;^UTILITY(U,$J,358.3,21928,0)
+ ;;=S62.654S^^101^1035^86
+ ;;^UTILITY(U,$J,358.3,21928,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21928,1,3,0)
+ ;;=3^Nondisp fx of medial phalanx of right ring finger, sequela
+ ;;^UTILITY(U,$J,358.3,21928,1,4,0)
+ ;;=4^S62.654S
+ ;;^UTILITY(U,$J,358.3,21928,2)
+ ;;=^5034766
+ ;;^UTILITY(U,$J,358.3,21929,0)
+ ;;=S62.641S^^101^1035^99
+ ;;^UTILITY(U,$J,358.3,21929,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21929,1,3,0)
+ ;;=3^Nondisp fx of proximal phalanx of left index finger, sequela
+ ;;^UTILITY(U,$J,358.3,21929,1,4,0)
+ ;;=4^S62.641S
+ ;;^UTILITY(U,$J,358.3,21929,2)
+ ;;=^5034675
+ ;;^UTILITY(U,$J,358.3,21930,0)
+ ;;=S62.647S^^101^1035^97
+ ;;^UTILITY(U,$J,358.3,21930,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21930,1,3,0)
+ ;;=3^Nondisp fx of proximal phalanx of l little finger, sequela
+ ;;^UTILITY(U,$J,358.3,21930,1,4,0)
+ ;;=4^S62.647S
+ ;;^UTILITY(U,$J,358.3,21930,2)
+ ;;=^5034717
+ ;;^UTILITY(U,$J,358.3,21931,0)
+ ;;=S62.643S^^101^1035^98
+ ;;^UTILITY(U,$J,358.3,21931,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21931,1,3,0)
+ ;;=3^Nondisp fx of proximal phalanx of l mid finger, sequela
+ ;;^UTILITY(U,$J,358.3,21931,1,4,0)
+ ;;=4^S62.643S
+ ;;^UTILITY(U,$J,358.3,21931,2)
+ ;;=^5034689
+ ;;^UTILITY(U,$J,358.3,21932,0)
+ ;;=S62.645S^^101^1035^100
+ ;;^UTILITY(U,$J,358.3,21932,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21932,1,3,0)
+ ;;=3^Nondisp fx of proximal phalanx of left ring finger, sequela
+ ;;^UTILITY(U,$J,358.3,21932,1,4,0)
+ ;;=4^S62.645S
+ ;;^UTILITY(U,$J,358.3,21932,2)
+ ;;=^5034703
+ ;;^UTILITY(U,$J,358.3,21933,0)
+ ;;=S62.640S^^101^1035^102
+ ;;^UTILITY(U,$J,358.3,21933,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21933,1,3,0)
+ ;;=3^Nondisp fx of proximal phalanx of r idx fngr, sequela
+ ;;^UTILITY(U,$J,358.3,21933,1,4,0)
+ ;;=4^S62.640S
+ ;;^UTILITY(U,$J,358.3,21933,2)
+ ;;=^5034668
+ ;;^UTILITY(U,$J,358.3,21934,0)
+ ;;=S62.646S^^101^1035^103
+ ;;^UTILITY(U,$J,358.3,21934,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21934,1,3,0)
+ ;;=3^Nondisp fx of proximal phalanx of r little finger, sequela
+ ;;^UTILITY(U,$J,358.3,21934,1,4,0)
+ ;;=4^S62.646S
+ ;;^UTILITY(U,$J,358.3,21934,2)
+ ;;=^5034710
+ ;;^UTILITY(U,$J,358.3,21935,0)
+ ;;=S62.642S^^101^1035^104
+ ;;^UTILITY(U,$J,358.3,21935,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21935,1,3,0)
+ ;;=3^Nondisp fx of proximal phalanx of r mid finger, sequela

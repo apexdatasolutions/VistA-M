@@ -1,132 +1,124 @@
-IBDEI1BW ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1BW ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,23801,1,3,0)
- ;;=3^Foley Placement;Comp
- ;;^UTILITY(U,$J,358.3,23802,0)
- ;;=51700^^151^1516^3^^^^1
- ;;^UTILITY(U,$J,358.3,23802,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23802,1,2,0)
- ;;=2^51700
- ;;^UTILITY(U,$J,358.3,23802,1,3,0)
- ;;=3^Bladder Irrigation;Simple
- ;;^UTILITY(U,$J,358.3,23803,0)
- ;;=51720^^151^1516^2^^^^1
- ;;^UTILITY(U,$J,358.3,23803,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23803,1,2,0)
- ;;=2^51720
- ;;^UTILITY(U,$J,358.3,23803,1,3,0)
- ;;=3^Bladder Instill Anticarc
- ;;^UTILITY(U,$J,358.3,23804,0)
- ;;=90586^^151^1516^1^^^^1
- ;;^UTILITY(U,$J,358.3,23804,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23804,1,2,0)
- ;;=2^90586
- ;;^UTILITY(U,$J,358.3,23804,1,3,0)
- ;;=3^BCG for Bladder CA,Live
- ;;^UTILITY(U,$J,358.3,23805,0)
- ;;=51736^^151^1516^14^^^^1
- ;;^UTILITY(U,$J,358.3,23805,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23805,1,2,0)
- ;;=2^51736
- ;;^UTILITY(U,$J,358.3,23805,1,3,0)
- ;;=3^Uroflow;Simple
- ;;^UTILITY(U,$J,358.3,23806,0)
- ;;=51798^^151^1516^9^^^^1
- ;;^UTILITY(U,$J,358.3,23806,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23806,1,2,0)
- ;;=2^51798
- ;;^UTILITY(U,$J,358.3,23806,1,3,0)
- ;;=3^PVR by US
- ;;^UTILITY(U,$J,358.3,23807,0)
- ;;=54235^^151^1516^7^^^^1
- ;;^UTILITY(U,$J,358.3,23807,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23807,1,2,0)
- ;;=2^54235
- ;;^UTILITY(U,$J,358.3,23807,1,3,0)
- ;;=3^Inj of Corpora w/ Drugs
- ;;^UTILITY(U,$J,358.3,23808,0)
- ;;=99071^^151^1516^10^^^^1
- ;;^UTILITY(U,$J,358.3,23808,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23808,1,2,0)
- ;;=2^99071
- ;;^UTILITY(U,$J,358.3,23808,1,3,0)
- ;;=3^Patient Education Materials
- ;;^UTILITY(U,$J,358.3,23809,0)
- ;;=99078^^151^1516^6^^^^1
- ;;^UTILITY(U,$J,358.3,23809,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23809,1,2,0)
- ;;=2^99078
- ;;^UTILITY(U,$J,358.3,23809,1,3,0)
- ;;=3^Group Health Education
- ;;^UTILITY(U,$J,358.3,23810,0)
- ;;=98960^^151^1516^13^^^^1
- ;;^UTILITY(U,$J,358.3,23810,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23810,1,2,0)
- ;;=2^98960
- ;;^UTILITY(U,$J,358.3,23810,1,3,0)
- ;;=3^Patient Education,Indiv,30 Min
- ;;^UTILITY(U,$J,358.3,23811,0)
- ;;=98961^^151^1516^11^^^^1
- ;;^UTILITY(U,$J,358.3,23811,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23811,1,2,0)
- ;;=2^98961
- ;;^UTILITY(U,$J,358.3,23811,1,3,0)
- ;;=3^Patient Education,2-4 Pts,30 Min
- ;;^UTILITY(U,$J,358.3,23812,0)
- ;;=98962^^151^1516^12^^^^1
- ;;^UTILITY(U,$J,358.3,23812,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23812,1,2,0)
- ;;=2^98962
- ;;^UTILITY(U,$J,358.3,23812,1,3,0)
- ;;=3^Patient Education,5-8 Pts,30 Min
- ;;^UTILITY(U,$J,358.3,23813,0)
- ;;=99071^^151^1517^9^^^^1
- ;;^UTILITY(U,$J,358.3,23813,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23813,1,2,0)
- ;;=2^99071
- ;;^UTILITY(U,$J,358.3,23813,1,3,0)
- ;;=3^Patient Education Materials
- ;;^UTILITY(U,$J,358.3,23814,0)
- ;;=57160^^151^1517^6^^^^1
- ;;^UTILITY(U,$J,358.3,23814,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23814,1,2,0)
- ;;=2^57160
- ;;^UTILITY(U,$J,358.3,23814,1,3,0)
- ;;=3^Insert Pessary/Oth Device
- ;;^UTILITY(U,$J,358.3,23815,0)
- ;;=90656^^151^1517^5^^^^1
- ;;^UTILITY(U,$J,358.3,23815,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23815,1,2,0)
- ;;=2^90656
- ;;^UTILITY(U,$J,358.3,23815,1,3,0)
- ;;=3^Flu Vaccine No Preservatives
- ;;^UTILITY(U,$J,358.3,23816,0)
- ;;=90658^^151^1517^4^^^^1
- ;;^UTILITY(U,$J,358.3,23816,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23816,1,2,0)
- ;;=2^90658
- ;;^UTILITY(U,$J,358.3,23816,1,3,0)
- ;;=3^Flu Vaccine
- ;;^UTILITY(U,$J,358.3,23817,0)
- ;;=90715^^151^1517^12^^^^1
- ;;^UTILITY(U,$J,358.3,23817,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23817,1,2,0)
- ;;=2^90715
+ ;;^UTILITY(U,$J,358.3,22149,1,4,0)
+ ;;=4^S82.144S
+ ;;^UTILITY(U,$J,358.3,22149,2)
+ ;;=^5040934
+ ;;^UTILITY(U,$J,358.3,22150,0)
+ ;;=S82.255S^^101^1038^41
+ ;;^UTILITY(U,$J,358.3,22150,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22150,1,3,0)
+ ;;=3^Nondisp fx of comminuted shaft of left tibia, sequela 
+ ;;^UTILITY(U,$J,358.3,22150,1,4,0)
+ ;;=4^S82.255S
+ ;;^UTILITY(U,$J,358.3,22150,2)
+ ;;=^5041506
+ ;;^UTILITY(U,$J,358.3,22151,0)
+ ;;=S82.254S^^101^1038^43
+ ;;^UTILITY(U,$J,358.3,22151,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22151,1,3,0)
+ ;;=3^Nondisp fx of comminuted shaft of right tibia, sequela 
+ ;;^UTILITY(U,$J,358.3,22151,1,4,0)
+ ;;=4^S82.254S
+ ;;^UTILITY(U,$J,358.3,22151,2)
+ ;;=^5041490
+ ;;^UTILITY(U,$J,358.3,22152,0)
+ ;;=S82.125S^^101^1038^45
+ ;;^UTILITY(U,$J,358.3,22152,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22152,1,3,0)
+ ;;=3^Nondisp fx of lateral condyle of left tibia, sequela
+ ;;^UTILITY(U,$J,358.3,22152,1,4,0)
+ ;;=4^S82.125S
+ ;;^UTILITY(U,$J,358.3,22152,2)
+ ;;=^5040758
+ ;;^UTILITY(U,$J,358.3,22153,0)
+ ;;=S82.124S^^101^1038^46
+ ;;^UTILITY(U,$J,358.3,22153,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22153,1,3,0)
+ ;;=3^Nondisp fx of lateral condyle of right tibia, sequela
+ ;;^UTILITY(U,$J,358.3,22153,1,4,0)
+ ;;=4^S82.124S
+ ;;^UTILITY(U,$J,358.3,22153,2)
+ ;;=^5040742
+ ;;^UTILITY(U,$J,358.3,22154,0)
+ ;;=S82.115S^^101^1038^49
+ ;;^UTILITY(U,$J,358.3,22154,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22154,1,3,0)
+ ;;=3^Nondisp fx of left tibial spine, sequela       
+ ;;^UTILITY(U,$J,358.3,22154,1,4,0)
+ ;;=4^S82.115S
+ ;;^UTILITY(U,$J,358.3,22154,2)
+ ;;=^5040662
+ ;;^UTILITY(U,$J,358.3,22155,0)
+ ;;=S82.155S^^101^1038^50
+ ;;^UTILITY(U,$J,358.3,22155,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22155,1,3,0)
+ ;;=3^Nondisp fx of left tibial tuberosity, sequela   
+ ;;^UTILITY(U,$J,358.3,22155,1,4,0)
+ ;;=4^S82.155S
+ ;;^UTILITY(U,$J,358.3,22155,2)
+ ;;=^5041046
+ ;;^UTILITY(U,$J,358.3,22156,0)
+ ;;=S82.135S^^101^1038^51
+ ;;^UTILITY(U,$J,358.3,22156,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22156,1,3,0)
+ ;;=3^Nondisp fx of medial condyle of left tibia, sequela
+ ;;^UTILITY(U,$J,358.3,22156,1,4,0)
+ ;;=4^S82.135S
+ ;;^UTILITY(U,$J,358.3,22156,2)
+ ;;=^5040854
+ ;;^UTILITY(U,$J,358.3,22157,0)
+ ;;=S82.134S^^101^1038^52
+ ;;^UTILITY(U,$J,358.3,22157,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22157,1,3,0)
+ ;;=3^Nondisp fx of medial condyle of right tibia, sequela
+ ;;^UTILITY(U,$J,358.3,22157,1,4,0)
+ ;;=4^S82.134S
+ ;;^UTILITY(U,$J,358.3,22157,2)
+ ;;=^5040838
+ ;;^UTILITY(U,$J,358.3,22158,0)
+ ;;=S82.55XS^^101^1038^53
+ ;;^UTILITY(U,$J,358.3,22158,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22158,1,3,0)
+ ;;=3^Nondisp fx of medial malleolus of left tibia, sequela
+ ;;^UTILITY(U,$J,358.3,22158,1,4,0)
+ ;;=4^S82.55XS
+ ;;^UTILITY(U,$J,358.3,22158,2)
+ ;;=^5042294
+ ;;^UTILITY(U,$J,358.3,22159,0)
+ ;;=S82.54XS^^101^1038^54
+ ;;^UTILITY(U,$J,358.3,22159,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22159,1,3,0)
+ ;;=3^Nondisp fx of medial malleolus of right tibia, sequela
+ ;;^UTILITY(U,$J,358.3,22159,1,4,0)
+ ;;=4^S82.54XS
+ ;;^UTILITY(U,$J,358.3,22159,2)
+ ;;=^5042278
+ ;;^UTILITY(U,$J,358.3,22160,0)
+ ;;=S82.114S^^101^1038^61
+ ;;^UTILITY(U,$J,358.3,22160,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22160,1,3,0)
+ ;;=3^Nondisp fx of right tibial spine, sequela      
+ ;;^UTILITY(U,$J,358.3,22160,1,4,0)
+ ;;=4^S82.114S
+ ;;^UTILITY(U,$J,358.3,22160,2)
+ ;;=^5040646
+ ;;^UTILITY(U,$J,358.3,22161,0)
+ ;;=S82.154S^^101^1038^62
+ ;;^UTILITY(U,$J,358.3,22161,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22161,1,3,0)
+ ;;=3^Nondisp fx of right tibial tuberosity, sequela  

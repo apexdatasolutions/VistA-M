@@ -1,0 +1,126 @@
+IBDEI1HP ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,24919,2)
+ ;;=^5054740
+ ;;^UTILITY(U,$J,358.3,24920,0)
+ ;;=T82.311A^^124^1239^7
+ ;;^UTILITY(U,$J,358.3,24920,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24920,1,3,0)
+ ;;=3^Breakdown of Carotid Arterial Graft,Init Encntr
+ ;;^UTILITY(U,$J,358.3,24920,1,4,0)
+ ;;=4^T82.311A
+ ;;^UTILITY(U,$J,358.3,24920,2)
+ ;;=^5054743
+ ;;^UTILITY(U,$J,358.3,24921,0)
+ ;;=T82.312A^^124^1239^8
+ ;;^UTILITY(U,$J,358.3,24921,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24921,1,3,0)
+ ;;=3^Breakdown of Femoral Arterial Graft,Init Encntr
+ ;;^UTILITY(U,$J,358.3,24921,1,4,0)
+ ;;=4^T82.312A
+ ;;^UTILITY(U,$J,358.3,24921,2)
+ ;;=^5054746
+ ;;^UTILITY(U,$J,358.3,24922,0)
+ ;;=T82.318A^^124^1239^17
+ ;;^UTILITY(U,$J,358.3,24922,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24922,1,3,0)
+ ;;=3^Breakdown of Vascular Grafts,Init Encntr
+ ;;^UTILITY(U,$J,358.3,24922,1,4,0)
+ ;;=4^T82.318A
+ ;;^UTILITY(U,$J,358.3,24922,2)
+ ;;=^5054749
+ ;;^UTILITY(U,$J,358.3,24923,0)
+ ;;=T82.319A^^124^1239^18
+ ;;^UTILITY(U,$J,358.3,24923,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24923,1,3,0)
+ ;;=3^Breakdown of Vascular Grafts,Unspec,Init Encntr
+ ;;^UTILITY(U,$J,358.3,24923,1,4,0)
+ ;;=4^T82.319A
+ ;;^UTILITY(U,$J,358.3,24923,2)
+ ;;=^5054752
+ ;;^UTILITY(U,$J,358.3,24924,0)
+ ;;=T82.320A^^124^1239^32
+ ;;^UTILITY(U,$J,358.3,24924,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24924,1,3,0)
+ ;;=3^Displacement of Aortic Graft,Init Encntr
+ ;;^UTILITY(U,$J,358.3,24924,1,4,0)
+ ;;=4^T82.320A
+ ;;^UTILITY(U,$J,358.3,24924,2)
+ ;;=^5054755
+ ;;^UTILITY(U,$J,358.3,24925,0)
+ ;;=T82.321A^^124^1239^37
+ ;;^UTILITY(U,$J,358.3,24925,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24925,1,3,0)
+ ;;=3^Displacement of Carotid Arterial Graft,Init Encntr
+ ;;^UTILITY(U,$J,358.3,24925,1,4,0)
+ ;;=4^T82.321A
+ ;;^UTILITY(U,$J,358.3,24925,2)
+ ;;=^5054758
+ ;;^UTILITY(U,$J,358.3,24926,0)
+ ;;=T82.322A^^124^1239^38
+ ;;^UTILITY(U,$J,358.3,24926,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24926,1,3,0)
+ ;;=3^Displacement of Femoral Arterial Graft,Init Encntr
+ ;;^UTILITY(U,$J,358.3,24926,1,4,0)
+ ;;=4^T82.322A
+ ;;^UTILITY(U,$J,358.3,24926,2)
+ ;;=^5054761
+ ;;^UTILITY(U,$J,358.3,24927,0)
+ ;;=T82.329A^^124^1239^47
+ ;;^UTILITY(U,$J,358.3,24927,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24927,1,3,0)
+ ;;=3^Displacement of Vascular Grafts,Unspec,Init Encntr
+ ;;^UTILITY(U,$J,358.3,24927,1,4,0)
+ ;;=4^T82.329A
+ ;;^UTILITY(U,$J,358.3,24927,2)
+ ;;=^5054767
+ ;;^UTILITY(U,$J,358.3,24928,0)
+ ;;=T82.330A^^124^1239^126
+ ;;^UTILITY(U,$J,358.3,24928,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24928,1,3,0)
+ ;;=3^Leakage of Aortic Graft,Init Encntr
+ ;;^UTILITY(U,$J,358.3,24928,1,4,0)
+ ;;=4^T82.330A
+ ;;^UTILITY(U,$J,358.3,24928,2)
+ ;;=^5054770
+ ;;^UTILITY(U,$J,358.3,24929,0)
+ ;;=T82.331A^^124^1239^129
+ ;;^UTILITY(U,$J,358.3,24929,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24929,1,3,0)
+ ;;=3^Leakage of Carotid Arterial Graft,Init Encntr
+ ;;^UTILITY(U,$J,358.3,24929,1,4,0)
+ ;;=4^T82.331A
+ ;;^UTILITY(U,$J,358.3,24929,2)
+ ;;=^5054773
+ ;;^UTILITY(U,$J,358.3,24930,0)
+ ;;=T82.332A^^124^1239^130
+ ;;^UTILITY(U,$J,358.3,24930,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24930,1,3,0)
+ ;;=3^Leakage of Femoral Arterial Graft,Init Encntr
+ ;;^UTILITY(U,$J,358.3,24930,1,4,0)
+ ;;=4^T82.332A
+ ;;^UTILITY(U,$J,358.3,24930,2)
+ ;;=^5054776
+ ;;^UTILITY(U,$J,358.3,24931,0)
+ ;;=T82.339A^^124^1239^135
+ ;;^UTILITY(U,$J,358.3,24931,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24931,1,3,0)
+ ;;=3^Leakage of Vascular Graft,Unspec,Init Encntr
+ ;;^UTILITY(U,$J,358.3,24931,1,4,0)
+ ;;=4^T82.339A
+ ;;^UTILITY(U,$J,358.3,24931,2)
+ ;;=^5054782

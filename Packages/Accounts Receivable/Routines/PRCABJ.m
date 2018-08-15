@@ -1,6 +1,6 @@
 PRCABJ ;WASH-ISC@ALTOONA,PA/LDB,TJK-NIGHTLY PROCESS FOR ACCOUNTS RECEIVABLE ;11/8/96  3:54 PM
- ;;4.5;Accounts Receivable;**11,34,101,114,155,153,141,165,167,173,201,237**;Mar 20, 1995
- ;;Per VHA Directive 10-93-142, this routine should not be modified.
+ ;;4.5;Accounts Receivable;**11,34,101,114,155,153,141,165,167,173,201,237,304,301**;Mar 20, 1995;Build 144
+ ;Per VA Directive 6402, this routine should not be modified.
  ;
  ;This routine is called by the PRCA NIGHTLY PROCESS option which should be run nightly to call the following tasks
  ;1) Update of interest/admin charges on patients' accounts
@@ -8,14 +8,17 @@ PRCABJ ;WASH-ISC@ALTOONA,PA/LDB,TJK-NIGHTLY PROCESS FOR ACCOUNTS RECEIVABLE ;11/
  ;3) Print of Patient Statements, Uniform Billing forms, and non-patient follow-up letters
  ;4) Purge of Receipts
  ;5) Creation of TOP (Treasury Offset Program) documents
- ;6) Print of the Follow-up list
- ;7) Purge AR Events
- ;8) Flag prepayments for refund review
- ;9) Print Comment List
- ;10) Starts the Repayment Plan Monitor
- ;11) Generates Diagnostic Measures Workload Reports
- ;12) Matches EFT with ERA
- ;13) Generates CBO Data Extract files for Boston ARC
+ ;6) Creation of Cross-Servicing (Treasury Cross-Servicing Project) documents
+ ;7) Print of the Follow-up list
+ ;8) Purge AR Events
+ ;9) Flag prepayments for refund review
+ ;10) Print Comment List
+ ;11) Starts the Repayment Plan Monitor
+ ;12) Generates Diagnostic Measures Workload Reports
+ ;13) Matches EFT with ERA
+ ;14) Generates CBO Data Extract files for Boston ARC
+ ;15) Auto-audit of Paper Bills
+ ;16) Generate the AR Diagnostic Measures Statistical Reports (for a defined period)
  ;
  ;Process will first check and Validate AR pointer files 341.1,
  ;430.2, and 430.3.
@@ -28,10 +31,10 @@ EN ;Start of nightly process-check to see if process is already running
  ;
 DRIVER ;All processes are called from this point
  N CHK,POP,% S CHK=0
- D CHK,INT,CHK,EN^RCCPCBJ,CHK,STM,CHK,RECPT,CHK,TOP,CHK,EVNT,CHK,BNUM
+ D CHK,INT,CHK,EN^RCCPCBJ,CHK,STM,CHK,RECPT,CHK,TOP,CHK,TCSP,CHK,EVNT,CHK,BNUM
  D CHK,ENUM,CHK,PURFMS,CHK,EN3^RCFMOBR,CHK,START^RCRJR,CHK,UB
  D CHK,STATMNT,CHK,UDLIST^PRCABJ1,CHK,LIST,CHK,COMMENT,CHK,REPAY
- D CHK,WRKLD,CHK,EFT,CHK,CBO
+ D CHK,WRKLD,CHK,EFT,CHK,CBO,ABAUDIT,ARDM
  D NOW^%DTC S $P(^RC(342,1,0),"^",10)=%
  L -^RC("PRCABJ")
  K ^RC("PRCABJ")
@@ -96,6 +99,15 @@ TOPQUE N ZTDESC,ZTASK,ZTDTH,ZTIO,ZTRTN,ARDUZ,ZTSAVE
  D ^%ZTLOAD
  Q
  ;
+TCSP ;Transmit Cross-Servicing (Treasury Cross-Servicing Project) documents
+ Q:$$DOW^XLFDT(DT,1)'=2
+ ;Run TCSP documents every Tuesday
+TCSPQUE N ZTDESC,ZTASK,ZTDTH,ZTIO,ZTRTN
+ S ZTIO="",ZTRTN="^RCTCSPD"
+ S ZTDESC="CROSS-SERVICING REFERRAL DOCUMENTS",ZTDTH=$H
+ D ^%ZTLOAD
+ Q
+ ;
 UB ;Print Uniform Billing forms
  N IOP,ZTIO,ZTSAVE,ZTRTN,ZTDESC,ZTASK,%ZIS,ZTDTH
  S ZTIO="",ZTRTN="PRCALT2",ZTDTH=$H,ZTDESC="Print Reimbursable Health Insurance Uniform Billing forms"
@@ -134,6 +146,15 @@ WRKLD ; Generates Diagnostic Measures Workload Reports
  D ^%ZTLOAD
  Q
  ;
+ ;PRCA*4.5*304 new tag ARDM
+ARDM ; Generate AR Diagnostic Measures statistic reports weekly
+ N ZTDESC,ZTDTH,ZTIO,ZTRTN,ZTSAVE
+ ;
+ ; run the report
+ S ZTIO="",ZTRTN="AUTO^RCDPENRU",ZTDTH=$H,ZTDESC="AR Diagnostic Measures Statistical Reports"
+ D ^%ZTLOAD
+ Q
+ ;
 EVNT ;Purge AR Events
  N IOP,ZTIO,ZTDESC,ZTASK,ZTIO,ZTRTN,ZTSAVE,%ZIS
  S ZTIO="",ZTRTN="PUR^RCEVDRV1",ZTDTH=$H,ZTDESC="Purge AR Event Information" D ^%ZTLOAD
@@ -161,4 +182,10 @@ CBO ; Create Extract Files for ARC
  NEW ZTRTN,ZTIO,ZTDTH,ZTSK,ZTDESC
  S ZTIO="",ZTRTN="EN^RCXVTSK",ZTDESC="CBO DATA EXTRACT",ZTDTH=$H
  D ^%ZTLOAD
+ Q
+ABAUDIT ;PRCA*4.5*304 - Auto-audit Paper bills
+ ;
+ N ZTRTN,ZTIO,ZTDTH,ZTSK,ZTDESC
+ ;
+ S ZTIO="",ZTRTN="ABAUDIT^PRCABJ2",ZTDESC="AR AUTO-AUDIT OF PAPER BILLS",ZTDTH=$H D ^%ZTLOAD
  Q

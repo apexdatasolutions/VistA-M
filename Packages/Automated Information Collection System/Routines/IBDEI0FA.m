@@ -1,140 +1,136 @@
-IBDEI0FA ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0FA ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,7389,1,4,0)
- ;;=4^V16.41
- ;;^UTILITY(U,$J,358.3,7389,1,5,0)
- ;;=5^Family h/o Cancer of Ovary
- ;;^UTILITY(U,$J,358.3,7389,2)
- ;;=^317951
- ;;^UTILITY(U,$J,358.3,7390,0)
- ;;=V16.42^^55^580^10
- ;;^UTILITY(U,$J,358.3,7390,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7390,1,4,0)
- ;;=4^V16.42
- ;;^UTILITY(U,$J,358.3,7390,1,5,0)
- ;;=5^Family h/o Cancer of Prostate
- ;;^UTILITY(U,$J,358.3,7390,2)
- ;;=^317952
- ;;^UTILITY(U,$J,358.3,7391,0)
- ;;=V16.43^^55^580^11
- ;;^UTILITY(U,$J,358.3,7391,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7391,1,4,0)
- ;;=4^V16.43
- ;;^UTILITY(U,$J,358.3,7391,1,5,0)
- ;;=5^Family h/o Cancer of Testis
- ;;^UTILITY(U,$J,358.3,7391,2)
- ;;=^317953
- ;;^UTILITY(U,$J,358.3,7392,0)
- ;;=V19.5^^55^580^13
- ;;^UTILITY(U,$J,358.3,7392,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7392,1,4,0)
- ;;=4^V19.5
- ;;^UTILITY(U,$J,358.3,7392,1,5,0)
- ;;=5^Family h/o Congenital Anomalies
- ;;^UTILITY(U,$J,358.3,7392,2)
- ;;=^295325
- ;;^UTILITY(U,$J,358.3,7393,0)
- ;;=V19.2^^55^580^14
- ;;^UTILITY(U,$J,358.3,7393,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7393,1,4,0)
- ;;=4^V19.2
- ;;^UTILITY(U,$J,358.3,7393,1,5,0)
- ;;=5^Family h/o Deafness Or Hearing Loss
- ;;^UTILITY(U,$J,358.3,7393,2)
- ;;=^295322
- ;;^UTILITY(U,$J,358.3,7394,0)
- ;;=V17.3^^55^580^16
- ;;^UTILITY(U,$J,358.3,7394,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7394,1,4,0)
- ;;=4^V17.3
- ;;^UTILITY(U,$J,358.3,7394,1,5,0)
- ;;=5^Family h/o Ischemic Heart Dis
- ;;^UTILITY(U,$J,358.3,7394,2)
- ;;=^295305
- ;;^UTILITY(U,$J,358.3,7395,0)
- ;;=V16.6^^55^580^17
- ;;^UTILITY(U,$J,358.3,7395,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7395,1,4,0)
- ;;=4^V16.6
- ;;^UTILITY(U,$J,358.3,7395,1,5,0)
- ;;=5^Family h/o Leukemia
- ;;^UTILITY(U,$J,358.3,7395,2)
- ;;=^295298
- ;;^UTILITY(U,$J,358.3,7396,0)
- ;;=V18.61^^55^580^19
- ;;^UTILITY(U,$J,358.3,7396,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7396,1,4,0)
- ;;=4^V18.61
- ;;^UTILITY(U,$J,358.3,7396,1,5,0)
- ;;=5^Family h/o Polycystic Kidney
- ;;^UTILITY(U,$J,358.3,7396,2)
- ;;=^321531
- ;;^UTILITY(U,$J,358.3,7397,0)
- ;;=V17.0^^55^580^20
- ;;^UTILITY(U,$J,358.3,7397,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7397,1,4,0)
- ;;=4^V17.0
- ;;^UTILITY(U,$J,358.3,7397,1,5,0)
- ;;=5^Family h/o Psychiatric Condition
- ;;^UTILITY(U,$J,358.3,7397,2)
- ;;=^295302
- ;;^UTILITY(U,$J,358.3,7398,0)
- ;;=V19.4^^55^580^21
- ;;^UTILITY(U,$J,358.3,7398,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7398,1,4,0)
- ;;=4^V19.4
- ;;^UTILITY(U,$J,358.3,7398,1,5,0)
- ;;=5^Family h/o Skin Condition
- ;;^UTILITY(U,$J,358.3,7398,2)
- ;;=^295324
- ;;^UTILITY(U,$J,358.3,7399,0)
- ;;=V17.1^^55^580^22
- ;;^UTILITY(U,$J,358.3,7399,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7399,1,4,0)
- ;;=4^V17.1
- ;;^UTILITY(U,$J,358.3,7399,1,5,0)
- ;;=5^Family h/o Stroke (CVA)
- ;;^UTILITY(U,$J,358.3,7399,2)
- ;;=^295303
- ;;^UTILITY(U,$J,358.3,7400,0)
- ;;=V16.8^^55^580^12
- ;;^UTILITY(U,$J,358.3,7400,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7400,1,4,0)
- ;;=4^V16.8
- ;;^UTILITY(U,$J,358.3,7400,1,5,0)
- ;;=5^Family h/o Cancer,Other Specified
- ;;^UTILITY(U,$J,358.3,7400,2)
- ;;=^295300
- ;;^UTILITY(U,$J,358.3,7401,0)
- ;;=V11.1^^55^580^24
- ;;^UTILITY(U,$J,358.3,7401,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7401,1,4,0)
- ;;=4^V11.1
- ;;^UTILITY(U,$J,358.3,7401,1,5,0)
- ;;=5^Hx of Affective Disorder
- ;;^UTILITY(U,$J,358.3,7401,2)
- ;;=^295250
- ;;^UTILITY(U,$J,358.3,7402,0)
- ;;=V15.89^^55^580^46
- ;;^UTILITY(U,$J,358.3,7402,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7402,1,4,0)
- ;;=4^V15.89
- ;;^UTILITY(U,$J,358.3,7402,1,5,0)
- ;;=5^Hx of Persian Gulf Region Exposure
- ;;^UTILITY(U,$J,358.3,7402,2)
- ;;=^295291
+ ;;^UTILITY(U,$J,358.3,6734,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6734,1,3,0)
+ ;;=3^Dermatitis,Allergic Contact d/t Animal Dander
+ ;;^UTILITY(U,$J,358.3,6734,1,4,0)
+ ;;=4^L23.81
+ ;;^UTILITY(U,$J,358.3,6734,2)
+ ;;=^5009123
+ ;;^UTILITY(U,$J,358.3,6735,0)
+ ;;=L23.0^^46^446^5
+ ;;^UTILITY(U,$J,358.3,6735,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6735,1,3,0)
+ ;;=3^Dermatitis,Allergic Contact d/t Metals
+ ;;^UTILITY(U,$J,358.3,6735,1,4,0)
+ ;;=4^L23.0
+ ;;^UTILITY(U,$J,358.3,6735,2)
+ ;;=^5009115
+ ;;^UTILITY(U,$J,358.3,6736,0)
+ ;;=B00.1^^46^446^10
+ ;;^UTILITY(U,$J,358.3,6736,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6736,1,3,0)
+ ;;=3^Dermatitis,Herpes Simplex
+ ;;^UTILITY(U,$J,358.3,6736,1,4,0)
+ ;;=4^B00.1
+ ;;^UTILITY(U,$J,358.3,6736,2)
+ ;;=^5000468
+ ;;^UTILITY(U,$J,358.3,6737,0)
+ ;;=L24.0^^46^446^13
+ ;;^UTILITY(U,$J,358.3,6737,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6737,1,3,0)
+ ;;=3^Dermatitis,Irritant Contact d/t Detergents
+ ;;^UTILITY(U,$J,358.3,6737,1,4,0)
+ ;;=4^L24.0
+ ;;^UTILITY(U,$J,358.3,6737,2)
+ ;;=^5009126
+ ;;^UTILITY(U,$J,358.3,6738,0)
+ ;;=L24.81^^46^446^14
+ ;;^UTILITY(U,$J,358.3,6738,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6738,1,3,0)
+ ;;=3^Dermatitis,Irritant Contact d/t Metals
+ ;;^UTILITY(U,$J,358.3,6738,1,4,0)
+ ;;=4^L24.81
+ ;;^UTILITY(U,$J,358.3,6738,2)
+ ;;=^5009134
+ ;;^UTILITY(U,$J,358.3,6739,0)
+ ;;=L24.2^^46^446^15
+ ;;^UTILITY(U,$J,358.3,6739,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6739,1,3,0)
+ ;;=3^Dermatitis,Irritant Contact d/t Solvents
+ ;;^UTILITY(U,$J,358.3,6739,1,4,0)
+ ;;=4^L24.2
+ ;;^UTILITY(U,$J,358.3,6739,2)
+ ;;=^5009128
+ ;;^UTILITY(U,$J,358.3,6740,0)
+ ;;=E08.620^^46^446^22
+ ;;^UTILITY(U,$J,358.3,6740,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6740,1,3,0)
+ ;;=3^Diabetes d/t Underlying Condition w/ DM Dermatitis
+ ;;^UTILITY(U,$J,358.3,6740,1,4,0)
+ ;;=4^E08.620
+ ;;^UTILITY(U,$J,358.3,6740,2)
+ ;;=^5002533
+ ;;^UTILITY(U,$J,358.3,6741,0)
+ ;;=E08.621^^46^446^24
+ ;;^UTILITY(U,$J,358.3,6741,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6741,1,3,0)
+ ;;=3^Diabetes d/t Underlying Conditions w/ Foot Ulcer
+ ;;^UTILITY(U,$J,358.3,6741,1,4,0)
+ ;;=4^E08.621
+ ;;^UTILITY(U,$J,358.3,6741,2)
+ ;;=^5002534
+ ;;^UTILITY(U,$J,358.3,6742,0)
+ ;;=T81.33XA^^46^446^27
+ ;;^UTILITY(U,$J,358.3,6742,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6742,1,3,0)
+ ;;=3^Disruption Traumatic Inj/Wound Repair,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6742,1,4,0)
+ ;;=4^T81.33XA
+ ;;^UTILITY(U,$J,358.3,6742,2)
+ ;;=^5054476
+ ;;^UTILITY(U,$J,358.3,6743,0)
+ ;;=L60.3^^46^446^30
+ ;;^UTILITY(U,$J,358.3,6743,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6743,1,3,0)
+ ;;=3^Dystrophic Nails
+ ;;^UTILITY(U,$J,358.3,6743,1,4,0)
+ ;;=4^L60.3
+ ;;^UTILITY(U,$J,358.3,6743,2)
+ ;;=^5009236
+ ;;^UTILITY(U,$J,358.3,6744,0)
+ ;;=M71.30^^46^446^25
+ ;;^UTILITY(U,$J,358.3,6744,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6744,1,3,0)
+ ;;=3^Digital Mucous Cyst
+ ;;^UTILITY(U,$J,358.3,6744,1,4,0)
+ ;;=4^M71.30
+ ;;^UTILITY(U,$J,358.3,6744,2)
+ ;;=^5013149
+ ;;^UTILITY(U,$J,358.3,6745,0)
+ ;;=L30.4^^46^447^9
+ ;;^UTILITY(U,$J,358.3,6745,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6745,1,3,0)
+ ;;=3^Erythema Intertrigo
+ ;;^UTILITY(U,$J,358.3,6745,1,4,0)
+ ;;=4^L30.4
+ ;;^UTILITY(U,$J,358.3,6745,2)
+ ;;=^5009157
+ ;;^UTILITY(U,$J,358.3,6746,0)
+ ;;=R60.0^^46^447^6
+ ;;^UTILITY(U,$J,358.3,6746,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6746,1,3,0)
+ ;;=3^Edema,Localized
+ ;;^UTILITY(U,$J,358.3,6746,1,4,0)
+ ;;=4^R60.0
+ ;;^UTILITY(U,$J,358.3,6746,2)
+ ;;=^5019532
+ ;;^UTILITY(U,$J,358.3,6747,0)
+ ;;=L53.0^^46^447^13
+ ;;^UTILITY(U,$J,358.3,6747,1,0)
+ ;;=^358.31IA^4^2

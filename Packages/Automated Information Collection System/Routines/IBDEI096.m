@@ -1,134 +1,136 @@
-IBDEI096 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI096 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,4220,1,4,0)
- ;;=4^97535
- ;;^UTILITY(U,$J,358.3,4221,0)
- ;;=98960^^36^325^12^^^^1
- ;;^UTILITY(U,$J,358.3,4221,1,0)
+ ;;^UTILITY(U,$J,358.3,3749,0)
+ ;;=M88.9^^28^258^107
+ ;;^UTILITY(U,$J,358.3,3749,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4221,1,2,0)
- ;;=2^Self-Mgmt Ed/Train 1 Pt,Ea 30min
- ;;^UTILITY(U,$J,358.3,4221,1,4,0)
- ;;=4^98960
- ;;^UTILITY(U,$J,358.3,4222,0)
- ;;=36593^^36^325^2^^^^1
- ;;^UTILITY(U,$J,358.3,4222,1,0)
+ ;;^UTILITY(U,$J,358.3,3749,1,3,0)
+ ;;=3^Osteitis Deformans,Unspec Bone
+ ;;^UTILITY(U,$J,358.3,3749,1,4,0)
+ ;;=4^M88.9
+ ;;^UTILITY(U,$J,358.3,3749,2)
+ ;;=^5014899
+ ;;^UTILITY(U,$J,358.3,3750,0)
+ ;;=M18.9^^28^258^108
+ ;;^UTILITY(U,$J,358.3,3750,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4222,1,2,0)
- ;;=2^Declot Vascular Device
- ;;^UTILITY(U,$J,358.3,4222,1,4,0)
- ;;=4^36593
- ;;^UTILITY(U,$J,358.3,4223,0)
- ;;=96523^^36^325^8^^^^1
- ;;^UTILITY(U,$J,358.3,4223,1,0)
+ ;;^UTILITY(U,$J,358.3,3750,1,3,0)
+ ;;=3^Osteoarthritis,1st Carpometacarpal Joint,Unspec
+ ;;^UTILITY(U,$J,358.3,3750,1,4,0)
+ ;;=4^M18.9
+ ;;^UTILITY(U,$J,358.3,3750,2)
+ ;;=^5010807
+ ;;^UTILITY(U,$J,358.3,3751,0)
+ ;;=M16.9^^28^258^109
+ ;;^UTILITY(U,$J,358.3,3751,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4223,1,2,0)
- ;;=2^Irrig Drug Delivery Device
- ;;^UTILITY(U,$J,358.3,4223,1,4,0)
- ;;=4^96523
- ;;^UTILITY(U,$J,358.3,4224,0)
- ;;=36569^^36^325^5^^^^1
- ;;^UTILITY(U,$J,358.3,4224,1,0)
+ ;;^UTILITY(U,$J,358.3,3751,1,3,0)
+ ;;=3^Osteoarthritis,Hip,Unspec
+ ;;^UTILITY(U,$J,358.3,3751,1,4,0)
+ ;;=4^M16.9
+ ;;^UTILITY(U,$J,358.3,3751,2)
+ ;;=^5010783
+ ;;^UTILITY(U,$J,358.3,3752,0)
+ ;;=M17.9^^28^258^110
+ ;;^UTILITY(U,$J,358.3,3752,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4224,1,2,0)
- ;;=2^Insert PICC Line
- ;;^UTILITY(U,$J,358.3,4224,1,4,0)
- ;;=4^36569
- ;;^UTILITY(U,$J,358.3,4225,0)
- ;;=36000^^36^325^7^^^^1
- ;;^UTILITY(U,$J,358.3,4225,1,0)
+ ;;^UTILITY(U,$J,358.3,3752,1,3,0)
+ ;;=3^Osteoarthritis,Knee,Unspec
+ ;;^UTILITY(U,$J,358.3,3752,1,4,0)
+ ;;=4^M17.9
+ ;;^UTILITY(U,$J,358.3,3752,2)
+ ;;=^5010794
+ ;;^UTILITY(U,$J,358.3,3753,0)
+ ;;=M19.92^^28^258^111
+ ;;^UTILITY(U,$J,358.3,3753,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4225,1,2,0)
- ;;=2^Intro Needle or Intracath,Vein
- ;;^UTILITY(U,$J,358.3,4225,1,4,0)
- ;;=4^36000
- ;;^UTILITY(U,$J,358.3,4226,0)
- ;;=99195^^36^325^9^^^^1
- ;;^UTILITY(U,$J,358.3,4226,1,0)
+ ;;^UTILITY(U,$J,358.3,3753,1,3,0)
+ ;;=3^Osteoarthritis,Post-Traumatic,Unspec Site
+ ;;^UTILITY(U,$J,358.3,3753,1,4,0)
+ ;;=4^M19.92
+ ;;^UTILITY(U,$J,358.3,3753,2)
+ ;;=^5010855
+ ;;^UTILITY(U,$J,358.3,3754,0)
+ ;;=M19.91^^28^258^112
+ ;;^UTILITY(U,$J,358.3,3754,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4226,1,2,0)
- ;;=2^Phlebotomy
- ;;^UTILITY(U,$J,358.3,4226,1,4,0)
- ;;=4^99195
- ;;^UTILITY(U,$J,358.3,4227,0)
- ;;=4066F^^36^325^3^^^^1
- ;;^UTILITY(U,$J,358.3,4227,1,0)
+ ;;^UTILITY(U,$J,358.3,3754,1,3,0)
+ ;;=3^Osteoarthritis,Primary,Unspec Site
+ ;;^UTILITY(U,$J,358.3,3754,1,4,0)
+ ;;=4^M19.91
+ ;;^UTILITY(U,$J,358.3,3754,2)
+ ;;=^5010854
+ ;;^UTILITY(U,$J,358.3,3755,0)
+ ;;=M19.93^^28^258^113
+ ;;^UTILITY(U,$J,358.3,3755,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4227,1,2,0)
- ;;=2^ECT Provided
- ;;^UTILITY(U,$J,358.3,4227,1,4,0)
- ;;=4^4066F
- ;;^UTILITY(U,$J,358.3,4228,0)
- ;;=P9047^^36^326^3^^^^1
- ;;^UTILITY(U,$J,358.3,4228,1,0)
+ ;;^UTILITY(U,$J,358.3,3755,1,3,0)
+ ;;=3^Osteoarthritis,Secondary,Unspec Site
+ ;;^UTILITY(U,$J,358.3,3755,1,4,0)
+ ;;=4^M19.93
+ ;;^UTILITY(U,$J,358.3,3755,2)
+ ;;=^5010856
+ ;;^UTILITY(U,$J,358.3,3756,0)
+ ;;=M19.90^^28^258^114
+ ;;^UTILITY(U,$J,358.3,3756,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4228,1,2,0)
- ;;=2^Inf Albumin(Human),25%,50ml
- ;;^UTILITY(U,$J,358.3,4228,1,4,0)
- ;;=4^P9047
- ;;^UTILITY(U,$J,358.3,4229,0)
- ;;=P9010^^36^326^6^^^^1
- ;;^UTILITY(U,$J,358.3,4229,1,0)
+ ;;^UTILITY(U,$J,358.3,3756,1,3,0)
+ ;;=3^Osteoarthritis,Unspec,Unspec Site
+ ;;^UTILITY(U,$J,358.3,3756,1,4,0)
+ ;;=4^M19.90
+ ;;^UTILITY(U,$J,358.3,3756,2)
+ ;;=^5010853
+ ;;^UTILITY(U,$J,358.3,3757,0)
+ ;;=M89.40^^28^258^115
+ ;;^UTILITY(U,$J,358.3,3757,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4229,1,2,0)
- ;;=2^Whole Blood for Transfusion,per unit
- ;;^UTILITY(U,$J,358.3,4229,1,4,0)
- ;;=4^P9010
- ;;^UTILITY(U,$J,358.3,4230,0)
- ;;=P9017^^36^326^2^^^^1
- ;;^UTILITY(U,$J,358.3,4230,1,0)
+ ;;^UTILITY(U,$J,358.3,3757,1,3,0)
+ ;;=3^Osteoarthropathy,Hypertrophic,Unspec Site
+ ;;^UTILITY(U,$J,358.3,3757,1,4,0)
+ ;;=4^M89.40
+ ;;^UTILITY(U,$J,358.3,3757,2)
+ ;;=^5015014
+ ;;^UTILITY(U,$J,358.3,3758,0)
+ ;;=M89.30^^28^258^116
+ ;;^UTILITY(U,$J,358.3,3758,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4230,1,2,0)
- ;;=2^Frh Frz Plasma 1 Donor w/in 8hr,per unit
- ;;^UTILITY(U,$J,358.3,4230,1,4,0)
- ;;=4^P9017
- ;;^UTILITY(U,$J,358.3,4231,0)
- ;;=P9020^^36^326^4^^^^1
- ;;^UTILITY(U,$J,358.3,4231,1,0)
+ ;;^UTILITY(U,$J,358.3,3758,1,3,0)
+ ;;=3^Osteoarthropathy,Hypertrophy of Bone,Unspec Site
+ ;;^UTILITY(U,$J,358.3,3758,1,4,0)
+ ;;=4^M89.30
+ ;;^UTILITY(U,$J,358.3,3758,2)
+ ;;=^5014986
+ ;;^UTILITY(U,$J,358.3,3759,0)
+ ;;=M93.90^^28^258^117
+ ;;^UTILITY(U,$J,358.3,3759,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4231,1,2,0)
- ;;=2^Platelet,Rich Plasma,per unit
- ;;^UTILITY(U,$J,358.3,4231,1,4,0)
- ;;=4^P9020
- ;;^UTILITY(U,$J,358.3,4232,0)
- ;;=P9021^^36^326^5^^^^1
- ;;^UTILITY(U,$J,358.3,4232,1,0)
+ ;;^UTILITY(U,$J,358.3,3759,1,3,0)
+ ;;=3^Osteochondropathy,Unspec Site
+ ;;^UTILITY(U,$J,358.3,3759,1,4,0)
+ ;;=4^M93.90
+ ;;^UTILITY(U,$J,358.3,3759,2)
+ ;;=^5015303
+ ;;^UTILITY(U,$J,358.3,3760,0)
+ ;;=M92.9^^28^258^118
+ ;;^UTILITY(U,$J,358.3,3760,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4232,1,2,0)
- ;;=2^Red Blood Cells,per unit
- ;;^UTILITY(U,$J,358.3,4232,1,4,0)
- ;;=4^P9021
- ;;^UTILITY(U,$J,358.3,4233,0)
- ;;=36430^^36^326^1^^^^1
- ;;^UTILITY(U,$J,358.3,4233,1,0)
+ ;;^UTILITY(U,$J,358.3,3760,1,3,0)
+ ;;=3^Osteochondrosis,Juvenile,Unspec
+ ;;^UTILITY(U,$J,358.3,3760,1,4,0)
+ ;;=4^M92.9
+ ;;^UTILITY(U,$J,358.3,3760,2)
+ ;;=^5015242
+ ;;^UTILITY(U,$J,358.3,3761,0)
+ ;;=M42.9^^28^258^119
+ ;;^UTILITY(U,$J,358.3,3761,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4233,1,2,0)
- ;;=2^Blood Transfusion Service
- ;;^UTILITY(U,$J,358.3,4233,1,4,0)
- ;;=4^36430
- ;;^UTILITY(U,$J,358.3,4234,0)
- ;;=96360^^36^327^1^^^^1
- ;;^UTILITY(U,$J,358.3,4234,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4234,1,2,0)
- ;;=2^Hydration IV Inf,Init
- ;;^UTILITY(U,$J,358.3,4234,1,4,0)
- ;;=4^96360
- ;;^UTILITY(U,$J,358.3,4235,0)
- ;;=96361^^36^327^2^^^^1
- ;;^UTILITY(U,$J,358.3,4235,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4235,1,2,0)
- ;;=2^Hydration IV Inf,Add-On
- ;;^UTILITY(U,$J,358.3,4235,1,4,0)
- ;;=4^96361
- ;;^UTILITY(U,$J,358.3,4236,0)
- ;;=96365^^36^327^3^^^^1
- ;;^UTILITY(U,$J,358.3,4236,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4236,1,2,0)
- ;;=2^IV Inf Ther/Proph/Diag Init Hr
- ;;^UTILITY(U,$J,358.3,4236,1,4,0)
- ;;=4^96365
+ ;;^UTILITY(U,$J,358.3,3761,1,3,0)
+ ;;=3^Osteochondrosis,Spinal,Unspec
+ ;;^UTILITY(U,$J,358.3,3761,1,4,0)
+ ;;=4^M42.9
+ ;;^UTILITY(U,$J,358.3,3761,2)
+ ;;=^5011910
+ ;;^UTILITY(U,$J,358.3,3762,0)
+ ;;=M89.50^^28^258^120

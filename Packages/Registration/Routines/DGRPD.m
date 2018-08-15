@@ -1,5 +1,5 @@
-DGRPD ;ALB/MRL/MLR/JAN/LBD/EG/BRM/JRC/BAJ-PATIENT INQUIRY (NEW) ; 05/03/06
- ;;5.3;Registration;**109,124,121,57,161,149,286,358,436,445,489,498,506,513,518,550,545,568,585,677,703,688**;Aug 13, 1993;Build 29
+DGRPD ;ALB/MRL,MLR,JAN,LBD,EG,BRM,JRC,BAJ,KUM - PATIENT INQUIRY (NEW) ;August 18, 2017
+ ;;5.3;Registration;**109,124,121,57,161,149,286,358,436,445,489,498,506,513,518,550,545,568,585,677,703,688,887,907,925,936,940**;Aug 13, 1993;Build 11
  ;  *286*  Newing variables X,Y in OKLINE subroutine
  ;  *358*  If a patient is on a domiciliary ward, don't display MEANS
  ;         TEST required/Medication Copayment Exemption messages
@@ -8,6 +8,12 @@ DGRPD ;ALB/MRL/MLR/JAN/LBD/EG/BRM/JRC/BAJ-PATIENT INQUIRY (NEW) ; 05/03/06
  ;  *545*  Add death information near the remarks field
  ;  *677*  Added Emergency Response
  ;  *688*  Modified to display Country and Foreign Address
+ ;  *936*  Modified to display Health Benefit Plans
+ ;  *940*  #879316,#879318 - Display Permanent & Total Disabled Status
+ ;
+ ;  Integration Agreements:
+ ;        6138 - DGHBPUTL API
+ ;
 SEL K DFN,DGRPOUT W ! S DIC="^DPT(",DIC(0)="AEQMZ" D ^DIC G Q:Y'>0 S DFN=+Y N Y W ! S DIR(0)="E" D ^DIR G SEL:$D(DTOUT)!($D(DUOUT)) D EN G SEL
 EN ;call to display patient inquiry - input DFN
  ;MPI/PD CHANGE
@@ -17,7 +23,10 @@ EN ;call to display patient inquiry - input DFN
  ;END MPI/PD CHANGE
  K DGRPOUT,DGHOW S DGABBRV=$S($D(^DG(43,1,0)):+$P(^(0),"^",38),1:0),DGRPU="UNSPECIFIED" D DEM^VADPT,HDR^DGRPD1 F I=0,.11,.13,.121,.122,.31,.32,.36,.361,.141,.3 S DGRP(I)=$S($D(^DPT(DFN,I)):^(I),1:"")
  S DGAD=.11,(DGA1,DGA2)=1 D A^DGRPU S DGTMPAD=0 I $P(DGRP(.121),"^",9)="Y" S DGTMPAD=$S('$P(DGRP(.121),"^",8):1,$P(DGRP(.121),"^",8)'<DT:1,1:0) I DGTMPAD S DGAD=.121,DGA1=1,DGA2=2 D A^DGRPU
- W ?1,"Address: ",$S($D(DGA(1)):DGA(1),1:"NONE ON FILE"),?40,"Temporary: ",$S($D(DGA(2)):DGA(2),1:"NO TEMPORARY ADDRESS")
+ ;jam DG*5.3*925 RM#788099 Add/Edit Residential address - move addresses down 1 line below the field labels
+ ; and change labels to "Permanent Mailing Address" and "Temporary Mailing Address"
+ W ?1,"Permanent Mailing Address: ",?40,"Temporary Mailing Address: "
+ W !,?9,$S($D(DGA(1)):DGA(1),1:"NONE ON FILE"),?48,$S($D(DGA(2)):DGA(2),1:"NO TEMPORARY MAILING")
  S I=2 F I1=0:0 S I=$O(DGA(I)) Q:I=""  W:(I#2)!($X>50) !?9 W:'(I#2) ?48 W DGA(I)
  S DGCC=+$P(DGRP(.11),U,7),DGST=+$P(DGRP(.11),U,5),DGCC=$S($D(^DIC(5,DGST,1,DGCC,0)):$E($P(^(0),U,1),1,20)_$S($P(^(0),U,3)]"":" ("_$P(^(0),U,3)_")",1:""),1:DGRPU)
  N DGCNTRY,DGFORGN S DGCNTRY=$P(DGRP(.11),"^",10),DGFORGN=$$FORIEN^DGADDUTL(DGCNTRY) I 'DGFORGN W !?2,"County: ",DGCC
@@ -32,7 +41,7 @@ EN ;call to display patient inquiry - input DFN
  N DGEMER S DGEMER=$$EXTERNAL^DILFD(2,.181,"",$P($G(^DPT(DFN,.18)),"^"))
  W:DGEMER]"" !?32,"Emergency Response: ",DGEMER
  I 'DGABBRV W !!?4,"POS: ",$S($D(^DIC(21,+$P(DGRP(.32),"^",3),0)):$P(^(0),"^",1),1:DGRPU),?42,"Claim #: ",$S($P(DGRP(.31),"^",3)]"":$P(DGRP(.31),"^",3),1:"UNSPECIFIED")
- I 'DGABBRV W !?2,"Relig: ",$S($D(^DIC(13,+$P(DGRP(0),"^",8),0)):$P(^(0),"^",1),1:DGRPU),?46,"Sex: ",$S($P(VADM(5),"^",2)]"":$P(VADM(5),"^",2),1:"UNSPECIFIED")
+ I 'DGABBRV W !?2,"Relig: ",$S($D(^DIC(13,+$P(DGRP(0),"^",8),0)):$P(^(0),"^",1),1:DGRPU),?46,"Birth Sex: ",$S($P(VADM(5),"^",2)]"":$P(VADM(5),"^",2),1:"UNSPECIFIED") ; DG*5.3*907
  I 'DGABBRV W ! D
  .N RACE,ETHNIC,PTR,VAL,X,DIWL,DIWR,DIWF
  .K ^UTILITY($J,"W")
@@ -53,6 +62,8 @@ EN ;call to display patient inquiry - input DFN
  .W ?3,"Race: ",RACE(1,0),?40,"Ethnicity: ",ETHNIC(1,0)
  .F X=2:1 Q:'$D(RACE(X,0))&'$D(ETHNIC(X,0))  W !,?9,$G(RACE(X,0)),?51,$G(ETHNIC(X,0))
  I '$$OKLINE^DGRPD1(16) G Q
+ D LANGUAGE
+ I '$$OKLINE^DGRPD1(10) G Q
  ;display cv status #4156
  N DGCV S DGCV=$$CVEDT^DGCV(+DFN)
  W !!,?2,"Combat Vet Status: "_$S($P(DGCV,U,3)=1:"ELIGIBLE",$P(DGCV,U,3)="":"NOT ELIGIBLE",1:"EXPIRED") I DGCV>0 W ?45,"End Date: "_$$FMTE^XLFDT($P(DGCV,U,2),"5DZ")
@@ -62,6 +73,10 @@ EN ;call to display patient inquiry - input DFN
  I '$$OKLINE^DGRPD1(16) G Q
  ;employability status
  W !?6,"Unemployable: ",$S($P(DGRP(.3),U,5)="Y":"YES",1:"NO")
+ I '$$OKLINE^DGRPD1(19) G Q
+ ; KUM DG*5.3*940 RM #879316,#879318 - Display Permanent & Total Disabled status
+ W !?6,"Permanent & Total Disabled: ",$S($P(DGRP(.3),U,4)="Y":"YES",1:"NO")
+ I '$$OKLINE^DGRPD1(19) G Q
  ;display the catastrophic disability review date if there is one
  D CATDIS^DGRPD1
  I $G(DGPRFLG)=1 G Q:'$$OKLINE^DGRPD1(19) D
@@ -76,7 +91,7 @@ EN ;call to display patient inquiry - input DFN
  ; If inpatient is on a DOM ward, don't display MT or CP messages
  ; If inpatient is NOT on a DOM ward, don't display CP message
  N DGDOM,DGDOM1,VAHOW,VAROOT,VAINDT,VAIP,VAERR
- G Q:'$$OKLINE^DGRPD1(14)
+ G Q:'$$OKLINE^DGRPD1(16)
  D DOM^DGMTR
  I '$G(DGDOM) D
  .D DIS^DGMTU(DFN)
@@ -86,7 +101,7 @@ EN ;call to display patient inquiry - input DFN
  D DIS^EASECU(DFN)   ;Added for LTC III (DG*5.3*518)
  S VAIP("L")=""
  I $$OKLINE^DGRPD1(14) D INP
- I '$G(DGRPOUT),($$OKLINE^DGRPD1(17)) D SA
+ I '$G(DGRPOUT),($$OKLINE^DGRPD1(10)) D SA ;*KNR*
  ;MPI/PD CHANGE
 Q D KVA^VADPT K %DT,D0,D1,DGA,DGA1,DGA2,DGABBRV,DGAD,DGCC,DGCMOR,DGDOM,DGLOCATN,DGMPI,DGRP,DGRPU,DGS,DGST,DGXFR0,DIC,DIR,DTOUT,DUOUT,DIRUT,DIROUT,I,I1,L,LDM,POP,SDCT,VA,X,X1,Y Q
 CA ;Confidential Address
@@ -125,14 +140,14 @@ SAA ;Scheduled Admit Data
  ;
 CL G FA:$O(^DPT(DFN,"DE",0))="" S SDCT=0 F I=0:0 S I=$O(^DPT(DFN,"DE",I)) Q:'I  I $D(^(I,0)),$P(^(0),"^",2)'="I",$O(^(0)) S SDCT=SDCT+1 W:SDCT=1 !!,"Currently enrolled in " W:$X>50 !?22 W $S($D(^SC(+^(0),0)):$P(^(0),"^",1)_", ",1:"")
  ;
-FA G:'$$OKLINE^DGRPD1(20) RMK
- ;
+FA ;
  N DGARRAY,SDCNT
  S DGARRAY("FLDS")="1;2;3;18",DGARRAY(4)=DFN,DGARRAY(1)=DT,DGARRAY("SORT")="P"
  S SDCNT=$$SDAPI^SDAMA301(.DGARRAY),CT=0 W !!,"Future Appointments: "
  ;if there is lower subscripts hanging from the 101 node,
  ;then it is a valid appointment, otherwise it is
  ;an error eg 01/20/2005
+ ;G:'$$OKLINE^DGRPD1(13) RMK ;*///*
  I $D(^TMP($J,"SDAMA301",101))=1 W "Appointment Database is Unavailable" G RMK
  I $O(^TMP($J,"SDAMA301",DFN,DT))'>0 W "NONE" G RMK
  ;
@@ -146,7 +161,7 @@ FA G:'$$OKLINE^DGRPD1(20) RMK
  ..W ?39,$P($P(^TMP($J,"SDAMA301",DFN,FA),U,2),";",2)," ",COV
  ..Q
  I $O(^TMP($J,"SDAMA301",DFN,FA))>0 W !,"See Scheduling options for additional appointments."
-RMK I '$G(DGRPOUT),($$OKLINE^DGRPD1(21)) W !!,"Remarks: ",$P(^DPT(DFN,0),"^",10)
+RMK I '$G(DGRPOUT),($$OKLINE^DGRPD1(15)) W !!,"Remarks: ",$P(^DPT(DFN,0),"^",10) ;*///*
  D GETS^DIQ(2,DFN_",",".351;.353;.354;.355","E","PDTHINFO")
  W !!
  W "Date of Death Information"
@@ -155,11 +170,34 @@ RMK I '$G(DGRPOUT),($$OKLINE^DGRPD1(21)) W !!,"Remarks: ",$P(^DPT(DFN,0),"^",10)
  W !,?5,"Updated Date/Time: ",$G(PDTHINFO(2,DFN_",",.354,"E"))
  W !,?5,"Last Edited By: ",$G(PDTHINFO(2,DFN_",",.355,"E")),!
  I $$OKLINE^DGRPD1(14) D EC^DGRPD1
+ D HBP
  K DGARRAY,SDCNT,^TMP($J,"SDAMA301"),ADM,L,TRN,DIS,SSN,FA,C,COV,NOW,CT,DGD,DGD1,I ;Y killed after dghinqky
  Q
+ ; KUM DG*5.3*936 Display Health Benefit Plans assigned to Veteran
+HBP W !!,"Health Benefit Plans Currently Assigned to Veteran:"
+ N DGHBP,HBP,DGCOUNT
+ S DGCOUNT=0
+ D GETHBP^DGHBPUTL(DFN)
+ S DGHBP="" F  S DGHBP=$O(HBP("CUR",DGHBP)) Q:DGHBP=""  D
+ .W !,?3,DGHBP
+ .S DGCOUNT=DGCOUNT+1
+ I DGCOUNT=0 W !,?3,"None"
+ Q
+ ;
 COV S COV=$S(+$P(^TMP($J,"SDAMA301",DFN,FA),U,18)=7:" (Collateral) ",1:"")
  S COV=COV_$S(STAT["NT":" * NO ACTION TAKEN *",STAT["N":" * NO-SHOW *",1:""),CT=CT+1 Q
  Q
  ;
 OREN S XQORQUIT=1 Q:'$D(ORVP)  S DFN=+ORVP D EN R !!,"Press RETURN to CONTINUE: ",X:DTIME
+ Q
+LANGUAGE ; Get language data *///*
+ S DGLANGDT=9999999,(DGPRFLAN,DGLANG0)=""
+ S DGLANGDT=$O(^DPT(DFN,.207,"B",DGLANGDT),-1)
+ I DGLANGDT="" G L1
+ S DGLANGDA=$O(^DPT(DFN,.207,"B",DGLANGDT,0))
+ S DGLANG0=$G(^DPT(DFN,.207,DGLANGDA,0)),Y=$P(DGLANG0,U),DGPRFLAN=$P(DGLANG0,U,2)
+ S Y=DGLANGDT X ^DD("DD") S DGLANGDT=Y
+L1 W !!,"Language Date/Time: ",$S(DGLANGDT="":"UNANSWERED",1:DGLANGDT),!
+ W ?1,"Preferred Language: ",$S(DGPRFLAN="":"UNANSWERED",1:DGPRFLAN)
+ K DGLANGDT,DGPRFLAN,DGLANG0,DGLANGDA
  Q

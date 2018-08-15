@@ -1,136 +1,120 @@
-IBDEI0MI ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0MI ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,11049,0)
- ;;=271.3^^71^723^18
- ;;^UTILITY(U,$J,358.3,11049,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11049,1,2,0)
- ;;=2^271.3
- ;;^UTILITY(U,$J,358.3,11049,1,5,0)
- ;;=5^Lactase Deficiency
- ;;^UTILITY(U,$J,358.3,11049,2)
- ;;=^64790
- ;;^UTILITY(U,$J,358.3,11050,0)
- ;;=537.2^^71^723^4
- ;;^UTILITY(U,$J,358.3,11050,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11050,1,2,0)
- ;;=2^537.2
- ;;^UTILITY(U,$J,358.3,11050,1,5,0)
- ;;=5^Chronic Duodenal Ileus
- ;;^UTILITY(U,$J,358.3,11050,2)
- ;;=^270187
- ;;^UTILITY(U,$J,358.3,11051,0)
- ;;=562.01^^71^723^5
- ;;^UTILITY(U,$J,358.3,11051,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11051,1,2,0)
- ;;=2^562.01
- ;;^UTILITY(U,$J,358.3,11051,1,5,0)
- ;;=5^Diverticulitis Sm Intest w/o Hem
- ;;^UTILITY(U,$J,358.3,11051,2)
- ;;=^270270
- ;;^UTILITY(U,$J,358.3,11052,0)
- ;;=562.03^^71^723^6
- ;;^UTILITY(U,$J,358.3,11052,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11052,1,2,0)
- ;;=2^562.03
- ;;^UTILITY(U,$J,358.3,11052,1,5,0)
- ;;=5^Diverticulitis Sm Intest w/ Hem
- ;;^UTILITY(U,$J,358.3,11052,2)
- ;;=^270272
- ;;^UTILITY(U,$J,358.3,11053,0)
- ;;=562.00^^71^723^7
- ;;^UTILITY(U,$J,358.3,11053,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11053,1,2,0)
- ;;=2^562.00
- ;;^UTILITY(U,$J,358.3,11053,1,5,0)
- ;;=5^Diverticulosis Sm Intest
- ;;^UTILITY(U,$J,358.3,11053,2)
- ;;=^270269
- ;;^UTILITY(U,$J,358.3,11054,0)
- ;;=562.02^^71^723^8
- ;;^UTILITY(U,$J,358.3,11054,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11054,1,2,0)
- ;;=2^562.02
- ;;^UTILITY(U,$J,358.3,11054,1,5,0)
- ;;=5^Diverticulosis Sm Intest w/ Hem
- ;;^UTILITY(U,$J,358.3,11054,2)
- ;;=^270271
- ;;^UTILITY(U,$J,358.3,11055,0)
- ;;=532.00^^71^723^10
- ;;^UTILITY(U,$J,358.3,11055,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11055,1,2,0)
- ;;=2^532.00
- ;;^UTILITY(U,$J,358.3,11055,1,5,0)
- ;;=5^Duodenal Ulcer,AC w/ Hem w/o Obst
- ;;^UTILITY(U,$J,358.3,11055,2)
- ;;=^270090
- ;;^UTILITY(U,$J,358.3,11056,0)
- ;;=532.01^^71^723^9
- ;;^UTILITY(U,$J,358.3,11056,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11056,1,2,0)
- ;;=2^532.01
- ;;^UTILITY(U,$J,358.3,11056,1,5,0)
- ;;=5^Duodenal Ulcer,AC w/ Hem w/ Obst
- ;;^UTILITY(U,$J,358.3,11056,2)
- ;;=^270091
- ;;^UTILITY(U,$J,358.3,11057,0)
- ;;=532.30^^71^723^11
- ;;^UTILITY(U,$J,358.3,11057,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11057,1,2,0)
- ;;=2^532.30
- ;;^UTILITY(U,$J,358.3,11057,1,5,0)
- ;;=5^Duodenal Ulcer,AC w/o Hem or Obst
- ;;^UTILITY(U,$J,358.3,11057,2)
- ;;=^270099
- ;;^UTILITY(U,$J,358.3,11058,0)
- ;;=532.40^^71^723^13
- ;;^UTILITY(U,$J,358.3,11058,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11058,1,2,0)
- ;;=2^532.40
- ;;^UTILITY(U,$J,358.3,11058,1,5,0)
- ;;=5^Duodenal Ulcer,Chr w/ Hem w/o Obst
- ;;^UTILITY(U,$J,358.3,11058,2)
- ;;=^270102
- ;;^UTILITY(U,$J,358.3,11059,0)
- ;;=532.41^^71^723^12
- ;;^UTILITY(U,$J,358.3,11059,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11059,1,2,0)
- ;;=2^532.41
- ;;^UTILITY(U,$J,358.3,11059,1,5,0)
- ;;=5^Duodenal Ulcer,Chr w/ Hem w/ Obst
- ;;^UTILITY(U,$J,358.3,11059,2)
- ;;=^270103
- ;;^UTILITY(U,$J,358.3,11060,0)
- ;;=532.70^^71^723^14
- ;;^UTILITY(U,$J,358.3,11060,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11060,1,2,0)
- ;;=2^532.70
- ;;^UTILITY(U,$J,358.3,11060,1,5,0)
- ;;=5^Duodenal Ulcer,Chr w/o Hem or Obst
- ;;^UTILITY(U,$J,358.3,11060,2)
- ;;=^270111
- ;;^UTILITY(U,$J,358.3,11061,0)
- ;;=555.0^^71^723^17
- ;;^UTILITY(U,$J,358.3,11061,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11061,1,2,0)
- ;;=2^555.0
- ;;^UTILITY(U,$J,358.3,11061,1,5,0)
- ;;=5^Enteritis,Regional Small Intest
- ;;^UTILITY(U,$J,358.3,11061,2)
- ;;=^270247
- ;;^UTILITY(U,$J,358.3,11062,0)
- ;;=555.2^^71^723^16
+ ;;^UTILITY(U,$J,358.3,10276,1,4,0)
+ ;;=4^L97.324
+ ;;^UTILITY(U,$J,358.3,10276,2)
+ ;;=^5009523
+ ;;^UTILITY(U,$J,358.3,10277,0)
+ ;;=L97.329^^68^664^175
+ ;;^UTILITY(U,$J,358.3,10277,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10277,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Left Ankle w/ Unspec Severity
+ ;;^UTILITY(U,$J,358.3,10277,1,4,0)
+ ;;=4^L97.329
+ ;;^UTILITY(U,$J,358.3,10277,2)
+ ;;=^5009524
+ ;;^UTILITY(U,$J,358.3,10278,0)
+ ;;=L97.411^^68^664^216
+ ;;^UTILITY(U,$J,358.3,10278,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10278,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Right Heel/Midfoot w/ Breakdown of Skin
+ ;;^UTILITY(U,$J,358.3,10278,1,4,0)
+ ;;=4^L97.411
+ ;;^UTILITY(U,$J,358.3,10278,2)
+ ;;=^5009530
+ ;;^UTILITY(U,$J,358.3,10279,0)
+ ;;=L97.412^^68^664^217
+ ;;^UTILITY(U,$J,358.3,10279,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10279,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Right Heel/Midfoot w/ Fat Layer Exposed
+ ;;^UTILITY(U,$J,358.3,10279,1,4,0)
+ ;;=4^L97.412
+ ;;^UTILITY(U,$J,358.3,10279,2)
+ ;;=^5009531
+ ;;^UTILITY(U,$J,358.3,10280,0)
+ ;;=L97.413^^68^664^218
+ ;;^UTILITY(U,$J,358.3,10280,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10280,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Right Heel/Midfoot w/ Necrosis of Muscle
+ ;;^UTILITY(U,$J,358.3,10280,1,4,0)
+ ;;=4^L97.413
+ ;;^UTILITY(U,$J,358.3,10280,2)
+ ;;=^5009532
+ ;;^UTILITY(U,$J,358.3,10281,0)
+ ;;=L97.414^^68^664^219
+ ;;^UTILITY(U,$J,358.3,10281,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10281,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Right Heel/Midfoot w/ Necrosis of Bone
+ ;;^UTILITY(U,$J,358.3,10281,1,4,0)
+ ;;=4^L97.414
+ ;;^UTILITY(U,$J,358.3,10281,2)
+ ;;=^5009533
+ ;;^UTILITY(U,$J,358.3,10282,0)
+ ;;=L97.419^^68^664^220
+ ;;^UTILITY(U,$J,358.3,10282,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10282,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Right Heel/Midfoot w/ Unspec Severity
+ ;;^UTILITY(U,$J,358.3,10282,1,4,0)
+ ;;=4^L97.419
+ ;;^UTILITY(U,$J,358.3,10282,2)
+ ;;=^5009534
+ ;;^UTILITY(U,$J,358.3,10283,0)
+ ;;=L97.421^^68^664^186
+ ;;^UTILITY(U,$J,358.3,10283,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10283,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Left Heel/Midfoot w/ Breakdown of Skin
+ ;;^UTILITY(U,$J,358.3,10283,1,4,0)
+ ;;=4^L97.421
+ ;;^UTILITY(U,$J,358.3,10283,2)
+ ;;=^5009535
+ ;;^UTILITY(U,$J,358.3,10284,0)
+ ;;=L97.422^^68^664^187
+ ;;^UTILITY(U,$J,358.3,10284,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10284,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Left Heel/Midfoot w/ Fat Layer Exposed
+ ;;^UTILITY(U,$J,358.3,10284,1,4,0)
+ ;;=4^L97.422
+ ;;^UTILITY(U,$J,358.3,10284,2)
+ ;;=^5009536
+ ;;^UTILITY(U,$J,358.3,10285,0)
+ ;;=L97.423^^68^664^188
+ ;;^UTILITY(U,$J,358.3,10285,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10285,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Left Heel/Midfoot w/ Necrosis of Muscle
+ ;;^UTILITY(U,$J,358.3,10285,1,4,0)
+ ;;=4^L97.423
+ ;;^UTILITY(U,$J,358.3,10285,2)
+ ;;=^5009537
+ ;;^UTILITY(U,$J,358.3,10286,0)
+ ;;=L97.424^^68^664^189
+ ;;^UTILITY(U,$J,358.3,10286,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10286,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Left Heel/Midfoot w/ Necrosis of Bone
+ ;;^UTILITY(U,$J,358.3,10286,1,4,0)
+ ;;=4^L97.424
+ ;;^UTILITY(U,$J,358.3,10286,2)
+ ;;=^5009538
+ ;;^UTILITY(U,$J,358.3,10287,0)
+ ;;=L97.429^^68^664^190
+ ;;^UTILITY(U,$J,358.3,10287,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10287,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Left Heel/Midfoot w/ Unspec Severity
+ ;;^UTILITY(U,$J,358.3,10287,1,4,0)
+ ;;=4^L97.429
+ ;;^UTILITY(U,$J,358.3,10287,2)
+ ;;=^5009539
+ ;;^UTILITY(U,$J,358.3,10288,0)
+ ;;=L97.511^^68^664^211

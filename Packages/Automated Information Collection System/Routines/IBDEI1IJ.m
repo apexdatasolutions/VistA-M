@@ -1,0 +1,132 @@
+IBDEI1IJ ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,25285,1,4,0)
+ ;;=4^M19.232
+ ;;^UTILITY(U,$J,358.3,25285,2)
+ ;;=^5010845
+ ;;^UTILITY(U,$J,358.3,25286,0)
+ ;;=M19.241^^124^1244^67
+ ;;^UTILITY(U,$J,358.3,25286,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25286,1,3,0)
+ ;;=3^Secondary Osteoarthritis,Right Hand
+ ;;^UTILITY(U,$J,358.3,25286,1,4,0)
+ ;;=4^M19.241
+ ;;^UTILITY(U,$J,358.3,25286,2)
+ ;;=^5010847
+ ;;^UTILITY(U,$J,358.3,25287,0)
+ ;;=M19.242^^124^1244^63
+ ;;^UTILITY(U,$J,358.3,25287,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25287,1,3,0)
+ ;;=3^Secondary Osteoarthritis,Left Hand
+ ;;^UTILITY(U,$J,358.3,25287,1,4,0)
+ ;;=4^M19.242
+ ;;^UTILITY(U,$J,358.3,25287,2)
+ ;;=^5010848
+ ;;^UTILITY(U,$J,358.3,25288,0)
+ ;;=M16.0^^124^1244^30
+ ;;^UTILITY(U,$J,358.3,25288,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25288,1,3,0)
+ ;;=3^Primary Osteoarthritis,Bilateral Hips
+ ;;^UTILITY(U,$J,358.3,25288,1,4,0)
+ ;;=4^M16.0
+ ;;^UTILITY(U,$J,358.3,25288,2)
+ ;;=^5010769
+ ;;^UTILITY(U,$J,358.3,25289,0)
+ ;;=M16.11^^124^1244^42
+ ;;^UTILITY(U,$J,358.3,25289,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25289,1,3,0)
+ ;;=3^Primary Osteoarthritis,Right Hip
+ ;;^UTILITY(U,$J,358.3,25289,1,4,0)
+ ;;=4^M16.11
+ ;;^UTILITY(U,$J,358.3,25289,2)
+ ;;=^5010771
+ ;;^UTILITY(U,$J,358.3,25290,0)
+ ;;=M16.12^^124^1244^35
+ ;;^UTILITY(U,$J,358.3,25290,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25290,1,3,0)
+ ;;=3^Primary Osteoarthritis,Left Hip
+ ;;^UTILITY(U,$J,358.3,25290,1,4,0)
+ ;;=4^M16.12
+ ;;^UTILITY(U,$J,358.3,25290,2)
+ ;;=^5010772
+ ;;^UTILITY(U,$J,358.3,25291,0)
+ ;;=M17.11^^124^1244^43
+ ;;^UTILITY(U,$J,358.3,25291,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25291,1,3,0)
+ ;;=3^Primary Osteoarthritis,Right Knee
+ ;;^UTILITY(U,$J,358.3,25291,1,4,0)
+ ;;=4^M17.11
+ ;;^UTILITY(U,$J,358.3,25291,2)
+ ;;=^5010786
+ ;;^UTILITY(U,$J,358.3,25292,0)
+ ;;=M17.12^^124^1244^36
+ ;;^UTILITY(U,$J,358.3,25292,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25292,1,3,0)
+ ;;=3^Primary Osteoarthritis,Left Knee
+ ;;^UTILITY(U,$J,358.3,25292,1,4,0)
+ ;;=4^M17.12
+ ;;^UTILITY(U,$J,358.3,25292,2)
+ ;;=^5010787
+ ;;^UTILITY(U,$J,358.3,25293,0)
+ ;;=M19.071^^124^1244^39
+ ;;^UTILITY(U,$J,358.3,25293,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25293,1,3,0)
+ ;;=3^Primary Osteoarthritis,Right Ankle/Foot
+ ;;^UTILITY(U,$J,358.3,25293,1,4,0)
+ ;;=4^M19.071
+ ;;^UTILITY(U,$J,358.3,25293,2)
+ ;;=^5010820
+ ;;^UTILITY(U,$J,358.3,25294,0)
+ ;;=M19.072^^124^1244^32
+ ;;^UTILITY(U,$J,358.3,25294,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25294,1,3,0)
+ ;;=3^Primary Osteoarthritis,Left Ankle/Foot
+ ;;^UTILITY(U,$J,358.3,25294,1,4,0)
+ ;;=4^M19.072
+ ;;^UTILITY(U,$J,358.3,25294,2)
+ ;;=^5010821
+ ;;^UTILITY(U,$J,358.3,25295,0)
+ ;;=M18.11^^124^1244^27
+ ;;^UTILITY(U,$J,358.3,25295,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25295,1,3,0)
+ ;;=3^Primary Osteoarthritis,1st Carpometacarp Joint,Right Hand
+ ;;^UTILITY(U,$J,358.3,25295,1,4,0)
+ ;;=4^M18.11
+ ;;^UTILITY(U,$J,358.3,25295,2)
+ ;;=^5010797
+ ;;^UTILITY(U,$J,358.3,25296,0)
+ ;;=M18.12^^124^1244^28
+ ;;^UTILITY(U,$J,358.3,25296,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25296,1,3,0)
+ ;;=3^Primary Osteoarthritis,1st Carpometacarp Joint,Left Hand
+ ;;^UTILITY(U,$J,358.3,25296,1,4,0)
+ ;;=4^M18.12
+ ;;^UTILITY(U,$J,358.3,25296,2)
+ ;;=^5010798
+ ;;^UTILITY(U,$J,358.3,25297,0)
+ ;;=M17.0^^124^1244^31
+ ;;^UTILITY(U,$J,358.3,25297,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25297,1,3,0)
+ ;;=3^Primary Osteoarthritis,Bilateral Knees
+ ;;^UTILITY(U,$J,358.3,25297,1,4,0)
+ ;;=4^M17.0
+ ;;^UTILITY(U,$J,358.3,25297,2)
+ ;;=^5010784
+ ;;^UTILITY(U,$J,358.3,25298,0)
+ ;;=M18.0^^124^1244^29
+ ;;^UTILITY(U,$J,358.3,25298,1,0)
+ ;;=^358.31IA^4^2

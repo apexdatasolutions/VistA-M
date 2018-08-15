@@ -1,150 +1,124 @@
-IBDEI09C ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI09C ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,4311,2)
- ;;=^127237
- ;;^UTILITY(U,$J,358.3,4312,0)
- ;;=435.9^^37^333^53
- ;;^UTILITY(U,$J,358.3,4312,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4312,1,4,0)
- ;;=4^TIA
- ;;^UTILITY(U,$J,358.3,4312,1,5,0)
- ;;=5^435.9
- ;;^UTILITY(U,$J,358.3,4312,2)
- ;;=^21635
- ;;^UTILITY(U,$J,358.3,4313,0)
- ;;=285.9^^37^333^6
- ;;^UTILITY(U,$J,358.3,4313,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4313,1,4,0)
- ;;=4^Anemia Nos
- ;;^UTILITY(U,$J,358.3,4313,1,5,0)
- ;;=5^285.9
- ;;^UTILITY(U,$J,358.3,4313,2)
- ;;=^7007
- ;;^UTILITY(U,$J,358.3,4314,0)
- ;;=285.1^^37^333^7
- ;;^UTILITY(U,$J,358.3,4314,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4314,1,4,0)
- ;;=4^Anemia,Acute Posthemorr
- ;;^UTILITY(U,$J,358.3,4314,1,5,0)
- ;;=5^285.1
- ;;^UTILITY(U,$J,358.3,4314,2)
- ;;=^267986
- ;;^UTILITY(U,$J,358.3,4315,0)
- ;;=280.0^^37^333^8
- ;;^UTILITY(U,$J,358.3,4315,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4315,1,4,0)
- ;;=4^Anemia,Chr Blood Loss
- ;;^UTILITY(U,$J,358.3,4315,1,5,0)
- ;;=5^280.0
- ;;^UTILITY(U,$J,358.3,4315,2)
- ;;=^267971
- ;;^UTILITY(U,$J,358.3,4316,0)
- ;;=280.9^^37^333^9
- ;;^UTILITY(U,$J,358.3,4316,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4316,1,4,0)
- ;;=4^Anemia,Iron Defic
- ;;^UTILITY(U,$J,358.3,4316,1,5,0)
- ;;=5^280.9
- ;;^UTILITY(U,$J,358.3,4316,2)
- ;;=^276946
- ;;^UTILITY(U,$J,358.3,4317,0)
- ;;=331.0^^37^333^5
- ;;^UTILITY(U,$J,358.3,4317,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4317,1,4,0)
- ;;=4^Alzheimer'S Disease
- ;;^UTILITY(U,$J,358.3,4317,1,5,0)
- ;;=5^331.0
- ;;^UTILITY(U,$J,358.3,4317,2)
- ;;=^5679
- ;;^UTILITY(U,$J,358.3,4318,0)
- ;;=250.01^^37^333^19
- ;;^UTILITY(U,$J,358.3,4318,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4318,1,4,0)
- ;;=4^Diabetes Type 1
- ;;^UTILITY(U,$J,358.3,4318,1,5,0)
- ;;=5^250.01
- ;;^UTILITY(U,$J,358.3,4318,2)
- ;;=^33586
- ;;^UTILITY(U,$J,358.3,4319,0)
- ;;=250.00^^37^333^20
- ;;^UTILITY(U,$J,358.3,4319,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4319,1,4,0)
- ;;=4^Diabetes Type 2
- ;;^UTILITY(U,$J,358.3,4319,1,5,0)
- ;;=5^250.00
- ;;^UTILITY(U,$J,358.3,4319,2)
- ;;=^33605
- ;;^UTILITY(U,$J,358.3,4320,0)
- ;;=577.0^^37^333^41
- ;;^UTILITY(U,$J,358.3,4320,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4320,1,4,0)
- ;;=4^Pancreatitis,Acute
- ;;^UTILITY(U,$J,358.3,4320,1,5,0)
- ;;=5^577.0
- ;;^UTILITY(U,$J,358.3,4320,2)
- ;;=^2643
- ;;^UTILITY(U,$J,358.3,4321,0)
- ;;=785.4^^37^333^25
- ;;^UTILITY(U,$J,358.3,4321,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4321,1,4,0)
- ;;=4^Gangrene
- ;;^UTILITY(U,$J,358.3,4321,1,5,0)
- ;;=5^785.4
- ;;^UTILITY(U,$J,358.3,4321,2)
- ;;=^49194
- ;;^UTILITY(U,$J,358.3,4322,0)
- ;;=780.99^^37^333^13
- ;;^UTILITY(U,$J,358.3,4322,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4322,1,4,0)
- ;;=4^Chills
- ;;^UTILITY(U,$J,358.3,4322,1,5,0)
- ;;=5^780.99
- ;;^UTILITY(U,$J,358.3,4322,2)
- ;;=Chills^295853
- ;;^UTILITY(U,$J,358.3,4323,0)
- ;;=787.20^^37^333^23
- ;;^UTILITY(U,$J,358.3,4323,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4323,1,4,0)
- ;;=4^Dysphagia Nos
- ;;^UTILITY(U,$J,358.3,4323,1,5,0)
- ;;=5^787.20
- ;;^UTILITY(U,$J,358.3,4323,2)
- ;;=^335307
- ;;^UTILITY(U,$J,358.3,4324,0)
- ;;=780.60^^37^333^24
- ;;^UTILITY(U,$J,358.3,4324,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4324,1,4,0)
- ;;=4^Fever
- ;;^UTILITY(U,$J,358.3,4324,1,5,0)
- ;;=5^780.60
- ;;^UTILITY(U,$J,358.3,4324,2)
- ;;=^336764
- ;;^UTILITY(U,$J,358.3,4325,0)
- ;;=786.30^^37^333^29
- ;;^UTILITY(U,$J,358.3,4325,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4325,1,4,0)
- ;;=4^Hemoptysis NOS
- ;;^UTILITY(U,$J,358.3,4325,1,5,0)
- ;;=5^786.30
- ;;^UTILITY(U,$J,358.3,4325,2)
- ;;=^339669
- ;;^UTILITY(U,$J,358.3,4326,0)
- ;;=787.60^^37^333^33
- ;;^UTILITY(U,$J,358.3,4326,1,0)
- ;;=^358.31IA^5^2
+ ;;^UTILITY(U,$J,358.3,3828,2)
+ ;;=^5007570
+ ;;^UTILITY(U,$J,358.3,3829,0)
+ ;;=I69.923^^28^259^23
+ ;;^UTILITY(U,$J,358.3,3829,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3829,1,3,0)
+ ;;=3^Cerebrovascular Disease,Fluency Disorder
+ ;;^UTILITY(U,$J,358.3,3829,1,4,0)
+ ;;=4^I69.923
+ ;;^UTILITY(U,$J,358.3,3829,2)
+ ;;=^5007556
+ ;;^UTILITY(U,$J,358.3,3830,0)
+ ;;=I69.952^^28^259^24
+ ;;^UTILITY(U,$J,358.3,3830,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3830,1,3,0)
+ ;;=3^Cerebrovascular Disease,Hemiplegia/Hemiparesis,Left Dominant Side
+ ;;^UTILITY(U,$J,358.3,3830,1,4,0)
+ ;;=4^I69.952
+ ;;^UTILITY(U,$J,358.3,3830,2)
+ ;;=^5133586
+ ;;^UTILITY(U,$J,358.3,3831,0)
+ ;;=I69.954^^28^259^25
+ ;;^UTILITY(U,$J,358.3,3831,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3831,1,3,0)
+ ;;=3^Cerebrovascular Disease,Hemiplegia/Hemiparesis,Left Nondominant Side
+ ;;^UTILITY(U,$J,358.3,3831,1,4,0)
+ ;;=4^I69.954
+ ;;^UTILITY(U,$J,358.3,3831,2)
+ ;;=^5133587
+ ;;^UTILITY(U,$J,358.3,3832,0)
+ ;;=I69.951^^28^259^26
+ ;;^UTILITY(U,$J,358.3,3832,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3832,1,3,0)
+ ;;=3^Cerebrovascular Disease,Hemiplegia/Hemiparesis,Right Dominant Side
+ ;;^UTILITY(U,$J,358.3,3832,1,4,0)
+ ;;=4^I69.951
+ ;;^UTILITY(U,$J,358.3,3832,2)
+ ;;=^5007561
+ ;;^UTILITY(U,$J,358.3,3833,0)
+ ;;=I69.953^^28^259^27
+ ;;^UTILITY(U,$J,358.3,3833,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3833,1,3,0)
+ ;;=3^Cerebrovascular Disease,Hemiplegia/Hemiparesis,Right Nondominant Side
+ ;;^UTILITY(U,$J,358.3,3833,1,4,0)
+ ;;=4^I69.953
+ ;;^UTILITY(U,$J,358.3,3833,2)
+ ;;=^5007562
+ ;;^UTILITY(U,$J,358.3,3834,0)
+ ;;=I69.942^^28^259^28
+ ;;^UTILITY(U,$J,358.3,3834,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3834,1,3,0)
+ ;;=3^Cerebrovascular Disease,Monoplegia,Lt Lower Dominant Side
+ ;;^UTILITY(U,$J,358.3,3834,1,4,0)
+ ;;=4^I69.942
+ ;;^UTILITY(U,$J,358.3,3834,2)
+ ;;=^5133582
+ ;;^UTILITY(U,$J,358.3,3835,0)
+ ;;=I69.944^^28^259^29
+ ;;^UTILITY(U,$J,358.3,3835,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3835,1,3,0)
+ ;;=3^Cerebrovascular Disease,Monoplegia,Lt Lower Nondominant Side
+ ;;^UTILITY(U,$J,358.3,3835,1,4,0)
+ ;;=4^I69.944
+ ;;^UTILITY(U,$J,358.3,3835,2)
+ ;;=^5133585
+ ;;^UTILITY(U,$J,358.3,3836,0)
+ ;;=I69.932^^28^259^30
+ ;;^UTILITY(U,$J,358.3,3836,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3836,1,3,0)
+ ;;=3^Cerebrovascular Disease,Monoplegia,Lt Upper Dominant Side
+ ;;^UTILITY(U,$J,358.3,3836,1,4,0)
+ ;;=4^I69.932
+ ;;^UTILITY(U,$J,358.3,3836,2)
+ ;;=^5133580
+ ;;^UTILITY(U,$J,358.3,3837,0)
+ ;;=I69.934^^28^259^31
+ ;;^UTILITY(U,$J,358.3,3837,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3837,1,3,0)
+ ;;=3^Cerebrovascular Disease,Monoplegia,Lt Upper Nondominant Side
+ ;;^UTILITY(U,$J,358.3,3837,1,4,0)
+ ;;=4^I69.934
+ ;;^UTILITY(U,$J,358.3,3837,2)
+ ;;=^5133583
+ ;;^UTILITY(U,$J,358.3,3838,0)
+ ;;=I69.941^^28^259^32
+ ;;^UTILITY(U,$J,358.3,3838,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3838,1,3,0)
+ ;;=3^Cerebrovascular Disease,Monoplegia,Rt Lower Dominant Side
+ ;;^UTILITY(U,$J,358.3,3838,1,4,0)
+ ;;=4^I69.941
+ ;;^UTILITY(U,$J,358.3,3838,2)
+ ;;=^5133581
+ ;;^UTILITY(U,$J,358.3,3839,0)
+ ;;=I69.943^^28^259^33
+ ;;^UTILITY(U,$J,358.3,3839,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3839,1,3,0)
+ ;;=3^Cerebrovascular Disease,Monoplegia,Rt Nondominant Side
+ ;;^UTILITY(U,$J,358.3,3839,1,4,0)
+ ;;=4^I69.943
+ ;;^UTILITY(U,$J,358.3,3839,2)
+ ;;=^5133584
+ ;;^UTILITY(U,$J,358.3,3840,0)
+ ;;=I69.931^^28^259^34
+ ;;^UTILITY(U,$J,358.3,3840,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3840,1,3,0)
+ ;;=3^Cerebrovascular Disease,Monoplegia,Rt Upper Dominant Side
+ ;;^UTILITY(U,$J,358.3,3840,1,4,0)
+ ;;=4^I69.931

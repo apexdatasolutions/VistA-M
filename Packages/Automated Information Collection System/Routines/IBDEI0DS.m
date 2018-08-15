@@ -1,142 +1,128 @@
-IBDEI0DS ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0DS ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,6634,1,4,0)
- ;;=4^795.52
- ;;^UTILITY(U,$J,358.3,6634,1,5,0)
- ;;=5^Pos GMA Interferon w/o Active TB
- ;;^UTILITY(U,$J,358.3,6634,2)
- ;;=^340573
- ;;^UTILITY(U,$J,358.3,6635,0)
- ;;=V15.82^^55^569^21
- ;;^UTILITY(U,$J,358.3,6635,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6635,1,4,0)
- ;;=4^V15.82
- ;;^UTILITY(U,$J,358.3,6635,1,5,0)
- ;;=5^H/O Tobacco Abuse
- ;;^UTILITY(U,$J,358.3,6635,2)
- ;;=^303405
- ;;^UTILITY(U,$J,358.3,6636,0)
- ;;=511.89^^55^569^27
- ;;^UTILITY(U,$J,358.3,6636,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6636,1,4,0)
- ;;=4^511.89
- ;;^UTILITY(U,$J,358.3,6636,1,5,0)
- ;;=5^Pleural Effusion NEC
- ;;^UTILITY(U,$J,358.3,6636,2)
- ;;=^336604
- ;;^UTILITY(U,$J,358.3,6637,0)
- ;;=511.9^^55^569^28
- ;;^UTILITY(U,$J,358.3,6637,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6637,1,4,0)
- ;;=4^511.9
- ;;^UTILITY(U,$J,358.3,6637,1,5,0)
- ;;=5^Pleural Effusion NOS
- ;;^UTILITY(U,$J,358.3,6637,2)
- ;;=^123973
- ;;^UTILITY(U,$J,358.3,6638,0)
- ;;=376.01^^55^570^25
- ;;^UTILITY(U,$J,358.3,6638,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6638,1,4,0)
- ;;=4^376.01
- ;;^UTILITY(U,$J,358.3,6638,1,5,0)
- ;;=5^Orbital Cellulitis
- ;;^UTILITY(U,$J,358.3,6638,2)
- ;;=^259068
- ;;^UTILITY(U,$J,358.3,6639,0)
- ;;=388.70^^55^570^26
- ;;^UTILITY(U,$J,358.3,6639,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6639,1,4,0)
- ;;=4^388.70
- ;;^UTILITY(U,$J,358.3,6639,1,5,0)
- ;;=5^Otalgia, Unsp
- ;;^UTILITY(U,$J,358.3,6639,2)
- ;;=^37811
- ;;^UTILITY(U,$J,358.3,6640,0)
- ;;=380.10^^55^570^27
- ;;^UTILITY(U,$J,358.3,6640,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6640,1,4,0)
- ;;=4^380.10
- ;;^UTILITY(U,$J,358.3,6640,1,5,0)
- ;;=5^Otitis Externa,Infect
- ;;^UTILITY(U,$J,358.3,6640,2)
- ;;=^62807
- ;;^UTILITY(U,$J,358.3,6641,0)
- ;;=381.01^^55^570^31
- ;;^UTILITY(U,$J,358.3,6641,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6641,1,4,0)
- ;;=4^381.01
- ;;^UTILITY(U,$J,358.3,6641,1,5,0)
- ;;=5^Otitis Media, Serous Acute
- ;;^UTILITY(U,$J,358.3,6641,2)
- ;;=^269369
- ;;^UTILITY(U,$J,358.3,6642,0)
- ;;=382.9^^55^570^28
- ;;^UTILITY(U,$J,358.3,6642,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6642,1,4,0)
- ;;=4^382.9
- ;;^UTILITY(U,$J,358.3,6642,1,5,0)
- ;;=5^Otitis Med, Other Acute
- ;;^UTILITY(U,$J,358.3,6642,2)
- ;;=^123967
- ;;^UTILITY(U,$J,358.3,6643,0)
- ;;=382.01^^55^570^30
- ;;^UTILITY(U,$J,358.3,6643,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6643,1,4,0)
- ;;=4^382.01
- ;;^UTILITY(U,$J,358.3,6643,1,5,0)
- ;;=5^Otitis Media W/Tympanic Membrane Rupture
- ;;^UTILITY(U,$J,358.3,6643,2)
- ;;=^269396
- ;;^UTILITY(U,$J,358.3,6644,0)
- ;;=381.10^^55^570^29
- ;;^UTILITY(U,$J,358.3,6644,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6644,1,4,0)
- ;;=4^381.10
- ;;^UTILITY(U,$J,358.3,6644,1,5,0)
- ;;=5^Otitis Med, Serous Chronic
- ;;^UTILITY(U,$J,358.3,6644,2)
- ;;=Otitis Med,serous chroinic^269376
- ;;^UTILITY(U,$J,358.3,6645,0)
- ;;=379.91^^55^570^32
- ;;^UTILITY(U,$J,358.3,6645,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6645,1,4,0)
- ;;=4^379.91
- ;;^UTILITY(U,$J,358.3,6645,1,5,0)
- ;;=5^Pain In Or Around Eye
- ;;^UTILITY(U,$J,358.3,6645,2)
- ;;=^89093
- ;;^UTILITY(U,$J,358.3,6646,0)
- ;;=462.^^55^570^33
- ;;^UTILITY(U,$J,358.3,6646,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6646,1,4,0)
- ;;=4^462.
- ;;^UTILITY(U,$J,358.3,6646,1,5,0)
- ;;=5^Pharyngitis, Acute
- ;;^UTILITY(U,$J,358.3,6646,2)
- ;;=Pharyngitis, Acute^2653
- ;;^UTILITY(U,$J,358.3,6647,0)
- ;;=460.^^55^570^21
- ;;^UTILITY(U,$J,358.3,6647,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6647,1,4,0)
- ;;=4^460.
- ;;^UTILITY(U,$J,358.3,6647,1,5,0)
- ;;=5^Nasopharyngitis, Acute
- ;;^UTILITY(U,$J,358.3,6647,2)
- ;;=^26543
- ;;^UTILITY(U,$J,358.3,6648,0)
- ;;=477.9^^55^570^3
+ ;;^UTILITY(U,$J,358.3,6011,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6011,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Right Leg w/ Foot Ulcer
+ ;;^UTILITY(U,$J,358.3,6011,1,4,0)
+ ;;=4^I70.335
+ ;;^UTILITY(U,$J,358.3,6011,2)
+ ;;=^5007630
+ ;;^UTILITY(U,$J,358.3,6012,0)
+ ;;=I70.338^^40^383^69
+ ;;^UTILITY(U,$J,358.3,6012,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6012,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Right Leg w/ Lower Leg Ulcer
+ ;;^UTILITY(U,$J,358.3,6012,1,4,0)
+ ;;=4^I70.338
+ ;;^UTILITY(U,$J,358.3,6012,2)
+ ;;=^5007631
+ ;;^UTILITY(U,$J,358.3,6013,0)
+ ;;=I70.339^^40^383^70
+ ;;^UTILITY(U,$J,358.3,6013,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6013,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Right Leg w/ Ulcer,Unspec Site
+ ;;^UTILITY(U,$J,358.3,6013,1,4,0)
+ ;;=4^I70.339
+ ;;^UTILITY(U,$J,358.3,6013,2)
+ ;;=^5007632
+ ;;^UTILITY(U,$J,358.3,6014,0)
+ ;;=I70.341^^40^383^62
+ ;;^UTILITY(U,$J,358.3,6014,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6014,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Left Leg w/ Thigh Ulcer
+ ;;^UTILITY(U,$J,358.3,6014,1,4,0)
+ ;;=4^I70.341
+ ;;^UTILITY(U,$J,358.3,6014,2)
+ ;;=^5007633
+ ;;^UTILITY(U,$J,358.3,6015,0)
+ ;;=I70.342^^40^383^58
+ ;;^UTILITY(U,$J,358.3,6015,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6015,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Left Leg w/ Calf Ulcer
+ ;;^UTILITY(U,$J,358.3,6015,1,4,0)
+ ;;=4^I70.342
+ ;;^UTILITY(U,$J,358.3,6015,2)
+ ;;=^5007634
+ ;;^UTILITY(U,$J,358.3,6016,0)
+ ;;=I70.343^^40^383^57
+ ;;^UTILITY(U,$J,358.3,6016,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6016,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Left Leg w/ Ankle Ulcer
+ ;;^UTILITY(U,$J,358.3,6016,1,4,0)
+ ;;=4^I70.343
+ ;;^UTILITY(U,$J,358.3,6016,2)
+ ;;=^5007635
+ ;;^UTILITY(U,$J,358.3,6017,0)
+ ;;=I70.344^^40^383^60
+ ;;^UTILITY(U,$J,358.3,6017,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6017,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Left Leg w/ Heel/Midfoot Ulcer
+ ;;^UTILITY(U,$J,358.3,6017,1,4,0)
+ ;;=4^I70.344
+ ;;^UTILITY(U,$J,358.3,6017,2)
+ ;;=^5007636
+ ;;^UTILITY(U,$J,358.3,6018,0)
+ ;;=I70.345^^40^383^59
+ ;;^UTILITY(U,$J,358.3,6018,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6018,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Left Leg w/ Foot Ulcer
+ ;;^UTILITY(U,$J,358.3,6018,1,4,0)
+ ;;=4^I70.345
+ ;;^UTILITY(U,$J,358.3,6018,2)
+ ;;=^5007637
+ ;;^UTILITY(U,$J,358.3,6019,0)
+ ;;=I70.348^^40^383^61
+ ;;^UTILITY(U,$J,358.3,6019,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6019,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Left Leg w/ Lower Leg Ulcer
+ ;;^UTILITY(U,$J,358.3,6019,1,4,0)
+ ;;=4^I70.348
+ ;;^UTILITY(U,$J,358.3,6019,2)
+ ;;=^5007638
+ ;;^UTILITY(U,$J,358.3,6020,0)
+ ;;=I70.349^^40^383^63
+ ;;^UTILITY(U,$J,358.3,6020,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6020,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Left Leg w/ Ulcer,Unspec Site
+ ;;^UTILITY(U,$J,358.3,6020,1,4,0)
+ ;;=4^I70.349
+ ;;^UTILITY(U,$J,358.3,6020,2)
+ ;;=^5007639
+ ;;^UTILITY(U,$J,358.3,6021,0)
+ ;;=I70.431^^40^383^8
+ ;;^UTILITY(U,$J,358.3,6021,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6021,1,3,0)
+ ;;=3^Athscl Autol Vein Bypass of Right Leg w/ Thigh Ulcer
+ ;;^UTILITY(U,$J,358.3,6021,1,4,0)
+ ;;=4^I70.431
+ ;;^UTILITY(U,$J,358.3,6021,2)
+ ;;=^5007664
+ ;;^UTILITY(U,$J,358.3,6022,0)
+ ;;=I70.432^^40^383^9
+ ;;^UTILITY(U,$J,358.3,6022,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6022,1,3,0)
+ ;;=3^Athscl Autol Vein Bypass of Right Leg w/ Calf Ulcer
+ ;;^UTILITY(U,$J,358.3,6022,1,4,0)
+ ;;=4^I70.432
+ ;;^UTILITY(U,$J,358.3,6022,2)
+ ;;=^5007665
+ ;;^UTILITY(U,$J,358.3,6023,0)
+ ;;=I70.433^^40^383^10
+ ;;^UTILITY(U,$J,358.3,6023,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6023,1,3,0)
+ ;;=3^Athscl Autol Vein Bypass of Right Leg w/ Ankle Ulcer

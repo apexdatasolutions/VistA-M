@@ -1,146 +1,134 @@
-IBDEI02I ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI02I ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,764,2)
- ;;=^87791
- ;;^UTILITY(U,$J,358.3,765,0)
- ;;=386.2^^11^93^95
- ;;^UTILITY(U,$J,358.3,765,1,0)
+ ;;^UTILITY(U,$J,358.3,406,1,4,0)
+ ;;=4^F12.180
+ ;;^UTILITY(U,$J,358.3,406,2)
+ ;;=^5003163
+ ;;^UTILITY(U,$J,358.3,407,0)
+ ;;=F12.188^^3^51^3
+ ;;^UTILITY(U,$J,358.3,407,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,765,1,3,0)
- ;;=3^386.2
- ;;^UTILITY(U,$J,358.3,765,1,4,0)
- ;;=4^Vertigo, Central
- ;;^UTILITY(U,$J,358.3,765,2)
- ;;=^269484
- ;;^UTILITY(U,$J,358.3,766,0)
- ;;=386.11^^11^93^94
- ;;^UTILITY(U,$J,358.3,766,1,0)
+ ;;^UTILITY(U,$J,358.3,407,1,3,0)
+ ;;=3^Cannabis-Induced Sleep Disorder w/ Mild Use Disorder
+ ;;^UTILITY(U,$J,358.3,407,1,4,0)
+ ;;=4^F12.188
+ ;;^UTILITY(U,$J,358.3,407,2)
+ ;;=^5003164
+ ;;^UTILITY(U,$J,358.3,408,0)
+ ;;=F12.20^^3^51^4
+ ;;^UTILITY(U,$J,358.3,408,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,766,1,3,0)
- ;;=3^386.11
- ;;^UTILITY(U,$J,358.3,766,1,4,0)
- ;;=4^Vertigo, BPPV
- ;;^UTILITY(U,$J,358.3,766,2)
- ;;=^269480
- ;;^UTILITY(U,$J,358.3,767,0)
- ;;=388.40^^11^93^22
- ;;^UTILITY(U,$J,358.3,767,1,0)
+ ;;^UTILITY(U,$J,358.3,408,1,3,0)
+ ;;=3^Cannabis Use Disorder,Moderate-Severe
+ ;;^UTILITY(U,$J,358.3,408,1,4,0)
+ ;;=4^F12.20
+ ;;^UTILITY(U,$J,358.3,408,2)
+ ;;=^5003166
+ ;;^UTILITY(U,$J,358.3,409,0)
+ ;;=F12.21^^3^51^5
+ ;;^UTILITY(U,$J,358.3,409,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,767,1,3,0)
- ;;=3^388.40
- ;;^UTILITY(U,$J,358.3,767,1,4,0)
- ;;=4^Auditory Perception, Abnormal NOS
- ;;^UTILITY(U,$J,358.3,767,2)
- ;;=^269531
- ;;^UTILITY(U,$J,358.3,768,0)
- ;;=386.10^^11^93^97
- ;;^UTILITY(U,$J,358.3,768,1,0)
+ ;;^UTILITY(U,$J,358.3,409,1,3,0)
+ ;;=3^Cannabis Use Disorder,Moderate-Severe,In Remission
+ ;;^UTILITY(U,$J,358.3,409,1,4,0)
+ ;;=4^F12.21
+ ;;^UTILITY(U,$J,358.3,409,2)
+ ;;=^5003167
+ ;;^UTILITY(U,$J,358.3,410,0)
+ ;;=F12.288^^3^51^6
+ ;;^UTILITY(U,$J,358.3,410,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,768,1,3,0)
- ;;=3^386.10
- ;;^UTILITY(U,$J,358.3,768,1,4,0)
- ;;=4^Vertigo, Peripheral Nos
- ;;^UTILITY(U,$J,358.3,768,2)
- ;;=^269478
- ;;^UTILITY(U,$J,358.3,769,0)
- ;;=386.01^^11^93^12
- ;;^UTILITY(U,$J,358.3,769,1,0)
+ ;;^UTILITY(U,$J,358.3,410,1,3,0)
+ ;;=3^Cannabis Withdrawal
+ ;;^UTILITY(U,$J,358.3,410,1,4,0)
+ ;;=4^F12.288
+ ;;^UTILITY(U,$J,358.3,410,2)
+ ;;=^5003176
+ ;;^UTILITY(U,$J,358.3,411,0)
+ ;;=F12.280^^3^51^7
+ ;;^UTILITY(U,$J,358.3,411,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,769,1,3,0)
- ;;=3^386.01
- ;;^UTILITY(U,$J,358.3,769,1,4,0)
- ;;=4^Actv Menieres, Cochleuest
- ;;^UTILITY(U,$J,358.3,769,2)
- ;;=^269469
- ;;^UTILITY(U,$J,358.3,770,0)
- ;;=386.02^^11^93^11
- ;;^UTILITY(U,$J,358.3,770,1,0)
+ ;;^UTILITY(U,$J,358.3,411,1,3,0)
+ ;;=3^Cannabis-Induced Anxiety Disorder w/ Moderate-Severe Use Disorder
+ ;;^UTILITY(U,$J,358.3,411,1,4,0)
+ ;;=4^F12.280
+ ;;^UTILITY(U,$J,358.3,411,2)
+ ;;=^5003175
+ ;;^UTILITY(U,$J,358.3,412,0)
+ ;;=F16.10^^3^52^1
+ ;;^UTILITY(U,$J,358.3,412,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,770,1,3,0)
- ;;=3^386.02
- ;;^UTILITY(U,$J,358.3,770,1,4,0)
- ;;=4^Actv Menieres, Cochlear
- ;;^UTILITY(U,$J,358.3,770,2)
- ;;=^269471
- ;;^UTILITY(U,$J,358.3,771,0)
- ;;=386.03^^11^93^13
- ;;^UTILITY(U,$J,358.3,771,1,0)
+ ;;^UTILITY(U,$J,358.3,412,1,3,0)
+ ;;=3^Phencyclidine Use Disorder,Mild
+ ;;^UTILITY(U,$J,358.3,412,1,4,0)
+ ;;=4^F16.10
+ ;;^UTILITY(U,$J,358.3,412,2)
+ ;;=^5003323
+ ;;^UTILITY(U,$J,358.3,413,0)
+ ;;=F16.20^^3^52^2
+ ;;^UTILITY(U,$J,358.3,413,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,771,1,3,0)
- ;;=3^386.03
- ;;^UTILITY(U,$J,358.3,771,1,4,0)
- ;;=4^Actv Menieres, Vestibular
- ;;^UTILITY(U,$J,358.3,771,2)
- ;;=^269473
- ;;^UTILITY(U,$J,358.3,772,0)
- ;;=386.12^^11^93^98
- ;;^UTILITY(U,$J,358.3,772,1,0)
+ ;;^UTILITY(U,$J,358.3,413,1,3,0)
+ ;;=3^Phencyclidine Use Disorder,Moderate-Severe
+ ;;^UTILITY(U,$J,358.3,413,1,4,0)
+ ;;=4^F16.20
+ ;;^UTILITY(U,$J,358.3,413,2)
+ ;;=^5003336
+ ;;^UTILITY(U,$J,358.3,414,0)
+ ;;=F16.21^^3^52^3
+ ;;^UTILITY(U,$J,358.3,414,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,772,1,3,0)
- ;;=3^386.12
- ;;^UTILITY(U,$J,358.3,772,1,4,0)
- ;;=4^Vestibular Neuronitis
- ;;^UTILITY(U,$J,358.3,772,2)
- ;;=^126186
- ;;^UTILITY(U,$J,358.3,773,0)
- ;;=388.41^^11^93^42
- ;;^UTILITY(U,$J,358.3,773,1,0)
+ ;;^UTILITY(U,$J,358.3,414,1,3,0)
+ ;;=3^Phencyclidine Use Disorder,Moderate-Severe,In Remission
+ ;;^UTILITY(U,$J,358.3,414,1,4,0)
+ ;;=4^F16.21
+ ;;^UTILITY(U,$J,358.3,414,2)
+ ;;=^5003337
+ ;;^UTILITY(U,$J,358.3,415,0)
+ ;;=F11.10^^3^53^4
+ ;;^UTILITY(U,$J,358.3,415,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,773,1,3,0)
- ;;=3^388.41
- ;;^UTILITY(U,$J,358.3,773,1,4,0)
- ;;=4^Diplacusis
- ;;^UTILITY(U,$J,358.3,773,2)
- ;;=^265456
- ;;^UTILITY(U,$J,358.3,774,0)
- ;;=388.45^^11^93^10
- ;;^UTILITY(U,$J,358.3,774,1,0)
+ ;;^UTILITY(U,$J,358.3,415,1,3,0)
+ ;;=3^Opioid Use Disorder,Mild
+ ;;^UTILITY(U,$J,358.3,415,1,4,0)
+ ;;=4^F11.10
+ ;;^UTILITY(U,$J,358.3,415,2)
+ ;;=^5003114
+ ;;^UTILITY(U,$J,358.3,416,0)
+ ;;=F11.129^^3^53^3
+ ;;^UTILITY(U,$J,358.3,416,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,774,1,3,0)
- ;;=3^388.45
- ;;^UTILITY(U,$J,358.3,774,1,4,0)
- ;;=4^Acq Auditory Process Disorder
- ;;^UTILITY(U,$J,358.3,774,2)
- ;;=^335255
- ;;^UTILITY(U,$J,358.3,775,0)
- ;;=386.41^^11^93^83
- ;;^UTILITY(U,$J,358.3,775,1,0)
+ ;;^UTILITY(U,$J,358.3,416,1,3,0)
+ ;;=3^Opioid Intoxication w/o Perceptual Disturbances;Mild Use Disorder
+ ;;^UTILITY(U,$J,358.3,416,1,4,0)
+ ;;=4^F11.129
+ ;;^UTILITY(U,$J,358.3,416,2)
+ ;;=^5003118
+ ;;^UTILITY(U,$J,358.3,417,0)
+ ;;=F11.14^^3^53^8
+ ;;^UTILITY(U,$J,358.3,417,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,775,1,3,0)
- ;;=3^386.41
- ;;^UTILITY(U,$J,358.3,775,1,4,0)
- ;;=4^Round Window Fistula
- ;;^UTILITY(U,$J,358.3,775,2)
- ;;=^269497
- ;;^UTILITY(U,$J,358.3,776,0)
- ;;=380.01^^11^93^16
- ;;^UTILITY(U,$J,358.3,776,1,0)
+ ;;^UTILITY(U,$J,358.3,417,1,3,0)
+ ;;=3^Opioid-Induced Depressive Disorder w/ Mild Use Disorder
+ ;;^UTILITY(U,$J,358.3,417,1,4,0)
+ ;;=4^F11.14
+ ;;^UTILITY(U,$J,358.3,417,2)
+ ;;=^5003119
+ ;;^UTILITY(U,$J,358.3,418,0)
+ ;;=F11.182^^3^53^10
+ ;;^UTILITY(U,$J,358.3,418,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,776,1,3,0)
- ;;=3^380.01
- ;;^UTILITY(U,$J,358.3,776,1,4,0)
- ;;=4^Acute Perichrondritis of Pinna
- ;;^UTILITY(U,$J,358.3,776,2)
- ;;=^269339
- ;;^UTILITY(U,$J,358.3,777,0)
- ;;=380.02^^11^93^36
- ;;^UTILITY(U,$J,358.3,777,1,0)
+ ;;^UTILITY(U,$J,358.3,418,1,3,0)
+ ;;=3^Opioid-Induced Sleep Disorder w/ Mild Use Disorder
+ ;;^UTILITY(U,$J,358.3,418,1,4,0)
+ ;;=4^F11.182
+ ;;^UTILITY(U,$J,358.3,418,2)
+ ;;=^5003124
+ ;;^UTILITY(U,$J,358.3,419,0)
+ ;;=F11.20^^3^53^5
+ ;;^UTILITY(U,$J,358.3,419,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,777,1,3,0)
- ;;=3^380.02
- ;;^UTILITY(U,$J,358.3,777,1,4,0)
- ;;=4^Chr Perichondritis of Pinna
- ;;^UTILITY(U,$J,358.3,777,2)
- ;;=^269340
- ;;^UTILITY(U,$J,358.3,778,0)
- ;;=380.03^^11^93^40
- ;;^UTILITY(U,$J,358.3,778,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,778,1,3,0)
- ;;=3^380.03
- ;;^UTILITY(U,$J,358.3,778,1,4,0)
- ;;=4^Chrondritis of Pinna
- ;;^UTILITY(U,$J,358.3,778,2)
- ;;=^331450
+ ;;^UTILITY(U,$J,358.3,419,1,3,0)
+ ;;=3^Opioid Use Disorder,Moderate-Severe

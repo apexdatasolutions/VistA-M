@@ -1,5 +1,5 @@
 PSOREJUT ;BIRM/MFR - BPS (ECME) - Clinical Rejects Utilities ;06/07/05
- ;;7.0;OUTPATIENT PHARMACY;**148,247,260,287,289,290,358,359,385,403,421**;DEC 1997;Build 15
+ ;;7.0;OUTPATIENT PHARMACY;**148,247,260,287,289,290,358,359,385,403,421,427,448,478**;DEC 1997;Build 27
  ;Reference to DUR1^BPSNCPD3 supported by IA 4560
  ;Reference to $$ADDCOMM^BPSBUTL supported by IA 4719
  ;
@@ -9,6 +9,7 @@ SAVE(RX,RFL,REJ,REOPEN) ; - Saves DUR Information in the file 52
  ;         (o) REOPEN - value of 1 means claim being reopened; null or no value passed means reopen claim functionality not being used
  ;         (r) REJ - Array containing information about the REJECT on the following subscripts:
  ;                   "BIN" - BIN Number
+ ;                   "PCN" - PCN Number
  ;                   "CODE"   - Reject Code (79 or 88)
  ;                   "DATE/TIME"   - Date/Time Reject Detected
  ;                   "PAYER MESSAGE" - Message returned by Payer (up to 140 chars long)
@@ -16,6 +17,7 @@ SAVE(RX,RFL,REJ,REOPEN) ; - Saves DUR Information in the file 52
  ;                   "DUR TEXT" - Payer's DUR description
  ;                   "DUR ADD MSG TEXT" - Payer's DUR additional message text description
  ;                   "INSURANCE NAME" - Patient's Insurance Company Name
+ ;                   "INSURANCE POINTER" - Patient's Insurance Company IEN
  ;                   "GROUP NAME" - Patient's Insurance Group Name
  ;                   "GROUP NUMBER" - Patient's Insurance Group Number
  ;                   "CARDHOLDER ID" - Patient's Insurance Cardholder ID
@@ -27,7 +29,7 @@ SAVE(RX,RFL,REJ,REOPEN) ; - Saves DUR Information in the file 52
  ;                   "RESPONSE IEN" - Pointer to the RESPONSE file in ECME
  ;                   "REASON SVC CODE" - Reason for Service Code (pointer to BPS NCPDP REASON FOR SERVICE CODE)
  ;                   "RE-OPENED" - Re-Open Flag
- ;                   "RRR FLAG" - Reject Resolution Required indicator
+ ;                   "RRR FLAG" - Reject Resolution Required indicator (expecting 1/0 into SAVE)
  ;                   "RRR THRESHOLD AMT" - Reject Resolution Required Dollar Threshold
  ;                   "RRR GROSS AMT DUE" - Reject Resolution Required Gross Amount Due
  ;Output: REJ("REJECT IEN")
@@ -35,7 +37,14 @@ SAVE(RX,RFL,REJ,REOPEN) ; - Saves DUR Information in the file 52
  I '$D(RFL) S RFL=$$LSTRFL^PSOBPSU1(RX)
  I '$G(PSODIV) S PSODIV=$$RXSITE^PSOBPSUT(RX,RFL)
  S REJ("BIN")=$E($G(REJ("BIN")),1,6)
+ S REJ("PCN")=$G(REJ("PCN"))
  S REJ("CODE")=$G(REJ("CODE"))
+ ;
+ ; convert REJ("RRR FLAG") into internal format (1/0) if necessary. When coming into SAVE from the Re-open Reject
+ ; action, this flag is in the external format (YES/NO).   esg - 3/29/16 - PSO*7*448
+ I $G(REJ("RRR FLAG"))="YES" S REJ("RRR FLAG")=1
+ I $G(REJ("RRR FLAG"))="NO" S REJ("RRR FLAG")=0
+ ;
  ;Ignore this additional Check if reject is Reject Resolution Required reject - PSO*7*421
  I '$G(REJ("RRR FLAG")),REJ("CODE")'=79&(REJ("CODE")'=88)&('$G(PSOTRIC))&('$G(REOPEN)) S ERR=$$EVAL^PSOREJU4(PSODIV,REJ("CODE"),$G(OPECC)) Q:'+ERR
  S REJ("PAYER MESSAGE")=$E($G(REJ("PAYER MESSAGE")),1,140),REJ("REASON")=$E($G(REJ("REASON")),1,100)
@@ -54,11 +63,13 @@ SAVE(RX,RFL,REJ,REOPEN) ; - Saves DUR Information in the file 52
  S DIC("DR")=DIC("DR")_";27///"_REJ("COB")
  S DIC("DR")=DIC("DR")_";28///"_REJ("DUR ADD MSG TEXT")
  S DIC("DR")=DIC("DR")_";29///"_REJ("BIN")
+ S DIC("DR")=DIC("DR")_";34///"_REJ("PCN")
  ;Update Reject Resolution Required fields - PSO*7*421
  I $G(REJ("RRR FLAG")) D
  .S DIC("DR")=DIC("DR")_";30///"_REJ("RRR FLAG")
  .S DIC("DR")=DIC("DR")_";31///"_REJ("RRR THRESHOLD AMT")
  .S DIC("DR")=DIC("DR")_";32///"_REJ("RRR GROSS AMT DUE")
+ S DIC("DR")=DIC("DR")_";33///"_REJ("INSURANCE POINTER")
  F  L +^PSRX(RX):5 Q:$T  H 15
  K DD,DO D FILE^DICN K DD,DO S REJ("REJECT IEN")=+Y
  S REJ("OVERRIDE MSG")=$G(DATA("OVERRIDE MSG"))
@@ -234,6 +245,7 @@ SYNC2 ;
  . . S DATA("PAYER MESSAGE")=$$CLEAN^PSOREJU1(DATA("PAYER MESSAGE"))
  . . S DATA("CODE")=CODE,DATA("REASON")=$$CLEAN^PSOREJU1($G(REJ(IDX,"REASON")))
  . . S DATA("PHARMACIST")=$G(USR),DATA("INSURANCE NAME")=$$CLEAN^PSOREJU1($G(REJ(IDX,"INSURANCE NAME")))
+ . . S DATA("INSURANCE POINTER")=$$CLEAN^PSOREJU1($G(REJ(IDX,"INSURANCE POINTER")))
  . . S DATA("GROUP NAME")=$$CLEAN^PSOREJU1($G(REJ(IDX,"GROUP NAME"))),DATA("GROUP NUMBER")=$$CLEAN^PSOREJU1($G(REJ(IDX,"GROUP NUMBER")))
  . . S DATA("CARDHOLDER ID")=$$CLEAN^PSOREJU1($G(REJ(IDX,"CARDHOLDER ID"))),DATA("PLAN CONTACT")=$$CLEAN^PSOREJU1($G(REJ(IDX,"PLAN CONTACT")))
  . . S DATA("PREVIOUS FILL")=$$CLEAN^PSOREJU1($$DAT^PSOREJU1($G(REJ(IDX,"PREVIOUS FILL DATE"))))
@@ -243,6 +255,7 @@ SYNC2 ;
  . . S DATA("MESSAGE")=$$CLEAN^PSOREJU1($G(REJ(IDX,"MESSAGE")))
  . . S DATA("DUR RESPONSE DATA")=$$CLEAN^PSOREJU1($G(REJ(IDX,"DUR RESPONSE DATA")))
  . . S DATA("BIN")=$$CLEAN^PSOREJU1($G(REJ(IDX,"BIN")))
+ . . S DATA("PCN")=$$CLEAN^PSOREJU1($G(REJ(IDX,"PCN")))
  . . D SAVE(RX,RFL,.DATA)
  L -^PSRX("REJ",RX)
  Q

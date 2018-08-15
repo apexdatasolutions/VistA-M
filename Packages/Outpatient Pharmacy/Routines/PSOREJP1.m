@@ -1,19 +1,19 @@
 PSOREJP1 ;BIRM/MFR - Third Party Reject Display Screen ;04/29/05
- ;;7.0;OUTPATIENT PHARMACY;**148,247,260,281,287,289,290,358,359,385,403,421**;DEC 1997;Build 15
+ ;;7.0;OUTPATIENT PHARMACY;**148,247,260,281,287,289,290,358,359,385,403,421,427,448,478**;DEC 1997;Build 27
  ;Reference to File 9002313.93 - BPS NCPDP REJECT CODES supported by IA 4720
  ;Reference to ^PS(59.7 supported by IA 694
  ;Reference to ^PSDRUG("AQ" supported by IA 3165
  ;Reference to File 9002313.25 supported by IA 5064
  ;Reference to BPSNCPD3 supported by IA 4560
  ;Reference to ^BPSVRX supported by IA 5723
- ;Reference to $$BBILL^BPSBUTL supported by IA 4719
+ ;Reference to $$BBILL^BPSBUTL and $$RESUBMIT^BPSBUTL supported by IA 4719
  ;
 EN(RX,REJ,CHANGE) ; Entry point
  ;
  ; - DO NOT change the IF logic below as both of them might get executed (intentional)
  N FILL,LASTLN,PSOTRIC,PSOCODE,PSOTCODE
  S FILL=+$$GET1^DIQ(52.25,REJ_","_RX,5)
- S PSOTRIC="",PSOTRIC=$$TRIC(RX,FILL,PSOTRIC),PSOCODE=$$GET1^DIQ(52.25,REJ_","_RX,.01)
+ S PSOTRIC=$$TRIC(RX,FILL),PSOCODE=$$GET1^DIQ(52.25,REJ_","_RX,.01)
  S PSOTCODE=0 S:PSOCODE'=79&(PSOCODE'=88)&(PSOTRIC) PSOTCODE=1
  I $$CLOSED(RX,REJ) D EN^VALM("PSO REJECT DISPLAY - RESOLVED")
  I '$$CLOSED(RX,REJ)&(PSOTRIC) D EN^VALM("PSO REJECT TRICARE")   ;cnf, PSO*7*358, replace PSOTCODE with PSOTRIC
@@ -39,11 +39,20 @@ ELIGDISP(RX,RFL) ; Return either CHAMPVA or TRICARE for display
  S PSOELIG=$$TRIC(RX,RFL)
  Q $S(PSOELIG=1:"TRICARE",PSOELIG=2:"CHAMPVA",1:"")
  ;
+ELIGTCV(RX,RFL,CAPS) ; Return either CHAMPVA, TRICARE, or Veteran/VETERAN for eligibility display (PSO*7*448)
+ ; if CAPS=1 then return "Veteran" in all caps
+ ; Note if the requested refill has been deleted, then the message "N/A - Fill Deleted" will be returned
+ N PSOELIG,VET,DELMSG
+ S DELMSG="N/A - Fill Deleted"
+ S PSOELIG=$$TRIC(RX,RFL),VET="Veteran" I $G(CAPS) S VET="VETERAN"
+ I RFL>0,'$D(^PSRX(RX,1,RFL,0)) S PSOELIG=3
+ Q $S(PSOELIG=1:"TRICARE",PSOELIG=2:"CHAMPVA",PSOELIG=3:DELMSG,1:VET)
+ ;
 INIT ; Builds the Body section
  N DATA,LINE
- I '$D(RFL) S RFL=$$LSTRFL^PSOBPSU1(RX)
- S PSOTRIC="",PSOTRIC=$$TRIC(RX,RFL,PSOTRIC)
- I '$$CLOSED(RX,REJ)&(PSOTRIC) S VALM("TITLE")="Reject Information ("_$$ELIGDISP(RX,RFL)_")"
+ I '$D(FILL) S FILL=+$$GET1^DIQ(52.25,REJ_","_RX,5)   ; PSO*7*448 obtain fill# from 52.25 subfile if not defined
+ I '$$CLOSED(RX,REJ) S VALM("TITLE")="Reject Information ("_$$ELIGTCV(RX,FILL)_")"
+ I $$CLOSED(RX,REJ) S VALM("TITLE")="Reject Information (RESOLVED)"
  F I=1:1:$G(LASTLN) D RESTORE^VALM10(I)
  K ^TMP("PSOREJP1",$J) S VALMCNT=0,LINE=0
  D GET^PSOREJU2(RX,FILL,.DATA,REJ,1)
@@ -56,19 +65,31 @@ INIT ; Builds the Body section
  Q
  ;
 REJ ; - DUR Information
- N TYPE,PFLDT,TREJ,TDATA,PSOTRIC,PSOET,PSONAF,BBCOB,BBTXT S TDATA=""
- S PSOTRIC="",PSOTRIC=$$TRIC(RX,FILL,PSOTRIC)
+ N TYPE,PFLDT,TREJ,TDATA,PSOET,PSONAF,PSOCOB,PSOTXT,PSOECME S TDATA=""
+ ;
+ ; LH;PSO*7*448 - Display 'RESUBMISSION' where 'BACK-BILL' currently
+ ; displays if the claim was resubmitted from the ECME User Screen.
+ ; To facilitate this, the function $$RESUBMIT^BPSBUTL was created.
+ ;
  ; Back Bill indicator - PSO*7*421
- S BBTXT="",BBCOB=$G(DATA(REJ,"COB")),BBCOB=$S(BBCOB="SECONDARY":2,BBCOB="TERTIARY":3,1:1)
- I $$BBILL^BPSBUTL(RX,FILL,BBCOB) S BBTXT=" BACK-BILL"
- D SETLN("REJECT Information"_$S($G(PSOTRIC)=1:" (TRICARE)",$G(PSOTRIC)=2:" (CHAMPVA)",1:"")_BBTXT,1,1)
- S TYPE=$S($G(DATA(REJ,"CODE"))=79:"79 - REFILL TOO SOON",1:"")
- I TYPE="" S TYPE=DATA(REJ,"CODE")_" - "_$E($$EXP(DATA(REJ,"CODE")),1,23)_"-"
- D SETLN("Reject Type    : "_TYPE_" received on "_$$FMTE^XLFDT($G(DATA(REJ,"DATE/TIME"))),,,18)
- ;cnf, PSO*7*358, if TRICARE/CHAMPVA non-billable then reset Status line
- S PSOET=$$PSOET^PSOREJP3(RX,FILL)
- I PSOET D SETLN("Status         : NO CLAIM SUBMITTED")
- I 'PSOET D SETLN("Reject Status  : "_$G(DATA(REJ,"STATUS"))_" - "_$$STATUS^PSOBPSUT(RX,FILL),,,18)
+ S PSOTXT="",PSOCOB=$G(DATA(REJ,"COB")),PSOCOB=$S(PSOCOB="SECONDARY":2,PSOCOB="TERTIARY":3,1:1)
+ I $$BBILL^BPSBUTL(RX,FILL,PSOCOB) S PSOTXT=" BACK-BILL"
+ E  I $$RESUBMIT^BPSBUTL(RX,FILL,PSOCOB) S PSOTXT=" RESUBMISSION"  ; IA 4719.
+ D SETLN("REJECT Information ("_$$ELIGTCV(RX,FILL)_") "_PSOTXT,1,1)
+ S PSOECME=$$STATUS^PSOBPSUT(RX,FILL)
+ I PSOECME="E PAYABLE" D
+ . D SETLN("Reject Type    : ",,,18)
+ . D SETLN("Reject Status  : ** E PAYABLE **",,,18)
+ . Q
+ E  D
+ . S TYPE=$S($G(DATA(REJ,"CODE"))=79:"79 - REFILL TOO SOON",1:"")
+ . I TYPE="" S TYPE=DATA(REJ,"CODE")_" - "_$E($$EXP(DATA(REJ,"CODE")),1,23)_"-"
+ . D SETLN("Reject Type    : "_TYPE_" received on "_$$FMTE^XLFDT($G(DATA(REJ,"DATE/TIME"))),,,18)
+ . ;cnf, PSO*7*358, if TRICARE/CHAMPVA non-billable then reset Status line
+ . S PSOET=$$PSOET^PSOREJP3(RX,FILL)
+ . I PSOET D SETLN("Status         : NO CLAIM SUBMITTED")
+ . I 'PSOET D SETLN("Reject Status  : "_$G(DATA(REJ,"STATUS"))_" - "_PSOECME,,,18)
+ . Q
  S PSONAF=$$NFLDT^BPSBUTL(RX,FILL) ; IA 4719
  I PSONAF'="" D SETLN("Next Avail Fill: "_$$FMTE^XLFDT(PSONAF),,,18) ; PSO*7*421
  D SET("PAYER MESSAGE",63)
@@ -91,14 +112,15 @@ OTH ; - Other Rejects Information
 INS ; - Insurance Information
  D SETLN()
  D SETLN("INSURANCE Information",1,1)
- N PSOINS,PSOINS1,I
+ N PSOINS,PSOINS1,I,PSOBINPCN
  S PSOINS=$G(DATA(REJ,"INSURANCE NAME"))
  F I=1:1:(50-($L(PSOINS)+18)) S PSOINS=PSOINS_" "
  S PSOINS1=$G(DATA(REJ,"COB"))
  I PSOINS1="SECONDARY" S PSOINS=PSOINS_"Coord. Of Benefits: "_PSOINS1
  D SETLN("Insurance      : "_PSOINS,,,18)
  D SETLN("Contact        : "_$G(DATA(REJ,"PLAN CONTACT")),,,18)
- D SETLN("BIN            : "_$G(DATA(REJ,"BIN")),,,18)
+ S PSOBINPCN=$G(DATA(REJ,"BIN"))_"/ "_$G(DATA(REJ,"PCN"))
+ D SETLN("BIN/ PCN       : "_PSOBINPCN,,,18)
  D SETLN("Group Number   : "_$G(DATA(REJ,"GROUP NUMBER")),,,18)
  D SETLN("Cardholder ID  : "_$G(DATA(REJ,"CARDHOLDER ID")),,1,18)
  Q
@@ -163,9 +185,11 @@ EDT ; - Rx Edit hidden action
  ;
  ; - DO structure used to avoid losing variables RX,FILL,REJ,LINE,TITLE
  DO
- . N PSOSITE,ORN,PSOPAR,PSOLIST
+ . N PSOSITE,ORN,PSOPAR,PSOLIST,PSOREJCT
  . S PSOSITE=$$RXSITE^PSOBPSUT(RX,FILL),ORN=RX
  . S PSOPAR=$G(^PS(59,PSOSITE,1)),PSOLIST(1)=ORN_","
+ . ; Variable PSOREJCT is used so that EPH^PSORXEDT has the RX 'passed' by this routine
+ . S PSOREJCT=RX_U_FILL
  . N RX,REJ,FILL,LINE,TITLE D EPH^PSORXEDT
  ;
  K VALMBCK I $$CLOSED(RX,REJ),$D(PSOSTFLT),PSOSTFLT="U" S CHANGE=1 Q
@@ -177,14 +201,14 @@ OVR ; - Override a REJECT action
  I $$CLOSED(RX,REJ,1) Q
  ;cnf, PSO*7*358
  S PSOET=$$PSOET^PSOREJP3(RX,FILL)
- I PSOET S VALMSG="OVR not allowed for "_$$ELIGDISP^PSOREJP1(RX,FILL)_" Non-Billable claim.",VALMBCK="R" Q
+ I PSOET S VALMSG="OVR not allowed for "_$$ELIGDISP(RX,FILL)_" Non-Billable claim.",VALMBCK="R" Q
  N COD1,COD2,COD3
  D FULL^VALM1 W !
  S COD1=$$OVRCOD^PSOREJU1(1,$$GET1^DIQ(52.25,REJ_","_RX,14)) I COD1="^"!(COD1="") S VALMBCK="R" Q
  S COD2=$$OVRCOD^PSOREJU1(2) I COD2="^" S VALMBCK="R" Q
  S COD3=$$OVRCOD^PSOREJU1(3) I COD3="^" S VALMBCK="R" Q
  D OVRDSP^PSOREJU1(COD1_"^"_COD2_"^"_COD3)
- D SEND^PSOREJP3(COD1_"^"_COD2_"^"_COD3)
+ D SEND^PSOREJP3(COD1_"^"_COD2_"^"_COD3,,,PSOET)
  Q
  ;
 RES ; - Re-submit a claim action
@@ -192,9 +216,8 @@ RES ; - Re-submit a claim action
  I $$CLOSED(RX,REJ,1) Q
  ;cnf, PSO*7*358
  S PSOET=$$PSOET^PSOREJP3(RX,FILL)
- I PSOET S VALMSG="RES not allowed for "_$$ELIGDISP^PSOREJP1(RX,FILL)_" Non-Billable claim.",VALMBCK="R" Q
  D FULL^VALM1 W !
- D SEND^PSOREJP3()
+ D SEND^PSOREJP3(,,,PSOET)
  Q
  ;
 CLA ; - Submit Clarification Code
@@ -202,11 +225,11 @@ CLA ; - Submit Clarification Code
  I $$CLOSED(RX,REJ,1) Q
  ;cnf, PSO*7*358
  S PSOET=$$PSOET^PSOREJP3(RX,FILL)
- I PSOET S VALMSG="CLA not allowed for "_$$ELIGDISP^PSOREJP1(RX,FILL)_" Non-Billable claim.",VALMBCK="R" Q
+ I PSOET S VALMSG="CLA not allowed for "_$$ELIGDISP(RX,FILL)_" Non-Billable claim.",VALMBCK="R" Q
  D FULL^VALM1 W !
  ; Prompt for the Submission Clarification Codes (up to three)
  S CLA=$$CLA^PSOREJU1() I CLA="^"!(CLA="") S VALMBCK="R" Q
- W ! D SEND^PSOREJP3(,CLA)
+ W ! D SEND^PSOREJP3(,CLA,,PSOET)
  Q
  ;
 PA ; - Submit Prior Authorization
@@ -214,11 +237,11 @@ PA ; - Submit Prior Authorization
  I $$CLOSED(RX,REJ,1) Q
  ;cnf, PSO*7*358
  S PSOET=$$PSOET^PSOREJP3(RX,FILL)
- I PSOET S VALMSG="PA not allowed for "_$$ELIGDISP^PSOREJP1(RX,FILL)_" Non-Billable claim.",VALMBCK="R" Q
+ I PSOET S VALMSG="PA not allowed for "_$$ELIGDISP(RX,FILL)_" Non-Billable claim.",VALMBCK="R" Q
  D FULL^VALM1 W !
  ; Prompt for Prior Auth fields
  S PA=$$PA^PSOREJU2() I PA="^" S VALMBCK="R" Q
- W ! D SEND^PSOREJP3(,,PA)
+ W ! D SEND^PSOREJP3(,,PA,PSOET)
  Q
  ;
 MP ; - Patient Medication Profile
@@ -282,10 +305,10 @@ OUT(RX) ; - Supported call by outside PROTOCOLs to act on specific REJECTs
  Q
  ;
 SMA ;Submit multiple actions
- N CLA,I,OVR,OVRSTR,PA,REJIEN,DUR,RSC,DURIEN,REQ,RSUB
+ N CLA,I,OVR,OVRSTR,PA,REJIEN,DUR,RSC,DURIEN,REQ,RSUB,PSOET
  I $$CLOSED(RX,REJ,1) Q
  S PSOET=$$PSOET^PSOREJP3(RX,FILL)
- I PSOET S VALMSG="SMA not allowed for "_$$ELIGDISP^PSOREJP1(RX,FILL)_" Non-Billable claim.",VALMBCK="R" Q
+ I PSOET S VALMSG="SMA not allowed for "_$$ELIGDISP(RX,FILL)_" Non-Billable claim.",VALMBCK="R" Q
  D FULL^VALM1 W !
  S DURIEN=$P($G(^PSRX(RX,"REJ",REJ,0)),U,11)
  D DURRESP^BPSNCPD3(DURIEN,.DUR) ; Reference to BPSNCPD3 supported by IA 4560
@@ -325,7 +348,7 @@ SMA ;Submit multiple actions
  I $P($P(OVRSTR,"~",3),U,1)]"" W !,?6,"Reason for Service Code 3      : ",$P($P(OVRSTR,"~",3),U,1),"  ",$$DSC^PSOREJU1(9002313.23,$P($P(OVRSTR,"~",3),U,1),1)
  I $P($P(OVRSTR,"~",3),U,2)]"" W !,?6,"Professional Service Code 3    : ",$P($P(OVRSTR,"~",3),U,2),"  ",$$DSC^PSOREJU1(9002313.21,$P($P(OVRSTR,"~",3),U,2),1)
  I $P($P(OVRSTR,"~",3),U,3)]"" W !,?6,"Result of Service Code 3       : ",$P($P(OVRSTR,"~",3),U,3),"  ",$$DSC^PSOREJU1(9002313.22,$P($P(OVRSTR,"~",3),U,3),1)
- W ! D SEND^PSOREJP3(OVRSTR,CLA,PA)
+ W ! D SEND^PSOREJP3(OVRSTR,CLA,PA,PSOET)
  Q
  ;
 VRX ; View ePharmacy Prescription - invoked from the Reject Information screen

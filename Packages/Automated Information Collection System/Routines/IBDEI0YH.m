@@ -1,138 +1,124 @@
-IBDEI0YH ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0YH ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,17134,1,1,0)
- ;;=1^282.1
- ;;^UTILITY(U,$J,358.3,17134,1,8,0)
- ;;=8^Hereditary Elliptocytosis
- ;;^UTILITY(U,$J,358.3,17134,2)
- ;;=^39378
- ;;^UTILITY(U,$J,358.3,17135,0)
- ;;=282.2^^111^1075^8
- ;;^UTILITY(U,$J,358.3,17135,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17135,1,1,0)
- ;;=1^282.2
- ;;^UTILITY(U,$J,358.3,17135,1,8,0)
- ;;=8^Anemias d/t Diso of Glutathione
- ;;^UTILITY(U,$J,358.3,17135,2)
- ;;=^7225
- ;;^UTILITY(U,$J,358.3,17136,0)
- ;;=282.3^^111^1075^35
- ;;^UTILITY(U,$J,358.3,17136,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17136,1,1,0)
- ;;=1^282.3
- ;;^UTILITY(U,$J,358.3,17136,1,8,0)
- ;;=8^Oth Hemolytic Anemias d/t Enzyme
- ;;^UTILITY(U,$J,358.3,17136,2)
- ;;=^267980
- ;;^UTILITY(U,$J,358.3,17137,0)
- ;;=282.40^^111^1075^54
- ;;^UTILITY(U,$J,358.3,17137,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17137,1,1,0)
- ;;=1^282.40
- ;;^UTILITY(U,$J,358.3,17137,1,8,0)
- ;;=8^Thalassemia,Unspec
- ;;^UTILITY(U,$J,358.3,17137,2)
- ;;=^340606
- ;;^UTILITY(U,$J,358.3,17138,0)
- ;;=282.42^^111^1075^48
- ;;^UTILITY(U,$J,358.3,17138,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17138,1,1,0)
- ;;=1^282.42
- ;;^UTILITY(U,$J,358.3,17138,1,8,0)
- ;;=8^Sickle-cell Thalassemia w/ Crisis
- ;;^UTILITY(U,$J,358.3,17138,2)
- ;;=^329909
- ;;^UTILITY(U,$J,358.3,17139,0)
- ;;=282.43^^111^1075^4
- ;;^UTILITY(U,$J,358.3,17139,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17139,1,1,0)
- ;;=1^282.43
- ;;^UTILITY(U,$J,358.3,17139,1,8,0)
- ;;=8^Alpha Thalessemia
- ;;^UTILITY(U,$J,358.3,17139,2)
- ;;=^340494
- ;;^UTILITY(U,$J,358.3,17140,0)
- ;;=282.44^^111^1075^12
- ;;^UTILITY(U,$J,358.3,17140,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17140,1,1,0)
- ;;=1^282.44
- ;;^UTILITY(U,$J,358.3,17140,1,8,0)
- ;;=8^Beta Thalassemia
- ;;^UTILITY(U,$J,358.3,17140,2)
- ;;=^340495
- ;;^UTILITY(U,$J,358.3,17141,0)
- ;;=282.45^^111^1075^15
- ;;^UTILITY(U,$J,358.3,17141,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17141,1,1,0)
- ;;=1^282.45
- ;;^UTILITY(U,$J,358.3,17141,1,8,0)
- ;;=8^Delta-beta Thalassemia
- ;;^UTILITY(U,$J,358.3,17141,2)
- ;;=^340496
- ;;^UTILITY(U,$J,358.3,17142,0)
- ;;=282.46^^111^1075^53
- ;;^UTILITY(U,$J,358.3,17142,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17142,1,1,0)
- ;;=1^282.46
- ;;^UTILITY(U,$J,358.3,17142,1,8,0)
- ;;=8^Thalassemia Minor
- ;;^UTILITY(U,$J,358.3,17142,2)
- ;;=^340497
- ;;^UTILITY(U,$J,358.3,17143,0)
- ;;=282.47^^111^1075^19
- ;;^UTILITY(U,$J,358.3,17143,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17143,1,1,0)
- ;;=1^282.47
- ;;^UTILITY(U,$J,358.3,17143,1,8,0)
- ;;=8^Hemoglobin E-beta Thalassemia
- ;;^UTILITY(U,$J,358.3,17143,2)
- ;;=^340498
- ;;^UTILITY(U,$J,358.3,17144,0)
- ;;=282.49^^111^1075^42
- ;;^UTILITY(U,$J,358.3,17144,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17144,1,1,0)
- ;;=1^282.49
- ;;^UTILITY(U,$J,358.3,17144,1,8,0)
- ;;=8^Oth Thalassemia
- ;;^UTILITY(U,$J,358.3,17144,2)
- ;;=^329910
- ;;^UTILITY(U,$J,358.3,17145,0)
- ;;=282.5^^111^1075^49
- ;;^UTILITY(U,$J,358.3,17145,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17145,1,1,0)
- ;;=1^282.5
- ;;^UTILITY(U,$J,358.3,17145,1,8,0)
- ;;=8^Sickle-cell Trait
- ;;^UTILITY(U,$J,358.3,17145,2)
- ;;=^110419
- ;;^UTILITY(U,$J,358.3,17146,0)
- ;;=282.60^^111^1075^47
- ;;^UTILITY(U,$J,358.3,17146,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17146,1,1,0)
- ;;=1^282.60
- ;;^UTILITY(U,$J,358.3,17146,1,8,0)
- ;;=8^Sickle-cell Disease Unspec
- ;;^UTILITY(U,$J,358.3,17146,2)
- ;;=^330077
- ;;^UTILITY(U,$J,358.3,17147,0)
- ;;=282.62^^111^1075^17
- ;;^UTILITY(U,$J,358.3,17147,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17147,1,1,0)
- ;;=1^282.62
- ;;^UTILITY(U,$J,358.3,17147,1,8,0)
- ;;=8^Hb-SS Disease w/ Crisis
+ ;;^UTILITY(U,$J,358.3,15882,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15882,1,3,0)
+ ;;=3^Intraoperative Complication of the Spleen
+ ;;^UTILITY(U,$J,358.3,15882,1,4,0)
+ ;;=4^D78.81
+ ;;^UTILITY(U,$J,358.3,15882,2)
+ ;;=^5002403
+ ;;^UTILITY(U,$J,358.3,15883,0)
+ ;;=H59.229^^85^828^3
+ ;;^UTILITY(U,$J,358.3,15883,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15883,1,3,0)
+ ;;=3^Accidental Puncture/Laceration of Eye/Adnexa,Unspec,During Surgery
+ ;;^UTILITY(U,$J,358.3,15883,1,4,0)
+ ;;=4^H59.229
+ ;;^UTILITY(U,$J,358.3,15883,2)
+ ;;=^5006416
+ ;;^UTILITY(U,$J,358.3,15884,0)
+ ;;=D78.12^^85^828^11
+ ;;^UTILITY(U,$J,358.3,15884,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15884,1,3,0)
+ ;;=3^Accidental Puncture/Laceration of Spleen During Surgery
+ ;;^UTILITY(U,$J,358.3,15884,1,4,0)
+ ;;=4^D78.12
+ ;;^UTILITY(U,$J,358.3,15884,2)
+ ;;=^5002400
+ ;;^UTILITY(U,$J,358.3,15885,0)
+ ;;=I97.811^^85^828^14
+ ;;^UTILITY(U,$J,358.3,15885,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15885,1,3,0)
+ ;;=3^Intraoperative Cerebrovascular Infarction During Surgery
+ ;;^UTILITY(U,$J,358.3,15885,1,4,0)
+ ;;=4^I97.811
+ ;;^UTILITY(U,$J,358.3,15885,2)
+ ;;=^5008108
+ ;;^UTILITY(U,$J,358.3,15886,0)
+ ;;=S31.154A^^85^829^3
+ ;;^UTILITY(U,$J,358.3,15886,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15886,1,3,0)
+ ;;=3^Open Bite of LLQ of Abd Wall w/o Penet Perit Cav,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15886,1,4,0)
+ ;;=4^S31.154A
+ ;;^UTILITY(U,$J,358.3,15886,2)
+ ;;=^5134487
+ ;;^UTILITY(U,$J,358.3,15887,0)
+ ;;=S31.151A^^85^829^4
+ ;;^UTILITY(U,$J,358.3,15887,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15887,1,3,0)
+ ;;=3^Open Bite of LUQ of Abd Wall w/o Penet Perit Cav,Init Cav
+ ;;^UTILITY(U,$J,358.3,15887,1,4,0)
+ ;;=4^S31.151A
+ ;;^UTILITY(U,$J,358.3,15887,2)
+ ;;=^5024104
+ ;;^UTILITY(U,$J,358.3,15888,0)
+ ;;=S31.153A^^85^829^35
+ ;;^UTILITY(U,$J,358.3,15888,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15888,1,3,0)
+ ;;=3^Open Bite of RLQ of Abd Wall w/o Penet Perit Cav,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15888,1,4,0)
+ ;;=4^S31.153A
+ ;;^UTILITY(U,$J,358.3,15888,2)
+ ;;=^5024110
+ ;;^UTILITY(U,$J,358.3,15889,0)
+ ;;=S31.150A^^85^829^36
+ ;;^UTILITY(U,$J,358.3,15889,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15889,1,3,0)
+ ;;=3^Open Bite of RUQ of Abd Wall w/o Penet Perit Cav,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15889,1,4,0)
+ ;;=4^S31.150A
+ ;;^UTILITY(U,$J,358.3,15889,2)
+ ;;=^5024101
+ ;;^UTILITY(U,$J,358.3,15890,0)
+ ;;=S91.052A^^85^829^5
+ ;;^UTILITY(U,$J,358.3,15890,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15890,1,3,0)
+ ;;=3^Open Bite of Left Ankle,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15890,1,4,0)
+ ;;=4^S91.052A
+ ;;^UTILITY(U,$J,358.3,15890,2)
+ ;;=^5044162
+ ;;^UTILITY(U,$J,358.3,15891,0)
+ ;;=S31.825A^^85^829^6
+ ;;^UTILITY(U,$J,358.3,15891,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15891,1,3,0)
+ ;;=3^Open Bite of Left Buttock,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15891,1,4,0)
+ ;;=4^S31.825A
+ ;;^UTILITY(U,$J,358.3,15891,2)
+ ;;=^5024317
+ ;;^UTILITY(U,$J,358.3,15892,0)
+ ;;=S01.452A^^85^829^7
+ ;;^UTILITY(U,$J,358.3,15892,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15892,1,3,0)
+ ;;=3^Open Bite of Left Cheek/Temporomandibular Area,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15892,1,4,0)
+ ;;=4^S01.452A
+ ;;^UTILITY(U,$J,358.3,15892,2)
+ ;;=^5020180
+ ;;^UTILITY(U,$J,358.3,15893,0)
+ ;;=S01.352A^^85^829^8
+ ;;^UTILITY(U,$J,358.3,15893,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15893,1,3,0)
+ ;;=3^Open Bite of Left Ear,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15893,1,4,0)
+ ;;=4^S01.352A
+ ;;^UTILITY(U,$J,358.3,15893,2)
+ ;;=^5020141
+ ;;^UTILITY(U,$J,358.3,15894,0)
+ ;;=S51.052A^^85^829^9

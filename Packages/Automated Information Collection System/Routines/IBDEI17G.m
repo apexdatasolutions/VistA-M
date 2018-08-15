@@ -1,138 +1,122 @@
-IBDEI17G ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI17G ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,21566,0)
- ;;=V10.41^^133^1317^56
- ;;^UTILITY(U,$J,358.3,21566,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21566,1,4,0)
- ;;=4^V10.41
- ;;^UTILITY(U,$J,358.3,21566,1,5,0)
- ;;=5^H/O Cervical Cancer
- ;;^UTILITY(U,$J,358.3,21566,2)
- ;;=^295219
- ;;^UTILITY(U,$J,358.3,21567,0)
- ;;=V10.05^^133^1317^57
- ;;^UTILITY(U,$J,358.3,21567,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21567,1,4,0)
- ;;=4^V10.05
- ;;^UTILITY(U,$J,358.3,21567,1,5,0)
- ;;=5^H/O Colon Cancer
- ;;^UTILITY(U,$J,358.3,21567,2)
- ;;=H/O Colon Cancer^295207
- ;;^UTILITY(U,$J,358.3,21568,0)
- ;;=V10.03^^133^1317^58
- ;;^UTILITY(U,$J,358.3,21568,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21568,1,4,0)
- ;;=4^V10.03
- ;;^UTILITY(U,$J,358.3,21568,1,5,0)
- ;;=5^H/O Esophageal Cancer
- ;;^UTILITY(U,$J,358.3,21568,2)
- ;;=^295205
- ;;^UTILITY(U,$J,358.3,21569,0)
- ;;=V10.12^^133^1317^59
- ;;^UTILITY(U,$J,358.3,21569,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21569,1,4,0)
- ;;=4^V10.12
- ;;^UTILITY(U,$J,358.3,21569,1,5,0)
- ;;=5^H/O Laryngeal Cancer
- ;;^UTILITY(U,$J,358.3,21569,2)
- ;;=^295212
- ;;^UTILITY(U,$J,358.3,21570,0)
- ;;=V10.60^^133^1317^60
- ;;^UTILITY(U,$J,358.3,21570,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21570,1,4,0)
- ;;=4^V10.60
- ;;^UTILITY(U,$J,358.3,21570,1,5,0)
- ;;=5^H/O Leukemia
- ;;^UTILITY(U,$J,358.3,21570,2)
- ;;=H/O Leukemia^295231
- ;;^UTILITY(U,$J,358.3,21571,0)
- ;;=V10.11^^133^1317^61
- ;;^UTILITY(U,$J,358.3,21571,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21571,1,4,0)
- ;;=4^V10.11
- ;;^UTILITY(U,$J,358.3,21571,1,5,0)
- ;;=5^H/O Lung Cancer
- ;;^UTILITY(U,$J,358.3,21571,2)
- ;;=H/O Lung Cancer^295211
- ;;^UTILITY(U,$J,358.3,21572,0)
- ;;=V10.79^^133^1317^62
- ;;^UTILITY(U,$J,358.3,21572,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21572,1,4,0)
- ;;=4^V10.79
- ;;^UTILITY(U,$J,358.3,21572,1,5,0)
- ;;=5^H/O Lymphoma
- ;;^UTILITY(U,$J,358.3,21572,2)
- ;;=H/O Lymphoma^295238
- ;;^UTILITY(U,$J,358.3,21573,0)
- ;;=V10.82^^133^1317^69
- ;;^UTILITY(U,$J,358.3,21573,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21573,1,4,0)
- ;;=4^V10.82
- ;;^UTILITY(U,$J,358.3,21573,1,5,0)
- ;;=5^H/O Skin Cancer
- ;;^UTILITY(U,$J,358.3,21573,2)
- ;;=^295240
- ;;^UTILITY(U,$J,358.3,21574,0)
- ;;=V10.02^^133^1317^64
- ;;^UTILITY(U,$J,358.3,21574,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21574,1,4,0)
- ;;=4^V10.02
- ;;^UTILITY(U,$J,358.3,21574,1,5,0)
- ;;=5^H/O Oral Cavity/Pharynx Cancer
- ;;^UTILITY(U,$J,358.3,21574,2)
- ;;=^295204
- ;;^UTILITY(U,$J,358.3,21575,0)
- ;;=V10.43^^133^1317^65
- ;;^UTILITY(U,$J,358.3,21575,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21575,1,4,0)
- ;;=4^V10.43
- ;;^UTILITY(U,$J,358.3,21575,1,5,0)
- ;;=5^H/O Ovarian Cancer
- ;;^UTILITY(U,$J,358.3,21575,2)
- ;;=^295221
- ;;^UTILITY(U,$J,358.3,21576,0)
- ;;=V10.46^^133^1317^66
- ;;^UTILITY(U,$J,358.3,21576,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21576,1,4,0)
- ;;=4^V10.46
- ;;^UTILITY(U,$J,358.3,21576,1,5,0)
- ;;=5^H/O Prostate Cancer
- ;;^UTILITY(U,$J,358.3,21576,2)
- ;;=^295224
- ;;^UTILITY(U,$J,358.3,21577,0)
- ;;=V10.06^^133^1317^67
- ;;^UTILITY(U,$J,358.3,21577,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21577,1,4,0)
- ;;=4^V10.06
- ;;^UTILITY(U,$J,358.3,21577,1,5,0)
- ;;=5^H/O Rectal/Anal Cancer
- ;;^UTILITY(U,$J,358.3,21577,2)
- ;;=^295208
- ;;^UTILITY(U,$J,358.3,21578,0)
- ;;=V10.52^^133^1317^68
- ;;^UTILITY(U,$J,358.3,21578,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21578,1,4,0)
- ;;=4^V10.52
- ;;^UTILITY(U,$J,358.3,21578,1,5,0)
- ;;=5^H/O Renal Cancer
- ;;^UTILITY(U,$J,358.3,21578,2)
- ;;=H/o Renal Cancer^295229
- ;;^UTILITY(U,$J,358.3,21579,0)
- ;;=V10.04^^133^1317^71
- ;;^UTILITY(U,$J,358.3,21579,1,0)
- ;;=^358.31IA^5^2
+ ;;^UTILITY(U,$J,358.3,20130,2)
+ ;;=^5060665
+ ;;^UTILITY(U,$J,358.3,20131,0)
+ ;;=Y36.820S^^94^935^21
+ ;;^UTILITY(U,$J,358.3,20131,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20131,1,3,0)
+ ;;=3^Explosn of Bomb Placed During War Op but Expld After,Milt,Sequela
+ ;;^UTILITY(U,$J,358.3,20131,1,4,0)
+ ;;=4^Y36.820S
+ ;;^UTILITY(U,$J,358.3,20131,2)
+ ;;=^5061795
+ ;;^UTILITY(U,$J,358.3,20132,0)
+ ;;=Y36.810S^^94^935^24
+ ;;^UTILITY(U,$J,358.3,20132,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20132,1,3,0)
+ ;;=3^Explosn of Mine Placed During War Op but Expld After,Milt,Sequela
+ ;;^UTILITY(U,$J,358.3,20132,1,4,0)
+ ;;=4^Y36.810S
+ ;;^UTILITY(U,$J,358.3,20132,2)
+ ;;=^5061789
+ ;;^UTILITY(U,$J,358.3,20133,0)
+ ;;=Y36.6X0S^^94^935^114
+ ;;^UTILITY(U,$J,358.3,20133,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20133,1,3,0)
+ ;;=3^War Op Inv Biological Weapons,Milt,Sequela
+ ;;^UTILITY(U,$J,358.3,20133,1,4,0)
+ ;;=4^Y36.6X0S
+ ;;^UTILITY(U,$J,358.3,20133,2)
+ ;;=^5061777
+ ;;^UTILITY(U,$J,358.3,20134,0)
+ ;;=Y36.410S^^94^935^122
+ ;;^UTILITY(U,$J,358.3,20134,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20134,1,3,0)
+ ;;=3^War Op Inv Rubber Bullets,Milt,Sequela
+ ;;^UTILITY(U,$J,358.3,20134,1,4,0)
+ ;;=4^Y36.410S
+ ;;^UTILITY(U,$J,358.3,20134,2)
+ ;;=^5061693
+ ;;^UTILITY(U,$J,358.3,20135,0)
+ ;;=Y36.200S^^94^935^119
+ ;;^UTILITY(U,$J,358.3,20135,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20135,1,3,0)
+ ;;=3^War Op Inv Explosion/Fragments,Unspec,Milt,Sequela
+ ;;^UTILITY(U,$J,358.3,20135,1,4,0)
+ ;;=4^Y36.200S
+ ;;^UTILITY(U,$J,358.3,20135,2)
+ ;;=^5061609
+ ;;^UTILITY(U,$J,358.3,20136,0)
+ ;;=Y36.300S^^94^935^120
+ ;;^UTILITY(U,$J,358.3,20136,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20136,1,3,0)
+ ;;=3^War Op Inv Fire/Conflagr/Hot Subst,Unspec,Milt,Sequela
+ ;;^UTILITY(U,$J,358.3,20136,1,4,0)
+ ;;=4^Y36.300S
+ ;;^UTILITY(U,$J,358.3,20136,2)
+ ;;=^5061663
+ ;;^UTILITY(U,$J,358.3,20137,0)
+ ;;=Y36.230A^^94^935^116
+ ;;^UTILITY(U,$J,358.3,20137,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20137,1,3,0)
+ ;;=3^War Op Inv Explosion of IED,Milt Pers,Init Encntr
+ ;;^UTILITY(U,$J,358.3,20137,1,4,0)
+ ;;=4^Y36.230A
+ ;;^UTILITY(U,$J,358.3,20137,2)
+ ;;=^5061625
+ ;;^UTILITY(U,$J,358.3,20138,0)
+ ;;=Y36.230D^^94^935^117
+ ;;^UTILITY(U,$J,358.3,20138,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20138,1,3,0)
+ ;;=3^War Op Inv Explosion of IED,Milt Pers,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,20138,1,4,0)
+ ;;=4^Y36.230D
+ ;;^UTILITY(U,$J,358.3,20138,2)
+ ;;=^5061626
+ ;;^UTILITY(U,$J,358.3,20139,0)
+ ;;=Y36.230S^^94^935^118
+ ;;^UTILITY(U,$J,358.3,20139,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20139,1,3,0)
+ ;;=3^War Op Inv Explosion of IED,Milt Pers,Sequela
+ ;;^UTILITY(U,$J,358.3,20139,1,4,0)
+ ;;=4^Y36.230S
+ ;;^UTILITY(U,$J,358.3,20139,2)
+ ;;=^5061627
+ ;;^UTILITY(U,$J,358.3,20140,0)
+ ;;=Y36.7X0S^^94^935^130
+ ;;^UTILITY(U,$J,358.3,20140,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20140,1,3,0)
+ ;;=3^War Op w/ Chem Weapons/Unconvtl Warfare,Milt,Sequela
+ ;;^UTILITY(U,$J,358.3,20140,1,4,0)
+ ;;=4^Y36.7X0S
+ ;;^UTILITY(U,$J,358.3,20140,2)
+ ;;=^5061783
+ ;;^UTILITY(U,$J,358.3,20141,0)
+ ;;=F02.81^^94^936^11
+ ;;^UTILITY(U,$J,358.3,20141,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20141,1,3,0)
+ ;;=3^Dementia in Oth Diseases Classd Elswhr w/ Behavioral Disturbances
+ ;;^UTILITY(U,$J,358.3,20141,1,4,0)
+ ;;=4^F02.81
+ ;;^UTILITY(U,$J,358.3,20141,2)
+ ;;=^5003049
+ ;;^UTILITY(U,$J,358.3,20142,0)
+ ;;=F02.80^^94^936^12
+ ;;^UTILITY(U,$J,358.3,20142,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20142,1,3,0)
+ ;;=3^Dementia in Oth Diseases Classd Elswhr w/o Behavioral Disturbances

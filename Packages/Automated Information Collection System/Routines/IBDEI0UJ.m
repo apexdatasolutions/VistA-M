@@ -1,136 +1,126 @@
-IBDEI0UJ ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0UJ ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,15096,2)
- ;;=^321980^340.
- ;;^UTILITY(U,$J,358.3,15097,0)
- ;;=293.0^^93^907^1
- ;;^UTILITY(U,$J,358.3,15097,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15097,1,2,0)
- ;;=2^293.0
- ;;^UTILITY(U,$J,358.3,15097,1,5,0)
- ;;=5^Acute Delirium
- ;;^UTILITY(U,$J,358.3,15097,2)
- ;;=Acute Delirium^268035
- ;;^UTILITY(U,$J,358.3,15098,0)
- ;;=291.0^^93^907^3
- ;;^UTILITY(U,$J,358.3,15098,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15098,1,2,0)
- ;;=2^291.0
- ;;^UTILITY(U,$J,358.3,15098,1,5,0)
- ;;=5^Withdrawal Delirium
- ;;^UTILITY(U,$J,358.3,15098,2)
- ;;=Withdrawal Delirium^4589
- ;;^UTILITY(U,$J,358.3,15099,0)
- ;;=292.81^^93^907^2
- ;;^UTILITY(U,$J,358.3,15099,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15099,1,2,0)
- ;;=2^292.81
- ;;^UTILITY(U,$J,358.3,15099,1,5,0)
- ;;=5^Drug Induced Delirium
- ;;^UTILITY(U,$J,358.3,15099,2)
- ;;=Drug Induced Delirium^268022
- ;;^UTILITY(U,$J,358.3,15100,0)
- ;;=296.50^^93^908^6
- ;;^UTILITY(U,$J,358.3,15100,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15100,1,2,0)
- ;;=2^296.50
- ;;^UTILITY(U,$J,358.3,15100,1,5,0)
- ;;=5^Bipolar Depressed, NOS
- ;;^UTILITY(U,$J,358.3,15100,2)
- ;;=^268130
- ;;^UTILITY(U,$J,358.3,15101,0)
- ;;=296.51^^93^908^4
- ;;^UTILITY(U,$J,358.3,15101,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15101,1,2,0)
- ;;=2^296.51
- ;;^UTILITY(U,$J,358.3,15101,1,5,0)
- ;;=5^Bipolar Depressed, Mild
- ;;^UTILITY(U,$J,358.3,15101,2)
- ;;=^303620
- ;;^UTILITY(U,$J,358.3,15102,0)
- ;;=296.52^^93^908^5
- ;;^UTILITY(U,$J,358.3,15102,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15102,1,2,0)
- ;;=2^296.52
- ;;^UTILITY(U,$J,358.3,15102,1,5,0)
- ;;=5^Bipolar Depressed, Moderate
- ;;^UTILITY(U,$J,358.3,15102,2)
- ;;=^303621
- ;;^UTILITY(U,$J,358.3,15103,0)
- ;;=296.53^^93^908^2
- ;;^UTILITY(U,$J,358.3,15103,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15103,1,2,0)
- ;;=2^296.53
- ;;^UTILITY(U,$J,358.3,15103,1,5,0)
- ;;=5^Bipolar Depress Severe w/o Psychosis
- ;;^UTILITY(U,$J,358.3,15103,2)
- ;;=^303622
- ;;^UTILITY(U,$J,358.3,15104,0)
- ;;=296.54^^93^908^1
- ;;^UTILITY(U,$J,358.3,15104,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15104,1,2,0)
- ;;=2^296.54
- ;;^UTILITY(U,$J,358.3,15104,1,5,0)
- ;;=5^Bipolar Depress Severe w/Psychosis
- ;;^UTILITY(U,$J,358.3,15104,2)
- ;;=Bipolar Depress Severe w/Psychosis^303623
- ;;^UTILITY(U,$J,358.3,15105,0)
- ;;=296.55^^93^908^7
- ;;^UTILITY(U,$J,358.3,15105,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15105,1,2,0)
- ;;=2^296.55
- ;;^UTILITY(U,$J,358.3,15105,1,5,0)
- ;;=5^Bipolar Depressed, Part Remiss
- ;;^UTILITY(U,$J,358.3,15105,2)
- ;;=^303624
- ;;^UTILITY(U,$J,358.3,15106,0)
- ;;=296.56^^93^908^3
- ;;^UTILITY(U,$J,358.3,15106,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15106,1,2,0)
- ;;=2^296.56
- ;;^UTILITY(U,$J,358.3,15106,1,5,0)
- ;;=5^Bipolar Depressed, Full Remission
- ;;^UTILITY(U,$J,358.3,15106,2)
- ;;=^303625
- ;;^UTILITY(U,$J,358.3,15107,0)
- ;;=296.40^^93^908^14
- ;;^UTILITY(U,$J,358.3,15107,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15107,1,2,0)
- ;;=2^296.40
- ;;^UTILITY(U,$J,358.3,15107,1,5,0)
- ;;=5^Bipolar Manic, NOS
- ;;^UTILITY(U,$J,358.3,15107,2)
- ;;=^303607
- ;;^UTILITY(U,$J,358.3,15108,0)
- ;;=296.41^^93^908^12
- ;;^UTILITY(U,$J,358.3,15108,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15108,1,2,0)
- ;;=2^296.41
- ;;^UTILITY(U,$J,358.3,15108,1,5,0)
- ;;=5^Bipolar Manic, Mild
- ;;^UTILITY(U,$J,358.3,15108,2)
- ;;=^303608
- ;;^UTILITY(U,$J,358.3,15109,0)
- ;;=296.42^^93^908^13
- ;;^UTILITY(U,$J,358.3,15109,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15109,1,2,0)
- ;;=2^296.42
- ;;^UTILITY(U,$J,358.3,15109,1,5,0)
- ;;=5^Bipolar Manic, Mod
- ;;^UTILITY(U,$J,358.3,15109,2)
- ;;=^303609
+ ;;^UTILITY(U,$J,358.3,14054,2)
+ ;;=^5133509
+ ;;^UTILITY(U,$J,358.3,14055,0)
+ ;;=H40.61X4^^82^770^39
+ ;;^UTILITY(U,$J,358.3,14055,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14055,1,3,0)
+ ;;=3^Drug-Induced Glaucoma,Right Eye,Indeterminate Stage
+ ;;^UTILITY(U,$J,358.3,14055,1,4,0)
+ ;;=4^H40.61X4
+ ;;^UTILITY(U,$J,358.3,14055,2)
+ ;;=^5005909
+ ;;^UTILITY(U,$J,358.3,14056,0)
+ ;;=H40.62X1^^82^770^35
+ ;;^UTILITY(U,$J,358.3,14056,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14056,1,3,0)
+ ;;=3^Drug-Induced Glaucoma,Left Eye,Mild Stage
+ ;;^UTILITY(U,$J,358.3,14056,1,4,0)
+ ;;=4^H40.62X1
+ ;;^UTILITY(U,$J,358.3,14056,2)
+ ;;=^5005911
+ ;;^UTILITY(U,$J,358.3,14057,0)
+ ;;=H40.62X0^^82^770^38
+ ;;^UTILITY(U,$J,358.3,14057,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14057,1,3,0)
+ ;;=3^Drug-Induced Glaucoma,Left Eye,Unspec Stage
+ ;;^UTILITY(U,$J,358.3,14057,1,4,0)
+ ;;=4^H40.62X0
+ ;;^UTILITY(U,$J,358.3,14057,2)
+ ;;=^5005910
+ ;;^UTILITY(U,$J,358.3,14058,0)
+ ;;=H40.62X2^^82^770^36
+ ;;^UTILITY(U,$J,358.3,14058,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14058,1,3,0)
+ ;;=3^Drug-Induced Glaucoma,Left Eye,Moderate Stage
+ ;;^UTILITY(U,$J,358.3,14058,1,4,0)
+ ;;=4^H40.62X2
+ ;;^UTILITY(U,$J,358.3,14058,2)
+ ;;=^5005912
+ ;;^UTILITY(U,$J,358.3,14059,0)
+ ;;=H40.62X3^^82^770^37
+ ;;^UTILITY(U,$J,358.3,14059,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14059,1,3,0)
+ ;;=3^Drug-Induced Glaucoma,Left Eye,Severe Stage
+ ;;^UTILITY(U,$J,358.3,14059,1,4,0)
+ ;;=4^H40.62X3
+ ;;^UTILITY(U,$J,358.3,14059,2)
+ ;;=^5133510
+ ;;^UTILITY(U,$J,358.3,14060,0)
+ ;;=H40.62X4^^82^770^34
+ ;;^UTILITY(U,$J,358.3,14060,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14060,1,3,0)
+ ;;=3^Drug-Induced Glaucoma,Left Eye,Indeterminate Stage
+ ;;^UTILITY(U,$J,358.3,14060,1,4,0)
+ ;;=4^H40.62X4
+ ;;^UTILITY(U,$J,358.3,14060,2)
+ ;;=^5005913
+ ;;^UTILITY(U,$J,358.3,14061,0)
+ ;;=H40.63X0^^82^770^33
+ ;;^UTILITY(U,$J,358.3,14061,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14061,1,3,0)
+ ;;=3^Drug-Induced Glaucoma,Bilateral,Unspec Stage
+ ;;^UTILITY(U,$J,358.3,14061,1,4,0)
+ ;;=4^H40.63X0
+ ;;^UTILITY(U,$J,358.3,14061,2)
+ ;;=^5005914
+ ;;^UTILITY(U,$J,358.3,14062,0)
+ ;;=H40.63X1^^82^770^30
+ ;;^UTILITY(U,$J,358.3,14062,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14062,1,3,0)
+ ;;=3^Drug-Induced Glaucoma,Bilateral,Mild Stage
+ ;;^UTILITY(U,$J,358.3,14062,1,4,0)
+ ;;=4^H40.63X1
+ ;;^UTILITY(U,$J,358.3,14062,2)
+ ;;=^5005915
+ ;;^UTILITY(U,$J,358.3,14063,0)
+ ;;=H40.63X2^^82^770^31
+ ;;^UTILITY(U,$J,358.3,14063,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14063,1,3,0)
+ ;;=3^Drug-Induced Glaucoma,Bilateral,Moderate Stage
+ ;;^UTILITY(U,$J,358.3,14063,1,4,0)
+ ;;=4^H40.63X2
+ ;;^UTILITY(U,$J,358.3,14063,2)
+ ;;=^5005916
+ ;;^UTILITY(U,$J,358.3,14064,0)
+ ;;=H40.63X3^^82^770^32
+ ;;^UTILITY(U,$J,358.3,14064,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14064,1,3,0)
+ ;;=3^Drug-Induced Glaucoma,Bilateral,Severe Stage
+ ;;^UTILITY(U,$J,358.3,14064,1,4,0)
+ ;;=4^H40.63X3
+ ;;^UTILITY(U,$J,358.3,14064,2)
+ ;;=^5005917
+ ;;^UTILITY(U,$J,358.3,14065,0)
+ ;;=H40.63X4^^82^770^29
+ ;;^UTILITY(U,$J,358.3,14065,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14065,1,3,0)
+ ;;=3^Drug-Induced Glaucoma,Bilateral,Indeterminate Stage
+ ;;^UTILITY(U,$J,358.3,14065,1,4,0)
+ ;;=4^H40.63X4
+ ;;^UTILITY(U,$J,358.3,14065,2)
+ ;;=^5005918
+ ;;^UTILITY(U,$J,358.3,14066,0)
+ ;;=H40.51X0^^82^770^54
+ ;;^UTILITY(U,$J,358.3,14066,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14066,1,3,0)
+ ;;=3^Glaucoma Sec to Oth Eye Disorder,Right Eye,Unspec Stage
+ ;;^UTILITY(U,$J,358.3,14066,1,4,0)
+ ;;=4^H40.51X0
+ ;;^UTILITY(U,$J,358.3,14066,2)
+ ;;=^5005888

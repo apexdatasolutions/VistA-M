@@ -1,140 +1,122 @@
-IBDEI19U ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI19U ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,22761,2)
- ;;=^100637
- ;;^UTILITY(U,$J,358.3,22762,0)
- ;;=302.85^^141^1402^3
- ;;^UTILITY(U,$J,358.3,22762,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22762,1,4,0)
- ;;=4^302.85
- ;;^UTILITY(U,$J,358.3,22762,1,5,0)
- ;;=5^Gender Ident Disorder
- ;;^UTILITY(U,$J,358.3,22762,2)
- ;;=^268180
- ;;^UTILITY(U,$J,358.3,22763,0)
- ;;=302.0^^141^1402^1
- ;;^UTILITY(U,$J,358.3,22763,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22763,1,4,0)
- ;;=4^302.0
- ;;^UTILITY(U,$J,358.3,22763,1,5,0)
- ;;=5^Ego-Dystonic Sexual Orient
- ;;^UTILITY(U,$J,358.3,22763,2)
- ;;=^331922
- ;;^UTILITY(U,$J,358.3,22764,0)
- ;;=302.1^^141^1402^14
- ;;^UTILITY(U,$J,358.3,22764,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22764,1,4,0)
- ;;=4^302.1
- ;;^UTILITY(U,$J,358.3,22764,1,5,0)
- ;;=5^Zoophilia
- ;;^UTILITY(U,$J,358.3,22764,2)
- ;;=^265356
- ;;^UTILITY(U,$J,358.3,22765,0)
- ;;=302.3^^141^1402^13
- ;;^UTILITY(U,$J,358.3,22765,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22765,1,4,0)
- ;;=4^302.3
- ;;^UTILITY(U,$J,358.3,22765,1,5,0)
- ;;=5^Transvestic Fetishism
- ;;^UTILITY(U,$J,358.3,22765,2)
- ;;=^331923
- ;;^UTILITY(U,$J,358.3,22766,0)
- ;;=302.50^^141^1402^9
- ;;^UTILITY(U,$J,358.3,22766,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22766,1,4,0)
- ;;=4^302.50
- ;;^UTILITY(U,$J,358.3,22766,1,5,0)
- ;;=5^Trans-sexualism NOS
- ;;^UTILITY(U,$J,358.3,22766,2)
- ;;=^120949
- ;;^UTILITY(U,$J,358.3,22767,0)
- ;;=302.51^^141^1402^10
- ;;^UTILITY(U,$J,358.3,22767,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22767,1,4,0)
- ;;=4^302.51
- ;;^UTILITY(U,$J,358.3,22767,1,5,0)
- ;;=5^Trans-sexualism w/ Asexual Hx
- ;;^UTILITY(U,$J,358.3,22767,2)
- ;;=^268175
- ;;^UTILITY(U,$J,358.3,22768,0)
- ;;=302.52^^141^1402^12
- ;;^UTILITY(U,$J,358.3,22768,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22768,1,4,0)
- ;;=4^302.52
- ;;^UTILITY(U,$J,358.3,22768,1,5,0)
- ;;=5^Trans-sexualism w/ Homosexual Hx
- ;;^UTILITY(U,$J,358.3,22768,2)
- ;;=^268176
- ;;^UTILITY(U,$J,358.3,22769,0)
- ;;=302.53^^141^1402^11
- ;;^UTILITY(U,$J,358.3,22769,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22769,1,4,0)
- ;;=4^302.53
- ;;^UTILITY(U,$J,358.3,22769,1,5,0)
- ;;=5^Trans-sexualism w/ Heterosexual Hx
- ;;^UTILITY(U,$J,358.3,22769,2)
- ;;=^268177
- ;;^UTILITY(U,$J,358.3,22770,0)
- ;;=780.52^^141^1403^3
- ;;^UTILITY(U,$J,358.3,22770,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22770,1,4,0)
- ;;=4^780.52
- ;;^UTILITY(U,$J,358.3,22770,1,5,0)
- ;;=5^Insomnia
- ;;^UTILITY(U,$J,358.3,22770,2)
- ;;=^87662
- ;;^UTILITY(U,$J,358.3,22771,0)
- ;;=780.51^^141^1403^4
- ;;^UTILITY(U,$J,358.3,22771,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22771,1,4,0)
- ;;=4^780.51
- ;;^UTILITY(U,$J,358.3,22771,1,5,0)
- ;;=5^Insomnia w/Sleep Apnea
- ;;^UTILITY(U,$J,358.3,22771,2)
- ;;=^273348
- ;;^UTILITY(U,$J,358.3,22772,0)
- ;;=780.57^^141^1403^5
- ;;^UTILITY(U,$J,358.3,22772,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22772,1,4,0)
- ;;=4^780.57
- ;;^UTILITY(U,$J,358.3,22772,1,5,0)
- ;;=5^Sleep Apnea
- ;;^UTILITY(U,$J,358.3,22772,2)
- ;;=^293933
- ;;^UTILITY(U,$J,358.3,22773,0)
- ;;=780.50^^141^1403^6
- ;;^UTILITY(U,$J,358.3,22773,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22773,1,4,0)
- ;;=4^780.50
- ;;^UTILITY(U,$J,358.3,22773,1,5,0)
- ;;=5^Sleep Disturbance, Unspec
- ;;^UTILITY(U,$J,358.3,22773,2)
- ;;=^111271
- ;;^UTILITY(U,$J,358.3,22774,0)
- ;;=291.82^^141^1403^1
- ;;^UTILITY(U,$J,358.3,22774,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22774,1,4,0)
- ;;=4^291.82
- ;;^UTILITY(U,$J,358.3,22774,1,5,0)
- ;;=5^Alcohol Induced Sleep D/O
- ;;^UTILITY(U,$J,358.3,22774,2)
- ;;=^332750
- ;;^UTILITY(U,$J,358.3,22775,0)
- ;;=292.85^^141^1403^2
- ;;^UTILITY(U,$J,358.3,22775,1,0)
- ;;=^358.31IA^5^2
+ ;;^UTILITY(U,$J,358.3,21257,0)
+ ;;=I21.3^^101^1028^33
+ ;;^UTILITY(U,$J,358.3,21257,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21257,1,3,0)
+ ;;=3^ST elevation (STEMI) myocardial infarction of unsp site
+ ;;^UTILITY(U,$J,358.3,21257,1,4,0)
+ ;;=4^I21.3
+ ;;^UTILITY(U,$J,358.3,21257,2)
+ ;;=^5007087
+ ;;^UTILITY(U,$J,358.3,21258,0)
+ ;;=J43.0^^101^1028^35
+ ;;^UTILITY(U,$J,358.3,21258,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21258,1,3,0)
+ ;;=3^Unilateral pulmonary emphysema [MacLeod's syndrome]
+ ;;^UTILITY(U,$J,358.3,21258,1,4,0)
+ ;;=4^J43.0
+ ;;^UTILITY(U,$J,358.3,21258,2)
+ ;;=^5008235
+ ;;^UTILITY(U,$J,358.3,21259,0)
+ ;;=I50.40^^101^1028^19
+ ;;^UTILITY(U,$J,358.3,21259,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21259,1,3,0)
+ ;;=3^Combined systolic and diastolic (congestive) hrt fail,Unspec
+ ;;^UTILITY(U,$J,358.3,21259,1,4,0)
+ ;;=4^I50.40
+ ;;^UTILITY(U,$J,358.3,21259,2)
+ ;;=^5007247
+ ;;^UTILITY(U,$J,358.3,21260,0)
+ ;;=I50.30^^101^1028^21
+ ;;^UTILITY(U,$J,358.3,21260,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21260,1,3,0)
+ ;;=3^Diastolic (congestive) heart failure,Unspec
+ ;;^UTILITY(U,$J,358.3,21260,1,4,0)
+ ;;=4^I50.30
+ ;;^UTILITY(U,$J,358.3,21260,2)
+ ;;=^5007243
+ ;;^UTILITY(U,$J,358.3,21261,0)
+ ;;=I50.20^^101^1028^34
+ ;;^UTILITY(U,$J,358.3,21261,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21261,1,3,0)
+ ;;=3^Systolic (congestive) heart failure,Unspec
+ ;;^UTILITY(U,$J,358.3,21261,1,4,0)
+ ;;=4^I50.20
+ ;;^UTILITY(U,$J,358.3,21261,2)
+ ;;=^5007239
+ ;;^UTILITY(U,$J,358.3,21262,0)
+ ;;=T84.81XA^^101^1029^4
+ ;;^UTILITY(U,$J,358.3,21262,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21262,1,3,0)
+ ;;=3^Embolism due to internal orthopedic prosth dev/grft, init
+ ;;^UTILITY(U,$J,358.3,21262,1,4,0)
+ ;;=4^T84.81XA
+ ;;^UTILITY(U,$J,358.3,21262,2)
+ ;;=^5055454
+ ;;^UTILITY(U,$J,358.3,21263,0)
+ ;;=T84.81XS^^101^1029^5
+ ;;^UTILITY(U,$J,358.3,21263,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21263,1,3,0)
+ ;;=3^Embolism due to internal orthopedic prosth dev/grft, sequela
+ ;;^UTILITY(U,$J,358.3,21263,1,4,0)
+ ;;=4^T84.81XS
+ ;;^UTILITY(U,$J,358.3,21263,2)
+ ;;=^5055456
+ ;;^UTILITY(U,$J,358.3,21264,0)
+ ;;=T84.81XD^^101^1029^6
+ ;;^UTILITY(U,$J,358.3,21264,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21264,1,3,0)
+ ;;=3^Embolism due to internal orthopedic prosth dev/grft, subs
+ ;;^UTILITY(U,$J,358.3,21264,1,4,0)
+ ;;=4^T84.81XD
+ ;;^UTILITY(U,$J,358.3,21264,2)
+ ;;=^5055455
+ ;;^UTILITY(U,$J,358.3,21265,0)
+ ;;=T84.82XA^^101^1029^7
+ ;;^UTILITY(U,$J,358.3,21265,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21265,1,3,0)
+ ;;=3^Fibrosis due to internal orthopedic prosth dev/grft, init
+ ;;^UTILITY(U,$J,358.3,21265,1,4,0)
+ ;;=4^T84.82XA
+ ;;^UTILITY(U,$J,358.3,21265,2)
+ ;;=^5055457
+ ;;^UTILITY(U,$J,358.3,21266,0)
+ ;;=T84.82XD^^101^1029^8
+ ;;^UTILITY(U,$J,358.3,21266,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21266,1,3,0)
+ ;;=3^Fibrosis due to internal orthopedic prosth dev/grft, subs
+ ;;^UTILITY(U,$J,358.3,21266,1,4,0)
+ ;;=4^T84.82XD
+ ;;^UTILITY(U,$J,358.3,21266,2)
+ ;;=^5055458
+ ;;^UTILITY(U,$J,358.3,21267,0)
+ ;;=T84.82XS^^101^1029^9
+ ;;^UTILITY(U,$J,358.3,21267,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21267,1,3,0)
+ ;;=3^Fibrosis due to internal orthopedic prosth dev/grft, sequela
+ ;;^UTILITY(U,$J,358.3,21267,1,4,0)
+ ;;=4^T84.82XS
+ ;;^UTILITY(U,$J,358.3,21267,2)
+ ;;=^5055459
+ ;;^UTILITY(U,$J,358.3,21268,0)
+ ;;=T84.83XA^^101^1029^10
+ ;;^UTILITY(U,$J,358.3,21268,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21268,1,3,0)
+ ;;=3^Hemorrhage due to internal orthopedic prosth dev/grft, init
+ ;;^UTILITY(U,$J,358.3,21268,1,4,0)
+ ;;=4^T84.83XA

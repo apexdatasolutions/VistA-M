@@ -1,128 +1,114 @@
-IBDEI18N ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI18N ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,22154,1,3,0)
- ;;=3^94668
- ;;^UTILITY(U,$J,358.3,22155,0)
- ;;=95992^^135^1331^9^^^^1
- ;;^UTILITY(U,$J,358.3,22155,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22155,1,2,0)
- ;;=2^Canalith Repositioning Proc,per day
- ;;^UTILITY(U,$J,358.3,22155,1,3,0)
- ;;=3^95992
- ;;^UTILITY(U,$J,358.3,22156,0)
- ;;=96000^^135^1331^12^^^^1
- ;;^UTILITY(U,$J,358.3,22156,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22156,1,2,0)
- ;;=2^Comp Cmptr Based Motion Analy Video/3D
- ;;^UTILITY(U,$J,358.3,22156,1,3,0)
- ;;=3^96000
- ;;^UTILITY(U,$J,358.3,22157,0)
- ;;=96125^^135^1331^40^^^^1
- ;;^UTILITY(U,$J,358.3,22157,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22157,1,2,0)
- ;;=2^Standardized Cognitive Perf Test,per hr
- ;;^UTILITY(U,$J,358.3,22157,1,3,0)
- ;;=3^96125
- ;;^UTILITY(U,$J,358.3,22158,0)
- ;;=97024^^135^1331^14^^^^1
- ;;^UTILITY(U,$J,358.3,22158,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22158,1,2,0)
- ;;=2^Diathermy
- ;;^UTILITY(U,$J,358.3,22158,1,3,0)
- ;;=3^97024
- ;;^UTILITY(U,$J,358.3,22159,0)
- ;;=97039^^135^1331^47^^^^1
- ;;^UTILITY(U,$J,358.3,22159,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22159,1,2,0)
- ;;=2^Unlisted Modality (Spec Type/Time)
- ;;^UTILITY(U,$J,358.3,22159,1,3,0)
- ;;=3^97039
- ;;^UTILITY(U,$J,358.3,22160,0)
- ;;=97139^^135^1331^48^^^^1
- ;;^UTILITY(U,$J,358.3,22160,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22160,1,2,0)
- ;;=2^Unlisted Therapeutic Proc (Specify)
- ;;^UTILITY(U,$J,358.3,22160,1,3,0)
- ;;=3^97139
- ;;^UTILITY(U,$J,358.3,22161,0)
- ;;=97533^^135^1331^38^^^^1
- ;;^UTILITY(U,$J,358.3,22161,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22161,1,2,0)
- ;;=2^Sensory Integration,ea 15min
- ;;^UTILITY(U,$J,358.3,22161,1,3,0)
- ;;=3^97533
- ;;^UTILITY(U,$J,358.3,22162,0)
- ;;=97537^^135^1331^11^^^^1
- ;;^UTILITY(U,$J,358.3,22162,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22162,1,2,0)
- ;;=2^Community/Work Reintegration,ea 15min
- ;;^UTILITY(U,$J,358.3,22162,1,3,0)
- ;;=3^97537
- ;;^UTILITY(U,$J,358.3,22163,0)
- ;;=97755^^135^1331^7^^^^1
- ;;^UTILITY(U,$J,358.3,22163,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22163,1,2,0)
- ;;=2^Assistive Tech Assess,ea 15min
- ;;^UTILITY(U,$J,358.3,22163,1,3,0)
- ;;=3^97755
- ;;^UTILITY(U,$J,358.3,22164,0)
- ;;=97810^^135^1331^3^^^^1
- ;;^UTILITY(U,$J,358.3,22164,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22164,1,2,0)
- ;;=2^Acupunct w/o Stimul ea 15min
- ;;^UTILITY(U,$J,358.3,22164,1,3,0)
- ;;=3^97810
- ;;^UTILITY(U,$J,358.3,22165,0)
- ;;=97811^^135^1331^4^^^^1
- ;;^UTILITY(U,$J,358.3,22165,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22165,1,2,0)
- ;;=2^Acupunct w/o Stimul ea addl 15min
- ;;^UTILITY(U,$J,358.3,22165,1,3,0)
- ;;=3^97811
- ;;^UTILITY(U,$J,358.3,22166,0)
- ;;=97813^^135^1331^1^^^^1
- ;;^UTILITY(U,$J,358.3,22166,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22166,1,2,0)
- ;;=2^Acupunct w/ Stimul ea 15min
- ;;^UTILITY(U,$J,358.3,22166,1,3,0)
- ;;=3^97813
- ;;^UTILITY(U,$J,358.3,22167,0)
- ;;=97814^^135^1331^2^^^^1
- ;;^UTILITY(U,$J,358.3,22167,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22167,1,2,0)
- ;;=2^Acupunct w/ Stimul ea addl 15min
- ;;^UTILITY(U,$J,358.3,22167,1,3,0)
- ;;=3^97814
- ;;^UTILITY(U,$J,358.3,22168,0)
- ;;=95831^^135^1331^31^^^^1
- ;;^UTILITY(U,$J,358.3,22168,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22168,1,2,0)
- ;;=2^Muscle Testing,Manual;Extrem or Trunk
- ;;^UTILITY(U,$J,358.3,22168,1,3,0)
- ;;=3^95831
- ;;^UTILITY(U,$J,358.3,22169,0)
- ;;=20600^^135^1332^5^^^^1
- ;;^UTILITY(U,$J,358.3,22169,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22169,1,2,0)
- ;;=2^Drain/Inject, Joint/Bursa
- ;;^UTILITY(U,$J,358.3,22169,1,3,0)
- ;;=3^20600
- ;;^UTILITY(U,$J,358.3,22170,0)
- ;;=20605^^135^1332^1^^^^1
+ ;;^UTILITY(U,$J,358.3,20710,2)
+ ;;=^5063619
+ ;;^UTILITY(U,$J,358.3,20711,0)
+ ;;=Z69.12^^99^981^2
+ ;;^UTILITY(U,$J,358.3,20711,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20711,1,3,0)
+ ;;=3^MH Svc for Perpetrator of Spousal/Partner Abuse-Physical,Sexual or Psychological
+ ;;^UTILITY(U,$J,358.3,20711,1,4,0)
+ ;;=4^Z69.12
+ ;;^UTILITY(U,$J,358.3,20711,2)
+ ;;=^5063233
+ ;;^UTILITY(U,$J,358.3,20712,0)
+ ;;=T74.21XA^^99^981^12
+ ;;^UTILITY(U,$J,358.3,20712,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20712,1,3,0)
+ ;;=3^Spouse/Partner or Nonspouse/Nonpartner Violence,Sexual Confirmed,Initial Encounter
+ ;;^UTILITY(U,$J,358.3,20712,1,4,0)
+ ;;=4^T74.21XA
+ ;;^UTILITY(U,$J,358.3,20712,2)
+ ;;=^5054152
+ ;;^UTILITY(U,$J,358.3,20713,0)
+ ;;=T74.21XD^^99^981^13
+ ;;^UTILITY(U,$J,358.3,20713,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20713,1,3,0)
+ ;;=3^Spouse/Partner or Nonspouse/Nonpartner Violence,Sexual Confirmed,Subsequent Encounter
+ ;;^UTILITY(U,$J,358.3,20713,1,4,0)
+ ;;=4^T74.21XD
+ ;;^UTILITY(U,$J,358.3,20713,2)
+ ;;=^5054153
+ ;;^UTILITY(U,$J,358.3,20714,0)
+ ;;=T76.21XA^^99^981^14
+ ;;^UTILITY(U,$J,358.3,20714,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20714,1,3,0)
+ ;;=3^Spouse/Partner or Nonspouse/Nonpartner Violence,Sexual Suspected,Initial Encounter
+ ;;^UTILITY(U,$J,358.3,20714,1,4,0)
+ ;;=4^T76.21XA
+ ;;^UTILITY(U,$J,358.3,20714,2)
+ ;;=^5054227
+ ;;^UTILITY(U,$J,358.3,20715,0)
+ ;;=T76.21XD^^99^981^15
+ ;;^UTILITY(U,$J,358.3,20715,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20715,1,3,0)
+ ;;=3^Spouse/Partner or Nonspouse/Nonpartner Violence,Sexual Suspected,Susequent Encounter
+ ;;^UTILITY(U,$J,358.3,20715,1,4,0)
+ ;;=4^T76.21XD
+ ;;^UTILITY(U,$J,358.3,20715,2)
+ ;;=^5054228
+ ;;^UTILITY(U,$J,358.3,20716,0)
+ ;;=Z69.81^^99^981^3
+ ;;^UTILITY(U,$J,358.3,20716,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20716,1,3,0)
+ ;;=3^MH Svc for Victim of Nonspousal/Nonpartner Abuse,Physical or Sexual
+ ;;^UTILITY(U,$J,358.3,20716,1,4,0)
+ ;;=4^Z69.81
+ ;;^UTILITY(U,$J,358.3,20716,2)
+ ;;=^5063234
+ ;;^UTILITY(U,$J,358.3,20717,0)
+ ;;=Z69.82^^99^981^1
+ ;;^UTILITY(U,$J,358.3,20717,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20717,1,3,0)
+ ;;=3^MH Svc for Perpetrator of Nonspousal/Nonpartner Abuse,Physical or Sexual
+ ;;^UTILITY(U,$J,358.3,20717,1,4,0)
+ ;;=4^Z69.82
+ ;;^UTILITY(U,$J,358.3,20717,2)
+ ;;=^5063235
+ ;;^UTILITY(U,$J,358.3,20718,0)
+ ;;=T74.01XA^^99^981^16
+ ;;^UTILITY(U,$J,358.3,20718,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20718,1,3,0)
+ ;;=3^Spouse/Partner or Nonspouse/Nonpartner Neglect Confirmed,Initial Encnter
+ ;;^UTILITY(U,$J,358.3,20718,1,4,0)
+ ;;=4^T74.01XA
+ ;;^UTILITY(U,$J,358.3,20718,2)
+ ;;=^5054140
+ ;;^UTILITY(U,$J,358.3,20719,0)
+ ;;=T74.01XD^^99^981^17
+ ;;^UTILITY(U,$J,358.3,20719,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20719,1,3,0)
+ ;;=3^Spouse/Partner or Nonspouse/Nonpartner Neglect Confirmed,Subsequent Encnter
+ ;;^UTILITY(U,$J,358.3,20719,1,4,0)
+ ;;=4^T74.01XD
+ ;;^UTILITY(U,$J,358.3,20719,2)
+ ;;=^5054141
+ ;;^UTILITY(U,$J,358.3,20720,0)
+ ;;=T76.01XA^^99^981^18
+ ;;^UTILITY(U,$J,358.3,20720,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20720,1,3,0)
+ ;;=3^Spouse/Partner or Nonspouse/Nonpartner Neglect Suspected,Initial Encnter
+ ;;^UTILITY(U,$J,358.3,20720,1,4,0)
+ ;;=4^T76.01XA
+ ;;^UTILITY(U,$J,358.3,20720,2)
+ ;;=^5054215
+ ;;^UTILITY(U,$J,358.3,20721,0)
+ ;;=T76.01XD^^99^981^19
+ ;;^UTILITY(U,$J,358.3,20721,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20721,1,3,0)
+ ;;=3^Spouse/Partner or Nonspouse/Nonpartner Neglect Suspected,Subsequent Encnter
+ ;;^UTILITY(U,$J,358.3,20721,1,4,0)
+ ;;=4^T76.01XD

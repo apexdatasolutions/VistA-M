@@ -1,0 +1,132 @@
+IBDEI1IT ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,25414,2)
+ ;;=^5001931
+ ;;^UTILITY(U,$J,358.3,25415,0)
+ ;;=D05.81^^124^1246^4
+ ;;^UTILITY(U,$J,358.3,25415,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25415,1,3,0)
+ ;;=3^Carcinoma in Situ of Breast,Right NEC
+ ;;^UTILITY(U,$J,358.3,25415,1,4,0)
+ ;;=4^D05.81
+ ;;^UTILITY(U,$J,358.3,25415,2)
+ ;;=^5001933
+ ;;^UTILITY(U,$J,358.3,25416,0)
+ ;;=D05.82^^124^1246^2
+ ;;^UTILITY(U,$J,358.3,25416,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25416,1,3,0)
+ ;;=3^Carcinoma in Situ of Breast,Left NEC
+ ;;^UTILITY(U,$J,358.3,25416,1,4,0)
+ ;;=4^D05.82
+ ;;^UTILITY(U,$J,358.3,25416,2)
+ ;;=^5001934
+ ;;^UTILITY(U,$J,358.3,25417,0)
+ ;;=D06.9^^124^1246^6
+ ;;^UTILITY(U,$J,358.3,25417,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25417,1,3,0)
+ ;;=3^Carcinoma in Situ of Cervix,Unspec
+ ;;^UTILITY(U,$J,358.3,25417,1,4,0)
+ ;;=4^D06.9
+ ;;^UTILITY(U,$J,358.3,25417,2)
+ ;;=^5001941
+ ;;^UTILITY(U,$J,358.3,25418,0)
+ ;;=D06.0^^124^1246^7
+ ;;^UTILITY(U,$J,358.3,25418,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25418,1,3,0)
+ ;;=3^Carcinoma in Situ of Endocervix
+ ;;^UTILITY(U,$J,358.3,25418,1,4,0)
+ ;;=4^D06.0
+ ;;^UTILITY(U,$J,358.3,25418,2)
+ ;;=^5001938
+ ;;^UTILITY(U,$J,358.3,25419,0)
+ ;;=D06.1^^124^1246^8
+ ;;^UTILITY(U,$J,358.3,25419,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25419,1,3,0)
+ ;;=3^Carcinoma in Situ of Exocervix
+ ;;^UTILITY(U,$J,358.3,25419,1,4,0)
+ ;;=4^D06.1
+ ;;^UTILITY(U,$J,358.3,25419,2)
+ ;;=^5001939
+ ;;^UTILITY(U,$J,358.3,25420,0)
+ ;;=D09.0^^124^1246^1
+ ;;^UTILITY(U,$J,358.3,25420,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25420,1,3,0)
+ ;;=3^Carcinoma in Situ of Bladder
+ ;;^UTILITY(U,$J,358.3,25420,1,4,0)
+ ;;=4^D09.0
+ ;;^UTILITY(U,$J,358.3,25420,2)
+ ;;=^267742
+ ;;^UTILITY(U,$J,358.3,25421,0)
+ ;;=C90.30^^124^1246^88
+ ;;^UTILITY(U,$J,358.3,25421,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25421,1,3,0)
+ ;;=3^Solitary Plasmacytoma,Not in Remission
+ ;;^UTILITY(U,$J,358.3,25421,1,4,0)
+ ;;=4^C90.30
+ ;;^UTILITY(U,$J,358.3,25421,2)
+ ;;=^5001759
+ ;;^UTILITY(U,$J,358.3,25422,0)
+ ;;=Z85.818^^124^1246^71
+ ;;^UTILITY(U,$J,358.3,25422,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25422,1,3,0)
+ ;;=3^Personal Hx of Malig Neop of Lip/Oral Cavity/Pharynx
+ ;;^UTILITY(U,$J,358.3,25422,1,4,0)
+ ;;=4^Z85.818
+ ;;^UTILITY(U,$J,358.3,25422,2)
+ ;;=^5063439
+ ;;^UTILITY(U,$J,358.3,25423,0)
+ ;;=Z85.01^^124^1246^67
+ ;;^UTILITY(U,$J,358.3,25423,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25423,1,3,0)
+ ;;=3^Personal Hx of Malig Neop of Esophagus
+ ;;^UTILITY(U,$J,358.3,25423,1,4,0)
+ ;;=4^Z85.01
+ ;;^UTILITY(U,$J,358.3,25423,2)
+ ;;=^5063395
+ ;;^UTILITY(U,$J,358.3,25424,0)
+ ;;=Z85.028^^124^1246^77
+ ;;^UTILITY(U,$J,358.3,25424,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25424,1,3,0)
+ ;;=3^Personal Hx of Malig Neop of Stomach
+ ;;^UTILITY(U,$J,358.3,25424,1,4,0)
+ ;;=4^Z85.028
+ ;;^UTILITY(U,$J,358.3,25424,2)
+ ;;=^5063397
+ ;;^UTILITY(U,$J,358.3,25425,0)
+ ;;=Z85.038^^124^1246^69
+ ;;^UTILITY(U,$J,358.3,25425,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25425,1,3,0)
+ ;;=3^Personal Hx of Malig Neop of Large Intestine
+ ;;^UTILITY(U,$J,358.3,25425,1,4,0)
+ ;;=4^Z85.038
+ ;;^UTILITY(U,$J,358.3,25425,2)
+ ;;=^5063399
+ ;;^UTILITY(U,$J,358.3,25426,0)
+ ;;=Z85.048^^124^1246^75
+ ;;^UTILITY(U,$J,358.3,25426,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25426,1,3,0)
+ ;;=3^Personal Hx of Malig Neop of Rectum/Rectosig Junct/Anus
+ ;;^UTILITY(U,$J,358.3,25426,1,4,0)
+ ;;=4^Z85.048
+ ;;^UTILITY(U,$J,358.3,25426,2)
+ ;;=^5063401
+ ;;^UTILITY(U,$J,358.3,25427,0)
+ ;;=Z85.118^^124^1246^65
+ ;;^UTILITY(U,$J,358.3,25427,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25427,1,3,0)
+ ;;=3^Personal Hx of Malig Neop of Bronchus/Lung

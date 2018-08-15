@@ -1,108 +1,130 @@
-IBDEI11Y ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI11Y ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,18855,1,3,0)
- ;;=3^28525
- ;;^UTILITY(U,$J,358.3,18856,0)
- ;;=28530^^122^1205^25^^^^1
- ;;^UTILITY(U,$J,358.3,18856,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18856,1,2,0)
- ;;=2^Closed TX of sesamiod fracture 
- ;;^UTILITY(U,$J,358.3,18856,1,3,0)
- ;;=3^28530
- ;;^UTILITY(U,$J,358.3,18857,0)
- ;;=28531^^122^1205^26^^^^1
- ;;^UTILITY(U,$J,358.3,18857,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18857,1,2,0)
- ;;=2^Open TX of sesamiod fracture, with or without internal fixation
- ;;^UTILITY(U,$J,358.3,18857,1,3,0)
- ;;=3^28531
- ;;^UTILITY(U,$J,358.3,18858,0)
- ;;=27760^^122^1205^27^^^^1
- ;;^UTILITY(U,$J,358.3,18858,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18858,1,2,0)
- ;;=2^Closed TX of medial malleolus fracture; without manipulation 
- ;;^UTILITY(U,$J,358.3,18858,1,3,0)
- ;;=3^27760
- ;;^UTILITY(U,$J,358.3,18859,0)
- ;;=27762^^122^1205^28^^^^1
- ;;^UTILITY(U,$J,358.3,18859,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18859,1,2,0)
- ;;=2^Closed TX of medial malleolus fracture; with manipulation, with or without skin or skeletal traction
- ;;^UTILITY(U,$J,358.3,18859,1,3,0)
- ;;=3^27762
- ;;^UTILITY(U,$J,358.3,18860,0)
- ;;=27766^^122^1205^29^^^^1
- ;;^UTILITY(U,$J,358.3,18860,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18860,1,2,0)
- ;;=2^Open/Closed TX of medial matteolus FX,w/ internal fixation
- ;;^UTILITY(U,$J,358.3,18860,1,3,0)
- ;;=3^27766
- ;;^UTILITY(U,$J,358.3,18861,0)
- ;;=27786^^122^1205^30^^^^1
- ;;^UTILITY(U,$J,358.3,18861,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18861,1,2,0)
- ;;=2^Closed TX of distal fibular fracture (lateral malleolus); without manipulation
- ;;^UTILITY(U,$J,358.3,18861,1,3,0)
- ;;=3^27786
- ;;^UTILITY(U,$J,358.3,18862,0)
- ;;=27788^^122^1205^31^^^^1
- ;;^UTILITY(U,$J,358.3,18862,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18862,1,2,0)
- ;;=2^Closed TX of distal fibular (lateral malleolus); with manipulation
- ;;^UTILITY(U,$J,358.3,18862,1,3,0)
- ;;=3^27788
- ;;^UTILITY(U,$J,358.3,18863,0)
- ;;=27792^^122^1205^32^^^^1
- ;;^UTILITY(U,$J,358.3,18863,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18863,1,2,0)
- ;;=2^Open TX of distal fibular fracture (lateral malleolus), with or without internal or external fixation
- ;;^UTILITY(U,$J,358.3,18863,1,3,0)
- ;;=3^27792
- ;;^UTILITY(U,$J,358.3,18864,0)
- ;;=27808^^122^1205^33^^^^1
- ;;^UTILITY(U,$J,358.3,18864,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18864,1,2,0)
- ;;=2^Closed TX of bimalleolar ankle fracture, (including Potts); without manipulation
- ;;^UTILITY(U,$J,358.3,18864,1,3,0)
- ;;=3^27808
- ;;^UTILITY(U,$J,358.3,18865,0)
- ;;=27810^^122^1205^34^^^^1
- ;;^UTILITY(U,$J,358.3,18865,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18865,1,2,0)
- ;;=2^Closed TX of bimalleolar ankle fracture, (including Potts); with manipulation
- ;;^UTILITY(U,$J,358.3,18865,1,3,0)
- ;;=3^27810
- ;;^UTILITY(U,$J,358.3,18866,0)
- ;;=27814^^122^1205^35^^^^1
- ;;^UTILITY(U,$J,358.3,18866,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18866,1,2,0)
- ;;=2^Open TX of bimalleolar ankle fracture, with or without internal or external fixation
- ;;^UTILITY(U,$J,358.3,18866,1,3,0)
- ;;=3^27814
- ;;^UTILITY(U,$J,358.3,18867,0)
- ;;=27816^^122^1205^36^^^^1
- ;;^UTILITY(U,$J,358.3,18867,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18867,1,2,0)
- ;;=2^Closed TX of trimalleolar ankle fracture; without manipulation
- ;;^UTILITY(U,$J,358.3,18867,1,3,0)
- ;;=3^27816
- ;;^UTILITY(U,$J,358.3,18868,0)
- ;;=27818^^122^1205^37^^^^1
- ;;^UTILITY(U,$J,358.3,18868,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18868,1,2,0)
- ;;=2^Closed TX of trimalleolar ankle fracture; with manipulation
+ ;;^UTILITY(U,$J,358.3,17520,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17520,1,3,0)
+ ;;=3^Fall from Incline,Subsequent
+ ;;^UTILITY(U,$J,358.3,17520,1,4,0)
+ ;;=4^W10.2XXD
+ ;;^UTILITY(U,$J,358.3,17520,2)
+ ;;=^5059587
+ ;;^UTILITY(U,$J,358.3,17521,0)
+ ;;=W10.1XXD^^88^863^19
+ ;;^UTILITY(U,$J,358.3,17521,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17521,1,3,0)
+ ;;=3^Fall from Sidewalk/Curb,Subsequent
+ ;;^UTILITY(U,$J,358.3,17521,1,4,0)
+ ;;=4^W10.1XXD
+ ;;^UTILITY(U,$J,358.3,17521,2)
+ ;;=^5059584
+ ;;^UTILITY(U,$J,358.3,17522,0)
+ ;;=W06.XXXD^^88^863^9
+ ;;^UTILITY(U,$J,358.3,17522,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17522,1,3,0)
+ ;;=3^Fall from Bed,Subsequent
+ ;;^UTILITY(U,$J,358.3,17522,1,4,0)
+ ;;=4^W06.XXXD
+ ;;^UTILITY(U,$J,358.3,17522,2)
+ ;;=^5059560
+ ;;^UTILITY(U,$J,358.3,17523,0)
+ ;;=W07.XXXD^^88^863^10
+ ;;^UTILITY(U,$J,358.3,17523,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17523,1,3,0)
+ ;;=3^Fall from Chair,Subsequent
+ ;;^UTILITY(U,$J,358.3,17523,1,4,0)
+ ;;=4^W07.XXXD
+ ;;^UTILITY(U,$J,358.3,17523,2)
+ ;;=^5059563
+ ;;^UTILITY(U,$J,358.3,17524,0)
+ ;;=W05.2XXD^^88^863^15
+ ;;^UTILITY(U,$J,358.3,17524,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17524,1,3,0)
+ ;;=3^Fall from Non-Moving Motorized Scooter,Subsequent
+ ;;^UTILITY(U,$J,358.3,17524,1,4,0)
+ ;;=4^W05.2XXD
+ ;;^UTILITY(U,$J,358.3,17524,2)
+ ;;=^5059557
+ ;;^UTILITY(U,$J,358.3,17525,0)
+ ;;=W05.1XXD^^88^863^16
+ ;;^UTILITY(U,$J,358.3,17525,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17525,1,3,0)
+ ;;=3^Fall from Non-Moving Nonmotorized Scooter,Subsequent
+ ;;^UTILITY(U,$J,358.3,17525,1,4,0)
+ ;;=4^W05.1XXD
+ ;;^UTILITY(U,$J,358.3,17525,2)
+ ;;=^5059554
+ ;;^UTILITY(U,$J,358.3,17526,0)
+ ;;=W05.0XXD^^88^863^17
+ ;;^UTILITY(U,$J,358.3,17526,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17526,1,3,0)
+ ;;=3^Fall from Non-Moving Wheelchair,Subsequent
+ ;;^UTILITY(U,$J,358.3,17526,1,4,0)
+ ;;=4^W05.0XXD
+ ;;^UTILITY(U,$J,358.3,17526,2)
+ ;;=^5059551
+ ;;^UTILITY(U,$J,358.3,17527,0)
+ ;;=W18.12XD^^88^863^21
+ ;;^UTILITY(U,$J,358.3,17527,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17527,1,3,0)
+ ;;=3^Fall from Toilet w/ Strike Against Object,Subsequent
+ ;;^UTILITY(U,$J,358.3,17527,1,4,0)
+ ;;=4^W18.12XD
+ ;;^UTILITY(U,$J,358.3,17527,2)
+ ;;=^5137984
+ ;;^UTILITY(U,$J,358.3,17528,0)
+ ;;=W18.11XD^^88^863^22
+ ;;^UTILITY(U,$J,358.3,17528,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17528,1,3,0)
+ ;;=3^Fall from Toilet,Subsequent
+ ;;^UTILITY(U,$J,358.3,17528,1,4,0)
+ ;;=4^W18.11XD
+ ;;^UTILITY(U,$J,358.3,17528,2)
+ ;;=^5059802
+ ;;^UTILITY(U,$J,358.3,17529,0)
+ ;;=W08.XXXD^^88^863^12
+ ;;^UTILITY(U,$J,358.3,17529,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17529,1,3,0)
+ ;;=3^Fall from Furniture,Subsequent
+ ;;^UTILITY(U,$J,358.3,17529,1,4,0)
+ ;;=4^W08.XXXD
+ ;;^UTILITY(U,$J,358.3,17529,2)
+ ;;=^5059566
+ ;;^UTILITY(U,$J,358.3,17530,0)
+ ;;=W18.2XXD^^88^863^23
+ ;;^UTILITY(U,$J,358.3,17530,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17530,1,3,0)
+ ;;=3^Fall in Shower/Bathtub,Subsequent
+ ;;^UTILITY(U,$J,358.3,17530,1,4,0)
+ ;;=4^W18.2XXD
+ ;;^UTILITY(U,$J,358.3,17530,2)
+ ;;=^5059807
+ ;;^UTILITY(U,$J,358.3,17531,0)
+ ;;=W11.XXXD^^88^863^14
+ ;;^UTILITY(U,$J,358.3,17531,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17531,1,3,0)
+ ;;=3^Fall from Ladder,Subsequent
+ ;;^UTILITY(U,$J,358.3,17531,1,4,0)
+ ;;=4^W11.XXXD
+ ;;^UTILITY(U,$J,358.3,17531,2)
+ ;;=^5059596
+ ;;^UTILITY(U,$J,358.3,17532,0)
+ ;;=W01.10XD^^88^863^2
+ ;;^UTILITY(U,$J,358.3,17532,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17532,1,3,0)
+ ;;=3^Fall Same Level w/ Strike Against Object,Subsequent
+ ;;^UTILITY(U,$J,358.3,17532,1,4,0)
+ ;;=4^W01.10XD

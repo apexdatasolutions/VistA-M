@@ -1,5 +1,8 @@
-ORMFN ; SLC/MKB - MFN msg router ;8/18/2010
- ;;3.0;ORDER ENTRY/RESULTS REPORTING;**26,97,94,176,215,243,280**;Dec 17, 1997;Build 85
+ORMFN ; SLC/MKB - MFN msg router ; 05 Oct 2017  2:10 PM
+ ;;3.0;ORDER ENTRY/RESULTS REPORTING;**26,97,94,176,215,243,280,350,471**;Dec 17, 1997;Build 2
+ ;
+ ;
+ ;
 EN(MSG) ; -- main entry point for OR ITEM RECEIVE
  N ORMSG,ORNMSP,ORDG,LEN,MSH,MFI,MFE,ZPKG,ZSY,NTE,ORMFE,ORDITEM,ORACTION,ORDIFN,ORFIEN,ORFLD,ORFDA,NUM,VALUE,X,Y,DA,DIC,DIK,SYS,ZLC,LAST,NAME,ID,INACTIVE,I,ORY,NEXT,DD,DO
  ;AGP Create a before and after temp global for compares by other protocols
@@ -29,6 +32,9 @@ ADD . I ORACTION=1,'ORDIFN D  Q:'ORDIFN  ;create item if it doesn't exist
  . . I ORDIFN>0 S ^TMP($J,"OR OI NEW",ORDIFN)=""
  . I '$D(^TMP($J,"OR OI NEW",ORDIFN)) M ^TMP($J,"OR OI BEFORE",ORDIFN)=^ORD(101.43,ORDIFN)
  . S ORFLD(.01)=NAME,ORFLD(1.1)=NAME,ORFLD(2)=ID,ORFLD(3)=$P(ORDITEM,U)
+ . I $D(^TMP($J,"OR OI BEFORE",ORDIFN,9,"AQO")) D
+ . . ;save orderable item quick order restriction
+ . . M ^TMP($J,"ORCM QO",ORDIFN)=^TMP($J,"OR OI BEFORE",ORDIFN,9,"AQO")
  . S SYS=$P(ORDITEM,U,3),ORFLD(4)=$S(+SYS=99:$E(SYS,3,99),1:SYS)
  . S ORFLD(.1)=$S(ORMFE="MAC":"@",(ORMFE="MUP")&('INACTIVE):"@",INACTIVE:$$HL7TFM^XLFDT(INACTIVE),1:"")
  . F NUM=.01,.1,1.1,2,3,4 S VALUE=$S(ORFLD(NUM)="":"@",1:ORFLD(NUM)) D VAL^DIE(101.43,ORFIEN,NUM,"F",VALUE,.ORY,"ORFDA")
@@ -62,7 +68,29 @@ NTE . K ^ORD(101.43,ORDIFN,8) ; replace text
  . . . S I=0 F  S I=$O(@ORMSG@(NTE,I)) Q:I'>0  S DA=DA+1,^ORD(101.43,ORDIFN,8,DA,0)=@ORMSG@(NTE,I)
  . . S ^ORD(101.43,ORDIFN,8,0)="^^"_DA_U_DA_U_DT_U
  . I '$D(^TMP($J,"OR OI NEW",ORDIFN)) M ^TMP($J,"OR OI AFTER",ORDIFN)=^ORD(101.43,ORDIFN)
+ . ;
+ . ;if orderable item quick order restriction previously on orderable item, replace it
+ . ;
+ . ;QO section is called repeatedly for IV entries
+ . ;Future FileMan calls after this error out for an unknown reason
+ . ;even though variables are new'd
+ . ;At final call to this section, DIR(0) does not contain "ADDITIVES".
+ . ;
+ . I $D(^TMP($J,"ORCM QO",ORDIFN)),$G(DIR(0))'["ADDITIVES" D QO
  Q
+ ;
+QO ;replace quick order restriction(s)
+ N ORGRPX,DA,DIR,DIE,DR
+ S ORGRPX=""
+ F  S ORGRPX=$O(^TMP($J,"ORCM QO",ORDIFN,ORGRPX)) Q:ORGRPX=""  D
+ . Q:$D(^ORD(101.43,ORDIFN,9,"AQO",ORGRPX))
+ . S DA=$P(ORGRPX,"S.",2),DA=$O(^ORD(101.43,ORDIFN,9,"B",DA,0))
+ . Q:DA=""
+ . S DA(1)=ORDIFN
+ . S DR="2///YES",DIE="^ORD(101.43,"_DA(1)_",9,"
+ . D ^DIE
+ K ^TMP($J,"ORCM QO",ORDIFN)
+ Q 
  ;
 NMSP(NAME) ; -- returns namespace for package
  I NAME="RADIOLOGY" Q "RA"
@@ -107,15 +135,25 @@ LR ; -- Laboratory
  Q
  ;
 PS ; -- Pharmacy
- N ROUTE
+ N ROUTE,PSO,S3,ORPSVAC,ORPSOI
+ K ^TMP("$J","ORMFN")
  S X=$P(ZPKG,"|",2)
  ;S ORFDA(101.43,ORFIEN,50.1)=$S(X'["I":0,$L($P($P(ORDITEM,U,5),"~",3)):2,1:1)
  S ORFDA(101.43,ORFIEN,50.1)=$S(X["V":2,X["I":1,1:0) ;inpt or iv med
  S ORFDA(101.43,ORFIEN,50.2)=(X["O") ;outpt med
  S ORFDA(101.43,ORFIEN,50.3)=(X["B") ;fluid base/soln
  S ORFDA(101.43,ORFIEN,50.4)=(X["A") ;fluid additive
- S ORFDA(101.43,ORFIEN,50.5)=(X["S") ;supply item
  S ORFDA(101.43,ORFIEN,50.7)=(X["N") ;non-VA med
+ ;Supply Items
+ D
+ . S ORPSOI=+$P($P(MFE,"|",5),"^",4) D DRGIEN^PSS50P7(ORPSOI,"","ORMFN")
+ . I ^TMP($J,"ORMFN",0)'>0 Q
+ . S S3=0,ORFDA(101.43,ORFIEN,50.5)=0
+ . F  S S3=$O(^TMP($J,"ORMFN",S3)) Q:'S3  D
+ .. D ZERO^PSS50(S3,,,,,"ORMFN")
+ .. I ^TMP($J,"ORMFN",0)'>0 Q
+ .. S ORPSVAC=$G(^TMP($J,"ORMFN",S3,2))
+ .. I ORPSVAC?1"XA".E!(ORPSVAC?1"XX".E)!(ORPSVAC="DX900"&($G(^TMP($J,"ORMFN",S3,3))["S")) S ORFDA(101.43,ORFIEN,50.5)=1
  S X=$P(ZPKG,"|",3),ORFDA(101.43,ORFIEN,50.6)=$S(X:1,1:0)
  ;Check for default med route
  ;S ROUTE=$$MEDROUTE

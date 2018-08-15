@@ -1,7 +1,7 @@
-DGENUPL1 ;ALB/CJM,ISA/KWP,CKN,LBD,TDM - PROCESS INCOMING (Z11 EVENT TYPE) HL7 MESSAGES ; 5/19/11 3:45pm
- ;;5.3;REGISTRATION;**147,222,232,314,397,379,407,363,673,653,688,797,842**;Aug 13,1993;Build 33
+DGENUPL1 ;ALB/CJM,ISA,KWP,CKN,LBD,LMD,TDM,TGH,DJS - PROCESS INCOMING (Z11 EVENT TYPE) HL7 MESSAGES ;30 Oct 2017  7:32PM
+ ;;5.3;REGISTRATION;**147,222,232,314,397,379,407,363,673,653,688,797,842,894,871,935**;Aug 13,1993;Build 53
  ;
-PARSE(MSGIEN,MSGID,CURLINE,ERRCOUNT,DGPAT,DGELG,DGENR,DGCDIS,DGOEIF,DGSEC,DGNTR,DGMST,DGNMSE) ;
+PARSE(MSGIEN,MSGID,CURLINE,ERRCOUNT,DGPAT,DGELG,DGENR,DGCDIS,DGOEIF,DGSEC,DGNTR,DGMST,DGNMSE,DGHBP) ;
  ;
  ;Description:  This function parses the HL7 segments.  It creates arrays
  ;defined by the PATIENT, ENROLLMENT, ELIGIBILY, CATASTROPHIC DISABILITY,
@@ -28,7 +28,12 @@ PARSE(MSGIEN,MSGID,CURLINE,ERRCOUNT,DGPAT,DGELG,DGENR,DGCDIS,DGOEIF,DGSEC,DGNTR,
  ;  DGNTR - array defined for NTR data.
  ;  DGMST - array defined for MST data.
  ;  DGNMSE - array define for MILITARY SERVICE EPISODE data (pass by ref)
+ ;  DGHBP - array define for HEALTH BENEFIT PLAN data (pass by ref) DG*5.3*871
+ ;
  N SEG,ERROR,COUNT,QFLG,NFLG
+ ;
+ ;DJS, Set TMP global to track the presence of ZMH segment; DG*5.3*935
+ K ^TMP($J,"DGENUPL") S ^TMP($J,"DGENUPL","ZMH",0)=0
  ;
  K DGEN,DGPAT,DGELG,DGCDIS,DGNTR,DGMST
  ;
@@ -37,7 +42,7 @@ PARSE(MSGIEN,MSGID,CURLINE,ERRCOUNT,DGPAT,DGELG,DGENR,DGCDIS,DGOEIF,DGSEC,DGNTR,
  .D:NFLG NXTSEG^DGENUPL(MSGIEN,.CURLINE,.SEG)
  .I SEG="ZIO",SEG("TYPE")'="ZIO" S NFLG=0 Q
  .I SEG("TYPE")=SEG D  Q
- ..D:(SEG'="ZEL") @SEG^DGENUPL2
+ ..I SEG'="ZEL" N DGRTN S DGRTN=SEG_"^DGENUPL2" D @DGRTN      ; DG*5.3*894
  ..D:(SEG="ZEL") ZEL^DGENUPL2(1)
  ..S NFLG=1
  .D ADDERROR^DGENUPL(MSGID,$G(DGPAT("SSN")),SEG_" SEGMENT MISSING OR OUT OF ORDER",.ERRCOUNT)
@@ -46,7 +51,8 @@ PARSE(MSGIEN,MSGID,CURLINE,ERRCOUNT,DGPAT,DGELG,DGENR,DGCDIS,DGOEIF,DGSEC,DGNTR,
  .;possible that in a bad message we are now past the end
  .S CURLINE=CURLINE-1
  ;
- I 'ERROR F COUNT=2:1 D NXTSEG^DGENUPL(MSGIEN,CURLINE,.SEG) Q:(SEG("TYPE")'="ZEL")  D  Q:ERROR
+ ;DJS, Set segment before processing possible multiple segments; DG*5.3*935
+ I 'ERROR S SEG="ZEL" F COUNT=2:1 D NXTSEG^DGENUPL(MSGIEN,CURLINE,.SEG) Q:(SEG("TYPE")'="ZEL")  D  Q:ERROR
  .S CURLINE=CURLINE+1
  .D ZEL^DGENUPL2(COUNT)
  ;
@@ -58,26 +64,38 @@ PARSE(MSGIEN,MSGID,CURLINE,ERRCOUNT,DGPAT,DGELG,DGENR,DGCDIS,DGOEIF,DGSEC,DGNTR,
  ..N PSUB
  ..F PSUB="PENAEFDT","PENTRMDT","PENAREAS","PENTRMR1","PENTRMR2","PENTRMR3","PENTRMR4" S DGPAT(PSUB)="@"
  ;
+ ;ZHP is optional & can repeat. DG*5.3*871
+ K DGHBP
+ ;DJS, Added call to extrinsic function to determine if multiple segments are present ; DG*5.3*935
+ I 'ERROR S SEG="ZHP" I $$CHKNXT(CURLINE+1,SEG) D  Q:ERROR $S(ERROR:0,1:1)
+ . D NXTSEG^DGENUPL(MSGIEN,.CURLINE,.SEG)
+ . S QFLG=0 F  D  Q:QFLG
+ . . I SEG("TYPE")'="ZHP" S QFLG=1,CURLINE=CURLINE-1 Q
+ . . D ZHP^DGENUPLB
+ . . D NXTSEG^DGENUPL(MSGIEN,.CURLINE,.SEG)
+ ;
  ;Phase II Add the capability to accept more than 1 ZCD
  I 'ERROR F SEG="ZEN","ZMT","ZCD" D  Q:ERROR
  .D NXTSEG^DGENUPL(MSGIEN,.CURLINE,.SEG)
  .I SEG("TYPE")=SEG D
- ..D @SEG^DGENUPL2
+ ..N DGRTN S DGRTN=SEG_"^DGENUPL2" D @DGRTN     ; DG*5.3*894
  .E  D
- ..D ADDERROR^DGENUPL(MSGID,$G(DGPAT("SSN")),SEG_" SEGMENT MISSING OR OUTOF ORDER",.ERRCOUNT)
+ ..D ADDERROR^DGENUPL(MSGID,$G(DGPAT("SSN")),SEG_" SEGMENT MISSING OR OUT OF ORDER",.ERRCOUNT)
  ..S ERROR=1
  ..;
  ..;possible that in a bad message we are now past the end
  ..S CURLINE=CURLINE-1
  ;
- I 'ERROR F COUNT=2:1 D NXTSEG^DGENUPL(MSGIEN,CURLINE,.SEG) Q:(SEG("TYPE")'="ZCD")  D  Q:ERROR
+ ;DJS, Added call to extrinsic function to determine if multiple segments are present ; DG*5.3*935
+ I 'ERROR S SEG="ZCD" I $$CHKNXT(CURLINE+1,SEG) F COUNT=2:1 D NXTSEG^DGENUPL(MSGIEN,CURLINE,.SEG) Q:(SEG("TYPE")'="ZCD")  D  Q:ERROR
  .S CURLINE=CURLINE+1
  .D ZCD^DGENUPL2
  ;
  ; Purple Heart/OEF-OIF  Addition of optional ZMH segment
  ;              Modified handling of ZSP and ZRD to accomodate ZMH
  ;
- I 'ERROR D  Q:ERROR $S(ERROR:0,1:1)
+ ;DJS, Added call to extrinsic function to determine if multiple segments are present ; DG*5.3*935
+ I 'ERROR S SEG="ZSP" I $$CHKNXT(CURLINE+1,SEG) D  Q:ERROR $S(ERROR:0,1:1)
  .D NXTSEG^DGENUPL(MSGIEN,.CURLINE,.SEG)
  .I SEG("TYPE")="ZSP" D ZSP^DGENUPL2 Q
  .D ADDERROR^DGENUPL(MSGID,$G(DGPAT("SSN")),SEG_" SEGMENT MISSING OR OUT OF ORDER",.ERRCOUNT)
@@ -87,27 +105,30 @@ PARSE(MSGIEN,MSGID,CURLINE,ERRCOUNT,DGPAT,DGELG,DGENR,DGCDIS,DGOEIF,DGSEC,DGNTR,
  ;
  ;Modified following code to receive multiple ZMH segment for
  ;Military service information - DG*5.3*653
- I 'ERROR D  Q:ERROR $S(ERROR:0,1:1)
- .D NXTSEG^DGENUPL(MSGIEN,.CURLINE,.SEG)
- .S QFLG=0 F  D  Q:QFLG
- . . I SEG("TYPE")'="ZMH" S QFLG=1 Q
- . . D ZMH^DGENUPL2,NXTSEG^DGENUPL(MSGIEN,.CURLINE,.SEG)
- .I SEG("TYPE")="ZRD" D ZRD^DGENUPL2 Q 
- .D ADDERROR^DGENUPL(MSGID,$G(DGPAT("SSN")),SEG_" SEGMENT MISSING OR OUT OF ORDER",.ERRCOUNT)
- .S ERROR=1
- .;possible that in a bad message we are now past the end
- .S CURLINE=CURLINE-1
  ;
- I 'ERROR F COUNT=2:1 D NXTSEG^DGENUPL(MSGIEN,CURLINE,.SEG) Q:(SEG("TYPE")'="ZRD")  D  Q:ERROR
+ ;DJS, Added call to extrinsic function to determine if multiple segments are present ; DG*5.3*935
+ I 'ERROR S SEG="ZMH" D  Q:ERROR
+ .;DJS, No ZMH segment present, so branch to DGNOZMH; DG*5.3*935
+ .I '$$CHKNXT(CURLINE+1,SEG) I ^TMP($J,"DGENUPL","ZMH",0)=0 D EN^DGNOZMH(DFN) K ^TMP($J,"DGENUPL") Q
+ .S QFLG=0 F  D  Q:QFLG!(ERROR)
+ ..I '$$CHKNXT(CURLINE+1,SEG) S QFLG=1 Q
+ ..D NXTSEG^DGENUPL(MSGIEN,.CURLINE,.SEG)
+ ..D ZMH^DGENUPL2
+ ..Q
+ .Q
+ ;
+ ;DJS, Added call to extrinsic function to determine if multiple segments are present ; DG*5.3*935
+ I 'ERROR S SEG="ZRD" I $$CHKNXT(CURLINE+1,SEG) F COUNT=2:1 D NXTSEG^DGENUPL(MSGIEN,CURLINE,.SEG) Q:(SEG("TYPE")'="ZRD")  D  Q:ERROR
  .S CURLINE=CURLINE+1
  .D ZRD^DGENUPL2
  ;
- I 'ERROR F  D  Q:(ERROR!(SEG("TYPE")'="OBX"))
+ ;DJS, Added call to extrinsic function to determine if multiple segments are present ; DG*5.3*935
+ I 'ERROR S SEG="OBX" F  D  Q:(ERROR!('$$CHKNXT(CURLINE+1,SEG)))
  .;possible if OBX segment not present that we are now past the end
- .I SEG("TYPE")'="OBX" S CURLINE=CURLINE-1 Q
+ .Q:'$$CHKNXT(CURLINE+1,SEG)
+ .D NXTSEG^DGENUPL(MSGIEN,.CURLINE,.SEG)
  .D OBX^DGENUPL2
- .S CURLINE=CURLINE+1
- .D NXTSEG^DGENUPL(MSGIEN,CURLINE,.SEG)
+ .Q
  ;
  Q $S(ERROR:0,1:1)
  ;
@@ -128,14 +149,15 @@ CONVERT(VAL,DATATYPE,ERROR) ;
  ;             to a pointer to the Means Test Status file
  ;       Phase II convert code to RSN IEN for DGCDIS object
  ;       "CDRSN" data type converts the codes diagnosis,procedure,condition to RSN IEN. (HL7TORSN^DGENA5)
+ ;       "CDDSCR" data type converts the codes descriptor(s) to DSCR IEN. (HL7TODSC^DGENA5)   DG*5.3*894
  ;       "EXT" convert from code to abbreviation
  ;       "POS" convert from Period of Service code to a point to Period of Service file
  ;       "AGENCY" convert Agency/Allied Country code from file 35
  ;       "PENSIONCD" convert Pension Award/Termination Reason code from file 27.18
+ ;       "HBP" convert from code to file 25.11 ien DG*5.3*871
  ;OUTPUT:
  ;  Function Value - the result of the conversion
  ;  ERROR - set to 1 if an error is detected, 0 otherwise (optional,pass by ref)
- ;
  S ERROR=0
  D
  .I VAL="" Q
@@ -144,6 +166,9 @@ CONVERT(VAL,DATATYPE,ERROR) ;
  ..S VAL=$$HLTOLIMB^DGENA5(VAL)
  .I $G(DATATYPE)="CDRSN" D  Q
  ..S VAL=$$HL7TORSN^DGENA5(VAL)
+ .; * check the new DESCRIPTOR seq  -  DG*5.3*894
+ .I $G(DATATYPE)="CDDSCR" D  Q
+ ..S VAL=$$HL7TODSC^DGENA5(VAL)
  .I ($G(DATATYPE)="MT") D  Q
  ..S VAL=$O(^DG(408.32,"AC",1,VAL,0))
  ..I 'VAL S ERROR=1
@@ -186,6 +211,11 @@ CONVERT(VAL,DATATYPE,ERROR) ;
  ..N OLDVAL
  ..S OLDVAL=VAL
  ..S VAL=$O(^DG(27.18,"C",OLDVAL,0))
+ ..I 'VAL S ERROR=1
+ .I ($G(DATATYPE)="HBP") D  Q    ; DG*5.3*871
+ ..N OLDVAL
+ ..S OLDVAL=VAL
+ ..S VAL=$O(^DGHBP(25.11,"C",OLDVAL,0))
  ..I 'VAL S ERROR=1
  Q VAL
  ;
@@ -248,3 +278,11 @@ MVERRORS ;
  M ^TMP("HLS",$J)=^TMP("IVM","HLS",$J)
  K ^TMP("IVM","HLS",$J)
  Q
+ ;
+ ;DJS, Added Extrinsic Function to determine if multiple segments are present ; DG*5.3*935
+CHKNXT(DGNVAL,DGNSEG) ; Check the SEG in the next segment manually
+ ; DGNVAL = CURLINE or CURLINE+1
+ ; DGNSEG = SEG (3 character SEG)
+ ; Returns 1 if there is a match or 0 if there is no match
+ ;
+ Q $S($E($G(^TMP($J,IVMRTN,+DGNVAL,0)),1,3)=DGNSEG:1,1:0)

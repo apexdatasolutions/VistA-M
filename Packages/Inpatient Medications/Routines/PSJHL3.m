@@ -1,5 +1,6 @@
-PSJHL3 ;BIR/RLW-PHARMACY ORDER SEGMENTS ;4/24/12 2:46pm
- ;;5.0;INPATIENT MEDICATIONS;**1,11,14,40,42,47,50,56,58,92,101,102,123,110,111,152,134,226,267,260**;16 DEC 97;Build 94
+PSJHL3 ;BIR/RLW - PHARMACY ORDER SEGMENTS ; 8/19/14 2:08pm
+ ;;5.0;INPATIENT MEDICATIONS;**1,11,14,40,42,47,50,56,58,92,101,102,123,110,111,152,134,226,267,260,281,315**;16 DEC 97;Build 73
+ ;;Per VHA Directive 2004-038, this routine should not be modified.
  ;
  ; Reference to ^PS(50.606 is supported by DBIA# 2174.
  ; Reference to ^PS(50.607 is supported by DBIA# 2221.        
@@ -18,6 +19,7 @@ PSJHL3 ;BIR/RLW-PHARMACY ORDER SEGMENTS ;4/24/12 2:46pm
  ;
  ;*267 Change NTE|21 so it can send over the Long Wp Special Inst/
  ;     Other Prt Info fields if populated.
+ ;*315 For PSJBCBU send Remove string & DOA in RXE.1.2.(3-4)
  ;
 EN1(PSJHLDFN,PSOC,PSJORDER) ; start here
  ; passed in are PSJHLDFN (patient ien)
@@ -29,16 +31,7 @@ EN1(PSJHLDFN,PSOC,PSJORDER) ; start here
  S IVTYPE=$S(RXORDER["U":"",1:$$IVTYPE^PSJHLU(PSJORDER))
  D RXO,RXE,RXR D ZRX
  D CALL^PSJHLU(PSJI)
- ;PSJ*5*260
- I +$G(^TMP("PSODAOC",$J,1,0)) D
- .N DA,OCCDT,ORN,ORL,Z,RET,PSJDAOC,RXN
- .S PSJDAOC="IP MEDS "_$S($G(PSJOCFG)]"":PSJOCFG,1:"")_" Order Acceptance",OCCDT=$$NOW^XLFDT
- .S RXN=+RXORDER
- .I RXORDER["P" S ORN=$P(^PS(53.1,+RXORDER,0),U,21)
- .I RXORDER["U" S ORN=$P(^PS(55,DFN,5,+RXORDER,0),U,21)
- .I RXORDER["V" S ORN=$P(^PS(55,DFN,"IV",+RXORDER,0),U,21)
- .Q:'$G(ORN)
- .D DAOC
+ ;PSJ*5*260 ADDED ALLERGY SETS HERE AND PSJ*5*281 MOVED ALLERGY SETS TO SETOC^PSJNEWOC
  Q
 INIT ; initialize HL7 variables
  D INIT^PSJHLU
@@ -47,7 +40,7 @@ RXO ; pharmacy prescription order segment (used to send Orderable Item to OE/RR)
  S LIMIT=17 X PSJCLEAR
  S FIELD(0)="RXO"
  S OINODE=$G(@(PSJORDER_".2)"))
- S SPDIEN=+$P(OINODE,"^"),DOSEOR=$$ESC^ORHLESC($P(OINODE,"^",2)),DOSE=$P(OINODE,"^",5),UNIT=$P(OINODE,"^",6) S:'$G(PSJBCBU) UNIT=$$ESC^ORHLESC(UNIT)
+ S SPDIEN=+$P(OINODE,"^"),DOSEOR=$$UP^XLFSTR($$ESC^ORHLESC($P(OINODE,"^",2))),DOSE=$P(OINODE,"^",5),UNIT=$P(OINODE,"^",6) S:'$G(PSJBCBU) UNIT=$$ESC^ORHLESC(UNIT)
  S FIELD(1)=$S(SPDIEN=0:"^^^^",1:"^^^"_SPDIEN_"^")
  I SPDIEN S DOSEFORM=$P($G(^PS(50.7,SPDIEN,0)),"^",2),NAME=$P($G(^PS(50.606,+DOSEFORM,0)),"^") S:'$G(PSJBCBU) NAME=$$ESC^ORHLESC(NAME) S FIELD(1)=FIELD(1)_$$ESC^ORHLESC($P($G(^PS(50.7,SPDIEN,0)),"^"))_" "_NAME
  S FIELD(1)=FIELD(1)_"^99PSP"
@@ -57,10 +50,12 @@ RXO ; pharmacy prescription order segment (used to send Orderable Item to OE/RR)
  D SEGMENT^PSJHLU(LIMIT),DISPLAY^PSJHL2
  Q
 RXE ; pharmacy encoded order segment
+ N PSJF1P1,NODE2P2
  S (UNITS,NDNODE,SPDIEN,PRODNAME,DDNUM,DDIEN,CNT)="",LIMIT=26 X PSJCLEAR
  S FIELD(0)="RXE"
  S NODE1=$G(@(PSJORDER_"0)")),NODE2=$G(@(PSJORDER_"2)")),NODEPT2=$G(@(PSJORDER_".2)"))
-  I $G(PSGST)="" N PSGST D
+ S NODE2P2=$G(@(PSJORDER_"2.1)"))    ;*315
+ I $G(PSGST)="" N PSGST D
  .I $G(RXORDER)["V" N X,ZZND,LYN,PSGS0XT,PSGS0Y,PSGOES S PSGOES=1 S X=$G(P(9)) I X]"" D EN^PSGS0 S:$G(ZZND)'="" PSGST=$P(ZZND,"^",5) Q
  .S PSGST=$P($G(NODE1),"^",7)
  I RXORDER["V" D IVRXE Q
@@ -69,12 +64,38 @@ RXE ; pharmacy encoded order segment
  N RENEW S RENEW=$$LASTREN^PSJLMPRI(PSJHLDFN,RXORDER)
  S PSGPLS=$S($G(PSJEXPOE):$P(NODE2,"^",2),RENEW>$P(NODE2,"^",2):RENEW,1:$P(NODE2,"^",2))
  S PSGPLF=$S($G(PSJEXPOE):PSJEXPOE,1:$P(NODE2,"^",4))
- S FIELD(1)="^"_$S($G(PSJBCBU):$P(NODE2,"^"),1:$$ESC^ORHLESC($P(NODE2,"^")))_"&"_$P(NODE2,"^",5)_"^^"_$$FMTHL7^XLFDT(PSGPLS)_"^"_$$FMTHL7^XLFDT(PSGPLF)_"^"_$P($G(NODEPT2),"^",4)_"^"_$G(PSGST)
+ ;
+ ;BCBU only, send Remove info for MRR meds via RXE.1.2            *315
+ N QQ,QADM,QDT,NUMADM,RMSTR,FREQ,RMTM,DOA,MRR,JORD
+ D:$G(PSJBCBU)
+ .S MRR=$P(NODE2P2,U,4)
+ .Q:'MRR                             ;not a MRR med
+ .S QADM=$P(NODE2,"^",5),NUMADM=$L(QADM,"-")
+ .S DOA=$P(NODE2P2,U,1),RMTM=$P(NODE2P2,U,2)
+ .S FREQ=$P(NODE2,U,6)
+ .S DOA=$S(DOA<1:+FREQ,1:DOA)
+ .;  Special One Time Schedule, Ord stop is RMTM
+ .I FREQ="O" D
+ ..S PREVSTOP="",JORD=$S($G(ON)["U":+ON,$G(PSGORD)["U":+PSGORD,1:"")
+ ..S:JORD PREVSTOP=$P(^PS(55,DFN,5,JORD,2),U,3)
+ ..S RMTM=$S(PREVSTOP:$E($P(PREVSTOP,".",2)_"0000",1,4),1:$E($P(PSGPLF,".",2)_"0000",1,4))
+ .;  All other schedules, calculate RMTM from freq and doa
+ .I FREQ'="O",FREQ>0,'RMTM,DOA>0,QADM D
+ ..F QQ=1:1:NUMADM D                 ;calc RM for all admin times
+ ...S QDT=DT_"."_$P(QADM,"-",QQ)
+ ...S QDT=$$FMADD^XLFDT(QDT,,,DOA)
+ ...S $P(RMTM,"-",QQ)=$E($P(QDT,".",2)_"0000",1,4)
+ .S:RMTM RMSTR="&"_RMTM_"&"_DOA      ;RM time string for RXE seg
+ ;end BCBU only
+ ;
+ S FIELD(1)="^"_$S($G(PSJBCBU):$P(NODE2,"^"),1:$$ESC^ORHLESC($P(NODE2,"^")))_"&"_$P(NODE2,"^",5)_$S($G(PSJBCBU):$G(RMSTR),1:"")_"^^"_$$FMTHL7^XLFDT(PSGPLS)_"^"_$$FMTHL7^XLFDT(PSGPLF)_"^"_$P($G(NODEPT2),"^",4)_"^"_$G(PSGST)  ;*315
  S FIELD(21)="^"_$P(NODE2,"^",5)_"^99PSA^^^"
  I ($G(DOSEOR)']"")!($O(@(PSJORDER_"1,"" "")"),-1)=1) D
  .S (CNT,DDNUM)=0 F  S DDNUM=$O(@(PSJORDER_"1,"_DDNUM_")")) Q:'DDNUM  Q:CNT=1  S DDIEN=+$G(@(PSJORDER_"1,"_DDNUM_",0)")) D
- ..S FIELD(1)=$S($P(@(PSJORDER_"1,"_DDNUM_",0)"),"^",2)="":"1",1:$P(@(PSJORDER_"1,"_DDNUM_",0)"),"^",2))_"&"_FIELD(1)
- ..S FIELD(1)=DOSE_"&"_UNIT_"&"_FIELD(1),$P(FIELD(1),"^",8)=$S($G(DOSEOR)]"":$G(DOSEOR),1:DOSE_UNIT)
+ ..S PSJF1P1=$S($P(@(PSJORDER_"1,"_DDNUM_",0)"),"^",2)="":"1",1:$P(@(PSJORDER_"1,"_DDNUM_",0)"),"^",2))
+ ..S:DOSE]"" FIELD(1)=DOSE_"&"_UNIT_"&"_PSJF1P1_"&"_FIELD(1)
+ ..S:DOSE="" FIELD(1)=$$FINDDOSE(DDIEN,PSJF1P1,DOSEOR)_FIELD(1)
+ ..S $P(FIELD(1),"^",8)=$S($G(DOSEOR)]"":$G(DOSEOR),1:"DOSAGE NOT FOUND")
  ..S:$P(FIELD(1),"^",8)="" $P(FIELD(1),"^",8)=$$ESC^ORHLESC($G(@(PSJORDER_".3)")))
  ..S NDNODE=$G(^PSDRUG(DDIEN,"ND"))
  ..;  CHANGE FOR NEW NDF CALL
@@ -174,28 +195,18 @@ ZRX ; pharmacy Z-segment
 CNT ;Count dispense drugs for an order
  S (CNT,DDNUM)=0 F  S DDNUM=$O(@(PSJORDER_"1,"_DDNUM_")")) Q:'DDNUM  S CNT=CNT+1
  Q
-DAOC ;stores drug allergies w/sign/symptoms - psj*5*260
- S ORL(1,1)=+ORN_"^"_PSJDAOC_"^"_DUZ_"^"_OCCDT_"^3^"
- S ORL(1,2)="A Drug-Allergy Reaction exists for this medication and/or class"
- D SAVEOC^OROCAPI1(.ORL,.RET)
- S DA=$O(RET(1,0)) Q:'DA
- S $P(^ORD(100.05,DA,0),"^",2)=6
- S ^ORD(100.05,DA,4,0)="100.517PA^1^1"
- S ^ORD(100.05,DA,4,1,0)=^TMP("PSODAOC",$J,1,0)
- S ^ORD(100.05,DA,4,"B",$P(^TMP("PSODAOC",$J,1,0),"^"),1)=""
- ;
- I $O(^TMP("PSODAOC",$J,1,0)) F I=0:0 S I=$O(^TMP("PSODAOC",$J,1,I)) Q:'I  D
- .S ^ORD(100.05,DA,4,1,1,0)="100.5173PA^"_I_"^"_I
- .S ^ORD(100.05,DA,4,1,1,I,0)=^TMP("PSODAOC",$J,1,I)
- .S ^ORD(100.05,DA,4,1,1,"B",^TMP("PSODAOC",$J,1,I),I)=""
- ;
- I $O(^TMP("PSODAOC",$J,2,0)) S Z=0 F I=0:0 S I=$O(^TMP("PSODAOC",$J,2,I)) Q:'I  S Z=Z+1 D
- .S ^ORD(100.05,DA,4,1,2,0)="100.5174PA^"_Z_"^"_Z
- .S ^ORD(100.05,DA,4,1,2,Z,0)=^TMP("PSODAOC",$J,2,I)
- .S ^ORD(100.05,DA,4,1,2,"B",^TMP("PSODAOC",$J,2,I),Z)=""
- ;
- I $O(^TMP("PSODAOC",$J,3,0)) F I=0:0 S I=$O(^TMP("PSODAOC",$J,3,I)) Q:'I  D
- .S ^ORD(100.05,DA,4,1,3,0)="100.5175PA^"_I_"^"_I
- .S ^ORD(100.05,DA,4,1,3,I,0)=^TMP("PSODAOC",$J,3,I)
- .S ^ORD(100.05,DA,4,1,3,"B",^TMP("PSODAOC",$J,3,I),I)=""
- Q
+FINDDOSE(PSJDD,PSJF1P1,PSJDO) ;
+ ;PSJDD - IEN file #50
+ ;PSJF1P1 - Unit Per Dose
+ ;PSJDO - Dosage Ordered
+ ;PSJOUT - Dose&Unit&UPD& 
+ ;PSJOUT="" - for freetext (not calculated dose or multi ingredient drug)
+ NEW PSJDO1,PSJDO2,PSJDOSE,PSJOUT
+ I '+$G(PSJDD)!'+$G(PSJF1P1)!($G(PSJDO)="") Q ""
+ S PSJOUT=""
+ S PSJDOSE=$$DOSE1^PSJOCDS(PSJF1P1)
+ I +PSJDOSE D
+ . I $TR(PSJDO," ")=$P(PSJDOSE,U,3) S PSJOUT=$P(PSJDOSE,U)_"&"_$P(PSJDOSE,U,2)_"&"_PSJF1P1_"&" Q
+ . I $P(PSJDOSE,U,2)["/" S PSJOUT="" Q
+ . I $TR(PSJDO," ")'=$P(PSJDOSE,U,3) S PSJOUT="&&"_PSJF1P1_"&"
+ Q PSJOUT

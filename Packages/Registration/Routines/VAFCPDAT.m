@@ -1,5 +1,5 @@
-VAFCPDAT ;BIR/CML/ALS-DISPLAY MPI/PD INFORMATION FOR SELECTED PATIENT ;10/24/02  13:13
- ;;5.3;Registration;**333,414,474,505,707,712,837,863**;Aug 13, 1993;Build 2
+VAFCPDAT ;BIR/CML/ALS-DISPLAY MPI/PD INFORMATION FOR SELECTED PATIENT ; 7/12/16 11:11am
+ ;;5.3;Registration;**333,414,474,505,707,712,837,863,876,902,926,937,950**;Aug 13, 1993;Build 4
  ;Registration has IA #3299 for MPI/PD to call START^VAFCPDAT
  ;
  ;variable DFN is not NEWed or KILLed in this routine as that variable is passed in
@@ -20,13 +20,14 @@ START ;Entry point without device call, used for RPC calls
  .I $D(NOTRPC) W @IOF,!," "
  .W !,"ICN ",$G(ICN)," does not exist at ",SITENAM,"."
  .W !,"Search date: ",HDT,!,LN
- S DIC=2,DR=".01;.02;.03;.09;.111;.112;.113;.114;.115;.1112;.131;.313;.351;994;.0907;.0906;.121;.1171;.1172;.1173",DA=DFN,DIQ(0)="EI",DIQ="DNODE"  ;**707,712,863
- N NAME,SSN,DOB,SEX,CLAIM,DOD,ICN,STR1,STR2,STR3,CTY,ST,ZIP,PHN,MBI,SSNVER,PREAS,BAI,TIN,FIN,COUNTRY,CCODE,CNAME,PROVINCE,POSTCODE ;**707,712,837,863
+ S DIC=2,DR=".01;.02;.03;.09;.111;.112;.113;.114;.115;.1112;.131;.313;.351;994;.0907;.0906;.121;.1171;.1172;.1173;.024;.352;.353;.354;.355;.357;.358;.2405",DA=DFN,DIQ(0)="EI",DIQ="DNODE"  ;**707,712,863,876
+ N NAME,SSN,DOB,SEX,CLAIM,DOD,ICN,STR1,STR2,STR3,CTY,ST,ZIP,PHN,MBI,SSNVER,PREAS,BAI,TIN,FIN,COUNTRY,CCODE,CNAME,PROVINCE,POSTCODE,SIGEN ;**707,712,837,863,876
+ N DODD,DODENTBY,DODSRC,DODLUPD,DODLEBY,DODOPT ;**926 Story 323009 (ckn)
  D EN^DIQ1 K DIC,DR,DA,DIQ
  S NAME=$G(DNODE(2,DFN,.01,"E")),SSN=$G(DNODE(2,DFN,.09,"E"))
  S DOB=$$FMTE^XLFDT($G(DNODE(2,DFN,.03,"I")))
  S MBI=$G(DNODE(2,DFN,994,"I")),MBI=$S(MBI="Y":"YES",MBI="N":"NO",1:"NULL")  ;**707
- S SEX=$G(DNODE(2,DFN,.02,"E")),DOD=$G(DNODE(2,DFN,.351,"E"))
+ S SEX=$G(DNODE(2,DFN,.02,"E")),SIGEN=$G(DNODE(2,DFN,.024,"E")),DOD=$G(DNODE(2,DFN,.351,"E"))  ;**876 - MVI_3432 (cml)
  S CLAIM=$G(DNODE(2,DFN,.313,"E")) S:CLAIM="" CLAIM="None"
  S BAI=$G(DNODE(2,DFN,.121,"E"))  ;**712
  S STR1=$G(DNODE(2,DFN,.111,"E")),STR2=$G(DNODE(2,DFN,.112,"E")),STR3=$G(DNODE(2,DFN,.113,"E"))
@@ -39,6 +40,14 @@ START ;Entry point without device call, used for RPC calls
  S MNODE=$$MPINODE^MPIFAPI(DFN) I +MNODE=-1 S MNODE="^^^^^^^^"
  S (ICN,SCN,SCORE,SCRDT,DIFF,TIN,FIN)=""   ;**837, MVI_883
  S ICN=$$GETICN^MPIF001(DFN) S:(+ICN=-1) ICN="None" ;**863 - MVI_2351 (ptd)
+ ;**926 - Story 323009 (ckn): DOD fields
+ I DOD'="" D
+ . S DODENTBY=$G(DNODE(2,DFN,.352,"E"))  ;Date of Death Entered By
+ . S DODSRC=$G(DNODE(2,DFN,.353,"E"))  ;Date of Death Source of Notification
+ . S DODLUPD=$G(DNODE(2,DFN,.354,"E"))  ;Date of Death Last Updated
+ . S DODLEBY=$G(DNODE(2,DFN,.355,"E"))  ;Date of Death Last Edited By
+ . S DODD=$G(DNODE(2,DFN,.357,"E"))  ;Date of Death Supporting Document Type
+ . S DODOPT=$G(DNODE(2,DFN,.358,"E"))  ;Date of Death Option Used
  ;S CMOR=$$GET1^DIQ(4,+$P($G(MNODE),"^",3)_",",.01) S:CMOR="" CMOR="None"    ;removed for **837, MVI_918
  I $E(ICN,1,3)=SITENUM S GOT=0 D
  . I $P($G(MNODE),"^",4)=""!('$D(^DPT("AICNL",1,DFN))) S ICN=ICN_"**"
@@ -59,15 +68,25 @@ START ;Entry point without device call, used for RPC calls
  W !,"Printed ",HDT," at ",SITENAM,!,LN
  S $Y=$Y+1
  ;next 7 lines modified for **707
- W !,"ICN    : ",ICN  ;CMOR removed  **837, MVI_918
- W !,"SSN    : ",SSN
+ W !,"ICN          : ",ICN  ;CMOR removed  **837, MVI_918
+ W !,"SSN          : ",SSN
  I SSNVER]"" W !?9,"SSN Verification Status: ",SSNVER
  I SSNVER="",PREAS]"" W !?9,"Pseudo SSN Reason: ",PREAS
  I SSNVER]"",PREAS]"" W !?9,"Pseudo SSN Reason      : ",PREAS
- W !,"Sex    : ",SEX
- W !,"Claim #: ",CLAIM
- W !,"Date of Birth: ",DOB
- I DOD]"" W !,"Date of Death: ",DOD
+ ; Story 603957 (elz) change sex to birth sex, lined up with DOB and DOD at the same time
+ W !,"Birth Sex    :  ",SEX
+ W !,"Claim #      :  ",CLAIM
+ W !,"Date of Birth:  ",DOB
+ ;**926 - Story 323009 (ckn): DOD fields
+ I DOD]"" D
+ . W !,"Date of Death:  ",DOD
+ . I DODENTBY]"" W !,?15,"Entered By: ",?42,DODENTBY
+ . I DODSRC]"" W !,?15,"Source of Notification: ",?42,DODSRC
+ . I DODLUPD]"" W !,?15,"Last Updated: ",?42,DODLUPD
+ . I DODLEBY]"" W !,?15,"Last Edited By: ",?42,DODLEBY
+ . I DODD]"" W !,?15,"Supporting Document Type: ",?42,DODD
+ . I DODOPT]"" W !,?15,"Option Used: ",?42,DODOPT
+ ;I DOD]"" W !,"Date of Death: ",DOD
  I MBI]"" W !,"Multiple Birth Indicator: ",MBI  ;**707
  I TIN]"" W !,"DoD Temporary ID Number : ",TIN  ;**837, MVI_883
  I FIN]"" W !,"DoD Foreign ID Number   : ",FIN  ;**837, MVI_883
@@ -82,6 +101,7 @@ START ;Entry point without device call, used for RPC calls
  ..I PROVINCE]"" W !?9,CTY_", "_PROVINCE_" ("_CNAME_")  "_POSTCODE
  ..I PROVINCE="" W !?9,CTY_", "_"("_CNAME_")  "_POSTCODE
  I PHN'="" W !,"Phone #: ",PHN
+ I SIGEN]"" W !,"Self-Identified Gender Identity: ",SIGEN  ;**876 - MVI_3432 (cml)  **902 - MVI_4730 (cml)
  I $G(IOSL)<30&($E(IOST,1,2)="C-") D
  .I $Y>23 D
  ..S DIR(0)="E" D  D ^DIR K DIR I 'Y S QFLG=1
@@ -160,7 +180,7 @@ TFHDR ;
  W !!,"Treating Facilities:",?22,"Station:",?32,"DT Last Treated",?54,"Event Reason"
  W !,"--------------------",?22,"--------",?32,"---------------",?54,"------------"
  Q
-ICNHDR  W !!,"ICN History:",!,"------------"
+ICNHDR W !!,"ICN History:",!,"------------"
  Q
  ;
 SS S DIR(0)="E" D  D ^DIR K DIR I 'Y S QFLG=1

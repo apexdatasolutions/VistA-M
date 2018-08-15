@@ -1,5 +1,5 @@
-ECXADM ;ALB/JAP,BIR/DMA,CML,PTD-Admissions Extract ;5/17/13  11:51
- ;;3.0;DSS EXTRACTS;**1,4,11,8,13,24,33,39,46,71,84,92,107,105,120,127,132,136,144,149**;Dec 22, 1997;Build 27
+ECXADM ;ALB/JAP,BIR/DMA,CML,PTD-Admissions Extract ;4/12/17  12:13
+ ;;3.0;DSS EXTRACTS;**1,4,11,8,13,24,33,39,46,71,84,92,107,105,120,127,132,136,144,149,154,161,166**;Dec 22, 1997;Build 24
 BEG ;entry point from option
  D SETUP I ECFILE="" Q
  D ^ECXTRAC,^ECXKILL
@@ -20,16 +20,18 @@ START ; start package specific extract
 GET ;gather extract data
  N ADM,W,X,ECXNPRFI,ECXATTPC,ECXPRVPC,ECXEST,ECXAOT,ECXEDIS,ECXICD10P ;136
  N ECXESC,ECXECL,ECXCLST ;144 Encounter Service Connected, Encounter Camp Lejeune, Camp Lejeune Status
+ N ECXSTANO  ;166 Patient Division
  ;patient demographics
  S ECXERR=0 D PAT(ECXDFN,ECD,.ECXERR)
  Q:ECXERR
  I $$ENROLLM^ECXUTL2(ECXDFN)
  S ECXFAC=$P($G(^DIC(42,+$P(EC,U,6),0)),U,11)
  S ECXPDIV=$$GETDIV^ECXDEPT(ECXFAC)  ;Get production division
+ S ECXSTANO=ECXPDIV  ;Set Patient Division to Prod Div Code. tjl - 166
  ;admission data
  S ELGA=$P($G(^DIC(8,+$P(EC,U,20),0)),U,9)
  I ELGA S ELGA=$$ELIG^ECXUTL3(ELGA,ECXSVC)
- S (ECDRG,ECDIA,ECXSADM,ECXADMS,ECXAOT)="",ECPTF=+$P(EC,U,16) I ECPTF,$D(^DGPT(ECPTF,"M")) D PTF
+ S (ECDRG,ECDIA,ECXSADM,ECXADMS,ECXAOT,ECXICD10P)="",ECPTF=+$P(EC,U,16) I ECPTF,$D(^DGPT(ECPTF,"M")) D PTF ;154
  ;get encounter classification
  S (ECXAO,ECXECE,ECXIR,ECXMIL,ECXHNC,ECXSHAD,ECXESC,ECXECL)="",ECXVISIT=$P(EC,U,27) ;144
  I ECXVISIT'="" D
@@ -57,7 +59,6 @@ GET ;gather extract data
  S ECXUSRTN=$$NPI^XUSNPI("Individual_ID",$E(ECXPRV,2,$L(ECXPRV)),ECD)
  S:+ECXUSRTN'>0 ECXUSRTN=""
  S ECPWNPI=$P(ECXUSRTN,U)
- S ECXICD10P="" ;136 ICD-10 null for now
  ;
  ;- Observation patient indicator (YES/NO)
  S ECXOBS=$$OBSPAT^ECXUTL4(ECXA,ECXSPC)
@@ -144,7 +145,7 @@ PTF ; get admitting DRG, diagnosis, source of admission from PTF
  S EC=1 I $D(^DGPT(ECPTF,"M",2,0)) S EC=2
  S EC1=+$P(^DGPT(ECPTF,"M",EC,0),U,5)
  S ECDRG=$P($G(^DGPT(ECPTF,"M",EC,"P")),U)
- S ECDIA=$P($G(^ICD9(EC1,0)),U)
+ S ECXICD10P=$S('EC1:"",1:$$CODEC^ICDEX(80,EC1)) ;154,161
  S ECX=+$P($G(^DGPT(ECPTF,101)),U),ECXSADM=$P($G(^DIC(45.1,ECX,0)),U,11)
  S ECXADMS=$$GET1^DIQ(45.1,ECX,.01)
  ;if source of admission = admit outpatient treatment ('1P')
@@ -157,10 +158,10 @@ FILE ;file the extract record
  ;religion^employment status^health ins^state^county^zip^
  ;eligibility^vet^vietnam^agent orange^radiation^pow^
  ;period of service^means test^marital status^
- ;ward^treating specialty^attending physician^mov #^DRG^princ diagnosis^
+ ;ward^treating specialty^attending physician^mov #^DRG^Placeholder^
  ;time^primary care provider^race^primary ward provider
  ;node1
- ;mpi^dss dept^attending npi^pc provider npi^ward provider npi^
+ ;mpi^placeholder^attending npi^pc provider npi^ward provider npi^
  ;admission elig^mst status^shad status^sharing payor^
  ;sharing insurance^enrollment location^
  ;pc prov person class^assoc pc provider^assoc pc prov person class^
@@ -180,7 +181,7 @@ FILE ;file the extract record
  ;primary care provider npi ECPTNPI^primary ward provider npi ECPWNPI^
  ;admit outpatient treatment ECXAOT^country ECXCNTRY^pat cat ECXPATCAT^
  ;admit source ECXADMS ^emergency dept disposition ECXEDIS^Primary ICD-10 code ECXICD10P^Camp Lejeune Status ECXCLST^Encounter Camp Lejeune ECXECL^Encounter SC ECXESC
- ;Combat Service Indicator (ECXSVCI) ^ Combat Service Location (ECXSVCL)
+ ;Combat Service Indicator (ECXSVCI) ^ Combat Service Location (ECXSVCL) ^ Patient Division (ECXSTANO)
  ;
  ;Convert specialty to PTF Code
  ;
@@ -214,6 +215,7 @@ FILE ;file the extract record
  I ECXLOGIC>2012 S ECODE2=ECODE2_U_ECXEDIS_U_ECXICD10P ;136
  I ECXLOGIC>2013 S ECODE2=ECODE2_U_ECXCLST_U_ECXECL_U_ECXESC ;144 Add Camp Lejeune status, encounter Camp Lejeune and encounter service connected
  I ECXLOGIC>2014 S ECODE2=ECODE2_U_ECXSVCI_U_ECXSVCL ;149
+ I ECXLOGIC>2017 S ECODE2=ECODE2_U_ECXSTANO  ;166 - tjl  Added Patient Division
  S ^ECX(ECFILE,EC7,0)=ECODE,^ECX(ECFILE,EC7,1)=ECODE1,^ECX(ECFILE,EC7,2)=$G(ECODE2)
  S ECRN=ECRN+1
  S DA=EC7,DIK="^ECX("_ECFILE_"," D IX1^DIK K DIK,DA

@@ -1,120 +1,126 @@
-IBDEI12G ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI12G ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,19096,2)
- ;;=^274247
- ;;^UTILITY(U,$J,358.3,19097,0)
- ;;=824.0^^125^1223^14
- ;;^UTILITY(U,$J,358.3,19097,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19097,1,3,0)
- ;;=3^824.0
- ;;^UTILITY(U,$J,358.3,19097,1,5,0)
- ;;=5^Fracture of ankle; medial malleolus, closed
- ;;^UTILITY(U,$J,358.3,19097,2)
- ;;=^274245
- ;;^UTILITY(U,$J,358.3,19098,0)
- ;;=824.6^^125^1223^15
- ;;^UTILITY(U,$J,358.3,19098,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19098,1,3,0)
- ;;=3^824.6
- ;;^UTILITY(U,$J,358.3,19098,1,5,0)
- ;;=5^Fracture of ankle; trimalleolar, closed
- ;;^UTILITY(U,$J,358.3,19098,2)
- ;;=^274251
- ;;^UTILITY(U,$J,358.3,19099,0)
- ;;=825.20^^125^1223^16
- ;;^UTILITY(U,$J,358.3,19099,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19099,1,3,0)
- ;;=3^825.20
- ;;^UTILITY(U,$J,358.3,19099,1,5,0)
- ;;=5^Fracture of other tarsal & metatarsal bone, closed; unspecified bone(s) of foot (except toes)
- ;;^UTILITY(U,$J,358.3,19099,2)
- ;;=^274265
- ;;^UTILITY(U,$J,358.3,19100,0)
- ;;=825.0^^125^1223^17
- ;;^UTILITY(U,$J,358.3,19100,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19100,1,3,0)
- ;;=3^825.0
- ;;^UTILITY(U,$J,358.3,19100,1,5,0)
- ;;=5^Fracture of one or more tarsal & metatarsal bone, closed; calcaneus, closed
- ;;^UTILITY(U,$J,358.3,19100,2)
- ;;=^274259
- ;;^UTILITY(U,$J,358.3,19101,0)
- ;;=825.23^^125^1223^18
- ;;^UTILITY(U,$J,358.3,19101,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19101,1,3,0)
- ;;=3^825.23
- ;;^UTILITY(U,$J,358.3,19101,1,5,0)
- ;;=5^Fracture of other tarsal & metatarsal bones, closed; Cuboid
- ;;^UTILITY(U,$J,358.3,19101,2)
- ;;=^274270
- ;;^UTILITY(U,$J,358.3,19102,0)
- ;;=825.24^^125^1223^19
- ;;^UTILITY(U,$J,358.3,19102,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19102,1,3,0)
- ;;=3^825.24
- ;;^UTILITY(U,$J,358.3,19102,1,5,0)
- ;;=5^Fracture of other tarsal & metatarsal bones, closed; Cuneiform, foot &
- ;;^UTILITY(U,$J,358.3,19102,2)
- ;;=^274271
- ;;^UTILITY(U,$J,358.3,19103,0)
- ;;=825.25^^125^1223^20
- ;;^UTILITY(U,$J,358.3,19103,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19103,1,3,0)
- ;;=3^825.25
- ;;^UTILITY(U,$J,358.3,19103,1,5,0)
- ;;=5^Fracture of other tarsal & metatarsal bones, closed; Jones 
- ;;^UTILITY(U,$J,358.3,19103,2)
- ;;=^274272
- ;;^UTILITY(U,$J,358.3,19104,0)
- ;;=825.22^^125^1223^21
- ;;^UTILITY(U,$J,358.3,19104,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19104,1,3,0)
- ;;=3^825.22
- ;;^UTILITY(U,$J,358.3,19104,1,5,0)
- ;;=5^Fracture of other tarsal & metatarsal bones, closed; Navicular (scapiod), foot & metatarsal
- ;;^UTILITY(U,$J,358.3,19104,2)
- ;;=^274269
- ;;^UTILITY(U,$J,358.3,19105,0)
- ;;=825.21^^125^1223^22
- ;;^UTILITY(U,$J,358.3,19105,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19105,1,3,0)
- ;;=3^825.21
- ;;^UTILITY(U,$J,358.3,19105,1,5,0)
- ;;=5^Fracture of other tarsal & metatarsal bones, closed; Astragalus, talus
- ;;^UTILITY(U,$J,358.3,19105,2)
- ;;=^274266
- ;;^UTILITY(U,$J,358.3,19106,0)
- ;;=825.29^^125^1223^23
- ;;^UTILITY(U,$J,358.3,19106,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19106,1,3,0)
- ;;=3^825.29
- ;;^UTILITY(U,$J,358.3,19106,1,5,0)
- ;;=5^Fracture of other tarsal & metatarsal bones, closed; Tarsal or tarsal w/metatarsal
- ;;^UTILITY(U,$J,358.3,19106,2)
- ;;=^274263
- ;;^UTILITY(U,$J,358.3,19107,0)
- ;;=826.0^^125^1223^24
- ;;^UTILITY(U,$J,358.3,19107,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19107,1,3,0)
- ;;=3^826.0
- ;;^UTILITY(U,$J,358.3,19107,1,5,0)
- ;;=5^Fracture of one or more phalanges of foot/toe(s), closed
- ;;^UTILITY(U,$J,358.3,19107,2)
- ;;=^274282
- ;;^UTILITY(U,$J,358.3,19108,0)
- ;;=733.16^^125^1223^25
- ;;^UTILITY(U,$J,358.3,19108,1,0)
- ;;=^358.31IA^5^2
+ ;;^UTILITY(U,$J,358.3,17785,1,4,0)
+ ;;=4^K50.90
+ ;;^UTILITY(U,$J,358.3,17785,2)
+ ;;=^5008645
+ ;;^UTILITY(U,$J,358.3,17786,0)
+ ;;=K50.911^^91^882^23
+ ;;^UTILITY(U,$J,358.3,17786,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17786,1,3,0)
+ ;;=3^Crohn's disease, unspecified, with rectal bleeding
+ ;;^UTILITY(U,$J,358.3,17786,1,4,0)
+ ;;=4^K50.911
+ ;;^UTILITY(U,$J,358.3,17786,2)
+ ;;=^5008646
+ ;;^UTILITY(U,$J,358.3,17787,0)
+ ;;=K51.20^^91^882^56
+ ;;^UTILITY(U,$J,358.3,17787,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17787,1,3,0)
+ ;;=3^Ulcerative (chronic) proctitis without complications
+ ;;^UTILITY(U,$J,358.3,17787,1,4,0)
+ ;;=4^K51.20
+ ;;^UTILITY(U,$J,358.3,17787,2)
+ ;;=^5008659
+ ;;^UTILITY(U,$J,358.3,17788,0)
+ ;;=K51.211^^91^882^54
+ ;;^UTILITY(U,$J,358.3,17788,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17788,1,3,0)
+ ;;=3^Ulcerative (chronic) proctitis with rectal bleeding
+ ;;^UTILITY(U,$J,358.3,17788,1,4,0)
+ ;;=4^K51.211
+ ;;^UTILITY(U,$J,358.3,17788,2)
+ ;;=^5008660
+ ;;^UTILITY(U,$J,358.3,17789,0)
+ ;;=K51.212^^91^882^52
+ ;;^UTILITY(U,$J,358.3,17789,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17789,1,3,0)
+ ;;=3^Ulcerative (chronic) proctitis with intestinal obstruction
+ ;;^UTILITY(U,$J,358.3,17789,1,4,0)
+ ;;=4^K51.212
+ ;;^UTILITY(U,$J,358.3,17789,2)
+ ;;=^5008661
+ ;;^UTILITY(U,$J,358.3,17790,0)
+ ;;=K51.213^^91^882^51
+ ;;^UTILITY(U,$J,358.3,17790,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17790,1,3,0)
+ ;;=3^Ulcerative (chronic) proctitis with fistula
+ ;;^UTILITY(U,$J,358.3,17790,1,4,0)
+ ;;=4^K51.213
+ ;;^UTILITY(U,$J,358.3,17790,2)
+ ;;=^5008662
+ ;;^UTILITY(U,$J,358.3,17791,0)
+ ;;=K51.214^^91^882^50
+ ;;^UTILITY(U,$J,358.3,17791,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17791,1,3,0)
+ ;;=3^Ulcerative (chronic) proctitis with abscess
+ ;;^UTILITY(U,$J,358.3,17791,1,4,0)
+ ;;=4^K51.214
+ ;;^UTILITY(U,$J,358.3,17791,2)
+ ;;=^5008663
+ ;;^UTILITY(U,$J,358.3,17792,0)
+ ;;=K51.218^^91^882^53
+ ;;^UTILITY(U,$J,358.3,17792,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17792,1,3,0)
+ ;;=3^Ulcerative (chronic) proctitis with other complication
+ ;;^UTILITY(U,$J,358.3,17792,1,4,0)
+ ;;=4^K51.218
+ ;;^UTILITY(U,$J,358.3,17792,2)
+ ;;=^5008664
+ ;;^UTILITY(U,$J,358.3,17793,0)
+ ;;=K51.219^^91^882^55
+ ;;^UTILITY(U,$J,358.3,17793,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17793,1,3,0)
+ ;;=3^Ulcerative (chronic) proctitis with unsp complications
+ ;;^UTILITY(U,$J,358.3,17793,1,4,0)
+ ;;=4^K51.219
+ ;;^UTILITY(U,$J,358.3,17793,2)
+ ;;=^5008665
+ ;;^UTILITY(U,$J,358.3,17794,0)
+ ;;=K51.90^^91^882^63
+ ;;^UTILITY(U,$J,358.3,17794,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17794,1,3,0)
+ ;;=3^Ulcerative colitis, unspecified, without complications
+ ;;^UTILITY(U,$J,358.3,17794,1,4,0)
+ ;;=4^K51.90
+ ;;^UTILITY(U,$J,358.3,17794,2)
+ ;;=^5008694
+ ;;^UTILITY(U,$J,358.3,17795,0)
+ ;;=K51.919^^91^882^57
+ ;;^UTILITY(U,$J,358.3,17795,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17795,1,3,0)
+ ;;=3^Ulcerative colitis, unsp with unspecified complications
+ ;;^UTILITY(U,$J,358.3,17795,1,4,0)
+ ;;=4^K51.919
+ ;;^UTILITY(U,$J,358.3,17795,2)
+ ;;=^5008700
+ ;;^UTILITY(U,$J,358.3,17796,0)
+ ;;=K51.918^^91^882^61
+ ;;^UTILITY(U,$J,358.3,17796,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17796,1,3,0)
+ ;;=3^Ulcerative colitis, unspecified with other complication
+ ;;^UTILITY(U,$J,358.3,17796,1,4,0)
+ ;;=4^K51.918
+ ;;^UTILITY(U,$J,358.3,17796,2)
+ ;;=^5008699
+ ;;^UTILITY(U,$J,358.3,17797,0)
+ ;;=K51.914^^91^882^58
+ ;;^UTILITY(U,$J,358.3,17797,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17797,1,3,0)
+ ;;=3^Ulcerative colitis, unspecified with abscess
+ ;;^UTILITY(U,$J,358.3,17797,1,4,0)
+ ;;=4^K51.914

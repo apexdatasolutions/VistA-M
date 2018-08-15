@@ -1,5 +1,5 @@
 PSOSUPOE ;BIR/RTR - Suspense pull via Listman ;3/1/96
- ;;7.0;OUTPATIENT PHARMACY;**8,21,27,34,130,148,281,287,289,358,385,403**;DEC 1997;Build 9
+ ;;7.0;OUTPATIENT PHARMACY;**8,21,27,34,130,148,281,287,289,358,385,403,427,496**;DEC 1997;Build 11
  ;External references PSOL and PSOUL^PSSLOCK supported by DBIA 2789
 SEL I '$G(PSOCNT) S VALMSG="This patient has no Prescriptions!" S VALMBCK="" Q
  N PSOGETF,PSOGET,PSOGETFN,ORD,ORN,MW,PDUZ,PSLST,PSOSQ,PSOSQRTE,PSOSQMTH,PSPOP,PSOX1,PSOX2,RXLTOP,RXREC,SFN,SORD,SORN,VALMCNT
@@ -28,6 +28,16 @@ BEGQ Q:'$D(^PSRX(+$G(RXREC),0))
  I $D(RXRP(RXREC)) W !!,"A reprint has already been requested for Rx # ",$P($G(^PSRX(RXREC,0)),"^") D DIR,ULRX Q
  I $D(RXPR(RXREC)) W !!,"A partial has already been requested for Rx # ",$P($G(^PSRX(RXREC,0)),"^") D DIR,ULRX Q
  S PSPOP=0 I $G(PSODIV),$P($G(^PS(52.5,SFN,0)),"^",6)'=$G(PSOSITE) D CKDIV I $G(PSPOP) D DIR,ULRX Q
+ ;
+ ; PSO*427-Check if Label Log indicates a label was already printed.
+ N PRNTED,RFL
+ S RFL=$P($G(^PS(52.5,SFN,0)),"^",13)
+ S PRNTED=$$PRINTED^PSOSULBL(SFN,RXREC,RFL)
+ ; PSO*427-If previously printed, ask user whether to continue.  If NO (0), remove from suspense.  If NO (0) or exit (-1), unlock and quit
+ I PRNTED N CONT S CONT=$$PRTQUES^PSOSUPRX(RXREC,RFL) I CONT'=1 D  Q
+ . I CONT=0 D REMOVE^PSOSULBL(SFN,RXREC,RFL,DUZ,1,PRNTED)
+ . I CONT=-1 W !,"This prescription will not be pulled but will be left on suspense."
+ . D DIR,ULRX
  ;
  ; Submitting Rx to ECME for 3rd Party Billing and checking the outcome
  ; If there are unresolved DUR, Refill Too Soon, or TRICARE/CHAMPVA rejects, we will not add the RX to the
@@ -82,25 +92,22 @@ PPLADD ;
  ; This function will move entries from the RXRS array (which has RXs that were pulled
  ; from supense via the PP action on the Medication profile) to the list of RXs that
  ; will get a label (PPL variable and possible PSORX array).
- ;
  ; Note that arrays RXRS and PSORX and variable PPL are pre-existing
- ;
  N SZZ,SPSOX1,SPSOX2,LSFN
  I $G(PPL)'="",$E(PPL,$L(PPL))'="," S PPL=PPL_","
  ;
  ; Loop through entries in the RXRS array and process
  S SZZ=0 F  S SZZ=$O(RXRS(SZZ)) Q:'SZZ  D
- .;
+ .; If SZZ is already set in the PPL variable do not set it again
+ .I $G(PPL)[SZZ Q
  .; Check if label already printed per the RX SUSPENSE file
  .S LSFN=$O(^PS(52.5,"B",SZZ,0))
  .Q:'$G(LSFN)
  .Q:$G(^PS(52.5,LSFN,"P"))
- .;
  .; The following function checks for ECME conditions where we do not want a label
  .; This is probably redundant as the RXRS array entry should not have been created if any of these
  .;   conditions existed but things might have changed after the entry was created
  .I $$ECMECHK^PSOREJU3(SZZ) Q
- .;
  .; Add to list of RXs that should get a label
  .I $G(PPL)="" S PPL=SZZ_"," Q
  .I $L(PPL)+$L(SZZ)<220 S PPL=PPL_SZZ_"," Q

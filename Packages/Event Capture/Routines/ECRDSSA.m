@@ -1,5 +1,5 @@
-ECRDSSA ;ALB/RPM - DSS Unit Activity Report ;11/7/12  17:32
- ;;2.0;EVENT CAPTURE;**95,104,112,119**;8 May 96;Build 12
+ECRDSSA ;ALB/RPM - DSS Unit Activity Report ;9/23/16  15:14
+ ;;2.0;EVENT CAPTURE;**95,104,112,119,126,131,134**;8 May 96;Build 12
  ;
 EN ;Get location(s), DSS Unit(s), sort type, start & end dates, device
  ;
@@ -74,11 +74,15 @@ BLDTMP(ECIEN,ECSRT,ECCNT) ;add record to list
  N ECREC  ;record string
  N ECERR  ;FM error
  N ECDT  ;date
+ N CLNODE ;Clinic zero node from 728.44
+ N ECACLN ;Clinic name
  I +$G(ECIEN)>0,$$GETKEYS(ECSRT,ECIEN,.ECKEY) D
  . S ECCNT=+$G(ECCNT)+1
  . S ECIENS=ECIEN_","
  . S ECREC=""
- . D GETS^DIQ(721,ECIENS,"1;2;3;6;8;9;10;20;29","IE","ECREC","ECERR")
+ . D GETS^DIQ(721,ECIENS,"1;2;3;6;7;8;9;10;20;26;29","IE","ECREC","ECERR") ;126 Added category (#7), 134 added Assoc. Clin (#26)
+ . S ECACLN=$G(ECREC(721,ECIENS,26,"E")) ;134
+ . S CLNODE=$G(^ECX(728.44,+$G(ECREC(721,ECIENS,26,"I")),0)) ;134
  . S ECLOCA=+$G(ECREC(721,ECIENS,3,"I"))
  . S ECDSS=+$G(ECREC(721,ECIENS,6,"I"))
  . S ECREC=ECREC_$E($G(ECREC(721,ECIENS,1,"E")),1,30)_"^"  ;pt name
@@ -87,10 +91,12 @@ BLDTMP(ECIEN,ECSRT,ECCNT) ;add record to list
  . S ECREC=ECREC_$E($G(ECREC(721,ECIENS,2,"I")),1,13)_"^"  ;dt/tm
  . S ECDT=$P($G(ECREC(721,ECIENS,2,"I")),".",1)
  . S ECREC=ECREC_$E($$GETPROC($G(ECREC(721,ECIENS,8,"I"))),1,5)_"^"   ;proc code
- . S ECREC=ECREC_$E($$GETPRNM($G(ECREC(721,ECIENS,8,"I")),ECDT),1,10)_"^"  ;proc name
+ . S ECREC=ECREC_$$GETPRNM($G(ECREC(721,ECIENS,8,"I")),ECDT)_"^"  ;126, get full proc name
+ . S ECREC=ECREC_$$GETPSYN(ECLOCA,ECDSS,+$G(ECREC(721,ECIENS,7,"I")),$G(ECREC(721,ECIENS,8,"I")))_"^" ;126 Get procedure synonym
  . S ECREC=ECREC_$E($G(ECREC(721,ECIENS,9,"I")),1,2)_"^"   ;vol
  . S ECREC=ECREC_$E($$GETPROV(ECIEN),1,30)_"^"  ;provider
- . S ECREC=ECREC_$E($G(ECREC(721,ECIENS,20,"E")),1,7)      ;dx
+ . S ECREC=ECREC_$E($G(ECREC(721,ECIENS,20,"E")),1,8)_U      ;dx 131, allow more space,134 add trailing ^
+ . S ECREC=ECREC_ECACLN_U_$P(CLNODE,U,2)_U_$P(CLNODE,U,3)_U_$P($G(^ECX(728.441,+$P(CLNODE,U,8),0)),U) ;134
  . S ^TMP("ECRPT",$J,ECLOCA,ECDSS,ECKEY(1),ECKEY(2),ECNT)=ECREC
  . S ^TMP("ECRPT",$J,ECLOCA)=$G(^TMP("ECRPT",$J,ECLOCA))+1
  . S ^TMP("ECRPT",$J,ECLOCA,ECDSS)=$G(^TMP("ECRPT",$J,ECLOCA,ECDSS))+1
@@ -119,7 +125,9 @@ PRINT(ECSRT) ;loop results array and format output
  N ECQUIT  ;user quit indicator
  N ECREC   ;tmp record data
  N CNT,PIECE ;119 array count for data, record piece
- I $G(ECPTYP)="E" S ^TMP($J,"ECRPT",1)="LOCATION^DSS UNIT (IEN #)^PATIENT^SSN^I/O^DATE/TIME^PROCEDURE CODE^PROCEDURE NAME^VOLUME^PRIMARY PROVIDER^DIAGNOSIS",CNT=1 ;119 Export header
+ I $G(ECPTYP)="E" D  ;134
+ .S ^TMP($J,"ECRPT",1)="LOCATION^DSS UNIT (IEN #)^PATIENT^SSN^I/O^DATE/TIME^CLINIC^STOP CODE^CREDIT STOP^CHAR4" ;119,126,134
+ .S ^TMP($J,"ECRPT",1)=^TMP($J,"ECRPT",1)_"^PROCEDURE CODE^PROCEDURE NAME^SYNONYM^VOLUME^PRIMARY PROVIDER^DIAGNOSIS",CNT=1 ;119,126,134 Export header
  I '$D(^TMP("ECRPT",$J)) G PRINTQ
  S ECRDT=$$FMTE^XLFDT($$NOW^XLFDT,"5DZ")
  S ECFDT=$$FMTE^XLFDT($P(ECSTDT+.0001,"."),"5DZ")
@@ -151,17 +159,22 @@ PRINT(ECSRT) ;loop results array and format output
  . . . . . I $G(ECPTYP)'="E" I $Y>(IOSL-7) D PAUSE Q:ECQUIT  D HDR(ECLOCNM,ECRDT,ECFDT,ECTDT,ECSRTBY),DSSHDR(ECCDSS,ECDSSNM) W " (cont'd)" ;119
  . . . . . S ECREC=^TMP("ECRPT",$J,ECCLOC,ECCDSS,ECKEY1,ECKEY2,ECCNT)
  . . . . . I $G(ECPTYP)="E" S CNT=CNT+1 S ^TMP($J,"ECRPT",CNT)=ECLOCNM_U_ECDSSNM_"(IEN #"_ECCDSS_")" D  Q  ;119
- . . . . . . F PIECE=1:1:9 S ^TMP($J,"ECRPT",CNT)=^TMP($J,"ECRPT",CNT)_U_$S(PIECE'=4:$P(ECREC,U,PIECE),1:$$FMTE^XLFDT($P(ECREC,U,PIECE),"2MZ")) ;119
+ . . . . . . F PIECE=1:1:4,11:1:14,5:1:10 S ^TMP($J,"ECRPT",CNT)=^TMP($J,"ECRPT",CNT)_U_$S(PIECE'=4:$P(ECREC,U,PIECE),1:$$FMTE^XLFDT($P(ECREC,U,PIECE),"2MZ")) ;119,126,134
  . . . . . W !,$P(ECREC,U,1)  ;name
- . . . . . W ?31,$P(ECREC,U,2)  ;ssn
- . . . . . W ?42,$P(ECREC,U,3)  ;inpt/outpt
+ . . . . . W ?27,$P(ECREC,U,2)  ;126 ssn
+ . . . . . W ?36,$P(ECREC,U,3)  ;126 inpt/outpt
  . . . . . S ECDAT=$$FMTE^XLFDT($P(ECREC,U,4),"2MZ")
- . . . . . W ?44,$P(ECDAT,":")_$P(ECDAT,":",2)  ;dt/tm
- . . . . . W ?58,$P(ECREC,U,5)  ;proc code
- . . . . . W ?64,$P(ECREC,U,6)  ;proc name
- . . . . . W ?75,$P(ECREC,U,7)  ;vol 119 fixed dot structure
- . . . . . W ?78,$P(ECREC,U,8)  ;provider
- . . . . . W ?109,$P(ECREC,U,9)  ;dx
+ . . . . . W ?40,$P(ECDAT,":")_$P(ECDAT,":",2)  ;126 dt/tm
+ . . . . . W ?54,$P(ECREC,U,5)  ;126 proc code
+ . . . . . W ?60,$P(ECREC,U,6)  ;126 proc name
+ . . . . . W ?112,$P(ECREC,U,8)  ;119,126 vol
+ . . . . . W ?118,$P(ECREC,U,10)  ;126 dx
+ . . . . . W !,?36,$P(ECREC,U,11) ;134 Clinic
+ . . . . . W ?68,$P(ECREC,U,12) ;134 Stop Code
+ . . . . . W ?74,$P(ECREC,U,13) ;134 Credit Stop Code
+ . . . . . W ?82,$P(ECREC,U,14) ;134 CHAR4 code
+ . . . . . W !?4,$P(ECREC,U,9) ;126 Provider
+ . . . . . W ?60,$P(ECREC,U,7) ;126 Synonym
  I $G(ECPTYP)'="E" I 'ECQUIT D PAUSE ;119
 PRINTQ Q
  ;
@@ -183,8 +196,10 @@ HDR(ECLOCN,ECRDT,ECFDT,ECTDT,ECSRT) ;Report header
  W !!,?13,"For Location ",ECLOCN
  W !,?13,"From "_ECFDT_" through "_ECTDT
  W !,?13,"Sorted by ",ECSRT
- W !!?4,"Patient",?31,"SSN",?40,"I/O",?45,"Date/Time",?58,"Proc",?64,"Procedure",?75,"Vol",?80,"Primary",?109,"Primary"
- W !?58,"Code",?64,"Name",?80,"Provider",?109,"Diagnosis"
+ W !!,"Patient",?27,"SSN",?36,"I/O",?40,"Date/Time",?54,"Procedure",?112,"Vol",?118,"Primary" ;126
+ W !?54,"Code",?60,"Name",?118,"Diagnosis" ;126
+ W !,?36,"CLINIC",?68,"STOP",?74,"CREDIT",?82,"CHAR4" ;134
+ W !?4,"Primary Provider",?60,"Synonym",!,$$REPEAT^XLFSTR("-",132) ;126
  Q
  ;
 DSSHDR(ECDSS,ECDSSNM) ;DSS header
@@ -210,7 +225,7 @@ PAUSE ;page break
  ;
 FOOTER ;page footer
  W !!?4,"Volume totals may represent days, minutes, numbers of procedures"
- W !?4,"and/or a combination of these."
+ W " and/or a combination of these.",! ;149,134
  Q
  ;
 GETLOCN(ECLOCA,ECLOC) ;get location name
@@ -332,6 +347,14 @@ GETPROC(ECVIEN) ;get procedure code
  S ECIEN=$P(ECVIEN,";",1)
  S ECFILE=$P(ECVIEN,";",2)
  Q $S(ECFILE["ICPT(":$$GET1^DIQ(81,ECIEN_",",.01),ECFILE["EC(725":$$GET1^DIQ(725,ECIEN_",",1),1:"")
+ ;
+GETPSYN(LOC,UNIT,CAT,PROC) ;API added in 126, gets synonym for EC screen
+ N SYN,IEN
+ S SYN=""
+ I PROC="" Q SYN
+ S IEN=$O(^ECJ("AP",LOC,UNIT,CAT,PROC,0))
+ I IEN="" Q SYN
+ Q $P($G(^ECJ(IEN,"PRO")),U,2)
  ;
 ASKSRT(ECTYP) ;Ask report sort type
  ;  Input:  none

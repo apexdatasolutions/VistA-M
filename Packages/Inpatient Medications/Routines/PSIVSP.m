@@ -1,12 +1,17 @@
-PSIVSP ;BIR/RGY,PR,CML3-DOSE PROCESSOR ;1/3/12 3:36pm
- ;;5.0;INPATIENT MEDICATIONS;**30,37,41,50,56,74,83,111,133,138,134,213,229,279,305**;16 DEC 97;Build 3
+PSIVSP ;BIR/RGY,PR,CML3 - DOSE PROCESSOR ;1/3/12 3:36pm
+ ;;5.0;INPATIENT MEDICATIONS;**30,37,41,50,56,74,83,111,133,138,134,213,229,279,305,331,256,347**;16 DEC 97;Build 6
  ;
  ; Reference to ^PS(51.1 is supported by DBIA #2177
  ;
 EN ;
+ NEW PSJORGX
  Q:'$D(X)
  S ATZERO=0 I X["@",$P(X,"@",2)=0 S ATZERO=1,X=$P(X,"@")
- D EN^PSGS0 S (P(9),PSIVSC1)=$S($G(X)]"":X,1:$G(P(9))),P(11)=$S($G(PSGS0Y):PSGS0Y,1:$G(P(11))),(XT,P(15))=$S(($G(PSGS0XT)!($G(PSGS0XT)="O")!($G(PSGS0XT)="D")):$G(PSGS0XT),1:$G(P(15)))
+ ;D EN^PSGS0 S (P(9),PSIVSC1)=$S($G(X)]"":X,1:$G(P(9))),P(11)=$S($G(PSGS0Y):PSGS0Y,1:$G(P(11))),(XT,P(15))=$S(($G(PSGS0XT)!($G(PSGS0XT)="O")!($G(PSGS0XT)="D")):$G(PSGS0XT),1:$G(P(15)))
+ ;PSJ*5*256 - not set P(9) when FN order so the Old schedule name is not auto replaced with .01 value
+ S PSJORGX=X
+ D EN^PSGS0 S:$S((($G(PSJOCFG)="FN IV")&(($G(P(9))="")&($G(X)]""))):1,(($G(X)]"")&($G(X)'=PSJORGX)):1,$G(PSJOCFG)="":0,1:1) P(9)=$S($G(X)]"":X,1:$G(P(9)))
+ S P(11)=$S($G(PSGS0Y):PSGS0Y,1:$G(P(11))),(XT,P(15))=$S(($G(PSGS0XT)!($G(PSGS0XT)="O")!($G(PSGS0XT)="D")):$G(PSGS0XT),1:$G(P(15)))
  I $G(ATZERO) S P(7)=1
  K ATZERO Q
 EN1 ;
@@ -46,6 +51,7 @@ OV I P(11)="" W $C(7)," ???",!?15,"*** You have not defined any administration t
 QDLP K X1,X2 Q
  ;
 ENI ;
+ N PSIZEROX S PSIZEROX=0_+X
  K:$L(X)<1!($L(X)>30)!(X["""")!($A(X)=45) X I '$D(X)!'$D(P(4)) Q
  ;*229 Reset ATZERO flag.
  I $P(X,"@",2)'=0!'$$SCHREQ^PSJLIVFD(.P) S P(7)=""
@@ -53,9 +59,9 @@ ENI ;
  I $E(X)="." K X Q  ;Enforce leading zero.
  I X'=+X!(X'=0_+X),X["@",($P(X,"@",2,999)'=+$P(X,"@",2,999)!(+$P(X,"@",2,999)<0)) K X Q
  S SPSOL=$O(DRG("SOL",0)) I 'SPSOL K SPSOL,X W "  You must define at least one solution !!" Q
- I X=+X!(X=0_+X),X'["@" S X=X_" ml/hr" W " ml/hr" D SPSOL S P(15)=$S('X:0,1:SPSOL\X*60+(SPSOL#X/X*60+.5)\1) K SPSOL Q
+ I (X=+X)!(X=PSIZEROX) I X'["@" S X=X_" ml/hr" W " ml/hr" D SPSOL S P(15)=$S('X:0,1:SPSOL\X*60+(SPSOL#X/X*60+.5)\1) K SPSOL Q
  S SPSOL=$S(($P(X,"@",2)?1.N):$P(X,"@",2),1:$G(P("NUMLBL"))) I SPSOL S P("NUMLBL")=+SPSOL
- S:$P(X,"@")=+X!($P(X,"@")=0_+X) $P(X,"@")=$P(X,"@")_" ml/hr" W "   ",+SPSOL," Label",$S(SPSOL'=1:"s",1:"")," per day",!?15,"at an infusion rate of: ",$P(X,"@") S P(15)=$S('SPSOL:0,1:1440/SPSOL\1) K SPSOL
+ S:$P(X,"@")=+X!($P(X,"@")=PSIZEROX) $P(X,"@")=$P(X,"@")_" ml/hr" W "   ",+SPSOL," Label",$S(SPSOL'=1:"s",1:"")," per day",!?15,"at an infusion rate of: ",$P(X,"@") S P(15)=$S('SPSOL:0,1:1440/SPSOL\1) K SPSOL
  I X["@",$P(X,"@",2)=0,$$SCHREQ^PSJLIVFD(.P) S P(7)=1  ; Set ATZERO flag
  ;*305
  I '$G(PSJEXMSG) D EXPINF^PSIVEDT1(.X)
@@ -68,6 +74,7 @@ CHK F Y=1:1 Q:$L(P(11))>240!($P(P(11),"-",Y)="")  S $P(P(11),"-",Y)=$P(P(11),"-"
 DIC ; 51.1 look-up
  N PSJSCH S PSJSCH=X I '$D(WSCHADM) N VAIP D IN5^VADPT S WSCHADM=VAIP(5),X=PSJSCH
  K DIC S DIC="^PS(51.1,",DIC(0)=$E("E",'$D(NOECH))_"ISZ"
+ ; The naked reference below refers to the full reference inside indirection to ^PS(51.1
  S DIC("W")="W ""  "","_$S('$D(WSCHADM):"$P(^(0),""^"",2)",'+WSCHADM:"$P(^(0),""^"",2)",1:"$S($D(^PS(51.1,+Y,1,+WSCHADM,0)):$P(^(0),""^"",2),1:$P(^PS(51.1,+Y,0),""^"",2))"),D="APPSJ" S:$D(PSIVSPQF) DIC(0)=DIC(0)_"O"
  D IX^DIC K DIC
  S:$D(DIE)#2 DIC=DIE Q:Y<0

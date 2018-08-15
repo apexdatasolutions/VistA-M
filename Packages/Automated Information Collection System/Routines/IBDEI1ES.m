@@ -1,128 +1,134 @@
-IBDEI1ES ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1ES ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,25281,1,2,0)
- ;;=2^297.9
- ;;^UTILITY(U,$J,358.3,25281,1,5,0)
- ;;=5^Paranoia
- ;;^UTILITY(U,$J,358.3,25281,2)
- ;;=^123970
- ;;^UTILITY(U,$J,358.3,25282,0)
- ;;=297.1^^169^1659^1
- ;;^UTILITY(U,$J,358.3,25282,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,25282,1,2,0)
- ;;=2^297.1
- ;;^UTILITY(U,$J,358.3,25282,1,5,0)
- ;;=5^Delusional Disorder
- ;;^UTILITY(U,$J,358.3,25282,2)
- ;;=^331896
- ;;^UTILITY(U,$J,358.3,25283,0)
- ;;=301.7^^169^1660^1
- ;;^UTILITY(U,$J,358.3,25283,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,25283,1,2,0)
- ;;=2^301.7
- ;;^UTILITY(U,$J,358.3,25283,1,5,0)
- ;;=5^Antisocial Personality Dis
- ;;^UTILITY(U,$J,358.3,25283,2)
- ;;=Antisocial Personality Dis^9066
- ;;^UTILITY(U,$J,358.3,25284,0)
- ;;=301.82^^169^1660^2
- ;;^UTILITY(U,$J,358.3,25284,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,25284,1,2,0)
- ;;=2^301.82
- ;;^UTILITY(U,$J,358.3,25284,1,5,0)
- ;;=5^Avoidant Personality Disorder
- ;;^UTILITY(U,$J,358.3,25284,2)
- ;;=Avoidant Personality Disorder^265347
- ;;^UTILITY(U,$J,358.3,25285,0)
- ;;=301.83^^169^1660^3
- ;;^UTILITY(U,$J,358.3,25285,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,25285,1,2,0)
- ;;=2^301.83
- ;;^UTILITY(U,$J,358.3,25285,1,5,0)
- ;;=5^Borderline Personality Disorder
- ;;^UTILITY(U,$J,358.3,25285,2)
- ;;=Borderline Personality Disorder^16372
- ;;^UTILITY(U,$J,358.3,25286,0)
- ;;=301.6^^169^1660^6
- ;;^UTILITY(U,$J,358.3,25286,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,25286,1,2,0)
- ;;=2^301.6
- ;;^UTILITY(U,$J,358.3,25286,1,5,0)
- ;;=5^Dependent Personality Disorder
- ;;^UTILITY(U,$J,358.3,25286,2)
- ;;=Dependent Personality Disorder^32860
- ;;^UTILITY(U,$J,358.3,25287,0)
- ;;=301.50^^169^1660^8
- ;;^UTILITY(U,$J,358.3,25287,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,25287,1,2,0)
- ;;=2^301.50
- ;;^UTILITY(U,$J,358.3,25287,1,5,0)
- ;;=5^Histrionic Personality Disorder
- ;;^UTILITY(U,$J,358.3,25287,2)
- ;;=Histrionic Personality Disorder^57763
- ;;^UTILITY(U,$J,358.3,25288,0)
- ;;=301.81^^169^1660^11
- ;;^UTILITY(U,$J,358.3,25288,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,25288,1,2,0)
- ;;=2^301.81
- ;;^UTILITY(U,$J,358.3,25288,1,5,0)
- ;;=5^Narcissistic Personality Disorder
- ;;^UTILITY(U,$J,358.3,25288,2)
- ;;=Narcissistic Personality Disorder^265353
- ;;^UTILITY(U,$J,358.3,25289,0)
- ;;=301.0^^169^1660^12
- ;;^UTILITY(U,$J,358.3,25289,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,25289,1,2,0)
- ;;=2^301.0
- ;;^UTILITY(U,$J,358.3,25289,1,5,0)
- ;;=5^Paranoid Personality Disorder
- ;;^UTILITY(U,$J,358.3,25289,2)
- ;;=Paranoid Personality Disorder^89982
- ;;^UTILITY(U,$J,358.3,25290,0)
- ;;=301.9^^169^1660^16
- ;;^UTILITY(U,$J,358.3,25290,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,25290,1,2,0)
- ;;=2^301.9
- ;;^UTILITY(U,$J,358.3,25290,1,5,0)
- ;;=5^Unspecified Personality Disorder
- ;;^UTILITY(U,$J,358.3,25290,2)
- ;;=Unspecified Personality Disorder^92451
- ;;^UTILITY(U,$J,358.3,25291,0)
- ;;=301.20^^169^1660^14
- ;;^UTILITY(U,$J,358.3,25291,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,25291,1,2,0)
- ;;=2^301.20
- ;;^UTILITY(U,$J,358.3,25291,1,5,0)
- ;;=5^Schizoid Personality Disorder
- ;;^UTILITY(U,$J,358.3,25291,2)
- ;;=^108271
- ;;^UTILITY(U,$J,358.3,25292,0)
- ;;=301.22^^169^1660^15
- ;;^UTILITY(U,$J,358.3,25292,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,25292,1,2,0)
- ;;=2^301.22
- ;;^UTILITY(U,$J,358.3,25292,1,5,0)
- ;;=5^Schizotypal Personality Disorder
- ;;^UTILITY(U,$J,358.3,25292,2)
- ;;=Schizotypal Personality Disorder^108367
- ;;^UTILITY(U,$J,358.3,25293,0)
- ;;=301.4^^169^1660^4
- ;;^UTILITY(U,$J,358.3,25293,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,25293,1,2,0)
- ;;=2^301.4
- ;;^UTILITY(U,$J,358.3,25293,1,5,0)
- ;;=5^Compulsive Personality Disorder
+ ;;^UTILITY(U,$J,358.3,23513,1,4,0)
+ ;;=4^M79.2
+ ;;^UTILITY(U,$J,358.3,23513,2)
+ ;;=^5013322
+ ;;^UTILITY(U,$J,358.3,23514,0)
+ ;;=I25.2^^113^1134^10
+ ;;^UTILITY(U,$J,358.3,23514,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,23514,1,3,0)
+ ;;=3^Old Myocardial Infarction
+ ;;^UTILITY(U,$J,358.3,23514,1,4,0)
+ ;;=4^I25.2
+ ;;^UTILITY(U,$J,358.3,23514,2)
+ ;;=^259884
+ ;;^UTILITY(U,$J,358.3,23515,0)
+ ;;=L97.829^^113^1134^5
+ ;;^UTILITY(U,$J,358.3,23515,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,23515,1,3,0)
+ ;;=3^Non-Pressure Chronic Ulcer Left Lower Leg,Severity Unspec
+ ;;^UTILITY(U,$J,358.3,23515,1,4,0)
+ ;;=4^L97.829
+ ;;^UTILITY(U,$J,358.3,23515,2)
+ ;;=^5009569
+ ;;^UTILITY(U,$J,358.3,23516,0)
+ ;;=L97.819^^113^1134^6
+ ;;^UTILITY(U,$J,358.3,23516,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,23516,1,3,0)
+ ;;=3^Non-Pressure Chronic Ulcer Right Lower Leg,Severity Unspec
+ ;;^UTILITY(U,$J,358.3,23516,1,4,0)
+ ;;=4^L97.819
+ ;;^UTILITY(U,$J,358.3,23516,2)
+ ;;=^5009564
+ ;;^UTILITY(U,$J,358.3,23517,0)
+ ;;=L98.499^^113^1134^7
+ ;;^UTILITY(U,$J,358.3,23517,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,23517,1,3,0)
+ ;;=3^Non-Pressure Chronic Ulcer of Skin,Severity Unspec
+ ;;^UTILITY(U,$J,358.3,23517,1,4,0)
+ ;;=4^L98.499
+ ;;^UTILITY(U,$J,358.3,23517,2)
+ ;;=^5009591
+ ;;^UTILITY(U,$J,358.3,23518,0)
+ ;;=R11.0^^113^1134^3
+ ;;^UTILITY(U,$J,358.3,23518,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,23518,1,3,0)
+ ;;=3^Nausea w/o Vomiting
+ ;;^UTILITY(U,$J,358.3,23518,1,4,0)
+ ;;=4^R11.0
+ ;;^UTILITY(U,$J,358.3,23518,2)
+ ;;=^5019231
+ ;;^UTILITY(U,$J,358.3,23519,0)
+ ;;=M19.90^^113^1134^12
+ ;;^UTILITY(U,$J,358.3,23519,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,23519,1,3,0)
+ ;;=3^Osteoarthritis,Unspec
+ ;;^UTILITY(U,$J,358.3,23519,1,4,0)
+ ;;=4^M19.90
+ ;;^UTILITY(U,$J,358.3,23519,2)
+ ;;=^5010853
+ ;;^UTILITY(U,$J,358.3,23520,0)
+ ;;=E66.3^^113^1134^26
+ ;;^UTILITY(U,$J,358.3,23520,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,23520,1,3,0)
+ ;;=3^Overweight
+ ;;^UTILITY(U,$J,358.3,23520,1,4,0)
+ ;;=4^E66.3
+ ;;^UTILITY(U,$J,358.3,23520,2)
+ ;;=^5002830
+ ;;^UTILITY(U,$J,358.3,23521,0)
+ ;;=K85.9^^113^1135^1
+ ;;^UTILITY(U,$J,358.3,23521,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,23521,1,3,0)
+ ;;=3^Pancreatitis, acute, unspec
+ ;;^UTILITY(U,$J,358.3,23521,1,4,0)
+ ;;=4^K85.9
+ ;;^UTILITY(U,$J,358.3,23521,2)
+ ;;=^5008887
+ ;;^UTILITY(U,$J,358.3,23522,0)
+ ;;=G20.^^113^1135^2
+ ;;^UTILITY(U,$J,358.3,23522,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,23522,1,3,0)
+ ;;=3^Parkinson's disease
+ ;;^UTILITY(U,$J,358.3,23522,1,4,0)
+ ;;=4^G20.
+ ;;^UTILITY(U,$J,358.3,23522,2)
+ ;;=^5003770
+ ;;^UTILITY(U,$J,358.3,23523,0)
+ ;;=I30.0^^113^1135^3
+ ;;^UTILITY(U,$J,358.3,23523,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,23523,1,3,0)
+ ;;=3^Pericarditis,idiopath,acute,nonspec
+ ;;^UTILITY(U,$J,358.3,23523,1,4,0)
+ ;;=4^I30.0
+ ;;^UTILITY(U,$J,358.3,23523,2)
+ ;;=^5007157
+ ;;^UTILITY(U,$J,358.3,23524,0)
+ ;;=I73.9^^113^1135^4
+ ;;^UTILITY(U,$J,358.3,23524,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,23524,1,3,0)
+ ;;=3^Peripheral vascular disease, unspec
+ ;;^UTILITY(U,$J,358.3,23524,1,4,0)
+ ;;=4^I73.9
+ ;;^UTILITY(U,$J,358.3,23524,2)
+ ;;=^184182
+ ;;^UTILITY(U,$J,358.3,23525,0)
+ ;;=F60.89^^113^1135^5
+ ;;^UTILITY(U,$J,358.3,23525,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,23525,1,3,0)
+ ;;=3^Personality disorders,oth,spec
+ ;;^UTILITY(U,$J,358.3,23525,1,4,0)
+ ;;=4^F60.89
+ ;;^UTILITY(U,$J,358.3,23525,2)
+ ;;=^5003638
+ ;;^UTILITY(U,$J,358.3,23526,0)
+ ;;=I80.3^^113^1135^7
+ ;;^UTILITY(U,$J,358.3,23526,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,23526,1,3,0)
+ ;;=3^Phlebitis & thrombophlbts of low extrmties, unspec

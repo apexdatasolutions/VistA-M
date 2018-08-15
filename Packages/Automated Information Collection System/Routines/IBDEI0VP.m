@@ -1,134 +1,134 @@
-IBDEI0VP ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0VP ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,15682,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,15682,1,2,0)
- ;;=2^433.10
- ;;^UTILITY(U,$J,358.3,15682,1,3,0)
- ;;=3^Carotid Artery Sten
- ;;^UTILITY(U,$J,358.3,15682,2)
- ;;=Carotid Artery Stenosis^295801
- ;;^UTILITY(U,$J,358.3,15683,0)
- ;;=437.0^^98^961^2
- ;;^UTILITY(U,$J,358.3,15683,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,15683,1,2,0)
- ;;=2^437.0
- ;;^UTILITY(U,$J,358.3,15683,1,3,0)
- ;;=3^Intracran Arter Sten
- ;;^UTILITY(U,$J,358.3,15683,2)
- ;;=Intercranial Arterial Stenosis^21571
- ;;^UTILITY(U,$J,358.3,15684,0)
- ;;=435.2^^98^961^6
- ;;^UTILITY(U,$J,358.3,15684,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,15684,1,2,0)
- ;;=2^435.2
- ;;^UTILITY(U,$J,358.3,15684,1,3,0)
- ;;=3^Subclavian Stenosis
- ;;^UTILITY(U,$J,358.3,15684,2)
- ;;=Subclavian Stenosis^115012
- ;;^UTILITY(U,$J,358.3,15685,0)
- ;;=435.9^^98^961^7
- ;;^UTILITY(U,$J,358.3,15685,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,15685,1,2,0)
- ;;=2^435.9
- ;;^UTILITY(U,$J,358.3,15685,1,3,0)
- ;;=3^Trans Ischemic Attack
- ;;^UTILITY(U,$J,358.3,15685,2)
- ;;=Trans Ischemic Attack^21635
- ;;^UTILITY(U,$J,358.3,15686,0)
- ;;=435.3^^98^961^8
- ;;^UTILITY(U,$J,358.3,15686,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,15686,1,2,0)
- ;;=2^435.3
- ;;^UTILITY(U,$J,358.3,15686,1,3,0)
- ;;=3^Vertebral Basilar Insuff
- ;;^UTILITY(U,$J,358.3,15686,2)
- ;;=Vertebral Basilar Insuffiency^260000
- ;;^UTILITY(U,$J,358.3,15687,0)
- ;;=438.20^^98^961^4
- ;;^UTILITY(U,$J,358.3,15687,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,15687,1,2,0)
- ;;=2^438.20
- ;;^UTILITY(U,$J,358.3,15687,1,3,0)
- ;;=3^Stroke w/Hemiplegia
- ;;^UTILITY(U,$J,358.3,15687,2)
- ;;=Stroke w/Hemiplegia^317910
- ;;^UTILITY(U,$J,358.3,15688,0)
- ;;=438.11^^98^961^3
- ;;^UTILITY(U,$J,358.3,15688,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,15688,1,2,0)
- ;;=2^438.11
- ;;^UTILITY(U,$J,358.3,15688,1,3,0)
- ;;=3^Stroke w/Aphasia
- ;;^UTILITY(U,$J,358.3,15688,2)
- ;;=Stroke w/Aphasia^317907
- ;;^UTILITY(U,$J,358.3,15689,0)
- ;;=438.6^^98^961^5.1
- ;;^UTILITY(U,$J,358.3,15689,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,15689,1,2,0)
- ;;=2^438.6
- ;;^UTILITY(U,$J,358.3,15689,1,3,0)
- ;;=3^Stroke w/Sensory Loss
- ;;^UTILITY(U,$J,358.3,15689,2)
- ;;=Stroke w/Sensory Loss^328503
- ;;^UTILITY(U,$J,358.3,15690,0)
- ;;=438.7^^98^961^5.2
- ;;^UTILITY(U,$J,358.3,15690,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,15690,1,2,0)
- ;;=2^438.7
- ;;^UTILITY(U,$J,358.3,15690,1,3,0)
- ;;=3^Stroke w/Vision Loss
- ;;^UTILITY(U,$J,358.3,15690,2)
- ;;=Stroke w/Vision Loss^328504
- ;;^UTILITY(U,$J,358.3,15691,0)
- ;;=438.85^^98^961^5.3
- ;;^UTILITY(U,$J,358.3,15691,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,15691,1,2,0)
- ;;=2^438.85
- ;;^UTILITY(U,$J,358.3,15691,1,3,0)
- ;;=3^Stroke w/Vertigo
- ;;^UTILITY(U,$J,358.3,15691,2)
- ;;=^328508
- ;;^UTILITY(U,$J,358.3,15692,0)
- ;;=438.82^^98^961^5.5
- ;;^UTILITY(U,$J,358.3,15692,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,15692,1,2,0)
- ;;=2^438.82
- ;;^UTILITY(U,$J,358.3,15692,1,3,0)
- ;;=3^Stroke w/dysphagia
- ;;^UTILITY(U,$J,358.3,15692,2)
- ;;=Stroke w/dysphagia^317923
- ;;^UTILITY(U,$J,358.3,15693,0)
- ;;=438.89^^98^961^5
- ;;^UTILITY(U,$J,358.3,15693,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,15693,1,2,0)
- ;;=2^438.89
- ;;^UTILITY(U,$J,358.3,15693,1,3,0)
- ;;=3^Stroke with Other Deficits
- ;;^UTILITY(U,$J,358.3,15693,2)
- ;;=^317924
- ;;^UTILITY(U,$J,358.3,15694,0)
- ;;=V12.54^^98^961^9
- ;;^UTILITY(U,$J,358.3,15694,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,15694,1,2,0)
- ;;=2^V12.54
- ;;^UTILITY(U,$J,358.3,15694,1,3,0)
- ;;=3^Stroke F/U, No Residuals
- ;;^UTILITY(U,$J,358.3,15694,2)
- ;;=^335309
- ;;^UTILITY(U,$J,358.3,15695,0)
- ;;=345.10^^98^962^3
+ ;;^UTILITY(U,$J,358.3,14588,2)
+ ;;=^5005699
+ ;;^UTILITY(U,$J,358.3,14589,0)
+ ;;=H35.62^^82^779^84
+ ;;^UTILITY(U,$J,358.3,14589,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14589,1,3,0)
+ ;;=3^Retinal Hemorrhage,Left Eye
+ ;;^UTILITY(U,$J,358.3,14589,1,4,0)
+ ;;=4^H35.62
+ ;;^UTILITY(U,$J,358.3,14589,2)
+ ;;=^5005700
+ ;;^UTILITY(U,$J,358.3,14590,0)
+ ;;=H35.63^^82^779^83
+ ;;^UTILITY(U,$J,358.3,14590,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14590,1,3,0)
+ ;;=3^Retinal Hemorrhage,Bilateral
+ ;;^UTILITY(U,$J,358.3,14590,1,4,0)
+ ;;=4^H35.63
+ ;;^UTILITY(U,$J,358.3,14590,2)
+ ;;=^5005701
+ ;;^UTILITY(U,$J,358.3,14591,0)
+ ;;=H35.82^^82^779^86
+ ;;^UTILITY(U,$J,358.3,14591,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14591,1,3,0)
+ ;;=3^Retinal Ischemia
+ ;;^UTILITY(U,$J,358.3,14591,1,4,0)
+ ;;=4^H35.82
+ ;;^UTILITY(U,$J,358.3,14591,2)
+ ;;=^5005716
+ ;;^UTILITY(U,$J,358.3,14592,0)
+ ;;=H30.93^^82^779^15
+ ;;^UTILITY(U,$J,358.3,14592,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14592,1,3,0)
+ ;;=3^Chorioretinal Inflammation,Bilateral
+ ;;^UTILITY(U,$J,358.3,14592,1,4,0)
+ ;;=4^H30.93
+ ;;^UTILITY(U,$J,358.3,14592,2)
+ ;;=^5005435
+ ;;^UTILITY(U,$J,358.3,14593,0)
+ ;;=H30.91^^82^779^19
+ ;;^UTILITY(U,$J,358.3,14593,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14593,1,3,0)
+ ;;=3^Chorioretinal Inflammation,Right Eye
+ ;;^UTILITY(U,$J,358.3,14593,1,4,0)
+ ;;=4^H30.91
+ ;;^UTILITY(U,$J,358.3,14593,2)
+ ;;=^5133481
+ ;;^UTILITY(U,$J,358.3,14594,0)
+ ;;=H30.92^^82^779^17
+ ;;^UTILITY(U,$J,358.3,14594,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14594,1,3,0)
+ ;;=3^Chorioretinal Inflammation,Left Eye
+ ;;^UTILITY(U,$J,358.3,14594,1,4,0)
+ ;;=4^H30.92
+ ;;^UTILITY(U,$J,358.3,14594,2)
+ ;;=^5133482
+ ;;^UTILITY(U,$J,358.3,14595,0)
+ ;;=H30.891^^82^779^20
+ ;;^UTILITY(U,$J,358.3,14595,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14595,1,3,0)
+ ;;=3^Chorioretinal Inflammation,Right Eye NEC
+ ;;^UTILITY(U,$J,358.3,14595,1,4,0)
+ ;;=4^H30.891
+ ;;^UTILITY(U,$J,358.3,14595,2)
+ ;;=^5005430
+ ;;^UTILITY(U,$J,358.3,14596,0)
+ ;;=H30.892^^82^779^18
+ ;;^UTILITY(U,$J,358.3,14596,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14596,1,3,0)
+ ;;=3^Chorioretinal Inflammation,Left Eye NEC
+ ;;^UTILITY(U,$J,358.3,14596,1,4,0)
+ ;;=4^H30.892
+ ;;^UTILITY(U,$J,358.3,14596,2)
+ ;;=^5005431
+ ;;^UTILITY(U,$J,358.3,14597,0)
+ ;;=H30.893^^82^779^16
+ ;;^UTILITY(U,$J,358.3,14597,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14597,1,3,0)
+ ;;=3^Chorioretinal Inflammation,Bilateral NEC
+ ;;^UTILITY(U,$J,358.3,14597,1,4,0)
+ ;;=4^H30.893
+ ;;^UTILITY(U,$J,358.3,14597,2)
+ ;;=^5005432
+ ;;^UTILITY(U,$J,358.3,14598,0)
+ ;;=H31.001^^82^779^23
+ ;;^UTILITY(U,$J,358.3,14598,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14598,1,3,0)
+ ;;=3^Chorioretinal Scars,Right Eye,Unspec
+ ;;^UTILITY(U,$J,358.3,14598,1,4,0)
+ ;;=4^H31.001
+ ;;^UTILITY(U,$J,358.3,14598,2)
+ ;;=^5005436
+ ;;^UTILITY(U,$J,358.3,14599,0)
+ ;;=H31.002^^82^779^22
+ ;;^UTILITY(U,$J,358.3,14599,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14599,1,3,0)
+ ;;=3^Chorioretinal Scars,Left Eye,Unspec
+ ;;^UTILITY(U,$J,358.3,14599,1,4,0)
+ ;;=4^H31.002
+ ;;^UTILITY(U,$J,358.3,14599,2)
+ ;;=^5005437
+ ;;^UTILITY(U,$J,358.3,14600,0)
+ ;;=H31.003^^82^779^21
+ ;;^UTILITY(U,$J,358.3,14600,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14600,1,3,0)
+ ;;=3^Chorioretinal Scars,Bilateral,Unspec
+ ;;^UTILITY(U,$J,358.3,14600,1,4,0)
+ ;;=4^H31.003
+ ;;^UTILITY(U,$J,358.3,14600,2)
+ ;;=^5005438
+ ;;^UTILITY(U,$J,358.3,14601,0)
+ ;;=H31.021^^82^779^95
+ ;;^UTILITY(U,$J,358.3,14601,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14601,1,3,0)
+ ;;=3^Retinopathy,Solar,Right Eye
+ ;;^UTILITY(U,$J,358.3,14601,1,4,0)
+ ;;=4^H31.021

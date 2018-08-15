@@ -1,5 +1,5 @@
-LRVRMI3 ;DALOI/STAFF - LAB MICRO LEDI INTERFACE ;08/15/13  16:08
- ;;5.2;LAB SERVICE;**350,427**;Sep 27, 1994;Build 33
+LRVRMI3 ;DALOI/STAFF - LAB MICRO LEDI INTERFACE ;09/07/16  08:09
+ ;;5.2;LAB SERVICE;**350,427,453,474**;Sep 27, 1994;Build 14
  ;
  ; Part of Micro LEDI interface.  It is a continuation of ^LRVRMI4 and ^LRVRMI2. Processes data in the temp global ^TMP("LRMI")
  ; and stores it into the appropriate sections of the Lab Data Microbiology file (#63.05).
@@ -20,7 +20,7 @@ NODE(LRNODE) ;  Process similar multiples - nodes 15,19-31
  . S LRX=$G(^TMP("LRMI",$J,LRDFN,"MI",LRIDT,LRNODE,IEN,0)),LRX=$S(LRX'="":LRX,1:" ")
  . I LRX'=" ",$$DUPCHK^LRVRMI3(LRLL,LRPROF,.LRCMT,LRX) Q
  . S LRFDA(1,LRFILE,"+"_IEN_","_LRIDT_","_LRDFN_",",.01)=LRX
- . S LRFDAIEN(IEN)=IEN
+ . ;S LRFDAIEN(IEN)=IEN
  . ;
  . ; if result came across in NTE, PL and status info will be under ^(0) node
  . I $D(^TMP("LRMI",$J,LRDFN,"MI",LRIDT,LRNODE,0)) D  ;
@@ -137,7 +137,7 @@ RPTDT(LRDFN,LRIDT,SUBSCR,RPTDT,USER) ; File Report Approved Date and Person Repo
  ;
  I FLDS'="" D
  . S IEN=LRIDT_","_LRDFN_","
- . S LRFDA(1,63.05,IEN,$P(FLDS,"^",1))=RPTDT
+ . I LRINTYPE=10 S LRFDA(1,63.05,IEN,$P(FLDS,"^",1))=RPTDT
  . S LRFDA(1,63.05,IEN,$P(FLDS,"^",2))=USER
  . D FILE^DIE("","LRFDA(1)","LRMSG")
  . I '$D(LRMSG) S LRX=1,LRRPTAPP=1 Q

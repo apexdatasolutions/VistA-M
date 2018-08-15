@@ -1,140 +1,126 @@
-IBDEI177 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI177 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,21444,1,5,0)
- ;;=5^Hematuria, Microscopic
- ;;^UTILITY(U,$J,358.3,21444,2)
- ;;=^336612
- ;;^UTILITY(U,$J,358.3,21445,0)
- ;;=788.91^^133^1315^58
- ;;^UTILITY(U,$J,358.3,21445,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21445,1,4,0)
- ;;=4^788.91
- ;;^UTILITY(U,$J,358.3,21445,1,5,0)
- ;;=5^Urinary Incontinence, Functional
- ;;^UTILITY(U,$J,358.3,21445,2)
- ;;=^336673
- ;;^UTILITY(U,$J,358.3,21446,0)
- ;;=596.81^^133^1315^31
- ;;^UTILITY(U,$J,358.3,21446,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21446,1,4,0)
- ;;=4^596.81
- ;;^UTILITY(U,$J,358.3,21446,1,5,0)
- ;;=5^Infection of Cystostomy
- ;;^UTILITY(U,$J,358.3,21446,2)
- ;;=^340556
- ;;^UTILITY(U,$J,358.3,21447,0)
- ;;=596.82^^133^1315^33
- ;;^UTILITY(U,$J,358.3,21447,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21447,1,4,0)
- ;;=4^596.82
- ;;^UTILITY(U,$J,358.3,21447,1,5,0)
- ;;=5^Mech Complication of Cystostomy
- ;;^UTILITY(U,$J,358.3,21447,2)
- ;;=^340557
- ;;^UTILITY(U,$J,358.3,21448,0)
- ;;=596.83^^133^1315^10
- ;;^UTILITY(U,$J,358.3,21448,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21448,1,4,0)
- ;;=4^596.83
- ;;^UTILITY(U,$J,358.3,21448,1,5,0)
- ;;=5^Cystostomy Complication
- ;;^UTILITY(U,$J,358.3,21448,2)
- ;;=^340558
- ;;^UTILITY(U,$J,358.3,21449,0)
- ;;=596.89^^133^1315^6
- ;;^UTILITY(U,$J,358.3,21449,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21449,1,4,0)
- ;;=4^596.89
- ;;^UTILITY(U,$J,358.3,21449,1,5,0)
- ;;=5^Bladder Disorder,Oth Spec
- ;;^UTILITY(U,$J,358.3,21449,2)
- ;;=^87989
- ;;^UTILITY(U,$J,358.3,21450,0)
- ;;=607.84^^133^1315^30
- ;;^UTILITY(U,$J,358.3,21450,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21450,1,4,0)
- ;;=4^607.84
- ;;^UTILITY(U,$J,358.3,21450,1,5,0)
- ;;=5^Impotence,Organic Origin
- ;;^UTILITY(U,$J,358.3,21450,2)
- ;;=^270441
- ;;^UTILITY(U,$J,358.3,21451,0)
- ;;=626.9^^133^1316^35
- ;;^UTILITY(U,$J,358.3,21451,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21451,1,4,0)
- ;;=4^626.9
- ;;^UTILITY(U,$J,358.3,21451,1,5,0)
- ;;=5^Menstrual Disorder
- ;;^UTILITY(U,$J,358.3,21451,2)
- ;;=^123887
- ;;^UTILITY(U,$J,358.3,21452,0)
- ;;=626.0^^133^1316^5
- ;;^UTILITY(U,$J,358.3,21452,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21452,1,4,0)
- ;;=4^626.0
- ;;^UTILITY(U,$J,358.3,21452,1,5,0)
- ;;=5^Amenorrhea
- ;;^UTILITY(U,$J,358.3,21452,2)
- ;;=Amenorrhea^5871
- ;;^UTILITY(U,$J,358.3,21453,0)
- ;;=628.0^^133^1316^6
- ;;^UTILITY(U,$J,358.3,21453,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21453,1,4,0)
- ;;=4^628.0
- ;;^UTILITY(U,$J,358.3,21453,1,5,0)
- ;;=5^Anovulatory Cyclic Bleeding
- ;;^UTILITY(U,$J,358.3,21453,2)
- ;;=^270583
- ;;^UTILITY(U,$J,358.3,21454,0)
- ;;=616.3^^133^1316^7
- ;;^UTILITY(U,$J,358.3,21454,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21454,1,4,0)
- ;;=4^616.3
- ;;^UTILITY(U,$J,358.3,21454,1,5,0)
- ;;=5^Bartholin's Abscess
- ;;^UTILITY(U,$J,358.3,21454,2)
- ;;=^12748
- ;;^UTILITY(U,$J,358.3,21455,0)
- ;;=610.0^^133^1316^10
- ;;^UTILITY(U,$J,358.3,21455,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21455,1,4,0)
- ;;=4^610.0
- ;;^UTILITY(U,$J,358.3,21455,1,5,0)
- ;;=5^Breast, Solitary Cyst
- ;;^UTILITY(U,$J,358.3,21455,2)
- ;;=^112247
- ;;^UTILITY(U,$J,358.3,21456,0)
- ;;=610.1^^133^1316^24
- ;;^UTILITY(U,$J,358.3,21456,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21456,1,4,0)
- ;;=4^610.1
- ;;^UTILITY(U,$J,358.3,21456,1,5,0)
- ;;=5^Fibrocystic Breast Disease
- ;;^UTILITY(U,$J,358.3,21456,2)
- ;;=^46167
- ;;^UTILITY(U,$J,358.3,21457,0)
- ;;=611.71^^133^1316^8
- ;;^UTILITY(U,$J,358.3,21457,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21457,1,4,0)
- ;;=4^611.71
- ;;^UTILITY(U,$J,358.3,21457,1,5,0)
- ;;=5^Breast Pain
- ;;^UTILITY(U,$J,358.3,21457,2)
- ;;=Breast Pain^74467
- ;;^UTILITY(U,$J,358.3,21458,0)
- ;;=611.72^^133^1316^9
+ ;;^UTILITY(U,$J,358.3,20019,1,4,0)
+ ;;=4^V00.891A
+ ;;^UTILITY(U,$J,358.3,20019,2)
+ ;;=^5055964
+ ;;^UTILITY(U,$J,358.3,20020,0)
+ ;;=V00.891D^^94^935^58
+ ;;^UTILITY(U,$J,358.3,20020,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20020,1,3,0)
+ ;;=3^Fall from Pedestrian Conveyance,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,20020,1,4,0)
+ ;;=4^V00.891D
+ ;;^UTILITY(U,$J,358.3,20020,2)
+ ;;=^5055965
+ ;;^UTILITY(U,$J,358.3,20021,0)
+ ;;=V00.892A^^94^935^99
+ ;;^UTILITY(U,$J,358.3,20021,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20021,1,3,0)
+ ;;=3^Pedestrian Conveyance Colliding w/ Stationary Obj,Init Encntr
+ ;;^UTILITY(U,$J,358.3,20021,1,4,0)
+ ;;=4^V00.892A
+ ;;^UTILITY(U,$J,358.3,20021,2)
+ ;;=^5055967
+ ;;^UTILITY(U,$J,358.3,20022,0)
+ ;;=V00.892D^^94^935^100
+ ;;^UTILITY(U,$J,358.3,20022,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20022,1,3,0)
+ ;;=3^Pedestrian Conveyance Colliding w/ Stationary Obj,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,20022,1,4,0)
+ ;;=4^V00.892D
+ ;;^UTILITY(U,$J,358.3,20022,2)
+ ;;=^5055968
+ ;;^UTILITY(U,$J,358.3,20023,0)
+ ;;=V00.898A^^94^935^97
+ ;;^UTILITY(U,$J,358.3,20023,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20023,1,3,0)
+ ;;=3^Pedestrian Conveyance Accident NEC,Init Encntr
+ ;;^UTILITY(U,$J,358.3,20023,1,4,0)
+ ;;=4^V00.898A
+ ;;^UTILITY(U,$J,358.3,20023,2)
+ ;;=^5055970
+ ;;^UTILITY(U,$J,358.3,20024,0)
+ ;;=V00.898D^^94^935^98
+ ;;^UTILITY(U,$J,358.3,20024,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20024,1,3,0)
+ ;;=3^Pedestrian Conveyance Accident NEC,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,20024,1,4,0)
+ ;;=4^V00.898D
+ ;;^UTILITY(U,$J,358.3,20024,2)
+ ;;=^5055971
+ ;;^UTILITY(U,$J,358.3,20025,0)
+ ;;=W00.0XXA^^94^935^79
+ ;;^UTILITY(U,$J,358.3,20025,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20025,1,3,0)
+ ;;=3^Fall on Same Level d/t Ice/Snow,Init Encntr
+ ;;^UTILITY(U,$J,358.3,20025,1,4,0)
+ ;;=4^W00.0XXA
+ ;;^UTILITY(U,$J,358.3,20025,2)
+ ;;=^5059510
+ ;;^UTILITY(U,$J,358.3,20026,0)
+ ;;=W00.0XXD^^94^935^80
+ ;;^UTILITY(U,$J,358.3,20026,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20026,1,3,0)
+ ;;=3^Fall on Same Level d/t Ice/Snow,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,20026,1,4,0)
+ ;;=4^W00.0XXD
+ ;;^UTILITY(U,$J,358.3,20026,2)
+ ;;=^5059511
+ ;;^UTILITY(U,$J,358.3,20027,0)
+ ;;=W00.1XXA^^94^935^59
+ ;;^UTILITY(U,$J,358.3,20027,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20027,1,3,0)
+ ;;=3^Fall from Stairs/Steps d/t Ice/Snow,Init Encntr
+ ;;^UTILITY(U,$J,358.3,20027,1,4,0)
+ ;;=4^W00.1XXA
+ ;;^UTILITY(U,$J,358.3,20027,2)
+ ;;=^5059513
+ ;;^UTILITY(U,$J,358.3,20028,0)
+ ;;=W00.1XXD^^94^935^60
+ ;;^UTILITY(U,$J,358.3,20028,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20028,1,3,0)
+ ;;=3^Fall from Stairs/Steps d/t Ice/Snow,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,20028,1,4,0)
+ ;;=4^W00.1XXD
+ ;;^UTILITY(U,$J,358.3,20028,2)
+ ;;=^5059514
+ ;;^UTILITY(U,$J,358.3,20029,0)
+ ;;=W00.2XXA^^94^935^53
+ ;;^UTILITY(U,$J,358.3,20029,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20029,1,3,0)
+ ;;=3^Fall from One Level to Another d/t Ice/Snow,Init Encntr
+ ;;^UTILITY(U,$J,358.3,20029,1,4,0)
+ ;;=4^W00.2XXA
+ ;;^UTILITY(U,$J,358.3,20029,2)
+ ;;=^5059516
+ ;;^UTILITY(U,$J,358.3,20030,0)
+ ;;=W00.2XXD^^94^935^54
+ ;;^UTILITY(U,$J,358.3,20030,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20030,1,3,0)
+ ;;=3^Fall from One Level to Another d/t Ice/Snow,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,20030,1,4,0)
+ ;;=4^W00.2XXD
+ ;;^UTILITY(U,$J,358.3,20030,2)
+ ;;=^5059517
+ ;;^UTILITY(U,$J,358.3,20031,0)
+ ;;=W00.9XXA^^94^935^25
+ ;;^UTILITY(U,$J,358.3,20031,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20031,1,3,0)
+ ;;=3^Fall d/t Ice/Snow,Unspec,Init Encntr
+ ;;^UTILITY(U,$J,358.3,20031,1,4,0)
+ ;;=4^W00.9XXA

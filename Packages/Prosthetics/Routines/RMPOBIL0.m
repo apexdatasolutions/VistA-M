@@ -1,9 +1,15 @@
 RMPOBIL0 ;EDS/MDB/HINES CIOFO/HNC - HOME OXYGEN BILLING TRANSACTIONS ;7/24/98  07:34
- ;;3.0;PROSTHETICS;**29,46,50,147**;Feb 09, 1996;Build 4
+ ;;3.0;PROSTHETICS;**29,46,50,147,179,190**;Feb 09, 1996;Build 5
  ;
  ; ODJ - patch 50 - 7/25/00 fix DIR date call in PREBILL sub. so as to
  ;                          interpret 2 digit entry as month
  ;                          (FM interpets this as year)
+ ;
+ ;RMPR*3.0*179 Added check for Deceased Date less than billing month
+ ;             begin date, error -1 and skips patient billing due to
+ ;             change in release DI*22.2*5.
+ ;
+ ;RMPR*3.0*190 Insure %DT(0) is not set prior to date handling
  ;
 OLD ; Enter from top (OLD code)
  ;
@@ -35,6 +41,7 @@ VENDOR(LAYGO) ;Select Vendor
  S RMPOVDR=+Y
  ;S RMPOVDR=$P(Y,U,2)  ; PER ANALYST
  I $P(Y,U,3)>0 D
+ . K %DT(0)    ;RMPR*3.0*190
  . S DIE=DIC,DA=+Y,DR="1///NOW" D ^DIE
  Q
 CKSITE ;Set up Site in Billing if it is not there
@@ -95,6 +102,10 @@ OK2BLD(VENDOR) ; Determine whether to include trx for RMPODFN
  S RMPOINDT=$P($G(^RMPR(665,RMPODFN,"RMPOA")),U,3)
  I $G(RMPOINDT) Q:RMPOINDT<RMPODATE -3
  ;Q:$P($G(^RMPR(665,RMPODFN,"RMPOA")),U,3) -3
+ ;
+ ; Do NOT process if Deceased date less the billing date.   ;RMPR*3.0*179 Skip a deceased patient. ^DPT(D0,.35) direct read supported by ICR #10035
+ S RMPOINDT=+$G(^DPT(RMPODFN,.35))
+ I $G(RMPOINDT) Q:RMPOINDT<RMPODATE -9
  ;
  ; Do NOT process if no Rx
  Q:'$D(^RMPR(665,RMPODFN,"RMPOB",0)) -4
@@ -196,6 +207,7 @@ BLDSTAT(RMPODFN) ;STATUS OF PT FOR GIVEN BUILD
  Q:OK=-6 "RX expires prior to billing period"
  Q:OK=-7 "No items on file"
  Q:OK=-8 "No items for vendor"
+ Q:OK=-9 "Patient deceased, not inactivated"    ;RMPR*3.0*179
  Q "Other Unknown Error"
  Q
 EXIT ;Kill variables before quitting

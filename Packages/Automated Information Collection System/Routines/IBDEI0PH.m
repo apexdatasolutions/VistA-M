@@ -1,142 +1,120 @@
-IBDEI0PH ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0PH ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,12570,2)
- ;;=^60144
- ;;^UTILITY(U,$J,358.3,12571,0)
- ;;=276.1^^87^820^30
- ;;^UTILITY(U,$J,358.3,12571,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12571,1,4,0)
- ;;=4^276.1
- ;;^UTILITY(U,$J,358.3,12571,1,5,0)
- ;;=5^Hyponatremia
- ;;^UTILITY(U,$J,358.3,12571,2)
- ;;=Hyponatremia^60722
- ;;^UTILITY(U,$J,358.3,12572,0)
- ;;=275.3^^87^820^18
- ;;^UTILITY(U,$J,358.3,12572,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12572,1,4,0)
- ;;=4^275.3
- ;;^UTILITY(U,$J,358.3,12572,1,5,0)
- ;;=5^Hyper Or Hypophosphatemia
- ;;^UTILITY(U,$J,358.3,12572,2)
- ;;=^93796
- ;;^UTILITY(U,$J,358.3,12573,0)
- ;;=240.0^^87^820^13
- ;;^UTILITY(U,$J,358.3,12573,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12573,1,4,0)
- ;;=4^240.0
- ;;^UTILITY(U,$J,358.3,12573,1,5,0)
- ;;=5^Goiter, Simple
- ;;^UTILITY(U,$J,358.3,12573,2)
- ;;=^259806
- ;;^UTILITY(U,$J,358.3,12574,0)
- ;;=241.1^^87^820^12
- ;;^UTILITY(U,$J,358.3,12574,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12574,1,4,0)
- ;;=4^241.1
- ;;^UTILITY(U,$J,358.3,12574,1,5,0)
- ;;=5^Goiter, Nontox, Multinod
- ;;^UTILITY(U,$J,358.3,12574,2)
- ;;=^267790
- ;;^UTILITY(U,$J,358.3,12575,0)
- ;;=241.0^^87^820^42
- ;;^UTILITY(U,$J,358.3,12575,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12575,1,4,0)
- ;;=4^241.0
- ;;^UTILITY(U,$J,358.3,12575,1,5,0)
- ;;=5^Thyroid Nodule, Nontoxic
- ;;^UTILITY(U,$J,358.3,12575,2)
- ;;=^83865
- ;;^UTILITY(U,$J,358.3,12576,0)
- ;;=242.00^^87^820^16
- ;;^UTILITY(U,$J,358.3,12576,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12576,1,4,0)
- ;;=4^242.00
- ;;^UTILITY(U,$J,358.3,12576,1,5,0)
- ;;=5^Graves' Disease
- ;;^UTILITY(U,$J,358.3,12576,2)
- ;;=^267793
- ;;^UTILITY(U,$J,358.3,12577,0)
- ;;=242.01^^87^820^11
- ;;^UTILITY(U,$J,358.3,12577,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12577,1,4,0)
- ;;=4^242.01
- ;;^UTILITY(U,$J,358.3,12577,1,5,0)
- ;;=5^Goiter Diff Tox W Strm
- ;;^UTILITY(U,$J,358.3,12577,2)
- ;;=^267794
- ;;^UTILITY(U,$J,358.3,12578,0)
- ;;=252.1^^87^820^31
- ;;^UTILITY(U,$J,358.3,12578,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12578,1,4,0)
- ;;=4^252.1
- ;;^UTILITY(U,$J,358.3,12578,1,5,0)
- ;;=5^Hypoparathyroidism
- ;;^UTILITY(U,$J,358.3,12578,2)
- ;;=^60635
- ;;^UTILITY(U,$J,358.3,12579,0)
- ;;=242.90^^87^820^25
- ;;^UTILITY(U,$J,358.3,12579,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12579,1,4,0)
- ;;=4^242.90
- ;;^UTILITY(U,$J,358.3,12579,1,5,0)
- ;;=5^Hyperthyroid w/o Goiter Or Strm
- ;;^UTILITY(U,$J,358.3,12579,2)
- ;;=^267811
- ;;^UTILITY(U,$J,358.3,12580,0)
- ;;=242.91^^87^820^36
- ;;^UTILITY(U,$J,358.3,12580,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12580,1,4,0)
- ;;=4^242.91
- ;;^UTILITY(U,$J,358.3,12580,1,5,0)
- ;;=5^Hyprthy W/O Goit W Strm
- ;;^UTILITY(U,$J,358.3,12580,2)
- ;;=^267812
- ;;^UTILITY(U,$J,358.3,12581,0)
- ;;=244.0^^87^820^34
- ;;^UTILITY(U,$J,358.3,12581,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12581,1,4,0)
- ;;=4^244.0
- ;;^UTILITY(U,$J,358.3,12581,1,5,0)
- ;;=5^Hypothyroid, Postsurgical
- ;;^UTILITY(U,$J,358.3,12581,2)
- ;;=^267814
- ;;^UTILITY(U,$J,358.3,12582,0)
- ;;=244.2^^87^820^33
- ;;^UTILITY(U,$J,358.3,12582,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12582,1,4,0)
- ;;=4^244.2
- ;;^UTILITY(U,$J,358.3,12582,1,5,0)
- ;;=5^Hypothyroid Due To Iodine Rx
- ;;^UTILITY(U,$J,358.3,12582,2)
- ;;=^267817
- ;;^UTILITY(U,$J,358.3,12583,0)
- ;;=244.9^^87^820^35
- ;;^UTILITY(U,$J,358.3,12583,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12583,1,4,0)
- ;;=4^244.9
- ;;^UTILITY(U,$J,358.3,12583,1,5,0)
- ;;=5^Hypothyroid, Unspec Cause
- ;;^UTILITY(U,$J,358.3,12583,2)
- ;;=^123752
- ;;^UTILITY(U,$J,358.3,12584,0)
- ;;=245.0^^87^820^43
- ;;^UTILITY(U,$J,358.3,12584,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12584,1,4,0)
- ;;=4^245.0
+ ;;^UTILITY(U,$J,358.3,11672,1,4,0)
+ ;;=4^S56.811A
+ ;;^UTILITY(U,$J,358.3,11672,2)
+ ;;=^5031862
+ ;;^UTILITY(U,$J,358.3,11673,0)
+ ;;=S56.812A^^68^688^21
+ ;;^UTILITY(U,$J,358.3,11673,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11673,1,3,0)
+ ;;=3^Strain of Left Forearm Muscle/Fasc/Tendon
+ ;;^UTILITY(U,$J,358.3,11673,1,4,0)
+ ;;=4^S56.812A
+ ;;^UTILITY(U,$J,358.3,11673,2)
+ ;;=^5031865
+ ;;^UTILITY(U,$J,358.3,11674,0)
+ ;;=S56.116A^^68^688^33
+ ;;^UTILITY(U,$J,358.3,11674,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11674,1,3,0)
+ ;;=3^Strain of Left Ring Finger at Forearm Level Flexor Muscle/Fasc/Tendon
+ ;;^UTILITY(U,$J,358.3,11674,1,4,0)
+ ;;=4^S56.116A
+ ;;^UTILITY(U,$J,358.3,11674,2)
+ ;;=^5031631
+ ;;^UTILITY(U,$J,358.3,11675,0)
+ ;;=S56.117A^^68^688^46
+ ;;^UTILITY(U,$J,358.3,11675,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11675,1,3,0)
+ ;;=3^Strain of Right Little Finger at Forearm Level Flexor Muscle/Fasc/Tendon
+ ;;^UTILITY(U,$J,358.3,11675,1,4,0)
+ ;;=4^S56.117A
+ ;;^UTILITY(U,$J,358.3,11675,2)
+ ;;=^5031634
+ ;;^UTILITY(U,$J,358.3,11676,0)
+ ;;=S56.118A^^68^688^26
+ ;;^UTILITY(U,$J,358.3,11676,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11676,1,3,0)
+ ;;=3^Strain of Left Little Finger at Forearm Level Flexor Muscle/Fasc/Tendon
+ ;;^UTILITY(U,$J,358.3,11676,1,4,0)
+ ;;=4^S56.118A
+ ;;^UTILITY(U,$J,358.3,11676,2)
+ ;;=^5031637
+ ;;^UTILITY(U,$J,358.3,11677,0)
+ ;;=S56.211A^^68^688^40
+ ;;^UTILITY(U,$J,358.3,11677,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11677,1,3,0)
+ ;;=3^Strain of Right Forearm Flexor Muscle/Fasc/Tendon
+ ;;^UTILITY(U,$J,358.3,11677,1,4,0)
+ ;;=4^S56.211A
+ ;;^UTILITY(U,$J,358.3,11677,2)
+ ;;=^5031691
+ ;;^UTILITY(U,$J,358.3,11678,0)
+ ;;=S56.212A^^68^688^20
+ ;;^UTILITY(U,$J,358.3,11678,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11678,1,3,0)
+ ;;=3^Strain of Left Forearm Flexor Muscle/Fasc/Tendon
+ ;;^UTILITY(U,$J,358.3,11678,1,4,0)
+ ;;=4^S56.212A
+ ;;^UTILITY(U,$J,358.3,11678,2)
+ ;;=^5031694
+ ;;^UTILITY(U,$J,358.3,11679,0)
+ ;;=S56.311A^^68^688^56
+ ;;^UTILITY(U,$J,358.3,11679,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11679,1,3,0)
+ ;;=3^Strain of Right Thumb at Forearm Level Extn/Abdr Muscle/Fasc/Tendon
+ ;;^UTILITY(U,$J,358.3,11679,1,4,0)
+ ;;=4^S56.311A
+ ;;^UTILITY(U,$J,358.3,11679,2)
+ ;;=^5031715
+ ;;^UTILITY(U,$J,358.3,11680,0)
+ ;;=S56.312A^^68^688^35
+ ;;^UTILITY(U,$J,358.3,11680,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11680,1,3,0)
+ ;;=3^Strain of Left Thumb at Forearm Level Extn/Abdr Muscle/Fasc/Tendon
+ ;;^UTILITY(U,$J,358.3,11680,1,4,0)
+ ;;=4^S56.312A
+ ;;^UTILITY(U,$J,358.3,11680,2)
+ ;;=^5031718
+ ;;^UTILITY(U,$J,358.3,11681,0)
+ ;;=S56.411A^^68^688^44
+ ;;^UTILITY(U,$J,358.3,11681,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11681,1,3,0)
+ ;;=3^Strain of Right Index Finger at Forearm Level Extensor Muscle/Fasc/Tendon
+ ;;^UTILITY(U,$J,358.3,11681,1,4,0)
+ ;;=4^S56.411A
+ ;;^UTILITY(U,$J,358.3,11681,2)
+ ;;=^5031763
+ ;;^UTILITY(U,$J,358.3,11682,0)
+ ;;=S56.412A^^68^688^24
+ ;;^UTILITY(U,$J,358.3,11682,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11682,1,3,0)
+ ;;=3^Strain of Left Index Finger at Forearm Level Extensor Muscle/Fasc/Tendon
+ ;;^UTILITY(U,$J,358.3,11682,1,4,0)
+ ;;=4^S56.412A
+ ;;^UTILITY(U,$J,358.3,11682,2)
+ ;;=^5031766
+ ;;^UTILITY(U,$J,358.3,11683,0)
+ ;;=S56.413A^^68^688^52
+ ;;^UTILITY(U,$J,358.3,11683,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11683,1,3,0)
+ ;;=3^Strain of Right Middle Finger at Forearm Level Extensor Muscle/Fasc/Tendon
+ ;;^UTILITY(U,$J,358.3,11683,1,4,0)
+ ;;=4^S56.413A
+ ;;^UTILITY(U,$J,358.3,11683,2)
+ ;;=^5031769
+ ;;^UTILITY(U,$J,358.3,11684,0)
+ ;;=S56.414A^^68^688^32

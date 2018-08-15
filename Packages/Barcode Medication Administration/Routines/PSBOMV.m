@@ -1,11 +1,13 @@
-PSBOMV ;BIRMINGHAM/EFC-BCMA UNIT DOSE VIRTUAL DUE LIST FUNCTIONS ;Mar 2004
- ;;3.0;BAR CODE MED ADMIN;**60,78**;Mar 2004;Build 8
+PSBOMV ;BIRMINGHAM/EFC-BCMA UNIT DOSE VIRTUAL DUE LIST FUNCTIONS ;03/06/16 3:06pm
+ ;;3.0;BAR CODE MED ADMIN;**60,78,72,86,83**;Mar 2004;Build 89
  ;Per VHA Directive 2004-038 (or future revisions regarding same), this routine should not be modified.
  ;
  ; Reference/IA
  ; ^DPT/10035
  ; ^NURSF(211.4/1409
+ ; ^XLFDT/10103
  ;
+ ;*83 - add ablility to print Removal of meds variances now.
 EN ;
  N CNT,PSBHDR,PSBPT,PSBINDX,DFN,PSBY,PSBSORT,PSBPRINT,PSBDT,PSBEV,PSBLOG,PSBPRCX,PSBRB,PSBSTOP,PSBSTRT,PSBTIME,PSBWLF,PSBWRD,PSBWRDA,PSBX,PSBY,PSBXX
  ;
@@ -24,9 +26,18 @@ RANGE ;Locate data between date range.
 CHECK ..;Ward IEN must exist in Ward Field # 9.
  ..Q:'$G(PSBWLF)
  ..Q:'$G(PSBLOG)
- ..;PSB*3*60 adds code to allow a variance equal to system variable DILOCKTM when checking for removal of a patch
- ..S PSBTMDF=$$FMDIFF^XLFDT($P($G(^PSB(53.79,PSBLOG,0)),U,6),$G(PSBTIME),2) ;PSB*3*60
- ..I PSBTMDF>=-($S($G(DILOCKTM)>0:DILOCKTM,1:3)),PSBTMDF<=$S($G(DILOCKTM)>0:DILOCKTM,1:3),$P($G(^PSB(53.79,PSBLOG,0)),U,9)="RM" Q  ;PSB*3*60
+ ..;*83
+ ..; Fix *60 no longer applies, Removals are now tracked by event code
+ ..; & added to the Var Log file similar to how a Give would be.
+ ..; ORDER ADMINISTRATION VARIANCE field (#.14) in file (#53.79), now
+ ..; also contains Variance of Removes.  Calculated remove time vs
+ ..; Scheduled remove time and passes in a Removal type event code.
+ ..;    see DD 53.79 trigger xrefs.
+ ..;
+ ..;;PSB*3*60 adds code to allow a variance equal to system variable DILOCKTM when checking for removal of a patch
+ ..;;S PSBTMDF=$$FMDIFF^XLFDT($P($G(^PSB(53.79,PSBLOG,0)),U,6),$G(PSBTIME),2) ;PSB*3*60
+ ..;;I PSBTMDF>=-($S($G(DILOCKTM)>0:DILOCKTM,1:3)),PSBTMDF<=$S($G(DILOCKTM)>0:DILOCKTM,1:3),$P($G(^PSB(53.79,PSBLOG,0)),U,9)="RM" Q  ;PSB*3*60
+ ..;
  ..;Quit if Ward IEN is not in Nurse Location file.
  ..I PSBPRINT="W",'$O(^NURSF(211.4,"C",PSBWLF,PSBWRD,0)) Q
  ..;Compare date/time and Quit if order status set to Remove.
@@ -53,7 +64,7 @@ BYWDPT ;Print by Ward and Sort by Patient.
  .....W ?48,$$GET1^DIQ(53.78,PSBY_",",.04)
  .....W ?75,$$GET1^DIQ(53.78,PSBY_",",.05)
  .....W ?95,$$GET1^DIQ(53.78,PSBY_",",.06)
- .....W ?102,$$GET1^DIQ(53.78,PSBY_",",.07)
+ .....;W ?102,$$GET1^DIQ(53.78,PSBY_",",.07) - Remove .07 since medication is written through pointer, PSB*3*86
  .....W ?102,$$GET1^DIQ(53.78,PSBY_",","MED LOG PTR:ADMINISTRATION MEDICATION")
  .....D VCOM ;Print Ward and Comments from Med Log.
  .....W !?52
@@ -76,7 +87,7 @@ BYWDRB ;Print by Ward and Sort by Room and Bed.
  .....W ?48,$$GET1^DIQ(53.78,PSBY_",",.04)
  .....W ?75,$$GET1^DIQ(53.78,PSBY_",",.05)
  .....W ?95,$$GET1^DIQ(53.78,PSBY_",",.06)
- .....W ?102,$$GET1^DIQ(53.78,PSBY_",",.07)
+ .....;W ?102,$$GET1^DIQ(53.78,PSBY_",",.07) - Remove .07 since medication is written through pointer, PSB*3*86
  .....W ?102,$$GET1^DIQ(53.78,PSBY_",","MED LOG PTR:ADMINISTRATION MEDICATION")
  .....D VCOM ;Print Ward and Comments from Med Log.
  .....W !?52
@@ -95,7 +106,7 @@ BYDFN ;Print by Patient.
  .....W !,$$GET1^DIQ(53.78,PSBY_",",.04)
  .....W ?23,$$GET1^DIQ(53.78,PSBY_",",.05)
  .....W ?43,$$GET1^DIQ(53.78,PSBY_",",.06)
- .....W ?50,$$GET1^DIQ(53.78,PSBY_",",.07)
+ .....;W ?50,$$GET1^DIQ(53.78,PSBY_",",.07) - Remove .07 since medication is written through pointer, PSB*3*86
  .....W ?50,$$GET1^DIQ(53.78,PSBY_",","MED LOG PTR:ADMINISTRATION MEDICATION")
  .....D VCOM ;Print Ward and Comments from Med Log.
  .W !!  D EVEPRNT
@@ -104,7 +115,7 @@ BYDFN ;Print by Patient.
  ;
 WRDHDR() ;
  N PSBSRCHL ;Add PSBSRCHL variable and additional PSBHDR array spacers for PSBOHDR call, PSB*3*78
- S PSBHDR(1)="MEDICATION VARIANCE LOG"
+ S PSBHDR(1)="MEDICATION VARIANCE LOG for "_$$FMTE^XLFDT(PSBSTRT)_" to "_$$FMTE^XLFDT(PSBSTOP) ;Add time frame for report header, PSB*3*72
  S PSBSRCHL=$$SRCHLIST^PSBOHDR()
  S PSBHDR(2)="",PSBHDR(3)="",PSBHDR(4)="Ward Location: "
  D WARD^PSBOHDR(PSBWRD,.PSBHDR,,,PSBSRCHL)
@@ -112,7 +123,7 @@ WRDHDR() ;
  Q ""
  ;
 PTHDR() ;
- S PSBHDR(1)="MEDICATION VARIANCE LOG"
+ S PSBHDR(1)="MEDICATION VARIANCE LOG for "_$$FMTE^XLFDT(PSBSTRT)_" to "_$$FMTE^XLFDT(PSBSTOP) ;Add time frame for report header, PSB*3*72
  D PT^PSBOHDR(PSBDFN,.PSBHDR)
  W !,"Event Date/Time",?23,"Event",?43,"Var",?50,"Medication",!,$TR($J("",IOM)," ","-")
  Q ""

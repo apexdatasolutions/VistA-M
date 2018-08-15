@@ -1,6 +1,6 @@
-IBCNEDEP ;DAOU/ALA - Process Transaction Records ;17-JUN-2002
- ;;2.0;INTEGRATED BILLING;**184,271,300,416,438,506**;21-MAR-94;Build 74
- ;;Per VHA Directive 2004-038, this routine should not be modified.
+IBCNEDEP ;DAOU/ALA - Process Transaction Records ;14-OCT-2015
+ ;;2.0;INTEGRATED BILLING;**184,271,300,416,438,506,533,549,601**;21-MAR-94;Build 14
+ ;;Per VA Directive 6402, this routine should not be modified.
  ;
  ;  This program finds records needing HL7 msg creation
  ;  Periodically check for stop request for background task
@@ -33,7 +33,9 @@ EN ;  Entry point
  ;  Start processing of data
  K ^TMP("HLS",$J),^TMP("IBQUERY",$J)
  ; Initialize count for periodic TaskMan check
- S IBCNETOT=0
+ ;IB*533 RRA CREATE VARIABLES TO ACCOUNT FOR MAX SENT LIMITATIONS
+ N IBMAXCNT,IBSENT
+ S IBCNETOT=0,IBSENT=0
  ;
  S C1CODE=$O(^IBE(365.15,"B","C1",""))
  ;  Get IB Site Parameters
@@ -42,6 +44,7 @@ EN ;  Entry point
  S MGRP=$$MGRP^IBCNEUT5()
  S FAIL=$P(IBCNEP,U,5),TMSG=$P(IBCNEP,U,7),FMSG=$P(IBCNEP,U,20)
  S RETRYFLG=$P(IBCNEP,U,26)        ;set value to (#350.9, 51.26) - IB*2.0*506
+ S IBMAXCNT=$P(IBCNEP,U,15)   ;get HL7 MAXIMUM NUMBER - IB*533
  S FLDT=$$FMADD^XLFDT(DT,-FAIL)
  ; Statuses
  ;   1 = Ready To Transmit
@@ -82,7 +85,7 @@ TMT ;  If the status is 'Transmitted' - is this a 'Retry' or
  .. D SST^IBCNEUT2(IEN,6)    ; mark TQ entry status as 'retry'
  .. Q
  . ;
- . D SST^IBCNEUT2(IEN,5)     ; if RETRYFLG=NO set TQ record to 'communication faliure'
+ . D SST^IBCNEUT2(IEN,5)     ; if RETRYFLG=NO set TQ record to 'communication failure'
  . ;
  . ;  For msg in the Response file set the status to
  . ; 'Comm Failure'
@@ -154,9 +157,9 @@ FIN ; Prioritize requests for statuses 'Retry' and 'Ready to Transmit'
  ;
 LP ;  Loop through priorities, process as either verifications
  ;  or identifications
- N IHCNT
+ N IHCNT,IBSTOP
  S VNUM="",IHCNT=0
- F  S VNUM=$O(^TMP("IBQUERY",$J,VNUM)) Q:VNUM=""  D  Q:$G(ZTSTOP)!$G(QFL)=1
+ F  S VNUM=$O(^TMP("IBQUERY",$J,VNUM)) Q:VNUM=""  D  Q:$G(ZTSTOP)!$G(QFL)=1!($G(IBSTOP)=1)
  . I VNUM=1!(VNUM=3) D VER Q
  . ;D ID
  ;
@@ -175,7 +178,7 @@ VER ;  Initialize HL7 variables protocol for Verifications
  D INIT^IBCNEHLO
  ;
  S DFN=""
- F  S DFN=$O(^TMP("IBQUERY",$J,VNUM,DFN)) Q:DFN=""  D  Q:$G(ZTSTOP)
+ F  S DFN=$O(^TMP("IBQUERY",$J,VNUM,DFN)) Q:DFN=""  D  Q:$G(ZTSTOP)!($G(IBSTOP)=1)
  . ;
  . ;  If the INQUIRE SECONDARY INSURANCES flag is 'yes',
  . ;  bundle verifications together, send a continuation pointer
@@ -184,7 +187,10 @@ VER ;  Initialize HL7 variables protocol for Verifications
  .. F  S IEN=$O(^TMP("IBQUERY",$J,VNUM,DFN,IEN)) Q:IEN=""  S TOT=TOT+1
  . ;
  . S IEN="",OMSGID="",QFL=0,CNT=0
- . F  S IEN=$O(^TMP("IBQUERY",$J,VNUM,DFN,IEN)) Q:IEN=""  D  Q:$G(ZTSTOP)
+ . F  S IEN=$O(^TMP("IBQUERY",$J,VNUM,DFN,IEN)) Q:IEN=""  D  Q:$G(ZTSTOP)!($G(IBSTOP)=1)
+ .. ;
+ .. ; IB*2.0*549 - quit if test site and not a valid test case
+ .. Q:'$$XMITOK^IBCNETST(IEN)
  .. ; Update count for periodic check
  .. S IBCNETOT=IBCNETOT+1
  .. ; Check for request to stop background job, periodically
@@ -200,6 +206,9 @@ VER ;  Initialize HL7 variables protocol for Verifications
  .. ;  If not successful
  .. I $P(HLRESLT,U,2)]"" D HLER^IBCNEDEQ Q
  .. ;  If successful
+ .. ; increment counter and quit if reached IBMAXCNT IB*533
+ .. S IBSENT=IBSENT+1
+ .. I IBMAXCNT'="",IBSENT+1>IBMAXCNT S IBSTOP=1
  .. D SCC^IBCNEDEQ
  .. I BNDL D
  ... I CNT=1 S OMSGID=MSGID
@@ -266,8 +275,15 @@ PROC ;  Process TQ record
  . S ^TMP("HLS",$J,HCT)=$TR(IN1,"*","")
  ;
  ;  Build multi-field NTE segment
- D NTE^IBCNEHLQ
+ D NTE^IBCNEHLQ(1)
  ;  If build successful
+ I NTE'="",$E(NTE,1)'="*" S HCT=HCT+1,^TMP("HLS",$J,HCT)=$TR(NTE,"*","")
+ ; IB*2.0*601 - Added NTE 2 & 3
+ D NTE^IBCNEHLQ(2)
+ ; If build successful Second NTE segment
+ I NTE'="",$E(NTE,1)'="*" S HCT=HCT+1,^TMP("HLS",$J,HCT)=$TR(NTE,"*","")
+ D NTE^IBCNEHLQ(3)
+ ; set the third NTE segment
  I NTE'="",$E(NTE,1)'="*" S HCT=HCT+1,^TMP("HLS",$J,HCT)=$TR(NTE,"*","")
  K NTE
  Q

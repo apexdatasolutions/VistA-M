@@ -1,5 +1,5 @@
 ONCODSP ;Hines OIFO/GWB,RTK - MISCELLANEOUS OPTIONS ;05/05/10
- ;;2.2;ONCOLOGY;**1**;Jul 31, 2013;Build 8
+ ;;2.2;ONCOLOGY;**1,4,5**;Jul 31, 2013;Build 6
  ;
 TR ;[TR Define Tumor Registry Parameters]
  W ! S DIC="^ONCO(160.1,",DIC(0)="AEMLQ",DLAYGO=160.1 D ^DIC
@@ -27,9 +27,9 @@ TR ;[TR Define Tumor Registry Parameters]
  S DR(1,160.1,12)="W !"
  S DR(1,160.1,13)="8  AFFILIATED DIVISION."
  S DR(1,160.1,14)="W !"
- S DR(1,160.1,15)="5  AUTHORZIED QA USER.."
+ S DR(1,160.1,15)="5  AUTHORIZED QA USER.."
  S DR(1,160.1,16)="W !"
- S DR(1,160.1,17)="105  ABSTRATOR/REGISTRAR"
+ S DR(1,160.1,17)="105  ABSTRACTOR/REGISTRAR"
  D ^DIE
  W ! K DIR S DIR(0)="E" D ^DIR S:$D(DIRUT) OUT="Y"
  G EX
@@ -62,6 +62,11 @@ PW ;Print Worksheet
  S BY="@NUMBER",FR=NUMBER,TO=NUMBER,FLDS="[ONCO WORKSHEET]"
  D EN1^DIP
  G WS
+FST ;Type of First Recurrence for RF option.
+ ;added label FST in p *2.2*4
+ W:$G(ONC1655) ?28,$E($$GET1^DIQ(165.5,ONC1655,20),1,15),?45,$E($$GET1^DIQ(165.5,ONC1655,.02),1,11)
+ W:$G(ONC16012) ?58,$P($G(^ONCO(160.12,ONC16012,0)),U,2)
+ Q
  ;
 RSR ;[RS Registry Summary Reports]
  S ONCOS("T")="T",DIR("A")=" Select"

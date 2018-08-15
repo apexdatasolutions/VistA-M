@@ -1,6 +1,11 @@
-FBAACO3 ;AISC/GRR - ENTER PAYMENT CONTINUED ;10/31/12 2:56pm
- ;;3.5;FEE BASIS;**4,38,55,61,116,122,133,108,124,143,139**;JAN 30, 1995;Build 127
+FBAACO3 ;AISC/GRR - ENTER PAYMENT CONTINUED ;12/4/14  14:11
+ ;;3.5;FEE BASIS;**4,38,55,61,116,122,133,108,124,143,139,157,154,158**;JAN 30, 1995;Build 94
  ;;Per VA Directive 6402, this routine should not be modified.
+ ;
+ ;FB*3.5*157 Modify file 162, Diagnosis (field 28) stuff from '///' to '////'
+ ;           since needed file 80 dx IEN is already passed back from DX 
+ ;           lookup.
+ ;
 DOEDIT ;
  N FB1725,FBFPPSC
  W ! S FBAACP(0)=FBAACP
@@ -42,21 +47,19 @@ DOEDIT ;
  ; now edit remaining fields
  D SETO K DR
  ;JAS - 09/13/13 - PATCH 139 - Added FBDXCHK1 and FBDXCHK2
- N FBDXCHK1 S FBDXCHK1=";S:FBAADT<$$IMPDATE^FBCSV1(""10D"") Y=""@20"";@15;S XX1=-1 S XX1=$$ASKICD10^FBAACO2(FBAADT) S:XX1<0 Y=""@15"";28///^S X=XX1;S Y=""@21"";"
+ N FBDXCHK1 S FBDXCHK1=";S:FBAADT<$$IMPDATE^FBCSV1(""10D"") Y=""@20"";@15;S XX1=-1 S XX1=$$ASKICD10^FBAACO2(FBAADT) S:XX1<0 Y=""@15"";28////^S X=XX1;S Y=""@21"";"   ;;FB*3.5*157
  S FBDXCHK1=FBDXCHK1_"@20;S XX1=$$ASKICD9^FBAACO2(FBAADT) S:+XX1<0 Y=""@20"";28////^S X=+XX1;@21;31;32R;S Y=""@7"";"
- N FBDXCHK2 S FBDXCHK2=";S:FBAADT<$$IMPDATE^FBCSV1(""10D"") Y=""@26"";@25;S XX1=-1 S XX1=$$ASKICD10^FBAACO2(FBAADT) S:XX1<0 Y=""@25"";28///^S X=XX1;S Y=""@30"";@26;"
+ N FBDXCHK2 S FBDXCHK2=";S:FBAADT<$$IMPDATE^FBCSV1(""10D"") Y=""@26"";@25;S XX1=-1 S XX1=$$ASKICD10^FBAACO2(FBAADT) S:XX1<0 Y=""@25"";28////^S X=XX1;S Y=""@30"";@26;"   ;;FB*3.5*157
  S DR="48;47;S FBUNITS=X;42R;S FBZIP=X;S:$$ANES^FBAAFS($$CPT^FBAAUTL4(FBAACP)) Y=""@2"";43///@;S FBTIME=X;S Y=""@3"";@2;43R;S FBTIME=X;@3"
  ; fb*3.5*116 remove edit of interest indicator (162.03,34) to prevent different interest indicator values at line item level; interest indicator set at invoice level only
  S DR(1,162.03,1)="S FBAAMM=$S(FBAAPTC=""R"":"""",1:1);D PPT^FBAACO1(FBAAMM1,FBCNTRP,1);34///@;34////^S X=FBAAMM1;54///@;54////^S X=FBCNTRP;30R;S FBHCFA(30)=X;1;S J=X;Q"
- ;S DR(1,162.03,1)="30R;S FBHCFA(30)=X;1;S J=X;Q"
- S DR(1,162.03,2)="D FEEDT^FBAACO3;44///@;44///^S X=FBFSAMT;45///@;45///^S X=FBFSUSD;S:FBAMTPD'>0!(FBAMTPD=FBAMTPD(0)) Y=""@4"";2///^S X=FBAMTPD;@4;2//^S X=FBAMTPD;D CHKIT^FBAACO3;S K=X"
- ;S DR(1,162.03,3)="3//^S X=$S(J-K:J-K,1:"""");4;S:X'=4 Y=6;22;6////^S X=DUZ;13;33"
- S DR(1,162.03,3)="K FBADJD;M FBADJD=FBADJ;S FBX=$$ADJ^FBUTL2(J-K,.FBADJ,2,,.FBADJD,1)"
+ S DR(1,162.03,2)="D FEEDT^FBAACO3;44///@;44///^S X=FBFSAMT;45///@;45///^S X=FBFSUSD;S:FBAMTPD'>0!(FBAMTPD=FBAMTPD(0)) Y=""@4"";2///^S X=FBAMTPD;@4;2//^S X=FBAMTPD;S K=X"
+ S DR(1,162.03,3)="K FBADJD;M FBADJD=FBADJ;S FBX=$$ADJ^FBUTL2(J-K,.FBADJ,5,,.FBADJD,1,.FBRRMK,1)"
  S DR(1,162.03,4)="S:FBFPPSC="""" Y=13;W !,""FPPS CLAIM ID: ""_FBFPPSC;S FBX=$$FPPSL^FBUTL5(FBFPPSL,,1);51///^S X=FBX;S FBFPPSL=X;@13;13;I $$BADDATE^FBAACO3(FBAADT,X) S Y=""@13"";33"
  ;JAS - 09/13/13 - PATCH 139 - Updated line below for ICD-10
  S DR(1,162.03,5)="S:$$EXTPV^FBAAUTL5(FBPOV)=""01"" Y=""@1"";S Y=$S('$D(FB7078):""@5"",FB7078]"""":""@21"",1:""@5"");@5"_FBDXCHK1_"@1"_FBDXCHK2_"S XX1=$$ASKICD9^FBAACO2(FBAADT) S:+XX1<0 Y=""@26"";28////^S X=+XX1;@30;31"
- S DR(1,162.03,6)="@7;K FBRRMKD;M FBRRMKD=FBRRMK;S FBX=$$RR^FBUTL4(.FBRRMK,2,,.FBRRMKD)"
- S DR(1,162.03,7)="73;74;75;58;59;60;61;62;63;64;65;66;67;76;77;78;79;68;69"
+ S DR(1,162.03,6)="73;74;75;58;59;60;61;62;63;64;65;66;67;76;77;78;79;68;69"
+ S DR(1,162.03,7)="82///^S X=$$PYMTH^FBAAUTL(FBFSUSD)" ;FB*3.5*158
  S DIE="^FBAAC("_DFN_",1,"_FBV_",1,"_FBSDI_",1,",DIE("NO^")="",FBOT=1
  D LOCK^FBUCUTL("^FBAAC("_DFN_",1,"_FBV_",1,"_FBSDI_",1,",FBAACPI) I 'FBLOCK S FBAAOUT=1 Q
  D ^DIE
@@ -138,8 +141,6 @@ FEEDT ;
  . ; set default amount paid to lesser of amt claimed (J) or fee sched.
  . S FBAMTPD=$S(FBFSAMT'>0:J,FBFSAMT>J:J,1:FBFSAMT)
  W !
- Q
-CHKIT I X>FBAMTPD&('$D(^XUSEC("FBAASUPERVISOR",DUZ))) W !!,"You must be a holder of the 'FBAASUPERVISOR' security key in order to",!,"exceed the Fee Schedule.",! S $P(^FBAAC(DFN,1,FBV,1,FBSDI,1,FBAACPI,0),"^",3)=K,Y=2 Q
  Q
 NOGO W !!,*7,"This payment CANNOT be edited.  The batch the payment is in",!,"has been Vouchered.  You may void the payment with the Void Payment option.",!
  Q

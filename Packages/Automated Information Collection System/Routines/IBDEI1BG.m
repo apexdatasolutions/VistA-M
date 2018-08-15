@@ -1,136 +1,124 @@
-IBDEI1BG ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1BG ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,23570,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23570,1,2,0)
- ;;=2^173.02
- ;;^UTILITY(U,$J,358.3,23570,1,5,0)
- ;;=5^SCC of skin of lip
- ;;^UTILITY(U,$J,358.3,23570,2)
- ;;=^340465
- ;;^UTILITY(U,$J,358.3,23571,0)
- ;;=173.09^^148^1495^4
- ;;^UTILITY(U,$J,358.3,23571,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23571,1,2,0)
- ;;=2^173.09
- ;;^UTILITY(U,$J,358.3,23571,1,5,0)
- ;;=5^Other specified neoplasm of lip
- ;;^UTILITY(U,$J,358.3,23571,2)
- ;;=^340466
- ;;^UTILITY(U,$J,358.3,23572,0)
- ;;=173.10^^148^1495^5
- ;;^UTILITY(U,$J,358.3,23572,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23572,1,2,0)
- ;;=2^173.10
- ;;^UTILITY(U,$J,358.3,23572,1,5,0)
- ;;=5^Malig neoplasm of eyelid NOS
- ;;^UTILITY(U,$J,358.3,23572,2)
- ;;=^340597
- ;;^UTILITY(U,$J,358.3,23573,0)
- ;;=173.11^^148^1495^6
- ;;^UTILITY(U,$J,358.3,23573,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23573,1,2,0)
- ;;=2^173.11
- ;;^UTILITY(U,$J,358.3,23573,1,5,0)
- ;;=5^BCC of skin of eyelid/canthus
- ;;^UTILITY(U,$J,358.3,23573,2)
- ;;=^340467
- ;;^UTILITY(U,$J,358.3,23574,0)
- ;;=173.12^^148^1495^7
- ;;^UTILITY(U,$J,358.3,23574,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23574,1,2,0)
- ;;=2^173.12
- ;;^UTILITY(U,$J,358.3,23574,1,5,0)
- ;;=5^SCC of skin of eyelid/canthus
- ;;^UTILITY(U,$J,358.3,23574,2)
- ;;=^340468
- ;;^UTILITY(U,$J,358.3,23575,0)
- ;;=173.19^^148^1495^8
- ;;^UTILITY(U,$J,358.3,23575,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23575,1,2,0)
- ;;=2^173.19
- ;;^UTILITY(U,$J,358.3,23575,1,5,0)
- ;;=5^Other specified neoplasm eyelid
- ;;^UTILITY(U,$J,358.3,23575,2)
- ;;=^340469
- ;;^UTILITY(U,$J,358.3,23576,0)
- ;;=173.20^^148^1495^9
- ;;^UTILITY(U,$J,358.3,23576,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23576,1,2,0)
- ;;=2^173.20
- ;;^UTILITY(U,$J,358.3,23576,1,5,0)
- ;;=5^Malig neoplasm skin, ear/ear canal NOS
- ;;^UTILITY(U,$J,358.3,23576,2)
- ;;=^340598
- ;;^UTILITY(U,$J,358.3,23577,0)
- ;;=173.21^^148^1495^10
- ;;^UTILITY(U,$J,358.3,23577,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23577,1,2,0)
- ;;=2^173.21
- ;;^UTILITY(U,$J,358.3,23577,1,5,0)
- ;;=5^BCC of skin of ear/ear canal
- ;;^UTILITY(U,$J,358.3,23577,2)
- ;;=^340470
- ;;^UTILITY(U,$J,358.3,23578,0)
- ;;=173.22^^148^1495^11
- ;;^UTILITY(U,$J,358.3,23578,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23578,1,2,0)
- ;;=2^173.22
- ;;^UTILITY(U,$J,358.3,23578,1,5,0)
- ;;=5^SCC of skin of ear/ear canal
- ;;^UTILITY(U,$J,358.3,23578,2)
- ;;=^340471
- ;;^UTILITY(U,$J,358.3,23579,0)
- ;;=173.29^^148^1495^12
- ;;^UTILITY(U,$J,358.3,23579,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23579,1,2,0)
- ;;=2^173.29
- ;;^UTILITY(U,$J,358.3,23579,1,5,0)
- ;;=5^Other spec neoplasm skin, ear/ear canal
- ;;^UTILITY(U,$J,358.3,23579,2)
- ;;=^340472
- ;;^UTILITY(U,$J,358.3,23580,0)
- ;;=173.30^^148^1495^13
- ;;^UTILITY(U,$J,358.3,23580,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23580,1,2,0)
- ;;=2^173.30
- ;;^UTILITY(U,$J,358.3,23580,1,5,0)
- ;;=5^Malig neoplasm skin, face NOS
- ;;^UTILITY(U,$J,358.3,23580,2)
- ;;=^340599
- ;;^UTILITY(U,$J,358.3,23581,0)
- ;;=173.31^^148^1495^14
- ;;^UTILITY(U,$J,358.3,23581,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23581,1,2,0)
- ;;=2^173.31
- ;;^UTILITY(U,$J,358.3,23581,1,5,0)
- ;;=5^BCC of skin of face
- ;;^UTILITY(U,$J,358.3,23581,2)
- ;;=^340473
- ;;^UTILITY(U,$J,358.3,23582,0)
- ;;=173.32^^148^1495^15
- ;;^UTILITY(U,$J,358.3,23582,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23582,1,2,0)
- ;;=2^173.32
- ;;^UTILITY(U,$J,358.3,23582,1,5,0)
- ;;=5^SCC of skin of face
- ;;^UTILITY(U,$J,358.3,23582,2)
- ;;=^340474
- ;;^UTILITY(U,$J,358.3,23583,0)
- ;;=173.39^^148^1495^16
- ;;^UTILITY(U,$J,358.3,23583,1,0)
- ;;=^358.31IA^5^2
+ ;;^UTILITY(U,$J,358.3,21959,1,4,0)
+ ;;=4^S32.412S
+ ;;^UTILITY(U,$J,358.3,21959,2)
+ ;;=^5024712
+ ;;^UTILITY(U,$J,358.3,21960,0)
+ ;;=S32.411S^^101^1036^4
+ ;;^UTILITY(U,$J,358.3,21960,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21960,1,3,0)
+ ;;=3^Disp fx of anterior wall of right acetabulum, sequela
+ ;;^UTILITY(U,$J,358.3,21960,1,4,0)
+ ;;=4^S32.411S
+ ;;^UTILITY(U,$J,358.3,21960,2)
+ ;;=^5024706
+ ;;^UTILITY(U,$J,358.3,21961,0)
+ ;;=S32.472S^^101^1036^13
+ ;;^UTILITY(U,$J,358.3,21961,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21961,1,3,0)
+ ;;=3^Disp fx of medial wall of left acetabulum, sequela
+ ;;^UTILITY(U,$J,358.3,21961,1,4,0)
+ ;;=4^S32.472S
+ ;;^UTILITY(U,$J,358.3,21961,2)
+ ;;=^5024928
+ ;;^UTILITY(U,$J,358.3,21962,0)
+ ;;=S32.471S^^101^1036^14
+ ;;^UTILITY(U,$J,358.3,21962,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21962,1,3,0)
+ ;;=3^Disp fx of medial wall of right acetabulum, sequela
+ ;;^UTILITY(U,$J,358.3,21962,1,4,0)
+ ;;=4^S32.471S
+ ;;^UTILITY(U,$J,358.3,21962,2)
+ ;;=^5024922
+ ;;^UTILITY(U,$J,358.3,21963,0)
+ ;;=S32.442S^^101^1036^15
+ ;;^UTILITY(U,$J,358.3,21963,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21963,1,3,0)
+ ;;=3^Disp fx of posterior column of left acetabulum, sequela
+ ;;^UTILITY(U,$J,358.3,21963,1,4,0)
+ ;;=4^S32.442S
+ ;;^UTILITY(U,$J,358.3,21963,2)
+ ;;=^5024820
+ ;;^UTILITY(U,$J,358.3,21964,0)
+ ;;=S32.441S^^101^1036^16
+ ;;^UTILITY(U,$J,358.3,21964,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21964,1,3,0)
+ ;;=3^Disp fx of posterior column of right acetabulum, sequela
+ ;;^UTILITY(U,$J,358.3,21964,1,4,0)
+ ;;=4^S32.441S
+ ;;^UTILITY(U,$J,358.3,21964,2)
+ ;;=^5024814
+ ;;^UTILITY(U,$J,358.3,21965,0)
+ ;;=S32.422S^^101^1036^17
+ ;;^UTILITY(U,$J,358.3,21965,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21965,1,3,0)
+ ;;=3^Disp fx of posterior wall of left acetabulum, sequela
+ ;;^UTILITY(U,$J,358.3,21965,1,4,0)
+ ;;=4^S32.422S
+ ;;^UTILITY(U,$J,358.3,21965,2)
+ ;;=^5024748
+ ;;^UTILITY(U,$J,358.3,21966,0)
+ ;;=S32.421S^^101^1036^18
+ ;;^UTILITY(U,$J,358.3,21966,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21966,1,3,0)
+ ;;=3^Disp fx of posterior wall of right acetabulum, sequela
+ ;;^UTILITY(U,$J,358.3,21966,1,4,0)
+ ;;=4^S32.421S
+ ;;^UTILITY(U,$J,358.3,21966,2)
+ ;;=^5024742
+ ;;^UTILITY(U,$J,358.3,21967,0)
+ ;;=S32.452S^^101^1036^19
+ ;;^UTILITY(U,$J,358.3,21967,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21967,1,3,0)
+ ;;=3^Disp fx of transverse of left acetabulum, sequela
+ ;;^UTILITY(U,$J,358.3,21967,1,4,0)
+ ;;=4^S32.452S
+ ;;^UTILITY(U,$J,358.3,21967,2)
+ ;;=^5024856
+ ;;^UTILITY(U,$J,358.3,21968,0)
+ ;;=S32.451S^^101^1036^20
+ ;;^UTILITY(U,$J,358.3,21968,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21968,1,3,0)
+ ;;=3^Disp fx of transverse of right acetabulum, sequela
+ ;;^UTILITY(U,$J,358.3,21968,1,4,0)
+ ;;=4^S32.451S
+ ;;^UTILITY(U,$J,358.3,21968,2)
+ ;;=^5024850
+ ;;^UTILITY(U,$J,358.3,21969,0)
+ ;;=S32.512S^^101^1036^21
+ ;;^UTILITY(U,$J,358.3,21969,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21969,1,3,0)
+ ;;=3^Fx of superior rim of left pubis, sequela
+ ;;^UTILITY(U,$J,358.3,21969,1,4,0)
+ ;;=4^S32.512S
+ ;;^UTILITY(U,$J,358.3,21969,2)
+ ;;=^5025018
+ ;;^UTILITY(U,$J,358.3,21970,0)
+ ;;=S32.511S^^101^1036^22
+ ;;^UTILITY(U,$J,358.3,21970,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21970,1,3,0)
+ ;;=3^Fx of superior rim of right pubis, sequela
+ ;;^UTILITY(U,$J,358.3,21970,1,4,0)
+ ;;=4^S32.511S
+ ;;^UTILITY(U,$J,358.3,21970,2)
+ ;;=^5025012
+ ;;^UTILITY(U,$J,358.3,21971,0)
+ ;;=S32.810S^^101^1036^23
+ ;;^UTILITY(U,$J,358.3,21971,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21971,1,3,0)
+ ;;=3^Mult fx of pelvis w stable disrupt of pelvic ring, sequela

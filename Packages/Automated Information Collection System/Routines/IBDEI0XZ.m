@@ -1,136 +1,124 @@
-IBDEI0XZ ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0XZ ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,16853,2)
- ;;=^271698
- ;;^UTILITY(U,$J,358.3,16854,0)
- ;;=671.44^^108^1060^2
- ;;^UTILITY(U,$J,358.3,16854,1,0)
+ ;;^UTILITY(U,$J,358.3,15662,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16854,1,3,0)
- ;;=3^671.44
- ;;^UTILITY(U,$J,358.3,16854,1,4,0)
- ;;=4^DVT-Postpartum
- ;;^UTILITY(U,$J,358.3,16854,2)
- ;;=^271701
- ;;^UTILITY(U,$J,358.3,16855,0)
- ;;=671.53^^108^1060^3
- ;;^UTILITY(U,$J,358.3,16855,1,0)
+ ;;^UTILITY(U,$J,358.3,15662,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Right Leg w/ Heel/Midfoot Ulcer
+ ;;^UTILITY(U,$J,358.3,15662,1,4,0)
+ ;;=4^I70.334
+ ;;^UTILITY(U,$J,358.3,15662,2)
+ ;;=^5007629
+ ;;^UTILITY(U,$J,358.3,15663,0)
+ ;;=I70.335^^85^825^68
+ ;;^UTILITY(U,$J,358.3,15663,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16855,1,3,0)
- ;;=3^671.53
- ;;^UTILITY(U,$J,358.3,16855,1,4,0)
- ;;=4^Oth phlebitis & thrombosis-Antep
- ;;^UTILITY(U,$J,358.3,16855,2)
- ;;=^271708
- ;;^UTILITY(U,$J,358.3,16856,0)
- ;;=671.54^^108^1060^4
- ;;^UTILITY(U,$J,358.3,16856,1,0)
+ ;;^UTILITY(U,$J,358.3,15663,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Right Leg w/ Foot Ulcer
+ ;;^UTILITY(U,$J,358.3,15663,1,4,0)
+ ;;=4^I70.335
+ ;;^UTILITY(U,$J,358.3,15663,2)
+ ;;=^5007630
+ ;;^UTILITY(U,$J,358.3,15664,0)
+ ;;=I70.338^^85^825^69
+ ;;^UTILITY(U,$J,358.3,15664,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16856,1,3,0)
- ;;=3^671.54
- ;;^UTILITY(U,$J,358.3,16856,1,4,0)
- ;;=4^Oth phlebitis & thrombosis-Postp
- ;;^UTILITY(U,$J,358.3,16856,2)
- ;;=^271709
- ;;^UTILITY(U,$J,358.3,16857,0)
- ;;=643.03^^108^1061^3
- ;;^UTILITY(U,$J,358.3,16857,1,0)
+ ;;^UTILITY(U,$J,358.3,15664,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Right Leg w/ Lower Leg Ulcer
+ ;;^UTILITY(U,$J,358.3,15664,1,4,0)
+ ;;=4^I70.338
+ ;;^UTILITY(U,$J,358.3,15664,2)
+ ;;=^5007631
+ ;;^UTILITY(U,$J,358.3,15665,0)
+ ;;=I70.339^^85^825^70
+ ;;^UTILITY(U,$J,358.3,15665,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16857,1,3,0)
- ;;=3^643.03
- ;;^UTILITY(U,$J,358.3,16857,1,4,0)
- ;;=4^Mild Hyperemesis-Antepartum
- ;;^UTILITY(U,$J,358.3,16857,2)
- ;;=^270868
- ;;^UTILITY(U,$J,358.3,16858,0)
- ;;=643.13^^108^1061^1
- ;;^UTILITY(U,$J,358.3,16858,1,0)
+ ;;^UTILITY(U,$J,358.3,15665,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Right Leg w/ Ulcer,Unspec Site
+ ;;^UTILITY(U,$J,358.3,15665,1,4,0)
+ ;;=4^I70.339
+ ;;^UTILITY(U,$J,358.3,15665,2)
+ ;;=^5007632
+ ;;^UTILITY(U,$J,358.3,15666,0)
+ ;;=I70.341^^85^825^62
+ ;;^UTILITY(U,$J,358.3,15666,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16858,1,3,0)
- ;;=3^643.13
- ;;^UTILITY(U,$J,358.3,16858,1,4,0)
- ;;=4^Hyperemesis w Metab-Antepartum
- ;;^UTILITY(U,$J,358.3,16858,2)
- ;;=^270872
- ;;^UTILITY(U,$J,358.3,16859,0)
- ;;=643.23^^108^1061^2
- ;;^UTILITY(U,$J,358.3,16859,1,0)
+ ;;^UTILITY(U,$J,358.3,15666,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Left Leg w/ Thigh Ulcer
+ ;;^UTILITY(U,$J,358.3,15666,1,4,0)
+ ;;=4^I70.341
+ ;;^UTILITY(U,$J,358.3,15666,2)
+ ;;=^5007633
+ ;;^UTILITY(U,$J,358.3,15667,0)
+ ;;=I70.342^^85^825^58
+ ;;^UTILITY(U,$J,358.3,15667,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16859,1,3,0)
- ;;=3^643.23
- ;;^UTILITY(U,$J,358.3,16859,1,4,0)
- ;;=4^Late Vomit Preg-Antepartum
- ;;^UTILITY(U,$J,358.3,16859,2)
- ;;=^270876
- ;;^UTILITY(U,$J,358.3,16860,0)
- ;;=V87.39^^108^1062^1
- ;;^UTILITY(U,$J,358.3,16860,1,0)
+ ;;^UTILITY(U,$J,358.3,15667,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Left Leg w/ Calf Ulcer
+ ;;^UTILITY(U,$J,358.3,15667,1,4,0)
+ ;;=4^I70.342
+ ;;^UTILITY(U,$J,358.3,15667,2)
+ ;;=^5007634
+ ;;^UTILITY(U,$J,358.3,15668,0)
+ ;;=I70.343^^85^825^57
+ ;;^UTILITY(U,$J,358.3,15668,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16860,1,3,0)
- ;;=3^V87.39
- ;;^UTILITY(U,$J,358.3,16860,1,4,0)
- ;;=4^Cont/Exp Hazard Sub NEC
- ;;^UTILITY(U,$J,358.3,16860,2)
- ;;=^336815
- ;;^UTILITY(U,$J,358.3,16861,0)
- ;;=V60.0^^108^1062^2
- ;;^UTILITY(U,$J,358.3,16861,1,0)
+ ;;^UTILITY(U,$J,358.3,15668,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Left Leg w/ Ankle Ulcer
+ ;;^UTILITY(U,$J,358.3,15668,1,4,0)
+ ;;=4^I70.343
+ ;;^UTILITY(U,$J,358.3,15668,2)
+ ;;=^5007635
+ ;;^UTILITY(U,$J,358.3,15669,0)
+ ;;=I70.344^^85^825^60
+ ;;^UTILITY(U,$J,358.3,15669,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16861,1,3,0)
- ;;=3^V60.0
- ;;^UTILITY(U,$J,358.3,16861,1,4,0)
- ;;=4^Homelessness
- ;;^UTILITY(U,$J,358.3,16861,2)
- ;;=^295539
- ;;^UTILITY(U,$J,358.3,16862,0)
- ;;=A4220^^109^1063^1^^^^1
- ;;^UTILITY(U,$J,358.3,16862,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,16862,1,1,0)
- ;;=1^A4220
- ;;^UTILITY(U,$J,358.3,16862,1,3,0)
- ;;=3^Infusion Pump Refill Kit
- ;;^UTILITY(U,$J,358.3,16863,0)
- ;;=99195^^109^1064^43^^^^1
- ;;^UTILITY(U,$J,358.3,16863,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,16863,1,1,0)
- ;;=1^99195
- ;;^UTILITY(U,$J,358.3,16863,1,3,0)
- ;;=3^Therapeutic Phlebotomy
- ;;^UTILITY(U,$J,358.3,16864,0)
- ;;=96450^^109^1064^19^^^^1
- ;;^UTILITY(U,$J,358.3,16864,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,16864,1,1,0)
- ;;=1^96450
- ;;^UTILITY(U,$J,358.3,16864,1,3,0)
- ;;=3^Chemotherapy, Into CNS
- ;;^UTILITY(U,$J,358.3,16865,0)
- ;;=96420^^109^1064^11^^^^1
- ;;^UTILITY(U,$J,358.3,16865,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,16865,1,1,0)
- ;;=1^96420
- ;;^UTILITY(U,$J,358.3,16865,1,3,0)
- ;;=3^Chemo,IA Push
- ;;^UTILITY(U,$J,358.3,16866,0)
- ;;=96422^^109^1064^8^^^^1
- ;;^UTILITY(U,$J,358.3,16866,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,16866,1,1,0)
- ;;=1^96422
- ;;^UTILITY(U,$J,358.3,16866,1,3,0)
- ;;=3^Chemo,IA Infus,Init hr
- ;;^UTILITY(U,$J,358.3,16867,0)
- ;;=96405^^109^1064^3^^^^1
- ;;^UTILITY(U,$J,358.3,16867,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,16867,1,1,0)
- ;;=1^96405
- ;;^UTILITY(U,$J,358.3,16867,1,3,0)
- ;;=3^Chemo Admin,Intralesional
- ;;^UTILITY(U,$J,358.3,16868,0)
- ;;=96440^^109^1064^5^^^^1
+ ;;^UTILITY(U,$J,358.3,15669,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Left Leg w/ Heel/Midfoot Ulcer
+ ;;^UTILITY(U,$J,358.3,15669,1,4,0)
+ ;;=4^I70.344
+ ;;^UTILITY(U,$J,358.3,15669,2)
+ ;;=^5007636
+ ;;^UTILITY(U,$J,358.3,15670,0)
+ ;;=I70.345^^85^825^59
+ ;;^UTILITY(U,$J,358.3,15670,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15670,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Left Leg w/ Foot Ulcer
+ ;;^UTILITY(U,$J,358.3,15670,1,4,0)
+ ;;=4^I70.345
+ ;;^UTILITY(U,$J,358.3,15670,2)
+ ;;=^5007637
+ ;;^UTILITY(U,$J,358.3,15671,0)
+ ;;=I70.348^^85^825^61
+ ;;^UTILITY(U,$J,358.3,15671,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15671,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Left Leg w/ Lower Leg Ulcer
+ ;;^UTILITY(U,$J,358.3,15671,1,4,0)
+ ;;=4^I70.348
+ ;;^UTILITY(U,$J,358.3,15671,2)
+ ;;=^5007638
+ ;;^UTILITY(U,$J,358.3,15672,0)
+ ;;=I70.349^^85^825^63
+ ;;^UTILITY(U,$J,358.3,15672,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15672,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Left Leg w/ Ulcer,Unspec Site
+ ;;^UTILITY(U,$J,358.3,15672,1,4,0)
+ ;;=4^I70.349
+ ;;^UTILITY(U,$J,358.3,15672,2)
+ ;;=^5007639
+ ;;^UTILITY(U,$J,358.3,15673,0)
+ ;;=I70.431^^85^825^8
+ ;;^UTILITY(U,$J,358.3,15673,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15673,1,3,0)
+ ;;=3^Athscl Autol Vein Bypass of Right Leg w/ Thigh Ulcer
+ ;;^UTILITY(U,$J,358.3,15673,1,4,0)
+ ;;=4^I70.431
+ ;;^UTILITY(U,$J,358.3,15673,2)
+ ;;=^5007664
+ ;;^UTILITY(U,$J,358.3,15674,0)
+ ;;=I70.432^^85^825^9

@@ -1,0 +1,132 @@
+IBDEI1ID ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,25206,1,4,0)
+ ;;=4^J96.11
+ ;;^UTILITY(U,$J,358.3,25206,2)
+ ;;=^5008351
+ ;;^UTILITY(U,$J,358.3,25207,0)
+ ;;=J96.12^^124^1241^12
+ ;;^UTILITY(U,$J,358.3,25207,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25207,1,3,0)
+ ;;=3^Chronic Respiratory Failure w/ Hypercapnia
+ ;;^UTILITY(U,$J,358.3,25207,1,4,0)
+ ;;=4^J96.12
+ ;;^UTILITY(U,$J,358.3,25207,2)
+ ;;=^5008352
+ ;;^UTILITY(U,$J,358.3,25208,0)
+ ;;=J95.821^^124^1241^23
+ ;;^UTILITY(U,$J,358.3,25208,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25208,1,3,0)
+ ;;=3^Postprocedural Respiratory Failure,Acute
+ ;;^UTILITY(U,$J,358.3,25208,1,4,0)
+ ;;=4^J95.821
+ ;;^UTILITY(U,$J,358.3,25208,2)
+ ;;=^5008338
+ ;;^UTILITY(U,$J,358.3,25209,0)
+ ;;=J95.822^^124^1241^24
+ ;;^UTILITY(U,$J,358.3,25209,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25209,1,3,0)
+ ;;=3^Postprocedural Respiratory Failure,Acute and Chronic
+ ;;^UTILITY(U,$J,358.3,25209,1,4,0)
+ ;;=4^J95.822
+ ;;^UTILITY(U,$J,358.3,25209,2)
+ ;;=^5008339
+ ;;^UTILITY(U,$J,358.3,25210,0)
+ ;;=K20.9^^124^1242^10
+ ;;^UTILITY(U,$J,358.3,25210,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25210,1,3,0)
+ ;;=3^Esophagitis,Unspec
+ ;;^UTILITY(U,$J,358.3,25210,1,4,0)
+ ;;=4^K20.9
+ ;;^UTILITY(U,$J,358.3,25210,2)
+ ;;=^295809
+ ;;^UTILITY(U,$J,358.3,25211,0)
+ ;;=K25.9^^124^1242^13
+ ;;^UTILITY(U,$J,358.3,25211,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25211,1,3,0)
+ ;;=3^Gastric Ulcer w/o Hemorrhage/Perforation
+ ;;^UTILITY(U,$J,358.3,25211,1,4,0)
+ ;;=4^K25.9
+ ;;^UTILITY(U,$J,358.3,25211,2)
+ ;;=^5008522
+ ;;^UTILITY(U,$J,358.3,25212,0)
+ ;;=K27.9^^124^1242^28
+ ;;^UTILITY(U,$J,358.3,25212,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25212,1,3,0)
+ ;;=3^Peptic Ulcer w/o Hemorrhage/Perforation
+ ;;^UTILITY(U,$J,358.3,25212,1,4,0)
+ ;;=4^K27.9
+ ;;^UTILITY(U,$J,358.3,25212,2)
+ ;;=^5008536
+ ;;^UTILITY(U,$J,358.3,25213,0)
+ ;;=K29.70^^124^1242^14
+ ;;^UTILITY(U,$J,358.3,25213,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25213,1,3,0)
+ ;;=3^Gastritis w/o Bleeding
+ ;;^UTILITY(U,$J,358.3,25213,1,4,0)
+ ;;=4^K29.70
+ ;;^UTILITY(U,$J,358.3,25213,2)
+ ;;=^5008552
+ ;;^UTILITY(U,$J,358.3,25214,0)
+ ;;=K50.90^^124^1242^5
+ ;;^UTILITY(U,$J,358.3,25214,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25214,1,3,0)
+ ;;=3^Crohn's Disease w/o Complications
+ ;;^UTILITY(U,$J,358.3,25214,1,4,0)
+ ;;=4^K50.90
+ ;;^UTILITY(U,$J,358.3,25214,2)
+ ;;=^5008645
+ ;;^UTILITY(U,$J,358.3,25215,0)
+ ;;=K52.89^^124^1242^25
+ ;;^UTILITY(U,$J,358.3,25215,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25215,1,3,0)
+ ;;=3^Noninfective Gastroenteritis NEC & Colitis
+ ;;^UTILITY(U,$J,358.3,25215,1,4,0)
+ ;;=4^K52.89
+ ;;^UTILITY(U,$J,358.3,25215,2)
+ ;;=^5008703
+ ;;^UTILITY(U,$J,358.3,25216,0)
+ ;;=K52.9^^124^1242^24
+ ;;^UTILITY(U,$J,358.3,25216,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25216,1,3,0)
+ ;;=3^Noninfective Gastroenteritis & Colitis,Unspec
+ ;;^UTILITY(U,$J,358.3,25216,1,4,0)
+ ;;=4^K52.9
+ ;;^UTILITY(U,$J,358.3,25216,2)
+ ;;=^5008704
+ ;;^UTILITY(U,$J,358.3,25217,0)
+ ;;=K57.30^^124^1242^8
+ ;;^UTILITY(U,$J,358.3,25217,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25217,1,3,0)
+ ;;=3^Diverticulosis Lg Intestine w/o Abscess or Bleeding
+ ;;^UTILITY(U,$J,358.3,25217,1,4,0)
+ ;;=4^K57.30
+ ;;^UTILITY(U,$J,358.3,25217,2)
+ ;;=^5008723
+ ;;^UTILITY(U,$J,358.3,25218,0)
+ ;;=K57.32^^124^1242^6
+ ;;^UTILITY(U,$J,358.3,25218,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25218,1,3,0)
+ ;;=3^Diverticulitis Lg Intestine w/o Abscess or Bleeding
+ ;;^UTILITY(U,$J,358.3,25218,1,4,0)
+ ;;=4^K57.32
+ ;;^UTILITY(U,$J,358.3,25218,2)
+ ;;=^5008725
+ ;;^UTILITY(U,$J,358.3,25219,0)
+ ;;=K57.31^^124^1242^9
+ ;;^UTILITY(U,$J,358.3,25219,1,0)
+ ;;=^358.31IA^4^2

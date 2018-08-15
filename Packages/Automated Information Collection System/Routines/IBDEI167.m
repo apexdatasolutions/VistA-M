@@ -1,120 +1,134 @@
-IBDEI167 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI167 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,20959,1,5,0)
- ;;=5^CAD, Occlusion Of Venous Graft
- ;;^UTILITY(U,$J,358.3,20959,2)
- ;;=CAD, Occlusion of Venous Graft^303282
- ;;^UTILITY(U,$J,358.3,20960,0)
- ;;=459.10^^133^1307^70
- ;;^UTILITY(U,$J,358.3,20960,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20960,1,4,0)
- ;;=4^459.10
- ;;^UTILITY(U,$J,358.3,20960,1,5,0)
- ;;=5^Post Phlebotic Syndrome
- ;;^UTILITY(U,$J,358.3,20960,2)
- ;;=Post Phlebotic Syndrome^328597
- ;;^UTILITY(U,$J,358.3,20961,0)
- ;;=428.20^^133^1307^50
- ;;^UTILITY(U,$J,358.3,20961,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20961,1,4,0)
- ;;=4^428.20
- ;;^UTILITY(U,$J,358.3,20961,1,5,0)
- ;;=5^Heart Failure, Systolic, Unspec
- ;;^UTILITY(U,$J,358.3,20961,2)
- ;;=Heart Failure, Systolic^328594
- ;;^UTILITY(U,$J,358.3,20962,0)
- ;;=428.21^^133^1307^40
- ;;^UTILITY(U,$J,358.3,20962,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20962,1,4,0)
- ;;=4^428.21
- ;;^UTILITY(U,$J,358.3,20962,1,5,0)
- ;;=5^Heart Failure, Acute Systolic
- ;;^UTILITY(U,$J,358.3,20962,2)
- ;;=Heart Failure, Acute Systolic^328494
- ;;^UTILITY(U,$J,358.3,20963,0)
- ;;=428.22^^133^1307^42
- ;;^UTILITY(U,$J,358.3,20963,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20963,1,4,0)
- ;;=4^428.22
- ;;^UTILITY(U,$J,358.3,20963,1,5,0)
- ;;=5^Heart Failure, Chronic Systolic
- ;;^UTILITY(U,$J,358.3,20963,2)
- ;;=Heart Failure, Chronic Systolic^328495
- ;;^UTILITY(U,$J,358.3,20964,0)
- ;;=428.23^^133^1307^49
- ;;^UTILITY(U,$J,358.3,20964,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20964,1,4,0)
- ;;=4^428.23
- ;;^UTILITY(U,$J,358.3,20964,1,5,0)
- ;;=5^Heart Failure, Systolic, Acute On Chronic
- ;;^UTILITY(U,$J,358.3,20964,2)
- ;;=Heart Failure, Systolic, Acute on Chronic^328496
- ;;^UTILITY(U,$J,358.3,20965,0)
- ;;=428.30^^133^1307^43
- ;;^UTILITY(U,$J,358.3,20965,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20965,1,4,0)
- ;;=4^428.30
- ;;^UTILITY(U,$J,358.3,20965,1,5,0)
- ;;=5^Heart Failure, Diastolic
- ;;^UTILITY(U,$J,358.3,20965,2)
- ;;=Heart Failure, Diastolic^328595
- ;;^UTILITY(U,$J,358.3,20966,0)
- ;;=428.31^^133^1307^39
- ;;^UTILITY(U,$J,358.3,20966,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20966,1,4,0)
- ;;=4^428.31
- ;;^UTILITY(U,$J,358.3,20966,1,5,0)
- ;;=5^Heart Failure, Acute Diastolic
- ;;^UTILITY(U,$J,358.3,20966,2)
- ;;=Heart Failure, Acute Diastolic^328497
- ;;^UTILITY(U,$J,358.3,20967,0)
- ;;=428.32^^133^1307^41
- ;;^UTILITY(U,$J,358.3,20967,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20967,1,4,0)
- ;;=4^428.32
- ;;^UTILITY(U,$J,358.3,20967,1,5,0)
- ;;=5^Heart Failure, Chronic Diastolic
- ;;^UTILITY(U,$J,358.3,20967,2)
- ;;=Heart Failure, Chronic Diastolic^328498
- ;;^UTILITY(U,$J,358.3,20968,0)
- ;;=428.33^^133^1307^45
- ;;^UTILITY(U,$J,358.3,20968,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20968,1,4,0)
- ;;=4^428.33
- ;;^UTILITY(U,$J,358.3,20968,1,5,0)
- ;;=5^Heart Failure, Diastolic, Acute On Chronic
- ;;^UTILITY(U,$J,358.3,20968,2)
- ;;=Heart Failure, Diastolic, Acute on Chronic^328499
- ;;^UTILITY(U,$J,358.3,20969,0)
- ;;=428.40^^133^1307^44
- ;;^UTILITY(U,$J,358.3,20969,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20969,1,4,0)
- ;;=4^428.40
- ;;^UTILITY(U,$J,358.3,20969,1,5,0)
- ;;=5^Heart Failure, Diastolic& Systolic
- ;;^UTILITY(U,$J,358.3,20969,2)
- ;;=Heart Failure, Systolic and Diastolic^328596
- ;;^UTILITY(U,$J,358.3,20970,0)
- ;;=428.41^^133^1307^46
- ;;^UTILITY(U,$J,358.3,20970,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20970,1,4,0)
- ;;=4^428.41
- ;;^UTILITY(U,$J,358.3,20970,1,5,0)
- ;;=5^Heart Failure, Systolic & Diastolic, Acute
- ;;^UTILITY(U,$J,358.3,20970,2)
- ;;=Heart Failure, Systolic & Diastolic, Acute^328500
- ;;^UTILITY(U,$J,358.3,20971,0)
- ;;=428.42^^133^1307^48
+ ;;^UTILITY(U,$J,358.3,19553,1,3,0)
+ ;;=3^Sarcoid Meningitis
+ ;;^UTILITY(U,$J,358.3,19553,1,4,0)
+ ;;=4^D86.81
+ ;;^UTILITY(U,$J,358.3,19553,2)
+ ;;=^5002446
+ ;;^UTILITY(U,$J,358.3,19554,0)
+ ;;=D86.82^^94^926^50
+ ;;^UTILITY(U,$J,358.3,19554,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19554,1,3,0)
+ ;;=3^Sarcoidosis,Multiple Cranial Nerve Palsies
+ ;;^UTILITY(U,$J,358.3,19554,1,4,0)
+ ;;=4^D86.82
+ ;;^UTILITY(U,$J,358.3,19554,2)
+ ;;=^5002447
+ ;;^UTILITY(U,$J,358.3,19555,0)
+ ;;=D86.84^^94^926^44
+ ;;^UTILITY(U,$J,358.3,19555,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19555,1,3,0)
+ ;;=3^Sarcoid Pyelonephritis
+ ;;^UTILITY(U,$J,358.3,19555,1,4,0)
+ ;;=4^D86.84
+ ;;^UTILITY(U,$J,358.3,19555,2)
+ ;;=^5002449
+ ;;^UTILITY(U,$J,358.3,19556,0)
+ ;;=D86.85^^94^926^42
+ ;;^UTILITY(U,$J,358.3,19556,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19556,1,3,0)
+ ;;=3^Sarcoid Myocarditis
+ ;;^UTILITY(U,$J,358.3,19556,1,4,0)
+ ;;=4^D86.85
+ ;;^UTILITY(U,$J,358.3,19556,2)
+ ;;=^5002450
+ ;;^UTILITY(U,$J,358.3,19557,0)
+ ;;=D86.83^^94^926^40
+ ;;^UTILITY(U,$J,358.3,19557,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19557,1,3,0)
+ ;;=3^Sarcoid Iridocyclitis
+ ;;^UTILITY(U,$J,358.3,19557,1,4,0)
+ ;;=4^D86.83
+ ;;^UTILITY(U,$J,358.3,19557,2)
+ ;;=^5002448
+ ;;^UTILITY(U,$J,358.3,19558,0)
+ ;;=D84.1^^94^926^16
+ ;;^UTILITY(U,$J,358.3,19558,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19558,1,3,0)
+ ;;=3^Defects in Complement System
+ ;;^UTILITY(U,$J,358.3,19558,1,4,0)
+ ;;=4^D84.1
+ ;;^UTILITY(U,$J,358.3,19558,2)
+ ;;=^5002439
+ ;;^UTILITY(U,$J,358.3,19559,0)
+ ;;=D81.810^^94^926^5
+ ;;^UTILITY(U,$J,358.3,19559,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19559,1,3,0)
+ ;;=3^Biotinidase Deficiency
+ ;;^UTILITY(U,$J,358.3,19559,1,4,0)
+ ;;=4^D81.810
+ ;;^UTILITY(U,$J,358.3,19559,2)
+ ;;=^5002422
+ ;;^UTILITY(U,$J,358.3,19560,0)
+ ;;=E88.01^^94^926^2
+ ;;^UTILITY(U,$J,358.3,19560,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19560,1,3,0)
+ ;;=3^Apha-1 Antitrypsin Deficiency
+ ;;^UTILITY(U,$J,358.3,19560,1,4,0)
+ ;;=4^E88.01
+ ;;^UTILITY(U,$J,358.3,19560,2)
+ ;;=^331442
+ ;;^UTILITY(U,$J,358.3,19561,0)
+ ;;=J09.X1^^94^926^25
+ ;;^UTILITY(U,$J,358.3,19561,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19561,1,3,0)
+ ;;=3^Influenza d/t Indent Novel Influenza A Virus w/ Pneumonia
+ ;;^UTILITY(U,$J,358.3,19561,1,4,0)
+ ;;=4^J09.X1
+ ;;^UTILITY(U,$J,358.3,19561,2)
+ ;;=^5008144
+ ;;^UTILITY(U,$J,358.3,19562,0)
+ ;;=J09.X2^^94^926^26
+ ;;^UTILITY(U,$J,358.3,19562,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19562,1,3,0)
+ ;;=3^Influenza d/t Indent Novel Influenza A Virus w/ Resp Manifest
+ ;;^UTILITY(U,$J,358.3,19562,1,4,0)
+ ;;=4^J09.X2
+ ;;^UTILITY(U,$J,358.3,19562,2)
+ ;;=^5008145
+ ;;^UTILITY(U,$J,358.3,19563,0)
+ ;;=J09.X3^^94^926^27
+ ;;^UTILITY(U,$J,358.3,19563,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19563,1,3,0)
+ ;;=3^Influenza d/t Indent Novel Influenza A Virus w/ GI Manifest
+ ;;^UTILITY(U,$J,358.3,19563,1,4,0)
+ ;;=4^J09.X3
+ ;;^UTILITY(U,$J,358.3,19563,2)
+ ;;=^5008146
+ ;;^UTILITY(U,$J,358.3,19564,0)
+ ;;=J09.X9^^94^926^28
+ ;;^UTILITY(U,$J,358.3,19564,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19564,1,3,0)
+ ;;=3^Influenza d/t Indent Novel Influenza A Virus w/ Oth Manifest
+ ;;^UTILITY(U,$J,358.3,19564,1,4,0)
+ ;;=4^J09.X9
+ ;;^UTILITY(U,$J,358.3,19564,2)
+ ;;=^5008147
+ ;;^UTILITY(U,$J,358.3,19565,0)
+ ;;=J44.9^^94^926^14
+ ;;^UTILITY(U,$J,358.3,19565,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19565,1,3,0)
+ ;;=3^COPD,Unspec
+ ;;^UTILITY(U,$J,358.3,19565,1,4,0)
+ ;;=4^J44.9
+ ;;^UTILITY(U,$J,358.3,19565,2)
+ ;;=^5008241
+ ;;^UTILITY(U,$J,358.3,19566,0)
+ ;;=J44.1^^94^926^12
+ ;;^UTILITY(U,$J,358.3,19566,1,0)
+ ;;=^358.31IA^4^2

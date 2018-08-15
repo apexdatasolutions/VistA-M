@@ -1,138 +1,122 @@
-IBDEI1BJ ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1BJ ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,23609,2)
- ;;=Boil/Furuncle of Buttock^271878
- ;;^UTILITY(U,$J,358.3,23610,0)
- ;;=680.0^^148^1496^3
- ;;^UTILITY(U,$J,358.3,23610,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23610,1,2,0)
- ;;=2^680.0
- ;;^UTILITY(U,$J,358.3,23610,1,5,0)
- ;;=5^Boil/Furuncle of Face
- ;;^UTILITY(U,$J,358.3,23610,2)
- ;;=Boil/Furuncle of face^271873
- ;;^UTILITY(U,$J,358.3,23611,0)
- ;;=680.7^^148^1496^4
- ;;^UTILITY(U,$J,358.3,23611,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23611,1,2,0)
- ;;=2^680.7
- ;;^UTILITY(U,$J,358.3,23611,1,5,0)
- ;;=5^Boil/Furuncle of Foot
- ;;^UTILITY(U,$J,358.3,23611,2)
- ;;=Boil/Furuncle of foot^271880
- ;;^UTILITY(U,$J,358.3,23612,0)
- ;;=692.72^^148^1497^1
- ;;^UTILITY(U,$J,358.3,23612,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23612,1,2,0)
- ;;=2^692.72
- ;;^UTILITY(U,$J,358.3,23612,1,5,0)
- ;;=5^Actinic Cheilitis
- ;;^UTILITY(U,$J,358.3,23612,2)
- ;;=Actinic Cheilitis^93951
- ;;^UTILITY(U,$J,358.3,23613,0)
- ;;=528.5^^148^1497^2
- ;;^UTILITY(U,$J,358.3,23613,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23613,1,2,0)
- ;;=2^528.5
- ;;^UTILITY(U,$J,358.3,23613,1,5,0)
- ;;=5^Angular Cheilitis
- ;;^UTILITY(U,$J,358.3,23613,2)
- ;;=Angular Cheilitis^70993
- ;;^UTILITY(U,$J,358.3,23614,0)
- ;;=706.2^^148^1498^2
- ;;^UTILITY(U,$J,358.3,23614,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23614,1,2,0)
- ;;=2^706.2
- ;;^UTILITY(U,$J,358.3,23614,1,5,0)
- ;;=5^Sebaceous Cyst
- ;;^UTILITY(U,$J,358.3,23614,2)
- ;;=Epidermoid Cyst^41304
- ;;^UTILITY(U,$J,358.3,23615,0)
- ;;=704.41^^148^1498^1
- ;;^UTILITY(U,$J,358.3,23615,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23615,1,2,0)
- ;;=2^704.41
- ;;^UTILITY(U,$J,358.3,23615,1,5,0)
- ;;=5^Pilar Cyst
- ;;^UTILITY(U,$J,358.3,23615,2)
- ;;=^340564
- ;;^UTILITY(U,$J,358.3,23616,0)
- ;;=704.42^^148^1498^3
- ;;^UTILITY(U,$J,358.3,23616,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23616,1,2,0)
- ;;=2^704.42
- ;;^UTILITY(U,$J,358.3,23616,1,5,0)
- ;;=5^Trichilemmal Cyst
- ;;^UTILITY(U,$J,358.3,23616,2)
- ;;=^340565
- ;;^UTILITY(U,$J,358.3,23617,0)
- ;;=693.0^^148^1499^2
- ;;^UTILITY(U,$J,358.3,23617,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23617,1,2,0)
- ;;=2^693.0
- ;;^UTILITY(U,$J,358.3,23617,1,5,0)
- ;;=5^Dermatitis Medicamentosis
- ;;^UTILITY(U,$J,358.3,23617,2)
- ;;=^33042
- ;;^UTILITY(U,$J,358.3,23618,0)
- ;;=995.20^^148^1499^1
- ;;^UTILITY(U,$J,358.3,23618,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23618,1,2,0)
- ;;=2^995.20
- ;;^UTILITY(U,$J,358.3,23618,1,5,0)
- ;;=5^Adv Eff Med/Biol Sub NOS
- ;;^UTILITY(U,$J,358.3,23618,2)
- ;;=^334208
- ;;^UTILITY(U,$J,358.3,23619,0)
- ;;=709.09^^148^1500^1
- ;;^UTILITY(U,$J,358.3,23619,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23619,1,2,0)
- ;;=2^709.09
- ;;^UTILITY(U,$J,358.3,23619,1,5,0)
- ;;=5^Solar Lentigo
- ;;^UTILITY(U,$J,358.3,23619,2)
- ;;=Solar Lentigo^303313
- ;;^UTILITY(U,$J,358.3,23620,0)
- ;;=232.9^^148^1500^2
- ;;^UTILITY(U,$J,358.3,23620,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23620,1,2,0)
- ;;=2^232.9
- ;;^UTILITY(U,$J,358.3,23620,1,5,0)
- ;;=5^Lentigo Maligna
- ;;^UTILITY(U,$J,358.3,23620,2)
- ;;=^267724
- ;;^UTILITY(U,$J,358.3,23621,0)
- ;;=703.8^^148^1501^2
- ;;^UTILITY(U,$J,358.3,23621,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23621,1,2,0)
- ;;=2^703.8
- ;;^UTILITY(U,$J,358.3,23621,1,5,0)
- ;;=5^Onycholysis
- ;;^UTILITY(U,$J,358.3,23621,2)
- ;;=^271926
- ;;^UTILITY(U,$J,358.3,23622,0)
- ;;=110.1^^148^1501^3
- ;;^UTILITY(U,$J,358.3,23622,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23622,1,2,0)
- ;;=2^110.1
- ;;^UTILITY(U,$J,358.3,23622,1,5,0)
- ;;=5^Onychomycosis
- ;;^UTILITY(U,$J,358.3,23622,2)
- ;;=^33173
- ;;^UTILITY(U,$J,358.3,23623,0)
- ;;=307.9^^148^1501^4
+ ;;^UTILITY(U,$J,358.3,21995,1,4,0)
+ ;;=4^S42.221S
+ ;;^UTILITY(U,$J,358.3,21995,2)
+ ;;=^5026809
+ ;;^UTILITY(U,$J,358.3,21996,0)
+ ;;=S42.225S^^101^1037^3
+ ;;^UTILITY(U,$J,358.3,21996,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21996,1,3,0)
+ ;;=3^2-part nondisp fx of surgical neck of left humerus, sequela
+ ;;^UTILITY(U,$J,358.3,21996,1,4,0)
+ ;;=4^S42.225S
+ ;;^UTILITY(U,$J,358.3,21996,2)
+ ;;=^5026837
+ ;;^UTILITY(U,$J,358.3,21997,0)
+ ;;=S42.224S^^101^1037^4
+ ;;^UTILITY(U,$J,358.3,21997,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21997,1,3,0)
+ ;;=3^2-part nondisp fx of surgical neck of right humerus, sequela
+ ;;^UTILITY(U,$J,358.3,21997,1,4,0)
+ ;;=4^S42.224S
+ ;;^UTILITY(U,$J,358.3,21997,2)
+ ;;=^5026830
+ ;;^UTILITY(U,$J,358.3,21998,0)
+ ;;=S42.232S^^101^1037^5
+ ;;^UTILITY(U,$J,358.3,21998,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21998,1,3,0)
+ ;;=3^3-part fx of surgical neck of left humerus, sequela
+ ;;^UTILITY(U,$J,358.3,21998,1,4,0)
+ ;;=4^S42.232S
+ ;;^UTILITY(U,$J,358.3,21998,2)
+ ;;=^5026858
+ ;;^UTILITY(U,$J,358.3,21999,0)
+ ;;=S42.331S^^101^1037^39
+ ;;^UTILITY(U,$J,358.3,21999,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21999,1,3,0)
+ ;;=3^Disp fx of oblique shaft of humerus, right arm, sequela  
+ ;;^UTILITY(U,$J,358.3,21999,1,4,0)
+ ;;=4^S42.331S
+ ;;^UTILITY(U,$J,358.3,21999,2)
+ ;;=^5027111
+ ;;^UTILITY(U,$J,358.3,22000,0)
+ ;;=S42.242S^^101^1037^6
+ ;;^UTILITY(U,$J,358.3,22000,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22000,1,3,0)
+ ;;=3^4-part fx of surgical neck of left humerus, sequela
+ ;;^UTILITY(U,$J,358.3,22000,1,4,0)
+ ;;=4^S42.242S
+ ;;^UTILITY(U,$J,358.3,22000,2)
+ ;;=^5026879
+ ;;^UTILITY(U,$J,358.3,22001,0)
+ ;;=S42.241S^^101^1037^7
+ ;;^UTILITY(U,$J,358.3,22001,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22001,1,3,0)
+ ;;=3^4-part fx of surgical neck of right humerus, sequela
+ ;;^UTILITY(U,$J,358.3,22001,1,4,0)
+ ;;=4^S42.241S
+ ;;^UTILITY(U,$J,358.3,22001,2)
+ ;;=^5026872
+ ;;^UTILITY(U,$J,358.3,22002,0)
+ ;;=S42.352S^^101^1037^14
+ ;;^UTILITY(U,$J,358.3,22002,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22002,1,3,0)
+ ;;=3^Disp fx of comminuted shaft of humerus, left arm, sequela
+ ;;^UTILITY(U,$J,358.3,22002,1,4,0)
+ ;;=4^S42.352S
+ ;;^UTILITY(U,$J,358.3,22002,2)
+ ;;=^5027202
+ ;;^UTILITY(U,$J,358.3,22003,0)
+ ;;=S42.351S^^101^1037^15
+ ;;^UTILITY(U,$J,358.3,22003,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22003,1,3,0)
+ ;;=3^Disp fx of comminuted shaft of humerus, right arm, sequela
+ ;;^UTILITY(U,$J,358.3,22003,1,4,0)
+ ;;=4^S42.351S
+ ;;^UTILITY(U,$J,358.3,22003,2)
+ ;;=^5027195
+ ;;^UTILITY(U,$J,358.3,22004,0)
+ ;;=S42.422S^^101^1037^16
+ ;;^UTILITY(U,$J,358.3,22004,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22004,1,3,0)
+ ;;=3^Disp fx of commnt suprcndl w/o intrcndl fx l humerus, sequela
+ ;;^UTILITY(U,$J,358.3,22004,1,4,0)
+ ;;=4^S42.422S
+ ;;^UTILITY(U,$J,358.3,22004,2)
+ ;;=^5027356
+ ;;^UTILITY(U,$J,358.3,22005,0)
+ ;;=S42.421S^^101^1037^17
+ ;;^UTILITY(U,$J,358.3,22005,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22005,1,3,0)
+ ;;=3^Disp fx of commnt suprcndl w/o intrcndl fx r humerus, sequela
+ ;;^UTILITY(U,$J,358.3,22005,1,4,0)
+ ;;=4^S42.421S
+ ;;^UTILITY(U,$J,358.3,22005,2)
+ ;;=^5027349
+ ;;^UTILITY(U,$J,358.3,22006,0)
+ ;;=S42.432S^^101^1037^28
+ ;;^UTILITY(U,$J,358.3,22006,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22006,1,3,0)
+ ;;=3^Disp fx of lateral epicondyle of l humerus, sequela
+ ;;^UTILITY(U,$J,358.3,22006,1,4,0)
+ ;;=4^S42.432S
+ ;;^UTILITY(U,$J,358.3,22006,2)
+ ;;=^5027398
+ ;;^UTILITY(U,$J,358.3,22007,0)
+ ;;=S42.431S^^101^1037^29
+ ;;^UTILITY(U,$J,358.3,22007,1,0)
+ ;;=^358.31IA^4^2

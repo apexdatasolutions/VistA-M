@@ -1,130 +1,124 @@
-IBDEI0Y6 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0Y6 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,16963,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,16963,1,1,0)
- ;;=1^J9200
- ;;^UTILITY(U,$J,358.3,16963,1,3,0)
- ;;=3^Floxuridine Inj 500mg
- ;;^UTILITY(U,$J,358.3,16964,0)
- ;;=J9211^^109^1065^47^^^^1
- ;;^UTILITY(U,$J,358.3,16964,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,16964,1,1,0)
- ;;=1^J9211
- ;;^UTILITY(U,$J,358.3,16964,1,3,0)
- ;;=3^Idarubicin HCL Inj 5mg
- ;;^UTILITY(U,$J,358.3,16965,0)
- ;;=J9215^^109^1065^49^^^^1
- ;;^UTILITY(U,$J,358.3,16965,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,16965,1,1,0)
- ;;=1^J9215
- ;;^UTILITY(U,$J,358.3,16965,1,3,0)
- ;;=3^Interferon Alfa-N3 Inj 250,000IU
- ;;^UTILITY(U,$J,358.3,16966,0)
- ;;=J9216^^109^1065^50^^^^1
- ;;^UTILITY(U,$J,358.3,16966,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,16966,1,1,0)
- ;;=1^J9216
- ;;^UTILITY(U,$J,358.3,16966,1,3,0)
- ;;=3^Interferon Gamma 1-B Inj 3 Million Units
- ;;^UTILITY(U,$J,358.3,16967,0)
- ;;=J9230^^109^1065^59^^^^1
- ;;^UTILITY(U,$J,358.3,16967,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,16967,1,1,0)
- ;;=1^J9230
- ;;^UTILITY(U,$J,358.3,16967,1,3,0)
- ;;=3^Mechlorethamine HCL Inj 10mg
- ;;^UTILITY(U,$J,358.3,16968,0)
- ;;=J9266^^109^1065^73^^^^1
- ;;^UTILITY(U,$J,358.3,16968,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,16968,1,1,0)
- ;;=1^J9266
- ;;^UTILITY(U,$J,358.3,16968,1,3,0)
- ;;=3^Pegasparagase Inj Single Vial
- ;;^UTILITY(U,$J,358.3,16969,0)
- ;;=J9268^^109^1065^76^^^^1
- ;;^UTILITY(U,$J,358.3,16969,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,16969,1,1,0)
- ;;=1^J9268
- ;;^UTILITY(U,$J,358.3,16969,1,3,0)
- ;;=3^Pentostatin Inj 10mg
- ;;^UTILITY(U,$J,358.3,16970,0)
- ;;=J9270^^109^1065^77^^^^1
- ;;^UTILITY(U,$J,358.3,16970,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,16970,1,1,0)
- ;;=1^J9270
- ;;^UTILITY(U,$J,358.3,16970,1,3,0)
- ;;=3^Plicamycin Inj 2.5mg
- ;;^UTILITY(U,$J,358.3,16971,0)
- ;;=J9280^^109^1065^64^^^^1
- ;;^UTILITY(U,$J,358.3,16971,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,16971,1,1,0)
- ;;=1^J9280
- ;;^UTILITY(U,$J,358.3,16971,1,3,0)
- ;;=3^Mitomycin Inj 5mg
- ;;^UTILITY(U,$J,358.3,16972,0)
- ;;=J9303^^109^1065^72^^^^1
- ;;^UTILITY(U,$J,358.3,16972,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,16972,1,1,0)
- ;;=1^J9303
- ;;^UTILITY(U,$J,358.3,16972,1,3,0)
- ;;=3^Panitumumab Inj 10mg
- ;;^UTILITY(U,$J,358.3,16973,0)
- ;;=J9320^^109^1065^82^^^^1
- ;;^UTILITY(U,$J,358.3,16973,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,16973,1,1,0)
- ;;=1^J9320
- ;;^UTILITY(U,$J,358.3,16973,1,3,0)
- ;;=3^Streptozocin Inj 1g
- ;;^UTILITY(U,$J,358.3,16974,0)
- ;;=J9600^^109^1065^78^^^^1
- ;;^UTILITY(U,$J,358.3,16974,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,16974,1,1,0)
- ;;=1^J9600
- ;;^UTILITY(U,$J,358.3,16974,1,3,0)
- ;;=3^Porfimer Sodium Inj 75mg
- ;;^UTILITY(U,$J,358.3,16975,0)
- ;;=J9999^^109^1065^70^^^^1
- ;;^UTILITY(U,$J,358.3,16975,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,16975,1,1,0)
- ;;=1^J9999
- ;;^UTILITY(U,$J,358.3,16975,1,3,0)
- ;;=3^Oxallplatin Inj
- ;;^UTILITY(U,$J,358.3,16976,0)
- ;;=96376^^109^1065^85^^^^1
- ;;^UTILITY(U,$J,358.3,16976,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,16976,1,1,0)
- ;;=1^96376
- ;;^UTILITY(U,$J,358.3,16976,1,3,0)
- ;;=3^Tx/Pro/Dx Inj Same Drug Add-on
- ;;^UTILITY(U,$J,358.3,16977,0)
- ;;=J9245^^109^1065^60^^^^1
- ;;^UTILITY(U,$J,358.3,16977,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,16977,1,1,0)
- ;;=1^J9245
- ;;^UTILITY(U,$J,358.3,16977,1,3,0)
- ;;=3^Melphalan Hydrochl Inj 50mg
- ;;^UTILITY(U,$J,358.3,16978,0)
- ;;=C9257^^109^1065^10^^^^1
- ;;^UTILITY(U,$J,358.3,16978,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,16978,1,1,0)
- ;;=1^C9257
- ;;^UTILITY(U,$J,358.3,16978,1,3,0)
- ;;=3^Bevacizumab Inj,0.25mg
+ ;;^UTILITY(U,$J,358.3,15746,1,4,0)
+ ;;=4^L97.413
+ ;;^UTILITY(U,$J,358.3,15746,2)
+ ;;=^5009532
+ ;;^UTILITY(U,$J,358.3,15747,0)
+ ;;=L97.414^^85^825^135
+ ;;^UTILITY(U,$J,358.3,15747,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15747,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Right Heel/Midfoot,Necrosis of Bone
+ ;;^UTILITY(U,$J,358.3,15747,1,4,0)
+ ;;=4^L97.414
+ ;;^UTILITY(U,$J,358.3,15747,2)
+ ;;=^5009533
+ ;;^UTILITY(U,$J,358.3,15748,0)
+ ;;=L97.419^^85^825^136
+ ;;^UTILITY(U,$J,358.3,15748,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15748,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Right Heel/Midfoot,Unspec Severity
+ ;;^UTILITY(U,$J,358.3,15748,1,4,0)
+ ;;=4^L97.419
+ ;;^UTILITY(U,$J,358.3,15748,2)
+ ;;=^5009534
+ ;;^UTILITY(U,$J,358.3,15749,0)
+ ;;=L97.511^^85^825^127
+ ;;^UTILITY(U,$J,358.3,15749,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15749,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Right Foot NEC,Breakdown of Skin
+ ;;^UTILITY(U,$J,358.3,15749,1,4,0)
+ ;;=4^L97.511
+ ;;^UTILITY(U,$J,358.3,15749,2)
+ ;;=^5009545
+ ;;^UTILITY(U,$J,358.3,15750,0)
+ ;;=L97.512^^85^825^128
+ ;;^UTILITY(U,$J,358.3,15750,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15750,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Right Foot NEC,Fat Layer Exposed
+ ;;^UTILITY(U,$J,358.3,15750,1,4,0)
+ ;;=4^L97.512
+ ;;^UTILITY(U,$J,358.3,15750,2)
+ ;;=^5009546
+ ;;^UTILITY(U,$J,358.3,15751,0)
+ ;;=L97.513^^85^825^129
+ ;;^UTILITY(U,$J,358.3,15751,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15751,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Right Foot NEC,Necrosis of Muscle
+ ;;^UTILITY(U,$J,358.3,15751,1,4,0)
+ ;;=4^L97.513
+ ;;^UTILITY(U,$J,358.3,15751,2)
+ ;;=^5009547
+ ;;^UTILITY(U,$J,358.3,15752,0)
+ ;;=L97.514^^85^825^130
+ ;;^UTILITY(U,$J,358.3,15752,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15752,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Right Foot NEC,Necrosis of Bone
+ ;;^UTILITY(U,$J,358.3,15752,1,4,0)
+ ;;=4^L97.514
+ ;;^UTILITY(U,$J,358.3,15752,2)
+ ;;=^5009548
+ ;;^UTILITY(U,$J,358.3,15753,0)
+ ;;=L97.519^^85^825^131
+ ;;^UTILITY(U,$J,358.3,15753,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15753,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Right Foot NEC,Unspec Severity
+ ;;^UTILITY(U,$J,358.3,15753,1,4,0)
+ ;;=4^L97.519
+ ;;^UTILITY(U,$J,358.3,15753,2)
+ ;;=^5009549
+ ;;^UTILITY(U,$J,358.3,15754,0)
+ ;;=L97.811^^85^825^137
+ ;;^UTILITY(U,$J,358.3,15754,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15754,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Right Lower Leg,Breakdown of Skin
+ ;;^UTILITY(U,$J,358.3,15754,1,4,0)
+ ;;=4^L97.811
+ ;;^UTILITY(U,$J,358.3,15754,2)
+ ;;=^5009560
+ ;;^UTILITY(U,$J,358.3,15755,0)
+ ;;=L97.812^^85^825^138
+ ;;^UTILITY(U,$J,358.3,15755,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15755,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Right Lower Leg,Fat Layer Exposed
+ ;;^UTILITY(U,$J,358.3,15755,1,4,0)
+ ;;=4^L97.812
+ ;;^UTILITY(U,$J,358.3,15755,2)
+ ;;=^5009561
+ ;;^UTILITY(U,$J,358.3,15756,0)
+ ;;=L97.813^^85^825^139
+ ;;^UTILITY(U,$J,358.3,15756,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15756,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Right Lower Leg,Necrosis of Muscle
+ ;;^UTILITY(U,$J,358.3,15756,1,4,0)
+ ;;=4^L97.813
+ ;;^UTILITY(U,$J,358.3,15756,2)
+ ;;=^5009562
+ ;;^UTILITY(U,$J,358.3,15757,0)
+ ;;=L97.814^^85^825^140
+ ;;^UTILITY(U,$J,358.3,15757,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15757,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Right Lower Leg,Necrosis of Bone
+ ;;^UTILITY(U,$J,358.3,15757,1,4,0)
+ ;;=4^L97.814
+ ;;^UTILITY(U,$J,358.3,15757,2)
+ ;;=^5009563
+ ;;^UTILITY(U,$J,358.3,15758,0)
+ ;;=L97.819^^85^825^141
+ ;;^UTILITY(U,$J,358.3,15758,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15758,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Right Lower Leg,Unspec Severity

@@ -1,132 +1,140 @@
-IBDEI02V ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI02V ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,960,0)
- ;;=92541^^12^106^8^^^^1
- ;;^UTILITY(U,$J,358.3,960,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,960,1,2,0)
- ;;=2^92541
- ;;^UTILITY(U,$J,358.3,960,1,3,0)
- ;;=3^Spontaneous Nystagmus Test W/Recording
- ;;^UTILITY(U,$J,358.3,961,0)
- ;;=92540^^12^106^1^^^^1
- ;;^UTILITY(U,$J,358.3,961,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,961,1,2,0)
- ;;=2^92540
- ;;^UTILITY(U,$J,358.3,961,1,3,0)
- ;;=3^Basic Vestibular Eval w/Recordings
- ;;^UTILITY(U,$J,358.3,962,0)
- ;;=92531^^12^107^1^^^^1
- ;;^UTILITY(U,$J,358.3,962,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,962,1,2,0)
- ;;=2^92531
- ;;^UTILITY(U,$J,358.3,962,1,3,0)
- ;;=3^Spontaneous Nystagmus Test, W/O Recording
- ;;^UTILITY(U,$J,358.3,963,0)
- ;;=92532^^12^107^2^^^^1
- ;;^UTILITY(U,$J,358.3,963,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,963,1,2,0)
- ;;=2^92532
- ;;^UTILITY(U,$J,358.3,963,1,3,0)
- ;;=3^Positional Nystagmus Test, W/O Recording
- ;;^UTILITY(U,$J,358.3,964,0)
- ;;=92533^^12^107^3^^^^1
- ;;^UTILITY(U,$J,358.3,964,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,964,1,2,0)
- ;;=2^92533
- ;;^UTILITY(U,$J,358.3,964,1,3,0)
- ;;=3^Caloric Vestibular Test, W/O Recording
- ;;^UTILITY(U,$J,358.3,965,0)
- ;;=92534^^12^107^4^^^^1
- ;;^UTILITY(U,$J,358.3,965,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,965,1,2,0)
- ;;=2^92534
- ;;^UTILITY(U,$J,358.3,965,1,3,0)
- ;;=3^Opokinetic Nystagmus Test, W/O Recording
- ;;^UTILITY(U,$J,358.3,966,0)
- ;;=98960^^12^108^1^^^^1
- ;;^UTILITY(U,$J,358.3,966,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,966,1,2,0)
- ;;=2^98960
- ;;^UTILITY(U,$J,358.3,966,1,3,0)
- ;;=3^Education & Training, Individual
- ;;^UTILITY(U,$J,358.3,967,0)
- ;;=98961^^12^108^2^^^^1
- ;;^UTILITY(U,$J,358.3,967,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,967,1,2,0)
- ;;=2^98961
- ;;^UTILITY(U,$J,358.3,967,1,3,0)
- ;;=3^Education & Training,2-4 Patients
- ;;^UTILITY(U,$J,358.3,968,0)
- ;;=98962^^12^108^3^^^^1
- ;;^UTILITY(U,$J,358.3,968,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,968,1,2,0)
- ;;=2^98962
- ;;^UTILITY(U,$J,358.3,968,1,3,0)
- ;;=3^Education & Training,5-8 Patients
- ;;^UTILITY(U,$J,358.3,969,0)
- ;;=V5011^^12^108^4^^^^1
- ;;^UTILITY(U,$J,358.3,969,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,969,1,2,0)
- ;;=2^V5011
- ;;^UTILITY(U,$J,358.3,969,1,3,0)
- ;;=3^Hearing Aid Fitting/Checking
- ;;^UTILITY(U,$J,358.3,970,0)
- ;;=V5030^^12^109^29^^^^1
- ;;^UTILITY(U,$J,358.3,970,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,970,1,2,0)
- ;;=2^V5030
- ;;^UTILITY(U,$J,358.3,970,1,3,0)
- ;;=3^HA,Monaural,Body Worn
- ;;^UTILITY(U,$J,358.3,971,0)
- ;;=V5040^^12^109^30^^^^1
- ;;^UTILITY(U,$J,358.3,971,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,971,1,2,0)
- ;;=2^V5040
- ;;^UTILITY(U,$J,358.3,971,1,3,0)
- ;;=3^HA,Monaural,Body Worn,Bone Conduction
- ;;^UTILITY(U,$J,358.3,972,0)
- ;;=V5050^^12^109^32^^^^1
- ;;^UTILITY(U,$J,358.3,972,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,972,1,2,0)
- ;;=2^V5050
- ;;^UTILITY(U,$J,358.3,972,1,3,0)
- ;;=3^HA,Monaural,In Ear
- ;;^UTILITY(U,$J,358.3,973,0)
- ;;=V5060^^12^109^28^^^^1
- ;;^UTILITY(U,$J,358.3,973,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,973,1,2,0)
- ;;=2^V5060
- ;;^UTILITY(U,$J,358.3,973,1,3,0)
- ;;=3^HA,Monaural,Behind Ear
- ;;^UTILITY(U,$J,358.3,974,0)
- ;;=V5100^^12^109^11^^^^1
- ;;^UTILITY(U,$J,358.3,974,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,974,1,2,0)
- ;;=2^V5100
- ;;^UTILITY(U,$J,358.3,974,1,3,0)
- ;;=3^HA,Bilateral,Body Worn
- ;;^UTILITY(U,$J,358.3,975,0)
- ;;=V5120^^12^109^13^^^^1
- ;;^UTILITY(U,$J,358.3,975,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,975,1,2,0)
- ;;=2^V5120
- ;;^UTILITY(U,$J,358.3,975,1,3,0)
- ;;=3^HA,Binaural,Body Worn
+ ;;^UTILITY(U,$J,358.3,579,1,4,0)
+ ;;=4^E11.621
+ ;;^UTILITY(U,$J,358.3,579,2)
+ ;;=^5002656
+ ;;^UTILITY(U,$J,358.3,580,0)
+ ;;=E11.622^^6^69^67
+ ;;^UTILITY(U,$J,358.3,580,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,580,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Skin Ulcer
+ ;;^UTILITY(U,$J,358.3,580,1,4,0)
+ ;;=4^E11.622
+ ;;^UTILITY(U,$J,358.3,580,2)
+ ;;=^5002657
+ ;;^UTILITY(U,$J,358.3,581,0)
+ ;;=E11.628^^6^69^66
+ ;;^UTILITY(U,$J,358.3,581,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,581,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Skin Complications
+ ;;^UTILITY(U,$J,358.3,581,1,4,0)
+ ;;=4^E11.628
+ ;;^UTILITY(U,$J,358.3,581,2)
+ ;;=^5002658
+ ;;^UTILITY(U,$J,358.3,582,0)
+ ;;=E11.630^^6^69^61
+ ;;^UTILITY(U,$J,358.3,582,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,582,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Periodontal Disease
+ ;;^UTILITY(U,$J,358.3,582,1,4,0)
+ ;;=4^E11.630
+ ;;^UTILITY(U,$J,358.3,582,2)
+ ;;=^5002659
+ ;;^UTILITY(U,$J,358.3,583,0)
+ ;;=E11.638^^6^69^60
+ ;;^UTILITY(U,$J,358.3,583,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,583,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Oral Complications
+ ;;^UTILITY(U,$J,358.3,583,1,4,0)
+ ;;=4^E11.638
+ ;;^UTILITY(U,$J,358.3,583,2)
+ ;;=^5002660
+ ;;^UTILITY(U,$J,358.3,584,0)
+ ;;=E11.69^^6^69^68
+ ;;^UTILITY(U,$J,358.3,584,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,584,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Specified Complication
+ ;;^UTILITY(U,$J,358.3,584,1,4,0)
+ ;;=4^E11.69
+ ;;^UTILITY(U,$J,358.3,584,2)
+ ;;=^5002664
+ ;;^UTILITY(U,$J,358.3,585,0)
+ ;;=E11.8^^6^69^69
+ ;;^UTILITY(U,$J,358.3,585,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,585,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Unspec Complications
+ ;;^UTILITY(U,$J,358.3,585,1,4,0)
+ ;;=4^E11.8
+ ;;^UTILITY(U,$J,358.3,585,2)
+ ;;=^5002665
+ ;;^UTILITY(U,$J,358.3,586,0)
+ ;;=H54.8^^6^70^2
+ ;;^UTILITY(U,$J,358.3,586,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,586,1,3,0)
+ ;;=3^Legal Blindness (Defined in USA)
+ ;;^UTILITY(U,$J,358.3,586,1,4,0)
+ ;;=4^H54.8
+ ;;^UTILITY(U,$J,358.3,586,2)
+ ;;=^5006369
+ ;;^UTILITY(U,$J,358.3,587,0)
+ ;;=H91.90^^6^70^1
+ ;;^UTILITY(U,$J,358.3,587,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,587,1,3,0)
+ ;;=3^Hearing Loss,Unspec
+ ;;^UTILITY(U,$J,358.3,587,1,4,0)
+ ;;=4^H91.90
+ ;;^UTILITY(U,$J,358.3,587,2)
+ ;;=^5006943
+ ;;^UTILITY(U,$J,358.3,588,0)
+ ;;=G23.8^^6^71^3
+ ;;^UTILITY(U,$J,358.3,588,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,588,1,3,0)
+ ;;=3^Basal Ganglia Degenerative Diseases,Other Spec
+ ;;^UTILITY(U,$J,358.3,588,1,4,0)
+ ;;=4^G23.8
+ ;;^UTILITY(U,$J,358.3,588,2)
+ ;;=^5003782
+ ;;^UTILITY(U,$J,358.3,589,0)
+ ;;=F04.^^6^71^1
+ ;;^UTILITY(U,$J,358.3,589,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,589,1,3,0)
+ ;;=3^Amnestic Disorder d/t Physiological Condition
+ ;;^UTILITY(U,$J,358.3,589,1,4,0)
+ ;;=4^F04.
+ ;;^UTILITY(U,$J,358.3,589,2)
+ ;;=^5003051
+ ;;^UTILITY(U,$J,358.3,590,0)
+ ;;=F05.^^6^71^4
+ ;;^UTILITY(U,$J,358.3,590,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,590,1,3,0)
+ ;;=3^Delirium d/t Physiological Condition
+ ;;^UTILITY(U,$J,358.3,590,1,4,0)
+ ;;=4^F05.
+ ;;^UTILITY(U,$J,358.3,590,2)
+ ;;=^5003052
+ ;;^UTILITY(U,$J,358.3,591,0)
+ ;;=F06.8^^6^71^6
+ ;;^UTILITY(U,$J,358.3,591,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,591,1,3,0)
+ ;;=3^Mental Disorders d/t Physiological Condition
+ ;;^UTILITY(U,$J,358.3,591,1,4,0)
+ ;;=4^F06.8
+ ;;^UTILITY(U,$J,358.3,591,2)
+ ;;=^5003062
+ ;;^UTILITY(U,$J,358.3,592,0)
+ ;;=F32.9^^6^71^5
+ ;;^UTILITY(U,$J,358.3,592,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,592,1,3,0)
+ ;;=3^Major Depressive Disorder,Single Episode,Unspec
+ ;;^UTILITY(U,$J,358.3,592,1,4,0)
+ ;;=4^F32.9
+ ;;^UTILITY(U,$J,358.3,592,2)
+ ;;=^5003528
+ ;;^UTILITY(U,$J,358.3,593,0)
+ ;;=F41.9^^6^71^2

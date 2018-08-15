@@ -1,0 +1,132 @@
+IBDEI1V2 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,31149,2)
+ ;;=^5059610
+ ;;^UTILITY(U,$J,358.3,31150,0)
+ ;;=W13.3XXD^^135^1391^84
+ ;;^UTILITY(U,$J,358.3,31150,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31150,1,3,0)
+ ;;=3^Fall through Floor,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,31150,1,4,0)
+ ;;=4^W13.3XXD
+ ;;^UTILITY(U,$J,358.3,31150,2)
+ ;;=^5059611
+ ;;^UTILITY(U,$J,358.3,31151,0)
+ ;;=W13.4XXA^^135^1391^71
+ ;;^UTILITY(U,$J,358.3,31151,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31151,1,3,0)
+ ;;=3^Fall from/through Window,Init Encntr
+ ;;^UTILITY(U,$J,358.3,31151,1,4,0)
+ ;;=4^W13.4XXA
+ ;;^UTILITY(U,$J,358.3,31151,2)
+ ;;=^5059613
+ ;;^UTILITY(U,$J,358.3,31152,0)
+ ;;=W13.4XXD^^135^1391^72
+ ;;^UTILITY(U,$J,358.3,31152,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31152,1,3,0)
+ ;;=3^Fall from/through Window,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,31152,1,4,0)
+ ;;=4^W13.4XXD
+ ;;^UTILITY(U,$J,358.3,31152,2)
+ ;;=^5059614
+ ;;^UTILITY(U,$J,358.3,31153,0)
+ ;;=W13.8XXA^^135^1391^35
+ ;;^UTILITY(U,$J,358.3,31153,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31153,1,3,0)
+ ;;=3^Fall from Building/Structure,Init Encntr
+ ;;^UTILITY(U,$J,358.3,31153,1,4,0)
+ ;;=4^W13.8XXA
+ ;;^UTILITY(U,$J,358.3,31153,2)
+ ;;=^5059616
+ ;;^UTILITY(U,$J,358.3,31154,0)
+ ;;=W13.8XXD^^135^1391^36
+ ;;^UTILITY(U,$J,358.3,31154,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31154,1,3,0)
+ ;;=3^Fall from Building/Structure,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,31154,1,4,0)
+ ;;=4^W13.8XXD
+ ;;^UTILITY(U,$J,358.3,31154,2)
+ ;;=^5059617
+ ;;^UTILITY(U,$J,358.3,31155,0)
+ ;;=W13.9XXA^^135^1391^33
+ ;;^UTILITY(U,$J,358.3,31155,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31155,1,3,0)
+ ;;=3^Fall from Building NOS,Init Encntr
+ ;;^UTILITY(U,$J,358.3,31155,1,4,0)
+ ;;=4^W13.9XXA
+ ;;^UTILITY(U,$J,358.3,31155,2)
+ ;;=^5059619
+ ;;^UTILITY(U,$J,358.3,31156,0)
+ ;;=W13.9XXD^^135^1391^34
+ ;;^UTILITY(U,$J,358.3,31156,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31156,1,3,0)
+ ;;=3^Fall from Building NOS,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,31156,1,4,0)
+ ;;=4^W13.9XXD
+ ;;^UTILITY(U,$J,358.3,31156,2)
+ ;;=^5059620
+ ;;^UTILITY(U,$J,358.3,31157,0)
+ ;;=W14.XXXA^^135^1391^65
+ ;;^UTILITY(U,$J,358.3,31157,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31157,1,3,0)
+ ;;=3^Fall from Tree,Init Encntr
+ ;;^UTILITY(U,$J,358.3,31157,1,4,0)
+ ;;=4^W14.XXXA
+ ;;^UTILITY(U,$J,358.3,31157,2)
+ ;;=^5059622
+ ;;^UTILITY(U,$J,358.3,31158,0)
+ ;;=W14.XXXD^^135^1391^66
+ ;;^UTILITY(U,$J,358.3,31158,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31158,1,3,0)
+ ;;=3^Fall from Tree,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,31158,1,4,0)
+ ;;=4^W14.XXXD
+ ;;^UTILITY(U,$J,358.3,31158,2)
+ ;;=^5059623
+ ;;^UTILITY(U,$J,358.3,31159,0)
+ ;;=W17.2XXA^^135^1391^77
+ ;;^UTILITY(U,$J,358.3,31159,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31159,1,3,0)
+ ;;=3^Fall into Hole,Init Encntr
+ ;;^UTILITY(U,$J,358.3,31159,1,4,0)
+ ;;=4^W17.2XXA
+ ;;^UTILITY(U,$J,358.3,31159,2)
+ ;;=^5059772
+ ;;^UTILITY(U,$J,358.3,31160,0)
+ ;;=W17.2XXD^^135^1391^78
+ ;;^UTILITY(U,$J,358.3,31160,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31160,1,3,0)
+ ;;=3^Fall into Hole,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,31160,1,4,0)
+ ;;=4^W17.2XXD
+ ;;^UTILITY(U,$J,358.3,31160,2)
+ ;;=^5059773
+ ;;^UTILITY(U,$J,358.3,31161,0)
+ ;;=W17.3XXA^^135^1391^75
+ ;;^UTILITY(U,$J,358.3,31161,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31161,1,3,0)
+ ;;=3^Fall into Empty Swimming Pool,Init Encntr
+ ;;^UTILITY(U,$J,358.3,31161,1,4,0)
+ ;;=4^W17.3XXA
+ ;;^UTILITY(U,$J,358.3,31161,2)
+ ;;=^5059775
+ ;;^UTILITY(U,$J,358.3,31162,0)
+ ;;=W17.3XXD^^135^1391^76
+ ;;^UTILITY(U,$J,358.3,31162,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31162,1,3,0)
+ ;;=3^Fall into Empty Swimming Pool,Subs Encntr

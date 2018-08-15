@@ -1,136 +1,124 @@
-IBDEI1BH ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1BH ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,23583,1,2,0)
- ;;=2^173.39
- ;;^UTILITY(U,$J,358.3,23583,1,5,0)
- ;;=5^Other spec neoplasm skin, face
- ;;^UTILITY(U,$J,358.3,23583,2)
- ;;=^340475
- ;;^UTILITY(U,$J,358.3,23584,0)
- ;;=173.40^^148^1495^17
- ;;^UTILITY(U,$J,358.3,23584,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23584,1,2,0)
- ;;=2^173.40
- ;;^UTILITY(U,$J,358.3,23584,1,5,0)
- ;;=5^Malig neoplasm skin, scalp/neck
- ;;^UTILITY(U,$J,358.3,23584,2)
- ;;=^340600
- ;;^UTILITY(U,$J,358.3,23585,0)
- ;;=173.41^^148^1495^18
- ;;^UTILITY(U,$J,358.3,23585,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23585,1,2,0)
- ;;=2^173.41
- ;;^UTILITY(U,$J,358.3,23585,1,5,0)
- ;;=5^BCC of skin of scalp/neck
- ;;^UTILITY(U,$J,358.3,23585,2)
- ;;=^340476
- ;;^UTILITY(U,$J,358.3,23586,0)
- ;;=173.42^^148^1495^19
- ;;^UTILITY(U,$J,358.3,23586,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23586,1,2,0)
- ;;=2^173.42
- ;;^UTILITY(U,$J,358.3,23586,1,5,0)
- ;;=5^SCC of skin of scalp/neck
- ;;^UTILITY(U,$J,358.3,23586,2)
- ;;=^340477
- ;;^UTILITY(U,$J,358.3,23587,0)
- ;;=173.49^^148^1495^20
- ;;^UTILITY(U,$J,358.3,23587,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23587,1,2,0)
- ;;=2^173.49
- ;;^UTILITY(U,$J,358.3,23587,1,5,0)
- ;;=5^Other spec neoplasm skin, scalp/neck
- ;;^UTILITY(U,$J,358.3,23587,2)
- ;;=^340478
- ;;^UTILITY(U,$J,358.3,23588,0)
- ;;=173.50^^148^1495^21
- ;;^UTILITY(U,$J,358.3,23588,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23588,1,2,0)
- ;;=2^173.50
- ;;^UTILITY(U,$J,358.3,23588,1,5,0)
- ;;=5^Malig neoplasm skin, trunk
- ;;^UTILITY(U,$J,358.3,23588,2)
- ;;=^340601
- ;;^UTILITY(U,$J,358.3,23589,0)
- ;;=173.51^^148^1495^22
- ;;^UTILITY(U,$J,358.3,23589,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23589,1,2,0)
- ;;=2^173.51
- ;;^UTILITY(U,$J,358.3,23589,1,5,0)
- ;;=5^BCC of skin of trunk
- ;;^UTILITY(U,$J,358.3,23589,2)
- ;;=^340479
- ;;^UTILITY(U,$J,358.3,23590,0)
- ;;=173.52^^148^1495^23
- ;;^UTILITY(U,$J,358.3,23590,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23590,1,2,0)
- ;;=2^173.52
- ;;^UTILITY(U,$J,358.3,23590,1,5,0)
- ;;=5^SCC of skin of trunk
- ;;^UTILITY(U,$J,358.3,23590,2)
- ;;=^340480
- ;;^UTILITY(U,$J,358.3,23591,0)
- ;;=173.59^^148^1495^24
- ;;^UTILITY(U,$J,358.3,23591,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23591,1,2,0)
- ;;=2^173.59
- ;;^UTILITY(U,$J,358.3,23591,1,5,0)
- ;;=5^Other spec neoplasm skin, trunk
- ;;^UTILITY(U,$J,358.3,23591,2)
- ;;=^340481
- ;;^UTILITY(U,$J,358.3,23592,0)
- ;;=173.60^^148^1495^25
- ;;^UTILITY(U,$J,358.3,23592,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23592,1,2,0)
- ;;=2^173.60
- ;;^UTILITY(U,$J,358.3,23592,1,5,0)
- ;;=5^Malig neoplasm skin, arm/shoulder
- ;;^UTILITY(U,$J,358.3,23592,2)
- ;;=^340602
- ;;^UTILITY(U,$J,358.3,23593,0)
- ;;=173.61^^148^1495^26
- ;;^UTILITY(U,$J,358.3,23593,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23593,1,2,0)
- ;;=2^173.61
- ;;^UTILITY(U,$J,358.3,23593,1,5,0)
- ;;=5^BCC of skin of arm/shoulder
- ;;^UTILITY(U,$J,358.3,23593,2)
- ;;=^340482
- ;;^UTILITY(U,$J,358.3,23594,0)
- ;;=173.62^^148^1495^27
- ;;^UTILITY(U,$J,358.3,23594,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23594,1,2,0)
- ;;=2^173.62
- ;;^UTILITY(U,$J,358.3,23594,1,5,0)
- ;;=5^SCC of skin of arm/shoulder
- ;;^UTILITY(U,$J,358.3,23594,2)
- ;;=^340483
- ;;^UTILITY(U,$J,358.3,23595,0)
- ;;=173.69^^148^1495^28
- ;;^UTILITY(U,$J,358.3,23595,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23595,1,2,0)
- ;;=2^173.69
- ;;^UTILITY(U,$J,358.3,23595,1,5,0)
- ;;=5^Other spec neoplasm skin, arm/shoulder
- ;;^UTILITY(U,$J,358.3,23595,2)
- ;;=^340484
- ;;^UTILITY(U,$J,358.3,23596,0)
- ;;=173.70^^148^1495^29
- ;;^UTILITY(U,$J,358.3,23596,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23596,1,2,0)
- ;;=2^173.70
+ ;;^UTILITY(U,$J,358.3,21971,1,4,0)
+ ;;=4^S32.810S
+ ;;^UTILITY(U,$J,358.3,21971,2)
+ ;;=^5025102
+ ;;^UTILITY(U,$J,358.3,21972,0)
+ ;;=S32.811S^^101^1036^24
+ ;;^UTILITY(U,$J,358.3,21972,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21972,1,3,0)
+ ;;=3^Mult fx of pelvis w unstable disrupt of pelvic ring, sequela
+ ;;^UTILITY(U,$J,358.3,21972,1,4,0)
+ ;;=4^S32.811S
+ ;;^UTILITY(U,$J,358.3,21972,2)
+ ;;=^5025108
+ ;;^UTILITY(U,$J,358.3,21973,0)
+ ;;=S32.465S^^101^1036^25
+ ;;^UTILITY(U,$J,358.3,21973,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21973,1,3,0)
+ ;;=3^Nondisp associated transv/post fx left acetabulum, sequela
+ ;;^UTILITY(U,$J,358.3,21973,1,4,0)
+ ;;=4^S32.465S
+ ;;^UTILITY(U,$J,358.3,21973,2)
+ ;;=^5024910
+ ;;^UTILITY(U,$J,358.3,21974,0)
+ ;;=S32.464S^^101^1036^26
+ ;;^UTILITY(U,$J,358.3,21974,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21974,1,3,0)
+ ;;=3^Nondisp associated transv/post fx right acetabulum, sequela
+ ;;^UTILITY(U,$J,358.3,21974,1,4,0)
+ ;;=4^S32.464S
+ ;;^UTILITY(U,$J,358.3,21974,2)
+ ;;=^5024904
+ ;;^UTILITY(U,$J,358.3,21975,0)
+ ;;=S32.315S^^101^1036^32
+ ;;^UTILITY(U,$J,358.3,21975,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21975,1,3,0)
+ ;;=3^Nondisp fx of avulsion of left ilium, sequela
+ ;;^UTILITY(U,$J,358.3,21975,1,4,0)
+ ;;=4^S32.315S
+ ;;^UTILITY(U,$J,358.3,21975,2)
+ ;;=^5024676
+ ;;^UTILITY(U,$J,358.3,21976,0)
+ ;;=S32.615S^^101^1036^33
+ ;;^UTILITY(U,$J,358.3,21976,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21976,1,3,0)
+ ;;=3^Nondisp fx of avulsion of left ischium, sequela
+ ;;^UTILITY(U,$J,358.3,21976,1,4,0)
+ ;;=4^S32.615S
+ ;;^UTILITY(U,$J,358.3,21976,2)
+ ;;=^5025084
+ ;;^UTILITY(U,$J,358.3,21977,0)
+ ;;=S32.314S^^101^1036^34
+ ;;^UTILITY(U,$J,358.3,21977,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21977,1,3,0)
+ ;;=3^Nondisp fx of avulsion of right ilium, sequela
+ ;;^UTILITY(U,$J,358.3,21977,1,4,0)
+ ;;=4^S32.314S
+ ;;^UTILITY(U,$J,358.3,21977,2)
+ ;;=^5024670
+ ;;^UTILITY(U,$J,358.3,21978,0)
+ ;;=S32.614S^^101^1036^35
+ ;;^UTILITY(U,$J,358.3,21978,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21978,1,3,0)
+ ;;=3^Nondisp fx of avulsion of right ischium, sequela
+ ;;^UTILITY(U,$J,358.3,21978,1,4,0)
+ ;;=4^S32.614S
+ ;;^UTILITY(U,$J,358.3,21978,2)
+ ;;=^5025078
+ ;;^UTILITY(U,$J,358.3,21979,0)
+ ;;=S32.485S^^101^1036^36
+ ;;^UTILITY(U,$J,358.3,21979,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21979,1,3,0)
+ ;;=3^Nondisp fx of dome of left acetabulum, sequela
+ ;;^UTILITY(U,$J,358.3,21979,1,4,0)
+ ;;=4^S32.485S
+ ;;^UTILITY(U,$J,358.3,21979,2)
+ ;;=^5024982
+ ;;^UTILITY(U,$J,358.3,21980,0)
+ ;;=S32.484S^^101^1036^27
+ ;;^UTILITY(U,$J,358.3,21980,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21980,1,3,0)
+ ;;=3^Nondisp fx dome of right acetabulum, sequela
+ ;;^UTILITY(U,$J,358.3,21980,1,4,0)
+ ;;=4^S32.484S
+ ;;^UTILITY(U,$J,358.3,21980,2)
+ ;;=^5024976
+ ;;^UTILITY(U,$J,358.3,21981,0)
+ ;;=S32.435S^^101^1036^28
+ ;;^UTILITY(U,$J,358.3,21981,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21981,1,3,0)
+ ;;=3^Nondisp fx of anterior column of left acetabulum, sequela
+ ;;^UTILITY(U,$J,358.3,21981,1,4,0)
+ ;;=4^S32.435S
+ ;;^UTILITY(U,$J,358.3,21981,2)
+ ;;=^5024802
+ ;;^UTILITY(U,$J,358.3,21982,0)
+ ;;=S32.434S^^101^1036^29
+ ;;^UTILITY(U,$J,358.3,21982,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21982,1,3,0)
+ ;;=3^Nondisp fx of anterior column of right acetabulum, sequela
+ ;;^UTILITY(U,$J,358.3,21982,1,4,0)
+ ;;=4^S32.434S
+ ;;^UTILITY(U,$J,358.3,21982,2)
+ ;;=^5024796
+ ;;^UTILITY(U,$J,358.3,21983,0)
+ ;;=S32.415S^^101^1036^30
+ ;;^UTILITY(U,$J,358.3,21983,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21983,1,3,0)
+ ;;=3^Nondisp fx of anterior wall of left acetabulum, sequela

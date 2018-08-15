@@ -1,148 +1,126 @@
-IBDEI01V ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI01V ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,415,1,0)
+ ;;^UTILITY(U,$J,358.3,100,0)
+ ;;=99343^^2^21^3
+ ;;^UTILITY(U,$J,358.3,100,1,0)
  ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,415,1,1,0)
- ;;=1^Comprehensive
- ;;^UTILITY(U,$J,358.3,415,1,2,0)
- ;;=2^99215
- ;;^UTILITY(U,$J,358.3,416,0)
- ;;=99241^^4^44^1
- ;;^UTILITY(U,$J,358.3,416,1,0)
+ ;;^UTILITY(U,$J,358.3,100,1,1,0)
+ ;;=1^DETAILED HX & EXAM;LOW COMPLEX MDM
+ ;;^UTILITY(U,$J,358.3,100,1,2,0)
+ ;;=2^99343
+ ;;^UTILITY(U,$J,358.3,101,0)
+ ;;=99344^^2^21^4
+ ;;^UTILITY(U,$J,358.3,101,1,0)
  ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,416,1,1,0)
- ;;=1^PROBLEM FOCUSED
- ;;^UTILITY(U,$J,358.3,416,1,2,0)
- ;;=2^99241
- ;;^UTILITY(U,$J,358.3,417,0)
- ;;=99242^^4^44^2
- ;;^UTILITY(U,$J,358.3,417,1,0)
+ ;;^UTILITY(U,$J,358.3,101,1,1,0)
+ ;;=1^COMPREH HX & EXAM;MOD COMPLEX MDM
+ ;;^UTILITY(U,$J,358.3,101,1,2,0)
+ ;;=2^99344
+ ;;^UTILITY(U,$J,358.3,102,0)
+ ;;=99345^^2^21^5
+ ;;^UTILITY(U,$J,358.3,102,1,0)
  ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,417,1,1,0)
- ;;=1^EXPANDED PROBLEM FOCUSED
- ;;^UTILITY(U,$J,358.3,417,1,2,0)
- ;;=2^99242
- ;;^UTILITY(U,$J,358.3,418,0)
- ;;=99243^^4^44^3
- ;;^UTILITY(U,$J,358.3,418,1,0)
+ ;;^UTILITY(U,$J,358.3,102,1,1,0)
+ ;;=1^COMPREH HX & EXAM;HIGH COMPLEX MDM
+ ;;^UTILITY(U,$J,358.3,102,1,2,0)
+ ;;=2^99345
+ ;;^UTILITY(U,$J,358.3,103,0)
+ ;;=99366^^2^22^1
+ ;;^UTILITY(U,$J,358.3,103,1,0)
  ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,418,1,1,0)
- ;;=1^DETAILED
- ;;^UTILITY(U,$J,358.3,418,1,2,0)
- ;;=2^99243
- ;;^UTILITY(U,$J,358.3,419,0)
- ;;=99244^^4^44^4
- ;;^UTILITY(U,$J,358.3,419,1,0)
+ ;;^UTILITY(U,$J,358.3,103,1,1,0)
+ ;;=1^Interdisc Tm Conf w/ Pt/Fam,30+min,Non-Phys
+ ;;^UTILITY(U,$J,358.3,103,1,2,0)
+ ;;=2^99366
+ ;;^UTILITY(U,$J,358.3,104,0)
+ ;;=99367^^2^22^3
+ ;;^UTILITY(U,$J,358.3,104,1,0)
  ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,419,1,1,0)
- ;;=1^COMPREHENSIVE-MODERATE
- ;;^UTILITY(U,$J,358.3,419,1,2,0)
- ;;=2^99244
- ;;^UTILITY(U,$J,358.3,420,0)
- ;;=99245^^4^44^5
- ;;^UTILITY(U,$J,358.3,420,1,0)
+ ;;^UTILITY(U,$J,358.3,104,1,1,0)
+ ;;=1^Interdisc Tm Conf w/o Pt/Fam,30+min,Physician
+ ;;^UTILITY(U,$J,358.3,104,1,2,0)
+ ;;=2^99367
+ ;;^UTILITY(U,$J,358.3,105,0)
+ ;;=99368^^2^22^2
+ ;;^UTILITY(U,$J,358.3,105,1,0)
  ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,420,1,1,0)
- ;;=1^COMPREHENSIVE-HIGH COMPLEX
- ;;^UTILITY(U,$J,358.3,420,1,2,0)
- ;;=2^99245
- ;;^UTILITY(U,$J,358.3,421,0)
- ;;=780.4^^5^45^37
- ;;^UTILITY(U,$J,358.3,421,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,421,1,4,0)
- ;;=4^780.4
- ;;^UTILITY(U,$J,358.3,421,1,5,0)
- ;;=5^Dizziness and Giddiness
- ;;^UTILITY(U,$J,358.3,421,2)
- ;;=^35946
- ;;^UTILITY(U,$J,358.3,422,0)
- ;;=780.79^^5^45^64
- ;;^UTILITY(U,$J,358.3,422,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,422,1,4,0)
- ;;=4^780.79
- ;;^UTILITY(U,$J,358.3,422,1,5,0)
- ;;=5^Malaise
- ;;^UTILITY(U,$J,358.3,422,2)
- ;;=Malaise^73344
- ;;^UTILITY(U,$J,358.3,423,0)
- ;;=780.1^^5^45^55
- ;;^UTILITY(U,$J,358.3,423,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,423,1,4,0)
- ;;=4^780.1
- ;;^UTILITY(U,$J,358.3,423,1,5,0)
- ;;=5^Hallucinations
- ;;^UTILITY(U,$J,358.3,423,2)
- ;;=Hallucinations^53738
- ;;^UTILITY(U,$J,358.3,424,0)
- ;;=780.2^^5^45^75
- ;;^UTILITY(U,$J,358.3,424,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,424,1,4,0)
- ;;=4^780.2
- ;;^UTILITY(U,$J,358.3,424,1,5,0)
- ;;=5^Syncope and Collapse
- ;;^UTILITY(U,$J,358.3,424,2)
- ;;=^116707
- ;;^UTILITY(U,$J,358.3,425,0)
- ;;=786.2^^5^45^32
- ;;^UTILITY(U,$J,358.3,425,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,425,1,4,0)
- ;;=4^786.2
- ;;^UTILITY(U,$J,358.3,425,1,5,0)
- ;;=5^Cough
- ;;^UTILITY(U,$J,358.3,425,2)
- ;;=Cough^28905
- ;;^UTILITY(U,$J,358.3,426,0)
- ;;=786.01^^5^45^62
- ;;^UTILITY(U,$J,358.3,426,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,426,1,4,0)
- ;;=4^786.01
- ;;^UTILITY(U,$J,358.3,426,1,5,0)
- ;;=5^Hyperventilation
- ;;^UTILITY(U,$J,358.3,426,2)
- ;;=Hyperventilation^60480
- ;;^UTILITY(U,$J,358.3,427,0)
- ;;=786.07^^5^45^80
- ;;^UTILITY(U,$J,358.3,427,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,427,1,4,0)
- ;;=4^786.07
- ;;^UTILITY(U,$J,358.3,427,1,5,0)
- ;;=5^Wheezing
- ;;^UTILITY(U,$J,358.3,427,2)
- ;;=Wheezing^127848
- ;;^UTILITY(U,$J,358.3,428,0)
- ;;=784.0^^5^45^56
- ;;^UTILITY(U,$J,358.3,428,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,428,1,4,0)
- ;;=4^784.0
- ;;^UTILITY(U,$J,358.3,428,1,5,0)
- ;;=5^Headache
- ;;^UTILITY(U,$J,358.3,428,2)
- ;;=Headache^54133
- ;;^UTILITY(U,$J,358.3,429,0)
- ;;=311.^^5^45^33
- ;;^UTILITY(U,$J,358.3,429,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,429,1,4,0)
- ;;=4^311.
- ;;^UTILITY(U,$J,358.3,429,1,5,0)
- ;;=5^Depression
- ;;^UTILITY(U,$J,358.3,429,2)
- ;;=Depression^35603
- ;;^UTILITY(U,$J,358.3,430,0)
- ;;=784.49^^5^45^60
- ;;^UTILITY(U,$J,358.3,430,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,430,1,4,0)
- ;;=4^784.49
- ;;^UTILITY(U,$J,358.3,430,1,5,0)
- ;;=5^Hoarseness
+ ;;^UTILITY(U,$J,358.3,105,1,1,0)
+ ;;=1^Interdisc Tm Conf w/o Pt/Fam,30+min,Non-Phys
+ ;;^UTILITY(U,$J,358.3,105,1,2,0)
+ ;;=2^99368
+ ;;^UTILITY(U,$J,358.3,106,0)
+ ;;=T74.11XA^^3^23^8
+ ;;^UTILITY(U,$J,358.3,106,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,106,1,3,0)
+ ;;=3^Spouse/Partner or Nonspouse/Nonpartner Violence,Physical,Confirmed,Initial Encounter
+ ;;^UTILITY(U,$J,358.3,106,1,4,0)
+ ;;=4^T74.11XA
+ ;;^UTILITY(U,$J,358.3,106,2)
+ ;;=^5054146
+ ;;^UTILITY(U,$J,358.3,107,0)
+ ;;=T74.11XD^^3^23^9
+ ;;^UTILITY(U,$J,358.3,107,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,107,1,3,0)
+ ;;=3^Spouse/Partner or Nonspouse/Nonpartner Violence,Physical,Confirmed,Subsequent Encounter
+ ;;^UTILITY(U,$J,358.3,107,1,4,0)
+ ;;=4^T74.11XD
+ ;;^UTILITY(U,$J,358.3,107,2)
+ ;;=^5054147
+ ;;^UTILITY(U,$J,358.3,108,0)
+ ;;=T76.11XA^^3^23^10
+ ;;^UTILITY(U,$J,358.3,108,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,108,1,3,0)
+ ;;=3^Spouse/Partner or Nonspouse/Nonpartner Violence,Physical,Suspected,Initial Encounter
+ ;;^UTILITY(U,$J,358.3,108,1,4,0)
+ ;;=4^T76.11XA
+ ;;^UTILITY(U,$J,358.3,108,2)
+ ;;=^5054221
+ ;;^UTILITY(U,$J,358.3,109,0)
+ ;;=T76.11XD^^3^23^11
+ ;;^UTILITY(U,$J,358.3,109,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,109,1,3,0)
+ ;;=3^Spouse/Partner or Nonspouse/Nonpartner Violence,Physical,Suspected,Subsequent Encounter
+ ;;^UTILITY(U,$J,358.3,109,1,4,0)
+ ;;=4^T76.11XD
+ ;;^UTILITY(U,$J,358.3,109,2)
+ ;;=^5054222
+ ;;^UTILITY(U,$J,358.3,110,0)
+ ;;=Z69.11^^3^23^4
+ ;;^UTILITY(U,$J,358.3,110,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,110,1,3,0)
+ ;;=3^MH Svc for Victim of Spousal/Partner Abuse/Neglect
+ ;;^UTILITY(U,$J,358.3,110,1,4,0)
+ ;;=4^Z69.11
+ ;;^UTILITY(U,$J,358.3,110,2)
+ ;;=^5063232
+ ;;^UTILITY(U,$J,358.3,111,0)
+ ;;=Z91.410^^3^23^5
+ ;;^UTILITY(U,$J,358.3,111,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,111,1,3,0)
+ ;;=3^Past Hx of Spouse/Partner Violence,Physical or Sexual
+ ;;^UTILITY(U,$J,358.3,111,1,4,0)
+ ;;=4^Z91.410
+ ;;^UTILITY(U,$J,358.3,111,2)
+ ;;=^5063619
+ ;;^UTILITY(U,$J,358.3,112,0)
+ ;;=Z69.12^^3^23^2
+ ;;^UTILITY(U,$J,358.3,112,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,112,1,3,0)
+ ;;=3^MH Svc for Perpetrator of Spousal/Partner Abuse-Physical,Sexual or Psychological
+ ;;^UTILITY(U,$J,358.3,112,1,4,0)
+ ;;=4^Z69.12
+ ;;^UTILITY(U,$J,358.3,112,2)
+ ;;=^5063233
+ ;;^UTILITY(U,$J,358.3,113,0)
+ ;;=T74.21XA^^3^23^12
+ ;;^UTILITY(U,$J,358.3,113,1,0)
+ ;;=^358.31IA^4^2

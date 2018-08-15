@@ -1,5 +1,5 @@
 RORX019 ;BPOIFO/ACS - LIVER SCORE BY RANGE ;5/18/11 12:39pm
- ;;1.5;CLINICAL CASE REGISTRIES;**10,13,14,15,19**;Feb 17, 2006;Build 43
+ ;;1.5;CLINICAL CASE REGISTRIES;**10,13,14,15,19,21,26,31**;Feb 17, 2006;Build 62
  ;
  ;******************************************************************************
  ;******************************************************************************
@@ -14,6 +14,12 @@ RORX019 ;BPOIFO/ACS - LIVER SCORE BY RANGE ;5/18/11 12:39pm
  ;ROR*1.5*14   APR 2011    A SAUNDERS   Added APRI and FIB4 scores.
  ;ROR*1.5*15   MAY 2011    C RAY        Modified to exclude null tests
  ;ROR*1.5*19   FEB 2012    J SCOTT      Support for ICD-10 Coding System
+ ;ROR*1.5*21   SEP 2013    T KOPP       Added ICN as last report column if
+ ;                                      additional identifier option selected
+ ;ROR*1.5*26   MAY 2015    T KOPP       Set up LIVPARAM so it can be called
+ ;                                      from other entry points/reports
+ ;ROR*1.5*31   MAY 2017    M FERRARESE  Adding PACT ,PCP,and AGE/DOB as additional
+ ;                                      identifiers.
  ;******************************************************************************
  ;******************************************************************************
  Q
@@ -91,20 +97,10 @@ MLDRANGE(RORTSK) ;
  ;
  ;--- Put report header data into output:
  ;report creation date, task number, last registry update date, last
- ;data extraction date, and ULNAST if present
+ ;data extraction date, and ULNAST if present, liver score by range
  S RC=$$HEADER(REPORT,PARAMS) Q:RC<0 RC
  ;
- ;--- Get test ranges requested
- ;I=1 ==> report = MELD      I=2 ==> report = MELD Na
- ;I=3 ==> report = APRI      I=4 ==> report = FIB-4
- S I=0 F  S I=$O(RORTSK("PARAMS","LRGRANGES","C",I)) Q:I=""  D
- . S RORDATA("L",I)=$G(RORTSK("PARAMS","LRGRANGES","C",I,"L")) ;low range
- . S RORDATA("H",I)=$G(RORTSK("PARAMS","LRGRANGES","C",I,"H")) ;high range
- ;
- ;--- Get Max Date for test results  OUTPUT: RORDATA("DATE")
- ;In the GUI, the user selects either 'most recent' or 'as of' date
- S RORDATA("DATE")=$$PARAM^RORTSK01("OPTIONS","MAX_DATE")
- I $G(RORDATA("DATE"))="" S RORDATA("DATE")=DT
+ D LIVPARAM(.RORDATA,.RORTSK,.RORLC)
  ;
  ;--- Create 'patients' table
  N RORBODY S RORBODY=$$ADDVAL^RORTSK11(RORTSK,"PATIENTS",,REPORT)
@@ -124,41 +120,6 @@ MLDRANGE(RORTSK) ;
  ;task progress percentage (shown on the GUI screen)
  N RORPTCNT S RORPTCNT=$$REGSIZE^RORUTL02(+RORREG) S:RORPTCNT<0 RORPTCNT=0
  ;
- ;--- LOINC codes
- I "1,2"[RORDATA("IDLST") D  ;If MELD or MELD-NA scores requested
- . ;create list for future comparison
- . S RORDATA("CR_LOINC")=";15045-8;21232-4;2160-0;" ;Creatinine
- . S RORDATA("BIL_LOINC")=";14631-6;1975-2;" ;Bilirubin
- . S RORDATA("SOD_LOINC")=";2947-0;2951-2;32717-1;" ;Sodium
- . S RORDATA("INR_LOINC")=";34714-6;6301-6;" ;INR 
- . ;set up array for future call to Lab API
- . S RORLC="CH" ;chemistry sub-file to search in #63
- . S RORLC(1)="15045-8^LN" ;Creatinine LOINC
- . S RORLC(2)="21232-4^LN" ;Creatinine LOINC
- . S RORLC(3)="2160-0^LN"  ;Creatinine LOINC
- . S RORLC(4)="14631-6^LN" ;Bilirubin LOINC
- . S RORLC(5)="1975-2^LN"  ;Bilirubin LOINC
- . S RORLC(6)="2947-0^LN"  ;Sodium LOINC
- . S RORLC(7)="2951-2^LN"  ;Sodium LOINC
- . S RORLC(8)="32717-1^LN" ;Sodium LOINC
- . S RORLC(9)="34714-6^LN" ;INR LOINC
- . S RORLC(10)="6301-6^LN" ;INR LOINC
- ;
- I "3,4"[RORDATA("IDLST") D  ;If APRI or FIB-4 scores requested
- . ;create list for future comparison
- . S RORDATA("AST_LOINC")=";1916-6;1920-8;127344-1;" ;AST 
- . S RORDATA("PLAT_LOINC")=";777-3;778-1;26515-7;" ;Platelets 
- . S RORDATA("ALT_LOINC")=";1742-6;16325-3;" ;ALT 
- . ;set up array for future call to Lab API
- . S RORLC="CH" ;chemistry sub-file to search in #63
- . S RORLC(1)="1916-6^LN" ;AST LOINC
- . S RORLC(2)="1920-8^LN" ;AST LOINC
- . ;S RORLC(3)="127344-1^LN" ;AST LOINC
- . S RORLC(4)="777-3^LN" ;Platelets LOINC
- . S RORLC(5)="778-1^LN" ;Platelets LOINC
- . S RORLC(6)="26515-7^LN" ;Platelets LOINC
- . S RORLC(7)="1742-6^LN" ;ALT LOINC
- . S RORLC(8)="16325-3^LN" ;ALT LOINC
  ;
  ;=== Set up Clinic/Division list parameters
  S RORCDLIST=$$CDPARMS^RORXU001(.RORTSK,.RORCDSTDT,.RORCDENDT,1)
@@ -223,7 +184,7 @@ PATIENT(DFN,PTAG,RORDATA,RORPTIEN,RORLC) ;
  I '$$INRANGE(.RORDATA) Q 1  ;exclude patient from report if ANY score is out of range
  I '$$SKIP(.RORDATA) Q 1  ;exclude patient from report with null scores
  ;--- Get patient data and put into the report
- N VADM,VA,RORDOD,MTAG,TTAG
+ N VADM,VA,RORDOD,MTAG,TTAG,AGETYPE,AGE
  D VADEM^RORUTL05(DFN,1)
  ;--- The <PATIENT> tag
  S PTAG=$$ADDVAL^RORTSK11(RORTSK,"PATIENT",,PTAG,,DFN)
@@ -232,6 +193,10 @@ PATIENT(DFN,PTAG,RORDATA,RORPTIEN,RORLC) ;
  D ADDVAL^RORTSK11(RORTSK,"NAME",VADM(1),PTAG,1)
  ;--- Last 4 digits of the SSN
  D ADDVAL^RORTSK11(RORTSK,"LAST4",VA("BID"),PTAG,2)
+ ;--- Age/DOB
+ S AGETYPE=$$PARAM^RORTSK01("AGE_RANGE","TYPE") I AGETYPE'="ALL" D
+ . S AGE=$S(AGETYPE="AGE":$P(VADM(4),U),AGETYPE="DOB":$$DATE^RORXU002($P(VADM(3),U)\1),1:"")
+ . D ADDVAL^RORTSK11(RORTSK,AGETYPE,AGE,PTAG,1)
  ;--- Date of death
  S RORDOD=$$DATE^RORXU002($P(VADM(6),U)\1)
  D ADDVAL^RORTSK11(RORTSK,"DOD",$G(RORDOD),PTAG,1)
@@ -254,6 +219,15 @@ PATIENT(DFN,PTAG,RORDATA,RORPTIEN,RORLC) ;
  I RORDATA("IDLST")[3 D ADDVAL^RORTSK11(RORTSK,"APRI",$G(RORDATA("SCORE",3)),PTAG,3)
  ;---  FIB-4 Score
  I RORDATA("IDLST")[4 D ADDVAL^RORTSK11(RORTSK,"FIB4",$G(RORDATA("SCORE",4)),PTAG,3)
+ I $$PARAM^RORTSK01("PATIENTS","ICN") D
+ . S TMP=$$ICN^RORUTL02(DFN)
+ . D ADDVAL^RORTSK11(RORTSK,"ICN",TMP,PTAG,1)
+ I $$PARAM^RORTSK01("PATIENTS","PACT") D
+ . S TMP=$$PACT^RORUTL02(DFN)
+ . D ADDVAL^RORTSK11(RORTSK,"PACT",TMP,PTAG,1)
+ I $$PARAM^RORTSK01("PATIENTS","PCP") D
+ . S TMP=$$PCP^RORUTL02(DFN)
+ . D ADDVAL^RORTSK11(RORTSK,"PCP",TMP,PTAG,1)
  Q ($S($G(TTAG)<0:TTAG,1:1))
  ;
  ;*****************************************************
@@ -355,13 +329,15 @@ HEADER(PARTAG,PARAMS) ;
  S HEADER=$$HEADER^RORXU002(.RORTSK,PARTAG)
  Q:HEADER<0 HEADER
  ;manually build the table defintion(s) listed below
- ;PATIENTS(#,NAME,LAST4,DOD,TEST,DATE,RESULT,MELD,MELDNA,APRI,FIB4)
+ ;PATIENTS(#,NAME,LAST4,AGE,DOD,TEST,DATE,RESULT,MELD,MELDNA,APRI,FIB4,ICN,PACT,PCP)
  S COLUMNS=$$ADDVAL^RORTSK11(RORTSK,"TBLDEF",,HEADER)
  D ADDATTR^RORTSK11(RORTSK,COLUMNS,"NAME","PATIENTS")
  D ADDATTR^RORTSK11(RORTSK,COLUMNS,"HEADER","1")
  D ADDATTR^RORTSK11(RORTSK,COLUMNS,"FOOTER","1")
  ;--- Required columns
- F COL="#","NAME","LAST4","DOD","TEST","DATE","RESULT"  D
+ S AGETYPE=$$PARAM^RORTSK01("AGE_RANGE","TYPE")
+ F COL="#","NAME","LAST4",AGETYPE,"DOD","TEST","DATE","RESULT" D
+ . Q:COL="ALL"  ;don't add AGE/DOB to the columns if AGETYPE is set to ALL ages
  . S TMP=$$ADDVAL^RORTSK11(RORTSK,"COLUMN",,COLUMNS)
  . D ADDATTR^RORTSK11(RORTSK,TMP,"NAME",COL)
  ;--- Additional columns
@@ -380,6 +356,15 @@ HEADER(PARTAG,PARAMS) ;
  I RORDATA("IDLST")[4 D
  . S TMP=$$ADDVAL^RORTSK11(RORTSK,"COLUMN",,COLUMNS)
  . D ADDATTR^RORTSK11(RORTSK,TMP,"NAME","FIB4")
+ I $$PARAM^RORTSK01("PATIENTS","ICN") D
+ . S TMP=$$ADDVAL^RORTSK11(RORTSK,"COLUMN",,COLUMNS)
+ . D ADDATTR^RORTSK11(RORTSK,TMP,"NAME","ICN")
+ I $$PARAM^RORTSK01("PATIENTS","PACT") D
+ . S TMP=$$ADDVAL^RORTSK11(RORTSK,"COLUMN",,COLUMNS)
+ . D ADDATTR^RORTSK11(RORTSK,TMP,"NAME","PACT")
+ I $$PARAM^RORTSK01("PATIENTS","PCP") D
+ . S TMP=$$ADDVAL^RORTSK11(RORTSK,"COLUMN",,COLUMNS)
+ . D ADDATTR^RORTSK11(RORTSK,TMP,"NAME","PCP")
  ;--- LOINC codes
  N LTAG S LTAG=$$ADDVAL^RORTSK11(RORTSK,"LOINC_CODES",,PARTAG)
  N CTAG S CTAG=$$ADDVAL^RORTSK11(RORTSK,"CODE",,LTAG)
@@ -403,4 +388,66 @@ HEADER(PARTAG,PARAMS) ;
  . D ADDATTR^RORTSK11(RORTSK,ULNAST,"VALUES",$G(RORDATA("ULNAST")))
  ;
  Q $S(RC<0:RC,1:HEADER)
+ ;
+ ; Set up parameter values for liver scores
+ ;
+ ;  Input:
+ ;     RORDATA   Array with ROR data
+ ;     RORTSK    Task number and task parameters
+ ;
+ ;  Output:
+ ;     RORDATA
+ ;     RORTSK
+ ;     RORLC     sub-file and LOINC codes to search for    
+ ;
+LIVPARAM(RORDATA,RORTSK,RORLC) ;
+ ;--- Get test ranges requested
+ ;I=1 ==> report = MELD      I=2 ==> report = MELD Na
+ ;I=3 ==> report = APRI      I=4 ==> report = FIB-4
+ N I
+ S I=0 F  S I=$O(RORTSK("PARAMS","LRGRANGES","C",I)) Q:I=""  D
+ . S RORDATA("L",I)=$G(RORTSK("PARAMS","LRGRANGES","C",I,"L")) ;low range
+ . S RORDATA("H",I)=$G(RORTSK("PARAMS","LRGRANGES","C",I,"H")) ;high range
+ ;
+ ;--- Get Max Date for test results  OUTPUT: RORDATA("DATE")
+ ;In the GUI, the user selects either 'most recent' or 'as of' date
+ S RORDATA("DATE")=$$PARAM^RORTSK01("OPTIONS","MAX_DATE")
+ I $G(RORDATA("DATE"))="" S RORDATA("DATE")=DT
+ ;
+ ;--- LOINC codes
+ I "1,2"[RORDATA("IDLST") D  ;If MELD or MELD-NA scores requested
+ . ;create list for future comparison
+ . S RORDATA("CR_LOINC")=";15045-8;21232-4;2160-0;" ;Creatinine
+ . S RORDATA("BIL_LOINC")=";14631-6;1975-2;" ;Bilirubin
+ . S RORDATA("SOD_LOINC")=";2947-0;2951-2;32717-1;" ;Sodium
+ . S RORDATA("INR_LOINC")=";34714-6;6301-6;" ;INR 
+ . ;set up array for future call to Lab API
+ . S RORLC="CH" ;chemistry sub-file to search in #63
+ . S RORLC(1)="15045-8^LN" ;Creatinine LOINC
+ . S RORLC(2)="21232-4^LN" ;Creatinine LOINC
+ . S RORLC(3)="2160-0^LN"  ;Creatinine LOINC
+ . S RORLC(4)="14631-6^LN" ;Bilirubin LOINC
+ . S RORLC(5)="1975-2^LN"  ;Bilirubin LOINC
+ . S RORLC(6)="2947-0^LN"  ;Sodium LOINC
+ . S RORLC(7)="2951-2^LN"  ;Sodium LOINC
+ . S RORLC(8)="32717-1^LN" ;Sodium LOINC
+ . S RORLC(9)="34714-6^LN" ;INR LOINC
+ . S RORLC(10)="6301-6^LN" ;INR LOINC
+ ;
+ I "3,4"[RORDATA("IDLST") D  ;If APRI or FIB-4 scores requested
+ . ;create list for future comparison
+ . S RORDATA("AST_LOINC")=";1916-6;1920-8;127344-1;" ;AST 
+ . S RORDATA("PLAT_LOINC")=";777-3;778-1;26515-7;" ;Platelets 
+ . S RORDATA("ALT_LOINC")=";1742-6;16325-3;" ;ALT 
+ . ;set up array for future call to Lab API
+ . S RORLC="CH" ;chemistry sub-file to search in #63
+ . S RORLC(1)="1916-6^LN" ;AST LOINC
+ . S RORLC(2)="1920-8^LN" ;AST LOINC
+ . ;S RORLC(3)="127344-1^LN" ;AST LOINC
+ . S RORLC(4)="777-3^LN" ;Platelets LOINC
+ . S RORLC(5)="778-1^LN" ;Platelets LOINC
+ . S RORLC(6)="26515-7^LN" ;Platelets LOINC
+ . S RORLC(7)="1742-6^LN" ;ALT LOINC
+ . S RORLC(8)="16325-3^LN" ;ALT LOINC
+ Q
  ;

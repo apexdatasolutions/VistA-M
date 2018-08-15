@@ -1,0 +1,132 @@
+IBDEI1K8 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,26082,1,4,0)
+ ;;=4^C83.50
+ ;;^UTILITY(U,$J,358.3,26082,2)
+ ;;=^5001581
+ ;;^UTILITY(U,$J,358.3,26083,0)
+ ;;=C83.59^^127^1271^44
+ ;;^UTILITY(U,$J,358.3,26083,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26083,1,3,0)
+ ;;=3^Lymphoblastic Lymphoma,Extranodal/Solid Organ Sites
+ ;;^UTILITY(U,$J,358.3,26083,1,4,0)
+ ;;=4^C83.59
+ ;;^UTILITY(U,$J,358.3,26083,2)
+ ;;=^5001590
+ ;;^UTILITY(U,$J,358.3,26084,0)
+ ;;=C83.70^^127^1271^45
+ ;;^UTILITY(U,$J,358.3,26084,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26084,1,3,0)
+ ;;=3^Burkitt Lymphoma,Unspec Site
+ ;;^UTILITY(U,$J,358.3,26084,1,4,0)
+ ;;=4^C83.70
+ ;;^UTILITY(U,$J,358.3,26084,2)
+ ;;=^5001591
+ ;;^UTILITY(U,$J,358.3,26085,0)
+ ;;=C83.79^^127^1271^46
+ ;;^UTILITY(U,$J,358.3,26085,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26085,1,3,0)
+ ;;=3^Burkitt Lymphoma,Extranodal/Solid Organ Sites
+ ;;^UTILITY(U,$J,358.3,26085,1,4,0)
+ ;;=4^C83.79
+ ;;^UTILITY(U,$J,358.3,26085,2)
+ ;;=^5001600
+ ;;^UTILITY(U,$J,358.3,26086,0)
+ ;;=C81.90^^127^1271^47
+ ;;^UTILITY(U,$J,358.3,26086,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26086,1,3,0)
+ ;;=3^Hodgkin Lymphoma,Unspec Site
+ ;;^UTILITY(U,$J,358.3,26086,1,4,0)
+ ;;=4^C81.90
+ ;;^UTILITY(U,$J,358.3,26086,2)
+ ;;=^5001451
+ ;;^UTILITY(U,$J,358.3,26087,0)
+ ;;=C81.99^^127^1271^48
+ ;;^UTILITY(U,$J,358.3,26087,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26087,1,3,0)
+ ;;=3^Hodgkin Lymphoma,Extranodal/Solid Organ Sites
+ ;;^UTILITY(U,$J,358.3,26087,1,4,0)
+ ;;=4^C81.99
+ ;;^UTILITY(U,$J,358.3,26087,2)
+ ;;=^5001460
+ ;;^UTILITY(U,$J,358.3,26088,0)
+ ;;=C82.90^^127^1271^49
+ ;;^UTILITY(U,$J,358.3,26088,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26088,1,3,0)
+ ;;=3^Follicular Lymphoma,Unspec Site
+ ;;^UTILITY(U,$J,358.3,26088,1,4,0)
+ ;;=4^C82.90
+ ;;^UTILITY(U,$J,358.3,26088,2)
+ ;;=^5001541
+ ;;^UTILITY(U,$J,358.3,26089,0)
+ ;;=C82.99^^127^1271^50
+ ;;^UTILITY(U,$J,358.3,26089,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26089,1,3,0)
+ ;;=3^Folicular Lymphoma,Extranodal/Solid Organ Sites
+ ;;^UTILITY(U,$J,358.3,26089,1,4,0)
+ ;;=4^C82.99
+ ;;^UTILITY(U,$J,358.3,26089,2)
+ ;;=^5001550
+ ;;^UTILITY(U,$J,358.3,26090,0)
+ ;;=C91.40^^127^1271^51
+ ;;^UTILITY(U,$J,358.3,26090,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26090,1,3,0)
+ ;;=3^Hairy Cell Leukemia,Not in Remission
+ ;;^UTILITY(U,$J,358.3,26090,1,4,0)
+ ;;=4^C91.40
+ ;;^UTILITY(U,$J,358.3,26090,2)
+ ;;=^5001771
+ ;;^UTILITY(U,$J,358.3,26091,0)
+ ;;=C90.00^^127^1271^52
+ ;;^UTILITY(U,$J,358.3,26091,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26091,1,3,0)
+ ;;=3^Multiple Myeloma,Not in Remission
+ ;;^UTILITY(U,$J,358.3,26091,1,4,0)
+ ;;=4^C90.00
+ ;;^UTILITY(U,$J,358.3,26091,2)
+ ;;=^5001752
+ ;;^UTILITY(U,$J,358.3,26092,0)
+ ;;=C90.01^^127^1271^53
+ ;;^UTILITY(U,$J,358.3,26092,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26092,1,3,0)
+ ;;=3^Multiple Myeloma,In Remission
+ ;;^UTILITY(U,$J,358.3,26092,1,4,0)
+ ;;=4^C90.01
+ ;;^UTILITY(U,$J,358.3,26092,2)
+ ;;=^267515
+ ;;^UTILITY(U,$J,358.3,26093,0)
+ ;;=C91.00^^127^1271^54
+ ;;^UTILITY(U,$J,358.3,26093,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26093,1,3,0)
+ ;;=3^Acute Lymphoblastic Leukemia,Not in Remission
+ ;;^UTILITY(U,$J,358.3,26093,1,4,0)
+ ;;=4^C91.00
+ ;;^UTILITY(U,$J,358.3,26093,2)
+ ;;=^5001762
+ ;;^UTILITY(U,$J,358.3,26094,0)
+ ;;=C91.01^^127^1271^55
+ ;;^UTILITY(U,$J,358.3,26094,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26094,1,3,0)
+ ;;=3^Acute Lymphoblastic Leukemia,In Remission
+ ;;^UTILITY(U,$J,358.3,26094,1,4,0)
+ ;;=4^C91.01
+ ;;^UTILITY(U,$J,358.3,26094,2)
+ ;;=^5001763
+ ;;^UTILITY(U,$J,358.3,26095,0)
+ ;;=C91.10^^127^1271^56
+ ;;^UTILITY(U,$J,358.3,26095,1,0)
+ ;;=^358.31IA^4^2

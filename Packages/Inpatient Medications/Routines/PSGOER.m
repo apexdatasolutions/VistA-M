@@ -1,5 +1,6 @@
-PSGOER ;BIR/CML3-RENEW A SINGLE ORDER ; 4/27/11 9:54am
- ;;5.0;INPATIENT MEDICATIONS ;**11,30,29,35,70,58,95,110,111,133,141,198,181,246,278**;16 DEC 97;Build 4
+PSGOER ;BIR/CML3 - RENEW A SINGLE ORDER ;4/27/11 9:54am
+ ;;5.0;INPATIENT MEDICATIONS ;**11,30,29,35,70,58,95,110,111,133,141,198,181,246,278,281,315,338,256,347**;16 DEC 97;Build 6
+ ;;Per VHA Directive 2004-038, this routine should not be modified.
  ;
  ; Reference to ^PS(51.1 supported by DBIA 2177.
  ; Reference to ^PS(55 supported by DBIA 2191.
@@ -7,6 +8,7 @@ PSGOER ;BIR/CML3-RENEW A SINGLE ORDER ; 4/27/11 9:54am
  ; Reference to ^PSBAPIPM is supported by DBIA 3564.
  ; Reference to ^PS(59.7 is supported by DBIA 2181.
  ; Reference to ^PSDRUG( is supported by DBIA 2192.
+ ; Reference to ^TMP("PSODAOC",$J is supported by DBIA 6071.
  ;
  ; renew a single order
  I $G(PSJCOM) D ^PSJCOMR Q
@@ -19,6 +21,11 @@ PSGOER ;BIR/CML3-RENEW A SINGLE ORDER ; 4/27/11 9:54am
  .I $G(PSGS0XT)="D",$G(PSGAT)="" S CHK=1 W !!?3,"This order contains a 'DAY OF THE WEEK' schedule without admin times"
  .W !?11," and CANNOT be renewed!" D PAUSE^VALM1
  I $G(PSGSCH)]"",'$$DOW^PSIVUTL(PSGSCH),'$$PRNOK^PSGS0(PSGSCH) I '$D(^PS(51.1,"AC","PSJ",PSGSCH)) D  Q
+  .;PSJ*5*256
+ .NEW PSJOLDNM
+ .S PSJOLDNM("ORD_SCHD")=PSGSCH
+ .I (PSGSCH]""),$$CHKSCHD^PSJMISC2(.PSJOLDNM,"R") K PSJOLDNM Q
+ .K PSJOLDNM
  .W !!?3,"This order contains an invalid schedule and CANNOT be renewed!" D PAUSE^VALM1
  W !! K DIR S DIR(0)="Y",DIR("A")=$S($P(PSJSYSP0,"^",3):"RENEW THIS ORDER",1:"MARK THIS ORDER FOR RENEWAL"),DIR("B")="YES"
  S DIR("?")="Answer 'YES' to "_$S($P(PSJSYSP0,"^",3):"renew this order",1:"mark this order for renewal")_".  Answer 'NO' (or '^') to stop now." D ^DIR
@@ -55,6 +62,9 @@ SPEED ;
  N PSGOEAV S PSGOEAV=+PSJSYSU
  W !!,"...updating order..." K DA S DA(1)=PSGP,DA=+PSGORD,PSGAL("C")=PSJSYSU*10+18000 D ^PSGAL5 W "."
  I $$LS^PSSLOCK(PSGP,PSGORD) D UPDREN(PSGORD,PSGDT,PSGOEPR,PSGOFD,PSJNOO),UPDRENOE(PSGP,PSGORD,PSGDT) D UNL^PSSLOCK(PSGP,PSGORD)
+ S ^TMP("PSODAOC",$J,"IP IEN")=PSGORD   ;set up which IEN will be used to store order checks
+ D SETOC^PSJNEWOC(PSGORD) ;PSJ*5*281 stores order checks
+ K ^TMP("PSODAOC",$J),^TMP("PSJDAOC",$J)
  ;
  I 'PSGOERDP,$P(PSJSYSW0,"^",4),PSGFD'<PSGWLL S $P(^PS(55,PSGP,5.1),"^")=+PSGFD
  W ".DONE!" S VALMBCK="Q" Q
@@ -65,8 +75,8 @@ MARK ;
  I $D(PSJSYSO) S PSGORD=+PSGORD_"A",PSGPOSA="R",PSGPOSD=PSGDT D ENPOS^PSGVDS
  Q
 MOVE(X,Y) ; Move comments/dispense drugs from 55 to 53.45.
- S Q=0 F  S Q=$O(^PS(55,PSGP,5,+PSGORD,X,Q)) Q:'Q  S ^PS(53.45,PSJSYSP,Y,Q,0)=$G(^(Q,0))
- S:Q ^PS(53.45,Y,0)="^53.450"_Y_"P^"_Q_U_Q
+ S Q=0 F  S Q=$O(^PS(55,PSGP,5,+PSGORD,X,Q)) Q:'Q  S ^PS(53.45,PSJSYSP,Y,Q,0)=$G(^(Q,0)) S ^PS(53.45,PSJSYSP,Y,0)="^53.450"_Y_"P^"_Q_U_Q
+ ;S:Q ^PS(53.45,Y,0)="^53.450"_Y_"P^"_Q_U_Q
  Q
 OC55 ;* Order checks for Speed finish and regular finish
  ;PSJ*5*181 - no longer use (OC will be triggered from OC^PSGOER0)
@@ -132,7 +142,8 @@ EXPIRED(PSJX,PSJY) ;
  S NOW=$S($G(PSGDT):PSGDT,1:$$DATE^PSJUTL2())
  S STOP=$S(PSJY["U":$P($G(^PS(55,PSJX,5,+PSJY,2)),U,4),1:$P($G(^PS(55,PSJX,"IV",+PSJY,0)),"^",3))
  I NOW<STOP Q 0
- I PSJY["U" N ND2,ND0 S ND0=$G(^PS(55,PSJX,5,+PSJY,0)),ND2=$G(^PS(55,PSJX,5,+PSJY,2)),FREQ=$P(ND2,"^",6) D
+ ;*315 ND2P1 ON NEXT LINE
+ I PSJY["U" N ND2,ND0 S ND0=$G(^PS(55,PSJX,5,+PSJY,0)),ND2=$G(^PS(55,PSJX,5,+PSJY,2)),ND2P1=$G(^PS(55,PSJX,5,+PSJY,2.1)),FREQ=$P(ND2,"^",6) D
  .N SCHED S SCHED=$P($G(^PS(55,PSJX,5,+PSJY,2)),"^") I SCHED["PRN" S FREQ=$$PRNFREQ(SCHED)
  .S LSTSTR=$P(ND2,"^",2)_"^"_$P(ND2,"^",4)_"^"_SCHED_"^"_$P(ND0,"^",7)_"^^"_$P(ND2,"^",5)
  .S LAST=$$EN^PSBAPIPM(PSJX,PSJY) I LAST,($P(ND0,"^",7)="O"),($P(LAST,"^",3)="G") I LAST>$P(ND2,"^",2) S CUTOFF=$$FMADD^XLFDT(NOW,,-1) Q

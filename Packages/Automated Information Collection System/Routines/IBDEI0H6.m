@@ -1,144 +1,128 @@
-IBDEI0H6 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0H6 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,8341,2)
- ;;=^269230
- ;;^UTILITY(U,$J,358.3,8342,0)
- ;;=377.51^^58^608^84
- ;;^UTILITY(U,$J,358.3,8342,1,0)
+ ;;^UTILITY(U,$J,358.3,7680,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8342,1,3,0)
- ;;=3^Optic Chiasm D/O w/ Pituitary Neoplasm
- ;;^UTILITY(U,$J,358.3,8342,1,4,0)
- ;;=4^377.51
- ;;^UTILITY(U,$J,358.3,8342,2)
- ;;=^269236
- ;;^UTILITY(U,$J,358.3,8343,0)
- ;;=377.75^^58^608^25
- ;;^UTILITY(U,$J,358.3,8343,1,0)
+ ;;^UTILITY(U,$J,358.3,7680,1,3,0)
+ ;;=3^Rapidly progr neph synd w/ diffus endocaplry prolif glomrlneph
+ ;;^UTILITY(U,$J,358.3,7680,1,4,0)
+ ;;=4^N01.4
+ ;;^UTILITY(U,$J,358.3,7680,2)
+ ;;=^5015505
+ ;;^UTILITY(U,$J,358.3,7681,0)
+ ;;=N01.5^^52^518^68
+ ;;^UTILITY(U,$J,358.3,7681,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8343,1,3,0)
- ;;=3^Cortical Blindness
- ;;^UTILITY(U,$J,358.3,8343,1,4,0)
- ;;=4^377.75
- ;;^UTILITY(U,$J,358.3,8343,2)
- ;;=^269248
- ;;^UTILITY(U,$J,358.3,8344,0)
- ;;=377.9^^58^608^88
- ;;^UTILITY(U,$J,358.3,8344,1,0)
+ ;;^UTILITY(U,$J,358.3,7681,1,3,0)
+ ;;=3^Rapidly progr neph synd w/ diffuse mesangiocap glomrlneph
+ ;;^UTILITY(U,$J,358.3,7681,1,4,0)
+ ;;=4^N01.5
+ ;;^UTILITY(U,$J,358.3,7681,2)
+ ;;=^5015506
+ ;;^UTILITY(U,$J,358.3,7682,0)
+ ;;=N01.6^^52^518^63
+ ;;^UTILITY(U,$J,358.3,7682,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8344,1,3,0)
- ;;=3^Optic Nerve/Visual Pathways,Unspec
- ;;^UTILITY(U,$J,358.3,8344,1,4,0)
- ;;=4^377.9
- ;;^UTILITY(U,$J,358.3,8344,2)
- ;;=^269251
- ;;^UTILITY(U,$J,358.3,8345,0)
- ;;=378.31^^58^608^54
- ;;^UTILITY(U,$J,358.3,8345,1,0)
+ ;;^UTILITY(U,$J,358.3,7682,1,3,0)
+ ;;=3^Rapidly progr neph synd w/ dense deposit disease
+ ;;^UTILITY(U,$J,358.3,7682,1,4,0)
+ ;;=4^N01.6
+ ;;^UTILITY(U,$J,358.3,7682,2)
+ ;;=^5015507
+ ;;^UTILITY(U,$J,358.3,7683,0)
+ ;;=N01.7^^52^518^66
+ ;;^UTILITY(U,$J,358.3,7683,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8345,1,3,0)
- ;;=3^Hypertropia
- ;;^UTILITY(U,$J,358.3,8345,1,4,0)
- ;;=4^378.31
- ;;^UTILITY(U,$J,358.3,8345,2)
- ;;=^60471
- ;;^UTILITY(U,$J,358.3,8346,0)
- ;;=378.81^^58^608^41
- ;;^UTILITY(U,$J,358.3,8346,1,0)
+ ;;^UTILITY(U,$J,358.3,7683,1,3,0)
+ ;;=3^Rapidly progr neph synd w/ diffuse crescentic glomrlneph
+ ;;^UTILITY(U,$J,358.3,7683,1,4,0)
+ ;;=4^N01.7
+ ;;^UTILITY(U,$J,358.3,7683,2)
+ ;;=^5015508
+ ;;^UTILITY(U,$J,358.3,7684,0)
+ ;;=N01.8^^52^518^71
+ ;;^UTILITY(U,$J,358.3,7684,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8346,1,3,0)
- ;;=3^Gaze Palsy
- ;;^UTILITY(U,$J,358.3,8346,1,4,0)
- ;;=4^378.81
- ;;^UTILITY(U,$J,358.3,8346,2)
- ;;=^265444
- ;;^UTILITY(U,$J,358.3,8347,0)
- ;;=378.84^^58^608^24
- ;;^UTILITY(U,$J,358.3,8347,1,0)
+ ;;^UTILITY(U,$J,358.3,7684,1,3,0)
+ ;;=3^Rapidly progr neph synd w/ oth morphologic changes
+ ;;^UTILITY(U,$J,358.3,7684,1,4,0)
+ ;;=4^N01.8
+ ;;^UTILITY(U,$J,358.3,7684,2)
+ ;;=^5015509
+ ;;^UTILITY(U,$J,358.3,7685,0)
+ ;;=N01.9^^52^518^72
+ ;;^UTILITY(U,$J,358.3,7685,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8347,1,3,0)
- ;;=3^Convergence Spasm
- ;;^UTILITY(U,$J,358.3,8347,1,4,0)
- ;;=4^378.84
- ;;^UTILITY(U,$J,358.3,8347,2)
- ;;=^269278
- ;;^UTILITY(U,$J,358.3,8348,0)
- ;;=378.85^^58^608^31
- ;;^UTILITY(U,$J,358.3,8348,1,0)
+ ;;^UTILITY(U,$J,358.3,7685,1,3,0)
+ ;;=3^Rapidly progr neph synd w/ unsp morphologic changes
+ ;;^UTILITY(U,$J,358.3,7685,1,4,0)
+ ;;=4^N01.9
+ ;;^UTILITY(U,$J,358.3,7685,2)
+ ;;=^5015510
+ ;;^UTILITY(U,$J,358.3,7686,0)
+ ;;=N02.0^^52^518^80
+ ;;^UTILITY(U,$J,358.3,7686,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8348,1,3,0)
- ;;=3^Divergence Insufficiency
- ;;^UTILITY(U,$J,358.3,8348,1,4,0)
- ;;=4^378.85
- ;;^UTILITY(U,$J,358.3,8348,2)
- ;;=^269279
- ;;^UTILITY(U,$J,358.3,8349,0)
- ;;=378.86^^58^608^76
- ;;^UTILITY(U,$J,358.3,8349,1,0)
+ ;;^UTILITY(U,$J,358.3,7686,1,3,0)
+ ;;=3^Recurrent & perst hematur w/ minor glomerular abnlt
+ ;;^UTILITY(U,$J,358.3,7686,1,4,0)
+ ;;=4^N02.0
+ ;;^UTILITY(U,$J,358.3,7686,2)
+ ;;=^5015511
+ ;;^UTILITY(U,$J,358.3,7687,0)
+ ;;=N02.1^^52^518^79
+ ;;^UTILITY(U,$J,358.3,7687,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8349,1,3,0)
- ;;=3^Ophthalmoplegia,Inernuclear
- ;;^UTILITY(U,$J,358.3,8349,1,4,0)
- ;;=4^378.86
- ;;^UTILITY(U,$J,358.3,8349,2)
- ;;=^265214
- ;;^UTILITY(U,$J,358.3,8350,0)
- ;;=378.87^^58^608^111
- ;;^UTILITY(U,$J,358.3,8350,1,0)
+ ;;^UTILITY(U,$J,358.3,7687,1,3,0)
+ ;;=3^Recurrent & perst hematur w/ focal & seg glomerular lesions
+ ;;^UTILITY(U,$J,358.3,7687,1,4,0)
+ ;;=4^N02.1
+ ;;^UTILITY(U,$J,358.3,7687,2)
+ ;;=^5015512
+ ;;^UTILITY(U,$J,358.3,7688,0)
+ ;;=N02.2^^52^518^77
+ ;;^UTILITY(U,$J,358.3,7688,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8350,1,3,0)
- ;;=3^Skew Deviation
- ;;^UTILITY(U,$J,358.3,8350,1,4,0)
- ;;=4^378.87
- ;;^UTILITY(U,$J,358.3,8350,2)
- ;;=^269280
- ;;^UTILITY(U,$J,358.3,8351,0)
- ;;=379.41^^58^608^9
- ;;^UTILITY(U,$J,358.3,8351,1,0)
+ ;;^UTILITY(U,$J,358.3,7688,1,3,0)
+ ;;=3^Recurrent & perst hematur w/ diffuse membranous glomrlneph
+ ;;^UTILITY(U,$J,358.3,7688,1,4,0)
+ ;;=4^N02.2
+ ;;^UTILITY(U,$J,358.3,7688,2)
+ ;;=^5015513
+ ;;^UTILITY(U,$J,358.3,7689,0)
+ ;;=N02.3^^52^518^74
+ ;;^UTILITY(U,$J,358.3,7689,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8351,1,3,0)
- ;;=3^Anisicoria
- ;;^UTILITY(U,$J,358.3,8351,1,4,0)
- ;;=4^379.41
- ;;^UTILITY(U,$J,358.3,8351,2)
- ;;=^7834
- ;;^UTILITY(U,$J,358.3,8352,0)
- ;;=379.42^^58^608^67
- ;;^UTILITY(U,$J,358.3,8352,1,0)
+ ;;^UTILITY(U,$J,358.3,7689,1,3,0)
+ ;;=3^Recur & perst hematur w/ diffus mesangial prolif glomrlneph
+ ;;^UTILITY(U,$J,358.3,7689,1,4,0)
+ ;;=4^N02.3
+ ;;^UTILITY(U,$J,358.3,7689,2)
+ ;;=^5015514
+ ;;^UTILITY(U,$J,358.3,7690,0)
+ ;;=N02.4^^52^518^73
+ ;;^UTILITY(U,$J,358.3,7690,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8352,1,3,0)
- ;;=3^Miosis
- ;;^UTILITY(U,$J,358.3,8352,1,4,0)
- ;;=4^379.42
- ;;^UTILITY(U,$J,358.3,8352,2)
- ;;=^78197
- ;;^UTILITY(U,$J,358.3,8353,0)
- ;;=379.46^^58^608^5
- ;;^UTILITY(U,$J,358.3,8353,1,0)
+ ;;^UTILITY(U,$J,358.3,7690,1,3,0)
+ ;;=3^Recur & perst hematur w/ diffus endocaplry prolif glomrlneph
+ ;;^UTILITY(U,$J,358.3,7690,1,4,0)
+ ;;=4^N02.4
+ ;;^UTILITY(U,$J,358.3,7690,2)
+ ;;=^5015515
+ ;;^UTILITY(U,$J,358.3,7691,0)
+ ;;=N02.5^^52^518^78
+ ;;^UTILITY(U,$J,358.3,7691,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8353,1,3,0)
- ;;=3^Adie's Pupil
- ;;^UTILITY(U,$J,358.3,8353,1,4,0)
- ;;=4^379.46
- ;;^UTILITY(U,$J,358.3,8353,2)
- ;;=^120229
- ;;^UTILITY(U,$J,358.3,8354,0)
- ;;=379.51^^58^608^74
- ;;^UTILITY(U,$J,358.3,8354,1,0)
+ ;;^UTILITY(U,$J,358.3,7691,1,3,0)
+ ;;=3^Recurrent & perst hematur w/ diffuse mesangiocap glomrlneph
+ ;;^UTILITY(U,$J,358.3,7691,1,4,0)
+ ;;=4^N02.5
+ ;;^UTILITY(U,$J,358.3,7691,2)
+ ;;=^5015516
+ ;;^UTILITY(U,$J,358.3,7692,0)
+ ;;=N02.6^^52^518^75
+ ;;^UTILITY(U,$J,358.3,7692,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8354,1,3,0)
- ;;=3^Nystagmus-Pendular,Congenital
- ;;^UTILITY(U,$J,358.3,8354,1,4,0)
- ;;=4^379.51
- ;;^UTILITY(U,$J,358.3,8354,2)
- ;;=^265447
- ;;^UTILITY(U,$J,358.3,8355,0)
- ;;=386.03^^58^608^58
- ;;^UTILITY(U,$J,358.3,8355,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8355,1,3,0)
- ;;=3^Meniere's Disease
- ;;^UTILITY(U,$J,358.3,8355,1,4,0)
- ;;=4^386.03
+ ;;^UTILITY(U,$J,358.3,7692,1,3,0)
+ ;;=3^Recurrent & perst hematur w/ dense deposit disease

@@ -1,138 +1,122 @@
-IBDEI1C4 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1C4 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,23917,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23917,1,2,0)
- ;;=2^753.10
- ;;^UTILITY(U,$J,358.3,23917,1,5,0)
- ;;=5^Renal Cysts
- ;;^UTILITY(U,$J,358.3,23917,2)
- ;;=^104720
- ;;^UTILITY(U,$J,358.3,23918,0)
- ;;=753.16^^153^1524^29
- ;;^UTILITY(U,$J,358.3,23918,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23918,1,2,0)
- ;;=2^753.16
- ;;^UTILITY(U,$J,358.3,23918,1,5,0)
- ;;=5^Medullary Cystic Kidney
- ;;^UTILITY(U,$J,358.3,23918,2)
- ;;=^67073
- ;;^UTILITY(U,$J,358.3,23919,0)
- ;;=590.00^^153^1524^14
- ;;^UTILITY(U,$J,358.3,23919,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23919,1,2,0)
- ;;=2^590.00
- ;;^UTILITY(U,$J,358.3,23919,1,5,0)
- ;;=5^Chr Pyelonephritis NOS
- ;;^UTILITY(U,$J,358.3,23919,2)
- ;;=^270367
- ;;^UTILITY(U,$J,358.3,23920,0)
- ;;=590.01^^153^1524^13
- ;;^UTILITY(U,$J,358.3,23920,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23920,1,2,0)
- ;;=2^590.01
- ;;^UTILITY(U,$J,358.3,23920,1,5,0)
- ;;=5^Chr Pyeloneph w/ Les Ren Med Necrosis
- ;;^UTILITY(U,$J,358.3,23920,2)
- ;;=^270368
- ;;^UTILITY(U,$J,358.3,23921,0)
- ;;=590.10^^153^1524^2
- ;;^UTILITY(U,$J,358.3,23921,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23921,1,2,0)
- ;;=2^590.10
- ;;^UTILITY(U,$J,358.3,23921,1,5,0)
- ;;=5^Acute Pyelonephritis NOS
- ;;^UTILITY(U,$J,358.3,23921,2)
- ;;=^270369
- ;;^UTILITY(U,$J,358.3,23922,0)
- ;;=590.11^^153^1524^1
- ;;^UTILITY(U,$J,358.3,23922,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23922,1,2,0)
- ;;=2^590.11
- ;;^UTILITY(U,$J,358.3,23922,1,5,0)
- ;;=5^AC Pyeloneph w/ Les Ren Med Necrosis
- ;;^UTILITY(U,$J,358.3,23922,2)
- ;;=^270370
- ;;^UTILITY(U,$J,358.3,23923,0)
- ;;=590.2^^153^1524^36
- ;;^UTILITY(U,$J,358.3,23923,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23923,1,2,0)
- ;;=2^590.2
- ;;^UTILITY(U,$J,358.3,23923,1,5,0)
- ;;=5^Renal & Perinephric Abscess
- ;;^UTILITY(U,$J,358.3,23923,2)
- ;;=^270371
- ;;^UTILITY(U,$J,358.3,23924,0)
- ;;=590.3^^153^1524^35
- ;;^UTILITY(U,$J,358.3,23924,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23924,1,2,0)
- ;;=2^590.3
- ;;^UTILITY(U,$J,358.3,23924,1,5,0)
- ;;=5^Pyeloureteritis Cystica
- ;;^UTILITY(U,$J,358.3,23924,2)
- ;;=^270372
- ;;^UTILITY(U,$J,358.3,23925,0)
- ;;=590.80^^153^1524^34
- ;;^UTILITY(U,$J,358.3,23925,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23925,1,2,0)
- ;;=2^590.80
- ;;^UTILITY(U,$J,358.3,23925,1,5,0)
- ;;=5^Pyelonephritis,Unspec
- ;;^UTILITY(U,$J,358.3,23925,2)
- ;;=^101463
- ;;^UTILITY(U,$J,358.3,23926,0)
- ;;=590.81^^153^1524^33
- ;;^UTILITY(U,$J,358.3,23926,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23926,1,2,0)
- ;;=2^590.81
- ;;^UTILITY(U,$J,358.3,23926,1,5,0)
- ;;=5^Pyelitis/Pyeloneph in Oth Diseases
- ;;^UTILITY(U,$J,358.3,23926,2)
- ;;=^270375
- ;;^UTILITY(U,$J,358.3,23927,0)
- ;;=189.0^^153^1524^25
- ;;^UTILITY(U,$J,358.3,23927,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23927,1,2,0)
- ;;=2^189.0
- ;;^UTILITY(U,$J,358.3,23927,1,5,0)
- ;;=5^Malig Neo Kidney,Primary
- ;;^UTILITY(U,$J,358.3,23927,2)
- ;;=^73523
- ;;^UTILITY(U,$J,358.3,23928,0)
- ;;=189.1^^153^1524^27
- ;;^UTILITY(U,$J,358.3,23928,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23928,1,2,0)
- ;;=2^189.1
- ;;^UTILITY(U,$J,358.3,23928,1,5,0)
- ;;=5^Malig Neo Renal Pelvis
- ;;^UTILITY(U,$J,358.3,23928,2)
- ;;=^267264
- ;;^UTILITY(U,$J,358.3,23929,0)
- ;;=189.2^^153^1524^28
- ;;^UTILITY(U,$J,358.3,23929,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23929,1,2,0)
- ;;=2^189.2
- ;;^UTILITY(U,$J,358.3,23929,1,5,0)
- ;;=5^Malig Neo Ureter
- ;;^UTILITY(U,$J,358.3,23929,2)
- ;;=^267265
- ;;^UTILITY(U,$J,358.3,23930,0)
- ;;=198.0^^153^1524^26
- ;;^UTILITY(U,$J,358.3,23930,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23930,1,2,0)
- ;;=2^198.0
+ ;;^UTILITY(U,$J,358.3,22244,1,4,0)
+ ;;=4^S32.052S
+ ;;^UTILITY(U,$J,358.3,22244,2)
+ ;;=^5024508
+ ;;^UTILITY(U,$J,358.3,22245,0)
+ ;;=S12.02XS^^101^1039^62
+ ;;^UTILITY(U,$J,358.3,22245,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22245,1,3,0)
+ ;;=3^Unstable burst fracture of first cervical vertebra, sequela
+ ;;^UTILITY(U,$J,358.3,22245,1,4,0)
+ ;;=4^S12.02XS
+ ;;^UTILITY(U,$J,358.3,22245,2)
+ ;;=^5021568
+ ;;^UTILITY(U,$J,358.3,22246,0)
+ ;;=S32.012S^^101^1039^63
+ ;;^UTILITY(U,$J,358.3,22246,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22246,1,3,0)
+ ;;=3^Unstable burst fracture of first lumbar vertebra, sequela
+ ;;^UTILITY(U,$J,358.3,22246,1,4,0)
+ ;;=4^S32.012S
+ ;;^UTILITY(U,$J,358.3,22246,2)
+ ;;=^5024388
+ ;;^UTILITY(U,$J,358.3,22247,0)
+ ;;=S22.012S^^101^1039^64
+ ;;^UTILITY(U,$J,358.3,22247,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22247,1,3,0)
+ ;;=3^Unstable burst fracture of first thoracic vertebra, sequela
+ ;;^UTILITY(U,$J,358.3,22247,1,4,0)
+ ;;=4^S22.012S
+ ;;^UTILITY(U,$J,358.3,22247,2)
+ ;;=^5022852
+ ;;^UTILITY(U,$J,358.3,22248,0)
+ ;;=S32.042S^^101^1039^65
+ ;;^UTILITY(U,$J,358.3,22248,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22248,1,3,0)
+ ;;=3^Unstable burst fracture of fourth lumbar vertebra, sequela
+ ;;^UTILITY(U,$J,358.3,22248,1,4,0)
+ ;;=4^S32.042S
+ ;;^UTILITY(U,$J,358.3,22248,2)
+ ;;=^5024478
+ ;;^UTILITY(U,$J,358.3,22249,0)
+ ;;=S22.042S^^101^1039^66
+ ;;^UTILITY(U,$J,358.3,22249,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22249,1,3,0)
+ ;;=3^Unstable burst fracture of fourth thoracic vertebra, sequela
+ ;;^UTILITY(U,$J,358.3,22249,1,4,0)
+ ;;=4^S22.042S
+ ;;^UTILITY(U,$J,358.3,22249,2)
+ ;;=^5022942
+ ;;^UTILITY(U,$J,358.3,22250,0)
+ ;;=S32.022S^^101^1039^67
+ ;;^UTILITY(U,$J,358.3,22250,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22250,1,3,0)
+ ;;=3^Unstable burst fracture of second lumbar vertebra, sequela
+ ;;^UTILITY(U,$J,358.3,22250,1,4,0)
+ ;;=4^S32.022S
+ ;;^UTILITY(U,$J,358.3,22250,2)
+ ;;=^5024418
+ ;;^UTILITY(U,$J,358.3,22251,0)
+ ;;=S22.022S^^101^1039^68
+ ;;^UTILITY(U,$J,358.3,22251,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22251,1,3,0)
+ ;;=3^Unstable burst fracture of second thoracic vertebra, sequela
+ ;;^UTILITY(U,$J,358.3,22251,1,4,0)
+ ;;=4^S22.022S
+ ;;^UTILITY(U,$J,358.3,22251,2)
+ ;;=^5022882
+ ;;^UTILITY(U,$J,358.3,22252,0)
+ ;;=S22.082S^^101^1039^57
+ ;;^UTILITY(U,$J,358.3,22252,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22252,1,3,0)
+ ;;=3^Unstable burst fracture of T11-T12 vertebra, sequela
+ ;;^UTILITY(U,$J,358.3,22252,1,4,0)
+ ;;=4^S22.082S
+ ;;^UTILITY(U,$J,358.3,22252,2)
+ ;;=^5023062
+ ;;^UTILITY(U,$J,358.3,22253,0)
+ ;;=S22.052S^^101^1039^58
+ ;;^UTILITY(U,$J,358.3,22253,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22253,1,3,0)
+ ;;=3^Unstable burst fracture of T5-T6 vertebra, sequela
+ ;;^UTILITY(U,$J,358.3,22253,1,4,0)
+ ;;=4^S22.052S
+ ;;^UTILITY(U,$J,358.3,22253,2)
+ ;;=^5022972
+ ;;^UTILITY(U,$J,358.3,22254,0)
+ ;;=S22.062S^^101^1039^59
+ ;;^UTILITY(U,$J,358.3,22254,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22254,1,3,0)
+ ;;=3^Unstable burst fracture of T7-T8 vertebra, sequela
+ ;;^UTILITY(U,$J,358.3,22254,1,4,0)
+ ;;=4^S22.062S
+ ;;^UTILITY(U,$J,358.3,22254,2)
+ ;;=^5023002
+ ;;^UTILITY(U,$J,358.3,22255,0)
+ ;;=S22.072S^^101^1039^60
+ ;;^UTILITY(U,$J,358.3,22255,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22255,1,3,0)
+ ;;=3^Unstable burst fracture of T9-T10 vertebra, sequela
+ ;;^UTILITY(U,$J,358.3,22255,1,4,0)
+ ;;=4^S22.072S
+ ;;^UTILITY(U,$J,358.3,22255,2)
+ ;;=^5023032
+ ;;^UTILITY(U,$J,358.3,22256,0)
+ ;;=S32.032S^^101^1039^69
+ ;;^UTILITY(U,$J,358.3,22256,1,0)
+ ;;=^358.31IA^4^2

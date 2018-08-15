@@ -1,140 +1,128 @@
-IBDEI0HT ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0HT ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,8658,1,3,0)
- ;;=3^Pemphigoid Bgn Mucous Membr w/ Ocular
- ;;^UTILITY(U,$J,358.3,8658,1,4,0)
- ;;=4^694.61
- ;;^UTILITY(U,$J,358.3,8658,2)
- ;;=^271915
- ;;^UTILITY(U,$J,358.3,8659,0)
- ;;=720.0^^58^612^85
- ;;^UTILITY(U,$J,358.3,8659,1,0)
+ ;;^UTILITY(U,$J,358.3,7980,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8659,1,3,0)
- ;;=3^Spondylitis,Ankylosing
- ;;^UTILITY(U,$J,358.3,8659,1,4,0)
- ;;=4^720.0
- ;;^UTILITY(U,$J,358.3,8659,2)
- ;;=^113484
- ;;^UTILITY(U,$J,358.3,8660,0)
- ;;=743.10^^58^612^66
- ;;^UTILITY(U,$J,358.3,8660,1,0)
+ ;;^UTILITY(U,$J,358.3,7980,1,3,0)
+ ;;=3^Rash and other nonspecific skin eruption
+ ;;^UTILITY(U,$J,358.3,7980,1,4,0)
+ ;;=4^R21.
+ ;;^UTILITY(U,$J,358.3,7980,2)
+ ;;=^5019283
+ ;;^UTILITY(U,$J,358.3,7981,0)
+ ;;=R23.3^^55^531^141
+ ;;^UTILITY(U,$J,358.3,7981,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8660,1,3,0)
- ;;=3^Microphthalmos,Unspec
- ;;^UTILITY(U,$J,358.3,8660,1,4,0)
- ;;=4^743.10
- ;;^UTILITY(U,$J,358.3,8660,2)
- ;;=^77633
- ;;^UTILITY(U,$J,358.3,8661,0)
- ;;=996.89^^58^612^52
- ;;^UTILITY(U,$J,358.3,8661,1,0)
+ ;;^UTILITY(U,$J,358.3,7981,1,3,0)
+ ;;=3^Spontaneous ecchymoses
+ ;;^UTILITY(U,$J,358.3,7981,1,4,0)
+ ;;=4^R23.3
+ ;;^UTILITY(U,$J,358.3,7981,2)
+ ;;=^5019295
+ ;;^UTILITY(U,$J,358.3,7982,0)
+ ;;=I96.^^55^531^44
+ ;;^UTILITY(U,$J,358.3,7982,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8661,1,3,0)
- ;;=3^Graft Rejection
- ;;^UTILITY(U,$J,358.3,8661,1,4,0)
- ;;=4^996.89
- ;;^UTILITY(U,$J,358.3,8661,2)
- ;;=^276309
- ;;^UTILITY(U,$J,358.3,8662,0)
- ;;=077.3^^58^612^26
- ;;^UTILITY(U,$J,358.3,8662,1,0)
+ ;;^UTILITY(U,$J,358.3,7982,1,3,0)
+ ;;=3^Gangrene, not elsewhere classified
+ ;;^UTILITY(U,$J,358.3,7982,1,4,0)
+ ;;=4^I96.
+ ;;^UTILITY(U,$J,358.3,7982,2)
+ ;;=^5008081
+ ;;^UTILITY(U,$J,358.3,7983,0)
+ ;;=E11.21^^55^532^13
+ ;;^UTILITY(U,$J,358.3,7983,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8662,1,3,0)
- ;;=3^Conjunctivitis,Adenoviral
- ;;^UTILITY(U,$J,358.3,8662,1,4,0)
- ;;=4^077.3
- ;;^UTILITY(U,$J,358.3,8662,2)
- ;;=^266673
- ;;^UTILITY(U,$J,358.3,8663,0)
- ;;=077.99^^58^612^21
- ;;^UTILITY(U,$J,358.3,8663,1,0)
+ ;;^UTILITY(U,$J,358.3,7983,1,3,0)
+ ;;=3^Type 2 diab w diabetic nephropathy
+ ;;^UTILITY(U,$J,358.3,7983,1,4,0)
+ ;;=4^E11.21
+ ;;^UTILITY(U,$J,358.3,7983,2)
+ ;;=^5002629
+ ;;^UTILITY(U,$J,358.3,7984,0)
+ ;;=E10.21^^55^532^1
+ ;;^UTILITY(U,$J,358.3,7984,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8663,1,3,0)
- ;;=3^Conjunctivitis d/t Virus,Unspec
- ;;^UTILITY(U,$J,358.3,8663,1,4,0)
- ;;=4^077.99
- ;;^UTILITY(U,$J,358.3,8663,2)
- ;;=^295786
- ;;^UTILITY(U,$J,358.3,8664,0)
- ;;=077.98^^58^612^9
- ;;^UTILITY(U,$J,358.3,8664,1,0)
+ ;;^UTILITY(U,$J,358.3,7984,1,3,0)
+ ;;=3^Type 1 diab w diabetic nephropathy
+ ;;^UTILITY(U,$J,358.3,7984,1,4,0)
+ ;;=4^E10.21
+ ;;^UTILITY(U,$J,358.3,7984,2)
+ ;;=^5002589
+ ;;^UTILITY(U,$J,358.3,7985,0)
+ ;;=E11.321^^55^532^19
+ ;;^UTILITY(U,$J,358.3,7985,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8664,1,3,0)
- ;;=3^Conjuctivitis d/t Chlamydiae
- ;;^UTILITY(U,$J,358.3,8664,1,4,0)
- ;;=4^077.98
- ;;^UTILITY(U,$J,358.3,8664,2)
- ;;=^295785
- ;;^UTILITY(U,$J,358.3,8665,0)
- ;;=190.4^^58^612^40
- ;;^UTILITY(U,$J,358.3,8665,1,0)
+ ;;^UTILITY(U,$J,358.3,7985,1,3,0)
+ ;;=3^Type 2 diab w mild nonprlf diabetic rtnop w macular edema
+ ;;^UTILITY(U,$J,358.3,7985,1,4,0)
+ ;;=4^E11.321
+ ;;^UTILITY(U,$J,358.3,7985,2)
+ ;;=^5002634
+ ;;^UTILITY(U,$J,358.3,7986,0)
+ ;;=E11.329^^55^532^20
+ ;;^UTILITY(U,$J,358.3,7986,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8665,1,3,0)
- ;;=3^Cornea Malig Neopl
- ;;^UTILITY(U,$J,358.3,8665,1,4,0)
- ;;=4^190.4
- ;;^UTILITY(U,$J,358.3,8665,2)
- ;;=^267275
- ;;^UTILITY(U,$J,358.3,8666,0)
- ;;=V67.09^^58^613^22
- ;;^UTILITY(U,$J,358.3,8666,1,0)
+ ;;^UTILITY(U,$J,358.3,7986,1,3,0)
+ ;;=3^Type 2 diab w mild nonprlf diabetic rtnop w/o macular edema
+ ;;^UTILITY(U,$J,358.3,7986,1,4,0)
+ ;;=4^E11.329
+ ;;^UTILITY(U,$J,358.3,7986,2)
+ ;;=^5002635
+ ;;^UTILITY(U,$J,358.3,7987,0)
+ ;;=E11.331^^55^532^21
+ ;;^UTILITY(U,$J,358.3,7987,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8666,1,3,0)
- ;;=3^F/U Vitreous Surgery
- ;;^UTILITY(U,$J,358.3,8666,1,4,0)
- ;;=4^V67.09
- ;;^UTILITY(U,$J,358.3,8666,2)
- ;;=F/U Vitreous Surgery^322080^V45.69^V43.1
- ;;^UTILITY(U,$J,358.3,8667,0)
- ;;=367.4^^58^613^43
- ;;^UTILITY(U,$J,358.3,8667,1,0)
+ ;;^UTILITY(U,$J,358.3,7987,1,3,0)
+ ;;=3^Type 2 diab w moderate nonprlf diab rtnop w macular edema
+ ;;^UTILITY(U,$J,358.3,7987,1,4,0)
+ ;;=4^E11.331
+ ;;^UTILITY(U,$J,358.3,7987,2)
+ ;;=^5002636
+ ;;^UTILITY(U,$J,358.3,7988,0)
+ ;;=E11.339^^55^532^22
+ ;;^UTILITY(U,$J,358.3,7988,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8667,1,3,0)
- ;;=3^Presbyopia
- ;;^UTILITY(U,$J,358.3,8667,1,4,0)
- ;;=4^367.4
- ;;^UTILITY(U,$J,358.3,8667,2)
- ;;=Presbyopia^98095
- ;;^UTILITY(U,$J,358.3,8668,0)
- ;;=379.21^^58^613^42
- ;;^UTILITY(U,$J,358.3,8668,1,0)
+ ;;^UTILITY(U,$J,358.3,7988,1,3,0)
+ ;;=3^Type 2 diab w moderate nonprlf diab rtnop w/o macular edema
+ ;;^UTILITY(U,$J,358.3,7988,1,4,0)
+ ;;=4^E11.339
+ ;;^UTILITY(U,$J,358.3,7988,2)
+ ;;=^5002637
+ ;;^UTILITY(U,$J,358.3,7989,0)
+ ;;=E11.311^^55^532^25
+ ;;^UTILITY(U,$J,358.3,7989,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8668,1,3,0)
- ;;=3^Posterior Vitreous Detachment
- ;;^UTILITY(U,$J,358.3,8668,1,4,0)
- ;;=4^379.21
- ;;^UTILITY(U,$J,358.3,8668,2)
- ;;=^269309
- ;;^UTILITY(U,$J,358.3,8669,0)
- ;;=374.10^^58^613^20
- ;;^UTILITY(U,$J,358.3,8669,1,0)
+ ;;^UTILITY(U,$J,358.3,7989,1,3,0)
+ ;;=3^Type 2 diab w unsp diabetic retinopathy w macular edema
+ ;;^UTILITY(U,$J,358.3,7989,1,4,0)
+ ;;=4^E11.311
+ ;;^UTILITY(U,$J,358.3,7989,2)
+ ;;=^5002632
+ ;;^UTILITY(U,$J,358.3,7990,0)
+ ;;=E11.319^^55^532^26
+ ;;^UTILITY(U,$J,358.3,7990,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8669,1,3,0)
- ;;=3^Ectropion
- ;;^UTILITY(U,$J,358.3,8669,1,4,0)
- ;;=4^374.10
- ;;^UTILITY(U,$J,358.3,8669,2)
- ;;=Ectropion^38326
- ;;^UTILITY(U,$J,358.3,8670,0)
- ;;=373.00^^58^613^8
- ;;^UTILITY(U,$J,358.3,8670,1,0)
+ ;;^UTILITY(U,$J,358.3,7990,1,3,0)
+ ;;=3^Type 2 diab w unsp diabetic rtnop w/o macular edema
+ ;;^UTILITY(U,$J,358.3,7990,1,4,0)
+ ;;=4^E11.319
+ ;;^UTILITY(U,$J,358.3,7990,2)
+ ;;=^5002633
+ ;;^UTILITY(U,$J,358.3,7991,0)
+ ;;=E11.341^^55^532^24
+ ;;^UTILITY(U,$J,358.3,7991,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8670,1,3,0)
- ;;=3^Blepharitis
- ;;^UTILITY(U,$J,358.3,8670,1,4,0)
- ;;=4^373.00
- ;;^UTILITY(U,$J,358.3,8670,2)
- ;;=Blepharitis^15271
- ;;^UTILITY(U,$J,358.3,8671,0)
- ;;=250.00^^58^613^13
- ;;^UTILITY(U,$J,358.3,8671,1,0)
+ ;;^UTILITY(U,$J,358.3,7991,1,3,0)
+ ;;=3^Type 2 diab w severe nonprlf diabetic rtnop w macular edema
+ ;;^UTILITY(U,$J,358.3,7991,1,4,0)
+ ;;=4^E11.341
+ ;;^UTILITY(U,$J,358.3,7991,2)
+ ;;=^5002638
+ ;;^UTILITY(U,$J,358.3,7992,0)
+ ;;=E11.349^^55^532^23
+ ;;^UTILITY(U,$J,358.3,7992,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8671,1,3,0)
- ;;=3^DM II w/o Eye Disease
- ;;^UTILITY(U,$J,358.3,8671,1,4,0)
- ;;=4^250.00
- ;;^UTILITY(U,$J,358.3,8671,2)
- ;;=DM Type II w/o Eye Disease^33605
+ ;;^UTILITY(U,$J,358.3,7992,1,3,0)
+ ;;=3^Type 2 diab w severe nonprlf diab rtnop w/o macular edema

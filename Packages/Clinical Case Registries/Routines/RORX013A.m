@@ -1,5 +1,5 @@
 RORX013A ;HCIOFO/SG - DIAGNOSIS CODES (QUERY & SORT) ;6/21/06 2:24pm
- ;;1.5;CLINICAL CASE REGISTRIES;**1,13,19**;Feb 17, 2006;Build 43
+ ;;1.5;CLINICAL CASE REGISTRIES;**1,13,19,21,25,31**;Feb 17, 2006;Build 62
  ;
  ; This routine uses the following IAs:
  ;
@@ -11,6 +11,7 @@ RORX013A ;HCIOFO/SG - DIAGNOSIS CODES (QUERY & SORT) ;6/21/06 2:24pm
  ; #3545         Access to the "AAD" cross-reference and the field 80 (private)
  ; #92           ^DGPT(IEN,0)  (controlled)
  ; #5747         $$CODEN^ICDEX, $$CODEC^ICDEX, $$VSTD^ICDEX (controlled)
+ ; #6130         PTFICD^DGPTFUT
  ;
  ;******************************************************************************
  ;******************************************************************************
@@ -21,7 +22,11 @@ RORX013A ;HCIOFO/SG - DIAGNOSIS CODES (QUERY & SORT) ;6/21/06 2:24pm
  ;ROR*1.5*13   DEC 2010    A SAUNDERS   User can select specific patients,
  ;                                      clinics, or divisions for the report.
  ;ROR*1.5*19   FEB 2012    J SCOTT      Support for ICD-10 Coding System.
- ;                                      
+ ;ROR*1.5*21   SEP 2013    T KOPP       Add Utilization date range to the report
+ ;                                      Add ICN to report, if requested
+ ;ROR*1.5*25   OCT 2014    T KOPP       Added PTF ICD-10 support for 25 diagnoses
+ ;ROR*1.5*31   MAY 2017    M FERRARESE  Adding PACT ,PCP,and AGE/DOB as additional
+ ;                                      identifiers.                                    
  ;******************************************************************************
  ;******************************************************************************
  Q
@@ -60,7 +65,7 @@ ICDSET(PATIEN,SOURCE,ICDIEN,DATE,ICD) ;
  ;       >0  Number of non-fatal errors
  ;
 INPAT(PATIEN) ;
- N ADMDT,DISDT,I,IEN,NODE,RC,RORBUF,RORMSG,TMP
+ N ADMDT,DISDT,I,IEN,NODE,RC,RORBUF,RORMSG,DIERR,TMP
  S NODE=$NA(^DGPT("AAD",+PATIEN))
  S RC=0
  ;--- Browse through the admissions
@@ -82,8 +87,8 @@ INPAT(PATIEN) ;
  . . . D ERROR^RORERR(-57,,,,RORBUF(0),"RPC^DGPTFAPI")
  . . S TMP=$P($G(RORBUF(1)),U,3)
  . . D:TMP'="" ICDSET(PATIEN,"I",,DISDT,TMP)   ; ICD1
- . . D:$G(RORBUF(2))'=""                       ; ICD2 - ICD10
- . . . F I=1:1:9  S TMP=$P(RORBUF(2),U,I)  D:TMP'=""
+ . . D:$G(RORBUF(2))'=""                       ; ICD2 - ICD24
+ . . . F I=1:1:24  S TMP=$P(RORBUF(2),U,I)  D:TMP'=""
  . . . . D ICDSET(PATIEN,"I",,DISDT,TMP)
  . . S TMP=+$$GET1^DIQ(45,IEN,80,"I",,"RORMSG")
  . . D:$G(DIERR) DBS^RORERR("RORMSG",-9,,,45,IEN)
@@ -127,7 +132,7 @@ OUTPAT(PATIEN) ;
  ;       >0  Number of non-fatal errors
  ;
 PROBLEM(PATIEN) ;
- N DATE,GMPFLD,GMPORIG,GMPROV,GMVAMC,ICDIEN,IEN,RC,RORPLST,TMP
+ N DATE,GMPFLD,GMPORIG,GMPROV,GMPVAMC,ICDIEN,IEN,IS,RC,RORPLST,TMP
  ;--- Load a list of active problems
  D ACTIVE^GMPLUTL(PATIEN,.RORPLST)
  ;--- Browse through the problems
@@ -155,13 +160,23 @@ QUERY(FLAGS) ;
  N ROREDT1       ; Day after the end date
  N RORLAST4      ; Last 4 digits of the current patient's SSN
  N RORPNAME      ; Name of the current patient
+ N RORICN        ; ICN of patient (optional)
+ N RORPACT       ; PACT of patient (optional)
+ N RORPCP        ; PCP of patient (optional) 
  N RORPTGRP      ; Temporary list of ICD groups
  N RORPTN        ; Number of patients in the registry
  N RORCDLIST     ; Flag to indicate whether a clinic or division list exists
  N RORCDSTDT     ; Start date for clinic/division utilization search
  N RORCDENDT     ; End date for clinic/division utilization search
  ;
- N CNT,ECNT,IEN,IENS,PATIEN,RC,TMP,VA,VADM,XREFNODE
+ N CNT,ECNT,IEN,IENS,PATIEN,RC,SKIPEDT,SKIPSDT,TMP,UTEDT,UTIL,UTSDT,VA,VADM,XREFNODE,AGE,AGETYPE
+ ;--- Utilization date range
+ D:$$PARAM^RORTSK01("PATIENTS","CAREONLY")
+ . S UTSDT=$$PARAM^RORTSK01("DATE_RANGE_3","START")\1
+ . S UTEDT=$$PARAM^RORTSK01("DATE_RANGE_3","END")\1
+ . ;--- Combined date range
+ . S SKIPSDT=$$DTMIN^RORUTL18(SKIPSDT,UTSDT)
+ . S SKIPEDT=$$DTMAX^RORUTL18(SKIPEDT,UTEDT)
  S XREFNODE=$NA(^RORDATA(798,"AC",+RORREG))
  S RORPTN=$$REGSIZE^RORUTL02(+RORREG)  S:RORPTN<0 RORPTN=0
  S ROREDT1=$$FMADD^XLFDT(ROREDT\1,1)
@@ -186,6 +201,11 @@ QUERY(FLAGS) ;
  . ;--- Check for Clinic or Division list and quit if not in list
  . I RORCDLIST,'$$CDUTIL^RORXU001(.RORTSK,PATIEN,RORCDSTDT,RORCDENDT) Q
  . ;
+ . ;--- Check for any utilization in the corresponding date range
+ . I $$PARAM^RORTSK01("PATIENTS","CAREONLY") D  Q:'UTIL
+ . . K TMP  S TMP("ALL")=1
+ . . S UTIL=+$$UTIL^RORXU003(UTSDT,UTEDT,PATIEN,.TMP)
+ . ;
  . M RORPTGRP=RORIGRP("C")
  . ;
  . ;--- Inpatient codes
@@ -207,7 +227,12 @@ QUERY(FLAGS) ;
  . ;
  . ;--- Get the patient's data
  . D VADEM^RORUTL05(PATIEN,1)
- . S RORPNAME=VADM(1),RORDOD=$P(VADM(6),U),RORLAST4=VA("BID")
+ . S RORPNAME=VADM(1),RORDOD=$$DATE^RORXU002($P(VADM(6),U)\1),RORLAST4=VA("BID")
+ . I $$PARAM^RORTSK01("PATIENTS","ICN") S RORICN=$$ICN^RORUTL02(PATIEN)
+ . S AGETYPE=$$PARAM^RORTSK01("AGE_RANGE","TYPE")
+ . S AGE=$S(AGETYPE="AGE":$P(VADM(4),U),AGETYPE="DOB":$$DATE^RORXU002($P(VADM(3),U)\1),1:"")
+ . I $$PARAM^RORTSK01("PATIENTS","PACT") S RORPACT=$$PACT^RORUTL02(PATIEN)
+ . I $$PARAM^RORTSK01("PATIENTS","PCP") S RORPCP=$$PCP^RORUTL02(PATIEN)
  . ;
  . ;--- Calculate the patient's totals
  . S RC=$$TOTALS(PATIEN)
@@ -245,7 +270,7 @@ SORT() ;
 TOTALS(PATIEN) ;
  N CNT,ICD,ICDIEN,ICDVST,PNODE,RC,TMP
  S PNODE=$NA(@RORTMP@("PAT",PATIEN))
- S @PNODE=RORLAST4_U_RORPNAME_U_RORDOD
+ S @PNODE=RORLAST4_U_RORPNAME_U_RORDOD_U_$G(RORICN)_U_$G(RORPACT)_U_$G(RORPCP)_U_AGE
  S ^("PAT")=$G(@RORTMP@("PAT"))+1 ;naked reference: ^TMP($J,"RORTMP-n") from RORX013
  ;
  S ICDIEN=0

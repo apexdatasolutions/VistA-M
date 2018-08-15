@@ -1,5 +1,5 @@
-LEXSRC2 ;ISL/KER - Classification Code Source Util ;04/21/2014
- ;;2.0;LEXICON UTILITY;**25,28,73,80**;Sep 23, 1996;Build 1
+LEXSRC2 ;ISL/KER - Classification Code Source Util ;05/23/2017
+ ;;2.0;LEXICON UTILITY;**25,28,73,80,110,103**;Sep 23, 1996;Build 2
  ;               
  ; Global Variables
  ;    None
@@ -51,12 +51,11 @@ STATCHK(CODE,CDT,LEX,SAB) ; Check Status of a Code
  ;       0 ^ IEN                                   Not Yet Active
  ;       0 ^ -1                                    Code not Found
  ;                      
- ;   ASTM Triplet in array LEX passed by reference (optional)
+ ;   LEX passed by reference (optional)
  ;                      
- ;   ASTM Triplet with Major Concept Map and Semantic
- ;   Map in array LEX passed by reference (optional)
+ ;         Code, Expression, Coding System, Major 
+ ;         Concept Map and Semantic Map in array LEX 
  ;                    
- ;
  ;     LEX(0)  =  Code, a 2 Piece String containing:
  ;
  ;         1 - IEN in the CODES file #757.02
@@ -89,10 +88,9 @@ STATCHK(CODE,CDT,LEX,SAB) ; Check Status of a Code
  ;         4 - External Semantic Class
  ;         5 - External Semantic Type 
  ;     
- ; This API requires the ACT Cross-Reference
- ;       ^LEX(757.02,"ACT",<code>,<status>,<date>,<ien>)
+ N LEXAE,LEXAP,LEXC,LEXDT,LEXE,LEXED,LEXEE,LEXI,LEXIE,LEXIP,LEXMR
+ N LEXMRI,LEXN,LEXINIT,LEXO,LEXSAB,LEXSTAT,LEXTDT,X
  ;
- ; Variables used
  ;   LEXC      Code     from input parameter
  ;   LEXDT     Date     from input parameter
  ;   LEXSAB    Source   from input parameter (patch 57)
@@ -113,11 +111,6 @@ STATCHK(CODE,CDT,LEX,SAB) ; Check Status of a Code
  ;   X         Output
  ;   LEX       Output Array (when passed)
  ;   
- ; Integration Agreement
- ;   4083     $$STATCHK^LEXSRC2()
- ;              
- N LEXAE,LEXAP,LEXC,LEXDT,LEXE,LEXED,LEXEE,LEXI,LEXIE,LEXIP,LEXMR
- N LEXMRI,LEXN,LEXINIT,LEXO,LEXSAB,LEXSTAT,LEXTDT,X
  S LEXC=$G(CODE) I '$L(LEXC) S (LEX,X)="0^-1" D UPD Q X
  S LEXDT=$P($G(CDT),".",1),LEXDT=$S(+LEXDT>0:LEXDT,1:$$DT^XLFDT)
  S LEXSAB=$$SAB($G(SAB)),LEXTDT=LEXDT+.00001
@@ -162,10 +155,9 @@ ADJ ; Do we have adjacent dates for SAB
  I +($G(LEXSAB))>0&($P(LEXN,"^",3)=+($G(LEXSAB))) S LEXSTAT=LEXNO,LEXMR=LEXND,LEXMRI=LEXNI
  Q
 INIT(X,Y) ; Inital Activation Dates (revised codes only)
- N LEXA,LEXC,LEXI,LEXOFF,LEXMR S LEXC=$G(X),LEXMR=$G(Y),X="" Q:'$L($G(LEXC))  Q:$G(LEXMR)'?7N
- I '$D(^LEX(757.02,"ACT",(LEXC_" "),1,LEXMR)) S LEXMR=$O(^LEX(757.02,"ACT",(LEXC_" "),1,LEXMR),-1)
- Q:$G(LEXMR)'?7N  S LEXA=(LEXMR-.001)
- S LEXOFF=$$FMADD^XLFDT(LEXMR,-1)
+ N LEXA,LEXC,LEXI,LEXOFF,LEXMR S LEXC=$G(X),LEXMR=$P($G(Y),".",1),X="" Q:'$L($G(LEXC)) ""  Q:$G(LEXMR)'?7N ""
+ S:'$D(^LEX(757.02,"ACT",(LEXC_" "),1,LEXMR)) LEXMR=$O(^LEX(757.02,"ACT",(LEXC_" "),1,LEXMR),-1) Q:$G(LEXMR)'?7N ""
+ S LEXA=(LEXMR-.001) S LEXOFF=$$FMADD^XLFDT(LEXMR,-1)
  F  S LEXA=$O(^LEX(757.02,"ACT",(LEXC_" "),1,LEXA),-1) Q:LEXA'?7N  D
  . S LEXI=$O(^LEX(757.02,"ACT",(LEXC_" "),0,LEXA))
  . I LEXI>LEXA,LEXI?7N,LEXI'<LEXOFF S X=LEXA

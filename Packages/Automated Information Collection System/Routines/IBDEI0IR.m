@@ -1,140 +1,134 @@
-IBDEI0IR ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0IR ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,9140,0)
- ;;=172.9^^61^639^24
- ;;^UTILITY(U,$J,358.3,9140,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9140,1,4,0)
- ;;=4^Malig Melanoma Skin
- ;;^UTILITY(U,$J,358.3,9140,1,5,0)
- ;;=5^172.9
- ;;^UTILITY(U,$J,358.3,9140,2)
- ;;=^75462
- ;;^UTILITY(U,$J,358.3,9141,0)
- ;;=728.6^^61^639^16
- ;;^UTILITY(U,$J,358.3,9141,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9141,1,4,0)
- ;;=4^Dupuytren's Contracture
- ;;^UTILITY(U,$J,358.3,9141,1,5,0)
- ;;=5^728.6
- ;;^UTILITY(U,$J,358.3,9141,2)
- ;;=^28077
- ;;^UTILITY(U,$J,358.3,9142,0)
- ;;=703.0^^61^639^21
- ;;^UTILITY(U,$J,358.3,9142,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9142,1,4,0)
- ;;=4^Ingrowing Nail
- ;;^UTILITY(U,$J,358.3,9142,1,5,0)
- ;;=5^703.0
- ;;^UTILITY(U,$J,358.3,9142,2)
- ;;=^81221
- ;;^UTILITY(U,$J,358.3,9143,0)
- ;;=214.1^^61^639^23
- ;;^UTILITY(U,$J,358.3,9143,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9143,1,4,0)
- ;;=4^Lipoma, other than face
- ;;^UTILITY(U,$J,358.3,9143,1,5,0)
- ;;=5^214.1
- ;;^UTILITY(U,$J,358.3,9143,2)
- ;;=Lipoma, other than face^267615
- ;;^UTILITY(U,$J,358.3,9144,0)
- ;;=707.10^^61^639^37
- ;;^UTILITY(U,$J,358.3,9144,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9144,1,4,0)
- ;;=4^Ulcer, LE, not specified
- ;;^UTILITY(U,$J,358.3,9144,1,5,0)
- ;;=5^707.10
- ;;^UTILITY(U,$J,358.3,9144,2)
- ;;=Ulcer, LE, not specified^322142
- ;;^UTILITY(U,$J,358.3,9145,0)
- ;;=707.11^^61^639^42
- ;;^UTILITY(U,$J,358.3,9145,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9145,1,4,0)
- ;;=4^Ulcer,Thigh
- ;;^UTILITY(U,$J,358.3,9145,1,5,0)
- ;;=5^707.11
- ;;^UTILITY(U,$J,358.3,9145,2)
- ;;=^322143
- ;;^UTILITY(U,$J,358.3,9146,0)
- ;;=707.12^^61^639^40
- ;;^UTILITY(U,$J,358.3,9146,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9146,1,4,0)
- ;;=4^Ulcer,Calf
- ;;^UTILITY(U,$J,358.3,9146,1,5,0)
- ;;=5^707.12
- ;;^UTILITY(U,$J,358.3,9146,2)
- ;;=^322144
- ;;^UTILITY(U,$J,358.3,9147,0)
- ;;=707.13^^61^639^39
- ;;^UTILITY(U,$J,358.3,9147,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9147,1,4,0)
- ;;=4^Ulcer,Ankle
- ;;^UTILITY(U,$J,358.3,9147,1,5,0)
- ;;=5^707.13
- ;;^UTILITY(U,$J,358.3,9147,2)
- ;;=^322145
- ;;^UTILITY(U,$J,358.3,9148,0)
- ;;=707.14^^61^639^41
- ;;^UTILITY(U,$J,358.3,9148,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9148,1,4,0)
- ;;=4^Ulcer,Heel Midfoot
- ;;^UTILITY(U,$J,358.3,9148,1,5,0)
- ;;=5^707.14
- ;;^UTILITY(U,$J,358.3,9148,2)
- ;;=^322146
- ;;^UTILITY(U,$J,358.3,9149,0)
- ;;=707.15^^61^639^35
- ;;^UTILITY(U,$J,358.3,9149,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9149,1,4,0)
- ;;=4^Ulcer of Toe
- ;;^UTILITY(U,$J,358.3,9149,1,5,0)
- ;;=5^707.15
- ;;^UTILITY(U,$J,358.3,9149,2)
- ;;=Ulcer of Toe^322148
- ;;^UTILITY(U,$J,358.3,9150,0)
- ;;=707.19^^61^639^38
- ;;^UTILITY(U,$J,358.3,9150,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9150,1,4,0)
- ;;=4^Ulcer, Other part of LE
- ;;^UTILITY(U,$J,358.3,9150,1,5,0)
- ;;=5^707.19
- ;;^UTILITY(U,$J,358.3,9150,2)
- ;;=Ulcer, Other part of LE^322150
- ;;^UTILITY(U,$J,358.3,9151,0)
- ;;=214.0^^61^639^22
- ;;^UTILITY(U,$J,358.3,9151,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9151,1,4,0)
- ;;=4^Lipoma of Skin of Face
- ;;^UTILITY(U,$J,358.3,9151,1,5,0)
- ;;=5^214.0
- ;;^UTILITY(U,$J,358.3,9151,2)
- ;;=Lipoma of Skin of Face^267614
- ;;^UTILITY(U,$J,358.3,9152,0)
- ;;=250.80^^61^639^36
- ;;^UTILITY(U,$J,358.3,9152,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9152,1,4,0)
- ;;=4^Ulcer, Diabetic of Toe
- ;;^UTILITY(U,$J,358.3,9152,1,5,0)
- ;;=5^250.80
- ;;^UTILITY(U,$J,358.3,9152,2)
- ;;=Ulcer, Diabetic of Toe^267846^707.15
- ;;^UTILITY(U,$J,358.3,9153,0)
- ;;=682.0^^61^639^4
- ;;^UTILITY(U,$J,358.3,9153,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9153,1,4,0)
- ;;=4^Cellulitis, Face
+ ;;^UTILITY(U,$J,358.3,8428,1,4,0)
+ ;;=4^D68.4
+ ;;^UTILITY(U,$J,358.3,8428,2)
+ ;;=^2235
+ ;;^UTILITY(U,$J,358.3,8429,0)
+ ;;=D68.32^^55^538^36
+ ;;^UTILITY(U,$J,358.3,8429,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8429,1,3,0)
+ ;;=3^Hemorrhagic disord d/t extrinsic circulating anticoagulants
+ ;;^UTILITY(U,$J,358.3,8429,1,4,0)
+ ;;=4^D68.32
+ ;;^UTILITY(U,$J,358.3,8429,2)
+ ;;=^5002357
+ ;;^UTILITY(U,$J,358.3,8430,0)
+ ;;=D68.9^^55^538^28
+ ;;^UTILITY(U,$J,358.3,8430,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8430,1,3,0)
+ ;;=3^Coagulation defect, unspecified
+ ;;^UTILITY(U,$J,358.3,8430,1,4,0)
+ ;;=4^D68.9
+ ;;^UTILITY(U,$J,358.3,8430,2)
+ ;;=^5002364
+ ;;^UTILITY(U,$J,358.3,8431,0)
+ ;;=D47.3^^55^538^31
+ ;;^UTILITY(U,$J,358.3,8431,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8431,1,3,0)
+ ;;=3^Essential (hemorrhagic) thrombocythemia
+ ;;^UTILITY(U,$J,358.3,8431,1,4,0)
+ ;;=4^D47.3
+ ;;^UTILITY(U,$J,358.3,8431,2)
+ ;;=^5002258
+ ;;^UTILITY(U,$J,358.3,8432,0)
+ ;;=D69.6^^55^538^129
+ ;;^UTILITY(U,$J,358.3,8432,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8432,1,3,0)
+ ;;=3^Thrombocytopenia, unspecified
+ ;;^UTILITY(U,$J,358.3,8432,1,4,0)
+ ;;=4^D69.6
+ ;;^UTILITY(U,$J,358.3,8432,2)
+ ;;=^5002370
+ ;;^UTILITY(U,$J,358.3,8433,0)
+ ;;=D75.1^^55^538^127
+ ;;^UTILITY(U,$J,358.3,8433,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8433,1,3,0)
+ ;;=3^Secondary polycythemia
+ ;;^UTILITY(U,$J,358.3,8433,1,4,0)
+ ;;=4^D75.1
+ ;;^UTILITY(U,$J,358.3,8433,2)
+ ;;=^186856
+ ;;^UTILITY(U,$J,358.3,8434,0)
+ ;;=M31.1^^55^538^130
+ ;;^UTILITY(U,$J,358.3,8434,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8434,1,3,0)
+ ;;=3^Thrombotic microangiopathy
+ ;;^UTILITY(U,$J,358.3,8434,1,4,0)
+ ;;=4^M31.1
+ ;;^UTILITY(U,$J,358.3,8434,2)
+ ;;=^119061
+ ;;^UTILITY(U,$J,358.3,8435,0)
+ ;;=I80.9^^55^538^92
+ ;;^UTILITY(U,$J,358.3,8435,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8435,1,3,0)
+ ;;=3^Phlebitis and thrombophlebitis of unspecified site
+ ;;^UTILITY(U,$J,358.3,8435,1,4,0)
+ ;;=4^I80.9
+ ;;^UTILITY(U,$J,358.3,8435,2)
+ ;;=^93357
+ ;;^UTILITY(U,$J,358.3,8436,0)
+ ;;=R59.9^^55^538^30
+ ;;^UTILITY(U,$J,358.3,8436,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8436,1,3,0)
+ ;;=3^Enlarged lymph nodes, unspecified
+ ;;^UTILITY(U,$J,358.3,8436,1,4,0)
+ ;;=4^R59.9
+ ;;^UTILITY(U,$J,358.3,8436,2)
+ ;;=^5019531
+ ;;^UTILITY(U,$J,358.3,8437,0)
+ ;;=Z85.819^^55^538^112
+ ;;^UTILITY(U,$J,358.3,8437,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8437,1,3,0)
+ ;;=3^Prsnl hx of malig neoplm of unsp site lip,oral cav,& pharynx
+ ;;^UTILITY(U,$J,358.3,8437,1,4,0)
+ ;;=4^Z85.819
+ ;;^UTILITY(U,$J,358.3,8437,2)
+ ;;=^5063440
+ ;;^UTILITY(U,$J,358.3,8438,0)
+ ;;=Z85.818^^55^538^108
+ ;;^UTILITY(U,$J,358.3,8438,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8438,1,3,0)
+ ;;=3^Prsnl hx of malig neoplm of site of lip, oral cav, & pharynx
+ ;;^UTILITY(U,$J,358.3,8438,1,4,0)
+ ;;=4^Z85.818
+ ;;^UTILITY(U,$J,358.3,8438,2)
+ ;;=^5063439
+ ;;^UTILITY(U,$J,358.3,8439,0)
+ ;;=Z85.01^^55^538^100
+ ;;^UTILITY(U,$J,358.3,8439,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8439,1,3,0)
+ ;;=3^Prsnl hx of malig neoplm of esophagus
+ ;;^UTILITY(U,$J,358.3,8439,1,4,0)
+ ;;=4^Z85.01
+ ;;^UTILITY(U,$J,358.3,8439,2)
+ ;;=^5063395
+ ;;^UTILITY(U,$J,358.3,8440,0)
+ ;;=Z85.028^^55^538^110
+ ;;^UTILITY(U,$J,358.3,8440,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8440,1,3,0)
+ ;;=3^Prsnl hx of malig neoplm of stomach
+ ;;^UTILITY(U,$J,358.3,8440,1,4,0)
+ ;;=4^Z85.028
+ ;;^UTILITY(U,$J,358.3,8440,2)
+ ;;=^5063397
+ ;;^UTILITY(U,$J,358.3,8441,0)
+ ;;=Z85.038^^55^538^102
+ ;;^UTILITY(U,$J,358.3,8441,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8441,1,3,0)
+ ;;=3^Prsnl hx of malig neoplm of large intestine

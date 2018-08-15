@@ -1,6 +1,6 @@
-IBCNSM31 ;ALB/AAS - INSURANCE MANAGEMENT - OUTPUTS ;28-MAY-93
- ;;2.0;INTEGRATED BILLING;**6,28,68,413,497**;21-MAR-94;Build 120
- ;;Per VHA Directive 2004-038, this routine should not be modified.
+IBCNSM31 ;ALB/AAS/JNM - INSURANCE MANAGEMENT - OUTPUTS ;28-MAY-93
+ ;;2.0;INTEGRATED BILLING;**6,28,68,413,497,516,549**;21-MAR-94;Build 54
+ ;;Per VA Directive 6402, this routine should not be modified.
  ;
 % G EN^IBCNSM
  ;
@@ -8,6 +8,14 @@ EA ; -- Edit all insurance policy data
  N IBDIF,I,J,IBXX,IBCDFN,IBTRC,VALMY
  D EN^VALM2($G(XQORNOD(0)))
  D FULL^VALM1
+ ;
+ ;IB*2.0*549 - Added Security Key check
+ I '$D(^XUSEC("IB GROUP PLAN EDIT",DUZ)) D  Q
+ . W !!,*7,"Sorry, but you do not have the required privileges to Edit All"
+ . K DIR
+ . D PAUSE^VALM1
+ . D EAQ
+ ;
  I $D(VALMY) S IBXX=0 F  S IBXX=$O(VALMY(IBXX)) Q:'IBXX  D  ;W !,"Entry ",X,"Selected" D
  .S IBPPOL=$G(^TMP("IBNSMDX",$J,$O(^TMP("IBNSM",$J,"IDX",IBXX,0))))
  .Q:IBPPOL=""
@@ -46,9 +54,11 @@ LK(IBCNS) ; -- screened look up to policy file
  ;
  I 'Y D LKP^IBCNSU2(IBCNS,0,0,.IBCPOL,$G(IBALR)) G LKQ
  ;
+ ; MRD;IB*2.0*516 - Display new Group Name and Number fields.
  S DIC("A")="Select an Active GROUP PLAN: "
  S DIC="^IBA(355.3,",DIC(0)="AEQM",DIC("S")="I +^(0)=IBCNS,$P(^(0),U,2),'$P(^(0),U,11),$G(IBALR)'=+Y"
- S DIC("W")="N IBX S IBX=$G(^(0)) W ""   Name: "",$E($S($P(IBX,U,3)]"""":$P(IBX,U,3),1:""<none>"")_$J("""",20),1,20),""   Number: "",$S($P(IBX,U,4)]"""":$P(IBX,U,4),1:""<none>"")"
+ ;S DIC("W")="N IBX S IBX=$G(^(0)) W ""   Name: "",$E($S($P(IBX,U,3)]"""":$P(IBX,U,3),1:""<none>"")_$J("""",20),1,20),""   Number: "",$S($P(IBX,U,4)]"""":$P(IBX,U,4),1:""<none>"")"
+ S DIC("W")="N IBX S IBX=$G(^(2)) W ""   Name: "",$E($S($P(IBX,U,1)]"""":$P(IBX,U,1),1:""<none>"")_$J("""",20),1,20),""   Number: "",$E($S($P(IBX,U,2)]"""":$P(IBX,U,2),1:""<none>""),1,14)"
  D ^DIC K DIC I +Y>0 S IBCPOL=+Y
  ;
  ; -- see if only one policy

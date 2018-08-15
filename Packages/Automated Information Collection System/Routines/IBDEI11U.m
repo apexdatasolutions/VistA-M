@@ -1,112 +1,130 @@
-IBDEI11U ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI11U ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,18800,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18800,1,2,0)
- ;;=2^Excision or Curettage of bone cyst or benign tumor, phalanges of foot
- ;;^UTILITY(U,$J,358.3,18800,1,3,0)
- ;;=3^28108
- ;;^UTILITY(U,$J,358.3,18801,0)
- ;;=28110^^122^1203^18^^^^1
- ;;^UTILITY(U,$J,358.3,18801,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18801,1,2,0)
- ;;=2^Ostectomy, partial excision, fifth metararsal head
- ;;^UTILITY(U,$J,358.3,18801,1,3,0)
- ;;=3^28110
- ;;^UTILITY(U,$J,358.3,18802,0)
- ;;=28111^^122^1203^19^^^^1
- ;;^UTILITY(U,$J,358.3,18802,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18802,1,2,0)
- ;;=2^Ostectomy, complete excision; 1st metatarsal head
- ;;^UTILITY(U,$J,358.3,18802,1,3,0)
- ;;=3^28111
- ;;^UTILITY(U,$J,358.3,18803,0)
- ;;=28112^^122^1203^20^^^^1
- ;;^UTILITY(U,$J,358.3,18803,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18803,1,2,0)
- ;;=2^Ostectomy, complete excision; other metatarsal head (2nd, 3rd, 4th)
- ;;^UTILITY(U,$J,358.3,18803,1,3,0)
- ;;=3^28112
- ;;^UTILITY(U,$J,358.3,18804,0)
- ;;=28113^^122^1203^21^^^^1
- ;;^UTILITY(U,$J,358.3,18804,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18804,1,2,0)
- ;;=2^Ostectomy, complete excision; 5th metatarsal head
- ;;^UTILITY(U,$J,358.3,18804,1,3,0)
- ;;=3^28113
- ;;^UTILITY(U,$J,358.3,18805,0)
- ;;=28114^^122^1203^22^^^^1
- ;;^UTILITY(U,$J,358.3,18805,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18805,1,2,0)
- ;;=2^Ostectomy, complete excision; all metatarsal heads, with partial proximal phalangectomy, excluding first metatarsal 
- ;;^UTILITY(U,$J,358.3,18805,1,3,0)
- ;;=3^28114
- ;;^UTILITY(U,$J,358.3,18806,0)
- ;;=28140^^122^1203^23^^^^1
- ;;^UTILITY(U,$J,358.3,18806,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18806,1,2,0)
- ;;=2^Metatarsectomy
- ;;^UTILITY(U,$J,358.3,18806,1,3,0)
- ;;=3^28140
- ;;^UTILITY(U,$J,358.3,18807,0)
- ;;=28119^^122^1203^24^^^^1
- ;;^UTILITY(U,$J,358.3,18807,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18807,1,2,0)
- ;;=2^Ostectomy, calcaneus; for spur, with or without plantar fascial release
- ;;^UTILITY(U,$J,358.3,18807,1,3,0)
- ;;=3^28119
- ;;^UTILITY(U,$J,358.3,18808,0)
- ;;=28120^^122^1203^25^^^^1
- ;;^UTILITY(U,$J,358.3,18808,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18808,1,2,0)
- ;;=2^Partial excision bone; talus or calcaneus
- ;;^UTILITY(U,$J,358.3,18808,1,3,0)
- ;;=3^28120
- ;;^UTILITY(U,$J,358.3,18809,0)
- ;;=28122^^122^1203^26^^^^1
- ;;^UTILITY(U,$J,358.3,18809,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18809,1,2,0)
- ;;=2^Partial excision bone; tarsal or metatarsal bone, except talus or calcaneus
- ;;^UTILITY(U,$J,358.3,18809,1,3,0)
- ;;=3^28122
- ;;^UTILITY(U,$J,358.3,18810,0)
- ;;=28124^^122^1203^27^^^^1
- ;;^UTILITY(U,$J,358.3,18810,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18810,1,2,0)
- ;;=2^Partial excision bone; phalanx of toe
- ;;^UTILITY(U,$J,358.3,18810,1,3,0)
- ;;=3^28124
- ;;^UTILITY(U,$J,358.3,18811,0)
- ;;=28153^^122^1203^28^^^^1
- ;;^UTILITY(U,$J,358.3,18811,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18811,1,2,0)
- ;;=2^Resection, condyle(s), distal end of phalanx, each toe
- ;;^UTILITY(U,$J,358.3,18811,1,3,0)
- ;;=3^28153
- ;;^UTILITY(U,$J,358.3,18812,0)
- ;;=28160^^122^1203^29^^^^1
- ;;^UTILITY(U,$J,358.3,18812,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18812,1,2,0)
- ;;=2^Hemiphalangectomy or interphalangeal joint excision, toe, proximal end of phalanx, each
- ;;^UTILITY(U,$J,358.3,18812,1,3,0)
- ;;=3^28160
- ;;^UTILITY(U,$J,358.3,18813,0)
- ;;=64774^^122^1203^30^^^^1
- ;;^UTILITY(U,$J,358.3,18813,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18813,1,2,0)
- ;;=2^Excision of neuroma; cutaneous nerve, surgically identifiable
+ ;;^UTILITY(U,$J,358.3,17469,2)
+ ;;=^5063281
+ ;;^UTILITY(U,$J,358.3,17470,0)
+ ;;=Z72.9^^88^861^142
+ ;;^UTILITY(U,$J,358.3,17470,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17470,1,3,0)
+ ;;=3^Problems Related to Lifestyle
+ ;;^UTILITY(U,$J,358.3,17470,1,4,0)
+ ;;=4^Z72.9
+ ;;^UTILITY(U,$J,358.3,17470,2)
+ ;;=^5063267
+ ;;^UTILITY(U,$J,358.3,17471,0)
+ ;;=Z73.6^^88^861^124
+ ;;^UTILITY(U,$J,358.3,17471,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17471,1,3,0)
+ ;;=3^Problems Related to Activity Limitations d/t Disability
+ ;;^UTILITY(U,$J,358.3,17471,1,4,0)
+ ;;=4^Z73.6
+ ;;^UTILITY(U,$J,358.3,17471,2)
+ ;;=^5063274
+ ;;^UTILITY(U,$J,358.3,17472,0)
+ ;;=Z60.2^^88^861^143
+ ;;^UTILITY(U,$J,358.3,17472,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17472,1,3,0)
+ ;;=3^Problems Related to Living Alone
+ ;;^UTILITY(U,$J,358.3,17472,1,4,0)
+ ;;=4^Z60.2
+ ;;^UTILITY(U,$J,358.3,17472,2)
+ ;;=^5063140
+ ;;^UTILITY(U,$J,358.3,17473,0)
+ ;;=Z59.3^^88^861^144
+ ;;^UTILITY(U,$J,358.3,17473,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17473,1,3,0)
+ ;;=3^Problems Related to Living in Residential Institution
+ ;;^UTILITY(U,$J,358.3,17473,1,4,0)
+ ;;=4^Z59.3
+ ;;^UTILITY(U,$J,358.3,17473,2)
+ ;;=^5063132
+ ;;^UTILITY(U,$J,358.3,17474,0)
+ ;;=Z59.6^^88^861^145
+ ;;^UTILITY(U,$J,358.3,17474,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17474,1,3,0)
+ ;;=3^Problems Related to Low Income
+ ;;^UTILITY(U,$J,358.3,17474,1,4,0)
+ ;;=4^Z59.6
+ ;;^UTILITY(U,$J,358.3,17474,2)
+ ;;=^5063135
+ ;;^UTILITY(U,$J,358.3,17475,0)
+ ;;=Z75.9^^88^861^146
+ ;;^UTILITY(U,$J,358.3,17475,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17475,1,3,0)
+ ;;=3^Problems Related to Med Facilities/Health Care
+ ;;^UTILITY(U,$J,358.3,17475,1,4,0)
+ ;;=4^Z75.9
+ ;;^UTILITY(U,$J,358.3,17475,2)
+ ;;=^5063296
+ ;;^UTILITY(U,$J,358.3,17476,0)
+ ;;=Z75.0^^88^861^147
+ ;;^UTILITY(U,$J,358.3,17476,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17476,1,3,0)
+ ;;=3^Problems Related to Med Services not Available in Home
+ ;;^UTILITY(U,$J,358.3,17476,1,4,0)
+ ;;=4^Z75.0
+ ;;^UTILITY(U,$J,358.3,17476,2)
+ ;;=^5063289
+ ;;^UTILITY(U,$J,358.3,17477,0)
+ ;;=Z74.2^^88^861^149
+ ;;^UTILITY(U,$J,358.3,17477,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17477,1,3,0)
+ ;;=3^Problems Related to Need for Assistance at Home
+ ;;^UTILITY(U,$J,358.3,17477,1,4,0)
+ ;;=4^Z74.2
+ ;;^UTILITY(U,$J,358.3,17477,2)
+ ;;=^5063285
+ ;;^UTILITY(U,$J,358.3,17478,0)
+ ;;=Z74.1^^88^861^150
+ ;;^UTILITY(U,$J,358.3,17478,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17478,1,3,0)
+ ;;=3^Problems Related to Need for Assistance w/ Personal Care
+ ;;^UTILITY(U,$J,358.3,17478,1,4,0)
+ ;;=4^Z74.1
+ ;;^UTILITY(U,$J,358.3,17478,2)
+ ;;=^5063284
+ ;;^UTILITY(U,$J,358.3,17479,0)
+ ;;=Z74.3^^88^861^151
+ ;;^UTILITY(U,$J,358.3,17479,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17479,1,3,0)
+ ;;=3^Problems Related to Need for Continuous Supervision
+ ;;^UTILITY(U,$J,358.3,17479,1,4,0)
+ ;;=4^Z74.3
+ ;;^UTILITY(U,$J,358.3,17479,2)
+ ;;=^5063286
+ ;;^UTILITY(U,$J,358.3,17480,0)
+ ;;=Z75.1^^88^861^126
+ ;;^UTILITY(U,$J,358.3,17480,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17480,1,3,0)
+ ;;=3^Problems Related to Awaiting Facility Admission
+ ;;^UTILITY(U,$J,358.3,17480,1,4,0)
+ ;;=4^Z75.1
+ ;;^UTILITY(U,$J,358.3,17480,2)
+ ;;=^5063290
+ ;;^UTILITY(U,$J,358.3,17481,0)
+ ;;=Z63.9^^88^861^152
+ ;;^UTILITY(U,$J,358.3,17481,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17481,1,3,0)
+ ;;=3^Problems Related to Primary Support Group
+ ;;^UTILITY(U,$J,358.3,17481,1,4,0)
+ ;;=4^Z63.9
+ ;;^UTILITY(U,$J,358.3,17481,2)
+ ;;=^5063175
+ ;;^UTILITY(U,$J,358.3,17482,0)
+ ;;=Z74.09^^88^861^154
+ ;;^UTILITY(U,$J,358.3,17482,1,0)
+ ;;=^358.31IA^4^2

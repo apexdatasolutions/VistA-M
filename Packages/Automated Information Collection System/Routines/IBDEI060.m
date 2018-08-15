@@ -1,146 +1,128 @@
-IBDEI060 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI060 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,2596,1,4,0)
- ;;=4^585.6
- ;;^UTILITY(U,$J,358.3,2596,1,5,0)
- ;;=5^End Stage Renal Disease
- ;;^UTILITY(U,$J,358.3,2596,2)
- ;;=^303986
- ;;^UTILITY(U,$J,358.3,2597,0)
- ;;=592.0^^27^239^8
- ;;^UTILITY(U,$J,358.3,2597,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2597,1,4,0)
- ;;=4^592.0
- ;;^UTILITY(U,$J,358.3,2597,1,5,0)
- ;;=5^Kidney Stone
- ;;^UTILITY(U,$J,358.3,2597,2)
- ;;=^67056
- ;;^UTILITY(U,$J,358.3,2598,0)
- ;;=590.01^^27^239^15
- ;;^UTILITY(U,$J,358.3,2598,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2598,1,4,0)
- ;;=4^590.01
- ;;^UTILITY(U,$J,358.3,2598,1,5,0)
- ;;=5^Pyelonephritis,Chr w/ Med Nec
- ;;^UTILITY(U,$J,358.3,2598,2)
- ;;=^270368
- ;;^UTILITY(U,$J,358.3,2599,0)
- ;;=584.9^^27^239^16
- ;;^UTILITY(U,$J,358.3,2599,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2599,1,4,0)
- ;;=4^584.9
- ;;^UTILITY(U,$J,358.3,2599,1,5,0)
- ;;=5^Renal Failure,Acute
- ;;^UTILITY(U,$J,358.3,2599,2)
- ;;=^338532
- ;;^UTILITY(U,$J,358.3,2600,0)
- ;;=233.7^^27^240^12
- ;;^UTILITY(U,$J,358.3,2600,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2600,1,4,0)
- ;;=4^233.7
- ;;^UTILITY(U,$J,358.3,2600,1,5,0)
- ;;=5^Ca In-Situ Bladder
- ;;^UTILITY(U,$J,358.3,2600,2)
- ;;=^267742
- ;;^UTILITY(U,$J,358.3,2601,0)
- ;;=233.0^^27^240^13
- ;;^UTILITY(U,$J,358.3,2601,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2601,1,4,0)
- ;;=4^233.0
- ;;^UTILITY(U,$J,358.3,2601,1,5,0)
- ;;=5^Ca In-Situ Breast
- ;;^UTILITY(U,$J,358.3,2601,2)
- ;;=Ca In-Situ Breast^267735
- ;;^UTILITY(U,$J,358.3,2602,0)
- ;;=233.1^^27^240^14
- ;;^UTILITY(U,$J,358.3,2602,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2602,1,4,0)
- ;;=4^233.1
- ;;^UTILITY(U,$J,358.3,2602,1,5,0)
- ;;=5^Ca In-Situ Cervix
- ;;^UTILITY(U,$J,358.3,2602,2)
- ;;=^267736
- ;;^UTILITY(U,$J,358.3,2603,0)
- ;;=232.9^^27^240^15
- ;;^UTILITY(U,$J,358.3,2603,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2603,1,4,0)
- ;;=4^232.9
- ;;^UTILITY(U,$J,358.3,2603,1,5,0)
- ;;=5^Ca In-Situ Skin
- ;;^UTILITY(U,$J,358.3,2603,2)
- ;;=^267724
- ;;^UTILITY(U,$J,358.3,2604,0)
- ;;=156.2^^27^240^2
- ;;^UTILITY(U,$J,358.3,2604,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2604,1,4,0)
- ;;=4^156.2
- ;;^UTILITY(U,$J,358.3,2604,1,5,0)
- ;;=5^Ca Ampulla Of Vater
- ;;^UTILITY(U,$J,358.3,2604,2)
- ;;=^267100
- ;;^UTILITY(U,$J,358.3,2605,0)
- ;;=154.3^^27^240^3
- ;;^UTILITY(U,$J,358.3,2605,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2605,1,4,0)
- ;;=4^154.3
- ;;^UTILITY(U,$J,358.3,2605,1,5,0)
- ;;=5^Ca Anus
- ;;^UTILITY(U,$J,358.3,2605,2)
- ;;=CA Anus^267092
- ;;^UTILITY(U,$J,358.3,2606,0)
- ;;=156.1^^27^240^4
- ;;^UTILITY(U,$J,358.3,2606,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2606,1,4,0)
- ;;=4^156.1
- ;;^UTILITY(U,$J,358.3,2606,1,5,0)
- ;;=5^Ca Bile Ducts
- ;;^UTILITY(U,$J,358.3,2606,2)
- ;;=CA Bile Ducts^267099
- ;;^UTILITY(U,$J,358.3,2607,0)
- ;;=153.9^^27^240^9
- ;;^UTILITY(U,$J,358.3,2607,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2607,1,4,0)
- ;;=4^153.9
- ;;^UTILITY(U,$J,358.3,2607,1,5,0)
- ;;=5^Ca Colon
- ;;^UTILITY(U,$J,358.3,2607,2)
- ;;=CA Colon^267078
- ;;^UTILITY(U,$J,358.3,2608,0)
- ;;=150.9^^27^240^10
- ;;^UTILITY(U,$J,358.3,2608,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2608,1,4,0)
- ;;=4^150.9
- ;;^UTILITY(U,$J,358.3,2608,1,5,0)
- ;;=5^Ca Esophagus
- ;;^UTILITY(U,$J,358.3,2608,2)
- ;;=CA Esophagus^267055
- ;;^UTILITY(U,$J,358.3,2609,0)
- ;;=156.0^^27^240^11
- ;;^UTILITY(U,$J,358.3,2609,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2609,1,4,0)
- ;;=4^156.0
- ;;^UTILITY(U,$J,358.3,2609,1,5,0)
- ;;=5^Ca Gallbladder
- ;;^UTILITY(U,$J,358.3,2609,2)
- ;;=^267098
- ;;^UTILITY(U,$J,358.3,2610,0)
- ;;=155.0^^27^240^17
- ;;^UTILITY(U,$J,358.3,2610,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2610,1,4,0)
- ;;=4^155.0
+ ;;^UTILITY(U,$J,358.3,2211,1,4,0)
+ ;;=4^I25.111
+ ;;^UTILITY(U,$J,358.3,2211,2)
+ ;;=^5007109
+ ;;^UTILITY(U,$J,358.3,2212,0)
+ ;;=I25.118^^19^191^17
+ ;;^UTILITY(U,$J,358.3,2212,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2212,1,3,0)
+ ;;=3^Athscl Hrt Disease of Native Cor Art w/ Oth Ang Pctrs
+ ;;^UTILITY(U,$J,358.3,2212,1,4,0)
+ ;;=4^I25.118
+ ;;^UTILITY(U,$J,358.3,2212,2)
+ ;;=^5007110
+ ;;^UTILITY(U,$J,358.3,2213,0)
+ ;;=I25.119^^19^191^18
+ ;;^UTILITY(U,$J,358.3,2213,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2213,1,3,0)
+ ;;=3^Athscl Hrt Disease of Native Cor Art w/ Unspec Ang Pctrs
+ ;;^UTILITY(U,$J,358.3,2213,1,4,0)
+ ;;=4^I25.119
+ ;;^UTILITY(U,$J,358.3,2213,2)
+ ;;=^5007111
+ ;;^UTILITY(U,$J,358.3,2214,0)
+ ;;=I25.701^^19^191^29
+ ;;^UTILITY(U,$J,358.3,2214,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2214,1,3,0)
+ ;;=3^Athscl of CABG w/ Ang Pctrs w/ Documented Spasm,Unspec
+ ;;^UTILITY(U,$J,358.3,2214,1,4,0)
+ ;;=4^I25.701
+ ;;^UTILITY(U,$J,358.3,2214,2)
+ ;;=^5007118
+ ;;^UTILITY(U,$J,358.3,2215,0)
+ ;;=I25.708^^19^191^31
+ ;;^UTILITY(U,$J,358.3,2215,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2215,1,3,0)
+ ;;=3^Athscl of CABG w/ Oth Ang Pctrs,Unspec
+ ;;^UTILITY(U,$J,358.3,2215,1,4,0)
+ ;;=4^I25.708
+ ;;^UTILITY(U,$J,358.3,2215,2)
+ ;;=^5007119
+ ;;^UTILITY(U,$J,358.3,2216,0)
+ ;;=I25.709^^19^191^33
+ ;;^UTILITY(U,$J,358.3,2216,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2216,1,3,0)
+ ;;=3^Athscl of CABG w/ Unspec Ang Pctrs,Unspec
+ ;;^UTILITY(U,$J,358.3,2216,1,4,0)
+ ;;=4^I25.709
+ ;;^UTILITY(U,$J,358.3,2216,2)
+ ;;=^5007120
+ ;;^UTILITY(U,$J,358.3,2217,0)
+ ;;=I25.711^^19^191^7
+ ;;^UTILITY(U,$J,358.3,2217,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2217,1,3,0)
+ ;;=3^Athscl Autologous Vein CABG w/ Ang Pctrs w/ Documented Spasm
+ ;;^UTILITY(U,$J,358.3,2217,1,4,0)
+ ;;=4^I25.711
+ ;;^UTILITY(U,$J,358.3,2217,2)
+ ;;=^5007122
+ ;;^UTILITY(U,$J,358.3,2218,0)
+ ;;=I25.718^^19^191^8
+ ;;^UTILITY(U,$J,358.3,2218,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2218,1,3,0)
+ ;;=3^Athscl Autologous Vein CABG w/ Oth Ang Pctrs
+ ;;^UTILITY(U,$J,358.3,2218,1,4,0)
+ ;;=4^I25.718
+ ;;^UTILITY(U,$J,358.3,2218,2)
+ ;;=^5007123
+ ;;^UTILITY(U,$J,358.3,2219,0)
+ ;;=I25.719^^19^191^9
+ ;;^UTILITY(U,$J,358.3,2219,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2219,1,3,0)
+ ;;=3^Athscl Autologous Vein CABG w/ Unspec Ang Pctrs
+ ;;^UTILITY(U,$J,358.3,2219,1,4,0)
+ ;;=4^I25.719
+ ;;^UTILITY(U,$J,358.3,2219,2)
+ ;;=^5007124
+ ;;^UTILITY(U,$J,358.3,2220,0)
+ ;;=I25.721^^19^191^3
+ ;;^UTILITY(U,$J,358.3,2220,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2220,1,3,0)
+ ;;=3^Athscl Autologous Artery CABG w/ Ang Pctrs w/ Documented Spasm
+ ;;^UTILITY(U,$J,358.3,2220,1,4,0)
+ ;;=4^I25.721
+ ;;^UTILITY(U,$J,358.3,2220,2)
+ ;;=^5007126
+ ;;^UTILITY(U,$J,358.3,2221,0)
+ ;;=I25.728^^19^191^4
+ ;;^UTILITY(U,$J,358.3,2221,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2221,1,3,0)
+ ;;=3^Athscl Autologous Artery CABG w/ Oth Ang Pctrs
+ ;;^UTILITY(U,$J,358.3,2221,1,4,0)
+ ;;=4^I25.728
+ ;;^UTILITY(U,$J,358.3,2221,2)
+ ;;=^5133560
+ ;;^UTILITY(U,$J,358.3,2222,0)
+ ;;=I25.729^^19^191^5
+ ;;^UTILITY(U,$J,358.3,2222,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2222,1,3,0)
+ ;;=3^Athscl Autologous Artery CABG w/ Unspec Ang Pctrs
+ ;;^UTILITY(U,$J,358.3,2222,1,4,0)
+ ;;=4^I25.729
+ ;;^UTILITY(U,$J,358.3,2222,2)
+ ;;=^5133561
+ ;;^UTILITY(U,$J,358.3,2223,0)
+ ;;=I25.731^^19^191^25
+ ;;^UTILITY(U,$J,358.3,2223,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2223,1,3,0)
+ ;;=3^Athscl Nonautologous Biological CABG w/ Ang Pctrs w/ Documented Spasm
+ ;;^UTILITY(U,$J,358.3,2223,1,4,0)
+ ;;=4^I25.731
+ ;;^UTILITY(U,$J,358.3,2223,2)
+ ;;=^5007128

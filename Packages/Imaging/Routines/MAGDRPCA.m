@@ -1,5 +1,5 @@
-MAGDRPCA ;WOIFO/PMK/MLS/SG/DAC/JSL - Imaging RPCs for Importer ; 01 Apr 2013 1:03 PM
- ;;3.0;IMAGING;**53,123,118,138**;Mar 19, 2002;Build 5380;Sep 03, 2013
+MAGDRPCA ;WOIFO/PMK/MLS/SG/DAC/JSL - Imaging RPCs for Importer ; 26 Jan 2016 7:03 PM
+ ;;3.0;IMAGING;**53,123,118,142,138,162**;Mar 19, 2002;Build 22
  ;; Per VHA Directive 2004-038, this routine should not be modified.
  ;; +---------------------------------------------------------------+
  ;; | Property of the US Government.                                |
@@ -153,19 +153,18 @@ PROC(ARRAY,DIV,FILTER) ;
  N RADPROC       ; Radiology procedure data (file #71)
  N TODAY         ; today's date in Fileman format
  N PROCTYPE      ; Type of procedure
+ N DIVSN         ; Division Station Number
  ;
  N BUF,ERROR,IEN,Z
  K ARRAY
  ;
  ;--- Validate parameters
  S DIV=$G(DIV)
- I (DIV'>0)!(DIV'=+DIV)  D  Q
- . S ARRAY(1)="-1,Invalid Institution IEN: '"_DIV_"'."
+ I ($$STA^XUAF4(DIV)="")!(DIV'=+DIV) D  Q:$D(ARRAY)  ; P142 DAC - Accept IEN or STATION NUMBER
+ . S DIVSN=$$IEN^XUAF4(DIV)  ; Check STATION NUMBER
+ . I DIVSN="" S ARRAY(1)="-2,Institution "_DIV_" does not exist." Q
+ . S DIV=DIVSN
  . Q
- I $D(^DIC(4,DIV))<10  D  Q
- . S ARRAY(1)="-2,Institution with IEN="_DIV_" does not exist."
- . Q
- ;
  S ERROR=$$DISPLAY^MAGDAIRG(0)
  I ERROR=-1 D  Q
  . S ARRAY(1)="-3,""No Credit"" entries must be added to the IMAGING LOCATIONS file (#79.1)"

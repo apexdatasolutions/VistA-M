@@ -1,144 +1,126 @@
-IBDEI0EP ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0EP ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,7095,1,4,0)
- ;;=4^233.7
- ;;^UTILITY(U,$J,358.3,7095,1,5,0)
- ;;=5^Ca In-Situ Bladder
- ;;^UTILITY(U,$J,358.3,7095,2)
- ;;=^267742
- ;;^UTILITY(U,$J,358.3,7096,0)
- ;;=233.0^^55^577^34
- ;;^UTILITY(U,$J,358.3,7096,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7096,1,4,0)
- ;;=4^233.0
- ;;^UTILITY(U,$J,358.3,7096,1,5,0)
- ;;=5^Ca In-Situ Breast
- ;;^UTILITY(U,$J,358.3,7096,2)
- ;;=Ca In-Situ Breast^267735
- ;;^UTILITY(U,$J,358.3,7097,0)
- ;;=233.1^^55^577^35
- ;;^UTILITY(U,$J,358.3,7097,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7097,1,4,0)
- ;;=4^233.1
- ;;^UTILITY(U,$J,358.3,7097,1,5,0)
- ;;=5^Ca In-Situ Cervix
- ;;^UTILITY(U,$J,358.3,7097,2)
- ;;=^267736
- ;;^UTILITY(U,$J,358.3,7098,0)
- ;;=232.9^^55^577^36
- ;;^UTILITY(U,$J,358.3,7098,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7098,1,4,0)
- ;;=4^232.9
- ;;^UTILITY(U,$J,358.3,7098,1,5,0)
- ;;=5^Ca In-Situ Skin
- ;;^UTILITY(U,$J,358.3,7098,2)
- ;;=^267724
- ;;^UTILITY(U,$J,358.3,7099,0)
- ;;=156.2^^55^577^23
- ;;^UTILITY(U,$J,358.3,7099,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7099,1,4,0)
- ;;=4^156.2
- ;;^UTILITY(U,$J,358.3,7099,1,5,0)
- ;;=5^Ca Ampulla Of Vater
- ;;^UTILITY(U,$J,358.3,7099,2)
- ;;=^267100
- ;;^UTILITY(U,$J,358.3,7100,0)
- ;;=154.3^^55^577^24
- ;;^UTILITY(U,$J,358.3,7100,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7100,1,4,0)
- ;;=4^154.3
- ;;^UTILITY(U,$J,358.3,7100,1,5,0)
- ;;=5^Ca Anus
- ;;^UTILITY(U,$J,358.3,7100,2)
- ;;=CA Anus^267092
- ;;^UTILITY(U,$J,358.3,7101,0)
- ;;=156.1^^55^577^25
- ;;^UTILITY(U,$J,358.3,7101,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7101,1,4,0)
- ;;=4^156.1
- ;;^UTILITY(U,$J,358.3,7101,1,5,0)
- ;;=5^Ca Bile Ducts
- ;;^UTILITY(U,$J,358.3,7101,2)
- ;;=CA Bile Ducts^267099
- ;;^UTILITY(U,$J,358.3,7102,0)
- ;;=153.9^^55^577^30
- ;;^UTILITY(U,$J,358.3,7102,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7102,1,4,0)
- ;;=4^153.9
- ;;^UTILITY(U,$J,358.3,7102,1,5,0)
- ;;=5^Ca Colon
- ;;^UTILITY(U,$J,358.3,7102,2)
- ;;=CA Colon^267078
- ;;^UTILITY(U,$J,358.3,7103,0)
- ;;=150.9^^55^577^31
- ;;^UTILITY(U,$J,358.3,7103,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7103,1,4,0)
- ;;=4^150.9
- ;;^UTILITY(U,$J,358.3,7103,1,5,0)
- ;;=5^Ca Esophagus
- ;;^UTILITY(U,$J,358.3,7103,2)
- ;;=CA Esophagus^267055
- ;;^UTILITY(U,$J,358.3,7104,0)
- ;;=156.0^^55^577^32
- ;;^UTILITY(U,$J,358.3,7104,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7104,1,4,0)
- ;;=4^156.0
- ;;^UTILITY(U,$J,358.3,7104,1,5,0)
- ;;=5^Ca Gallbladder
- ;;^UTILITY(U,$J,358.3,7104,2)
- ;;=^267098
- ;;^UTILITY(U,$J,358.3,7105,0)
- ;;=155.0^^55^577^38
- ;;^UTILITY(U,$J,358.3,7105,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7105,1,4,0)
- ;;=4^155.0
- ;;^UTILITY(U,$J,358.3,7105,1,5,0)
- ;;=5^Ca Liver, Primary
- ;;^UTILITY(U,$J,358.3,7105,2)
- ;;=CA Liver, Primary^73526
- ;;^UTILITY(U,$J,358.3,7106,0)
- ;;=157.9^^55^577^44
- ;;^UTILITY(U,$J,358.3,7106,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7106,1,4,0)
- ;;=4^157.9
- ;;^UTILITY(U,$J,358.3,7106,1,5,0)
- ;;=5^Ca Pancreas
- ;;^UTILITY(U,$J,358.3,7106,2)
- ;;=CA Pancreas^267103
- ;;^UTILITY(U,$J,358.3,7107,0)
- ;;=154.1^^55^577^47
- ;;^UTILITY(U,$J,358.3,7107,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7107,1,4,0)
- ;;=4^154.1
- ;;^UTILITY(U,$J,358.3,7107,1,5,0)
- ;;=5^Ca Rectum
- ;;^UTILITY(U,$J,358.3,7107,2)
- ;;=CA Rectum^267090
- ;;^UTILITY(U,$J,358.3,7108,0)
- ;;=152.9^^55^577^50
- ;;^UTILITY(U,$J,358.3,7108,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7108,1,4,0)
- ;;=4^152.9
- ;;^UTILITY(U,$J,358.3,7108,1,5,0)
- ;;=5^Ca Small Bowel
- ;;^UTILITY(U,$J,358.3,7108,2)
- ;;=CA Small Bowel^267077
- ;;^UTILITY(U,$J,358.3,7109,0)
- ;;=151.9^^55^577^51
- ;;^UTILITY(U,$J,358.3,7109,1,0)
- ;;=^358.31IA^5^2
+ ;;^UTILITY(U,$J,358.3,6425,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6425,1,3,0)
+ ;;=3^Sedatv/Hyp/Anxiolytc Abuse w/ Psych Disorder w/ Delusions
+ ;;^UTILITY(U,$J,358.3,6425,1,4,0)
+ ;;=4^F13.150
+ ;;^UTILITY(U,$J,358.3,6425,2)
+ ;;=^5003194
+ ;;^UTILITY(U,$J,358.3,6426,0)
+ ;;=F14.150^^43^397^4
+ ;;^UTILITY(U,$J,358.3,6426,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6426,1,3,0)
+ ;;=3^Cocaine Abuse w/ Psych Disorder w/ Delusions
+ ;;^UTILITY(U,$J,358.3,6426,1,4,0)
+ ;;=4^F14.150
+ ;;^UTILITY(U,$J,358.3,6426,2)
+ ;;=^5003245
+ ;;^UTILITY(U,$J,358.3,6427,0)
+ ;;=F14.250^^43^397^7
+ ;;^UTILITY(U,$J,358.3,6427,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6427,1,3,0)
+ ;;=3^Cocaine Dependence w/ Psych Disorder w/ Delusions
+ ;;^UTILITY(U,$J,358.3,6427,1,4,0)
+ ;;=4^F14.250
+ ;;^UTILITY(U,$J,358.3,6427,2)
+ ;;=^5003261
+ ;;^UTILITY(U,$J,358.3,6428,0)
+ ;;=F19.250^^43^397^22
+ ;;^UTILITY(U,$J,358.3,6428,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6428,1,3,0)
+ ;;=3^Psychoactive Subs Dependence w/ Psych Disorder w/ Delusions
+ ;;^UTILITY(U,$J,358.3,6428,1,4,0)
+ ;;=4^F19.250
+ ;;^UTILITY(U,$J,358.3,6428,2)
+ ;;=^5003442
+ ;;^UTILITY(U,$J,358.3,6429,0)
+ ;;=F16.250^^43^397^10
+ ;;^UTILITY(U,$J,358.3,6429,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6429,1,3,0)
+ ;;=3^Hallucinogen Dependence w/ Psych Disorder w/ Delusions
+ ;;^UTILITY(U,$J,358.3,6429,1,4,0)
+ ;;=4^F16.250
+ ;;^UTILITY(U,$J,358.3,6429,2)
+ ;;=^5003342
+ ;;^UTILITY(U,$J,358.3,6430,0)
+ ;;=F11.250^^43^397^14
+ ;;^UTILITY(U,$J,358.3,6430,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6430,1,3,0)
+ ;;=3^Opioid Dependence w/ Psych Disorder w/ Delusions
+ ;;^UTILITY(U,$J,358.3,6430,1,4,0)
+ ;;=4^F11.250
+ ;;^UTILITY(U,$J,358.3,6430,2)
+ ;;=^5003135
+ ;;^UTILITY(U,$J,358.3,6431,0)
+ ;;=F19.150^^43^397^18
+ ;;^UTILITY(U,$J,358.3,6431,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6431,1,3,0)
+ ;;=3^Psychoactive Subs Abuse w/ Psych Disorder w/ Delusions
+ ;;^UTILITY(U,$J,358.3,6431,1,4,0)
+ ;;=4^F19.150
+ ;;^UTILITY(U,$J,358.3,6431,2)
+ ;;=^5003422
+ ;;^UTILITY(U,$J,358.3,6432,0)
+ ;;=F15.251^^43^397^45
+ ;;^UTILITY(U,$J,358.3,6432,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6432,1,3,0)
+ ;;=3^Stimulant Dependence w/ Psych Disorder w/ Hallucinations
+ ;;^UTILITY(U,$J,358.3,6432,1,4,0)
+ ;;=4^F15.251
+ ;;^UTILITY(U,$J,358.3,6432,2)
+ ;;=^5003304
+ ;;^UTILITY(U,$J,358.3,6433,0)
+ ;;=F15.151^^43^397^41
+ ;;^UTILITY(U,$J,358.3,6433,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6433,1,3,0)
+ ;;=3^Stimulant Abuse w/ Psych Disorder w/ Hallucinations
+ ;;^UTILITY(U,$J,358.3,6433,1,4,0)
+ ;;=4^F15.151
+ ;;^UTILITY(U,$J,358.3,6433,2)
+ ;;=^5003289
+ ;;^UTILITY(U,$J,358.3,6434,0)
+ ;;=F13.251^^43^397^37
+ ;;^UTILITY(U,$J,358.3,6434,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6434,1,3,0)
+ ;;=3^Sedatv/Hyp/Anxiolytc Dependence w/ Psych Disorder w/ Hallucinations
+ ;;^UTILITY(U,$J,358.3,6434,1,4,0)
+ ;;=4^F13.251
+ ;;^UTILITY(U,$J,358.3,6434,2)
+ ;;=^5003212
+ ;;^UTILITY(U,$J,358.3,6435,0)
+ ;;=F13.151^^43^397^31
+ ;;^UTILITY(U,$J,358.3,6435,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6435,1,3,0)
+ ;;=3^Sedatv/Hyp/Anxiolytc Abuse w/ Psych Disorder w/ Hallucinations
+ ;;^UTILITY(U,$J,358.3,6435,1,4,0)
+ ;;=4^F13.151
+ ;;^UTILITY(U,$J,358.3,6435,2)
+ ;;=^5003195
+ ;;^UTILITY(U,$J,358.3,6436,0)
+ ;;=F12.251^^43^397^2
+ ;;^UTILITY(U,$J,358.3,6436,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6436,1,3,0)
+ ;;=3^Cannabis Dependence w/ Psych Disorder w/ Hallucinations
+ ;;^UTILITY(U,$J,358.3,6436,1,4,0)
+ ;;=4^F12.251
+ ;;^UTILITY(U,$J,358.3,6436,2)
+ ;;=^5003173
+ ;;^UTILITY(U,$J,358.3,6437,0)
+ ;;=F14.151^^43^397^6
+ ;;^UTILITY(U,$J,358.3,6437,1,0)
+ ;;=^358.31IA^4^2

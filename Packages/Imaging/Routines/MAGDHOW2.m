@@ -1,5 +1,5 @@
-MAGDHOW2 ;WOIFO/PMK - Capture Consult/GMRC data ; 15 May 2013 11:35 AM
- ;;3.0;IMAGING;**138**;Mar 19, 2002;Build 5380;Sep 03, 2013
+MAGDHOW2 ;WOIFO/PMK/DAC - Capture Consult/GMRC data ;15 May 2017 3:02 PM
+ ;;3.0;IMAGING;**138,156,183**;Mar 19, 2002;Build 11;Nov 16, 2014
  ;; Per VHA Directive 2004-038, this routine should not be modified.
  ;; +---------------------------------------------------------------+
  ;; | Property of the US Government.                                |
@@ -16,12 +16,23 @@ MAGDHOW2 ;WOIFO/PMK - Capture Consult/GMRC data ; 15 May 2013 11:35 AM
  ;; +---------------------------------------------------------------+
  ;;
  ;
+ ; Supported IA #4716 reference ^HLOAPI function calls
+ ; Supported IA #4717 reference ^HLOAPI1 function calls
+ ; Supported IA #5886 reference ^HLOPBLD1 function calls
+ ; Supported IA #6103 reference for reading ^HLA
+ ;
  ;
 MESSAGE(SERVICE) ; invoked from ^MAGDHOW1
  N CONSULT,ERROR,HL7IEN,HLMSTATE,I,MESSAGES,MSG,NEXT,OBXSEGNO
  N PRIORITY,SAVEORCSEG,SUCCESS,TIUDOC,X,Y
  ;
- D INIT(MSGTYPE,"O01") ; start building a new HL7 message
+ ; P156 DAC - Support for HL7 result messages
+ I MSGTYPE="ORM" D  ; order entry message
+ . D INIT(MSGTYPE,"O01") ; start building a new HL7 order entry message
+ . Q
+ E  D  ; result message
+ . D INIT(MSGTYPE,"R01") ; start building a new HL7 result message
+ . Q
  ;
  D PIDPV1^MAGDHOW2(.HLMSTATE,DFN)
  D ORC^MAGDHOW3(.HLMSTATE,GMRCIEN,.SAVEORCSEG)
@@ -76,6 +87,7 @@ INIT(MSGTYPE,EVENT) ; start building a new HL7 message
  Q
  ;
 PIDPV1(HLMSTATE,DFN) ; build the PID and PV1 segments
+ ; Also invoked by ^MAGT7S to build these segments for Anatomic Pathology - P183 PMK 3/7/17
  N HL,HL7ARRAY,HL7SEG,HLECH,HLFS,HLQ,NUL,PID,PV1,SUCCESS
  S HLECH=HLMSTATE("HDR","ENCODING CHARACTERS")
  S HLFS=HLMSTATE("HDR","FIELD SEPARATOR")
@@ -178,6 +190,7 @@ OUTPUT ; output the messages to ^MAGDHL7
  . . Q
  . S J=J+1,^MAGDHL7(2006.5,D0,1,J,0)=Y
  . Q
+ S:FMDATETIME'="" ^MAGDHL7(2006.5,"C",FMDATETIME,D0)="" ; P183 PMK 3/6/17
  ; The next line must be last, since WAIT^MAGDHRS1
  ; uses this node to determine that the entry is complete.
  S ^MAGDHL7(2006.5,D0,1,0)="^^"_J_"^"_J_"^"_FMDATETIME

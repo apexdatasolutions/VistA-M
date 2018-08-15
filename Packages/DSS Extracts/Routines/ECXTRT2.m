@@ -1,14 +1,14 @@
-ECXTRT2 ;ALB/JAP,BIR/DMA,CML,PTD-Treating Specialty Change Extract ;9/8/10  16:34
- ;;3.0;DSS EXTRACTS;**105,127**;Dec 22, 1997;Build 36
+ECXTRT2 ;ALB/JAP,BIR/DMA,CML,PTD-Treating Specialty Change Extract ;4/17/17  11:04
+ ;;3.0;DSS EXTRACTS;**105,127,161,166**;Dec 22, 1997;Build 24
  ;
 FILE ;file the extract record
  ;node0
- ;^dfn^ssn^name^i/o (ECXA)^date^product^adm date^d/c date^
+ ;^dfn^facility^ssn^name^i/o (ECXA)^date^product^adm date^d/c date^  ;166  tjl - store the FACILITY, starting in FY18
  ;mov#^type^new ts^losing ts^losing ts los^
  ;losing attending^movement type^time^adm time^new provider^
  ;new attending^losing provider
  ;node1
- ;mpi^dss dept^placeholder^placeholder^placeholder^
+ ;mpi^placeholder^placeholder^placeholder^placeholder^
  ;placeholder^losing attending los^losing provider los^dom^
  ;observ pat ind^encounter num
  ;^losing attending physician npi^losing prim ward provider npi^
@@ -27,6 +27,7 @@ FILE ;file the extract record
  ;done
  S EC7=$O(^ECX(ECFILE,999999999),-1),EC7=EC7+1
  S ECODE=EC7_U_EC23_U_U_ECXDFN_U_ECXSSN_U_ECXPNM_U_ECXA_U_ECXDATE_U_U
+ I ECXLOGIC>2017 S $P(ECODE,U,4)=ECXPDIV  ;166  tjl - Store the Production Division Code in the Facility field
  S ECODE=ECODE_ECXADMDT_U_ECXDCDT_U_ECDA_U_6_U_ECXSPCN_U_ECXSPCL_U
  S ECODE=ECODE_ECXLOS_U_ECXATTL_U_ECMT_U_ECXTIME_U_ECXADMTM_U_ECXPRVN_U
  S ECODE=ECODE_ECXATTN_U_ECXPRVL_U

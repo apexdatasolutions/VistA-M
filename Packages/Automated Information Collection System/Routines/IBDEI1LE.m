@@ -1,0 +1,128 @@
+IBDEI1LE ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,26636,0)
+ ;;=H35.40^^130^1295^33
+ ;;^UTILITY(U,$J,358.3,26636,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26636,1,3,0)
+ ;;=3^Peripheral Retinal Degeneration,Unspec
+ ;;^UTILITY(U,$J,358.3,26636,1,4,0)
+ ;;=4^H35.40
+ ;;^UTILITY(U,$J,358.3,26636,2)
+ ;;=^5005670
+ ;;^UTILITY(U,$J,358.3,26637,0)
+ ;;=H35.431^^130^1295^32
+ ;;^UTILITY(U,$J,358.3,26637,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26637,1,3,0)
+ ;;=3^Paving Stone Degeneration of Retina,Right Eye
+ ;;^UTILITY(U,$J,358.3,26637,1,4,0)
+ ;;=4^H35.431
+ ;;^UTILITY(U,$J,358.3,26637,2)
+ ;;=^5005679
+ ;;^UTILITY(U,$J,358.3,26638,0)
+ ;;=H35.432^^130^1295^31
+ ;;^UTILITY(U,$J,358.3,26638,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26638,1,3,0)
+ ;;=3^Paving Stone Degeneration of Retina,Left Eye
+ ;;^UTILITY(U,$J,358.3,26638,1,4,0)
+ ;;=4^H35.432
+ ;;^UTILITY(U,$J,358.3,26638,2)
+ ;;=^5005680
+ ;;^UTILITY(U,$J,358.3,26639,0)
+ ;;=H35.433^^130^1295^30
+ ;;^UTILITY(U,$J,358.3,26639,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26639,1,3,0)
+ ;;=3^Paving Stone Degeneration of Retina,Bilateral
+ ;;^UTILITY(U,$J,358.3,26639,1,4,0)
+ ;;=4^H35.433
+ ;;^UTILITY(U,$J,358.3,26639,2)
+ ;;=^5005681
+ ;;^UTILITY(U,$J,358.3,26640,0)
+ ;;=H35.412^^130^1295^25
+ ;;^UTILITY(U,$J,358.3,26640,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26640,1,3,0)
+ ;;=3^Lattice Degeneration of Retina,Left Eye
+ ;;^UTILITY(U,$J,358.3,26640,1,4,0)
+ ;;=4^H35.412
+ ;;^UTILITY(U,$J,358.3,26640,2)
+ ;;=^5005672
+ ;;^UTILITY(U,$J,358.3,26641,0)
+ ;;=H35.411^^130^1295^26
+ ;;^UTILITY(U,$J,358.3,26641,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26641,1,3,0)
+ ;;=3^Lattice Degeneration of Retina,Right Eye
+ ;;^UTILITY(U,$J,358.3,26641,1,4,0)
+ ;;=4^H35.411
+ ;;^UTILITY(U,$J,358.3,26641,2)
+ ;;=^5005671
+ ;;^UTILITY(U,$J,358.3,26642,0)
+ ;;=H35.413^^130^1295^24
+ ;;^UTILITY(U,$J,358.3,26642,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26642,1,3,0)
+ ;;=3^Lattice Degeneration of Retina,Bilateral
+ ;;^UTILITY(U,$J,358.3,26642,1,4,0)
+ ;;=4^H35.413
+ ;;^UTILITY(U,$J,358.3,26642,2)
+ ;;=^5005673
+ ;;^UTILITY(U,$J,358.3,26643,0)
+ ;;=H35.442^^130^1295^1
+ ;;^UTILITY(U,$J,358.3,26643,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26643,1,3,0)
+ ;;=3^Age-Related Reticular Degeneration of Retina,Left Eye
+ ;;^UTILITY(U,$J,358.3,26643,1,4,0)
+ ;;=4^H35.442
+ ;;^UTILITY(U,$J,358.3,26643,2)
+ ;;=^5005684
+ ;;^UTILITY(U,$J,358.3,26644,0)
+ ;;=H35.441^^130^1295^2
+ ;;^UTILITY(U,$J,358.3,26644,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26644,1,3,0)
+ ;;=3^Age-Related Reticular Degeneration of Retina,Right Eye
+ ;;^UTILITY(U,$J,358.3,26644,1,4,0)
+ ;;=4^H35.441
+ ;;^UTILITY(U,$J,358.3,26644,2)
+ ;;=^5005683
+ ;;^UTILITY(U,$J,358.3,26645,0)
+ ;;=H35.443^^130^1295^3
+ ;;^UTILITY(U,$J,358.3,26645,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26645,1,3,0)
+ ;;=3^Age-Related Reticular Degeneration of Retina,Bilateral
+ ;;^UTILITY(U,$J,358.3,26645,1,4,0)
+ ;;=4^H35.443
+ ;;^UTILITY(U,$J,358.3,26645,2)
+ ;;=^5005685
+ ;;^UTILITY(U,$J,358.3,26646,0)
+ ;;=H35.52^^130^1295^34
+ ;;^UTILITY(U,$J,358.3,26646,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26646,1,3,0)
+ ;;=3^Pigmentary Retinal Dystrophy
+ ;;^UTILITY(U,$J,358.3,26646,1,4,0)
+ ;;=4^H35.52
+ ;;^UTILITY(U,$J,358.3,26646,2)
+ ;;=^5005697
+ ;;^UTILITY(U,$J,358.3,26647,0)
+ ;;=H35.63^^130^1295^42
+ ;;^UTILITY(U,$J,358.3,26647,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26647,1,3,0)
+ ;;=3^Retinal Hemorrhage,Bilateral
+ ;;^UTILITY(U,$J,358.3,26647,1,4,0)
+ ;;=4^H35.63
+ ;;^UTILITY(U,$J,358.3,26647,2)
+ ;;=^5005701
+ ;;^UTILITY(U,$J,358.3,26648,0)
+ ;;=H35.61^^130^1295^44
+ ;;^UTILITY(U,$J,358.3,26648,1,0)
+ ;;=^358.31IA^4^2

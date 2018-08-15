@@ -1,0 +1,132 @@
+IBDEI20Q ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,33819,1,4,0)
+ ;;=4^T85.691A
+ ;;^UTILITY(U,$J,358.3,33819,2)
+ ;;=^5055655
+ ;;^UTILITY(U,$J,358.3,33820,0)
+ ;;=T85.691D^^154^1705^27
+ ;;^UTILITY(U,$J,358.3,33820,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,33820,1,3,0)
+ ;;=3^Mech Comp,Intraperitoneal Dialysis Catheter,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,33820,1,4,0)
+ ;;=4^T85.691D
+ ;;^UTILITY(U,$J,358.3,33820,2)
+ ;;=^5055656
+ ;;^UTILITY(U,$J,358.3,33821,0)
+ ;;=T82.898A^^154^1705^6
+ ;;^UTILITY(U,$J,358.3,33821,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,33821,1,3,0)
+ ;;=3^Complication of Vascular Graft,Init Encntr
+ ;;^UTILITY(U,$J,358.3,33821,1,4,0)
+ ;;=4^T82.898A
+ ;;^UTILITY(U,$J,358.3,33821,2)
+ ;;=^5054953
+ ;;^UTILITY(U,$J,358.3,33822,0)
+ ;;=T82.898D^^154^1705^7
+ ;;^UTILITY(U,$J,358.3,33822,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,33822,1,3,0)
+ ;;=3^Complication of Vascular Graft,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,33822,1,4,0)
+ ;;=4^T82.898D
+ ;;^UTILITY(U,$J,358.3,33822,2)
+ ;;=^5054954
+ ;;^UTILITY(U,$J,358.3,33823,0)
+ ;;=N25.81^^154^1705^36
+ ;;^UTILITY(U,$J,358.3,33823,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,33823,1,3,0)
+ ;;=3^Secondary Hyperparathyroidism of Renal Origin
+ ;;^UTILITY(U,$J,358.3,33823,1,4,0)
+ ;;=4^N25.81
+ ;;^UTILITY(U,$J,358.3,33823,2)
+ ;;=^5015617
+ ;;^UTILITY(U,$J,358.3,33824,0)
+ ;;=T82.858A^^154^1705^37
+ ;;^UTILITY(U,$J,358.3,33824,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,33824,1,3,0)
+ ;;=3^Stenosis of Vascular Graft,Init Encntr
+ ;;^UTILITY(U,$J,358.3,33824,1,4,0)
+ ;;=4^T82.858A
+ ;;^UTILITY(U,$J,358.3,33824,2)
+ ;;=^5054941
+ ;;^UTILITY(U,$J,358.3,33825,0)
+ ;;=T82.858D^^154^1705^38
+ ;;^UTILITY(U,$J,358.3,33825,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,33825,1,3,0)
+ ;;=3^Stenosis of Vascular Graft,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,33825,1,4,0)
+ ;;=4^T82.858D
+ ;;^UTILITY(U,$J,358.3,33825,2)
+ ;;=^5054942
+ ;;^UTILITY(U,$J,358.3,33826,0)
+ ;;=T82.868A^^154^1705^39
+ ;;^UTILITY(U,$J,358.3,33826,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,33826,1,3,0)
+ ;;=3^Thrombosis of Vascular Graft,Init Encntr
+ ;;^UTILITY(U,$J,358.3,33826,1,4,0)
+ ;;=4^T82.868A
+ ;;^UTILITY(U,$J,358.3,33826,2)
+ ;;=^5054947
+ ;;^UTILITY(U,$J,358.3,33827,0)
+ ;;=T82.868D^^154^1705^40
+ ;;^UTILITY(U,$J,358.3,33827,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,33827,1,3,0)
+ ;;=3^Thrombosis of Vascular Graft,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,33827,1,4,0)
+ ;;=4^T82.868D
+ ;;^UTILITY(U,$J,358.3,33827,2)
+ ;;=^5054948
+ ;;^UTILITY(U,$J,358.3,33828,0)
+ ;;=N28.1^^154^1706^1
+ ;;^UTILITY(U,$J,358.3,33828,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,33828,1,3,0)
+ ;;=3^Cyst of Kidney,Acquired
+ ;;^UTILITY(U,$J,358.3,33828,1,4,0)
+ ;;=4^N28.1
+ ;;^UTILITY(U,$J,358.3,33828,2)
+ ;;=^270380
+ ;;^UTILITY(U,$J,358.3,33829,0)
+ ;;=Q61.9^^154^1706^2
+ ;;^UTILITY(U,$J,358.3,33829,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,33829,1,3,0)
+ ;;=3^Cystic Kidney Disease,Unspec
+ ;;^UTILITY(U,$J,358.3,33829,1,4,0)
+ ;;=4^Q61.9
+ ;;^UTILITY(U,$J,358.3,33829,2)
+ ;;=^5018800
+ ;;^UTILITY(U,$J,358.3,33830,0)
+ ;;=Q61.2^^154^1706^6
+ ;;^UTILITY(U,$J,358.3,33830,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,33830,1,3,0)
+ ;;=3^Polycystic Kidney,Adult Type
+ ;;^UTILITY(U,$J,358.3,33830,1,4,0)
+ ;;=4^Q61.2
+ ;;^UTILITY(U,$J,358.3,33830,2)
+ ;;=^5018796
+ ;;^UTILITY(U,$J,358.3,33831,0)
+ ;;=Q61.5^^154^1706^4
+ ;;^UTILITY(U,$J,358.3,33831,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,33831,1,3,0)
+ ;;=3^Medullary Cystic Kidney
+ ;;^UTILITY(U,$J,358.3,33831,1,4,0)
+ ;;=4^Q61.5
+ ;;^UTILITY(U,$J,358.3,33831,2)
+ ;;=^67073
+ ;;^UTILITY(U,$J,358.3,33832,0)
+ ;;=Z82.71^^154^1706^3
+ ;;^UTILITY(U,$J,358.3,33832,1,0)
+ ;;=^358.31IA^4^2

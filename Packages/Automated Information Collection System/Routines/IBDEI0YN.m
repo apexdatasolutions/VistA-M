@@ -1,134 +1,122 @@
-IBDEI0YN ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0YN ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,17214,1,1,0)
- ;;=1^205.90
- ;;^UTILITY(U,$J,358.3,17214,1,8,0)
- ;;=8^Unspec Myeloid Leuk w/o Remission
- ;;^UTILITY(U,$J,358.3,17214,2)
- ;;=^336860
- ;;^UTILITY(U,$J,358.3,17215,0)
- ;;=205.91^^111^1077^64
- ;;^UTILITY(U,$J,358.3,17215,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17215,1,1,0)
- ;;=1^205.91
- ;;^UTILITY(U,$J,358.3,17215,1,8,0)
- ;;=8^Unspec Myeloid Leuk in Remission
- ;;^UTILITY(U,$J,358.3,17215,2)
- ;;=^267542
- ;;^UTILITY(U,$J,358.3,17216,0)
- ;;=205.92^^111^1077^63
- ;;^UTILITY(U,$J,358.3,17216,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17216,1,1,0)
- ;;=1^205.92
- ;;^UTILITY(U,$J,358.3,17216,1,8,0)
- ;;=8^Unspec Myeloid Leuk in Relapse
- ;;^UTILITY(U,$J,358.3,17216,2)
- ;;=^336475
- ;;^UTILITY(U,$J,358.3,17217,0)
- ;;=206.00^^111^1077^6
- ;;^UTILITY(U,$J,358.3,17217,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17217,1,1,0)
- ;;=1^206.00
- ;;^UTILITY(U,$J,358.3,17217,1,8,0)
- ;;=8^Acute Monocytic Leuk w/o Remission
- ;;^UTILITY(U,$J,358.3,17217,2)
- ;;=^336861
- ;;^UTILITY(U,$J,358.3,17218,0)
- ;;=206.01^^111^1077^5
- ;;^UTILITY(U,$J,358.3,17218,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17218,1,1,0)
- ;;=1^206.01
- ;;^UTILITY(U,$J,358.3,17218,1,8,0)
- ;;=8^Acute Monocytic Leuk in Remission
- ;;^UTILITY(U,$J,358.3,17218,2)
- ;;=^267544
- ;;^UTILITY(U,$J,358.3,17219,0)
- ;;=206.02^^111^1077^4
- ;;^UTILITY(U,$J,358.3,17219,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17219,1,1,0)
- ;;=1^206.02
- ;;^UTILITY(U,$J,358.3,17219,1,8,0)
- ;;=8^Acute Monocytic Leuk in Relapse
- ;;^UTILITY(U,$J,358.3,17219,2)
- ;;=^336476
- ;;^UTILITY(U,$J,358.3,17220,0)
- ;;=206.10^^111^1077^15
- ;;^UTILITY(U,$J,358.3,17220,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17220,1,1,0)
- ;;=1^206.10
- ;;^UTILITY(U,$J,358.3,17220,1,8,0)
- ;;=8^Chr Monocytic Leuk w/o Remission
- ;;^UTILITY(U,$J,358.3,17220,2)
- ;;=^336862
- ;;^UTILITY(U,$J,358.3,17221,0)
- ;;=206.11^^111^1077^14
- ;;^UTILITY(U,$J,358.3,17221,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17221,1,1,0)
- ;;=1^206.11
- ;;^UTILITY(U,$J,358.3,17221,1,8,0)
- ;;=8^Chr Monocytic Leuk in Remission
- ;;^UTILITY(U,$J,358.3,17221,2)
- ;;=^267546
- ;;^UTILITY(U,$J,358.3,17222,0)
- ;;=206.12^^111^1077^13
- ;;^UTILITY(U,$J,358.3,17222,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17222,1,1,0)
- ;;=1^206.12
- ;;^UTILITY(U,$J,358.3,17222,1,8,0)
- ;;=8^Chr Monocytic Leuk in Relapse
- ;;^UTILITY(U,$J,358.3,17222,2)
- ;;=^336477
- ;;^UTILITY(U,$J,358.3,17223,0)
- ;;=206.20^^111^1077^55
- ;;^UTILITY(U,$J,358.3,17223,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17223,1,1,0)
- ;;=1^206.20
- ;;^UTILITY(U,$J,358.3,17223,1,8,0)
- ;;=8^Subacute Monocytic Leuk w/o Remiss
- ;;^UTILITY(U,$J,358.3,17223,2)
- ;;=^336863
- ;;^UTILITY(U,$J,358.3,17224,0)
- ;;=206.21^^111^1077^54
- ;;^UTILITY(U,$J,358.3,17224,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17224,1,1,0)
- ;;=1^206.21
- ;;^UTILITY(U,$J,358.3,17224,1,8,0)
- ;;=8^Subacute Monocytic Leuk in Relapse
- ;;^UTILITY(U,$J,358.3,17224,2)
- ;;=^267548
- ;;^UTILITY(U,$J,358.3,17225,0)
- ;;=206.22^^111^1077^56
- ;;^UTILITY(U,$J,358.3,17225,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17225,1,1,0)
- ;;=1^206.22
- ;;^UTILITY(U,$J,358.3,17225,1,8,0)
- ;;=8^Subacute Monocytic Leuk w/o Remiss
- ;;^UTILITY(U,$J,358.3,17225,2)
- ;;=^336478
- ;;^UTILITY(U,$J,358.3,17226,0)
- ;;=206.80^^111^1077^41
- ;;^UTILITY(U,$J,358.3,17226,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17226,1,1,0)
- ;;=1^206.80
- ;;^UTILITY(U,$J,358.3,17226,1,8,0)
- ;;=8^Oth Monocytic Leuk w/ Remission
- ;;^UTILITY(U,$J,358.3,17226,2)
- ;;=^336864
- ;;^UTILITY(U,$J,358.3,17227,0)
- ;;=206.81^^111^1077^40
- ;;^UTILITY(U,$J,358.3,17227,1,0)
- ;;=^358.31IA^8^2
+ ;;^UTILITY(U,$J,358.3,15955,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Head,Oth Part,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15955,1,4,0)
+ ;;=4^S01.83XA
+ ;;^UTILITY(U,$J,358.3,15955,2)
+ ;;=^5020231
+ ;;^UTILITY(U,$J,358.3,15956,0)
+ ;;=S01.93XA^^85^830^2
+ ;;^UTILITY(U,$J,358.3,15956,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15956,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Head,Unspec Part,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15956,1,4,0)
+ ;;=4^S01.93XA
+ ;;^UTILITY(U,$J,358.3,15956,2)
+ ;;=^5020246
+ ;;^UTILITY(U,$J,358.3,15957,0)
+ ;;=S11.83XA^^85^830^32
+ ;;^UTILITY(U,$J,358.3,15957,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15957,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Neck,Oth Part,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15957,1,4,0)
+ ;;=4^S11.83XA
+ ;;^UTILITY(U,$J,358.3,15957,2)
+ ;;=^5021515
+ ;;^UTILITY(U,$J,358.3,15958,0)
+ ;;=S11.93XA^^85^830^33
+ ;;^UTILITY(U,$J,358.3,15958,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15958,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Neck,Unspec Part,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15958,1,4,0)
+ ;;=4^S11.93XA
+ ;;^UTILITY(U,$J,358.3,15958,2)
+ ;;=^5021536
+ ;;^UTILITY(U,$J,358.3,15959,0)
+ ;;=S31.813A^^85^830^38
+ ;;^UTILITY(U,$J,358.3,15959,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15959,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Right Buttock,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15959,1,4,0)
+ ;;=4^S31.813A
+ ;;^UTILITY(U,$J,358.3,15959,2)
+ ;;=^5024302
+ ;;^UTILITY(U,$J,358.3,15960,0)
+ ;;=S31.133A^^85^830^35
+ ;;^UTILITY(U,$J,358.3,15960,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15960,1,3,0)
+ ;;=3^Puncture Wound w/o FB of RLQ of Abd Wall w/o Penet Perit Cav,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15960,1,4,0)
+ ;;=4^S31.133A
+ ;;^UTILITY(U,$J,358.3,15960,2)
+ ;;=^5024080
+ ;;^UTILITY(U,$J,358.3,15961,0)
+ ;;=S31.134A^^85^830^3
+ ;;^UTILITY(U,$J,358.3,15961,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15961,1,3,0)
+ ;;=3^Puncture Wound w/o FB of LLQ of Abd Wall w/o Penet Perit Cav,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15961,1,4,0)
+ ;;=4^S31.134A
+ ;;^UTILITY(U,$J,358.3,15961,2)
+ ;;=^5134457
+ ;;^UTILITY(U,$J,358.3,15962,0)
+ ;;=S31.823A^^85^830^6
+ ;;^UTILITY(U,$J,358.3,15962,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15962,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Left Buttock,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15962,1,4,0)
+ ;;=4^S31.823A
+ ;;^UTILITY(U,$J,358.3,15962,2)
+ ;;=^5024314
+ ;;^UTILITY(U,$J,358.3,15963,0)
+ ;;=S31.130A^^85^830^36
+ ;;^UTILITY(U,$J,358.3,15963,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15963,1,3,0)
+ ;;=3^Puncture Wound w/o FB of RUQ of Abd Wall w/o Penet Perit Cav,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15963,1,4,0)
+ ;;=4^S31.130A
+ ;;^UTILITY(U,$J,358.3,15963,2)
+ ;;=^5024071
+ ;;^UTILITY(U,$J,358.3,15964,0)
+ ;;=S31.131A^^85^830^4
+ ;;^UTILITY(U,$J,358.3,15964,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15964,1,3,0)
+ ;;=3^Puncture Wound w/o FB of LUQ of Abd Wall w/o Penet Perit Cav,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15964,1,4,0)
+ ;;=4^S31.131A
+ ;;^UTILITY(U,$J,358.3,15964,2)
+ ;;=^5024074
+ ;;^UTILITY(U,$J,358.3,15965,0)
+ ;;=S41.031A^^85^830^59
+ ;;^UTILITY(U,$J,358.3,15965,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15965,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Right Shoulder,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15965,1,4,0)
+ ;;=4^S41.031A
+ ;;^UTILITY(U,$J,358.3,15965,2)
+ ;;=^5026309
+ ;;^UTILITY(U,$J,358.3,15966,0)
+ ;;=S41.032A^^85^830^27
+ ;;^UTILITY(U,$J,358.3,15966,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15966,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Left Shoulder,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15966,1,4,0)
+ ;;=4^S41.032A
+ ;;^UTILITY(U,$J,358.3,15966,2)
+ ;;=^5026312
+ ;;^UTILITY(U,$J,358.3,15967,0)
+ ;;=S51.031A^^85^830^41

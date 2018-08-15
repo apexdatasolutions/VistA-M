@@ -1,7 +1,16 @@
-RORX016B ;HCIOFO/BH,SG - OUTPATIENT UTILIZATION (SORT) ; 9/14/05 10:08am
- ;;1.5;CLINICAL CASE REGISTRIES;;Feb 17, 2006
+RORX016B ;HCIOFO/BH,SG - OUTPATIENT UTILIZATION (SORT) ;9/14/05 10:08am
+ ;;1.5;CLINICAL CASE REGISTRIES;**21,31**;Feb 17, 2006;Build 62
  ;
  Q
+ ;******************************************************************************
+ ;                       --- ROUTINE MODIFICATION LOG ---
+ ;        
+ ;PKG/PATCH    DATE        DEVELOPER    MODIFICATION
+ ;-----------  ----------  -----------  ----------------------------------------
+ ;ROR*1.5*21   SEP 2013    T KOPP       Added ICN as last report column if
+ ;                                      additional identifier option selected
+ ;ROR*1.5*31   MAY 2017    M FERRARESE  Adding PACT and PCP as additional identifiers.
+ ;******************************************************************************
  ;
  ;***** SORTS THE RESULTS AND COMPILES THE TOTALS
  ;
@@ -34,7 +43,7 @@ SORT() ;
  ;       <0  Error code
  ;        0  Ok
  ;
-TOTALS(PATIEN) ;
+TOTALS(PATIEN,AGE) ;
  N NODE,TMP
  S NODE=$NA(^TMP("RORX016",$J))
  ;
@@ -65,7 +74,8 @@ TOTALS(PATIEN) ;
  . S:NV>0 @NODE@("OPV")=$G(@NODE@("OPV"))+NV
  . ;--- Count the stop codes
  . D:NPSC>0
- . . S @NODE@("OP",PATIEN)=NPSC_U_NDSC_U_$G(VA("BID"))_U_NV
+ . . S @NODE@("OP",PATIEN)=NPSC_U_NDSC_U_$G(VA("BID"))_U_NV_U_$S($$PARAM^RORTSK01("PATIENTS","ICN"):$$ICN^RORUTL02(PATIEN),1:"")
+ . . S @NODE@("OP",PATIEN)=@NODE@("OP",PATIEN)_U_$S($$PARAM^RORTSK01("PATIENTS","PACT"):$$PACT^RORUTL02(PATIEN),1:"")_U_$S($$PARAM^RORTSK01("PATIENTS","PCP"):$$PCP^RORUTL02(PATIEN),1:"")_U_AGE
  . . S @NODE@("OPS1",NPSC)=$G(@NODE@("OPS1",NPSC))+1
  . . S @NODE@("OPS1",NPSC,RORPNAME,PATIEN)=""
  Q 0

@@ -1,5 +1,5 @@
 SROESNR1 ;BIR/ADM - NURSE REPORT E-SIG UTILITY ;06/07/2011
- ;;3.0;Surgery;**100,143,157,176**;24 Jun 93;Build 8
+ ;;3.0;Surgery;**100,143,157,176,182,184,186**;24 Jun 93;Build 3
  ;** NOTICE: This routine is part of an implementation of a nationally
  ;**         controlled procedure.  Local modifications to this routine
  ;**         are prohibited.
@@ -79,11 +79,13 @@ PJA ;;Prosthesis Installed^0;.47^1,0
  ;;Prosthesis Installed^04-RN Verifier-130.01,10-4^1,2;3
  ;;Prosthesis Installed^05-Vendor-130.01,1-4^1,0;2
  ;;Prosthesis Installed^06-Model-130.01,2-4^1,0;3
+ ;;Prosthesis Installed^07-Lot/Serial Number-130.01,2.5-4^1,0;5;retired by SR176
  ;;Prosthesis Installed^08-Sterile Resp-130.01,5-4^1,0;7
  ;;Prosthesis Installed^09-Size-130.01,6-4^1,1;1
  ;;Prosthesis Installed^10-Quantity-130.01,7-4^1,1;2
  ;;Prosthesis Installed^11-Lot Number-130.01,11-4^1,1;3
  ;;Prosthesis Installed^12-Serial Number-130.01,12-4^1,1;4
+ ;;Prosthesis Installed^13-Provider Read Back Performed-130.01,13-4^1,1;5
  ;;
 PCC ;;Medications^0;.375^22,0
  ;;Medications^01-Medication-130.33,.01-2^22,0;1
@@ -107,13 +109,26 @@ PJD ;;Blood Replacement Fluids^0;.27^4,0
  ;;Blood Replacement Fluids^04-VA Identification-130.04,4-4^4,0;5
  ;;Blood Replacement Fluids^05-Comments-130.04,5;W-4^4,1,0;1
  ;;
-PJABI ;;Laser Unit(s)^0;129^44,0
- ;;Laser Unit(s)^01-Laser Unit/ID-130.0129,.01-2^44,0;1
- ;;Laser Unit(s)^02-Duration-130.0129,1-4^44,0;2
- ;;Laser Unit(s)^03-Wattage-130.0129,2-4^44,0;3
- ;;Laser Unit(s)^04-Operator-130.0129,3-4^44,0;4
- ;;Laser Unit(s)^05-Plume Evacuator-130.0129,4-4^44,0;5
- ;;Laser Unit(s)^06-Comments-130.0129,5;W-4^44,1,0;1
+PAA ;;Laser Performed^0;135^56,0
+ ;;Laser Performed^01-Laser Name-130.11,.01-4^56,0;1
+ ;;Laser Performed^02-Laser Type-130.11,1-4^56,0;2
+ ;;Laser Performed^03-Laser Start Time-130.11,2-4^56,0;3
+ ;;Laser Performed^04-Laser End Date-130.11,3-4^56,0;4
+ ;;Laser Performed^05-Laser Test Fire-130.11,4-4^56,0;5
+ ;;Laser Performed^06-Laser Delivery System-130.11,5-4^56,0;6
+ ;;Laser Performed^07-Pulse Mode-130.11,6-4^56,0;7
+ ;;Laser Performed^08-Power/Average Power-130.11,7-4^56,0;8
+ ;;Laser Performed^09-Interval/Repetition Rate-130.11,8-4^56,0;9
+ ;;Laser Performed^10-Total Joules Delivered-130.11,9-4^56,0;10
+ ;;Laser Performed^11-Watts Delivered-130.11,10-4^56,0;11
+ ;;Laser Performed^12-Wave Form-130.11,11-4^56,0;12
+ ;;Laser Performed^13-Pulse Width-130.11,12-4^56,0;13
+ ;;Laser Performed^14-Energy Joules-130.11,13-4^56,0;14
+ ;;Laser Performed^15-Duration-130.11,14-4^56,0;15
+ ;;Laser Performed^16-Patient Precautions-130.11,15-4^56,0;16
+ ;;Laser Performed^17-Laser On Standby When Not In Use-130.11,16-4^56,0;17
+ ;;Laser Performed^18-Laser Off and Key Secured At End Of Use-130.11,17-4^56,0;18
+ ;;Laser Performed^19-Personnel Precautions-130.11,18-4^56,0;19
  ;;
 PJAC ;;Cell Saver(s)^0;130^45,0
  ;;Cell Saver(s)^01-Cell Saver ID-130.013,.01-2^45,0;1
@@ -129,3 +144,10 @@ PAH ;;Other Diagnosis^0;.74^15,0
  ;;Other Diagnosis^01X-Other Diagnosis-130.18,.01-2^15,0;1
  ;;Other Diagnosis^02-ICD Diagnosis Code-130.18,3-2^15,0;3
  ;;Other Diagnosis^03X-Diagnosis Comments-130.18,2;W-4^15,1,0;1
+ ;;
+PJFDG ;;Organ to be Transplanted^0;647^63,0
+ ;;Organ to be Transplanted^01-Organ to be Transplanted-130.0647,.01-2^63,0;1
+ ;;
+PJFFD ;;Donor Vessel UNOS ID^0;664^57,0
+ ;;Donor Vessel UNOS ID^01-Donor Vessel UNOS ID-130.0664,.01-2^57,0;1
+ ;;

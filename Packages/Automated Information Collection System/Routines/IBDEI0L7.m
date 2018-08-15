@@ -1,134 +1,138 @@
-IBDEI0L7 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0L7 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,10393,0)
- ;;=V10.62^^67^675^43
- ;;^UTILITY(U,$J,358.3,10393,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10393,1,4,0)
- ;;=4^V10.62
- ;;^UTILITY(U,$J,358.3,10393,1,5,0)
- ;;=5^Hx of Myeloid Leukemia
- ;;^UTILITY(U,$J,358.3,10393,2)
- ;;=Hx of Myeloid Leukemia^295233
- ;;^UTILITY(U,$J,358.3,10394,0)
- ;;=V10.63^^67^675^41
- ;;^UTILITY(U,$J,358.3,10394,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10394,1,4,0)
- ;;=4^V10.63
- ;;^UTILITY(U,$J,358.3,10394,1,5,0)
- ;;=5^Hx of Monocytic Leukemia
- ;;^UTILITY(U,$J,358.3,10394,2)
- ;;=Hx of Monocytic Leukemia^295234
- ;;^UTILITY(U,$J,358.3,10395,0)
- ;;=V11.2^^67^675^32
- ;;^UTILITY(U,$J,358.3,10395,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10395,1,4,0)
- ;;=4^V11.2
- ;;^UTILITY(U,$J,358.3,10395,1,5,0)
- ;;=5^Hx of Dysthymia
- ;;^UTILITY(U,$J,358.3,10395,2)
- ;;=Hx of Dysthymia^295251
- ;;^UTILITY(U,$J,358.3,10396,0)
- ;;=V15.81^^67^675^60
- ;;^UTILITY(U,$J,358.3,10396,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10396,1,4,0)
- ;;=4^V15.81
- ;;^UTILITY(U,$J,358.3,10396,1,5,0)
- ;;=5^Noncompliance With Medical Treatment
- ;;^UTILITY(U,$J,358.3,10396,2)
- ;;=^295290
- ;;^UTILITY(U,$J,358.3,10397,0)
- ;;=V10.43^^67^675^44
- ;;^UTILITY(U,$J,358.3,10397,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10397,1,4,0)
- ;;=4^V10.43
- ;;^UTILITY(U,$J,358.3,10397,1,5,0)
- ;;=5^Hx of Ovarian CA
- ;;^UTILITY(U,$J,358.3,10397,2)
- ;;=Hx of Ovarian CA^295221
- ;;^UTILITY(U,$J,358.3,10398,0)
- ;;=V12.71^^67^675^45
- ;;^UTILITY(U,$J,358.3,10398,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10398,1,4,0)
- ;;=4^V12.71
- ;;^UTILITY(U,$J,358.3,10398,1,5,0)
- ;;=5^Hx of Peptic Ulcer Disease
- ;;^UTILITY(U,$J,358.3,10398,2)
- ;;=^303400
- ;;^UTILITY(U,$J,358.3,10399,0)
- ;;=V10.46^^67^675^48
- ;;^UTILITY(U,$J,358.3,10399,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10399,1,4,0)
- ;;=4^V10.46
- ;;^UTILITY(U,$J,358.3,10399,1,5,0)
- ;;=5^Hx of Prostate Cancer
- ;;^UTILITY(U,$J,358.3,10399,2)
- ;;=Hx of Prostate Cancer^295224
- ;;^UTILITY(U,$J,358.3,10400,0)
- ;;=V11.0^^67^675^50
- ;;^UTILITY(U,$J,358.3,10400,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10400,1,4,0)
- ;;=4^V11.0
- ;;^UTILITY(U,$J,358.3,10400,1,5,0)
- ;;=5^Hx of Schizophrenia
- ;;^UTILITY(U,$J,358.3,10400,2)
- ;;=Hx of Schizophrenia^295249
- ;;^UTILITY(U,$J,358.3,10401,0)
- ;;=V10.83^^67^675^51
- ;;^UTILITY(U,$J,358.3,10401,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10401,1,4,0)
- ;;=4^V10.83
- ;;^UTILITY(U,$J,358.3,10401,1,5,0)
- ;;=5^Hx of Skin Cancer (Non-Melanoma)
- ;;^UTILITY(U,$J,358.3,10401,2)
- ;;=^295241
- ;;^UTILITY(U,$J,358.3,10402,0)
- ;;=V15.1^^67^675^53
- ;;^UTILITY(U,$J,358.3,10402,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10402,1,4,0)
- ;;=4^V15.1
- ;;^UTILITY(U,$J,358.3,10402,1,5,0)
- ;;=5^Hx of Surgery To Heart And Great Vessels
- ;;^UTILITY(U,$J,358.3,10402,2)
- ;;=^295283
- ;;^UTILITY(U,$J,358.3,10403,0)
- ;;=V15.82^^67^675^57
- ;;^UTILITY(U,$J,358.3,10403,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10403,1,4,0)
- ;;=4^V15.82
- ;;^UTILITY(U,$J,358.3,10403,1,5,0)
- ;;=5^Hx of Tobacco Use (not current)
- ;;^UTILITY(U,$J,358.3,10403,2)
- ;;=Hx of Tobacco Use (not current)^303405
- ;;^UTILITY(U,$J,358.3,10404,0)
- ;;=V12.01^^67^675^54
- ;;^UTILITY(U,$J,358.3,10404,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10404,1,4,0)
- ;;=4^V12.01
- ;;^UTILITY(U,$J,358.3,10404,1,5,0)
- ;;=5^Hx of TB
- ;;^UTILITY(U,$J,358.3,10404,2)
- ;;=Hx of TB^303393
- ;;^UTILITY(U,$J,358.3,10405,0)
- ;;=V13.01^^67^675^36
- ;;^UTILITY(U,$J,358.3,10405,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10405,1,4,0)
- ;;=4^V13.01
- ;;^UTILITY(U,$J,358.3,10405,1,5,0)
- ;;=5^Hx of Kidney Stones
- ;;^UTILITY(U,$J,358.3,10405,2)
- ;;=Hx of Kidney Stones^303403
+ ;;^UTILITY(U,$J,358.3,9608,0)
+ ;;=F44.6^^65^627^4
+ ;;^UTILITY(U,$J,358.3,9608,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9608,1,3,0)
+ ;;=3^Conversion Disorder w/ Sensory Symptom/Deficit
+ ;;^UTILITY(U,$J,358.3,9608,1,4,0)
+ ;;=4^F44.6
+ ;;^UTILITY(U,$J,358.3,9608,2)
+ ;;=^5003581
+ ;;^UTILITY(U,$J,358.3,9609,0)
+ ;;=F10.20^^65^627^1
+ ;;^UTILITY(U,$J,358.3,9609,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9609,1,3,0)
+ ;;=3^Alcohol Dependence Uncomplicated
+ ;;^UTILITY(U,$J,358.3,9609,1,4,0)
+ ;;=4^F10.20
+ ;;^UTILITY(U,$J,358.3,9609,2)
+ ;;=^5003081
+ ;;^UTILITY(U,$J,358.3,9610,0)
+ ;;=F51.8^^65^627^12
+ ;;^UTILITY(U,$J,358.3,9610,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9610,1,3,0)
+ ;;=3^Sleep Disorder Not d/t Substance/Physiological Condition
+ ;;^UTILITY(U,$J,358.3,9610,1,4,0)
+ ;;=4^F51.8
+ ;;^UTILITY(U,$J,358.3,9610,2)
+ ;;=^5003616
+ ;;^UTILITY(U,$J,358.3,9611,0)
+ ;;=F32.9^^65^627^8
+ ;;^UTILITY(U,$J,358.3,9611,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9611,1,3,0)
+ ;;=3^MDD,Single Episode,Unspec
+ ;;^UTILITY(U,$J,358.3,9611,1,4,0)
+ ;;=4^F32.9
+ ;;^UTILITY(U,$J,358.3,9611,2)
+ ;;=^5003528
+ ;;^UTILITY(U,$J,358.3,9612,0)
+ ;;=G91.1^^65^627^9
+ ;;^UTILITY(U,$J,358.3,9612,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9612,1,3,0)
+ ;;=3^Obstructive Hydrocephalus
+ ;;^UTILITY(U,$J,358.3,9612,1,4,0)
+ ;;=4^G91.1
+ ;;^UTILITY(U,$J,358.3,9612,2)
+ ;;=^84947
+ ;;^UTILITY(U,$J,358.3,9613,0)
+ ;;=I95.1^^65^627^10
+ ;;^UTILITY(U,$J,358.3,9613,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9613,1,3,0)
+ ;;=3^Orthostatic Hypotension
+ ;;^UTILITY(U,$J,358.3,9613,1,4,0)
+ ;;=4^I95.1
+ ;;^UTILITY(U,$J,358.3,9613,2)
+ ;;=^60741
+ ;;^UTILITY(U,$J,358.3,9614,0)
+ ;;=I95.89^^65^627^7
+ ;;^UTILITY(U,$J,358.3,9614,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9614,1,3,0)
+ ;;=3^Hypotension,Other
+ ;;^UTILITY(U,$J,358.3,9614,1,4,0)
+ ;;=4^I95.89
+ ;;^UTILITY(U,$J,358.3,9614,2)
+ ;;=^5008079
+ ;;^UTILITY(U,$J,358.3,9615,0)
+ ;;=R55.^^65^627^13
+ ;;^UTILITY(U,$J,358.3,9615,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9615,1,3,0)
+ ;;=3^Syncope and Collapse
+ ;;^UTILITY(U,$J,358.3,9615,1,4,0)
+ ;;=4^R55.
+ ;;^UTILITY(U,$J,358.3,9615,2)
+ ;;=^116707
+ ;;^UTILITY(U,$J,358.3,9616,0)
+ ;;=G47.10^^65^627^6
+ ;;^UTILITY(U,$J,358.3,9616,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9616,1,3,0)
+ ;;=3^Hypersomnia,Unspec
+ ;;^UTILITY(U,$J,358.3,9616,1,4,0)
+ ;;=4^G47.10
+ ;;^UTILITY(U,$J,358.3,9616,2)
+ ;;=^332926
+ ;;^UTILITY(U,$J,358.3,9617,0)
+ ;;=G47.30^^65^627^11
+ ;;^UTILITY(U,$J,358.3,9617,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9617,1,3,0)
+ ;;=3^Sleep Apnea,Unspec
+ ;;^UTILITY(U,$J,358.3,9617,1,4,0)
+ ;;=4^G47.30
+ ;;^UTILITY(U,$J,358.3,9617,2)
+ ;;=^5003977
+ ;;^UTILITY(U,$J,358.3,9618,0)
+ ;;=R20.0^^65^627^2
+ ;;^UTILITY(U,$J,358.3,9618,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9618,1,3,0)
+ ;;=3^Anesthesia of Skin
+ ;;^UTILITY(U,$J,358.3,9618,1,4,0)
+ ;;=4^R20.0
+ ;;^UTILITY(U,$J,358.3,9618,2)
+ ;;=^5019278
+ ;;^UTILITY(U,$J,358.3,9619,0)
+ ;;=90471^^66^628^1^^^^1
+ ;;^UTILITY(U,$J,358.3,9619,1,0)
+ ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,9619,1,2,0)
+ ;;=2^90471
+ ;;^UTILITY(U,$J,358.3,9619,1,3,0)
+ ;;=3^Immunization Administration (use w/ Vacs below)
+ ;;^UTILITY(U,$J,358.3,9620,0)
+ ;;=90472^^66^628^1.5^^^^1
+ ;;^UTILITY(U,$J,358.3,9620,1,0)
+ ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,9620,1,2,0)
+ ;;=2^90472
+ ;;^UTILITY(U,$J,358.3,9620,1,3,0)
+ ;;=3^2 or more Immunization Administration (use w/ Vacs below)
+ ;;^UTILITY(U,$J,358.3,9621,0)
+ ;;=90632^^66^628^5^^^^1
+ ;;^UTILITY(U,$J,358.3,9621,1,0)
+ ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,9621,1,2,0)
+ ;;=2^90632
+ ;;^UTILITY(U,$J,358.3,9621,1,3,0)
+ ;;=3^Hepatitis A Vaccine

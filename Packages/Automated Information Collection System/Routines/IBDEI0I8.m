@@ -1,140 +1,132 @@
-IBDEI0I8 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0I8 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,8879,2)
- ;;=^40463
- ;;^UTILITY(U,$J,358.3,8880,0)
- ;;=618.6^^61^625^16
- ;;^UTILITY(U,$J,358.3,8880,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8880,1,4,0)
- ;;=4^Enterocele,Vaginal
- ;;^UTILITY(U,$J,358.3,8880,1,5,0)
- ;;=5^618.6
- ;;^UTILITY(U,$J,358.3,8880,2)
- ;;=^56796
- ;;^UTILITY(U,$J,358.3,8881,0)
- ;;=625.6^^61^625^20
- ;;^UTILITY(U,$J,358.3,8881,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8881,1,4,0)
- ;;=4^Incontin,Female Stress
- ;;^UTILITY(U,$J,358.3,8881,1,5,0)
- ;;=5^625.6
- ;;^UTILITY(U,$J,358.3,8881,2)
- ;;=^114717
- ;;^UTILITY(U,$J,358.3,8882,0)
- ;;=611.72^^61^625^21
- ;;^UTILITY(U,$J,358.3,8882,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8882,1,4,0)
- ;;=4^Lump/Mass In Breast
- ;;^UTILITY(U,$J,358.3,8882,1,5,0)
- ;;=5^611.72
- ;;^UTILITY(U,$J,358.3,8882,2)
- ;;=Lump/Mass in Breast^72018
- ;;^UTILITY(U,$J,358.3,8883,0)
- ;;=795.00^^61^625^1
- ;;^UTILITY(U,$J,358.3,8883,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8883,1,4,0)
- ;;=4^Abnormal Pap Smear, Nos
- ;;^UTILITY(U,$J,358.3,8883,1,5,0)
- ;;=5^795.00
- ;;^UTILITY(U,$J,358.3,8883,2)
- ;;=Abnormal Pap Smear, NOS^117041
- ;;^UTILITY(U,$J,358.3,8884,0)
- ;;=618.00^^61^625^29
- ;;^UTILITY(U,$J,358.3,8884,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8884,1,4,0)
- ;;=4^Vaginal Wall Prolpse Nos
- ;;^UTILITY(U,$J,358.3,8884,1,5,0)
- ;;=5^618.00
- ;;^UTILITY(U,$J,358.3,8884,2)
- ;;=^331533
- ;;^UTILITY(U,$J,358.3,8885,0)
- ;;=611.89^^61^625^19
- ;;^UTILITY(U,$J,358.3,8885,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8885,1,4,0)
- ;;=4^Hematoma,Breast
- ;;^UTILITY(U,$J,358.3,8885,1,5,0)
- ;;=5^611.89
- ;;^UTILITY(U,$J,358.3,8885,2)
- ;;=^336616
- ;;^UTILITY(U,$J,358.3,8886,0)
- ;;=173.51^^61^625^10
- ;;^UTILITY(U,$J,358.3,8886,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8886,1,4,0)
- ;;=4^Cancer, Skin Of Breast
- ;;^UTILITY(U,$J,358.3,8886,1,5,0)
- ;;=5^173.51
- ;;^UTILITY(U,$J,358.3,8886,2)
- ;;=^340479
- ;;^UTILITY(U,$J,358.3,8887,0)
- ;;=175.9^^61^626^1
- ;;^UTILITY(U,$J,358.3,8887,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8887,1,4,0)
- ;;=4^Ca, Male Breast
- ;;^UTILITY(U,$J,358.3,8887,1,5,0)
- ;;=5^175.9
- ;;^UTILITY(U,$J,358.3,8887,2)
- ;;=CA, Male Breast^267205
- ;;^UTILITY(U,$J,358.3,8888,0)
- ;;=175.0^^61^626^2
- ;;^UTILITY(U,$J,358.3,8888,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8888,1,4,0)
- ;;=4^Ca, Male Nipple
- ;;^UTILITY(U,$J,358.3,8888,1,5,0)
- ;;=5^175.0
- ;;^UTILITY(U,$J,358.3,8888,2)
- ;;=CA, Male Nipple^267204
- ;;^UTILITY(U,$J,358.3,8889,0)
- ;;=611.1^^61^626^3
- ;;^UTILITY(U,$J,358.3,8889,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8889,1,4,0)
- ;;=4^Gynecomastia,Male
- ;;^UTILITY(U,$J,358.3,8889,1,5,0)
- ;;=5^611.1
- ;;^UTILITY(U,$J,358.3,8889,2)
- ;;=^60454
- ;;^UTILITY(U,$J,358.3,8890,0)
- ;;=216.0^^61^627^4
- ;;^UTILITY(U,$J,358.3,8890,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8890,1,4,0)
- ;;=4^Benign Lesion, Lip
- ;;^UTILITY(U,$J,358.3,8890,1,5,0)
- ;;=5^216.0
- ;;^UTILITY(U,$J,358.3,8890,2)
- ;;=Benign Neoplasm of Skin of Lip^267629
- ;;^UTILITY(U,$J,358.3,8891,0)
- ;;=216.1^^61^627^2
- ;;^UTILITY(U,$J,358.3,8891,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8891,1,4,0)
- ;;=4^Benign Lesion, Eyelid
- ;;^UTILITY(U,$J,358.3,8891,1,5,0)
- ;;=5^216.1
- ;;^UTILITY(U,$J,358.3,8891,2)
- ;;=Benign Neoplasm of Skin of Eyelid^267630
- ;;^UTILITY(U,$J,358.3,8892,0)
- ;;=216.2^^61^627^1
- ;;^UTILITY(U,$J,358.3,8892,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8892,1,4,0)
- ;;=4^Benign Lesion, Ear
- ;;^UTILITY(U,$J,358.3,8892,1,5,0)
- ;;=5^216.2
- ;;^UTILITY(U,$J,358.3,8892,2)
- ;;=Benign Neoplasm of Skin of Ear^267631
- ;;^UTILITY(U,$J,358.3,8893,0)
- ;;=216.4^^61^627^6
- ;;^UTILITY(U,$J,358.3,8893,1,0)
- ;;=^358.31IA^5^2
+ ;;^UTILITY(U,$J,358.3,8178,2)
+ ;;=^5008536
+ ;;^UTILITY(U,$J,358.3,8179,0)
+ ;;=K29.70^^55^536^53
+ ;;^UTILITY(U,$J,358.3,8179,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8179,1,3,0)
+ ;;=3^Gastritis, unspecified, without bleeding
+ ;;^UTILITY(U,$J,358.3,8179,1,4,0)
+ ;;=4^K29.70
+ ;;^UTILITY(U,$J,358.3,8179,2)
+ ;;=^5008552
+ ;;^UTILITY(U,$J,358.3,8180,0)
+ ;;=K29.80^^55^536^37
+ ;;^UTILITY(U,$J,358.3,8180,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8180,1,3,0)
+ ;;=3^Duodenitis without bleeding
+ ;;^UTILITY(U,$J,358.3,8180,1,4,0)
+ ;;=4^K29.80
+ ;;^UTILITY(U,$J,358.3,8180,2)
+ ;;=^5008554
+ ;;^UTILITY(U,$J,358.3,8181,0)
+ ;;=K30.^^55^536^51
+ ;;^UTILITY(U,$J,358.3,8181,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8181,1,3,0)
+ ;;=3^Functional dyspepsia
+ ;;^UTILITY(U,$J,358.3,8181,1,4,0)
+ ;;=4^K30.
+ ;;^UTILITY(U,$J,358.3,8181,2)
+ ;;=^5008558
+ ;;^UTILITY(U,$J,358.3,8182,0)
+ ;;=K31.9^^55^536^35
+ ;;^UTILITY(U,$J,358.3,8182,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8182,1,3,0)
+ ;;=3^Disease of stomach and duodenum, unspecified
+ ;;^UTILITY(U,$J,358.3,8182,1,4,0)
+ ;;=4^K31.9
+ ;;^UTILITY(U,$J,358.3,8182,2)
+ ;;=^5008570
+ ;;^UTILITY(U,$J,358.3,8183,0)
+ ;;=K40.90^^55^536^101
+ ;;^UTILITY(U,$J,358.3,8183,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8183,1,3,0)
+ ;;=3^Unil inguinal hernia, w/o obst or gangr, not spcf as recur
+ ;;^UTILITY(U,$J,358.3,8183,1,4,0)
+ ;;=4^K40.90
+ ;;^UTILITY(U,$J,358.3,8183,2)
+ ;;=^5008591
+ ;;^UTILITY(U,$J,358.3,8184,0)
+ ;;=K40.20^^55^536^15
+ ;;^UTILITY(U,$J,358.3,8184,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8184,1,3,0)
+ ;;=3^Bi inguinal hernia, w/o obst or gangrene, not spcf as recur
+ ;;^UTILITY(U,$J,358.3,8184,1,4,0)
+ ;;=4^K40.20
+ ;;^UTILITY(U,$J,358.3,8184,2)
+ ;;=^5008585
+ ;;^UTILITY(U,$J,358.3,8185,0)
+ ;;=K41.90^^55^536^100
+ ;;^UTILITY(U,$J,358.3,8185,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8185,1,3,0)
+ ;;=3^Unil femoral hernia, w/o obst or gangrene, not spcf as recur
+ ;;^UTILITY(U,$J,358.3,8185,1,4,0)
+ ;;=4^K41.90
+ ;;^UTILITY(U,$J,358.3,8185,2)
+ ;;=^5008603
+ ;;^UTILITY(U,$J,358.3,8186,0)
+ ;;=K42.9^^55^536^99
+ ;;^UTILITY(U,$J,358.3,8186,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8186,1,3,0)
+ ;;=3^Umbilical hernia without obstruction or gangrene
+ ;;^UTILITY(U,$J,358.3,8186,1,4,0)
+ ;;=4^K42.9
+ ;;^UTILITY(U,$J,358.3,8186,2)
+ ;;=^5008606
+ ;;^UTILITY(U,$J,358.3,8187,0)
+ ;;=K43.9^^55^536^102
+ ;;^UTILITY(U,$J,358.3,8187,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8187,1,3,0)
+ ;;=3^Ventral hernia without obstruction or gangrene
+ ;;^UTILITY(U,$J,358.3,8187,1,4,0)
+ ;;=4^K43.9
+ ;;^UTILITY(U,$J,358.3,8187,2)
+ ;;=^5008615
+ ;;^UTILITY(U,$J,358.3,8188,0)
+ ;;=K44.9^^55^536^33
+ ;;^UTILITY(U,$J,358.3,8188,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8188,1,3,0)
+ ;;=3^Diaphragmatic hernia without obstruction or gangrene
+ ;;^UTILITY(U,$J,358.3,8188,1,4,0)
+ ;;=4^K44.9
+ ;;^UTILITY(U,$J,358.3,8188,2)
+ ;;=^5008617
+ ;;^UTILITY(U,$J,358.3,8189,0)
+ ;;=K50.90^^55^536^32
+ ;;^UTILITY(U,$J,358.3,8189,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8189,1,3,0)
+ ;;=3^Crohn's disease, unspecified, without complications
+ ;;^UTILITY(U,$J,358.3,8189,1,4,0)
+ ;;=4^K50.90
+ ;;^UTILITY(U,$J,358.3,8189,2)
+ ;;=^5008645
+ ;;^UTILITY(U,$J,358.3,8190,0)
+ ;;=K51.90^^55^536^98
+ ;;^UTILITY(U,$J,358.3,8190,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8190,1,3,0)
+ ;;=3^Ulcerative colitis, unspecified, without complications
+ ;;^UTILITY(U,$J,358.3,8190,1,4,0)
+ ;;=4^K51.90
+ ;;^UTILITY(U,$J,358.3,8190,2)
+ ;;=^5008694
+ ;;^UTILITY(U,$J,358.3,8191,0)
+ ;;=K52.9^^55^536^77
+ ;;^UTILITY(U,$J,358.3,8191,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8191,1,3,0)
+ ;;=3^Noninfective gastroenteritis and colitis, unspecified

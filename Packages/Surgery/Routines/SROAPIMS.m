@@ -1,6 +1,6 @@
 SROAPIMS ;BIR/ADM - PIMS Information Retrieval ;01/24/07
- ;;3.0;Surgery;**38,46,47,57,71,81,86,100,125,134,160,175**;24 Jun 93;Build 6
- ; 
+ ;;3.0;Surgery;**38,46,47,57,71,81,86,100,125,134,160,175,182,184,185**;24 Jun 93;Build 2
+ ;
  ; Reference to ^MCAR(690,"AC" supported by DBIA #80
  ; Reference to ^DGPM("APTT1" supported by DBIA #565
  ;
@@ -46,10 +46,11 @@ STAY ; find length of post-operative hospital stay
 END S $P(^SRF(SRTN,208),"^",10)=$P(SRVADPT(5),"^"),SRINOUT=$P(^SRF(SRTN,0),"^",12) I SRVADPT(7)'="",SRVADPT(9)="" S SRVADPT(9)=$P($G(^SRF(SRTN,.2)),"^",10)
  F I=7:1:10,12,13 S X=$P(SRVADPT(I),"^") I $L(X)>7 S $P(SRVADPT(I),"^")=+X
  I SRVADPT(7)'="" S $P(^SRF(SRTN,205),"^")=SRVADPT(11),L=6 F J=14:1:17 S L=L+1,$P(^SRF(SRTN,208),"^",J)=$P(SRVADPT(L),"^")
- I SRVADPT(7)="" S $P(^SRF(SRTN,205),"^")=$S(SRINOUT="O":"NA",1:SRVADPT(11)) S L=6 F J=14:1:17 S L=L+1 S $P(^SRF(SRTN,208),"^",J)=$S(SRINOUT="O":"NA",1:$P(SRVADPT(L),"^"))
+ I SRVADPT(7)="" S $P(^SRF(SRTN,205),"^")=$S(SRINOUT="O"!(SRINOUT=1):"NA",1:SRVADPT(11)) S L=6 F J=14:1:17 S L=L+1 S $P(^SRF(SRTN,208),"^",J)=$S(SRINOUT="O"!(SRINOUT=1):"NA",1:$P(SRVADPT(L),"^"))
  I SRVADPT(12)="" F J=1:1:3 S $P(^SRF(SRTN,208.1),"^",J)="NA"
  S $P(^SRF(SRTN,205),"^",3)=$S($P(SRVADPT(6),"^")'="":$E($P(SRVADPT(6),"^"),1,12),1:"NA")
  S $P(^SRF(SRTN,205),"^",41)=$S($P(SRVADPT(6),"^")="":"N",$$FMDIFF^XLFDT($P(SRVADPT(6),"^"),$P(^SRF(SRTN,.2),"^",3))>30:"N",1:"Y")
+ S $P(^SRF(SRTN,210),"^",14)=1
  D MCAR,EMPLOY
  D KVA^VADPT K DIE,DR,I,SR,SR24,SR48,SRCC,SRD,SRDD,SRDO,SRDT,SRF,SRINOUT,SRNON,SRSP,SRSRV,SRQ,SRX,SRY,X,X1,Y
  Q
@@ -79,7 +80,7 @@ ADM1 ; get information related to admission
  ; determine if admission was for observation
  ; quit if no specialty defined for admission
  S SRX=$P($G(VAIP(13,6)),"^") I SRX="" S SRSOUT=1 Q
- D SPEC S Y="18,23,24,36,41,65,94" I Y[SRSP D  Q:SRSOUT
+ D SPEC S Y="18,23,24,36,41,65,94" I Y[SRSP D  Q:$G(SRSOUT)
  .S SRVADPT(14)=SRSP,SRVADPT(12)=$E($P(VAIP(13,1),"^"),1,12),SRVADPT(13)=$E($P(VAIP(17,1),"^"),1,12)
  .S I=1 F J=12:1:14 S $P(^SRF(SRTN,208.1),"^",I)=SRVADPT(J),I=I+1
  .; look for admission following discharge from observation

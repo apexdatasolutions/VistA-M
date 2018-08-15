@@ -1,17 +1,20 @@
 IBCU7 ;ALB/AAS - INTERCEPT SCREEN INPUT OF PROCEDURE CODES ;29-OCT-91
- ;;2.0;INTEGRATED BILLING;**62,52,106,125,51,137,210,245,228,260,348,371,432,447,488,461**;21-MAR-94;Build 58
- ;;Per VHA Directive 2004-038, this routine should not be modified.
+ ;;2.0;INTEGRATED BILLING;**62,52,106,125,51,137,210,245,228,260,348,371,432,447,488,461,516,522,577,604**;21-MAR-94;Build 11
+ ;;Per VA Directive 6402, this routine should not be modified.
  ;
  ;MAP TO DGCRU7
  ;
+ ; This routine is a copy of IBUC7 for testing purposes.
+ ;
 CHKX ;  -interception of input x from Additional Procedure input
  G:X=" " CHKXQ
- I $$INPAT^IBCEF(DA(1)),'$P($G(^IBE(350.9,1,1)),"^",15),X'?1A1N D  G CHKXQ
+ I $$INPAT^IBCEF(DA(1)),'$P($G(^IBE(350.9,1,1)),"^",15),X'?1A1.2N D  G CHKXQ
  . K X
  . D EN^DDIOL("Site param does not allow entry of non-PTF procedures") ;Fileman error here will be: The previous error occurred when performing an action specified in a Pre-lookup transform (7.5 node).
  G:'$D(^UTILITY($J,"IB")) CHKXQ
- S M=($A($E(X,1))-64),S=+$E(X,2) Q:'$G(^UTILITY($J,"IB",M,S))  S X="`"_+^(S)
- I $D(DGPROCDT),DGPROCDT'=$P($G(^UTILITY($J,"IB",M,1)),"^",2) S DGPROCDT=$P(^(1),"^",2) W !!,"Procedure Date: " S Y=DGPROCDT X ^DD("DD") W Y,!
+ ;S M=($A($E(X,1))-64),S=+$E(X,2) Q:'$G(^UTILITY($J,"IB",M,S))  S X="`"_+^(S)
+ S M=0 I X?1A1.2N S N=$G(^UTILITY($J,"IB","B",X)) S M=+N,S=+$P(N,U,2),P=X S S=$G(^UTILITY($J,"IB",M,S)) I +S S X="`"_+S I $P(N,U,3)="N" S X=""""_X_"""" S $P(^UTILITY($J,"IB","B",P),U,3)="Y"
+ I +M,$D(DGPROCDT),DGPROCDT'=$P($G(^UTILITY($J,"IB",M,1)),"^",2) S DGPROCDT=$P(^(1),"^",2) W !!,"Procedure Date: " S Y=DGPROCDT X ^DD("DD") W Y,!
 CHKXQ Q
  ;
 CODMUL ;Date oriented entry of procedure
@@ -34,7 +37,7 @@ CODDT I $D(IBIFN),$D(^DGCR(399,IBIFN,0)),$P(^(0),U,9) S DIC("V")=$S($P(^(0),U,9)
  K IBEX
  G CODDT
  ;
-ASKCOD N Z,Z0,DA,IBACT,IBQUIT,IBLNPRV  ;WCJ;2.0*432
+ASKCOD N Z,Z0,DA,IBACT,IBQUIT,IBLNPRV,IBCODE  ;WCJ;2.0*432
  N IBPOPOUT  S IBPOPOUT=0  ; IB*2.0*447 BI
  K DGCPT
  S DGCPT=0,DGCPTUP=$P($G(^IBE(350.9,1,1)),"^",19),DGADDVST=0,IBFT=$P($G(^DGCR(399,IBIFN,0)),"^",19)
@@ -51,6 +54,7 @@ ASKCOD N Z,Z0,DA,IBACT,IBQUIT,IBLNPRV  ;WCJ;2.0*432
  . S DA(1)=IBIFN,DLAYGO=399
  . W ! D ^DIC I Y<1 S IBQUIT=1 Q
  . S IBPROCP=+Y
+ . S IBCODE=X ;Get the code
  . ; If we just added inactive code - it must be deleted.
  . S IBACT=0 ; Active flag
  . I Y["ICD0" S IBACT=$$ICD0ACT^IBACSV(+$P(Y,U,2),$$BDATE^IBACSV(IBIFN))
@@ -84,11 +88,20 @@ ASKCOD N Z,Z0,DA,IBACT,IBQUIT,IBLNPRV  ;WCJ;2.0*432
  . N IBPROCSV  ; DEM;432 - Variable IBPROCSV is variable to preserve value of 'Y', which is procedure code info returned by call to ^DIC.
  . S IBPROCSV=Y  ; DEM;432 - Preserve value of Y for after calls to FileMan (Y = procedure code info returned by call to ^DIC).
  . K DR   ;WCJ;IB*2.0*432
- . ; 
+ . ;
  . I IBPROCSV["ICD0" S DR=".01",DIE=DIC,(IBPROCP,DA)=+Y D ^DIE Q:'$D(DA)!($D(Y))  K DR ; IB*2.0*461
  . I IBPROCSV["ICPT" S DR=".01;16",DIE=DIC,(IBPROCP,DA)=+Y D ^DIE Q:'$D(DA)!($D(Y))  K DR ; IB*2.0*447 BI
  . ;
  . S DR=""
+ . ;
+ . ; MRD;IB*2.0*516 - Added line level PROCEDURE DESCRIPTION field,
+ . ; asked only if the procedure is an "NOC".
+ . I IBPROCSV["ICPT",$$NOCPROC(IBPROCSV,IBCODE,DGPROCDT) D  ; added IBCODE,DGPROCDT in *604
+ . . S DA=$P(IBPROCSV,"^")  ; The line# on the bill/claim.
+ . . S DR=51                ; Field# for PROCEDURE DESCRIPTION
+ . . D ^DIE
+ . . Q
+ . ;
  . D EN^IBCU7B ; DEM;432 - Call to line level provider user input.
  . S Y=IBPROCSV  ; DEM;432 - Restore value of Y after calls to FileMan
  . K IBPROCSV
@@ -97,6 +110,20 @@ ASKCOD N Z,Z0,DA,IBACT,IBQUIT,IBLNPRV  ;WCJ;2.0*432
  . S DR="" I Y["ICPT" S DR="6;5//"_$$DEFDIV(IBIFN)_";"
  . S DR=DR_$S(IBFT=2:"8;9;17//NO;",1:"")_3,DIE=DIC,(IBPROCP,DA)=+Y D ^DIE Q:'$D(DA)!($E($G(Y))=U)
  . K DR   ;WCJ;IB*2.0*432
+ . ;
+ . ; MRD;IB*2.0*516 - Allow user to add an NDC and Units.  Ask only if
+ . ; coding system is not ICD and this is not a prescription claim. If
+ . ; an NDC is entered, prompt for Units.
+ . I $P($G(^DGCR(399,IBIFN,0)),U,9)'=9,'$$RXLINK^IBCSC5C(IBIFN,IBPROCP) D
+ . . K DA
+ . . S DA=IBPROCP,DA(1)=IBIFN,DIE="^DGCR(399,"_IBIFN_",""CP"","
+ . . ; vd/Beginning IB*2*577 - Added the prompt for Unit/Basis of Measurement.
+ . . ; S DR="53NDC NUMBER;I X="""" S Y="""";54//1"
+ . . S DR="53NDC NUMBER;I X="""" S Y="""";52R~//UN;54R~QUANTITY//1"  ;Prompt for NDC, UN & amt.
+ . . ; vd/Ending IB*2*577
+ . . D ^DIE
+ . . Q
+ . ;
  . I IBFT=3 D:'$$INPAT^IBCEF(IBIFN) ATTACH  ; DEM;432 - Prompt for Attachment Control Number.
  . ; DEM;432 - Add Additional OB Minutes to DR string for call to DIE.
  . S DR=$$SPCUNIT(IBIFN,IBPROCP) S:DR["15;" DR=DR_"74Additional OB Minutes" D ^DIE ; miles/minutes/hours
@@ -112,7 +139,7 @@ ASKCOD N Z,Z0,DA,IBACT,IBQUIT,IBLNPRV  ;WCJ;2.0*432
  . I DGCPTUP,DGCPTNEW S DGCPT=DGCPT+1 I $P(DGPROC,"^",7) S DGCPT($P(DGPROC,"^",7),+DGPROC,X,DGCPT)=""
  . ; add visit date to bill
  . I DGADDVST S (X,DINUM)=DGPROCDT D VFILE1^IBCOPV1 K DINUM,X,DGNOADD,DGADDVST
- ; Delete modifers with only a sequence #, no code
+ ; Delete modifiers with only a sequence #, no code
  S Z=0 F  S Z=$O(^DGCR(399,IBIFN,"CP",Z)) Q:'Z  S Z0=0 F  S Z0=$O(^DGCR(399,IBIFN,"CP",Z,"MOD",Z0)) Q:'Z0  I $P($G(^(Z0,0)),U,2)="" S DA(2)=IBIFN,DA(1)=Z,DA=Z0,DIK="^DGCR(399,"_DA(2)_",""CP"","_DA(1)_",""MOD""," D ^DIK
  Q
 CODQ K %DT,DGPROC,DIC,DIE,DR,DGPROCDT,IBPROCP,DLAYGO
@@ -210,3 +237,72 @@ ATTACH ; DEM;432 - Attachment control number.
  S DR="71Report Type;72Report Transmission Method;70Attachment Control Number"
  D ^DIE
  Q
+ ;
+NOCPROC(IBPROCSV,IBCODE,IBDATE) ; MRD;IB*2.0*516 - Function to determine if procedure is an
+ ; "NOC". Returns '1' if "NOC" procedure, otherwise '0'.
+ ;
+ N IBNOC,IBPROCEX,IBPROCIN,IBPROCNM,IBX,IBLINES,IBSTR,IBEND,IBLN
+ S IBNOC=0
+ I $G(IBPROCSV)="" G NOCPROCQ
+ I $G(IBCODE)="" G NOCPROCQ
+ I $G(IBDATE)'?7N G NOCPROCQ
+ S IBPROCIN=$P($P(IBPROCSV,U,2),";") ;parsing out the IEN
+ I IBPROCIN="" G NOCPROCQ
+ ;
+ ; If procedure code ends in '99', quit with a '1'.
+ ;
+ I $E(IBCODE,$L(IBCODE)-1,$L(IBCODE))=99 S IBNOC=1 G NOCPROCQ ;Does code end with 99? If so NOC
+ ;
+ ; Pull procedure name, then check to see if it contains one of the
+ ; specified strings.
+ ;
+ S IBPROCNM=$$CPT^ICPTCOD(IBCODE,IBDATE)
+ S IBPROCNM=$P(IBPROCNM,U,3)
+ I IBPROCNM'="",($$NOC(IBPROCNM)) S IBNOC=1 G NOCPROCQ ; Does external match NOC strings? if so NOC
+ ;
+ ;Does array strings match any of the specified strings
+ S IBLINES=$$CPTD^ICPTCOD(IBCODE,"IBINFO",,IBDATE) ;get number of lines/array of lines
+ S IBEND=1 S:IBLINES>1 IBEND=IBLINES-1 ;set up counter for loop
+ F IBLN=1:1:IBEND D  Q:IBNOC=1  ;loop through array so we can check if node values = NOC
+ . N IBSTR S IBSTR=$$TM($G(IBINFO(IBLN)))_" "_$$TM($G(IBINFO(IBLN+1)))_" " ;Build strings for NOC comparison
+ . S IBNOC=$$NOC(IBSTR) ;is current combination of strings a NOC?
+ . Q
+ ;
+NOCPROCQ ; Quit out.
+ K IBINFO ;killing the array made in CPTD^ICPTCOD
+ Q IBNOC
+ ;
+NOC(IBTEXT) ; Quit with '1' if IBTEXT contains one of the specified strings.
+ ;
+ S IBTEXT=$TR(IBTEXT,"abcdefghijklmnopqrstuvwxyz","ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+ ;
+ I IBTEXT["NOT OTHERWISE" Q 1
+ I IBTEXT["NOT ELSEWHERE" Q 1
+ I IBTEXT["NOT LISTED" Q 1
+ I IBTEXT["UNLISTED" Q 1
+ I IBTEXT["UNSPECIFIED" Q 1
+ I IBTEXT["UNCLASSIFIED" Q 1
+ I IBTEXT["NON-SPECIFIED" Q 1
+ I IBTEXT["NOS " Q 1
+ I IBTEXT["NOS;" Q 1
+ I IBTEXT["NOS." Q 1
+ I IBTEXT["NOS," Q 1
+ I IBTEXT["NOS/" Q 1
+ I IBTEXT["(NOS)" Q 1
+ I IBTEXT["NOC " Q 1
+ I IBTEXT["NOC;" Q 1
+ I IBTEXT["NOC." Q 1
+ I IBTEXT["NOC," Q 1
+ I IBTEXT["NOC/" Q 1
+ I IBTEXT["(NOC)" Q 1
+ ;
+ ; Check if last three charcters are 'NOC' or 'NOS'.
+ ;
+ S IBTEXT=$E(IBTEXT,$L(IBTEXT)-2,$L(IBTEXT))
+ Q 0
+ ;
+TM(IBX,IBY) ; Trim Character Y - Default " "
+ S IBX=$G(IBX) Q:IBX="" IBX  S IBY=$G(IBY) S:'$L(IBY) IBY=" "
+ F  Q:$E(IBX,1)'=IBY  S IBX=$E(IBX,2,$L(IBX))
+ F  Q:$E(IBX,$L(IBX))'=IBY  S IBX=$E(IBX,1,($L(IBX)-1))
+ Q IBX

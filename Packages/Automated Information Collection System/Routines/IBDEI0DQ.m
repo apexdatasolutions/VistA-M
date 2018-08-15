@@ -1,142 +1,130 @@
-IBDEI0DQ ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0DQ ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,6606,1,5,0)
- ;;=5^COPD, General
- ;;^UTILITY(U,$J,358.3,6606,2)
- ;;=COPD, General^24355
- ;;^UTILITY(U,$J,358.3,6607,0)
- ;;=491.20^^55^569^13
- ;;^UTILITY(U,$J,358.3,6607,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6607,1,4,0)
- ;;=4^491.20
- ;;^UTILITY(U,$J,358.3,6607,1,5,0)
- ;;=5^Chronic Asthmatic Bronchitis
- ;;^UTILITY(U,$J,358.3,6607,2)
- ;;=Chronic Asthmatic Bronchitis^269953
- ;;^UTILITY(U,$J,358.3,6608,0)
- ;;=491.9^^55^569^14
- ;;^UTILITY(U,$J,358.3,6608,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6608,1,4,0)
- ;;=4^491.9
- ;;^UTILITY(U,$J,358.3,6608,1,5,0)
- ;;=5^Chronic Bronchitis
- ;;^UTILITY(U,$J,358.3,6608,2)
- ;;=^24359
- ;;^UTILITY(U,$J,358.3,6609,0)
- ;;=786.2^^55^569^15
- ;;^UTILITY(U,$J,358.3,6609,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6609,1,4,0)
- ;;=4^786.2
- ;;^UTILITY(U,$J,358.3,6609,1,5,0)
- ;;=5^Cough
- ;;^UTILITY(U,$J,358.3,6609,2)
- ;;=Cough^28905
- ;;^UTILITY(U,$J,358.3,6610,0)
- ;;=786.09^^55^569^16
- ;;^UTILITY(U,$J,358.3,6610,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6610,1,4,0)
- ;;=4^786.09
- ;;^UTILITY(U,$J,358.3,6610,1,5,0)
- ;;=5^Dyspnea
- ;;^UTILITY(U,$J,358.3,6610,2)
- ;;=Dyspnea^87547
- ;;^UTILITY(U,$J,358.3,6611,0)
- ;;=492.8^^55^569^17
- ;;^UTILITY(U,$J,358.3,6611,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6611,1,4,0)
- ;;=4^492.8
- ;;^UTILITY(U,$J,358.3,6611,1,5,0)
- ;;=5^Emphysema
- ;;^UTILITY(U,$J,358.3,6611,2)
- ;;=Emphysema^87569
- ;;^UTILITY(U,$J,358.3,6612,0)
- ;;=487.1^^55^569^24
- ;;^UTILITY(U,$J,358.3,6612,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6612,1,4,0)
- ;;=4^487.1
- ;;^UTILITY(U,$J,358.3,6612,1,5,0)
- ;;=5^Influenza with other Resp Manifest
- ;;^UTILITY(U,$J,358.3,6612,2)
- ;;=^63125
- ;;^UTILITY(U,$J,358.3,6613,0)
- ;;=487.0^^55^569^23
- ;;^UTILITY(U,$J,358.3,6613,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6613,1,4,0)
- ;;=4^487.0
- ;;^UTILITY(U,$J,358.3,6613,1,5,0)
- ;;=5^Influenza w Pneumonia
- ;;^UTILITY(U,$J,358.3,6613,2)
- ;;=^269942
- ;;^UTILITY(U,$J,358.3,6614,0)
- ;;=515.^^55^569^25
- ;;^UTILITY(U,$J,358.3,6614,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6614,1,4,0)
- ;;=4^515.
- ;;^UTILITY(U,$J,358.3,6614,1,5,0)
- ;;=5^Interstitial Lung disease
- ;;^UTILITY(U,$J,358.3,6614,2)
- ;;=^101072
- ;;^UTILITY(U,$J,358.3,6615,0)
- ;;=786.52^^55^569^26
- ;;^UTILITY(U,$J,358.3,6615,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6615,1,4,0)
- ;;=4^786.52
- ;;^UTILITY(U,$J,358.3,6615,1,5,0)
- ;;=5^Painful resp, Pleurodynia
- ;;^UTILITY(U,$J,358.3,6615,2)
- ;;=^89126
- ;;^UTILITY(U,$J,358.3,6616,0)
- ;;=511.0^^55^569^29
- ;;^UTILITY(U,$J,358.3,6616,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6616,1,4,0)
- ;;=4^511.0
- ;;^UTILITY(U,$J,358.3,6616,1,5,0)
- ;;=5^Pleurisy
- ;;^UTILITY(U,$J,358.3,6616,2)
- ;;=Pleurisy^95432
- ;;^UTILITY(U,$J,358.3,6617,0)
- ;;=486.^^55^569^30
- ;;^UTILITY(U,$J,358.3,6617,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6617,1,4,0)
- ;;=4^486.
- ;;^UTILITY(U,$J,358.3,6617,1,5,0)
- ;;=5^Pneumonia, Unsp Organism
- ;;^UTILITY(U,$J,358.3,6617,2)
- ;;=^95632
- ;;^UTILITY(U,$J,358.3,6618,0)
- ;;=135.^^55^569^33
- ;;^UTILITY(U,$J,358.3,6618,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6618,1,4,0)
- ;;=4^135.
- ;;^UTILITY(U,$J,358.3,6618,1,5,0)
- ;;=5^Sarcoidosis
- ;;^UTILITY(U,$J,358.3,6618,2)
- ;;=Sarcoidosis^107916^517.8
- ;;^UTILITY(U,$J,358.3,6619,0)
- ;;=786.05^^55^569^34
- ;;^UTILITY(U,$J,358.3,6619,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6619,1,4,0)
- ;;=4^786.05
- ;;^UTILITY(U,$J,358.3,6619,1,5,0)
- ;;=5^Shortness of Breath
- ;;^UTILITY(U,$J,358.3,6619,2)
- ;;=Shortness of Breath^37632
- ;;^UTILITY(U,$J,358.3,6620,0)
- ;;=780.57^^55^569^35
- ;;^UTILITY(U,$J,358.3,6620,1,0)
- ;;=^358.31IA^5^2
+ ;;^UTILITY(U,$J,358.3,5986,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5986,1,3,0)
+ ;;=3^Trigger Finger,Left Index Finger
+ ;;^UTILITY(U,$J,358.3,5986,1,4,0)
+ ;;=4^M65.322
+ ;;^UTILITY(U,$J,358.3,5986,2)
+ ;;=^5012781
+ ;;^UTILITY(U,$J,358.3,5987,0)
+ ;;=M65.331^^40^382^9
+ ;;^UTILITY(U,$J,358.3,5987,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5987,1,3,0)
+ ;;=3^Trigger Finger,Right Middle Finger
+ ;;^UTILITY(U,$J,358.3,5987,1,4,0)
+ ;;=4^M65.331
+ ;;^UTILITY(U,$J,358.3,5987,2)
+ ;;=^5012783
+ ;;^UTILITY(U,$J,358.3,5988,0)
+ ;;=M65.321^^40^382^7
+ ;;^UTILITY(U,$J,358.3,5988,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5988,1,3,0)
+ ;;=3^Trigger Finger,Right Index Finger
+ ;;^UTILITY(U,$J,358.3,5988,1,4,0)
+ ;;=4^M65.321
+ ;;^UTILITY(U,$J,358.3,5988,2)
+ ;;=^5012780
+ ;;^UTILITY(U,$J,358.3,5989,0)
+ ;;=M65.312^^40^382^6
+ ;;^UTILITY(U,$J,358.3,5989,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5989,1,3,0)
+ ;;=3^Trigger Finger,Left Thumb
+ ;;^UTILITY(U,$J,358.3,5989,1,4,0)
+ ;;=4^M65.312
+ ;;^UTILITY(U,$J,358.3,5989,2)
+ ;;=^5012778
+ ;;^UTILITY(U,$J,358.3,5990,0)
+ ;;=M65.311^^40^382^11
+ ;;^UTILITY(U,$J,358.3,5990,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5990,1,3,0)
+ ;;=3^Trigger Finger,Right Thumb
+ ;;^UTILITY(U,$J,358.3,5990,1,4,0)
+ ;;=4^M65.311
+ ;;^UTILITY(U,$J,358.3,5990,2)
+ ;;=^5012777
+ ;;^UTILITY(U,$J,358.3,5991,0)
+ ;;=E08.621^^40^383^86
+ ;;^UTILITY(U,$J,358.3,5991,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5991,1,3,0)
+ ;;=3^Diabetes d/t Underlying Condition w/ Foot Ulcer
+ ;;^UTILITY(U,$J,358.3,5991,1,4,0)
+ ;;=4^E08.621
+ ;;^UTILITY(U,$J,358.3,5991,2)
+ ;;=^5002534
+ ;;^UTILITY(U,$J,358.3,5992,0)
+ ;;=E09.621^^40^383^85
+ ;;^UTILITY(U,$J,358.3,5992,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5992,1,3,0)
+ ;;=3^Diabetes d/t Drug/Chemical Induced w/ Foot Ulcer
+ ;;^UTILITY(U,$J,358.3,5992,1,4,0)
+ ;;=4^E09.621
+ ;;^UTILITY(U,$J,358.3,5992,2)
+ ;;=^5002576
+ ;;^UTILITY(U,$J,358.3,5993,0)
+ ;;=I70.231^^40^383^22
+ ;;^UTILITY(U,$J,358.3,5993,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5993,1,3,0)
+ ;;=3^Athscl Native Arteries of Right Leg w/ Thigh Ulcer
+ ;;^UTILITY(U,$J,358.3,5993,1,4,0)
+ ;;=4^I70.231
+ ;;^UTILITY(U,$J,358.3,5993,2)
+ ;;=^5007588
+ ;;^UTILITY(U,$J,358.3,5994,0)
+ ;;=I70.232^^40^383^23
+ ;;^UTILITY(U,$J,358.3,5994,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5994,1,3,0)
+ ;;=3^Athscl Native Arteries of Right Leg w/ Calf Ulcer
+ ;;^UTILITY(U,$J,358.3,5994,1,4,0)
+ ;;=4^I70.232
+ ;;^UTILITY(U,$J,358.3,5994,2)
+ ;;=^5007589
+ ;;^UTILITY(U,$J,358.3,5995,0)
+ ;;=I70.233^^40^383^24
+ ;;^UTILITY(U,$J,358.3,5995,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5995,1,3,0)
+ ;;=3^Athscl Native Arteries of Right Leg w/ Ankle Ulcer
+ ;;^UTILITY(U,$J,358.3,5995,1,4,0)
+ ;;=4^I70.233
+ ;;^UTILITY(U,$J,358.3,5995,2)
+ ;;=^5007590
+ ;;^UTILITY(U,$J,358.3,5996,0)
+ ;;=I70.234^^40^383^25
+ ;;^UTILITY(U,$J,358.3,5996,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5996,1,3,0)
+ ;;=3^Athscl Native Arteries of Right Leg w/ Heel/Midfoot Ulcer
+ ;;^UTILITY(U,$J,358.3,5996,1,4,0)
+ ;;=4^I70.234
+ ;;^UTILITY(U,$J,358.3,5996,2)
+ ;;=^5007591
+ ;;^UTILITY(U,$J,358.3,5997,0)
+ ;;=I70.235^^40^383^26
+ ;;^UTILITY(U,$J,358.3,5997,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5997,1,3,0)
+ ;;=3^Athscl Native Arteries of Right Leg w/ Foot Ulcer
+ ;;^UTILITY(U,$J,358.3,5997,1,4,0)
+ ;;=4^I70.235
+ ;;^UTILITY(U,$J,358.3,5997,2)
+ ;;=^5007592
+ ;;^UTILITY(U,$J,358.3,5998,0)
+ ;;=I70.238^^40^383^27
+ ;;^UTILITY(U,$J,358.3,5998,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5998,1,3,0)
+ ;;=3^Athscl Native Arteries of Right Leg w/ Lower Leg Ulcer
+ ;;^UTILITY(U,$J,358.3,5998,1,4,0)
+ ;;=4^I70.238

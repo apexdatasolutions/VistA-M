@@ -1,140 +1,122 @@
-IBDEI0XD ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0XD ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,16556,1,1,0)
- ;;=1^Prob Focused Exam
- ;;^UTILITY(U,$J,358.3,16556,1,2,0)
- ;;=2^99241
- ;;^UTILITY(U,$J,358.3,16557,0)
- ;;=99242^^107^1043^2
- ;;^UTILITY(U,$J,358.3,16557,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,16557,1,1,0)
- ;;=1^Exp Prob Focused Exam
- ;;^UTILITY(U,$J,358.3,16557,1,2,0)
- ;;=2^99242
- ;;^UTILITY(U,$J,358.3,16558,0)
- ;;=99243^^107^1043^3
- ;;^UTILITY(U,$J,358.3,16558,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,16558,1,1,0)
- ;;=1^Detailed Exam
- ;;^UTILITY(U,$J,358.3,16558,1,2,0)
- ;;=2^99243
- ;;^UTILITY(U,$J,358.3,16559,0)
- ;;=99244^^107^1043^4
- ;;^UTILITY(U,$J,358.3,16559,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,16559,1,1,0)
- ;;=1^Comprehensive,Moderate
- ;;^UTILITY(U,$J,358.3,16559,1,2,0)
- ;;=2^99244
- ;;^UTILITY(U,$J,358.3,16560,0)
- ;;=99245^^107^1043^5
- ;;^UTILITY(U,$J,358.3,16560,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,16560,1,1,0)
- ;;=1^Comprehensive,High
- ;;^UTILITY(U,$J,358.3,16560,1,2,0)
- ;;=2^99245
- ;;^UTILITY(U,$J,358.3,16561,0)
- ;;=571.5^^108^1044^2
- ;;^UTILITY(U,$J,358.3,16561,1,0)
+ ;;^UTILITY(U,$J,358.3,15381,2)
+ ;;=^5032750
+ ;;^UTILITY(U,$J,358.3,15382,0)
+ ;;=S61.204A^^85^817^56
+ ;;^UTILITY(U,$J,358.3,15382,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16561,1,3,0)
- ;;=3^571.5
- ;;^UTILITY(U,$J,358.3,16561,1,4,0)
- ;;=4^Cirrhosis Of Liver
- ;;^UTILITY(U,$J,358.3,16561,2)
- ;;=^24731
- ;;^UTILITY(U,$J,358.3,16562,0)
- ;;=530.81^^108^1044^4
- ;;^UTILITY(U,$J,358.3,16562,1,0)
+ ;;^UTILITY(U,$J,358.3,15382,1,3,0)
+ ;;=3^Open Wound of Right Ring Finger w/o Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15382,1,4,0)
+ ;;=4^S61.204A
+ ;;^UTILITY(U,$J,358.3,15382,2)
+ ;;=^5032753
+ ;;^UTILITY(U,$J,358.3,15383,0)
+ ;;=S61.205A^^85^817^25
+ ;;^UTILITY(U,$J,358.3,15383,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16562,1,3,0)
- ;;=3^530.81
- ;;^UTILITY(U,$J,358.3,16562,1,4,0)
- ;;=4^Esophageal Reflux (GERD)
- ;;^UTILITY(U,$J,358.3,16562,2)
- ;;=^295749
- ;;^UTILITY(U,$J,358.3,16563,0)
- ;;=558.9^^108^1044^6
- ;;^UTILITY(U,$J,358.3,16563,1,0)
+ ;;^UTILITY(U,$J,358.3,15383,1,3,0)
+ ;;=3^Open Wound of Left Ring Finger w/o Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15383,1,4,0)
+ ;;=4^S61.205A
+ ;;^UTILITY(U,$J,358.3,15383,2)
+ ;;=^5032756
+ ;;^UTILITY(U,$J,358.3,15384,0)
+ ;;=S61.206A^^85^817^51
+ ;;^UTILITY(U,$J,358.3,15384,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16563,1,3,0)
- ;;=3^558.9
- ;;^UTILITY(U,$J,358.3,16563,1,4,0)
- ;;=4^Gastroenteritis/Colitis, Noninfect
- ;;^UTILITY(U,$J,358.3,16563,2)
- ;;=^87311
- ;;^UTILITY(U,$J,358.3,16564,0)
- ;;=564.1^^108^1044^9
- ;;^UTILITY(U,$J,358.3,16564,1,0)
+ ;;^UTILITY(U,$J,358.3,15384,1,3,0)
+ ;;=3^Open Wound of Right Little Finger w/o Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15384,1,4,0)
+ ;;=4^S61.206A
+ ;;^UTILITY(U,$J,358.3,15384,2)
+ ;;=^5032759
+ ;;^UTILITY(U,$J,358.3,15385,0)
+ ;;=S61.207A^^85^817^20
+ ;;^UTILITY(U,$J,358.3,15385,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16564,1,3,0)
- ;;=3^564.1
- ;;^UTILITY(U,$J,358.3,16564,1,4,0)
- ;;=4^Irritable Colon
- ;;^UTILITY(U,$J,358.3,16564,2)
- ;;=^65682
- ;;^UTILITY(U,$J,358.3,16565,0)
- ;;=211.3^^108^1044^11
- ;;^UTILITY(U,$J,358.3,16565,1,0)
+ ;;^UTILITY(U,$J,358.3,15385,1,3,0)
+ ;;=3^Open Wound of Left Little Finger w/o Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15385,1,4,0)
+ ;;=4^S61.207A
+ ;;^UTILITY(U,$J,358.3,15385,2)
+ ;;=^5032762
+ ;;^UTILITY(U,$J,358.3,15386,0)
+ ;;=S61.300A^^85^817^45
+ ;;^UTILITY(U,$J,358.3,15386,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16565,1,3,0)
- ;;=3^211.3
- ;;^UTILITY(U,$J,358.3,16565,1,4,0)
- ;;=4^Polyps, Colon/Lg Bowel (Benign Neo
- ;;^UTILITY(U,$J,358.3,16565,2)
- ;;=^13295
- ;;^UTILITY(U,$J,358.3,16566,0)
- ;;=533.90^^108^1044^12
- ;;^UTILITY(U,$J,358.3,16566,1,0)
+ ;;^UTILITY(U,$J,358.3,15386,1,3,0)
+ ;;=3^Open Wound of Right Index Finger w/ Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15386,1,4,0)
+ ;;=4^S61.300A
+ ;;^UTILITY(U,$J,358.3,15386,2)
+ ;;=^5032891
+ ;;^UTILITY(U,$J,358.3,15387,0)
+ ;;=S61.301A^^85^817^14
+ ;;^UTILITY(U,$J,358.3,15387,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16566,1,3,0)
- ;;=3^533.90
- ;;^UTILITY(U,$J,358.3,16566,1,4,0)
- ;;=4^Ulcer, Peptic
- ;;^UTILITY(U,$J,358.3,16566,2)
- ;;=^93051
- ;;^UTILITY(U,$J,358.3,16567,0)
- ;;=070.54^^108^1044^8
- ;;^UTILITY(U,$J,358.3,16567,1,0)
+ ;;^UTILITY(U,$J,358.3,15387,1,3,0)
+ ;;=3^Open Wound of Left Index Finger w/ Damage to Nail,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15387,1,4,0)
+ ;;=4^S61.301A
+ ;;^UTILITY(U,$J,358.3,15387,2)
+ ;;=^5135735
+ ;;^UTILITY(U,$J,358.3,15388,0)
+ ;;=S61.302A^^85^817^53
+ ;;^UTILITY(U,$J,358.3,15388,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16567,1,3,0)
- ;;=3^070.54
- ;;^UTILITY(U,$J,358.3,16567,1,4,0)
- ;;=4^Hepatitis C,Chronic,w/o Coma
- ;;^UTILITY(U,$J,358.3,16567,2)
- ;;=^303252
- ;;^UTILITY(U,$J,358.3,16568,0)
- ;;=455.6^^108^1044^7
- ;;^UTILITY(U,$J,358.3,16568,1,0)
+ ;;^UTILITY(U,$J,358.3,15388,1,3,0)
+ ;;=3^Open Wound of Right Middle Finger w/ Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15388,1,4,0)
+ ;;=4^S61.302A
+ ;;^UTILITY(U,$J,358.3,15388,2)
+ ;;=^5032894
+ ;;^UTILITY(U,$J,358.3,15389,0)
+ ;;=S61.303A^^85^817^22
+ ;;^UTILITY(U,$J,358.3,15389,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16568,1,3,0)
- ;;=3^455.6
- ;;^UTILITY(U,$J,358.3,16568,1,4,0)
- ;;=4^Hemorrhoids
- ;;^UTILITY(U,$J,358.3,16568,2)
- ;;=^123922
- ;;^UTILITY(U,$J,358.3,16569,0)
- ;;=789.00^^108^1044^1
- ;;^UTILITY(U,$J,358.3,16569,1,0)
+ ;;^UTILITY(U,$J,358.3,15389,1,3,0)
+ ;;=3^Open Wound of Left Middle Finger w/ Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15389,1,4,0)
+ ;;=4^S61.303A
+ ;;^UTILITY(U,$J,358.3,15389,2)
+ ;;=^5135738
+ ;;^UTILITY(U,$J,358.3,15390,0)
+ ;;=S61.304A^^85^817^55
+ ;;^UTILITY(U,$J,358.3,15390,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16569,1,3,0)
- ;;=3^789.00
- ;;^UTILITY(U,$J,358.3,16569,1,4,0)
- ;;=4^Abdominal Pain, Unsp
- ;;^UTILITY(U,$J,358.3,16569,2)
- ;;=^303317
- ;;^UTILITY(U,$J,358.3,16570,0)
- ;;=564.00^^108^1044^3
- ;;^UTILITY(U,$J,358.3,16570,1,0)
+ ;;^UTILITY(U,$J,358.3,15390,1,3,0)
+ ;;=3^Open Wound of Right Ring Finger w/ Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15390,1,4,0)
+ ;;=4^S61.304A
+ ;;^UTILITY(U,$J,358.3,15390,2)
+ ;;=^5032897
+ ;;^UTILITY(U,$J,358.3,15391,0)
+ ;;=S61.305A^^85^817^24
+ ;;^UTILITY(U,$J,358.3,15391,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16570,1,3,0)
- ;;=3^564.00
- ;;^UTILITY(U,$J,358.3,16570,1,4,0)
- ;;=4^Constipation
- ;;^UTILITY(U,$J,358.3,16570,2)
- ;;=^323537
+ ;;^UTILITY(U,$J,358.3,15391,1,3,0)
+ ;;=3^Open Wound of Left Ring Finger w/ Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15391,1,4,0)
+ ;;=4^S61.305A
+ ;;^UTILITY(U,$J,358.3,15391,2)
+ ;;=^5135741
+ ;;^UTILITY(U,$J,358.3,15392,0)
+ ;;=S61.306A^^85^817^50
+ ;;^UTILITY(U,$J,358.3,15392,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15392,1,3,0)
+ ;;=3^Open Wound of Right Little Finger w/ Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15392,1,4,0)
+ ;;=4^S61.306A
+ ;;^UTILITY(U,$J,358.3,15392,2)
+ ;;=^5032900
+ ;;^UTILITY(U,$J,358.3,15393,0)
+ ;;=S61.307A^^85^817^19
+ ;;^UTILITY(U,$J,358.3,15393,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15393,1,3,0)
+ ;;=3^Open Wound of Left Little Finger w/ Nail Damage,Init Encntr

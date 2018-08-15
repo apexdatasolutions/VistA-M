@@ -1,6 +1,6 @@
-IBCNSP3 ;ALB/AAS - INSURANCE MANAGEMENT EDIT ;06-JUL-93
- ;;2.0;INTEGRATED BILLING;**28,52,85,251,371,497**;21-MAR-94;Build 120
- ;;Per VHA Directive 2004-038, this routine should not be modified.
+IBCNSP3 ;ALB/AAS - INSURANCE MANAGEMENT EDIT ;27-APR-2015
+ ;;2.0;INTEGRATED BILLING;**28,52,85,251,371,497,528,549**;21-MAR-94;Build 54
+ ;;Per VA Directive 6402, this routine should not be modified.
  ;
 % G ^IBCNSM4
  ;
@@ -59,22 +59,24 @@ EM ; -- Employer for claims update
  L -^DPT(DFN,.312,+$P($G(IBPPOL),"^",4))
 EMQ S VALMBCK="R" Q
  ;
-AC ; -- Add Comment
- D FULL^VALM1 W !!
- N IBDIF,DA,DR,DIE,DIC,X,Y
- D SAVEPT(DFN,IBCDFN)
- W !!,"You may now enter a brief comment about this patient's policy"
- D VARS
- L +^DPT(DFN,.312,+$P($G(IBPPOL),"^",4)):5 I '$T D LOCKED^IBTRCD1 G ACQ
- S DR="1.08" D ^DIE
- D COMPPT(DFN,IBCDFN) I IBDIF D UPDATPT(DFN,IBCDFN)
- L -^DPT(DFN,.312,+$P($G(IBPPOL),"^",4))
- W !!,"You may now enter comments about this Group Plan that pertains to all Patients"
- L +^IBA(355.3,+IBCPOL):5 I '$T D LOCKED^IBTRCD1 G ACQ
- S DIE="^IBA(355.3,",DA=IBCPOL,DR="11" D ^DIE
+GC ;EP
+ ; IB*2.0*549 Added Method
+ ; Protocol action to add/edit a Group Plan Comment
+ ; Input:   DFN     - IEN of the currently selected patient
+ ;          IBCPOL  - IEN of the currently selected group plan
+ ; Output:  Group Plan Comment is added/edited (Potentially)
+ N DA,DR,DIE,DIC,X,Y
+ S VALMBCK="R"
+ D FULL^VALM1
+ W !!,"You may now enter comments about this Group Plan that pertains to all"
+ W " Patients",!!
+ L +^IBA(355.3,+IBCPOL):5                       ; Lock the Group Plan for editing
+ I '$T D LOCKED^IBTRCD1 Q
+ S DIE="^IBA(355.3,",DA=IBCPOL,DR="11Group Plan Comment"
+ D ^DIE
  D BLD^IBCNSP
- L -^IBA(355.3,+IBCPOL)
-ACQ S VALMBCK="R" Q
+ L -^IBA(355.3,+IBCPOL)                         ; Unlock the Group Plan
+ Q
  ;
 BLS(X,Y) ; -- blank a section of lines
  N I
@@ -126,7 +128,7 @@ R1 S DIC="^IBA(355.7,",DIC(0)="AEQML",DLAYGO=355.7
  S IBPRY=+Y
  L +^IBA(355.7,IBPRY):5 I '$T D LOCKED^IBTRCD1 G RIDERQ
  S DIE="^IBA(355.7,",DA=+Y,DR=".01",DIDEL=355.7
- D ^DIE K DA,DR,DIE,DIC,DIDEL
+ D ^DIE K DA,DR,DIE,DIC,DIDEL,DLAYGO
  L -^IBA(355.7,IBPRY)
  W ! G R1
 RIDERQ S VALMBCK="R"

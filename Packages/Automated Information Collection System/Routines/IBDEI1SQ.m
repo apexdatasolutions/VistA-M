@@ -1,0 +1,132 @@
+IBDEI1SQ ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,30070,0)
+ ;;=D56.3^^135^1372^180
+ ;;^UTILITY(U,$J,358.3,30070,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30070,1,3,0)
+ ;;=3^Thalassemia Minor
+ ;;^UTILITY(U,$J,358.3,30070,1,4,0)
+ ;;=4^D56.3
+ ;;^UTILITY(U,$J,358.3,30070,2)
+ ;;=^340497
+ ;;^UTILITY(U,$J,358.3,30071,0)
+ ;;=D56.9^^135^1372^181
+ ;;^UTILITY(U,$J,358.3,30071,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30071,1,3,0)
+ ;;=3^Thalassemia,Unspec
+ ;;^UTILITY(U,$J,358.3,30071,1,4,0)
+ ;;=4^D56.9
+ ;;^UTILITY(U,$J,358.3,30071,2)
+ ;;=^340606
+ ;;^UTILITY(U,$J,358.3,30072,0)
+ ;;=M31.1^^135^1372^183
+ ;;^UTILITY(U,$J,358.3,30072,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30072,1,3,0)
+ ;;=3^Thrombotic Microangiopathy
+ ;;^UTILITY(U,$J,358.3,30072,1,4,0)
+ ;;=4^M31.1
+ ;;^UTILITY(U,$J,358.3,30072,2)
+ ;;=^119061
+ ;;^UTILITY(U,$J,358.3,30073,0)
+ ;;=D51.2^^135^1372^184
+ ;;^UTILITY(U,$J,358.3,30073,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30073,1,3,0)
+ ;;=3^Transcobalamin II Deficiency
+ ;;^UTILITY(U,$J,358.3,30073,1,4,0)
+ ;;=4^D51.2
+ ;;^UTILITY(U,$J,358.3,30073,2)
+ ;;=^5002286
+ ;;^UTILITY(U,$J,358.3,30074,0)
+ ;;=D05.92^^135^1372^33
+ ;;^UTILITY(U,$J,358.3,30074,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30074,1,3,0)
+ ;;=3^Carcinoma in Situ Left Breast,Unspec Type
+ ;;^UTILITY(U,$J,358.3,30074,1,4,0)
+ ;;=4^D05.92
+ ;;^UTILITY(U,$J,358.3,30074,2)
+ ;;=^5001937
+ ;;^UTILITY(U,$J,358.3,30075,0)
+ ;;=D05.91^^135^1372^35
+ ;;^UTILITY(U,$J,358.3,30075,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30075,1,3,0)
+ ;;=3^Carcinoma in Situ Right Breast,Unspec Type
+ ;;^UTILITY(U,$J,358.3,30075,1,4,0)
+ ;;=4^D05.91
+ ;;^UTILITY(U,$J,358.3,30075,2)
+ ;;=^5001936
+ ;;^UTILITY(U,$J,358.3,30076,0)
+ ;;=D05.90^^135^1372^31
+ ;;^UTILITY(U,$J,358.3,30076,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30076,1,3,0)
+ ;;=3^Carcinoma in Situ Breast Unspec,Unspec Type
+ ;;^UTILITY(U,$J,358.3,30076,1,4,0)
+ ;;=4^D05.90
+ ;;^UTILITY(U,$J,358.3,30076,2)
+ ;;=^5001935
+ ;;^UTILITY(U,$J,358.3,30077,0)
+ ;;=D51.0^^135^1372^185
+ ;;^UTILITY(U,$J,358.3,30077,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30077,1,3,0)
+ ;;=3^Vitamin B12 Deficiency Anemia d/t Intrinsic Factor Deficiency
+ ;;^UTILITY(U,$J,358.3,30077,1,4,0)
+ ;;=4^D51.0
+ ;;^UTILITY(U,$J,358.3,30077,2)
+ ;;=^5002284
+ ;;^UTILITY(U,$J,358.3,30078,0)
+ ;;=D51.1^^135^1372^186
+ ;;^UTILITY(U,$J,358.3,30078,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30078,1,3,0)
+ ;;=3^Vitamin B12 Deficiency Anemia d/t Selective Vit B12 Malabsorp w/ Proteinuria
+ ;;^UTILITY(U,$J,358.3,30078,1,4,0)
+ ;;=4^D51.1
+ ;;^UTILITY(U,$J,358.3,30078,2)
+ ;;=^5002285
+ ;;^UTILITY(U,$J,358.3,30079,0)
+ ;;=D51.9^^135^1372^188
+ ;;^UTILITY(U,$J,358.3,30079,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30079,1,3,0)
+ ;;=3^Vitamin B12 Deficiency Anemia,Unspec
+ ;;^UTILITY(U,$J,358.3,30079,1,4,0)
+ ;;=4^D51.9
+ ;;^UTILITY(U,$J,358.3,30079,2)
+ ;;=^5002289
+ ;;^UTILITY(U,$J,358.3,30080,0)
+ ;;=D68.0^^135^1372^190
+ ;;^UTILITY(U,$J,358.3,30080,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30080,1,3,0)
+ ;;=3^Von Willebrand's Disease
+ ;;^UTILITY(U,$J,358.3,30080,1,4,0)
+ ;;=4^D68.0
+ ;;^UTILITY(U,$J,358.3,30080,2)
+ ;;=^127267
+ ;;^UTILITY(U,$J,358.3,30081,0)
+ ;;=C88.0^^135^1372^191
+ ;;^UTILITY(U,$J,358.3,30081,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30081,1,3,0)
+ ;;=3^Waldenstrom Macroglobulinemia
+ ;;^UTILITY(U,$J,358.3,30081,1,4,0)
+ ;;=4^C88.0
+ ;;^UTILITY(U,$J,358.3,30081,2)
+ ;;=^5001748
+ ;;^UTILITY(U,$J,358.3,30082,0)
+ ;;=C91.02^^135^1372^3
+ ;;^UTILITY(U,$J,358.3,30082,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30082,1,3,0)
+ ;;=3^Acute Lymphoblastic Leukemia,In Relapse
+ ;;^UTILITY(U,$J,358.3,30082,1,4,0)
+ ;;=4^C91.02

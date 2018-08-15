@@ -1,0 +1,124 @@
+IBDEI1UZ ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,31113,0)
+ ;;=V00.892A^^135^1391^99
+ ;;^UTILITY(U,$J,358.3,31113,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31113,1,3,0)
+ ;;=3^Pedestrian Conveyance Colliding w/ Stationary Obj,Init Encntr
+ ;;^UTILITY(U,$J,358.3,31113,1,4,0)
+ ;;=4^V00.892A
+ ;;^UTILITY(U,$J,358.3,31113,2)
+ ;;=^5055967
+ ;;^UTILITY(U,$J,358.3,31114,0)
+ ;;=V00.892D^^135^1391^100
+ ;;^UTILITY(U,$J,358.3,31114,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31114,1,3,0)
+ ;;=3^Pedestrian Conveyance Colliding w/ Stationary Obj,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,31114,1,4,0)
+ ;;=4^V00.892D
+ ;;^UTILITY(U,$J,358.3,31114,2)
+ ;;=^5055968
+ ;;^UTILITY(U,$J,358.3,31115,0)
+ ;;=V00.898A^^135^1391^97
+ ;;^UTILITY(U,$J,358.3,31115,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31115,1,3,0)
+ ;;=3^Pedestrian Conveyance Accident NEC,Init Encntr
+ ;;^UTILITY(U,$J,358.3,31115,1,4,0)
+ ;;=4^V00.898A
+ ;;^UTILITY(U,$J,358.3,31115,2)
+ ;;=^5055970
+ ;;^UTILITY(U,$J,358.3,31116,0)
+ ;;=V00.898D^^135^1391^98
+ ;;^UTILITY(U,$J,358.3,31116,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31116,1,3,0)
+ ;;=3^Pedestrian Conveyance Accident NEC,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,31116,1,4,0)
+ ;;=4^V00.898D
+ ;;^UTILITY(U,$J,358.3,31116,2)
+ ;;=^5055971
+ ;;^UTILITY(U,$J,358.3,31117,0)
+ ;;=W00.0XXA^^135^1391^79
+ ;;^UTILITY(U,$J,358.3,31117,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31117,1,3,0)
+ ;;=3^Fall on Same Level d/t Ice/Snow,Init Encntr
+ ;;^UTILITY(U,$J,358.3,31117,1,4,0)
+ ;;=4^W00.0XXA
+ ;;^UTILITY(U,$J,358.3,31117,2)
+ ;;=^5059510
+ ;;^UTILITY(U,$J,358.3,31118,0)
+ ;;=W00.0XXD^^135^1391^80
+ ;;^UTILITY(U,$J,358.3,31118,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31118,1,3,0)
+ ;;=3^Fall on Same Level d/t Ice/Snow,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,31118,1,4,0)
+ ;;=4^W00.0XXD
+ ;;^UTILITY(U,$J,358.3,31118,2)
+ ;;=^5059511
+ ;;^UTILITY(U,$J,358.3,31119,0)
+ ;;=W00.1XXA^^135^1391^59
+ ;;^UTILITY(U,$J,358.3,31119,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31119,1,3,0)
+ ;;=3^Fall from Stairs/Steps d/t Ice/Snow,Init Encntr
+ ;;^UTILITY(U,$J,358.3,31119,1,4,0)
+ ;;=4^W00.1XXA
+ ;;^UTILITY(U,$J,358.3,31119,2)
+ ;;=^5059513
+ ;;^UTILITY(U,$J,358.3,31120,0)
+ ;;=W00.1XXD^^135^1391^60
+ ;;^UTILITY(U,$J,358.3,31120,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31120,1,3,0)
+ ;;=3^Fall from Stairs/Steps d/t Ice/Snow,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,31120,1,4,0)
+ ;;=4^W00.1XXD
+ ;;^UTILITY(U,$J,358.3,31120,2)
+ ;;=^5059514
+ ;;^UTILITY(U,$J,358.3,31121,0)
+ ;;=W00.2XXA^^135^1391^53
+ ;;^UTILITY(U,$J,358.3,31121,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31121,1,3,0)
+ ;;=3^Fall from One Level to Another d/t Ice/Snow,Init Encntr
+ ;;^UTILITY(U,$J,358.3,31121,1,4,0)
+ ;;=4^W00.2XXA
+ ;;^UTILITY(U,$J,358.3,31121,2)
+ ;;=^5059516
+ ;;^UTILITY(U,$J,358.3,31122,0)
+ ;;=W00.2XXD^^135^1391^54
+ ;;^UTILITY(U,$J,358.3,31122,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31122,1,3,0)
+ ;;=3^Fall from One Level to Another d/t Ice/Snow,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,31122,1,4,0)
+ ;;=4^W00.2XXD
+ ;;^UTILITY(U,$J,358.3,31122,2)
+ ;;=^5059517
+ ;;^UTILITY(U,$J,358.3,31123,0)
+ ;;=W00.9XXA^^135^1391^25
+ ;;^UTILITY(U,$J,358.3,31123,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31123,1,3,0)
+ ;;=3^Fall d/t Ice/Snow,Unspec,Init Encntr
+ ;;^UTILITY(U,$J,358.3,31123,1,4,0)
+ ;;=4^W00.9XXA
+ ;;^UTILITY(U,$J,358.3,31123,2)
+ ;;=^5059519
+ ;;^UTILITY(U,$J,358.3,31124,0)
+ ;;=W00.9XXD^^135^1391^26
+ ;;^UTILITY(U,$J,358.3,31124,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31124,1,3,0)
+ ;;=3^Fall d/t Ice/Snow,Unspec,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,31124,1,4,0)
+ ;;=4^W00.9XXD
+ ;;^UTILITY(U,$J,358.3,31124,2)
+ ;;=^5059520

@@ -1,136 +1,122 @@
-IBDEI1AR ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1AR ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,23226,1,2,0)
- ;;=2^99243
- ;;^UTILITY(U,$J,358.3,23227,0)
- ;;=99244^^146^1432^4
- ;;^UTILITY(U,$J,358.3,23227,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,23227,1,1,0)
- ;;=1^Comprehensive, Moderate
- ;;^UTILITY(U,$J,358.3,23227,1,2,0)
- ;;=2^99244
- ;;^UTILITY(U,$J,358.3,23228,0)
- ;;=99245^^146^1432^5
- ;;^UTILITY(U,$J,358.3,23228,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,23228,1,1,0)
- ;;=1^Comprehensive, High
- ;;^UTILITY(U,$J,358.3,23228,1,2,0)
- ;;=2^99245
- ;;^UTILITY(U,$J,358.3,23229,0)
- ;;=Q3014^^147^1433^1^^^^1
- ;;^UTILITY(U,$J,358.3,23229,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23229,1,2,0)
- ;;=2^Q3014
- ;;^UTILITY(U,$J,358.3,23229,1,3,0)
- ;;=3^TELEHEALTH FACILITY FEE
- ;;^UTILITY(U,$J,358.3,23230,0)
- ;;=T1014^^147^1433^2^^^^1
- ;;^UTILITY(U,$J,358.3,23230,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23230,1,2,0)
- ;;=2^T1014
- ;;^UTILITY(U,$J,358.3,23230,1,3,0)
- ;;=3^TELEHEALTH TRANSMIT, PER MIN
- ;;^UTILITY(U,$J,358.3,23231,0)
- ;;=96999^^147^1433^3^^^^1
- ;;^UTILITY(U,$J,358.3,23231,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23231,1,2,0)
- ;;=2^96999
- ;;^UTILITY(U,$J,358.3,23231,1,3,0)
- ;;=3^Teledermatology - Photo
- ;;^UTILITY(U,$J,358.3,23232,0)
- ;;=911.0^^148^1434^8
- ;;^UTILITY(U,$J,358.3,23232,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23232,1,2,0)
- ;;=2^911.0
- ;;^UTILITY(U,$J,358.3,23232,1,5,0)
- ;;=5^Abrasion Trunk w/o infection
- ;;^UTILITY(U,$J,358.3,23232,2)
- ;;=^275275
- ;;^UTILITY(U,$J,358.3,23233,0)
- ;;=913.0^^148^1434^5
- ;;^UTILITY(U,$J,358.3,23233,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23233,1,2,0)
- ;;=2^913.0
- ;;^UTILITY(U,$J,358.3,23233,1,5,0)
- ;;=5^Abrasion Forearm w/o infection
- ;;^UTILITY(U,$J,358.3,23233,2)
- ;;=^275297
- ;;^UTILITY(U,$J,358.3,23234,0)
- ;;=910.0^^148^1434^2
- ;;^UTILITY(U,$J,358.3,23234,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23234,1,2,0)
- ;;=2^910.0
- ;;^UTILITY(U,$J,358.3,23234,1,5,0)
- ;;=5^Abrasion Face w/o infection
- ;;^UTILITY(U,$J,358.3,23234,2)
- ;;=^275263
- ;;^UTILITY(U,$J,358.3,23235,0)
- ;;=915.0^^148^1434^3
- ;;^UTILITY(U,$J,358.3,23235,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23235,1,2,0)
- ;;=2^915.0
- ;;^UTILITY(U,$J,358.3,23235,1,5,0)
- ;;=5^Abrasion Finger w/o infection
- ;;^UTILITY(U,$J,358.3,23235,2)
- ;;=^275319
- ;;^UTILITY(U,$J,358.3,23236,0)
- ;;=917.0^^148^1434^4
- ;;^UTILITY(U,$J,358.3,23236,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23236,1,2,0)
- ;;=2^917.0
- ;;^UTILITY(U,$J,358.3,23236,1,5,0)
- ;;=5^Abrasion Foot w/o infection
- ;;^UTILITY(U,$J,358.3,23236,2)
- ;;=^275341
- ;;^UTILITY(U,$J,358.3,23237,0)
- ;;=914.0^^148^1434^6
- ;;^UTILITY(U,$J,358.3,23237,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23237,1,2,0)
- ;;=2^914.0
- ;;^UTILITY(U,$J,358.3,23237,1,5,0)
- ;;=5^Abrasion Hand w/o infection
- ;;^UTILITY(U,$J,358.3,23237,2)
- ;;=^275308
- ;;^UTILITY(U,$J,358.3,23238,0)
- ;;=916.0^^148^1434^7
- ;;^UTILITY(U,$J,358.3,23238,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23238,1,2,0)
- ;;=2^916.0
- ;;^UTILITY(U,$J,358.3,23238,1,5,0)
- ;;=5^Abrasion Leg w/o infection
- ;;^UTILITY(U,$J,358.3,23238,2)
- ;;=^275330
- ;;^UTILITY(U,$J,358.3,23239,0)
- ;;=919.0^^148^1434^9
- ;;^UTILITY(U,$J,358.3,23239,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23239,1,2,0)
- ;;=2^919.0
- ;;^UTILITY(U,$J,358.3,23239,1,5,0)
- ;;=5^Abrasion w/o Infection, Site NOS
- ;;^UTILITY(U,$J,358.3,23239,2)
- ;;=^1305
- ;;^UTILITY(U,$J,358.3,23240,0)
- ;;=918.0^^148^1434^1
- ;;^UTILITY(U,$J,358.3,23240,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23240,1,2,0)
- ;;=2^918.0
- ;;^UTILITY(U,$J,358.3,23240,1,5,0)
- ;;=5^Abrasion Eyelid w/o Infection
- ;;^UTILITY(U,$J,358.3,23240,2)
- ;;=^275352
+ ;;^UTILITY(U,$J,358.3,21660,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21660,1,3,0)
+ ;;=3^Nondisp medial condyle fx of right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21660,1,4,0)
+ ;;=4^S72.434S
+ ;;^UTILITY(U,$J,358.3,21660,2)
+ ;;=^5038915
+ ;;^UTILITY(U,$J,358.3,21661,0)
+ ;;=S72.435S^^101^1033^71
+ ;;^UTILITY(U,$J,358.3,21661,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21661,1,3,0)
+ ;;=3^Nondisp medial condyle fx of left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21661,1,4,0)
+ ;;=4^S72.435S
+ ;;^UTILITY(U,$J,358.3,21661,2)
+ ;;=^5038931
+ ;;^UTILITY(U,$J,358.3,21662,0)
+ ;;=S72.441S^^101^1033^24
+ ;;^UTILITY(U,$J,358.3,21662,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21662,1,3,0)
+ ;;=3^Displaced lower epiphysis fx of right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21662,1,4,0)
+ ;;=4^S72.441S
+ ;;^UTILITY(U,$J,358.3,21662,2)
+ ;;=^5038963
+ ;;^UTILITY(U,$J,358.3,21663,0)
+ ;;=S72.442S^^101^1033^23
+ ;;^UTILITY(U,$J,358.3,21663,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21663,1,3,0)
+ ;;=3^Displaced lower epiphysis fx of left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21663,1,4,0)
+ ;;=4^S72.442S
+ ;;^UTILITY(U,$J,358.3,21663,2)
+ ;;=^5136242
+ ;;^UTILITY(U,$J,358.3,21664,0)
+ ;;=S72.444S^^101^1033^70
+ ;;^UTILITY(U,$J,358.3,21664,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21664,1,3,0)
+ ;;=3^Nondisp lower epiphy fx of right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21664,1,4,0)
+ ;;=4^S72.444S
+ ;;^UTILITY(U,$J,358.3,21664,2)
+ ;;=^5038984
+ ;;^UTILITY(U,$J,358.3,21665,0)
+ ;;=S72.445S^^101^1033^69
+ ;;^UTILITY(U,$J,358.3,21665,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21665,1,3,0)
+ ;;=3^Nondisp lower epiphy fx of left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21665,1,4,0)
+ ;;=4^S72.445S
+ ;;^UTILITY(U,$J,358.3,21665,2)
+ ;;=^5136269
+ ;;^UTILITY(U,$J,358.3,21666,0)
+ ;;=S72.451S^^101^1033^41
+ ;;^UTILITY(U,$J,358.3,21666,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21666,1,3,0)
+ ;;=3^Displaced suprcndl fx w/o intrcndl extn lower end r femur, sqla
+ ;;^UTILITY(U,$J,358.3,21666,1,4,0)
+ ;;=4^S72.451S
+ ;;^UTILITY(U,$J,358.3,21666,2)
+ ;;=^5039005
+ ;;^UTILITY(U,$J,358.3,21667,0)
+ ;;=S72.452S^^101^1033^42
+ ;;^UTILITY(U,$J,358.3,21667,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21667,1,3,0)
+ ;;=3^Displaced suprcndl fx w/o intrcndl extn lower end l femur, sqla
+ ;;^UTILITY(U,$J,358.3,21667,1,4,0)
+ ;;=4^S72.452S
+ ;;^UTILITY(U,$J,358.3,21667,2)
+ ;;=^5039021
+ ;;^UTILITY(U,$J,358.3,21668,0)
+ ;;=S72.454S^^101^1033^88
+ ;;^UTILITY(U,$J,358.3,21668,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21668,1,3,0)
+ ;;=3^Nondisp suprcndl fx w/o intrcndl extn lower end r femr, sqla
+ ;;^UTILITY(U,$J,358.3,21668,1,4,0)
+ ;;=4^S72.454S
+ ;;^UTILITY(U,$J,358.3,21668,2)
+ ;;=^5039053
+ ;;^UTILITY(U,$J,358.3,21669,0)
+ ;;=S72.455S^^101^1033^89
+ ;;^UTILITY(U,$J,358.3,21669,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21669,1,3,0)
+ ;;=3^Nondisp suprcndl fx w/o intrcndl extn lower end l femr, sqla
+ ;;^UTILITY(U,$J,358.3,21669,1,4,0)
+ ;;=4^S72.455S
+ ;;^UTILITY(U,$J,358.3,21669,2)
+ ;;=^5039069
+ ;;^UTILITY(U,$J,358.3,21670,0)
+ ;;=S72.461S^^101^1033^39
+ ;;^UTILITY(U,$J,358.3,21670,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21670,1,3,0)
+ ;;=3^Displaced suprcndl fx w intrcndl extn lower end of r femur, sqla
+ ;;^UTILITY(U,$J,358.3,21670,1,4,0)
+ ;;=4^S72.461S
+ ;;^UTILITY(U,$J,358.3,21670,2)
+ ;;=^5039093
+ ;;^UTILITY(U,$J,358.3,21671,0)
+ ;;=S72.462S^^101^1033^40
+ ;;^UTILITY(U,$J,358.3,21671,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21671,1,3,0)
+ ;;=3^Displaced suprcndl fx w intrcndl extn lower end of l femur, sqla
+ ;;^UTILITY(U,$J,358.3,21671,1,4,0)
+ ;;=4^S72.462S
+ ;;^UTILITY(U,$J,358.3,21671,2)
+ ;;=^5136422

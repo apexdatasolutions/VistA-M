@@ -1,138 +1,124 @@
-IBDEI0YG ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0YG ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,17121,0)
- ;;=285.29^^111^1075^6
- ;;^UTILITY(U,$J,358.3,17121,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17121,1,1,0)
- ;;=1^285.29
- ;;^UTILITY(U,$J,358.3,17121,1,8,0)
- ;;=8^Anemia Oth Chronic Illness
- ;;^UTILITY(U,$J,358.3,17121,2)
- ;;=^321979
- ;;^UTILITY(U,$J,358.3,17122,0)
- ;;=285.1^^111^1075^1
- ;;^UTILITY(U,$J,358.3,17122,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17122,1,1,0)
- ;;=1^285.1
- ;;^UTILITY(U,$J,358.3,17122,1,8,0)
- ;;=8^Ac Posthemorrhag Anemia
- ;;^UTILITY(U,$J,358.3,17122,2)
- ;;=^267986
- ;;^UTILITY(U,$J,358.3,17123,0)
- ;;=284.2^^111^1075^30
- ;;^UTILITY(U,$J,358.3,17123,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17123,1,1,0)
- ;;=1^284.2
- ;;^UTILITY(U,$J,358.3,17123,1,8,0)
- ;;=8^Myelophthisic Anemia
- ;;^UTILITY(U,$J,358.3,17123,2)
- ;;=^334037
- ;;^UTILITY(U,$J,358.3,17124,0)
- ;;=281.9^^111^1075^14
- ;;^UTILITY(U,$J,358.3,17124,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17124,1,1,0)
- ;;=1^281.9
- ;;^UTILITY(U,$J,358.3,17124,1,8,0)
- ;;=8^Deficiency Anemia,Unspec
- ;;^UTILITY(U,$J,358.3,17124,2)
- ;;=^123801
- ;;^UTILITY(U,$J,358.3,17125,0)
- ;;=282.41^^111^1075^46
- ;;^UTILITY(U,$J,358.3,17125,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17125,1,1,0)
- ;;=1^282.41
- ;;^UTILITY(U,$J,358.3,17125,1,8,0)
- ;;=8^Sickle Cell Thalassemia w/o crisis
- ;;^UTILITY(U,$J,358.3,17125,2)
- ;;=^329908
- ;;^UTILITY(U,$J,358.3,17126,0)
- ;;=284.11^^111^1075^10
- ;;^UTILITY(U,$J,358.3,17126,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17126,1,1,0)
- ;;=1^284.11
- ;;^UTILITY(U,$J,358.3,17126,1,8,0)
- ;;=8^Antineoplastic Chemo Indcd Panycyt
- ;;^UTILITY(U,$J,358.3,17126,2)
- ;;=^340499
- ;;^UTILITY(U,$J,358.3,17127,0)
- ;;=284.12^^111^1075^33
- ;;^UTILITY(U,$J,358.3,17127,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17127,1,1,0)
- ;;=1^284.12
- ;;^UTILITY(U,$J,358.3,17127,1,8,0)
- ;;=8^Oth Drug Indcd Pancytopenia
- ;;^UTILITY(U,$J,358.3,17127,2)
- ;;=^340500
- ;;^UTILITY(U,$J,358.3,17128,0)
- ;;=284.19^^111^1075^36
- ;;^UTILITY(U,$J,358.3,17128,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17128,1,1,0)
- ;;=1^284.19
- ;;^UTILITY(U,$J,358.3,17128,1,8,0)
- ;;=8^Oth Pancytopenia
- ;;^UTILITY(U,$J,358.3,17128,2)
- ;;=^340501
- ;;^UTILITY(U,$J,358.3,17129,0)
- ;;=281.1^^111^1075^43
- ;;^UTILITY(U,$J,358.3,17129,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17129,1,1,0)
- ;;=1^281.1
- ;;^UTILITY(U,$J,358.3,17129,1,8,0)
- ;;=8^Oth Vit B12 Deficiency Anemia
- ;;^UTILITY(U,$J,358.3,17129,2)
- ;;=^267974
- ;;^UTILITY(U,$J,358.3,17130,0)
- ;;=281.2^^111^1075^16
- ;;^UTILITY(U,$J,358.3,17130,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17130,1,1,0)
- ;;=1^281.2
- ;;^UTILITY(U,$J,358.3,17130,1,8,0)
- ;;=8^Folate-deficiency Anemia
- ;;^UTILITY(U,$J,358.3,17130,2)
- ;;=^259686
- ;;^UTILITY(U,$J,358.3,17131,0)
- ;;=281.3^^111^1075^41
- ;;^UTILITY(U,$J,358.3,17131,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17131,1,1,0)
- ;;=1^281.3
- ;;^UTILITY(U,$J,358.3,17131,1,8,0)
- ;;=8^Oth Spec Megaloblastic Anemia NEC
- ;;^UTILITY(U,$J,358.3,17131,2)
- ;;=^88100
- ;;^UTILITY(U,$J,358.3,17132,0)
- ;;=281.4^^111^1075^45
- ;;^UTILITY(U,$J,358.3,17132,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17132,1,1,0)
- ;;=1^281.4
- ;;^UTILITY(U,$J,358.3,17132,1,8,0)
- ;;=8^Protein-deficiency Anemia
- ;;^UTILITY(U,$J,358.3,17132,2)
- ;;=^267975
- ;;^UTILITY(U,$J,358.3,17133,0)
- ;;=282.0^^111^1075^25
- ;;^UTILITY(U,$J,358.3,17133,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17133,1,1,0)
- ;;=1^282.0
- ;;^UTILITY(U,$J,358.3,17133,1,8,0)
- ;;=8^Hereditary Spherocytosis
- ;;^UTILITY(U,$J,358.3,17133,2)
- ;;=^113079
- ;;^UTILITY(U,$J,358.3,17134,0)
- ;;=282.1^^111^1075^23
- ;;^UTILITY(U,$J,358.3,17134,1,0)
- ;;=^358.31IA^8^2
+ ;;^UTILITY(U,$J,358.3,15870,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15870,1,3,0)
+ ;;=3^Accidental Puncture/Laceration of Musculoskeletal System
+ ;;^UTILITY(U,$J,358.3,15870,1,4,0)
+ ;;=4^M96.821
+ ;;^UTILITY(U,$J,358.3,15870,2)
+ ;;=^5015396
+ ;;^UTILITY(U,$J,358.3,15871,0)
+ ;;=G97.49^^85^828^7
+ ;;^UTILITY(U,$J,358.3,15871,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15871,1,3,0)
+ ;;=3^Accidental Puncture/Laceration of Nervous System During Surgery
+ ;;^UTILITY(U,$J,358.3,15871,1,4,0)
+ ;;=4^G97.49
+ ;;^UTILITY(U,$J,358.3,15871,2)
+ ;;=^5004208
+ ;;^UTILITY(U,$J,358.3,15872,0)
+ ;;=J95.72^^85^828^8
+ ;;^UTILITY(U,$J,358.3,15872,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15872,1,3,0)
+ ;;=3^Accidental Puncture/Laceration of Respiratory System During Surgery
+ ;;^UTILITY(U,$J,358.3,15872,1,4,0)
+ ;;=4^J95.72
+ ;;^UTILITY(U,$J,358.3,15872,2)
+ ;;=^5008335
+ ;;^UTILITY(U,$J,358.3,15873,0)
+ ;;=L76.12^^85^828^10
+ ;;^UTILITY(U,$J,358.3,15873,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15873,1,3,0)
+ ;;=3^Accidental Puncture/Laceration of Skin During Surgery
+ ;;^UTILITY(U,$J,358.3,15873,1,4,0)
+ ;;=4^L76.12
+ ;;^UTILITY(U,$J,358.3,15873,2)
+ ;;=^5009305
+ ;;^UTILITY(U,$J,358.3,15874,0)
+ ;;=I97.88^^85^828^15
+ ;;^UTILITY(U,$J,358.3,15874,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15874,1,3,0)
+ ;;=3^Intraoperative Complication of the Circulatory System NEC
+ ;;^UTILITY(U,$J,358.3,15874,1,4,0)
+ ;;=4^I97.88
+ ;;^UTILITY(U,$J,358.3,15874,2)
+ ;;=^5008111
+ ;;^UTILITY(U,$J,358.3,15875,0)
+ ;;=K91.81^^85^828^16
+ ;;^UTILITY(U,$J,358.3,15875,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15875,1,3,0)
+ ;;=3^Intraoperative Complication of the Digestive System NEC
+ ;;^UTILITY(U,$J,358.3,15875,1,4,0)
+ ;;=4^K91.81
+ ;;^UTILITY(U,$J,358.3,15875,2)
+ ;;=^5008907
+ ;;^UTILITY(U,$J,358.3,15876,0)
+ ;;=H95.88^^85^828^17
+ ;;^UTILITY(U,$J,358.3,15876,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15876,1,3,0)
+ ;;=3^Intraoperative Complication of the Ear/Mastoid NEC
+ ;;^UTILITY(U,$J,358.3,15876,1,4,0)
+ ;;=4^H95.88
+ ;;^UTILITY(U,$J,358.3,15876,2)
+ ;;=^5007036
+ ;;^UTILITY(U,$J,358.3,15877,0)
+ ;;=N99.81^^85^828^18
+ ;;^UTILITY(U,$J,358.3,15877,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15877,1,3,0)
+ ;;=3^Intraoperative Complication of the GU System NEC
+ ;;^UTILITY(U,$J,358.3,15877,1,4,0)
+ ;;=4^N99.81
+ ;;^UTILITY(U,$J,358.3,15877,2)
+ ;;=^5015967
+ ;;^UTILITY(U,$J,358.3,15878,0)
+ ;;=M96.89^^85^828^19
+ ;;^UTILITY(U,$J,358.3,15878,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15878,1,3,0)
+ ;;=3^Intraoperative Complication of the Musculoskeletal System NEC
+ ;;^UTILITY(U,$J,358.3,15878,1,4,0)
+ ;;=4^M96.89
+ ;;^UTILITY(U,$J,358.3,15878,2)
+ ;;=^5015399
+ ;;^UTILITY(U,$J,358.3,15879,0)
+ ;;=G97.81^^85^828^20
+ ;;^UTILITY(U,$J,358.3,15879,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15879,1,3,0)
+ ;;=3^Intraoperative Complication of the Nervous System
+ ;;^UTILITY(U,$J,358.3,15879,1,4,0)
+ ;;=4^G97.81
+ ;;^UTILITY(U,$J,358.3,15879,2)
+ ;;=^5004211
+ ;;^UTILITY(U,$J,358.3,15880,0)
+ ;;=J95.88^^85^828^21
+ ;;^UTILITY(U,$J,358.3,15880,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15880,1,3,0)
+ ;;=3^Intraoperative Complication of the Respiratory System NEC
+ ;;^UTILITY(U,$J,358.3,15880,1,4,0)
+ ;;=4^J95.88
+ ;;^UTILITY(U,$J,358.3,15880,2)
+ ;;=^5008345
+ ;;^UTILITY(U,$J,358.3,15881,0)
+ ;;=L76.81^^85^828^22
+ ;;^UTILITY(U,$J,358.3,15881,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15881,1,3,0)
+ ;;=3^Intraoperative Complication of the Skin NEC
+ ;;^UTILITY(U,$J,358.3,15881,1,4,0)
+ ;;=4^L76.81
+ ;;^UTILITY(U,$J,358.3,15881,2)
+ ;;=^5009308
+ ;;^UTILITY(U,$J,358.3,15882,0)
+ ;;=D78.81^^85^828^23

@@ -1,136 +1,140 @@
-IBDEI0IE ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0IE ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,8960,0)
- ;;=209.33^^61^631^3
- ;;^UTILITY(U,$J,358.3,8960,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8960,1,4,0)
- ;;=4^Merkel Cell CA-Upper Limb
- ;;^UTILITY(U,$J,358.3,8960,1,5,0)
- ;;=5^209.33
- ;;^UTILITY(U,$J,358.3,8960,2)
- ;;=^338214
- ;;^UTILITY(U,$J,358.3,8961,0)
- ;;=209.34^^61^631^4
- ;;^UTILITY(U,$J,358.3,8961,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8961,1,4,0)
- ;;=4^Merkel Cell CA-Lower Limb
- ;;^UTILITY(U,$J,358.3,8961,1,5,0)
- ;;=5^209.34
- ;;^UTILITY(U,$J,358.3,8961,2)
- ;;=^338215
- ;;^UTILITY(U,$J,358.3,8962,0)
- ;;=209.35^^61^631^5
- ;;^UTILITY(U,$J,358.3,8962,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8962,1,4,0)
- ;;=4^Merkel Cell-Trunk
- ;;^UTILITY(U,$J,358.3,8962,1,5,0)
- ;;=5^209.35
- ;;^UTILITY(U,$J,358.3,8962,2)
- ;;=^338216
- ;;^UTILITY(U,$J,358.3,8963,0)
- ;;=209.36^^61^631^6
- ;;^UTILITY(U,$J,358.3,8963,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8963,1,4,0)
- ;;=4^Merkel Cell CA-Oth Sites
- ;;^UTILITY(U,$J,358.3,8963,1,5,0)
- ;;=5^209.36
- ;;^UTILITY(U,$J,358.3,8963,2)
- ;;=^338217
- ;;^UTILITY(U,$J,358.3,8964,0)
- ;;=V67.09^^61^632^11
- ;;^UTILITY(U,$J,358.3,8964,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8964,1,4,0)
- ;;=4^F/U exam, Following Surg
- ;;^UTILITY(U,$J,358.3,8964,1,5,0)
- ;;=5^V67.09
- ;;^UTILITY(U,$J,358.3,8964,2)
- ;;=F/U exam, completed treatment^322080
- ;;^UTILITY(U,$J,358.3,8965,0)
- ;;=V58.42^^61^632^1
- ;;^UTILITY(U,$J,358.3,8965,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8965,1,4,0)
- ;;=4^Aftercare after CA surgery
- ;;^UTILITY(U,$J,358.3,8965,1,5,0)
- ;;=5^V58.42
- ;;^UTILITY(U,$J,358.3,8965,2)
- ;;=Aftercare after CA surgery^295530
- ;;^UTILITY(U,$J,358.3,8966,0)
- ;;=V58.73^^61^632^5
- ;;^UTILITY(U,$J,358.3,8966,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8966,1,4,0)
- ;;=4^Aftercare after Vasc Surg
- ;;^UTILITY(U,$J,358.3,8966,1,5,0)
- ;;=5^V58.73
- ;;^UTILITY(U,$J,358.3,8966,2)
- ;;=Aftercare after Vasc Surg^295530
- ;;^UTILITY(U,$J,358.3,8967,0)
- ;;=V58.74^^61^632^3
- ;;^UTILITY(U,$J,358.3,8967,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8967,1,4,0)
- ;;=4^Aftercare after Lung Surg
- ;;^UTILITY(U,$J,358.3,8967,1,5,0)
- ;;=5^V58.74
- ;;^UTILITY(U,$J,358.3,8967,2)
- ;;=Aftercare after Lung Surg^295530
- ;;^UTILITY(U,$J,358.3,8968,0)
- ;;=V58.77^^61^632^4
- ;;^UTILITY(U,$J,358.3,8968,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8968,1,4,0)
- ;;=4^Aftercare after Skin Surg
- ;;^UTILITY(U,$J,358.3,8968,1,5,0)
- ;;=5^V58.77
- ;;^UTILITY(U,$J,358.3,8968,2)
- ;;=Aftercare after Skin Surg^295530
- ;;^UTILITY(U,$J,358.3,8969,0)
- ;;=V58.75^^61^632^2
- ;;^UTILITY(U,$J,358.3,8969,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8969,1,4,0)
- ;;=4^Aftercare after GI Surgery
- ;;^UTILITY(U,$J,358.3,8969,1,5,0)
- ;;=5^V58.75
- ;;^UTILITY(U,$J,358.3,8969,2)
- ;;=Aftercare after GI Surgery^295530
- ;;^UTILITY(U,$J,358.3,8970,0)
- ;;=V58.31^^61^632^12
- ;;^UTILITY(U,$J,358.3,8970,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8970,1,4,0)
- ;;=4^Removal Surg Dressing
- ;;^UTILITY(U,$J,358.3,8970,1,5,0)
- ;;=5^V58.31
- ;;^UTILITY(U,$J,358.3,8970,2)
- ;;=^334216
- ;;^UTILITY(U,$J,358.3,8971,0)
- ;;=V58.30^^61^632^10
- ;;^UTILITY(U,$J,358.3,8971,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8971,1,4,0)
- ;;=4^Change/Remove Dressing
- ;;^UTILITY(U,$J,358.3,8971,1,5,0)
- ;;=5^V58.30
- ;;^UTILITY(U,$J,358.3,8971,2)
- ;;=^334215
- ;;^UTILITY(U,$J,358.3,8972,0)
- ;;=V58.32^^61^632^13
- ;;^UTILITY(U,$J,358.3,8972,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,8972,1,4,0)
- ;;=4^Removal Sutures
- ;;^UTILITY(U,$J,358.3,8972,1,5,0)
- ;;=5^V58.32
- ;;^UTILITY(U,$J,358.3,8972,2)
- ;;=^334217
- ;;^UTILITY(U,$J,358.3,8973,0)
- ;;=V58.71^^61^632^9
+ ;;^UTILITY(U,$J,358.3,8258,0)
+ ;;=E11.21^^55^537^61
+ ;;^UTILITY(U,$J,358.3,8258,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8258,1,3,0)
+ ;;=3^Type 2 diabetes mellitus with diabetic nephropathy
+ ;;^UTILITY(U,$J,358.3,8258,1,4,0)
+ ;;=4^E11.21
+ ;;^UTILITY(U,$J,358.3,8258,2)
+ ;;=^5002629
+ ;;^UTILITY(U,$J,358.3,8259,0)
+ ;;=E83.41^^55^537^29
+ ;;^UTILITY(U,$J,358.3,8259,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8259,1,3,0)
+ ;;=3^Hypermagnesemia
+ ;;^UTILITY(U,$J,358.3,8259,1,4,0)
+ ;;=4^E83.41
+ ;;^UTILITY(U,$J,358.3,8259,2)
+ ;;=^5003002
+ ;;^UTILITY(U,$J,358.3,8260,0)
+ ;;=E83.42^^55^537^35
+ ;;^UTILITY(U,$J,358.3,8260,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8260,1,3,0)
+ ;;=3^Hypomagnesemia
+ ;;^UTILITY(U,$J,358.3,8260,1,4,0)
+ ;;=4^E83.42
+ ;;^UTILITY(U,$J,358.3,8260,2)
+ ;;=^5003003
+ ;;^UTILITY(U,$J,358.3,8261,0)
+ ;;=E83.51^^55^537^33
+ ;;^UTILITY(U,$J,358.3,8261,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8261,1,3,0)
+ ;;=3^Hypocalcemia
+ ;;^UTILITY(U,$J,358.3,8261,1,4,0)
+ ;;=4^E83.51
+ ;;^UTILITY(U,$J,358.3,8261,2)
+ ;;=^60542
+ ;;^UTILITY(U,$J,358.3,8262,0)
+ ;;=E83.52^^55^537^27
+ ;;^UTILITY(U,$J,358.3,8262,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8262,1,3,0)
+ ;;=3^Hypercalcemia
+ ;;^UTILITY(U,$J,358.3,8262,1,4,0)
+ ;;=4^E83.52
+ ;;^UTILITY(U,$J,358.3,8262,2)
+ ;;=^59932
+ ;;^UTILITY(U,$J,358.3,8263,0)
+ ;;=E87.0^^55^537^30
+ ;;^UTILITY(U,$J,358.3,8263,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8263,1,3,0)
+ ;;=3^Hyperosmolality and hypernatremia
+ ;;^UTILITY(U,$J,358.3,8263,1,4,0)
+ ;;=4^E87.0
+ ;;^UTILITY(U,$J,358.3,8263,2)
+ ;;=^5003018
+ ;;^UTILITY(U,$J,358.3,8264,0)
+ ;;=E87.1^^55^537^31
+ ;;^UTILITY(U,$J,358.3,8264,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8264,1,3,0)
+ ;;=3^Hypo-osmolality and hyponatremia
+ ;;^UTILITY(U,$J,358.3,8264,1,4,0)
+ ;;=4^E87.1
+ ;;^UTILITY(U,$J,358.3,8264,2)
+ ;;=^5003019
+ ;;^UTILITY(U,$J,358.3,8265,0)
+ ;;=E87.5^^55^537^28
+ ;;^UTILITY(U,$J,358.3,8265,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8265,1,3,0)
+ ;;=3^Hyperkalemia
+ ;;^UTILITY(U,$J,358.3,8265,1,4,0)
+ ;;=4^E87.5
+ ;;^UTILITY(U,$J,358.3,8265,2)
+ ;;=^60041
+ ;;^UTILITY(U,$J,358.3,8266,0)
+ ;;=E87.6^^55^537^34
+ ;;^UTILITY(U,$J,358.3,8266,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8266,1,3,0)
+ ;;=3^Hypokalemia
+ ;;^UTILITY(U,$J,358.3,8266,1,4,0)
+ ;;=4^E87.6
+ ;;^UTILITY(U,$J,358.3,8266,2)
+ ;;=^60610
+ ;;^UTILITY(U,$J,358.3,8267,0)
+ ;;=F52.0^^55^537^32
+ ;;^UTILITY(U,$J,358.3,8267,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8267,1,3,0)
+ ;;=3^Hypoactive sexual desire disorder
+ ;;^UTILITY(U,$J,358.3,8267,1,4,0)
+ ;;=4^F52.0
+ ;;^UTILITY(U,$J,358.3,8267,2)
+ ;;=^5003618
+ ;;^UTILITY(U,$J,358.3,8268,0)
+ ;;=F52.21^^55^537^39
+ ;;^UTILITY(U,$J,358.3,8268,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8268,1,3,0)
+ ;;=3^Male erectile disorder
+ ;;^UTILITY(U,$J,358.3,8268,1,4,0)
+ ;;=4^F52.21
+ ;;^UTILITY(U,$J,358.3,8268,2)
+ ;;=^5003620
+ ;;^UTILITY(U,$J,358.3,8269,0)
+ ;;=I12.9^^55^537^25
+ ;;^UTILITY(U,$J,358.3,8269,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8269,1,3,0)
+ ;;=3^Hyp chr kidney disease w stage 1-4/unsp chr kdny
+ ;;^UTILITY(U,$J,358.3,8269,1,4,0)
+ ;;=4^I12.9
+ ;;^UTILITY(U,$J,358.3,8269,2)
+ ;;=^5007066
+ ;;^UTILITY(U,$J,358.3,8270,0)
+ ;;=I12.0^^55^537^26
+ ;;^UTILITY(U,$J,358.3,8270,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8270,1,3,0)
+ ;;=3^Hyp chr kidney disease w stage 5 chr kidney disease or ESRD
+ ;;^UTILITY(U,$J,358.3,8270,1,4,0)
+ ;;=4^I12.0
+ ;;^UTILITY(U,$J,358.3,8270,2)
+ ;;=^5007065
+ ;;^UTILITY(U,$J,358.3,8271,0)
+ ;;=K40.90^^55^537^62
+ ;;^UTILITY(U,$J,358.3,8271,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8271,1,3,0)
+ ;;=3^Unil inguinal hernia, w/o obst or gangr, not spcf as recur

@@ -1,140 +1,126 @@
-IBDEI0EG ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0EG ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,6970,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6970,1,4,0)
- ;;=4^592.0
- ;;^UTILITY(U,$J,358.3,6970,1,5,0)
- ;;=5^Renal Calculi
- ;;^UTILITY(U,$J,358.3,6970,2)
- ;;=^67056
- ;;^UTILITY(U,$J,358.3,6971,0)
- ;;=403.91^^55^575^50
- ;;^UTILITY(U,$J,358.3,6971,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6971,1,4,0)
- ;;=4^403.91
- ;;^UTILITY(U,$J,358.3,6971,1,5,0)
- ;;=5^Renal Failure, Chronic Hypertensive
- ;;^UTILITY(U,$J,358.3,6971,2)
- ;;=^269610
- ;;^UTILITY(U,$J,358.3,6972,0)
- ;;=586.^^55^575^53
- ;;^UTILITY(U,$J,358.3,6972,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6972,1,4,0)
- ;;=4^586.
- ;;^UTILITY(U,$J,358.3,6972,1,5,0)
- ;;=5^Uremia
- ;;^UTILITY(U,$J,358.3,6972,2)
- ;;=Uremia^104733
- ;;^UTILITY(U,$J,358.3,6973,0)
- ;;=599.0^^55^575^65
- ;;^UTILITY(U,$J,358.3,6973,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6973,1,4,0)
- ;;=4^599.0
- ;;^UTILITY(U,$J,358.3,6973,1,5,0)
- ;;=5^Urinary Tract Infection
- ;;^UTILITY(U,$J,358.3,6973,2)
- ;;=Urinary Tract Infection^124436
- ;;^UTILITY(U,$J,358.3,6974,0)
- ;;=275.42^^55^575^28
- ;;^UTILITY(U,$J,358.3,6974,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6974,1,4,0)
- ;;=4^275.42
- ;;^UTILITY(U,$J,358.3,6974,1,5,0)
- ;;=5^Hypercalcemia
- ;;^UTILITY(U,$J,358.3,6974,2)
- ;;=Hypercalcemia^59932
- ;;^UTILITY(U,$J,358.3,6975,0)
- ;;=275.41^^55^575^31
- ;;^UTILITY(U,$J,358.3,6975,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6975,1,4,0)
- ;;=4^275.41
- ;;^UTILITY(U,$J,358.3,6975,1,5,0)
- ;;=5^Hypocalcemia
- ;;^UTILITY(U,$J,358.3,6975,2)
- ;;=Hypocalcemia^60542
- ;;^UTILITY(U,$J,358.3,6976,0)
- ;;=276.7^^55^575^29
- ;;^UTILITY(U,$J,358.3,6976,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6976,1,4,0)
- ;;=4^276.7
- ;;^UTILITY(U,$J,358.3,6976,1,5,0)
- ;;=5^Hyperkalemia/Hyperpotassemia
- ;;^UTILITY(U,$J,358.3,6976,2)
- ;;=Hyperkalemia/Hyperpotassemia^60042
- ;;^UTILITY(U,$J,358.3,6977,0)
- ;;=276.8^^55^575^32
- ;;^UTILITY(U,$J,358.3,6977,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6977,1,4,0)
- ;;=4^276.8
- ;;^UTILITY(U,$J,358.3,6977,1,5,0)
- ;;=5^Hypokalemia/Hypopotassemia
- ;;^UTILITY(U,$J,358.3,6977,2)
- ;;=Hypokalemia/Hypopotassemia^60611
- ;;^UTILITY(U,$J,358.3,6978,0)
- ;;=275.2^^55^575^26
- ;;^UTILITY(U,$J,358.3,6978,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6978,1,4,0)
- ;;=4^275.2
- ;;^UTILITY(U,$J,358.3,6978,1,5,0)
- ;;=5^Hyper Or Hypomagnesemia
- ;;^UTILITY(U,$J,358.3,6978,2)
- ;;=^35626
- ;;^UTILITY(U,$J,358.3,6979,0)
- ;;=276.0^^55^575^30
- ;;^UTILITY(U,$J,358.3,6979,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6979,1,4,0)
- ;;=4^276.0
- ;;^UTILITY(U,$J,358.3,6979,1,5,0)
- ;;=5^Hypernatremia
- ;;^UTILITY(U,$J,358.3,6979,2)
- ;;=^60144
- ;;^UTILITY(U,$J,358.3,6980,0)
- ;;=276.1^^55^575^33
- ;;^UTILITY(U,$J,358.3,6980,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6980,1,4,0)
- ;;=4^276.1
- ;;^UTILITY(U,$J,358.3,6980,1,5,0)
- ;;=5^Hyponatremia
- ;;^UTILITY(U,$J,358.3,6980,2)
- ;;=Hyponatremia^60722
- ;;^UTILITY(U,$J,358.3,6981,0)
- ;;=275.3^^55^575^27
- ;;^UTILITY(U,$J,358.3,6981,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6981,1,4,0)
- ;;=4^275.3
- ;;^UTILITY(U,$J,358.3,6981,1,5,0)
- ;;=5^Hyper Or Hypophosphatemia
- ;;^UTILITY(U,$J,358.3,6981,2)
- ;;=^93796
- ;;^UTILITY(U,$J,358.3,6982,0)
- ;;=250.40^^55^575^16
- ;;^UTILITY(U,$J,358.3,6982,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6982,1,4,0)
- ;;=4^250.40
- ;;^UTILITY(U,$J,358.3,6982,1,5,0)
- ;;=5^DM type II with Nephropathy
- ;;^UTILITY(U,$J,358.3,6982,2)
- ;;=DM type II with Nephropathy^267837^583.81
- ;;^UTILITY(U,$J,358.3,6983,0)
- ;;=790.93^^55^575^1
- ;;^UTILITY(U,$J,358.3,6983,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6983,1,4,0)
- ;;=4^790.93
- ;;^UTILITY(U,$J,358.3,6983,1,5,0)
- ;;=5^Abnormal PSA
+ ;;^UTILITY(U,$J,358.3,6309,0)
+ ;;=S31.134A^^40^388^3
+ ;;^UTILITY(U,$J,358.3,6309,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6309,1,3,0)
+ ;;=3^Puncture Wound w/o FB of LLQ of Abd Wall w/o Penet Perit Cav,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6309,1,4,0)
+ ;;=4^S31.134A
+ ;;^UTILITY(U,$J,358.3,6309,2)
+ ;;=^5134457
+ ;;^UTILITY(U,$J,358.3,6310,0)
+ ;;=S31.823A^^40^388^6
+ ;;^UTILITY(U,$J,358.3,6310,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6310,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Left Buttock,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6310,1,4,0)
+ ;;=4^S31.823A
+ ;;^UTILITY(U,$J,358.3,6310,2)
+ ;;=^5024314
+ ;;^UTILITY(U,$J,358.3,6311,0)
+ ;;=S31.130A^^40^388^36
+ ;;^UTILITY(U,$J,358.3,6311,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6311,1,3,0)
+ ;;=3^Puncture Wound w/o FB of RUQ of Abd Wall w/o Penet Perit Cav,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6311,1,4,0)
+ ;;=4^S31.130A
+ ;;^UTILITY(U,$J,358.3,6311,2)
+ ;;=^5024071
+ ;;^UTILITY(U,$J,358.3,6312,0)
+ ;;=S31.131A^^40^388^4
+ ;;^UTILITY(U,$J,358.3,6312,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6312,1,3,0)
+ ;;=3^Puncture Wound w/o FB of LUQ of Abd Wall w/o Penet Perit Cav,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6312,1,4,0)
+ ;;=4^S31.131A
+ ;;^UTILITY(U,$J,358.3,6312,2)
+ ;;=^5024074
+ ;;^UTILITY(U,$J,358.3,6313,0)
+ ;;=S41.031A^^40^388^59
+ ;;^UTILITY(U,$J,358.3,6313,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6313,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Right Shoulder,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6313,1,4,0)
+ ;;=4^S41.031A
+ ;;^UTILITY(U,$J,358.3,6313,2)
+ ;;=^5026309
+ ;;^UTILITY(U,$J,358.3,6314,0)
+ ;;=S41.032A^^40^388^27
+ ;;^UTILITY(U,$J,358.3,6314,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6314,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Left Shoulder,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6314,1,4,0)
+ ;;=4^S41.032A
+ ;;^UTILITY(U,$J,358.3,6314,2)
+ ;;=^5026312
+ ;;^UTILITY(U,$J,358.3,6315,0)
+ ;;=S51.031A^^40^388^41
+ ;;^UTILITY(U,$J,358.3,6315,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6315,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Right Elbow,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6315,1,4,0)
+ ;;=4^S51.031A
+ ;;^UTILITY(U,$J,358.3,6315,2)
+ ;;=^5028638
+ ;;^UTILITY(U,$J,358.3,6316,0)
+ ;;=S51.032A^^40^388^9
+ ;;^UTILITY(U,$J,358.3,6316,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6316,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Left Elbow,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6316,1,4,0)
+ ;;=4^S51.032A
+ ;;^UTILITY(U,$J,358.3,6316,2)
+ ;;=^5028641
+ ;;^UTILITY(U,$J,358.3,6317,0)
+ ;;=S61.531A^^40^388^63
+ ;;^UTILITY(U,$J,358.3,6317,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6317,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Right Wrist,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6317,1,4,0)
+ ;;=4^S61.531A
+ ;;^UTILITY(U,$J,358.3,6317,2)
+ ;;=^5033038
+ ;;^UTILITY(U,$J,358.3,6318,0)
+ ;;=S61.532A^^40^388^31
+ ;;^UTILITY(U,$J,358.3,6318,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6318,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Left Wrist,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6318,1,4,0)
+ ;;=4^S61.532A
+ ;;^UTILITY(U,$J,358.3,6318,2)
+ ;;=^5033041
+ ;;^UTILITY(U,$J,358.3,6319,0)
+ ;;=S61.432A^^40^388^13
+ ;;^UTILITY(U,$J,358.3,6319,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6319,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Left Hand,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6319,1,4,0)
+ ;;=4^S61.432A
+ ;;^UTILITY(U,$J,358.3,6319,2)
+ ;;=^5033002
+ ;;^UTILITY(U,$J,358.3,6320,0)
+ ;;=S61.431A^^40^388^45
+ ;;^UTILITY(U,$J,358.3,6320,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6320,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Right Hand,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6320,1,4,0)
+ ;;=4^S61.431A
+ ;;^UTILITY(U,$J,358.3,6320,2)
+ ;;=^5032999
+ ;;^UTILITY(U,$J,358.3,6321,0)
+ ;;=S61.031A^^40^388^61

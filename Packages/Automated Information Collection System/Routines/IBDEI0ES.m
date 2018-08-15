@@ -1,142 +1,120 @@
-IBDEI0ES ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0ES ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,7137,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7137,1,4,0)
- ;;=4^196.8
- ;;^UTILITY(U,$J,358.3,7137,1,5,0)
- ;;=5^Mets to Lymph Nodes,Multiple Sites
- ;;^UTILITY(U,$J,358.3,7137,2)
- ;;=^267320
- ;;^UTILITY(U,$J,358.3,7138,0)
- ;;=V10.51^^55^577^56
- ;;^UTILITY(U,$J,358.3,7138,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7138,1,4,0)
- ;;=4^V10.51
- ;;^UTILITY(U,$J,358.3,7138,1,5,0)
- ;;=5^H/O Bladder Cancer
- ;;^UTILITY(U,$J,358.3,7138,2)
- ;;=^295228
- ;;^UTILITY(U,$J,358.3,7139,0)
- ;;=V10.3^^55^577^57
- ;;^UTILITY(U,$J,358.3,7139,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7139,1,4,0)
- ;;=4^V10.3
- ;;^UTILITY(U,$J,358.3,7139,1,5,0)
- ;;=5^H/O Breast Cancer
- ;;^UTILITY(U,$J,358.3,7139,2)
- ;;=^295217
- ;;^UTILITY(U,$J,358.3,7140,0)
- ;;=V10.41^^55^577^58
- ;;^UTILITY(U,$J,358.3,7140,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7140,1,4,0)
- ;;=4^V10.41
- ;;^UTILITY(U,$J,358.3,7140,1,5,0)
- ;;=5^H/O Cervical Cancer
- ;;^UTILITY(U,$J,358.3,7140,2)
- ;;=^295219
- ;;^UTILITY(U,$J,358.3,7141,0)
- ;;=V10.05^^55^577^59
- ;;^UTILITY(U,$J,358.3,7141,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7141,1,4,0)
- ;;=4^V10.05
- ;;^UTILITY(U,$J,358.3,7141,1,5,0)
- ;;=5^H/O Colon Cancer
- ;;^UTILITY(U,$J,358.3,7141,2)
- ;;=H/O Colon Cancer^295207
- ;;^UTILITY(U,$J,358.3,7142,0)
- ;;=V10.03^^55^577^60
- ;;^UTILITY(U,$J,358.3,7142,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7142,1,4,0)
- ;;=4^V10.03
- ;;^UTILITY(U,$J,358.3,7142,1,5,0)
- ;;=5^H/O Esophageal Cancer
- ;;^UTILITY(U,$J,358.3,7142,2)
- ;;=^295205
- ;;^UTILITY(U,$J,358.3,7143,0)
- ;;=V10.60^^55^577^62
- ;;^UTILITY(U,$J,358.3,7143,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7143,1,4,0)
- ;;=4^V10.60
- ;;^UTILITY(U,$J,358.3,7143,1,5,0)
- ;;=5^H/O Leukemia
- ;;^UTILITY(U,$J,358.3,7143,2)
- ;;=H/O Leukemia^295231
- ;;^UTILITY(U,$J,358.3,7144,0)
- ;;=V10.11^^55^577^63
- ;;^UTILITY(U,$J,358.3,7144,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7144,1,4,0)
- ;;=4^V10.11
- ;;^UTILITY(U,$J,358.3,7144,1,5,0)
- ;;=5^H/O Lung Cancer
- ;;^UTILITY(U,$J,358.3,7144,2)
- ;;=H/O Lung Cancer^295211
- ;;^UTILITY(U,$J,358.3,7145,0)
- ;;=V10.79^^55^577^64
- ;;^UTILITY(U,$J,358.3,7145,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7145,1,4,0)
- ;;=4^V10.79
- ;;^UTILITY(U,$J,358.3,7145,1,5,0)
- ;;=5^H/O Lymphoma
- ;;^UTILITY(U,$J,358.3,7145,2)
- ;;=H/O Lymphoma^295238
- ;;^UTILITY(U,$J,358.3,7146,0)
- ;;=V10.82^^55^577^65
- ;;^UTILITY(U,$J,358.3,7146,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7146,1,4,0)
- ;;=4^V10.82
- ;;^UTILITY(U,$J,358.3,7146,1,5,0)
- ;;=5^H/O Malig Melanoma Of Skin
- ;;^UTILITY(U,$J,358.3,7146,2)
- ;;=^295240
- ;;^UTILITY(U,$J,358.3,7147,0)
- ;;=V10.02^^55^577^68
- ;;^UTILITY(U,$J,358.3,7147,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7147,1,4,0)
- ;;=4^V10.02
- ;;^UTILITY(U,$J,358.3,7147,1,5,0)
- ;;=5^H/O Oral Cavity/Pharynx Cancer
- ;;^UTILITY(U,$J,358.3,7147,2)
- ;;=^295204
- ;;^UTILITY(U,$J,358.3,7148,0)
- ;;=V10.43^^55^577^69
- ;;^UTILITY(U,$J,358.3,7148,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7148,1,4,0)
- ;;=4^V10.43
- ;;^UTILITY(U,$J,358.3,7148,1,5,0)
- ;;=5^H/O Ovarian Cancer
- ;;^UTILITY(U,$J,358.3,7148,2)
- ;;=^295221
- ;;^UTILITY(U,$J,358.3,7149,0)
- ;;=V10.46^^55^577^70
- ;;^UTILITY(U,$J,358.3,7149,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7149,1,4,0)
- ;;=4^V10.46
- ;;^UTILITY(U,$J,358.3,7149,1,5,0)
- ;;=5^H/O Prostate Cancer
- ;;^UTILITY(U,$J,358.3,7149,2)
- ;;=^295224
- ;;^UTILITY(U,$J,358.3,7150,0)
- ;;=V10.06^^55^577^71
- ;;^UTILITY(U,$J,358.3,7150,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7150,1,4,0)
- ;;=4^V10.06
- ;;^UTILITY(U,$J,358.3,7150,1,5,0)
- ;;=5^H/O Rectal/Anal Cancer
- ;;^UTILITY(U,$J,358.3,7150,2)
- ;;=^295208
+ ;;^UTILITY(U,$J,358.3,6462,0)
+ ;;=I63.9^^43^401^5
+ ;;^UTILITY(U,$J,358.3,6462,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6462,1,3,0)
+ ;;=3^Cerebral Infarction w/ Behavioral Disturbance,Unspec
+ ;;^UTILITY(U,$J,358.3,6462,1,4,0)
+ ;;=4^I63.9
+ ;;^UTILITY(U,$J,358.3,6462,2)
+ ;;=^5007355^F01.51
+ ;;^UTILITY(U,$J,358.3,6463,0)
+ ;;=I65.9^^43^401^25
+ ;;^UTILITY(U,$J,358.3,6463,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6463,1,3,0)
+ ;;=3^Occlusion/Stenosis of Precerebral Artery w/o Behavioral Disturbance,Unspec
+ ;;^UTILITY(U,$J,358.3,6463,1,4,0)
+ ;;=4^I65.9
+ ;;^UTILITY(U,$J,358.3,6463,2)
+ ;;=^269751^F01.50
+ ;;^UTILITY(U,$J,358.3,6464,0)
+ ;;=I65.9^^43^401^26
+ ;;^UTILITY(U,$J,358.3,6464,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6464,1,3,0)
+ ;;=3^Occlusion/Stenosis of Precerebral Artery w/ Behavioral Disturbance,Unspec
+ ;;^UTILITY(U,$J,358.3,6464,1,4,0)
+ ;;=4^I65.9
+ ;;^UTILITY(U,$J,358.3,6464,2)
+ ;;=^269751^F01.51
+ ;;^UTILITY(U,$J,358.3,6465,0)
+ ;;=I66.9^^43^401^23
+ ;;^UTILITY(U,$J,358.3,6465,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6465,1,3,0)
+ ;;=3^Occlusion/Stenosis of Cerebral Artery w/o Behavioral Disturbance,Unspec
+ ;;^UTILITY(U,$J,358.3,6465,1,4,0)
+ ;;=4^I66.9
+ ;;^UTILITY(U,$J,358.3,6465,2)
+ ;;=^5007379^F01.50
+ ;;^UTILITY(U,$J,358.3,6466,0)
+ ;;=I66.9^^43^401^24
+ ;;^UTILITY(U,$J,358.3,6466,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6466,1,3,0)
+ ;;=3^Occlusion/Stenosis of Cerebral Artery w/ Behavioral Disturbance,Unspec
+ ;;^UTILITY(U,$J,358.3,6466,1,4,0)
+ ;;=4^I66.9
+ ;;^UTILITY(U,$J,358.3,6466,2)
+ ;;=^5007379^F01.51
+ ;;^UTILITY(U,$J,358.3,6467,0)
+ ;;=I67.9^^43^401^8
+ ;;^UTILITY(U,$J,358.3,6467,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6467,1,3,0)
+ ;;=3^Cerebrovascular Disease w/o Behavioral Disturbance,Unspec
+ ;;^UTILITY(U,$J,358.3,6467,1,4,0)
+ ;;=4^I67.9
+ ;;^UTILITY(U,$J,358.3,6467,2)
+ ;;=^5007389^F01.50
+ ;;^UTILITY(U,$J,358.3,6468,0)
+ ;;=I67.9^^43^401^7
+ ;;^UTILITY(U,$J,358.3,6468,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6468,1,3,0)
+ ;;=3^Cerebrovascular Disease w/ Behavioral Disturbance,Unspec
+ ;;^UTILITY(U,$J,358.3,6468,1,4,0)
+ ;;=4^I67.9
+ ;;^UTILITY(U,$J,358.3,6468,2)
+ ;;=^5007389^F01.51
+ ;;^UTILITY(U,$J,358.3,6469,0)
+ ;;=I68.8^^43^401^9
+ ;;^UTILITY(U,$J,358.3,6469,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6469,1,3,0)
+ ;;=3^Cerebrovascular Disorder in Oth Diseases w/o Behavioral Disturbance NEC
+ ;;^UTILITY(U,$J,358.3,6469,1,4,0)
+ ;;=4^I68.8
+ ;;^UTILITY(U,$J,358.3,6469,2)
+ ;;=^5007392^F01.50
+ ;;^UTILITY(U,$J,358.3,6470,0)
+ ;;=I68.8^^43^401^10
+ ;;^UTILITY(U,$J,358.3,6470,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6470,1,3,0)
+ ;;=3^Cerebrovascular Disorder in Oth Diseases w/ Behavioral Disturbance NEC
+ ;;^UTILITY(U,$J,358.3,6470,1,4,0)
+ ;;=4^I68.8
+ ;;^UTILITY(U,$J,358.3,6470,2)
+ ;;=^5007392^F01.51
+ ;;^UTILITY(U,$J,358.3,6471,0)
+ ;;=I69.990^^43^401^1
+ ;;^UTILITY(U,$J,358.3,6471,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6471,1,3,0)
+ ;;=3^Apraxia Following Cerebrovascular Disease w/o Behavioral Disturbance
+ ;;^UTILITY(U,$J,358.3,6471,1,4,0)
+ ;;=4^I69.990
+ ;;^UTILITY(U,$J,358.3,6471,2)
+ ;;=^5007568^F01.50
+ ;;^UTILITY(U,$J,358.3,6472,0)
+ ;;=I69.990^^43^401^2
+ ;;^UTILITY(U,$J,358.3,6472,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6472,1,3,0)
+ ;;=3^Apraxia Following Cerebrovascular Disease w/ Behavioral Disturbance
+ ;;^UTILITY(U,$J,358.3,6472,1,4,0)
+ ;;=4^I69.990
+ ;;^UTILITY(U,$J,358.3,6472,2)
+ ;;=^5007568^F01.51
+ ;;^UTILITY(U,$J,358.3,6473,0)
+ ;;=I69.991^^43^401^11
+ ;;^UTILITY(U,$J,358.3,6473,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6473,1,3,0)
+ ;;=3^Dysphagia Following Cerebrovascular Disease w/ Behavioral Disturbance

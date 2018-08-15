@@ -1,5 +1,5 @@
-RORUTL15 ;HCIOFO/BH,SG - PHARMACY DATA SEARCH (TOOLS) ;12/21/05 11:11am
- ;;1.5;CLINICAL CASE REGISTRIES;**13**;Feb 17, 2006;Build 27
+RORUTL15 ;HCIOFO/BH,SG - PHARMACY DATA SEARCH (TOOLS) ; 04 Apr 2016  4:57 PM
+ ;;1.5;CLINICAL CASE REGISTRIES;**13,26,28**;Feb 17, 2006;Build 66
  ;
  ; This routine uses the following IAs:
  ;
@@ -8,6 +8,7 @@ RORUTL15 ;HCIOFO/BH,SG - PHARMACY DATA SEARCH (TOOLS) ;12/21/05 11:11am
  ; #4543         IEN^PSN50P65 (supported)
  ; #4549         ZERO^PSS52P6 (supported)
  ; #4826         PSS436^PSS55 (supported)
+ ; #10104        UP^XLFSTR (supported)
  ;
  ;******************************************************************************
  ;******************************************************************************
@@ -22,6 +23,13 @@ RORUTL15 ;HCIOFO/BH,SG - PHARMACY DATA SEARCH (TOOLS) ;12/21/05 11:11am
  ;                                      Any references to patch 11 in the code
  ;                                      below is referring to path 13.
  ;
+ ;ROR*1.5*26   JUN 2015    T KOPP       Callback function for SVR screening
+ ;                                      does not require the # of refills as a
+ ;                                      parameter for the Patient Med History
+ ;                                      Report, so a check is made for callback
+ ;                                      entry point RXOCB to prevent adding it.
+ ;
+ ;ROR*1.5*28   APR  2016   T KOPP       Check for DAA drug/in house param
  ;******************************************************************************
  ;******************************************************************************
  Q
@@ -85,10 +93,10 @@ PROCESS(PTIEN,RORFLAGS,ROR8LST) ;
  . ;standard callback setup
  . S ROR8SET="S RC="_ROR8DST("RORCB")_"(.ROR8DST,ORDER"
  . S ROR8SET=ROR8SET_",ORDFLG,DRUGIEN_U_DRUGNAME,ORDDATE)"
- . ;Patch 11: Variable 'RORX011' is set in routine RORX011 for the
+ . ;Patch 11/13: Variable 'RORX011' is set in routine RORX011 for the
  . ;Patient Medications History report.  If set, add # refills
  . ;remaining (NUMREF) to the callback parameter list.
- . I $G(RORX011) S ROR8SET=$E(ROR8SET,1,$L(ROR8SET)-1)_",$G(NUMREF))"
+ . I $G(RORX011),$G(ROR8DST("RORCB"))'["RXOCB" S ROR8SET=$E(ROR8SET,1,$L(ROR8SET)-1)_",$G(NUMREF))"
  . ;---
  . S ROR8DST("RORDFN")=PTIEN
  . S ROR8DST("ROREDT")=ROREDT
@@ -99,15 +107,20 @@ PROCESS(PTIEN,RORFLAGS,ROR8LST) ;
  ;=== Process the list of preselected orders
  S (IRX,RC)=0
  F  S IRX=$O(@ROR8LST@(IRX))  Q:'IRX  D  Q:RC
+ . N REMARK,CHOICE
  . S ORDFLG=$P(@ROR8LST@(IRX),U)
  . S TMP=@ROR8LST@(IRX,0)
  . S ORDER=$P(TMP,U),ORDDATE=$P(TMP,U,15)
- . ;Patch 11: get #refills remaining for Patient Medication History report:
+ . ;Patch 11/13: get #refills remaining for Patient Medication History report:
  . I $G(RORX011) S NUMREF=$P(TMP,U,5)
  . ;--- Get the order details
  . K ^TMP("PS",$J)
  . D OEL^PSOORRL(PTIEN,ORDER)
  . Q:$D(^TMP("PS",$J))<10
+ . ; Check order remark for "CHOICE"
+ . I RORFLAGS["C"!(RORFLAGS["H") D  Q:$S(RORFLAGS["C":'CHOICE,RORFLAGS["H":CHOICE,1:0)
+ . . S REMARK=$$UP^XLFSTR($P($G(^TMP("PS",$J,"RXN",0)),U,4))
+ . . S CHOICE=(REMARK["CHOICE") ; true if DAA drug, false if in house
  . ;=== Inpatient and Outpatient Medications
  . I ORDFLG'["V"  D  Q
  . . ;--- Double-check the dates for outpatient orders
@@ -204,7 +217,7 @@ PROCMED(ORDER,ORDFLG,DRUGIEN,ORDDATE) ;
  . S $P(TMP,U,5,6)=ROR8DST("RORXVCL")
  . S @ROR8DST@(RORXCNT)=TMP
  ;=== Callback function
- X ROR8SET  ; (.ROR8DST,ORDER,ORDFLG,DRUGIEN_U_DRUGNAME,ORDDATE)
+ X ROR8SET  ; (.ROR8DST,ORDER,ORDFLG,DRUGIEN_U_DRUGNAME,ORDDATE,special data for specific reports)
  Q RC
  ;
  ;***** LOADS AND PRESELECTS PHARMACY ORDERS

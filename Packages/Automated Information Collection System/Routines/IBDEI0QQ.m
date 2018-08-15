@@ -1,144 +1,122 @@
-IBDEI0QQ ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0QQ ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,13187,1,5,0)
- ;;=5^Screen for HIV
- ;;^UTILITY(U,$J,358.3,13187,2)
- ;;=^295833
- ;;^UTILITY(U,$J,358.3,13188,0)
- ;;=V74.5^^87^830^91
- ;;^UTILITY(U,$J,358.3,13188,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13188,1,4,0)
- ;;=4^V74.5
- ;;^UTILITY(U,$J,358.3,13188,1,5,0)
- ;;=5^Screen for STD's
- ;;^UTILITY(U,$J,358.3,13188,2)
- ;;=^295637
- ;;^UTILITY(U,$J,358.3,13189,0)
- ;;=V68.81^^87^830^92
- ;;^UTILITY(U,$J,358.3,13189,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13189,1,4,0)
- ;;=4^V68.81
- ;;^UTILITY(U,$J,358.3,13189,1,5,0)
- ;;=5^Transfer of Care
- ;;^UTILITY(U,$J,358.3,13189,2)
- ;;=^295587
- ;;^UTILITY(U,$J,358.3,13190,0)
- ;;=919.1^^87^831^1
- ;;^UTILITY(U,$J,358.3,13190,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13190,1,4,0)
- ;;=4^919.1
- ;;^UTILITY(U,$J,358.3,13190,1,5,0)
- ;;=5^Abrasion, Infected
- ;;^UTILITY(U,$J,358.3,13190,2)
- ;;=^275358
- ;;^UTILITY(U,$J,358.3,13191,0)
- ;;=919.0^^87^831^2
- ;;^UTILITY(U,$J,358.3,13191,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13191,1,4,0)
- ;;=4^919.0
- ;;^UTILITY(U,$J,358.3,13191,1,5,0)
- ;;=5^Abrasion, Not Infected
- ;;^UTILITY(U,$J,358.3,13191,2)
- ;;=^1305
- ;;^UTILITY(U,$J,358.3,13192,0)
- ;;=924.9^^87^831^6
- ;;^UTILITY(U,$J,358.3,13192,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13192,1,4,0)
- ;;=4^924.9
- ;;^UTILITY(U,$J,358.3,13192,1,5,0)
- ;;=5^Contusion NOS
- ;;^UTILITY(U,$J,358.3,13192,2)
- ;;=^28117
- ;;^UTILITY(U,$J,358.3,13193,0)
- ;;=879.8^^87^831^10
- ;;^UTILITY(U,$J,358.3,13193,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13193,1,4,0)
- ;;=4^879.8
- ;;^UTILITY(U,$J,358.3,13193,1,5,0)
- ;;=5^Open Wound NOS
- ;;^UTILITY(U,$J,358.3,13193,2)
- ;;=^275021
- ;;^UTILITY(U,$J,358.3,13194,0)
- ;;=919.3^^87^831^4
- ;;^UTILITY(U,$J,358.3,13194,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13194,1,4,0)
- ;;=4^919.3
- ;;^UTILITY(U,$J,358.3,13194,1,5,0)
- ;;=5^Blister, Infected
- ;;^UTILITY(U,$J,358.3,13194,2)
- ;;=^275359
- ;;^UTILITY(U,$J,358.3,13195,0)
- ;;=919.2^^87^831^5
- ;;^UTILITY(U,$J,358.3,13195,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13195,1,4,0)
- ;;=4^919.2
- ;;^UTILITY(U,$J,358.3,13195,1,5,0)
- ;;=5^Blister, Not Infected
- ;;^UTILITY(U,$J,358.3,13195,2)
- ;;=^15350
- ;;^UTILITY(U,$J,358.3,13196,0)
- ;;=919.5^^87^831^8
- ;;^UTILITY(U,$J,358.3,13196,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13196,1,4,0)
- ;;=4^919.5
- ;;^UTILITY(U,$J,358.3,13196,1,5,0)
- ;;=5^Insect Bite, Infected
- ;;^UTILITY(U,$J,358.3,13196,2)
- ;;=^275360
- ;;^UTILITY(U,$J,358.3,13197,0)
- ;;=919.4^^87^831^9
- ;;^UTILITY(U,$J,358.3,13197,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13197,1,4,0)
- ;;=4^919.4
- ;;^UTILITY(U,$J,358.3,13197,1,5,0)
- ;;=5^Insect Bite, Not Infected
- ;;^UTILITY(U,$J,358.3,13197,2)
- ;;=^63612
- ;;^UTILITY(U,$J,358.3,13198,0)
- ;;=919.7^^87^831^21
- ;;^UTILITY(U,$J,358.3,13198,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13198,1,4,0)
- ;;=4^919.7
- ;;^UTILITY(U,$J,358.3,13198,1,5,0)
- ;;=5^Sup Foreign Body Infected
- ;;^UTILITY(U,$J,358.3,13198,2)
- ;;=^275362
- ;;^UTILITY(U,$J,358.3,13199,0)
- ;;=919.6^^87^831^22
- ;;^UTILITY(U,$J,358.3,13199,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13199,1,4,0)
- ;;=4^919.6
- ;;^UTILITY(U,$J,358.3,13199,1,5,0)
- ;;=5^Sup Foreign Body No Infec
- ;;^UTILITY(U,$J,358.3,13199,2)
- ;;=^275361
- ;;^UTILITY(U,$J,358.3,13200,0)
- ;;=919.9^^87^831^23
- ;;^UTILITY(U,$J,358.3,13200,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13200,1,4,0)
- ;;=4^919.9
- ;;^UTILITY(U,$J,358.3,13200,1,5,0)
- ;;=5^Sup Injury, Infected
- ;;^UTILITY(U,$J,358.3,13200,2)
- ;;=^275364
- ;;^UTILITY(U,$J,358.3,13201,0)
- ;;=919.8^^87^831^24
- ;;^UTILITY(U,$J,358.3,13201,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13201,1,4,0)
- ;;=4^919.8
+ ;;^UTILITY(U,$J,358.3,12244,2)
+ ;;=^5026336
+ ;;^UTILITY(U,$J,358.3,12245,0)
+ ;;=S41.112A^^71^708^123
+ ;;^UTILITY(U,$J,358.3,12245,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12245,1,3,0)
+ ;;=3^Laceration w/o fb of left upper arm, init encntr
+ ;;^UTILITY(U,$J,358.3,12245,1,4,0)
+ ;;=4^S41.112A
+ ;;^UTILITY(U,$J,358.3,12245,2)
+ ;;=^5026339
+ ;;^UTILITY(U,$J,358.3,12246,0)
+ ;;=S61.210A^^71^708^128
+ ;;^UTILITY(U,$J,358.3,12246,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12246,1,3,0)
+ ;;=3^Laceration w/o fb of right indx fngr w/o damage to nail, init
+ ;;^UTILITY(U,$J,358.3,12246,1,4,0)
+ ;;=4^S61.210A
+ ;;^UTILITY(U,$J,358.3,12246,2)
+ ;;=^5032771
+ ;;^UTILITY(U,$J,358.3,12247,0)
+ ;;=S61.211A^^71^708^116
+ ;;^UTILITY(U,$J,358.3,12247,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12247,1,3,0)
+ ;;=3^Laceration w/o fb of left indx fngr w/o damage to nail, init
+ ;;^UTILITY(U,$J,358.3,12247,1,4,0)
+ ;;=4^S61.211A
+ ;;^UTILITY(U,$J,358.3,12247,2)
+ ;;=^5032774
+ ;;^UTILITY(U,$J,358.3,12248,0)
+ ;;=S61.212A^^71^708^132
+ ;;^UTILITY(U,$J,358.3,12248,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12248,1,3,0)
+ ;;=3^Laceration w/o fb of right mid finger w/o damage to nail, init
+ ;;^UTILITY(U,$J,358.3,12248,1,4,0)
+ ;;=4^S61.212A
+ ;;^UTILITY(U,$J,358.3,12248,2)
+ ;;=^5032777
+ ;;^UTILITY(U,$J,358.3,12249,0)
+ ;;=S61.213A^^71^708^120
+ ;;^UTILITY(U,$J,358.3,12249,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12249,1,3,0)
+ ;;=3^Laceration w/o fb of left mid finger w/o damage to nail, init
+ ;;^UTILITY(U,$J,358.3,12249,1,4,0)
+ ;;=4^S61.213A
+ ;;^UTILITY(U,$J,358.3,12249,2)
+ ;;=^5032780
+ ;;^UTILITY(U,$J,358.3,12250,0)
+ ;;=S61.214A^^71^708^133
+ ;;^UTILITY(U,$J,358.3,12250,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12250,1,3,0)
+ ;;=3^Laceration w/o fb of right rng fngr w/o damage to nail, init
+ ;;^UTILITY(U,$J,358.3,12250,1,4,0)
+ ;;=4^S61.214A
+ ;;^UTILITY(U,$J,358.3,12250,2)
+ ;;=^5032783
+ ;;^UTILITY(U,$J,358.3,12251,0)
+ ;;=S61.215A^^71^708^121
+ ;;^UTILITY(U,$J,358.3,12251,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12251,1,3,0)
+ ;;=3^Laceration w/o fb of left rng fngr w/o damage to nail, init
+ ;;^UTILITY(U,$J,358.3,12251,1,4,0)
+ ;;=4^S61.215A
+ ;;^UTILITY(U,$J,358.3,12251,2)
+ ;;=^5032786
+ ;;^UTILITY(U,$J,358.3,12252,0)
+ ;;=S61.216A^^71^708^130
+ ;;^UTILITY(U,$J,358.3,12252,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12252,1,3,0)
+ ;;=3^Laceration w/o fb of right litttle finger w/o damage to nail, init
+ ;;^UTILITY(U,$J,358.3,12252,1,4,0)
+ ;;=4^S61.216A
+ ;;^UTILITY(U,$J,358.3,12252,2)
+ ;;=^5032789
+ ;;^UTILITY(U,$J,358.3,12253,0)
+ ;;=S61.217A^^71^708^118
+ ;;^UTILITY(U,$J,358.3,12253,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12253,1,3,0)
+ ;;=3^Laceration w/o fb of left little finger w/o damage to nail, init
+ ;;^UTILITY(U,$J,358.3,12253,1,4,0)
+ ;;=4^S61.217A
+ ;;^UTILITY(U,$J,358.3,12253,2)
+ ;;=^5032792
+ ;;^UTILITY(U,$J,358.3,12254,0)
+ ;;=S91.311A^^71^708^124
+ ;;^UTILITY(U,$J,358.3,12254,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12254,1,3,0)
+ ;;=3^Laceration w/o fb of right foot, init encntr
+ ;;^UTILITY(U,$J,358.3,12254,1,4,0)
+ ;;=4^S91.311A
+ ;;^UTILITY(U,$J,358.3,12254,2)
+ ;;=^5044320
+ ;;^UTILITY(U,$J,358.3,12255,0)
+ ;;=S91.312A^^71^708^112
+ ;;^UTILITY(U,$J,358.3,12255,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12255,1,3,0)
+ ;;=3^Laceration w/o fb of left foot, init encntr
+ ;;^UTILITY(U,$J,358.3,12255,1,4,0)
+ ;;=4^S91.312A
+ ;;^UTILITY(U,$J,358.3,12255,2)
+ ;;=^5044323
+ ;;^UTILITY(U,$J,358.3,12256,0)
+ ;;=S51.811A^^71^708^125
+ ;;^UTILITY(U,$J,358.3,12256,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12256,1,3,0)
+ ;;=3^Laceration w/o fb of right forearm, init encntr

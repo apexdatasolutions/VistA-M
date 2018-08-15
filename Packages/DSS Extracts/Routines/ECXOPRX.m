@@ -1,5 +1,5 @@
-ECXOPRX ;ALB/JAP,BIR/DMA,CML,PTD-Prescription Extract for DSS ;4/16/13  16:28
- ;;3.0;DSS EXTRACTS;**10,11,8,13,24,30,33,38,39,46,49,71,81,84,92,105,112,120,127,136,144,149**;Dec 22, 1997;Build 27
+ECXOPRX ;ALB/JAP,BIR/DMA,CML,PTD-Prescription Extract for DSS ;7/17/17  12:49
+ ;;3.0;DSS EXTRACTS;**10,11,8,13,24,30,33,38,39,46,49,71,81,84,92,105,112,120,127,136,144,149,154,166**;Dec 22, 1997;Build 24
  ;
 BEG ;entry point from option
  D SETUP I ECFILE="" Q
@@ -7,7 +7,8 @@ BEG ;entry point from option
  Q
  ;
 START ;entry when queued
- N X,DA,DIC,DIQ,DR,ECXNPRFI,ECRXPTST,ECNONVAP,ECRXNUM,ECXSCRX,ECXESC,ECXCLST,ECXECL ;144
+ N X,DA,DIC,DIQ,DR,ECXNPRFI,ECRXPTST,ECNONVAP,ECRXNUM,ECXSCRX,ECXESC,ECXCLST,ECXECL,ECXCHOCE ;144,154
+ N ECXOCLIN,ECXSTANO ;166
  S QFLG=0
  I '$D(ECINST) D
  .S ECINST=+$P(^ECX(728,1,0),U) K ECXDIC S DA=ECINST,DIC="^DIC(4,",DIQ(0)="I",DIQ="ECXDIC",DR=".01;99"
@@ -29,7 +30,7 @@ V6 ;version 6 or better
  Q
  ;
 STUFF ;get data
- N ECXPHA
+ N ECXPHA,DR,DIC,DA,DIQ,ECXDIQ ;154
  S ECDATA=$G(^PSRX(ECRX,0)),ECXPHA="" Q:'ECDATA
  I ECRFL S ECDATA1=$G(^PSRX(ECRX,ECREF,ECRFL,0)) I ECDATA1="" Q
  ;ecref set to 1 in extract+5 and v6+1 and to "P" in v6+2
@@ -43,8 +44,14 @@ STUFF ;get data
  S ECPRVNPI=$$NPI^XUSNPI("Individual_ID",$P(ECDATA,U,4),ECXDATE)
  S:+ECPRVNPI'>0 ECPRVNPI="" S ECPRVNPI=$P(ECPRVNPI,U)
  ;get classification data
- S ECXCLS=$G(^PSRX(ECRX,"IBQ")),ECXMIL=$P(ECXCLS,U,2),ECXAO=$P(ECXCLS,U,3),ECXIR=$P(ECXCLS,U,4),ECXECE=$P(ECXCLS,U,5),ECXHNC=$P(ECXCLS,U,6),ECXSHAD=$P(ECXCLS,U,8)
- F X="ECXMIL","ECXAO","ECXIR","ECXECE","ECXHNC","ECXSHAD" S @X=$S(@X:"Y",@X=0:"N",1:"")
+ ;154 Added section to use call to PSODI for obtaining data
+ F DR=116:1:121,122.01,128 D
+ .S DIC=52
+ .S DA=ECRX
+ .S DIQ="ECXDIQ"
+ .D DIQ^PSODI(DIC,DIC,DR,DA,DIQ)
+ .S @$S(DR=116:"ECXESC",DR=117:"ECXMIL",DR=118:"ECXAO",DR=119:"ECXIR",DR=120:"ECXECE",DR=121:"ECXHNC",DR=122.01:"ECXSHAD",1:"ECXECL")=$S($G(ECXDIQ(52,DA,DR))="YES":"Y",$G(ECXDIQ(52,DA,DR))="NO":"N",1:"")
+ .S ECXSCRX=ECXESC
  ;- Check non-va provider flag and set to 'Y' if exist
  S ECNONVAP=$$NONVAP^ECXUTL5($E(ECXPROV,2,99))
  ; ******* - PATCH 127, ADD PATCAT CODE ********
@@ -74,16 +81,16 @@ STUFF ;get data
  S ECXOBS=$$OBSPAT^ECXUTL4(ECXA,ECXTS) ;Observation pat indic (YES/NO)
  S ECXORDPH="" ;Ordering physician (null for FY2002)
  ;- Ordering stop code & Ordering date
- S ECXORDST=$P($G(^ECX(728.44,+$P(ECDATA,U,5),0)),U,2),ECXORDDT=$$ECXDATE^ECXUTL(+$P(ECDATA,U,13),ECXYM)
+ S ECXOCLIN=+$P(ECDATA,U,5)  ;166 tjl - Get Ordering Clinic from piece 5 of prescription record
+ S ECXORDST=$P($G(^ECX(728.44,ECXOCLIN,0)),U,2)
+ S ECXORDDT=$$ECXDATE^ECXUTL(+$P(ECDATA,U,13),ECXYM)  ;166 tjl - Split for legibility
+ S ECXSTANO=$$RADDIV^ECXDEPT($P($G(^SC(ECXOCLIN,0)),U,4))  ;166 tjl - Get Patient Division based on Ordering Clinic
  S ECXCNH=$$CNHSTAT^ECXUTL4(ECXDFN) ;CNH status (YES/NO)
  ;- DSS Dept and National Prod Division
  ;S ECXDSSD=$$PRE^ECXDEPT(ECXDIV,ECMW,ECINST) dss department postponed
  N ECXPDIV S ECXPDIV=$$PREDIV^ECXDEPT(ECXDIV)
  ;- Set national patient record flag if exist
  D NPRF^ECXUTL5
- S ECXSCRX=$$SCRX^ECXUTL5(ECRX) ;Service connected rx
- S ECXESC=ECXSCRX ;144 Encounter SC set based on prescription SC setting
- S ECXECL="" ;144 Encounter Camp Lejeune null until information available in prescription file
  ;- If no encounter number don't file record
  S ECXENC=$$ENCNUM^ECXUTL4(ECXA,ECXSSN,ECXADMDT,ECXDATE,ECXTS,ECXOBS,ECHEAD,,)
  I ECXLOGIC>2003 D
@@ -93,6 +100,7 @@ STUFF ;get data
  .. E  S TMP=$$JULDT^ECXUTL4(ECD),ECXENC=$E(ECXSSN,1,9)_TMP_"160"
  .. I (ECXLOGIC>2009),(ECXOBS="YES") S ECXOBS=""
  .. S ECXA="O"
+ S ECXCHOCE=$S($$UP^XLFSTR($$GET1^DIQ(52,ECRX_",",12))["CHOICE":"C",1:"") ;154 If remarks contain "choice" RX is filled by choice program
  I ECXENC'="" D FILE^ECXOPRX1
  Q
  ;

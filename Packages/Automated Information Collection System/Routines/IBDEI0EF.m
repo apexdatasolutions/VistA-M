@@ -1,140 +1,126 @@
-IBDEI0EF ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0EF ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,6956,1,5,0)
- ;;=5^Hepatitis,Autoimmune
- ;;^UTILITY(U,$J,358.3,6956,2)
- ;;=^336610
- ;;^UTILITY(U,$J,358.3,6957,0)
- ;;=787.21^^55^574^21
- ;;^UTILITY(U,$J,358.3,6957,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6957,1,4,0)
- ;;=4^787.21
- ;;^UTILITY(U,$J,358.3,6957,1,5,0)
- ;;=5^Dysphagia,Oral Phase
- ;;^UTILITY(U,$J,358.3,6957,2)
- ;;=^335276
- ;;^UTILITY(U,$J,358.3,6958,0)
- ;;=787.22^^55^574^22
- ;;^UTILITY(U,$J,358.3,6958,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6958,1,4,0)
- ;;=4^787.22
- ;;^UTILITY(U,$J,358.3,6958,1,5,0)
- ;;=5^Dysphagia,Oropharyngeal
- ;;^UTILITY(U,$J,358.3,6958,2)
- ;;=^335277
- ;;^UTILITY(U,$J,358.3,6959,0)
- ;;=787.23^^55^574^23
- ;;^UTILITY(U,$J,358.3,6959,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6959,1,4,0)
- ;;=4^787.23
- ;;^UTILITY(U,$J,358.3,6959,1,5,0)
- ;;=5^Dysphagia,Pharyngeal
- ;;^UTILITY(U,$J,358.3,6959,2)
- ;;=^335278
- ;;^UTILITY(U,$J,358.3,6960,0)
- ;;=787.24^^55^574^24
- ;;^UTILITY(U,$J,358.3,6960,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6960,1,4,0)
- ;;=4^787.24
- ;;^UTILITY(U,$J,358.3,6960,1,5,0)
- ;;=5^Dysphagia,Pharyngoesoph
- ;;^UTILITY(U,$J,358.3,6960,2)
- ;;=^335279
- ;;^UTILITY(U,$J,358.3,6961,0)
- ;;=787.29^^55^574^20
- ;;^UTILITY(U,$J,358.3,6961,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6961,1,4,0)
- ;;=4^787.29
- ;;^UTILITY(U,$J,358.3,6961,1,5,0)
- ;;=5^Dysphagia NEC
- ;;^UTILITY(U,$J,358.3,6961,2)
- ;;=^335280
- ;;^UTILITY(U,$J,358.3,6962,0)
- ;;=584.9^^55^575^2
- ;;^UTILITY(U,$J,358.3,6962,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6962,1,4,0)
- ;;=4^584.9
- ;;^UTILITY(U,$J,358.3,6962,1,5,0)
- ;;=5^Acute Renal Failure
- ;;^UTILITY(U,$J,358.3,6962,2)
- ;;=^67114
- ;;^UTILITY(U,$J,358.3,6963,0)
- ;;=583.9^^55^575^19
- ;;^UTILITY(U,$J,358.3,6963,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6963,1,4,0)
- ;;=4^583.9
- ;;^UTILITY(U,$J,358.3,6963,1,5,0)
- ;;=5^Glomerulonephritis
- ;;^UTILITY(U,$J,358.3,6963,2)
- ;;=^83446
- ;;^UTILITY(U,$J,358.3,6964,0)
- ;;=403.90^^55^575^51
- ;;^UTILITY(U,$J,358.3,6964,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6964,1,4,0)
- ;;=4^403.90
- ;;^UTILITY(U,$J,358.3,6964,1,5,0)
- ;;=5^Renal Insufficiency with Hypertension (CRI and HTN)
- ;;^UTILITY(U,$J,358.3,6964,2)
- ;;=Renal Insufficiency with Hypertension (CRI and HTN)^269609
- ;;^UTILITY(U,$J,358.3,6965,0)
- ;;=593.9^^55^575^9
- ;;^UTILITY(U,$J,358.3,6965,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6965,1,4,0)
- ;;=4^593.9
- ;;^UTILITY(U,$J,358.3,6965,1,5,0)
- ;;=5^Chronic Renal Insufficiency
- ;;^UTILITY(U,$J,358.3,6965,2)
- ;;=Chronic Renal Insufficiency^123849
- ;;^UTILITY(U,$J,358.3,6966,0)
- ;;=581.9^^55^575^37
- ;;^UTILITY(U,$J,358.3,6966,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6966,1,4,0)
- ;;=4^581.9
- ;;^UTILITY(U,$J,358.3,6966,1,5,0)
- ;;=5^Nephrotic Syndrome
- ;;^UTILITY(U,$J,358.3,6966,2)
- ;;=^82357
- ;;^UTILITY(U,$J,358.3,6967,0)
- ;;=753.12^^55^575^43
- ;;^UTILITY(U,$J,358.3,6967,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6967,1,4,0)
- ;;=4^753.12
- ;;^UTILITY(U,$J,358.3,6967,1,5,0)
- ;;=5^Polycystic Kidney Disease
- ;;^UTILITY(U,$J,358.3,6967,2)
- ;;=^67295
- ;;^UTILITY(U,$J,358.3,6968,0)
- ;;=791.0^^55^575^45
- ;;^UTILITY(U,$J,358.3,6968,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6968,1,4,0)
- ;;=4^791.0
- ;;^UTILITY(U,$J,358.3,6968,1,5,0)
- ;;=5^Proteinuria
- ;;^UTILITY(U,$J,358.3,6968,2)
- ;;=Proteinuria^99873
- ;;^UTILITY(U,$J,358.3,6969,0)
- ;;=791.9^^55^575^48
- ;;^UTILITY(U,$J,358.3,6969,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6969,1,4,0)
- ;;=4^791.9
- ;;^UTILITY(U,$J,358.3,6969,1,5,0)
- ;;=5^Pyuria
- ;;^UTILITY(U,$J,358.3,6969,2)
- ;;=^273408
- ;;^UTILITY(U,$J,358.3,6970,0)
- ;;=592.0^^55^575^49
+ ;;^UTILITY(U,$J,358.3,6296,2)
+ ;;=^5021542
+ ;;^UTILITY(U,$J,358.3,6297,0)
+ ;;=S01.03XA^^40^388^64
+ ;;^UTILITY(U,$J,358.3,6297,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6297,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Scalp,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6297,1,4,0)
+ ;;=4^S01.03XA
+ ;;^UTILITY(U,$J,358.3,6297,2)
+ ;;=^5020042
+ ;;^UTILITY(U,$J,358.3,6298,0)
+ ;;=S01.331A^^40^388^40
+ ;;^UTILITY(U,$J,358.3,6298,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6298,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Right Ear,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6298,1,4,0)
+ ;;=4^S01.331A
+ ;;^UTILITY(U,$J,358.3,6298,2)
+ ;;=^5020126
+ ;;^UTILITY(U,$J,358.3,6299,0)
+ ;;=S01.332A^^40^388^8
+ ;;^UTILITY(U,$J,358.3,6299,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6299,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Left Ear,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6299,1,4,0)
+ ;;=4^S01.332A
+ ;;^UTILITY(U,$J,358.3,6299,2)
+ ;;=^5020129
+ ;;^UTILITY(U,$J,358.3,6300,0)
+ ;;=S01.23XA^^40^388^34
+ ;;^UTILITY(U,$J,358.3,6300,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6300,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Nose,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6300,1,4,0)
+ ;;=4^S01.23XA
+ ;;^UTILITY(U,$J,358.3,6300,2)
+ ;;=^5020099
+ ;;^UTILITY(U,$J,358.3,6301,0)
+ ;;=S01.432A^^40^388^7
+ ;;^UTILITY(U,$J,358.3,6301,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6301,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Left Cheek/TMJ Area,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6301,1,4,0)
+ ;;=4^S01.432A
+ ;;^UTILITY(U,$J,358.3,6301,2)
+ ;;=^5020168
+ ;;^UTILITY(U,$J,358.3,6302,0)
+ ;;=S01.431A^^40^388^39
+ ;;^UTILITY(U,$J,358.3,6302,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6302,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Right Cheek/TMJ Area,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6302,1,4,0)
+ ;;=4^S01.431A
+ ;;^UTILITY(U,$J,358.3,6302,2)
+ ;;=^5020165
+ ;;^UTILITY(U,$J,358.3,6303,0)
+ ;;=S01.83XA^^40^388^1
+ ;;^UTILITY(U,$J,358.3,6303,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6303,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Head,Oth Part,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6303,1,4,0)
+ ;;=4^S01.83XA
+ ;;^UTILITY(U,$J,358.3,6303,2)
+ ;;=^5020231
+ ;;^UTILITY(U,$J,358.3,6304,0)
+ ;;=S01.93XA^^40^388^2
+ ;;^UTILITY(U,$J,358.3,6304,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6304,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Head,Unspec Part,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6304,1,4,0)
+ ;;=4^S01.93XA
+ ;;^UTILITY(U,$J,358.3,6304,2)
+ ;;=^5020246
+ ;;^UTILITY(U,$J,358.3,6305,0)
+ ;;=S11.83XA^^40^388^32
+ ;;^UTILITY(U,$J,358.3,6305,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6305,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Neck,Oth Part,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6305,1,4,0)
+ ;;=4^S11.83XA
+ ;;^UTILITY(U,$J,358.3,6305,2)
+ ;;=^5021515
+ ;;^UTILITY(U,$J,358.3,6306,0)
+ ;;=S11.93XA^^40^388^33
+ ;;^UTILITY(U,$J,358.3,6306,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6306,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Neck,Unspec Part,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6306,1,4,0)
+ ;;=4^S11.93XA
+ ;;^UTILITY(U,$J,358.3,6306,2)
+ ;;=^5021536
+ ;;^UTILITY(U,$J,358.3,6307,0)
+ ;;=S31.813A^^40^388^38
+ ;;^UTILITY(U,$J,358.3,6307,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6307,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Right Buttock,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6307,1,4,0)
+ ;;=4^S31.813A
+ ;;^UTILITY(U,$J,358.3,6307,2)
+ ;;=^5024302
+ ;;^UTILITY(U,$J,358.3,6308,0)
+ ;;=S31.133A^^40^388^35
+ ;;^UTILITY(U,$J,358.3,6308,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6308,1,3,0)
+ ;;=3^Puncture Wound w/o FB of RLQ of Abd Wall w/o Penet Perit Cav,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6308,1,4,0)
+ ;;=4^S31.133A
+ ;;^UTILITY(U,$J,358.3,6308,2)
+ ;;=^5024080

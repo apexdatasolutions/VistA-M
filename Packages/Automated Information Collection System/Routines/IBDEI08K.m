@@ -1,140 +1,132 @@
-IBDEI08K ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI08K ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,3886,1,4,0)
- ;;=4^625.6
- ;;^UTILITY(U,$J,358.3,3886,1,5,0)
- ;;=5^Incontinence, stress, female
- ;;^UTILITY(U,$J,358.3,3886,2)
- ;;=^114717
- ;;^UTILITY(U,$J,358.3,3887,0)
- ;;=788.31^^33^284^88
- ;;^UTILITY(U,$J,358.3,3887,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3887,1,4,0)
- ;;=4^788.31
- ;;^UTILITY(U,$J,358.3,3887,1,5,0)
- ;;=5^Incontinence, urge
- ;;^UTILITY(U,$J,358.3,3887,2)
- ;;=^260046
- ;;^UTILITY(U,$J,358.3,3888,0)
- ;;=788.43^^33^284^107
- ;;^UTILITY(U,$J,358.3,3888,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3888,1,4,0)
- ;;=4^788.43
- ;;^UTILITY(U,$J,358.3,3888,1,5,0)
- ;;=5^Nocturia
- ;;^UTILITY(U,$J,358.3,3888,2)
- ;;=Nocturia^84740
- ;;^UTILITY(U,$J,358.3,3889,0)
- ;;=788.5^^33^284^110
- ;;^UTILITY(U,$J,358.3,3889,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3889,1,4,0)
- ;;=4^788.5
- ;;^UTILITY(U,$J,358.3,3889,1,5,0)
- ;;=5^Oliguria/Anuria
- ;;^UTILITY(U,$J,358.3,3889,2)
- ;;=Oliguria/Anuria^85458
- ;;^UTILITY(U,$J,358.3,3890,0)
- ;;=788.42^^33^284^121
- ;;^UTILITY(U,$J,358.3,3890,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3890,1,4,0)
- ;;=4^788.42
- ;;^UTILITY(U,$J,358.3,3890,1,5,0)
- ;;=5^Polyuria
- ;;^UTILITY(U,$J,358.3,3890,2)
- ;;=Polyuria^96503
- ;;^UTILITY(U,$J,358.3,3891,0)
- ;;=788.0^^33^284^125
- ;;^UTILITY(U,$J,358.3,3891,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3891,1,4,0)
- ;;=4^788.0
- ;;^UTILITY(U,$J,358.3,3891,1,5,0)
- ;;=5^Renal Colic
- ;;^UTILITY(U,$J,358.3,3891,2)
- ;;=Renal Colic^265306
- ;;^UTILITY(U,$J,358.3,3892,0)
- ;;=788.20^^33^284^126
- ;;^UTILITY(U,$J,358.3,3892,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3892,1,4,0)
- ;;=4^788.20
- ;;^UTILITY(U,$J,358.3,3892,1,5,0)
- ;;=5^Retention, urinary
- ;;^UTILITY(U,$J,358.3,3892,2)
- ;;=^295812
- ;;^UTILITY(U,$J,358.3,3893,0)
- ;;=788.62^^33^284^130
- ;;^UTILITY(U,$J,358.3,3893,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3893,1,4,0)
- ;;=4^788.62
- ;;^UTILITY(U,$J,358.3,3893,1,5,0)
- ;;=5^Slowing, urine stream
- ;;^UTILITY(U,$J,358.3,3893,2)
- ;;=^295769
- ;;^UTILITY(U,$J,358.3,3894,0)
- ;;=788.7^^33^284^143
- ;;^UTILITY(U,$J,358.3,3894,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3894,1,4,0)
- ;;=4^788.7
- ;;^UTILITY(U,$J,358.3,3894,1,5,0)
- ;;=5^Urethral Discharge
- ;;^UTILITY(U,$J,358.3,3894,2)
- ;;=^265872
- ;;^UTILITY(U,$J,358.3,3895,0)
- ;;=599.0^^33^284^144
- ;;^UTILITY(U,$J,358.3,3895,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3895,1,4,0)
- ;;=4^599.0
- ;;^UTILITY(U,$J,358.3,3895,1,5,0)
- ;;=5^Urinary tract infection
- ;;^UTILITY(U,$J,358.3,3895,2)
- ;;=^124436
- ;;^UTILITY(U,$J,358.3,3896,0)
- ;;=784.49^^33^284^115
- ;;^UTILITY(U,$J,358.3,3896,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3896,1,4,0)
- ;;=4^784.49
- ;;^UTILITY(U,$J,358.3,3896,1,5,0)
- ;;=5^Other Voice and Resonance Disorders
- ;;^UTILITY(U,$J,358.3,3896,2)
- ;;=Other Voice and Resonance Disorders^88244
- ;;^UTILITY(U,$J,358.3,3897,0)
- ;;=525.10^^33^284^95
- ;;^UTILITY(U,$J,358.3,3897,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3897,1,4,0)
- ;;=4^525.10
- ;;^UTILITY(U,$J,358.3,3897,1,5,0)
- ;;=5^Loss of Teeth
- ;;^UTILITY(U,$J,358.3,3897,2)
- ;;=Loss of Teeth^323490
- ;;^UTILITY(U,$J,358.3,3898,0)
- ;;=795.39^^33^284^122
- ;;^UTILITY(U,$J,358.3,3898,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3898,1,4,0)
- ;;=4^795.39
- ;;^UTILITY(U,$J,358.3,3898,1,5,0)
- ;;=5^Positive Culture findings
- ;;^UTILITY(U,$J,358.3,3898,2)
- ;;=Positive Culture findings^328582
- ;;^UTILITY(U,$J,358.3,3899,0)
- ;;=564.00^^33^284^41
- ;;^UTILITY(U,$J,358.3,3899,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3899,1,4,0)
- ;;=4^564.00
- ;;^UTILITY(U,$J,358.3,3899,1,5,0)
- ;;=5^Constipation
- ;;^UTILITY(U,$J,358.3,3899,2)
- ;;=Constipation^323537
+ ;;^UTILITY(U,$J,358.3,3453,1,3,0)
+ ;;=3^Fall from Non-Moving Nonmotorized Scooter,Init Encntr
+ ;;^UTILITY(U,$J,358.3,3453,1,4,0)
+ ;;=4^W05.1XXA
+ ;;^UTILITY(U,$J,358.3,3453,2)
+ ;;=^5059553
+ ;;^UTILITY(U,$J,358.3,3454,0)
+ ;;=W05.0XXA^^28^254^13
+ ;;^UTILITY(U,$J,358.3,3454,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3454,1,3,0)
+ ;;=3^Fall from Non-Moving Wheelchair,Init Encntr
+ ;;^UTILITY(U,$J,358.3,3454,1,4,0)
+ ;;=4^W05.0XXA
+ ;;^UTILITY(U,$J,358.3,3454,2)
+ ;;=^5059550
+ ;;^UTILITY(U,$J,358.3,3455,0)
+ ;;=W18.12XA^^28^254^15
+ ;;^UTILITY(U,$J,358.3,3455,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3455,1,3,0)
+ ;;=3^Fall from Toilet w/ Strike Against Object,Init Encntr
+ ;;^UTILITY(U,$J,358.3,3455,1,4,0)
+ ;;=4^W18.12XA
+ ;;^UTILITY(U,$J,358.3,3455,2)
+ ;;=^5059804
+ ;;^UTILITY(U,$J,358.3,3456,0)
+ ;;=W18.11XA^^28^254^16
+ ;;^UTILITY(U,$J,358.3,3456,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3456,1,3,0)
+ ;;=3^Fall from Toilet,Init Encntr
+ ;;^UTILITY(U,$J,358.3,3456,1,4,0)
+ ;;=4^W18.11XA
+ ;;^UTILITY(U,$J,358.3,3456,2)
+ ;;=^5059801
+ ;;^UTILITY(U,$J,358.3,3457,0)
+ ;;=W08.XXXA^^28^254^9
+ ;;^UTILITY(U,$J,358.3,3457,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3457,1,3,0)
+ ;;=3^Fall from Furniture,Init Encntr
+ ;;^UTILITY(U,$J,358.3,3457,1,4,0)
+ ;;=4^W08.XXXA
+ ;;^UTILITY(U,$J,358.3,3457,2)
+ ;;=^5059565
+ ;;^UTILITY(U,$J,358.3,3458,0)
+ ;;=W18.2XXA^^28^254^17
+ ;;^UTILITY(U,$J,358.3,3458,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3458,1,3,0)
+ ;;=3^Fall in Shower/Bathtub,Init Encntr
+ ;;^UTILITY(U,$J,358.3,3458,1,4,0)
+ ;;=4^W18.2XXA
+ ;;^UTILITY(U,$J,358.3,3458,2)
+ ;;=^5059806
+ ;;^UTILITY(U,$J,358.3,3459,0)
+ ;;=W11.XXXA^^28^254^10
+ ;;^UTILITY(U,$J,358.3,3459,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3459,1,3,0)
+ ;;=3^Fall from Ladder,Init Encntr
+ ;;^UTILITY(U,$J,358.3,3459,1,4,0)
+ ;;=4^W11.XXXA
+ ;;^UTILITY(U,$J,358.3,3459,2)
+ ;;=^5059595
+ ;;^UTILITY(U,$J,358.3,3460,0)
+ ;;=W01.10XA^^28^254^2
+ ;;^UTILITY(U,$J,358.3,3460,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3460,1,3,0)
+ ;;=3^Fall Same Level w/ Strike Against Object,Init Encntr
+ ;;^UTILITY(U,$J,358.3,3460,1,4,0)
+ ;;=4^W01.10XA
+ ;;^UTILITY(U,$J,358.3,3460,2)
+ ;;=^5059525
+ ;;^UTILITY(U,$J,358.3,3461,0)
+ ;;=W01.0XXA^^28^254^3
+ ;;^UTILITY(U,$J,358.3,3461,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3461,1,3,0)
+ ;;=3^Fall Same Level w/o Strike Against Object,Init Encntr
+ ;;^UTILITY(U,$J,358.3,3461,1,4,0)
+ ;;=4^W01.0XXA
+ ;;^UTILITY(U,$J,358.3,3461,2)
+ ;;=^5059522
+ ;;^UTILITY(U,$J,358.3,3462,0)
+ ;;=W18.30XA^^28^254^18
+ ;;^UTILITY(U,$J,358.3,3462,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3462,1,3,0)
+ ;;=3^Fall on Same Level,Unspec,Init Encntr
+ ;;^UTILITY(U,$J,358.3,3462,1,4,0)
+ ;;=4^W18.30XA
+ ;;^UTILITY(U,$J,358.3,3462,2)
+ ;;=^5059809
+ ;;^UTILITY(U,$J,358.3,3463,0)
+ ;;=W04.XXXA^^28^254^4
+ ;;^UTILITY(U,$J,358.3,3463,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3463,1,3,0)
+ ;;=3^Fall While Being Carried by Oth Persons,Init Encntr
+ ;;^UTILITY(U,$J,358.3,3463,1,4,0)
+ ;;=4^W04.XXXA
+ ;;^UTILITY(U,$J,358.3,3463,2)
+ ;;=^5059547
+ ;;^UTILITY(U,$J,358.3,3464,0)
+ ;;=Z91.81^^28^254^23
+ ;;^UTILITY(U,$J,358.3,3464,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3464,1,3,0)
+ ;;=3^Hx of Falling
+ ;;^UTILITY(U,$J,358.3,3464,1,4,0)
+ ;;=4^Z91.81
+ ;;^UTILITY(U,$J,358.3,3464,2)
+ ;;=^5063625
+ ;;^UTILITY(U,$J,358.3,3465,0)
+ ;;=W17.89XA^^28^254^14
+ ;;^UTILITY(U,$J,358.3,3465,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3465,1,3,0)
+ ;;=3^Fall from One Level to Another,Init Encntr
+ ;;^UTILITY(U,$J,358.3,3465,1,4,0)
+ ;;=4^W17.89XA
+ ;;^UTILITY(U,$J,358.3,3465,2)
+ ;;=^5059787
+ ;;^UTILITY(U,$J,358.3,3466,0)
+ ;;=W03.XXXA^^28^254^1

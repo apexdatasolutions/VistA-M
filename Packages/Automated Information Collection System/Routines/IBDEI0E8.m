@@ -1,144 +1,124 @@
-IBDEI0E8 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0E8 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,6858,0)
- ;;=304.00^^55^573^19
- ;;^UTILITY(U,$J,358.3,6858,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6858,1,4,0)
- ;;=4^304.00
- ;;^UTILITY(U,$J,358.3,6858,1,5,0)
- ;;=5^Opioid Dependence 
- ;;^UTILITY(U,$J,358.3,6858,2)
- ;;=^81364
- ;;^UTILITY(U,$J,358.3,6859,0)
- ;;=301.9^^55^573^21
- ;;^UTILITY(U,$J,358.3,6859,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6859,1,4,0)
- ;;=4^301.9
- ;;^UTILITY(U,$J,358.3,6859,1,5,0)
- ;;=5^Personality Disorder 
- ;;^UTILITY(U,$J,358.3,6859,2)
- ;;=^92451
- ;;^UTILITY(U,$J,358.3,6860,0)
- ;;=298.9^^55^573^22
- ;;^UTILITY(U,$J,358.3,6860,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6860,1,4,0)
- ;;=4^298.9
- ;;^UTILITY(U,$J,358.3,6860,1,5,0)
- ;;=5^Psychosis
- ;;^UTILITY(U,$J,358.3,6860,2)
- ;;=^1
- ;;^UTILITY(U,$J,358.3,6861,0)
- ;;=309.81^^55^573^20
- ;;^UTILITY(U,$J,358.3,6861,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6861,1,4,0)
- ;;=4^309.81
- ;;^UTILITY(U,$J,358.3,6861,1,5,0)
- ;;=5^PTSD (chronic)
- ;;^UTILITY(U,$J,358.3,6861,2)
- ;;=^114716
- ;;^UTILITY(U,$J,358.3,6862,0)
- ;;=295.90^^55^573^23
- ;;^UTILITY(U,$J,358.3,6862,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6862,1,4,0)
- ;;=4^295.90
- ;;^UTILITY(U,$J,358.3,6862,1,5,0)
- ;;=5^Schizophrenia 
- ;;^UTILITY(U,$J,358.3,6862,2)
- ;;=^108287
- ;;^UTILITY(U,$J,358.3,6863,0)
- ;;=300.81^^55^573^24
- ;;^UTILITY(U,$J,358.3,6863,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6863,1,4,0)
- ;;=4^300.81
- ;;^UTILITY(U,$J,358.3,6863,1,5,0)
- ;;=5^Somatization Disorder
- ;;^UTILITY(U,$J,358.3,6863,2)
- ;;=^112280
- ;;^UTILITY(U,$J,358.3,6864,0)
- ;;=306.9^^55^573^25
- ;;^UTILITY(U,$J,358.3,6864,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6864,1,4,0)
- ;;=4^306.9
- ;;^UTILITY(U,$J,358.3,6864,1,5,0)
- ;;=5^Somatization Reaction
- ;;^UTILITY(U,$J,358.3,6864,2)
- ;;=^123979
- ;;^UTILITY(U,$J,358.3,6865,0)
- ;;=305.1^^55^573^27
- ;;^UTILITY(U,$J,358.3,6865,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6865,1,4,0)
- ;;=4^305.1
- ;;^UTILITY(U,$J,358.3,6865,1,5,0)
- ;;=5^Tobacco Dependence
- ;;^UTILITY(U,$J,358.3,6865,2)
- ;;=^119899
- ;;^UTILITY(U,$J,358.3,6866,0)
- ;;=V61.01^^55^573^12
- ;;^UTILITY(U,$J,358.3,6866,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6866,1,4,0)
- ;;=4^V61.01
- ;;^UTILITY(U,$J,358.3,6866,1,5,0)
- ;;=5^Family Dsrpt-Military Deployment
- ;;^UTILITY(U,$J,358.3,6866,2)
- ;;=^336799
- ;;^UTILITY(U,$J,358.3,6867,0)
- ;;=V61.02^^55^573^13
- ;;^UTILITY(U,$J,358.3,6867,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6867,1,4,0)
- ;;=4^V61.02
- ;;^UTILITY(U,$J,358.3,6867,1,5,0)
- ;;=5^Family Dsrpt-Return from Military Deployment
- ;;^UTILITY(U,$J,358.3,6867,2)
- ;;=^336800
- ;;^UTILITY(U,$J,358.3,6868,0)
- ;;=V62.84^^55^573^26
- ;;^UTILITY(U,$J,358.3,6868,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6868,1,4,0)
- ;;=4^V62.84
- ;;^UTILITY(U,$J,358.3,6868,1,5,0)
- ;;=5^Suicidal Ideation
- ;;^UTILITY(U,$J,358.3,6868,2)
- ;;=^332876
- ;;^UTILITY(U,$J,358.3,6869,0)
- ;;=V62.85^^55^573^14
- ;;^UTILITY(U,$J,358.3,6869,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6869,1,4,0)
- ;;=4^V62.85
- ;;^UTILITY(U,$J,358.3,6869,1,5,0)
- ;;=5^Homicidal Ideation
- ;;^UTILITY(U,$J,358.3,6869,2)
- ;;=^339690
- ;;^UTILITY(U,$J,358.3,6870,0)
- ;;=785.9^^55^574^1
- ;;^UTILITY(U,$J,358.3,6870,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6870,1,4,0)
- ;;=4^785.9
- ;;^UTILITY(U,$J,358.3,6870,1,5,0)
- ;;=5^Abdominal Bruit
- ;;^UTILITY(U,$J,358.3,6870,2)
- ;;=^273372
- ;;^UTILITY(U,$J,358.3,6871,0)
- ;;=789.30^^55^574^2
- ;;^UTILITY(U,$J,358.3,6871,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6871,1,4,0)
- ;;=4^789.30
- ;;^UTILITY(U,$J,358.3,6871,1,5,0)
- ;;=5^Abdominal/Pelvic Mass 
- ;;^UTILITY(U,$J,358.3,6871,2)
- ;;=^917
+ ;;^UTILITY(U,$J,358.3,6210,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6210,1,3,0)
+ ;;=3^Intraoperative Hemorrhage/Hematoma of GU System
+ ;;^UTILITY(U,$J,358.3,6210,1,4,0)
+ ;;=4^N99.62
+ ;;^UTILITY(U,$J,358.3,6210,2)
+ ;;=^5015964
+ ;;^UTILITY(U,$J,358.3,6211,0)
+ ;;=M96.811^^40^386^34
+ ;;^UTILITY(U,$J,358.3,6211,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6211,1,3,0)
+ ;;=3^Intraoperative Hemorrhage/Hematoma of Musculoskeletal System
+ ;;^UTILITY(U,$J,358.3,6211,1,4,0)
+ ;;=4^M96.811
+ ;;^UTILITY(U,$J,358.3,6211,2)
+ ;;=^5015394
+ ;;^UTILITY(U,$J,358.3,6212,0)
+ ;;=J95.62^^40^386^37
+ ;;^UTILITY(U,$J,358.3,6212,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6212,1,3,0)
+ ;;=3^Intraoperative Hemorrhage/Hematoma of Respiratory System
+ ;;^UTILITY(U,$J,358.3,6212,1,4,0)
+ ;;=4^J95.62
+ ;;^UTILITY(U,$J,358.3,6212,2)
+ ;;=^5008333
+ ;;^UTILITY(U,$J,358.3,6213,0)
+ ;;=K91.72^^40^386^1
+ ;;^UTILITY(U,$J,358.3,6213,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6213,1,3,0)
+ ;;=3^Accidental Puncture/Laceration of Digestive System During Surgery
+ ;;^UTILITY(U,$J,358.3,6213,1,4,0)
+ ;;=4^K91.72
+ ;;^UTILITY(U,$J,358.3,6213,2)
+ ;;=^5008906
+ ;;^UTILITY(U,$J,358.3,6214,0)
+ ;;=E36.12^^40^386^2
+ ;;^UTILITY(U,$J,358.3,6214,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6214,1,3,0)
+ ;;=3^Accidental Puncture/Laceration of Endocrine System During Surgery
+ ;;^UTILITY(U,$J,358.3,6214,1,4,0)
+ ;;=4^E36.12
+ ;;^UTILITY(U,$J,358.3,6214,2)
+ ;;=^5002782
+ ;;^UTILITY(U,$J,358.3,6215,0)
+ ;;=H59.221^^40^386^9
+ ;;^UTILITY(U,$J,358.3,6215,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6215,1,3,0)
+ ;;=3^Accidental Puncture/Laceration of Right Eye/Adnexa During Surgery
+ ;;^UTILITY(U,$J,358.3,6215,1,4,0)
+ ;;=4^H59.221
+ ;;^UTILITY(U,$J,358.3,6215,2)
+ ;;=^5006413
+ ;;^UTILITY(U,$J,358.3,6216,0)
+ ;;=H59.222^^40^386^5
+ ;;^UTILITY(U,$J,358.3,6216,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6216,1,3,0)
+ ;;=3^Accidental Puncture/Laceration of Left Eye/Adnexa During Surgery
+ ;;^UTILITY(U,$J,358.3,6216,1,4,0)
+ ;;=4^H59.222
+ ;;^UTILITY(U,$J,358.3,6216,2)
+ ;;=^5006414
+ ;;^UTILITY(U,$J,358.3,6217,0)
+ ;;=N99.72^^40^386^4
+ ;;^UTILITY(U,$J,358.3,6217,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6217,1,3,0)
+ ;;=3^Accidental Puncture/Laceration of GU System
+ ;;^UTILITY(U,$J,358.3,6217,1,4,0)
+ ;;=4^N99.72
+ ;;^UTILITY(U,$J,358.3,6217,2)
+ ;;=^5015966
+ ;;^UTILITY(U,$J,358.3,6218,0)
+ ;;=M96.821^^40^386^6
+ ;;^UTILITY(U,$J,358.3,6218,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6218,1,3,0)
+ ;;=3^Accidental Puncture/Laceration of Musculoskeletal System
+ ;;^UTILITY(U,$J,358.3,6218,1,4,0)
+ ;;=4^M96.821
+ ;;^UTILITY(U,$J,358.3,6218,2)
+ ;;=^5015396
+ ;;^UTILITY(U,$J,358.3,6219,0)
+ ;;=G97.49^^40^386^7
+ ;;^UTILITY(U,$J,358.3,6219,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6219,1,3,0)
+ ;;=3^Accidental Puncture/Laceration of Nervous System During Surgery
+ ;;^UTILITY(U,$J,358.3,6219,1,4,0)
+ ;;=4^G97.49
+ ;;^UTILITY(U,$J,358.3,6219,2)
+ ;;=^5004208
+ ;;^UTILITY(U,$J,358.3,6220,0)
+ ;;=J95.72^^40^386^8
+ ;;^UTILITY(U,$J,358.3,6220,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6220,1,3,0)
+ ;;=3^Accidental Puncture/Laceration of Respiratory System During Surgery
+ ;;^UTILITY(U,$J,358.3,6220,1,4,0)
+ ;;=4^J95.72
+ ;;^UTILITY(U,$J,358.3,6220,2)
+ ;;=^5008335
+ ;;^UTILITY(U,$J,358.3,6221,0)
+ ;;=L76.12^^40^386^10
+ ;;^UTILITY(U,$J,358.3,6221,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6221,1,3,0)
+ ;;=3^Accidental Puncture/Laceration of Skin During Surgery
+ ;;^UTILITY(U,$J,358.3,6221,1,4,0)
+ ;;=4^L76.12
+ ;;^UTILITY(U,$J,358.3,6221,2)
+ ;;=^5009305
+ ;;^UTILITY(U,$J,358.3,6222,0)
+ ;;=I97.88^^40^386^15

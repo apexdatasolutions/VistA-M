@@ -1,5 +1,5 @@
-ORMGMRC ; SLC/MKB - Process Consult ORM msgs ;03/17/09  10:58
- ;;3.0;ORDER ENTRY/RESULTS REPORTING;**3,26,68,92,153,174,195,255,243,280**;Dec 17, 1997;Build 85
+ORMGMRC ; SLC/MKB - Process Consult ORM msgs ;02/23/15  06:26
+ ;;3.0;ORDER ENTRY/RESULTS REPORTING;**3,26,68,92,153,174,195,255,243,280,350,415**;Dec 17, 1997;Build 4
 EN ; -- entry point for GMRC messges
  I '$L($T(@ORDCNTRL)) Q  ;S ORERR="Invalid order control code" Q
  I ORDCNTRL'="SN",ORDCNTRL'="ZP",'ORIFN!('$D(^OR(100,+ORIFN,0))) S ORERR="Invalid OE/RR order number" Q
@@ -48,6 +48,7 @@ XX ; -- Change order
  K ^OR(100,ORIFN,4.5) D RESPONSE^ORCSAVE,ORDTEXT^ORCSAVE1(ORIFN_";"_ORDA)
  S $P(^OR(100,ORIFN,8,ORDA,0),U,14)=ORDA
  K:OREASON="RESUBMIT" ^OR(100,ORIFN,6) ;clear previous DC data
+ I OREASON="RESUBMIT" N DA S DA=+ORIFN D EK^ORDD100A S $P(^OR(100,ORIFN,0),U,9)="" ;p415 clear stop date/time including xref "AE"
  D PXRMADD^ORDD100(ORIFN,ORVP,ORLOG) ; JEH 255
  I $G(ORL) S ORP(1)=+ORIFN_";"_ORDA_"^1" D PRINTS^ORWD1(.ORP,+ORL)
  Q
@@ -77,7 +78,7 @@ DLG ; -- Build ORDIALOG(),ORDG from msg
  D GETDLG1^ORCD(ORDIALOG)
  S ORDIALOG($$PTR("URGENCY"),1)=ORURG
  ;ORSTRT defined in routine ORM before coming here ;WAT/280
- S ORDIALOG($$PTR("EARLIEST DATE"),1)=ORSTRT ;WAT/280
+ S ORDIALOG($$PTR("CLINICALLY INDICATED DATE"),1)=ORSTRT ;WAT/280/350
  S OI=$$ORDITEM^ORM(USID) I 'OI S ORERR="Invalid consult or procedure" Q
  S ORDIALOG($$PTR("ORDERABLE ITEM"),1)=OI
  S ZSV=$O(@ORMSG@(OBR)) I ZSV,$E(@ORMSG@(ZSV),1,3)="ZSV" D
@@ -124,6 +125,7 @@ RE ; -- Completed, w/results
  ;
 UA ; -- Unable to Accept [ack]
  S ORDUZ="" I '$L(OREASON1),$L(OREASON) S OREASON1=OREASON
+ ;Q  ;WAT TESTING 10/22/13
 OC ; -- Cancelled/Denied
  S:'$L(ORNATR) ORNATR="X" ;Rejected
  S ^OR(100,+ORIFN,6)=$O(^ORD(100.02,"C",ORNATR,0))_U_ORDUZ_U_ORLOG_U_U_OREASON1

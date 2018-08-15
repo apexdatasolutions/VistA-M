@@ -1,6 +1,6 @@
 BPSSCRCV ;BHAM ISC/SS - ECME SCREEN CHANGE VIEW ;05-APR-05
- ;;1.0;E CLAIMS MGMT ENGINE;**1,5,7,11,14**;JUN 2004;Build 2
- ;;Per VHA Directive 2004-038, this routine should not be modified.
+ ;;1.0;E CLAIMS MGMT ENGINE;**1,5,7,11,14,20,22**;JUN 2004;Build 28
+ ;;Per VA Directive 6402, this routine should not be modified.
  ;USER SCREEN
  Q
  ;****
@@ -17,12 +17,13 @@ BPSSCRCV ;BHAM ISC/SS - ECME SCREEN CHANGE VIEW ;05-APR-05
  ;1.06 REJECTED/PAYABLE --'R' FOR REJECTS; 'P' FOR PAYABLES; 'U' FOR UNSTRANDED; 'A' FOR ALL; Display Rejects or Payables or Unstranded or ALL claims 
  ;1.07 RELEASED/NOT RELEASED --'R' FOR RELEASED; 'N' FOR NON-RELEASED; 'A' FOR ALL; Display Released Rxs or Non-Released Rxs or ALL 
  ;1.08 CMOP/MAIL/WINDOW --'C' FOR CMOP; 'M' FOR MAIL;'W' FOR WINDOW;'A' FOR ALL; Display CMOP or Mail or Window or ALL Rxs 
- ;1.09 REALTIME/BACKBILL --'R' FOR REALTIME; 'B' FOR BACKBILLS; 'P' FOR PRO Option; 'A' FOR ALL; Display RealTime Fills or Backbills or PRO Option or ALL 
+ ;1.09 REALTIME/BACKBILL --'R' FOR REALTIME; 'B' FOR BACKBILLS; 'P' FOR PRO Option; 'S' FOR ECME User Screen Resubmits;
+ ;      'A' FOR ALL; Display RealTime, Backbills, PRO Option, Resubmission, or ALL
  ;1.1 REJECT CODE/ALL --'R' FOR REJECT CODE; 'A' FOR ALL; Display Specific Reject Code or ALL Reject
  ;Codes 0 means ALL Reject Codes otherwise - Reject Code value 
  ;1.11 SPECIFIC/ALL INSURANCES --'I' FOR SPECIFIC INSURANCE(S);'A' FOR ALL; Display Specific Insurance Company(s) or All null - ALL otherwise - pointer to INSURANCE COMPANY file #36 
  ;1.12 SORT LIST --'T' FOR TRANSACTION DATE;'D' FOR DIVISION; 'I' FOR INSURANCE; 'C' FOR REJECT CODE; 
- ;'P' FOR PATIENT NAME -- 'N' FOR DRUG NAME; 'B' FOR BILL TYPE (BB/P2/RT); 'L' FOR FILL LOCATION;
+ ;'P' FOR PATIENT NAME -- 'N' FOR DRUG NAME; 'B' FOR BILL TYPE (BB/P2/RT/RS); 'L' FOR FILL LOCATION;
  ;'R' FOR RELEASED/NON-RELEASED -- 'A' FOR ACTIVE/DISCONTINUED; the field used to sort claims in the list 
  ;1.13 ALL ECME PHARMACY DIVISIONS --'D' FOR DIVISION; 'A' FOR ALL; 
  ;1.14 SELECTED INSURANCE -- Single, or multiple, insurance(s) to select claims for the User Screen, to store INSURANCE COMPANY pointer (#36) 
@@ -30,6 +31,7 @@ BPSSCRCV ;BHAM ISC/SS - ECME SCREEN CHANGE VIEW ;05-APR-05
  ;1.16 SELECTED USER -- POINTER TO NEW PERSON FILE (#200) Selected user for the user screen 
  ;1.17 SELECTED PATIENT -- POINTER TO PATIENT FILE (#2) Selected patient for the User Screen 
  ;1.18 SELECTED RX -- POINTER TO PRESCRIPTION FILE (#52) Selected RX 
+ ;1.19 NON-BILLABLE TRI/CVA ENTRIES OPEN/CLOSED/ALL -- 'O' Open; 'C' Closed; 'A' All
  ;2    ECME PHARMACY DIVISION -- the list of POINTERs TO BPS PHARMACIES FILE (#9002313.56) separated by ";"
  ;should start and end with ";", example: ";4;5;"
  ;2.01 ELIGIBILITY TYPE --'V' FOR VETERAN;'T' FOR TRICARE;'C' FOR CHAMPVA;'A' FOR ALL; Display claims for specific Eligibility Type or ALL (BNT BPS*1.0*7)
@@ -42,14 +44,24 @@ BPSSCRCV ;BHAM ISC/SS - ECME SCREEN CHANGE VIEW ;05-APR-05
  ;*****
  ;
 CV ;
+ N BPSRESCV,BPSTMPCV,DIR,Y
  D FULL^VALM1
  W @IOF
+ S BPSTMPCV=$G(BPARR("TEMPCV"))   ; Define Temp View Flag before BPARR is killed
  K BPARR
  I +$G(DUZ)=0 D ERRMSG^BPSSCRCV("Unknown User") Q
  N BPDUZ7
  S BPDUZ7=+DUZ
  ;always get current profile from the file
  D READPROF^BPSSCRSL(.BPARR,BPDUZ7)
+ ; BPARR("1.13") is the parameter for Pharmacy Division. 
+ ; If BPARR("1.13") is defined, the user has a preferred view defined.
+ I ($G(BPSTMPCV)=1)&($G(BPARR("1.13"))'="") D
+ . S DIR(0)="Y"
+ . S DIR("A")="Restore your Preferred View and exit Change View (Y/N)"
+ . D ^DIR
+ . S BPSRESCV=Y
+ I $G(BPSRESCV)=1 G CV1     ; User replied YES - restore to preferred view.
  D SAVEVIEW^BPSSCR01(.BPARR)
  ;edit current profile
  D EDITPROF(.BPARR,.BPDUZ7)
@@ -59,6 +71,7 @@ CV ;
  K BPARR(1.12)
  D ENDEDIT^BPSSCRSL(.BPARR,+BPDUZ7)
  S BPARR(1.12)=BPSRT
+CV1 ;
  D SAVEVIEW^BPSSCR01(.BPARR)
  S VALMBG=1
  D REDRAW^BPSSCRUD("Updating screen...")
@@ -66,6 +79,7 @@ CV ;
  ;edit user profile for CHANGE VIEW
 EDITPROF(BPARR,BPDUZ7) ;
  I +$G(DUZ)=0 D ERRMSG("Unknown User") Q
+ I $G(BPSRESCV)="^" Q
  N BP1,BPTF,BPQ,BPINP
  N BPRET
  N DIR,DR,DIE,DA
@@ -97,11 +111,12 @@ EDITPROF(BPARR,BPDUZ7) ;
  S BPTF=$P(BPINP,U,2)
  Q:$$EDITFLD(1.05,+BPDUZ7,"N^1:999:0","Activity Timeframe Value",$S(BPTF="H":24,1:7),.BPARR)=-1
  Q:$$EDITFLD(2.02,+BPDUZ7,"S^O:OPEN CLAIMS;C:CLOSED CLAIMS;A:ALL","Select Open/Closed or All Claims","O",.BPARR)=-1
+ Q:$$EDITFLD(1.19,+BPDUZ7,"S^O:Open Non-Billable Entries;C:Closed Non-Billable Entries;A:ALL","Display (O)pen or (C)losed or (A)ll Non-Billable Entries","A",.BPARR)=-1
  Q:$$EDITFLD(2.03,+BPDUZ7,"S^B:BILLING REQUESTS;R:REVERSALS;A:ALL","Select Submission Type","A",.BPARR)=-1
  Q:$$EDITFLD(1.06,+BPDUZ7,"S^R:REJECTS;P:PAYABLES;U:UNSTRANDED;A:ALL","Display (R)ejects or (P)ayables or (U)nstranded or (A)LL","REJECTS",.BPARR)=-1
  Q:$$EDITFLD(1.07,+BPDUZ7,"S^R:RELEASED;N:NON-RELEASED;A:ALL","Display (R)eleased Rxs or (N)on-Released Rxs or (A)LL","RELEASED",.BPARR)=-1
  Q:$$EDITFLD(1.08,+BPDUZ7,"S^C:CMOP;M:MAIL;W:WINDOW;A:ALL","Display (C)MOP or (M)ail or (W)indow or (A)LL","ALL",.BPARR)=-1
- Q:$$EDITFLD(1.09,+BPDUZ7,"S^R:REALTIME;B:BACKBILLS;P:PRO OPTION;A:ALL","Display (R)ealTime Fills or (B)ackbills or (P)RO Option or (A)LL","ALL",.BPARR)=-1
+ Q:$$EDITFLD(1.09,+BPDUZ7,"S^R:REALTIME;B:BACKBILLS;P:PRO OPTION;S:RESUBMISSION;A:ALL","Display (R)ealTime, (B)ackbills, (P)RO Option, Re(S)ubmission or (A)LL","ALL",.BPARR)=-1
  S BPQ=0 F  D  Q:BPQ'=0
  . S BPINP=$$EDITFLD(1.1,+BPDUZ7,"S^R:REJECT CODE;A:ALL","Display Specific (R)eject Code or (A)LL","ALL",.BPARR)
  . S:BPINP=-1 BPQ=-1 S:$P(BPINP,U,2)="A" BPQ=1 I BPQ'=0 Q
@@ -133,6 +148,8 @@ EDITFLD(FLDNO,RECIEN,DIR0,PRMTMSG,DFLTVAL,BPARRAY) ;*/
  N RECIENS,FDA,LCK,ERRARR
  S RETV=$$GETPARAM^BPSSCRSL(FLDNO,RECIEN)
  I FLDNO=1.17 S RETV=$P($G(^DPT(+RETV,0)),U)
+ ;Use the External Code from File #9002313.93 as the default value to display to user.
+ I FLDNO=1.15 S RETV=$P($G(^BPSF(9002313.93,+RETV,0)),U)
  ;if data then use it, otherwise use data from parameter
  I $L($G(RETV))>0 S DFLTVAL=RETV E  S DFLTVAL=$G(DFLTVAL)
  ;prompt the user
@@ -172,6 +189,14 @@ PROMPT(ZERONODE,PRMTMSG,DFLTVAL) ;
  . S DIR(0)=ZERONODE
  . S DIR("A")=PRMTMSG
  . S:$L($G(DFLTVAL))>0 DIR("B")=DFLTVAL
+ . ;
+ . ; display some extra text for FLDNO=1.19   (BPS*1*20)
+ . I $G(FLDNO)=1.19 D
+ .. S DIR("A",1)="    Please note this question only applies to"
+ .. S DIR("A",2)="    TRICARE or CHAMPVA Non-Billable Entries."
+ .. S DIR("A",3)=" "
+ .. Q
+ . ;
  . D ^DIR
  . I (Y=-1)!$D(DIROUT)!$D(DUOUT)!$D(DTOUT) S BPQUIT=1
  I BPQUIT=1 Q -1

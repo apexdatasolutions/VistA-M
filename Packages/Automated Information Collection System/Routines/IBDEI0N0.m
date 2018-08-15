@@ -1,132 +1,120 @@
-IBDEI0N0 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0N0 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,11309,1,2,0)
- ;;=2^91110
- ;;^UTILITY(U,$J,358.3,11309,1,3,0)
- ;;=3^GI Tract Capsule Endoscopy
- ;;^UTILITY(U,$J,358.3,11310,0)
- ;;=91112^^72^736^9^^^^1
- ;;^UTILITY(U,$J,358.3,11310,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11310,1,2,0)
- ;;=2^91112
- ;;^UTILITY(U,$J,358.3,11310,1,3,0)
- ;;=3^GI Wireless Capsule Measure
- ;;^UTILITY(U,$J,358.3,11311,0)
- ;;=90471^^72^737^7^^^^1
- ;;^UTILITY(U,$J,358.3,11311,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11311,1,2,0)
- ;;=2^90471
- ;;^UTILITY(U,$J,358.3,11311,1,3,0)
- ;;=3^Immunization Admin, One Vac
- ;;^UTILITY(U,$J,358.3,11312,0)
- ;;=90472^^72^737^8^^^^1
- ;;^UTILITY(U,$J,358.3,11312,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11312,1,2,0)
- ;;=2^90472
- ;;^UTILITY(U,$J,358.3,11312,1,3,0)
- ;;=3^Immunization,Each Ad'L Vac
- ;;^UTILITY(U,$J,358.3,11313,0)
- ;;=90632^^72^737^4^^^^1
- ;;^UTILITY(U,$J,358.3,11313,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11313,1,2,0)
- ;;=2^90632
- ;;^UTILITY(U,$J,358.3,11313,1,3,0)
- ;;=3^Hepatitis A
- ;;^UTILITY(U,$J,358.3,11314,0)
- ;;=90746^^72^737^5^^^^1
- ;;^UTILITY(U,$J,358.3,11314,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11314,1,2,0)
- ;;=2^90746
- ;;^UTILITY(U,$J,358.3,11314,1,3,0)
- ;;=3^Hepatitis B
- ;;^UTILITY(U,$J,358.3,11315,0)
- ;;=90747^^72^737^6^^^^1
- ;;^UTILITY(U,$J,358.3,11315,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11315,1,2,0)
- ;;=2^90747
- ;;^UTILITY(U,$J,358.3,11315,1,3,0)
- ;;=3^Hepb Vacc, Ill Pat 4 Dose Im
- ;;^UTILITY(U,$J,358.3,11316,0)
- ;;=90658^^72^737^9^^^^1
- ;;^UTILITY(U,$J,358.3,11316,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11316,1,2,0)
- ;;=2^90658
- ;;^UTILITY(U,$J,358.3,11316,1,3,0)
- ;;=3^Influenza Vaccine
- ;;^UTILITY(U,$J,358.3,11317,0)
- ;;=J3420^^72^737^12^^^^1
- ;;^UTILITY(U,$J,358.3,11317,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11317,1,2,0)
- ;;=2^J3420
- ;;^UTILITY(U,$J,358.3,11317,1,3,0)
- ;;=3^Vitamin B12 Injection       
- ;;^UTILITY(U,$J,358.3,11318,0)
- ;;=96402^^72^737^10^^^^1
- ;;^UTILITY(U,$J,358.3,11318,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11318,1,2,0)
- ;;=2^96402
- ;;^UTILITY(U,$J,358.3,11318,1,3,0)
- ;;=3^Injec,IM,anti-neplastic hormone
- ;;^UTILITY(U,$J,358.3,11319,0)
- ;;=96372^^72^737^11^^^^1
- ;;^UTILITY(U,$J,358.3,11319,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11319,1,2,0)
- ;;=2^96372
- ;;^UTILITY(U,$J,358.3,11319,1,3,0)
- ;;=3^Ther/Proph/Diag Inj, SC/IM
- ;;^UTILITY(U,$J,358.3,11320,0)
- ;;=90656^^72^737^3^^^^1
- ;;^UTILITY(U,$J,358.3,11320,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11320,1,2,0)
- ;;=2^90656
- ;;^UTILITY(U,$J,358.3,11320,1,3,0)
- ;;=3^Flu Vaccine,No Preservatives
- ;;^UTILITY(U,$J,358.3,11321,0)
- ;;=90660^^72^737^2^^^^1
- ;;^UTILITY(U,$J,358.3,11321,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11321,1,2,0)
- ;;=2^90660
- ;;^UTILITY(U,$J,358.3,11321,1,3,0)
- ;;=3^Flu Vaccine,Nasal
- ;;^UTILITY(U,$J,358.3,11322,0)
- ;;=90662^^72^737^1^^^^1
- ;;^UTILITY(U,$J,358.3,11322,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11322,1,2,0)
- ;;=2^90662
- ;;^UTILITY(U,$J,358.3,11322,1,3,0)
- ;;=3^Flu Vaccine High Dose Syringe (Fluzone)
- ;;^UTILITY(U,$J,358.3,11323,0)
- ;;=91037^^72^738^1^^^^1
- ;;^UTILITY(U,$J,358.3,11323,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11323,1,2,0)
- ;;=2^91037
- ;;^UTILITY(U,$J,358.3,11323,1,3,0)
- ;;=3^Esoph Imped Funct Test < 1hr
- ;;^UTILITY(U,$J,358.3,11324,0)
- ;;=91038^^72^738^2^^^^1
- ;;^UTILITY(U,$J,358.3,11324,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11324,1,2,0)
- ;;=2^91038
- ;;^UTILITY(U,$J,358.3,11324,1,3,0)
- ;;=3^Esoph Imped Funct Test > 1hr
- ;;^UTILITY(U,$J,358.3,11325,0)
- ;;=91010^^72^738^3^^^^1
- ;;^UTILITY(U,$J,358.3,11325,1,0)
- ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,10508,1,3,0)
+ ;;=3^Ulcerative Colitis w/ Rectal Bleeding,Unspec
+ ;;^UTILITY(U,$J,358.3,10508,1,4,0)
+ ;;=4^K51.911
+ ;;^UTILITY(U,$J,358.3,10508,2)
+ ;;=^5008695
+ ;;^UTILITY(U,$J,358.3,10509,0)
+ ;;=K52.89^^68^670^54
+ ;;^UTILITY(U,$J,358.3,10509,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10509,1,3,0)
+ ;;=3^Gastroenteritis & Colitis,Oth Spec Noninfective
+ ;;^UTILITY(U,$J,358.3,10509,1,4,0)
+ ;;=4^K52.89
+ ;;^UTILITY(U,$J,358.3,10509,2)
+ ;;=^5008703
+ ;;^UTILITY(U,$J,358.3,10510,0)
+ ;;=K52.9^^68^670^53
+ ;;^UTILITY(U,$J,358.3,10510,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10510,1,3,0)
+ ;;=3^Gastroenteritis & Colitis,Noninfective Unspec
+ ;;^UTILITY(U,$J,358.3,10510,1,4,0)
+ ;;=4^K52.9
+ ;;^UTILITY(U,$J,358.3,10510,2)
+ ;;=^5008704
+ ;;^UTILITY(U,$J,358.3,10511,0)
+ ;;=K57.30^^68^670^42
+ ;;^UTILITY(U,$J,358.3,10511,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10511,1,3,0)
+ ;;=3^Diverticulosis of Lg Intestine w/o Perforation/Abscess w/o Bleeding
+ ;;^UTILITY(U,$J,358.3,10511,1,4,0)
+ ;;=4^K57.30
+ ;;^UTILITY(U,$J,358.3,10511,2)
+ ;;=^5008723
+ ;;^UTILITY(U,$J,358.3,10512,0)
+ ;;=K57.50^^68^670^43
+ ;;^UTILITY(U,$J,358.3,10512,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10512,1,3,0)
+ ;;=3^Diverticulosis of Sm & Lg Intestine w/o Performation/Abscess w/o Bleeding
+ ;;^UTILITY(U,$J,358.3,10512,1,4,0)
+ ;;=4^K57.50
+ ;;^UTILITY(U,$J,358.3,10512,2)
+ ;;=^5008729
+ ;;^UTILITY(U,$J,358.3,10513,0)
+ ;;=K57.90^^68^670^41
+ ;;^UTILITY(U,$J,358.3,10513,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10513,1,3,0)
+ ;;=3^Diverticulosis of Intestine,Unspec w/o Performation/Abscess w/o Bleeding
+ ;;^UTILITY(U,$J,358.3,10513,1,4,0)
+ ;;=4^K57.90
+ ;;^UTILITY(U,$J,358.3,10513,2)
+ ;;=^5008735
+ ;;^UTILITY(U,$J,358.3,10514,0)
+ ;;=K57.20^^68^670^37
+ ;;^UTILITY(U,$J,358.3,10514,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10514,1,3,0)
+ ;;=3^Diverticulitis of Lg Intestine w/ Performation/Abscess w/o Bleeding
+ ;;^UTILITY(U,$J,358.3,10514,1,4,0)
+ ;;=4^K57.20
+ ;;^UTILITY(U,$J,358.3,10514,2)
+ ;;=^5008721
+ ;;^UTILITY(U,$J,358.3,10515,0)
+ ;;=K57.92^^68^670^36
+ ;;^UTILITY(U,$J,358.3,10515,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10515,1,3,0)
+ ;;=3^Diverticulitis of Intestine,Unspec w/o Perforation/Abscess w/o Bleeding
+ ;;^UTILITY(U,$J,358.3,10515,1,4,0)
+ ;;=4^K57.92
+ ;;^UTILITY(U,$J,358.3,10515,2)
+ ;;=^5008737
+ ;;^UTILITY(U,$J,358.3,10516,0)
+ ;;=K57.80^^68^670^35
+ ;;^UTILITY(U,$J,358.3,10516,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10516,1,3,0)
+ ;;=3^Diverticulitis of Intestine,Unspec w/ Perforation/Abscess w/o Bleeding
+ ;;^UTILITY(U,$J,358.3,10516,1,4,0)
+ ;;=4^K57.80
+ ;;^UTILITY(U,$J,358.3,10516,2)
+ ;;=^5008733
+ ;;^UTILITY(U,$J,358.3,10517,0)
+ ;;=K57.52^^68^670^40
+ ;;^UTILITY(U,$J,358.3,10517,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10517,1,3,0)
+ ;;=3^Diverticulitis of Sm & Lg Intestine w/o Perforation/Abscess w/o Bleeding
+ ;;^UTILITY(U,$J,358.3,10517,1,4,0)
+ ;;=4^K57.52
+ ;;^UTILITY(U,$J,358.3,10517,2)
+ ;;=^5008731
+ ;;^UTILITY(U,$J,358.3,10518,0)
+ ;;=K57.40^^68^670^39
+ ;;^UTILITY(U,$J,358.3,10518,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10518,1,3,0)
+ ;;=3^Diverticulitis of Sm & Lg Intestine w/ Perforation/Abscess w/o Bleeding
+ ;;^UTILITY(U,$J,358.3,10518,1,4,0)
+ ;;=4^K57.40
+ ;;^UTILITY(U,$J,358.3,10518,2)
+ ;;=^5008727
+ ;;^UTILITY(U,$J,358.3,10519,0)
+ ;;=K57.32^^68^670^38
+ ;;^UTILITY(U,$J,358.3,10519,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10519,1,3,0)
+ ;;=3^Diverticulitis of Lg Intestine w/o Perforation/Abscess w/o Bleeding
+ ;;^UTILITY(U,$J,358.3,10519,1,4,0)
+ ;;=4^K57.32
+ ;;^UTILITY(U,$J,358.3,10519,2)
+ ;;=^5008725

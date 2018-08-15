@@ -1,5 +1,7 @@
 LRSRVR6 ;DALOI/JMC,TMK - LAB DATA SERVER CONT'D SNOMED EXTRACT ; 17 Apr 2013  2:03 PM
- ;;5.2;LAB SERVICE;**346,378,350,425**;Sep 27, 1994;Build 30
+ ;;5.2;LAB SERVICE;**346,378,350,425,460,495**;Sep 27, 1994;Build 6
+ ;
+ ; 5.2;LAB SERVICE; CHANGE FOR PATCH LR*5.2*495; Jul 10 2017
  ;
  ; Produces SNOMED extract via LRLABSERVER option
  ;
@@ -78,9 +80,9 @@ FILE ; Search file entry and build record.
  ;
  S LRVFLD(21)=$$VFIELD^DILFD(LRFN,21)
  F  S LRROOT=$Q(@LRROOT) Q:LRROOT=""  Q:$QS(LRROOT,2)'="B"  D
- . Q:$G(@LRROOT)
  . S LRIEN=$QS(LRROOT,4),LRSPEC=""
  . S LRNAME=$P($G(^LAB(LRFN,LRIEN,0)),"^") ;,LRNAME=$$TRIM^XLFSTR(LRNAME,"RL"," ")
+ . I $G(@LRROOT),LRNAME'=$QS(LRROOT,3) Q
  . S X=$P($G(^LAB(LRFN,LRIEN,0)),"^",2)
  . S LRSNM=$S(LRFN'=62:X,1:"")
  . I LRFN=62 S LRSPEC=X
@@ -99,9 +101,13 @@ FILE ; Search file entry and build record.
  . S LRSTR=LRSTR_LRSPECN_"|1.2|"
  . I LRVFLD(21) S LRSTR=LRSTR_$$GET1^DIQ(LRFN,LRIEN_",",21,"I")
  . S LRSTR=LRSTR_"|"
- . I LRFN=61!(LRFN=62) D  ; Inactive date
+ . ;START OF CHANGE FOR LR*5.2*495 to Send Inactive date for 61.2
+ . ;I LRFN=61!(LRFN=62) D  ; Inactive date
+ . I LRFN=61!(LRFN=62)!(LRFN=61.2) D  ; Inactive date
  .. I LRFN=61 S LRSTR=LRSTR_$TR($$FMTE^XLFDT($$GET1^DIQ(LRFN,LRIEN_",",64.9103,"I"),"1D")," ,","/")
  .. I LRFN=62 S LRSTR=LRSTR_$TR($$FMTE^XLFDT($$GET1^DIQ(LRFN,LRIEN_",",64.9101,"I"),"1D")," ,","/")
+ .. I LRFN=61.2 S LRSTR=LRSTR_$TR($$FMTE^XLFDT($$GET1^DIQ(LRFN,LRIEN_",",64.9102,"I"),"1D")," ,","/")
+ .. ;END OF CHANGE FOR LR*5.2*495
  .. S LRSTR=LRSTR_"|"
  . S LRCNT=LRCNT+1,LRCNT(LRFN)=LRCNT(LRFN)+1
  . I LRSCT D

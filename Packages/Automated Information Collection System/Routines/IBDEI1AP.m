@@ -1,132 +1,124 @@
-IBDEI1AP ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1AP ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,23194,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23194,1,2,0)
- ;;=2^90472
- ;;^UTILITY(U,$J,358.3,23194,1,3,0)
- ;;=3^Immunization Admin,Ea Addl
- ;;^UTILITY(U,$J,358.3,23195,0)
- ;;=97034^^145^1428^1^^^^1
- ;;^UTILITY(U,$J,358.3,23195,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23195,1,2,0)
- ;;=2^97034
- ;;^UTILITY(U,$J,358.3,23195,1,3,0)
- ;;=3^Contrast Baths Ea 15Min
- ;;^UTILITY(U,$J,358.3,23196,0)
- ;;=97014^^145^1428^2^^^^1
- ;;^UTILITY(U,$J,358.3,23196,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23196,1,2,0)
- ;;=2^97014
- ;;^UTILITY(U,$J,358.3,23196,1,3,0)
- ;;=3^Electrical Stimulation
- ;;^UTILITY(U,$J,358.3,23197,0)
- ;;=97530^^145^1428^3^^^^1
- ;;^UTILITY(U,$J,358.3,23197,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23197,1,2,0)
- ;;=2^97530
- ;;^UTILITY(U,$J,358.3,23197,1,3,0)
- ;;=3^Functional Activities
- ;;^UTILITY(U,$J,358.3,23198,0)
- ;;=97116^^145^1428^4^^^^1
- ;;^UTILITY(U,$J,358.3,23198,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23198,1,2,0)
- ;;=2^97116
- ;;^UTILITY(U,$J,358.3,23198,1,3,0)
- ;;=3^Gait Training
- ;;^UTILITY(U,$J,358.3,23199,0)
- ;;=97010^^145^1428^5^^^^1
- ;;^UTILITY(U,$J,358.3,23199,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23199,1,2,0)
- ;;=2^97010
- ;;^UTILITY(U,$J,358.3,23199,1,3,0)
- ;;=3^Hot/Cold Therapies
- ;;^UTILITY(U,$J,358.3,23200,0)
- ;;=97033^^145^1428^6^^^^1
- ;;^UTILITY(U,$J,358.3,23200,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23200,1,2,0)
- ;;=2^97033
- ;;^UTILITY(U,$J,358.3,23200,1,3,0)
- ;;=3^Iontophoresis Ea 15Min
- ;;^UTILITY(U,$J,358.3,23201,0)
- ;;=97530^^145^1428^7^^^^1
- ;;^UTILITY(U,$J,358.3,23201,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23201,1,2,0)
- ;;=2^97530
- ;;^UTILITY(U,$J,358.3,23201,1,3,0)
- ;;=3^Kinetic Therapy Ea 15Min
- ;;^UTILITY(U,$J,358.3,23202,0)
- ;;=97140^^145^1428^8^^^^1
- ;;^UTILITY(U,$J,358.3,23202,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23202,1,2,0)
- ;;=2^97140
- ;;^UTILITY(U,$J,358.3,23202,1,3,0)
- ;;=3^Manipulation/Mobilization Ea 15Min
- ;;^UTILITY(U,$J,358.3,23203,0)
- ;;=97112^^145^1428^9^^^^1
- ;;^UTILITY(U,$J,358.3,23203,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23203,1,2,0)
- ;;=2^97112
- ;;^UTILITY(U,$J,358.3,23203,1,3,0)
- ;;=3^Neuromuscular Re-Ed
- ;;^UTILITY(U,$J,358.3,23204,0)
- ;;=97039^^145^1428^10^^^^1
- ;;^UTILITY(U,$J,358.3,23204,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23204,1,2,0)
- ;;=2^97039
- ;;^UTILITY(U,$J,358.3,23204,1,3,0)
- ;;=3^Physical Therapy Treatment
- ;;^UTILITY(U,$J,358.3,23205,0)
- ;;=97124^^145^1428^11^^^^1
- ;;^UTILITY(U,$J,358.3,23205,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23205,1,2,0)
- ;;=2^97124
- ;;^UTILITY(U,$J,358.3,23205,1,3,0)
- ;;=3^Soft Tissue Mobilization
- ;;^UTILITY(U,$J,358.3,23206,0)
- ;;=97110^^145^1428^12^^^^1
- ;;^UTILITY(U,$J,358.3,23206,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23206,1,2,0)
- ;;=2^97110
- ;;^UTILITY(U,$J,358.3,23206,1,3,0)
- ;;=3^Therapeutic Ex/Record/Flex
- ;;^UTILITY(U,$J,358.3,23207,0)
- ;;=97035^^145^1428^13^^^^1
- ;;^UTILITY(U,$J,358.3,23207,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23207,1,2,0)
- ;;=2^97035
- ;;^UTILITY(U,$J,358.3,23207,1,3,0)
- ;;=3^Ultrasound Ea 15Min
- ;;^UTILITY(U,$J,358.3,23208,0)
- ;;=20552^^145^1429^5^^^^1
- ;;^UTILITY(U,$J,358.3,23208,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23208,1,2,0)
- ;;=2^20552
- ;;^UTILITY(U,$J,358.3,23208,1,3,0)
- ;;=3^Trigger Point Inj,1/2 Muscles
- ;;^UTILITY(U,$J,358.3,23209,0)
- ;;=20553^^145^1429^6^^^^1
- ;;^UTILITY(U,$J,358.3,23209,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23209,1,2,0)
- ;;=2^20553
- ;;^UTILITY(U,$J,358.3,23209,1,3,0)
- ;;=3^Trigger Point Inj,3 or More Muscles
- ;;^UTILITY(U,$J,358.3,23210,0)
- ;;=64405^^145^1429^4^^^^1
+ ;;^UTILITY(U,$J,358.3,21636,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21636,1,3,0)
+ ;;=3^Nondisp transverse fx shaft of right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21636,1,4,0)
+ ;;=4^S72.324S
+ ;;^UTILITY(U,$J,358.3,21636,2)
+ ;;=^5038207
+ ;;^UTILITY(U,$J,358.3,21637,0)
+ ;;=S72.325S^^101^1033^92
+ ;;^UTILITY(U,$J,358.3,21637,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21637,1,3,0)
+ ;;=3^Nondisp transverse fx shaft of left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21637,1,4,0)
+ ;;=4^S72.325S
+ ;;^UTILITY(U,$J,358.3,21637,2)
+ ;;=^5038223
+ ;;^UTILITY(U,$J,358.3,21638,0)
+ ;;=S72.331S^^101^1033^30
+ ;;^UTILITY(U,$J,358.3,21638,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21638,1,3,0)
+ ;;=3^Displaced oblique fx of shaft of right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21638,1,4,0)
+ ;;=4^S72.331S
+ ;;^UTILITY(U,$J,358.3,21638,2)
+ ;;=^5038255
+ ;;^UTILITY(U,$J,358.3,21639,0)
+ ;;=S72.332S^^101^1033^29
+ ;;^UTILITY(U,$J,358.3,21639,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21639,1,3,0)
+ ;;=3^Displaced oblique fx of shaft of left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21639,1,4,0)
+ ;;=4^S72.332S
+ ;;^UTILITY(U,$J,358.3,21639,2)
+ ;;=^5038271
+ ;;^UTILITY(U,$J,358.3,21640,0)
+ ;;=S72.334S^^101^1033^76
+ ;;^UTILITY(U,$J,358.3,21640,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21640,1,3,0)
+ ;;=3^Nondisp oblique fx shaft of right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21640,1,4,0)
+ ;;=4^S72.334S
+ ;;^UTILITY(U,$J,358.3,21640,2)
+ ;;=^5038303
+ ;;^UTILITY(U,$J,358.3,21641,0)
+ ;;=S72.335S^^101^1033^75
+ ;;^UTILITY(U,$J,358.3,21641,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21641,1,3,0)
+ ;;=3^Nondisp oblique fx shaft of left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21641,1,4,0)
+ ;;=4^S72.335S
+ ;;^UTILITY(U,$J,358.3,21641,2)
+ ;;=^5038319
+ ;;^UTILITY(U,$J,358.3,21642,0)
+ ;;=S72.341S^^101^1033^36
+ ;;^UTILITY(U,$J,358.3,21642,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21642,1,3,0)
+ ;;=3^Displaced spiral fx of shaft of right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21642,1,4,0)
+ ;;=4^S72.341S
+ ;;^UTILITY(U,$J,358.3,21642,2)
+ ;;=^5038351
+ ;;^UTILITY(U,$J,358.3,21643,0)
+ ;;=S72.342S^^101^1033^35
+ ;;^UTILITY(U,$J,358.3,21643,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21643,1,3,0)
+ ;;=3^Displaced spiral fx of shaft of left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21643,1,4,0)
+ ;;=4^S72.342S
+ ;;^UTILITY(U,$J,358.3,21643,2)
+ ;;=^5038367
+ ;;^UTILITY(U,$J,358.3,21644,0)
+ ;;=S72.344S^^101^1033^83
+ ;;^UTILITY(U,$J,358.3,21644,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21644,1,3,0)
+ ;;=3^Nondisp spiral fx shaft of right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21644,1,4,0)
+ ;;=4^S72.344S
+ ;;^UTILITY(U,$J,358.3,21644,2)
+ ;;=^5038399
+ ;;^UTILITY(U,$J,358.3,21645,0)
+ ;;=S72.345S^^101^1033^81
+ ;;^UTILITY(U,$J,358.3,21645,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21645,1,3,0)
+ ;;=3^Nondisp spiral fx of shaft of left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21645,1,4,0)
+ ;;=4^S72.345S
+ ;;^UTILITY(U,$J,358.3,21645,2)
+ ;;=^5038415
+ ;;^UTILITY(U,$J,358.3,21646,0)
+ ;;=S72.351S^^101^1033^10
+ ;;^UTILITY(U,$J,358.3,21646,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21646,1,3,0)
+ ;;=3^Displaced comminuted fx shaft of right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21646,1,4,0)
+ ;;=4^S72.351S
+ ;;^UTILITY(U,$J,358.3,21646,2)
+ ;;=^5038447
+ ;;^UTILITY(U,$J,358.3,21647,0)
+ ;;=S72.352S^^101^1033^9
+ ;;^UTILITY(U,$J,358.3,21647,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21647,1,3,0)
+ ;;=3^Displaced comminuted fx shaft of left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21647,1,4,0)
+ ;;=4^S72.352S
+ ;;^UTILITY(U,$J,358.3,21647,2)
+ ;;=^5038463
+ ;;^UTILITY(U,$J,358.3,21648,0)
+ ;;=S72.354S^^101^1033^56

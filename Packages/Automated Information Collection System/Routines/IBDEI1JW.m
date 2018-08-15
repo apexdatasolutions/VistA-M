@@ -1,0 +1,134 @@
+IBDEI1JW ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,25924,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25924,1,3,0)
+ ;;=3^Right Lower Quadrant Abdominal Pain
+ ;;^UTILITY(U,$J,358.3,25924,1,4,0)
+ ;;=4^R10.31
+ ;;^UTILITY(U,$J,358.3,25924,2)
+ ;;=^5019211
+ ;;^UTILITY(U,$J,358.3,25925,0)
+ ;;=R10.32^^127^1267^3
+ ;;^UTILITY(U,$J,358.3,25925,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25925,1,3,0)
+ ;;=3^Left Lower Quadrant Abdominal Pain
+ ;;^UTILITY(U,$J,358.3,25925,1,4,0)
+ ;;=4^R10.32
+ ;;^UTILITY(U,$J,358.3,25925,2)
+ ;;=^5019212
+ ;;^UTILITY(U,$J,358.3,25926,0)
+ ;;=R10.33^^127^1267^6
+ ;;^UTILITY(U,$J,358.3,25926,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25926,1,3,0)
+ ;;=3^Periumbilical Pain
+ ;;^UTILITY(U,$J,358.3,25926,1,4,0)
+ ;;=4^R10.33
+ ;;^UTILITY(U,$J,358.3,25926,2)
+ ;;=^5019213
+ ;;^UTILITY(U,$J,358.3,25927,0)
+ ;;=R10.13^^127^1267^2
+ ;;^UTILITY(U,$J,358.3,25927,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25927,1,3,0)
+ ;;=3^Epigastric Pain
+ ;;^UTILITY(U,$J,358.3,25927,1,4,0)
+ ;;=4^R10.13
+ ;;^UTILITY(U,$J,358.3,25927,2)
+ ;;=^5019208
+ ;;^UTILITY(U,$J,358.3,25928,0)
+ ;;=R10.84^^127^1267^1
+ ;;^UTILITY(U,$J,358.3,25928,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25928,1,3,0)
+ ;;=3^Abdominal Pain,Generalized
+ ;;^UTILITY(U,$J,358.3,25928,1,4,0)
+ ;;=4^R10.84
+ ;;^UTILITY(U,$J,358.3,25928,2)
+ ;;=^5019229
+ ;;^UTILITY(U,$J,358.3,25929,0)
+ ;;=R10.2^^127^1267^5
+ ;;^UTILITY(U,$J,358.3,25929,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25929,1,3,0)
+ ;;=3^Pelvic/Perineal Pain
+ ;;^UTILITY(U,$J,358.3,25929,1,4,0)
+ ;;=4^R10.2
+ ;;^UTILITY(U,$J,358.3,25929,2)
+ ;;=^5019209
+ ;;^UTILITY(U,$J,358.3,25930,0)
+ ;;=Z48.01^^127^1268^1
+ ;;^UTILITY(U,$J,358.3,25930,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25930,1,3,0)
+ ;;=3^Change/Removal of Surgical Wound Dressing
+ ;;^UTILITY(U,$J,358.3,25930,1,4,0)
+ ;;=4^Z48.01
+ ;;^UTILITY(U,$J,358.3,25930,2)
+ ;;=^5063034
+ ;;^UTILITY(U,$J,358.3,25931,0)
+ ;;=Z48.02^^127^1268^3
+ ;;^UTILITY(U,$J,358.3,25931,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25931,1,3,0)
+ ;;=3^Removal of Sutures
+ ;;^UTILITY(U,$J,358.3,25931,1,4,0)
+ ;;=4^Z48.02
+ ;;^UTILITY(U,$J,358.3,25931,2)
+ ;;=^5063035
+ ;;^UTILITY(U,$J,358.3,25932,0)
+ ;;=Z48.812^^127^1268^4
+ ;;^UTILITY(U,$J,358.3,25932,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25932,1,3,0)
+ ;;=3^Surgical Aftercare Following Surgery on Circulatory System
+ ;;^UTILITY(U,$J,358.3,25932,1,4,0)
+ ;;=4^Z48.812
+ ;;^UTILITY(U,$J,358.3,25932,2)
+ ;;=^5063049
+ ;;^UTILITY(U,$J,358.3,25933,0)
+ ;;=Z09.^^127^1268^2
+ ;;^UTILITY(U,$J,358.3,25933,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25933,1,3,0)
+ ;;=3^F/U Exam After Treatment for Condition Other Than Malig Neop
+ ;;^UTILITY(U,$J,358.3,25933,1,4,0)
+ ;;=4^Z09.
+ ;;^UTILITY(U,$J,358.3,25933,2)
+ ;;=^5062668
+ ;;^UTILITY(U,$J,358.3,25934,0)
+ ;;=I25.10^^127^1269^5
+ ;;^UTILITY(U,$J,358.3,25934,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25934,1,3,0)
+ ;;=3^Athscl Hrt Disease of Native Coronary Artery w/o Ang Pctrs
+ ;;^UTILITY(U,$J,358.3,25934,1,4,0)
+ ;;=4^I25.10
+ ;;^UTILITY(U,$J,358.3,25934,2)
+ ;;=^5007107
+ ;;^UTILITY(U,$J,358.3,25935,0)
+ ;;=I50.9^^127^1269^9
+ ;;^UTILITY(U,$J,358.3,25935,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25935,1,3,0)
+ ;;=3^Congestive Heart Failure
+ ;;^UTILITY(U,$J,358.3,25935,1,4,0)
+ ;;=4^I50.9
+ ;;^UTILITY(U,$J,358.3,25935,2)
+ ;;=^5007251
+ ;;^UTILITY(U,$J,358.3,25936,0)
+ ;;=I65.21^^127^1269^16
+ ;;^UTILITY(U,$J,358.3,25936,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25936,1,3,0)
+ ;;=3^Occlusion/Stenosis of Right Carotid Artery
+ ;;^UTILITY(U,$J,358.3,25936,1,4,0)
+ ;;=4^I65.21
+ ;;^UTILITY(U,$J,358.3,25936,2)
+ ;;=^5007360
+ ;;^UTILITY(U,$J,358.3,25937,0)
+ ;;=I65.22^^127^1269^14

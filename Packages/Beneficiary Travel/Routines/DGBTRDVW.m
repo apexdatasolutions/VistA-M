@@ -1,9 +1,9 @@
-DGBTRDVW ;ALB/RFE - BENEFICIARY/TRAVEL UTILITY ROUTINES; 07/03/12
- ;;1.0;Beneficiary Travel;**20**;September 25, 2001;Build 185
+DGBTRDVW ;ALB/RFE - BENEFICIARY/TRAVEL UTILITY ROUTINES;07/03/12
+ ;;1.0;Beneficiary Travel;**20,25,30**;September 25, 2001;Build 4
  Q
 WAIV(DFN,DGBTDTI) ;
  N %H,DED,I,TRIP,TRIPCT,RETURN,DGBTDW,EXPDT,FUTURE,FDED,WAIVER
- ;Return values: total number of trips ^ number of one way trips ^ number of round trips ^ deductible (all this for the month)^ waiver y/n (y will be 1, n will be no) ^ type of wavier i.e MAN for manual, PENSION etc. ^
+ ;Return values: total number of trips ^ number of one way trips ^ number of round trips ^ deductible (all this for the month)^ waiver y/n (y will be 1, n will be no) ^ type of waiver i.e. MAN for manual, PENSION etc. ^
  ;total number of trips as of this claim date ^ deductible as of this claim date
  S TRIP=$$TRIP
  S WAIVER=$$WAIVYN
@@ -21,16 +21,16 @@ TRIP() ;
  .I (DGBTDT=DGBTDTI)&($G(CHZFLG)=0) Q
  .Q:$$GET1^DIQ(392,DGBTDT,56,"I")="S"
  .I $$GET1^DIQ(392,DGBTDT,45.2,"I")=1 Q
- .I $D(DTRAY($P(DGBTDT,"."))) Q
+ .I $D(DTRAY(DGBTDT)) Q  ;dbe patch DGBT*1*25
  .S ACCTYPE=$$GET1^DIQ(392.3,$$GET1^DIQ(392,DGBTDT,6,"I"),5,"I")
  .I ACCTYPE="" Q
  .I 45'[ACCTYPE Q
- .S DTRAY($P(DGBTDT,"."))=""
+ .S DTRAY(DGBTDT)="" ;dbe patch DGBT*1*25
  .S DED=DED+$$GET1^DIQ(392,DGBTDT,9)
  .S TRIPTYP=+$$GET1^DIQ(392,DGBTDT,31,"I")
  .S TRIPS(TRIPTYP)=TRIPS(TRIPTYP)+1
  .S TRIPCT=TRIPCT+TRIPTYP
- .I ($G(CHZFLG))&($P(DGBTDT,".")=$P(DGBTDTI,".")) S FUTURE=FUTURE+TRIPTYP,FDED=FDED+$$GET1^DIQ(392,DGBTDT,9,"I")
+ .I ($G(CHZFLG))&(DGBTDT=DGBTDTI) S FUTURE=FUTURE+TRIPTYP,FDED=FDED+$$GET1^DIQ(392,DGBTDT,9,"I") ;*30 modified check to use date/time
  Q TRIPCT_U_TRIPS(1)_U_TRIPS(2)_U_DED_U
 WAIVYN() ;
  I DED'<18 Q "1^DED^"
@@ -77,6 +77,7 @@ PENSION() ;
  S (HIT,I)=""
  F  S I=$O(VAEL(1,I)) Q:I=""  D  Q:HIT
  .I VAEL(1,I)["PENSION" S HIT=1 Q
- .I $P(VAEL(1,I),"^",2)="AID & ATTENDANCE" S HIT=1 Q
- .I $P(VAEL(1,I),"^",2)="HOUSEBOUND" S HIT=1 Q
+ .I $P(VAEL(3),U,2)'=100 D  ;*30 added to prevent waiver for 100% SC
+ ..I $P(VAEL(1,I),"^",2)="AID & ATTENDANCE" S HIT=1 Q
+ ..I $P(VAEL(1,I),"^",2)="HOUSEBOUND" S HIT=1 Q
  Q HIT

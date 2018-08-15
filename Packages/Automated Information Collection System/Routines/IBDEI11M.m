@@ -1,108 +1,128 @@
-IBDEI11M ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI11M ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,18691,0)
- ;;=11600^^122^1195^1^^^^1
- ;;^UTILITY(U,$J,358.3,18691,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18691,1,2,0)
- ;;=2^Excision Malignant Lesions-trunk, arms or legs; 0.5cm or less
- ;;^UTILITY(U,$J,358.3,18691,1,3,0)
- ;;=3^11600
- ;;^UTILITY(U,$J,358.3,18692,0)
- ;;=11601^^122^1195^2^^^^1
- ;;^UTILITY(U,$J,358.3,18692,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18692,1,2,0)
- ;;=2^Excision Malignant Lesions-trunk, arms or legs; 0.6cm to 1.0cm
- ;;^UTILITY(U,$J,358.3,18692,1,3,0)
- ;;=3^11601
- ;;^UTILITY(U,$J,358.3,18693,0)
- ;;=11602^^122^1195^3^^^^1
- ;;^UTILITY(U,$J,358.3,18693,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18693,1,2,0)
- ;;=2^Excision Malignant Lesions-trunk, arms or legs; 1.1cm to 2.0cm
- ;;^UTILITY(U,$J,358.3,18693,1,3,0)
- ;;=3^11602
- ;;^UTILITY(U,$J,358.3,18694,0)
- ;;=11603^^122^1195^4^^^^1
- ;;^UTILITY(U,$J,358.3,18694,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18694,1,2,0)
- ;;=2^Excision Malignant Lesions-trunk, arms or legs; 2.1cm to 3.0cm
- ;;^UTILITY(U,$J,358.3,18694,1,3,0)
- ;;=3^11603
- ;;^UTILITY(U,$J,358.3,18695,0)
- ;;=11604^^122^1195^5^^^^1
- ;;^UTILITY(U,$J,358.3,18695,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18695,1,2,0)
- ;;=2^Excision Malignant Lesions-trunk, arms or legs; 3.1cm to 4.0cm
- ;;^UTILITY(U,$J,358.3,18695,1,3,0)
- ;;=3^11604
- ;;^UTILITY(U,$J,358.3,18696,0)
- ;;=11606^^122^1195^6^^^^1
- ;;^UTILITY(U,$J,358.3,18696,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18696,1,2,0)
- ;;=2^Excision Malignant Lesions-trunk, arms or legs; over 4.0cm
- ;;^UTILITY(U,$J,358.3,18696,1,3,0)
- ;;=3^11606
- ;;^UTILITY(U,$J,358.3,18697,0)
- ;;=11620^^122^1195^7^^^^1
- ;;^UTILITY(U,$J,358.3,18697,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18697,1,2,0)
- ;;=2^Excision Malignant Lesions-scalp, neck, hands, feet, genitalia; 0.5cm or less
- ;;^UTILITY(U,$J,358.3,18697,1,3,0)
- ;;=3^11620
- ;;^UTILITY(U,$J,358.3,18698,0)
- ;;=11621^^122^1195^8^^^^1
- ;;^UTILITY(U,$J,358.3,18698,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18698,1,2,0)
- ;;=2^Excision Malignant Lesions-scalp, neck, hands, feet, genitalia; 0.6cm to 1.0cm
- ;;^UTILITY(U,$J,358.3,18698,1,3,0)
- ;;=3^11621
- ;;^UTILITY(U,$J,358.3,18699,0)
- ;;=11622^^122^1195^9^^^^1
- ;;^UTILITY(U,$J,358.3,18699,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18699,1,2,0)
- ;;=2^Excision Malignant Lesions-scalp, neck, hands, feet, genitalia; 1.1cm to 2.0cm
- ;;^UTILITY(U,$J,358.3,18699,1,3,0)
- ;;=3^11622
- ;;^UTILITY(U,$J,358.3,18700,0)
- ;;=11623^^122^1195^10^^^^1
- ;;^UTILITY(U,$J,358.3,18700,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18700,1,2,0)
- ;;=2^Excision Malignant Lesions-scalp, neck, hands, feet, genitalia; 2.1cm to 3.0cm
- ;;^UTILITY(U,$J,358.3,18700,1,3,0)
- ;;=3^11623
- ;;^UTILITY(U,$J,358.3,18701,0)
- ;;=11624^^122^1195^11^^^^1
- ;;^UTILITY(U,$J,358.3,18701,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18701,1,2,0)
- ;;=2^Excision Malignant Lesions-scalp, neck, hands, feet, genitalia; 3.1cm to 4.0cm
- ;;^UTILITY(U,$J,358.3,18701,1,3,0)
- ;;=3^11624
- ;;^UTILITY(U,$J,358.3,18702,0)
- ;;=11626^^122^1195^12^^^^1
- ;;^UTILITY(U,$J,358.3,18702,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18702,1,2,0)
- ;;=2^Excision Malignant Lesions-scalp, neck, hands, feet, gentalia; over 4.0cm
- ;;^UTILITY(U,$J,358.3,18702,1,3,0)
- ;;=3^11626
- ;;^UTILITY(U,$J,358.3,18703,0)
- ;;=12001^^122^1196^1^^^^1
- ;;^UTILITY(U,$J,358.3,18703,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18703,1,2,0)
- ;;=2^Simple Repair of Superficial Wounds of scalp, neck, azillae, external genitalia, trunk, extriemities; 2.5cm or less 
- ;;^UTILITY(U,$J,358.3,18703,1,3,0)
- ;;=3^12001
+ ;;^UTILITY(U,$J,358.3,17367,0)
+ ;;=Z79.02^^88^861^43
+ ;;^UTILITY(U,$J,358.3,17367,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17367,1,3,0)
+ ;;=3^Drug Therapy,Antithrombotics/Antiplateletes,Long Term Current Use
+ ;;^UTILITY(U,$J,358.3,17367,1,4,0)
+ ;;=4^Z79.02
+ ;;^UTILITY(U,$J,358.3,17367,2)
+ ;;=^5063331
+ ;;^UTILITY(U,$J,358.3,17368,0)
+ ;;=Z79.82^^88^861^44
+ ;;^UTILITY(U,$J,358.3,17368,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17368,1,3,0)
+ ;;=3^Drug Therapy,Aspirin,Long Term Current Use
+ ;;^UTILITY(U,$J,358.3,17368,1,4,0)
+ ;;=4^Z79.82
+ ;;^UTILITY(U,$J,358.3,17368,2)
+ ;;=^5063340
+ ;;^UTILITY(U,$J,358.3,17369,0)
+ ;;=Z79.83^^88^861^45
+ ;;^UTILITY(U,$J,358.3,17369,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17369,1,3,0)
+ ;;=3^Drug Therapy,Bisphosphonates,Long Term Current Use
+ ;;^UTILITY(U,$J,358.3,17369,1,4,0)
+ ;;=4^Z79.83
+ ;;^UTILITY(U,$J,358.3,17369,2)
+ ;;=^5063341
+ ;;^UTILITY(U,$J,358.3,17370,0)
+ ;;=Z79.890^^88^861^46
+ ;;^UTILITY(U,$J,358.3,17370,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17370,1,3,0)
+ ;;=3^Drug Therapy,Hormone Replacement Therapy
+ ;;^UTILITY(U,$J,358.3,17370,1,4,0)
+ ;;=4^Z79.890
+ ;;^UTILITY(U,$J,358.3,17370,2)
+ ;;=^331975
+ ;;^UTILITY(U,$J,358.3,17371,0)
+ ;;=Z79.4^^88^861^48
+ ;;^UTILITY(U,$J,358.3,17371,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17371,1,3,0)
+ ;;=3^Drug Therapy,Insulin,Long Term Current Use
+ ;;^UTILITY(U,$J,358.3,17371,1,4,0)
+ ;;=4^Z79.4
+ ;;^UTILITY(U,$J,358.3,17371,2)
+ ;;=^5063334
+ ;;^UTILITY(U,$J,358.3,17372,0)
+ ;;=Z79.1^^88^861^49
+ ;;^UTILITY(U,$J,358.3,17372,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17372,1,3,0)
+ ;;=3^Drug Therapy,NSAID,Long Term Current Use
+ ;;^UTILITY(U,$J,358.3,17372,1,4,0)
+ ;;=4^Z79.1
+ ;;^UTILITY(U,$J,358.3,17372,2)
+ ;;=^5063332
+ ;;^UTILITY(U,$J,358.3,17373,0)
+ ;;=Z79.891^^88^861^50
+ ;;^UTILITY(U,$J,358.3,17373,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17373,1,3,0)
+ ;;=3^Drug Therapy,Opiate Analgesic,Long Term Current Use
+ ;;^UTILITY(U,$J,358.3,17373,1,4,0)
+ ;;=4^Z79.891
+ ;;^UTILITY(U,$J,358.3,17373,2)
+ ;;=^5063342
+ ;;^UTILITY(U,$J,358.3,17374,0)
+ ;;=Z79.899^^88^861^51
+ ;;^UTILITY(U,$J,358.3,17374,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17374,1,3,0)
+ ;;=3^Drug Therapy,Other Long Term Current Use
+ ;;^UTILITY(U,$J,358.3,17374,1,4,0)
+ ;;=4^Z79.899
+ ;;^UTILITY(U,$J,358.3,17374,2)
+ ;;=^5063343
+ ;;^UTILITY(U,$J,358.3,17375,0)
+ ;;=Z76.0^^88^861^71
+ ;;^UTILITY(U,$J,358.3,17375,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17375,1,3,0)
+ ;;=3^Issue of Repeat Prescription
+ ;;^UTILITY(U,$J,358.3,17375,1,4,0)
+ ;;=4^Z76.0
+ ;;^UTILITY(U,$J,358.3,17375,2)
+ ;;=^5063297
+ ;;^UTILITY(U,$J,358.3,17376,0)
+ ;;=Z79.810^^88^861^52
+ ;;^UTILITY(U,$J,358.3,17376,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17376,1,3,0)
+ ;;=3^Drug Therapy,SERMs,Long Term Current Use
+ ;;^UTILITY(U,$J,358.3,17376,1,4,0)
+ ;;=4^Z79.810
+ ;;^UTILITY(U,$J,358.3,17376,2)
+ ;;=^5063337
+ ;;^UTILITY(U,$J,358.3,17377,0)
+ ;;=Z79.51^^88^861^47
+ ;;^UTILITY(U,$J,358.3,17377,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17377,1,3,0)
+ ;;=3^Drug Therapy,Inhaled Steroids,Long Term Current Use
+ ;;^UTILITY(U,$J,358.3,17377,1,4,0)
+ ;;=4^Z79.51
+ ;;^UTILITY(U,$J,358.3,17377,2)
+ ;;=^5063335
+ ;;^UTILITY(U,$J,358.3,17378,0)
+ ;;=Z79.52^^88^861^53
+ ;;^UTILITY(U,$J,358.3,17378,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17378,1,3,0)
+ ;;=3^Drug Therapy,Systemic Steroids,Long Term Current Use
+ ;;^UTILITY(U,$J,358.3,17378,1,4,0)
+ ;;=4^Z79.52
+ ;;^UTILITY(U,$J,358.3,17378,2)
+ ;;=^5063336
+ ;;^UTILITY(U,$J,358.3,17379,0)
+ ;;=R68.2^^88^861^54
+ ;;^UTILITY(U,$J,358.3,17379,1,0)
+ ;;=^358.31IA^4^2

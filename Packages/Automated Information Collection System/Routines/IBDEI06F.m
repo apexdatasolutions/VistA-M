@@ -1,146 +1,126 @@
-IBDEI06F ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI06F ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,2804,1,5,0)
- ;;=5^No Family Able to Care for Patient
- ;;^UTILITY(U,$J,358.3,2804,2)
- ;;=^295542
- ;;^UTILITY(U,$J,358.3,2805,0)
- ;;=V60.5^^27^246^7
- ;;^UTILITY(U,$J,358.3,2805,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2805,1,4,0)
- ;;=4^V60.5
- ;;^UTILITY(U,$J,358.3,2805,1,5,0)
- ;;=5^Respite Care
- ;;^UTILITY(U,$J,358.3,2805,2)
- ;;=^295543
- ;;^UTILITY(U,$J,358.3,2806,0)
- ;;=V66.7^^27^246^4
- ;;^UTILITY(U,$J,358.3,2806,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2806,1,4,0)
- ;;=4^V66.7
- ;;^UTILITY(U,$J,358.3,2806,1,5,0)
- ;;=5^Palliative Care
- ;;^UTILITY(U,$J,358.3,2806,2)
- ;;=^89209
- ;;^UTILITY(U,$J,358.3,2807,0)
- ;;=239.6^^27^247^2
- ;;^UTILITY(U,$J,358.3,2807,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2807,1,4,0)
- ;;=4^239.6
- ;;^UTILITY(U,$J,358.3,2807,1,5,0)
- ;;=5^Brain Mass,Not Neoplastic Mass
- ;;^UTILITY(U,$J,358.3,2807,2)
- ;;=^16739
- ;;^UTILITY(U,$J,358.3,2808,0)
- ;;=246.9^^27^247^21
- ;;^UTILITY(U,$J,358.3,2808,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2808,1,4,0)
- ;;=4^246.9
- ;;^UTILITY(U,$J,358.3,2808,1,5,0)
- ;;=5^Thyroid Mass
- ;;^UTILITY(U,$J,358.3,2808,2)
- ;;=^123878
- ;;^UTILITY(U,$J,358.3,2809,0)
- ;;=593.9^^27^247^14
- ;;^UTILITY(U,$J,358.3,2809,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2809,1,4,0)
- ;;=4^593.9
- ;;^UTILITY(U,$J,358.3,2809,1,5,0)
- ;;=5^Kidney Mass
- ;;^UTILITY(U,$J,358.3,2809,2)
- ;;=^123849
- ;;^UTILITY(U,$J,358.3,2810,0)
- ;;=607.89^^27^247^18
- ;;^UTILITY(U,$J,358.3,2810,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2810,1,4,0)
- ;;=4^607.89
- ;;^UTILITY(U,$J,358.3,2810,1,5,0)
- ;;=5^Penis Mass
- ;;^UTILITY(U,$J,358.3,2810,2)
- ;;=^88018
- ;;^UTILITY(U,$J,358.3,2811,0)
- ;;=608.89^^27^247^20
- ;;^UTILITY(U,$J,358.3,2811,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2811,1,4,0)
- ;;=4^608.89
- ;;^UTILITY(U,$J,358.3,2811,1,5,0)
- ;;=5^Testes Mass
- ;;^UTILITY(U,$J,358.3,2811,2)
- ;;=^88009
- ;;^UTILITY(U,$J,358.3,2812,0)
- ;;=611.72^^27^247^3
- ;;^UTILITY(U,$J,358.3,2812,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2812,1,4,0)
- ;;=4^611.72
- ;;^UTILITY(U,$J,358.3,2812,1,5,0)
- ;;=5^Breast Mass
- ;;^UTILITY(U,$J,358.3,2812,2)
- ;;=^72018
- ;;^UTILITY(U,$J,358.3,2813,0)
- ;;=625.8^^27^247^22
- ;;^UTILITY(U,$J,358.3,2813,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2813,1,4,0)
- ;;=4^625.8
- ;;^UTILITY(U,$J,358.3,2813,1,5,0)
- ;;=5^Uterine Mass
- ;;^UTILITY(U,$J,358.3,2813,2)
- ;;=^270563
- ;;^UTILITY(U,$J,358.3,2814,0)
- ;;=719.60^^27^247^12
- ;;^UTILITY(U,$J,358.3,2814,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2814,1,4,0)
- ;;=4^719.60
- ;;^UTILITY(U,$J,358.3,2814,1,5,0)
- ;;=5^Joint Mass,Site Unspec
- ;;^UTILITY(U,$J,358.3,2814,2)
- ;;=^272416
- ;;^UTILITY(U,$J,358.3,2815,0)
- ;;=719.61^^27^247^11
- ;;^UTILITY(U,$J,358.3,2815,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2815,1,4,0)
- ;;=4^719.61
- ;;^UTILITY(U,$J,358.3,2815,1,5,0)
- ;;=5^Joint Mass,Shoulder
- ;;^UTILITY(U,$J,358.3,2815,2)
- ;;=^272417
- ;;^UTILITY(U,$J,358.3,2816,0)
- ;;=719.62^^27^247^13
- ;;^UTILITY(U,$J,358.3,2816,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2816,1,4,0)
- ;;=4^719.62
- ;;^UTILITY(U,$J,358.3,2816,1,5,0)
- ;;=5^Joint Mass,Upper Arm
- ;;^UTILITY(U,$J,358.3,2816,2)
- ;;=^272418
- ;;^UTILITY(U,$J,358.3,2817,0)
- ;;=719.63^^27^247^5
- ;;^UTILITY(U,$J,358.3,2817,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2817,1,4,0)
- ;;=4^719.63
- ;;^UTILITY(U,$J,358.3,2817,1,5,0)
- ;;=5^Joint Mass,Forearm
- ;;^UTILITY(U,$J,358.3,2817,2)
- ;;=^272419
- ;;^UTILITY(U,$J,358.3,2818,0)
- ;;=719.64^^27^247^6
- ;;^UTILITY(U,$J,358.3,2818,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2818,1,4,0)
- ;;=4^719.64
- ;;^UTILITY(U,$J,358.3,2818,1,5,0)
- ;;=5^Joint Mass,Hand
+ ;;^UTILITY(U,$J,358.3,2407,1,3,0)
+ ;;=3^Athscl Native Arteries of Left Leg w/ Rest Pain
+ ;;^UTILITY(U,$J,358.3,2407,1,4,0)
+ ;;=4^I70.222
+ ;;^UTILITY(U,$J,358.3,2407,2)
+ ;;=^5007584
+ ;;^UTILITY(U,$J,358.3,2408,0)
+ ;;=I70.223^^19^203^29
+ ;;^UTILITY(U,$J,358.3,2408,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2408,1,3,0)
+ ;;=3^Athscl Native Arteries of Bilateral Legs w/ Rest Pain
+ ;;^UTILITY(U,$J,358.3,2408,1,4,0)
+ ;;=4^I70.223
+ ;;^UTILITY(U,$J,358.3,2408,2)
+ ;;=^5007585
+ ;;^UTILITY(U,$J,358.3,2409,0)
+ ;;=I70.231^^19^203^38
+ ;;^UTILITY(U,$J,358.3,2409,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2409,1,3,0)
+ ;;=3^Athscl Native Arteries of Right Leg w/ Thigh Ulceration
+ ;;^UTILITY(U,$J,358.3,2409,1,4,0)
+ ;;=4^I70.231
+ ;;^UTILITY(U,$J,358.3,2409,2)
+ ;;=^5007588
+ ;;^UTILITY(U,$J,358.3,2410,0)
+ ;;=I70.234^^19^203^39
+ ;;^UTILITY(U,$J,358.3,2410,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2410,1,3,0)
+ ;;=3^Athscl Native Arteries of Right Leg w/ Heel/Midfoot Ulcer
+ ;;^UTILITY(U,$J,358.3,2410,1,4,0)
+ ;;=4^I70.234
+ ;;^UTILITY(U,$J,358.3,2410,2)
+ ;;=^5007591
+ ;;^UTILITY(U,$J,358.3,2411,0)
+ ;;=I70.239^^19^203^40
+ ;;^UTILITY(U,$J,358.3,2411,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2411,1,3,0)
+ ;;=3^Athscl Native Arteries of Right Leg w/ Ulcer of Unspec Site
+ ;;^UTILITY(U,$J,358.3,2411,1,4,0)
+ ;;=4^I70.239
+ ;;^UTILITY(U,$J,358.3,2411,2)
+ ;;=^5007594
+ ;;^UTILITY(U,$J,358.3,2412,0)
+ ;;=I70.241^^19^203^34
+ ;;^UTILITY(U,$J,358.3,2412,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2412,1,3,0)
+ ;;=3^Athscl Native Arteries of Left Leg w/ Thigh Ulceration
+ ;;^UTILITY(U,$J,358.3,2412,1,4,0)
+ ;;=4^I70.241
+ ;;^UTILITY(U,$J,358.3,2412,2)
+ ;;=^5007595
+ ;;^UTILITY(U,$J,358.3,2413,0)
+ ;;=I70.249^^19^203^35
+ ;;^UTILITY(U,$J,358.3,2413,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2413,1,3,0)
+ ;;=3^Athscl Native Arteries of Left Leg w/ Ulcer of Unspec Site
+ ;;^UTILITY(U,$J,358.3,2413,1,4,0)
+ ;;=4^I70.249
+ ;;^UTILITY(U,$J,358.3,2413,2)
+ ;;=^5007601
+ ;;^UTILITY(U,$J,358.3,2414,0)
+ ;;=I70.262^^19^203^31
+ ;;^UTILITY(U,$J,358.3,2414,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2414,1,3,0)
+ ;;=3^Athscl Native Arteries of Left Leg w/ Gangrene
+ ;;^UTILITY(U,$J,358.3,2414,1,4,0)
+ ;;=4^I70.262
+ ;;^UTILITY(U,$J,358.3,2414,2)
+ ;;=^5007604
+ ;;^UTILITY(U,$J,358.3,2415,0)
+ ;;=I70.261^^19^203^41
+ ;;^UTILITY(U,$J,358.3,2415,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2415,1,3,0)
+ ;;=3^Athscl Native Arteries of Right Leg w/ Gangrene
+ ;;^UTILITY(U,$J,358.3,2415,1,4,0)
+ ;;=4^I70.261
+ ;;^UTILITY(U,$J,358.3,2415,2)
+ ;;=^5007603
+ ;;^UTILITY(U,$J,358.3,2416,0)
+ ;;=I70.263^^19^203^30
+ ;;^UTILITY(U,$J,358.3,2416,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2416,1,3,0)
+ ;;=3^Athscl Native Arteries of Bilateral Legs w/ Gangrene
+ ;;^UTILITY(U,$J,358.3,2416,1,4,0)
+ ;;=4^I70.263
+ ;;^UTILITY(U,$J,358.3,2416,2)
+ ;;=^5007605
+ ;;^UTILITY(U,$J,358.3,2417,0)
+ ;;=I70.301^^19^203^50
+ ;;^UTILITY(U,$J,358.3,2417,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2417,1,3,0)
+ ;;=3^Athscl Unspec Type Bypass of Right Leg
+ ;;^UTILITY(U,$J,358.3,2417,1,4,0)
+ ;;=4^I70.301
+ ;;^UTILITY(U,$J,358.3,2417,2)
+ ;;=^5007611
+ ;;^UTILITY(U,$J,358.3,2418,0)
+ ;;=I70.302^^19^203^49
+ ;;^UTILITY(U,$J,358.3,2418,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2418,1,3,0)
+ ;;=3^Athscl Unspec Type Bypass of Left Leg
+ ;;^UTILITY(U,$J,358.3,2418,1,4,0)
+ ;;=4^I70.302
+ ;;^UTILITY(U,$J,358.3,2418,2)
+ ;;=^5007612
+ ;;^UTILITY(U,$J,358.3,2419,0)
+ ;;=I70.303^^19^203^48
+ ;;^UTILITY(U,$J,358.3,2419,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2419,1,3,0)
+ ;;=3^Athscl Unspec Type Bypass of Bilateral Legs

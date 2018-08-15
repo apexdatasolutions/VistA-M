@@ -1,122 +1,140 @@
-IBDEI0RM ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0RM ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,13640,0)
- ;;=414.02^^90^848^18
- ;;^UTILITY(U,$J,358.3,13640,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13640,1,4,0)
- ;;=4^414.02
- ;;^UTILITY(U,$J,358.3,13640,1,5,0)
- ;;=5^CAD, Occlusion of Venous Graft
- ;;^UTILITY(U,$J,358.3,13640,2)
- ;;=CAD, Occlusion of Venous Graft^303282
- ;;^UTILITY(U,$J,358.3,13641,0)
- ;;=459.10^^90^848^73
- ;;^UTILITY(U,$J,358.3,13641,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13641,1,4,0)
- ;;=4^459.10
- ;;^UTILITY(U,$J,358.3,13641,1,5,0)
- ;;=5^Post Phlebotic Syndrome
- ;;^UTILITY(U,$J,358.3,13641,2)
- ;;=Post Phlebotic Syndrome^328597
- ;;^UTILITY(U,$J,358.3,13642,0)
- ;;=428.20^^90^848^50
- ;;^UTILITY(U,$J,358.3,13642,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13642,1,4,0)
- ;;=4^428.20
- ;;^UTILITY(U,$J,358.3,13642,1,5,0)
- ;;=5^Heart Failure, Systolic, Unspec
- ;;^UTILITY(U,$J,358.3,13642,2)
- ;;=Heart Failure, Systolic^328594
- ;;^UTILITY(U,$J,358.3,13643,0)
- ;;=428.21^^90^848^42
- ;;^UTILITY(U,$J,358.3,13643,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13643,1,4,0)
- ;;=4^428.21
- ;;^UTILITY(U,$J,358.3,13643,1,5,0)
- ;;=5^Heart Failure, Acute Systolic
- ;;^UTILITY(U,$J,358.3,13643,2)
- ;;=Heart Failure, Acute Systolic^328494
- ;;^UTILITY(U,$J,358.3,13644,0)
- ;;=428.22^^90^848^44
- ;;^UTILITY(U,$J,358.3,13644,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13644,1,4,0)
- ;;=4^428.22
- ;;^UTILITY(U,$J,358.3,13644,1,5,0)
- ;;=5^Heart Failure, Chronic Systolic
- ;;^UTILITY(U,$J,358.3,13644,2)
- ;;=Heart Failure, Chronic Systolic^328495
- ;;^UTILITY(U,$J,358.3,13645,0)
- ;;=428.23^^90^848^49
- ;;^UTILITY(U,$J,358.3,13645,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13645,1,4,0)
- ;;=4^428.23
- ;;^UTILITY(U,$J,358.3,13645,1,5,0)
- ;;=5^Heart Failure, Systolic, Acute on Chronic
- ;;^UTILITY(U,$J,358.3,13645,2)
- ;;=Heart Failure, Systolic, Acute on Chronic^328496
- ;;^UTILITY(U,$J,358.3,13646,0)
- ;;=428.30^^90^848^45
- ;;^UTILITY(U,$J,358.3,13646,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13646,1,4,0)
- ;;=4^428.30
- ;;^UTILITY(U,$J,358.3,13646,1,5,0)
- ;;=5^Heart Failure, Diastolic
- ;;^UTILITY(U,$J,358.3,13646,2)
- ;;=Heart Failure, Diastolic^328595
- ;;^UTILITY(U,$J,358.3,13647,0)
- ;;=428.31^^90^848^41
- ;;^UTILITY(U,$J,358.3,13647,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13647,1,4,0)
- ;;=4^428.31
- ;;^UTILITY(U,$J,358.3,13647,1,5,0)
- ;;=5^Heart Failure, Acute Diastolic
- ;;^UTILITY(U,$J,358.3,13647,2)
- ;;=Heart Failure, Acute Diastolic^328497
- ;;^UTILITY(U,$J,358.3,13648,0)
- ;;=428.32^^90^848^43
- ;;^UTILITY(U,$J,358.3,13648,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13648,1,4,0)
- ;;=4^428.32
- ;;^UTILITY(U,$J,358.3,13648,1,5,0)
- ;;=5^Heart Failure, Chronic Diastolic
- ;;^UTILITY(U,$J,358.3,13648,2)
- ;;=Heart Failure, Chronic Diastolic^328498
- ;;^UTILITY(U,$J,358.3,13649,0)
- ;;=428.33^^90^848^47
- ;;^UTILITY(U,$J,358.3,13649,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13649,1,4,0)
- ;;=4^428.33
- ;;^UTILITY(U,$J,358.3,13649,1,5,0)
- ;;=5^Heart Failure, Diastolic, Acute on Chronic
- ;;^UTILITY(U,$J,358.3,13649,2)
- ;;=Heart Failure, Diastolic, Acute on Chronic^328499
- ;;^UTILITY(U,$J,358.3,13650,0)
- ;;=428.40^^90^848^46
- ;;^UTILITY(U,$J,358.3,13650,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13650,1,4,0)
- ;;=4^428.40
- ;;^UTILITY(U,$J,358.3,13650,1,5,0)
- ;;=5^Heart Failure, Diastolic& Systolic
- ;;^UTILITY(U,$J,358.3,13650,2)
- ;;=Heart Failure, Systolic and Diastolic^328596
- ;;^UTILITY(U,$J,358.3,13651,0)
- ;;=428.41^^90^848^48
- ;;^UTILITY(U,$J,358.3,13651,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13651,1,4,0)
- ;;=4^428.41
- ;;^UTILITY(U,$J,358.3,13651,1,5,0)
- ;;=5^Heart Failure, Systolic & Diastolic, Acute
+ ;;^UTILITY(U,$J,358.3,12674,1,3,0)
+ ;;=3^Chronic tonsillitis
+ ;;^UTILITY(U,$J,358.3,12674,1,4,0)
+ ;;=4^J35.01
+ ;;^UTILITY(U,$J,358.3,12674,2)
+ ;;=^259089
+ ;;^UTILITY(U,$J,358.3,12675,0)
+ ;;=J36.^^77^736^18
+ ;;^UTILITY(U,$J,358.3,12675,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12675,1,3,0)
+ ;;=3^Peritonsillar abscess
+ ;;^UTILITY(U,$J,358.3,12675,1,4,0)
+ ;;=4^J36.
+ ;;^UTILITY(U,$J,358.3,12675,2)
+ ;;=^92333
+ ;;^UTILITY(U,$J,358.3,12676,0)
+ ;;=J37.0^^77^736^4
+ ;;^UTILITY(U,$J,358.3,12676,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12676,1,3,0)
+ ;;=3^Chronic laryngitis
+ ;;^UTILITY(U,$J,358.3,12676,1,4,0)
+ ;;=4^J37.0
+ ;;^UTILITY(U,$J,358.3,12676,2)
+ ;;=^269902
+ ;;^UTILITY(U,$J,358.3,12677,0)
+ ;;=J30.9^^77^736^2
+ ;;^UTILITY(U,$J,358.3,12677,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12677,1,3,0)
+ ;;=3^Allergic rhinitis, unspecified
+ ;;^UTILITY(U,$J,358.3,12677,1,4,0)
+ ;;=4^J30.9
+ ;;^UTILITY(U,$J,358.3,12677,2)
+ ;;=^5008205
+ ;;^UTILITY(U,$J,358.3,12678,0)
+ ;;=J30.0^^77^736^22
+ ;;^UTILITY(U,$J,358.3,12678,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12678,1,3,0)
+ ;;=3^Vasomotor rhinitis
+ ;;^UTILITY(U,$J,358.3,12678,1,4,0)
+ ;;=4^J30.0
+ ;;^UTILITY(U,$J,358.3,12678,2)
+ ;;=^5008201
+ ;;^UTILITY(U,$J,358.3,12679,0)
+ ;;=J34.3^^77^736^14
+ ;;^UTILITY(U,$J,358.3,12679,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12679,1,3,0)
+ ;;=3^Hypertrophy of nasal turbinates
+ ;;^UTILITY(U,$J,358.3,12679,1,4,0)
+ ;;=4^J34.3
+ ;;^UTILITY(U,$J,358.3,12679,2)
+ ;;=^269909
+ ;;^UTILITY(U,$J,358.3,12680,0)
+ ;;=M95.0^^77^736^1
+ ;;^UTILITY(U,$J,358.3,12680,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12680,1,3,0)
+ ;;=3^Acquired deformity of nose
+ ;;^UTILITY(U,$J,358.3,12680,1,4,0)
+ ;;=4^M95.0
+ ;;^UTILITY(U,$J,358.3,12680,2)
+ ;;=^5015367
+ ;;^UTILITY(U,$J,358.3,12681,0)
+ ;;=J38.00^^77^736^17
+ ;;^UTILITY(U,$J,358.3,12681,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12681,1,3,0)
+ ;;=3^Paralysis of vocal cords and larynx, unspecified
+ ;;^UTILITY(U,$J,358.3,12681,1,4,0)
+ ;;=4^J38.00
+ ;;^UTILITY(U,$J,358.3,12681,2)
+ ;;=^5008219
+ ;;^UTILITY(U,$J,358.3,12682,0)
+ ;;=J38.1^^77^736^21
+ ;;^UTILITY(U,$J,358.3,12682,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12682,1,3,0)
+ ;;=3^Polyp of vocal cord and larynx
+ ;;^UTILITY(U,$J,358.3,12682,1,4,0)
+ ;;=4^J38.1
+ ;;^UTILITY(U,$J,358.3,12682,2)
+ ;;=^5008222
+ ;;^UTILITY(U,$J,358.3,12683,0)
+ ;;=J38.7^^77^736^15
+ ;;^UTILITY(U,$J,358.3,12683,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12683,1,3,0)
+ ;;=3^Larynx Diseases NEC
+ ;;^UTILITY(U,$J,358.3,12683,1,4,0)
+ ;;=4^J38.7
+ ;;^UTILITY(U,$J,358.3,12683,2)
+ ;;=^5008227
+ ;;^UTILITY(U,$J,358.3,12684,0)
+ ;;=K13.21^^77^736^16
+ ;;^UTILITY(U,$J,358.3,12684,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12684,1,3,0)
+ ;;=3^Leukoplakia of oral mucosa, including tongue
+ ;;^UTILITY(U,$J,358.3,12684,1,4,0)
+ ;;=4^K13.21
+ ;;^UTILITY(U,$J,358.3,12684,2)
+ ;;=^270054
+ ;;^UTILITY(U,$J,358.3,12685,0)
+ ;;=R43.0^^77^736^3
+ ;;^UTILITY(U,$J,358.3,12685,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12685,1,3,0)
+ ;;=3^Anosmia
+ ;;^UTILITY(U,$J,358.3,12685,1,4,0)
+ ;;=4^R43.0
+ ;;^UTILITY(U,$J,358.3,12685,2)
+ ;;=^7949
+ ;;^UTILITY(U,$J,358.3,12686,0)
+ ;;=R49.0^^77^736^12
+ ;;^UTILITY(U,$J,358.3,12686,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12686,1,3,0)
+ ;;=3^Dysphonia
+ ;;^UTILITY(U,$J,358.3,12686,1,4,0)
+ ;;=4^R49.0
+ ;;^UTILITY(U,$J,358.3,12686,2)
+ ;;=^5019501
+ ;;^UTILITY(U,$J,358.3,12687,0)
+ ;;=R04.0^^77^736^13
+ ;;^UTILITY(U,$J,358.3,12687,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12687,1,3,0)
+ ;;=3^Epistaxis
+ ;;^UTILITY(U,$J,358.3,12687,1,4,0)
+ ;;=4^R04.0
+ ;;^UTILITY(U,$J,358.3,12687,2)
+ ;;=^5019173

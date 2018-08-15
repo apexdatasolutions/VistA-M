@@ -1,132 +1,126 @@
-IBDEI0GC ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0GC ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,7936,1,0)
+ ;;^UTILITY(U,$J,358.3,7252,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Diabetic Ophthalmic Complication NEC
+ ;;^UTILITY(U,$J,358.3,7252,1,4,0)
+ ;;=4^E11.39
+ ;;^UTILITY(U,$J,358.3,7252,2)
+ ;;=^5002643
+ ;;^UTILITY(U,$J,358.3,7253,0)
+ ;;=E11.41^^49^479^63
+ ;;^UTILITY(U,$J,358.3,7253,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,7936,1,3,0)
- ;;=3^Lacrimal,Canal Stenosis
- ;;^UTILITY(U,$J,358.3,7936,1,4,0)
- ;;=4^375.53
- ;;^UTILITY(U,$J,358.3,7936,2)
- ;;=Lacrimal Canal Stenosis^269154
- ;;^UTILITY(U,$J,358.3,7937,0)
- ;;=375.51^^58^604^70
- ;;^UTILITY(U,$J,358.3,7937,1,0)
+ ;;^UTILITY(U,$J,358.3,7253,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Diabetic Mononueuropathy
+ ;;^UTILITY(U,$J,358.3,7253,1,4,0)
+ ;;=4^E11.41
+ ;;^UTILITY(U,$J,358.3,7253,2)
+ ;;=^5002645
+ ;;^UTILITY(U,$J,358.3,7254,0)
+ ;;=E11.42^^49^479^66
+ ;;^UTILITY(U,$J,358.3,7254,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,7937,1,3,0)
- ;;=3^Lacrimal,Punctum Eversion
- ;;^UTILITY(U,$J,358.3,7937,1,4,0)
- ;;=4^375.51
- ;;^UTILITY(U,$J,358.3,7937,2)
- ;;=Lacrimal Punctum Eversion^269150
- ;;^UTILITY(U,$J,358.3,7938,0)
- ;;=375.54^^58^604^71
- ;;^UTILITY(U,$J,358.3,7938,1,0)
+ ;;^UTILITY(U,$J,358.3,7254,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Diabetic Polyneuropathy
+ ;;^UTILITY(U,$J,358.3,7254,1,4,0)
+ ;;=4^E11.42
+ ;;^UTILITY(U,$J,358.3,7254,2)
+ ;;=^5002646
+ ;;^UTILITY(U,$J,358.3,7255,0)
+ ;;=E11.43^^49^479^62
+ ;;^UTILITY(U,$J,358.3,7255,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,7938,1,3,0)
- ;;=3^Lacrimal,Sac Stenosis
- ;;^UTILITY(U,$J,358.3,7938,1,4,0)
- ;;=4^375.54
- ;;^UTILITY(U,$J,358.3,7938,2)
- ;;=Lacrimal Punctum Stenosis^269156
- ;;^UTILITY(U,$J,358.3,7939,0)
- ;;=375.56^^58^604^78
- ;;^UTILITY(U,$J,358.3,7939,1,0)
+ ;;^UTILITY(U,$J,358.3,7255,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Diabetic Autonomic Polyneuropathy
+ ;;^UTILITY(U,$J,358.3,7255,1,4,0)
+ ;;=4^E11.43
+ ;;^UTILITY(U,$J,358.3,7255,2)
+ ;;=^5002647
+ ;;^UTILITY(U,$J,358.3,7256,0)
+ ;;=E11.44^^49^479^61
+ ;;^UTILITY(U,$J,358.3,7256,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,7939,1,3,0)
- ;;=3^Nasolacrimal Duct Obstruction
- ;;^UTILITY(U,$J,358.3,7939,1,4,0)
- ;;=4^375.56
- ;;^UTILITY(U,$J,358.3,7939,2)
- ;;=Obstruction, Nasolacrimal duct^269159
- ;;^UTILITY(U,$J,358.3,7940,0)
- ;;=376.30^^58^604^87
- ;;^UTILITY(U,$J,358.3,7940,1,0)
+ ;;^UTILITY(U,$J,358.3,7256,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Diabetic Amyotrophy
+ ;;^UTILITY(U,$J,358.3,7256,1,4,0)
+ ;;=4^E11.44
+ ;;^UTILITY(U,$J,358.3,7256,2)
+ ;;=^5002648
+ ;;^UTILITY(U,$J,358.3,7257,0)
+ ;;=E11.49^^49^479^64
+ ;;^UTILITY(U,$J,358.3,7257,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,7940,1,3,0)
- ;;=3^Orbit Exophalmos
- ;;^UTILITY(U,$J,358.3,7940,1,4,0)
- ;;=4^376.30
- ;;^UTILITY(U,$J,358.3,7940,2)
- ;;=Exophthalmos^43683
- ;;^UTILITY(U,$J,358.3,7941,0)
- ;;=802.8^^58^604^88
- ;;^UTILITY(U,$J,358.3,7941,1,0)
+ ;;^UTILITY(U,$J,358.3,7257,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Diabetic Neurological Complication NEC
+ ;;^UTILITY(U,$J,358.3,7257,1,4,0)
+ ;;=4^E11.49
+ ;;^UTILITY(U,$J,358.3,7257,2)
+ ;;=^5002649
+ ;;^UTILITY(U,$J,358.3,7258,0)
+ ;;=E10.39^^49^479^26
+ ;;^UTILITY(U,$J,358.3,7258,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,7941,1,3,0)
- ;;=3^Orbit Fracture
- ;;^UTILITY(U,$J,358.3,7941,1,4,0)
- ;;=4^802.8
- ;;^UTILITY(U,$J,358.3,7941,2)
- ;;=Fracture of Orbit^25315
- ;;^UTILITY(U,$J,358.3,7942,0)
- ;;=870.4^^58^604^92
- ;;^UTILITY(U,$J,358.3,7942,1,0)
+ ;;^UTILITY(U,$J,358.3,7258,1,3,0)
+ ;;=3^Diabetes Type 1 w/ Diabetic Ophthalmic Complication NEC
+ ;;^UTILITY(U,$J,358.3,7258,1,4,0)
+ ;;=4^E10.39
+ ;;^UTILITY(U,$J,358.3,7258,2)
+ ;;=^5002603
+ ;;^UTILITY(U,$J,358.3,7259,0)
+ ;;=E10.10^^49^479^37
+ ;;^UTILITY(U,$J,358.3,7259,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,7942,1,3,0)
- ;;=3^Orbit Penetrating Wound w/ Foreign Body
- ;;^UTILITY(U,$J,358.3,7942,1,4,0)
- ;;=4^870.4
- ;;^UTILITY(U,$J,358.3,7942,2)
- ;;=Foreign Body in Orbit^274883
- ;;^UTILITY(U,$J,358.3,7943,0)
- ;;=376.10^^58^604^91
- ;;^UTILITY(U,$J,358.3,7943,1,0)
+ ;;^UTILITY(U,$J,358.3,7259,1,3,0)
+ ;;=3^Diabetes Type 1 w/ Ketoacidosis w/o Coma
+ ;;^UTILITY(U,$J,358.3,7259,1,4,0)
+ ;;=4^E10.10
+ ;;^UTILITY(U,$J,358.3,7259,2)
+ ;;=^5002587
+ ;;^UTILITY(U,$J,358.3,7260,0)
+ ;;=E10.21^^49^479^22
+ ;;^UTILITY(U,$J,358.3,7260,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,7943,1,3,0)
- ;;=3^Orbit Inflammation,Chronic
- ;;^UTILITY(U,$J,358.3,7943,1,4,0)
- ;;=4^376.10
- ;;^UTILITY(U,$J,358.3,7943,2)
- ;;=Orbital Inflammation^269175
- ;;^UTILITY(U,$J,358.3,7944,0)
- ;;=360.41^^58^604^66
- ;;^UTILITY(U,$J,358.3,7944,1,0)
+ ;;^UTILITY(U,$J,358.3,7260,1,3,0)
+ ;;=3^Diabetes Type 1 w/ Diabetic Nephropathy
+ ;;^UTILITY(U,$J,358.3,7260,1,4,0)
+ ;;=4^E10.21
+ ;;^UTILITY(U,$J,358.3,7260,2)
+ ;;=^5002589
+ ;;^UTILITY(U,$J,358.3,7261,0)
+ ;;=E10.311^^49^479^30
+ ;;^UTILITY(U,$J,358.3,7261,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,7944,1,3,0)
- ;;=3^Hypotensive Blind Phthisis,Blind
- ;;^UTILITY(U,$J,358.3,7944,1,4,0)
- ;;=4^360.41
- ;;^UTILITY(U,$J,358.3,7944,2)
- ;;=Phthisis^268564
- ;;^UTILITY(U,$J,358.3,7945,0)
- ;;=376.50^^58^604^86
- ;;^UTILITY(U,$J,358.3,7945,1,0)
+ ;;^UTILITY(U,$J,358.3,7261,1,3,0)
+ ;;=3^Diabetes Type 1 w/ Diabetic Retinopathy w/ Macular Edema
+ ;;^UTILITY(U,$J,358.3,7261,1,4,0)
+ ;;=4^E10.311
+ ;;^UTILITY(U,$J,358.3,7261,2)
+ ;;=^5002592
+ ;;^UTILITY(U,$J,358.3,7262,0)
+ ;;=E10.319^^49^479^31
+ ;;^UTILITY(U,$J,358.3,7262,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,7945,1,3,0)
- ;;=3^Orbit Enopthalmos
- ;;^UTILITY(U,$J,358.3,7945,1,4,0)
- ;;=4^376.50
- ;;^UTILITY(U,$J,358.3,7945,2)
- ;;=Enopthalmos^40801
- ;;^UTILITY(U,$J,358.3,7946,0)
- ;;=239.2^^58^604^95
- ;;^UTILITY(U,$J,358.3,7946,1,0)
+ ;;^UTILITY(U,$J,358.3,7262,1,3,0)
+ ;;=3^Diabetes Type 1 w/ Diabetic Retinopathy w/o Macular Edema
+ ;;^UTILITY(U,$J,358.3,7262,1,4,0)
+ ;;=4^E10.319
+ ;;^UTILITY(U,$J,358.3,7262,2)
+ ;;=^5002593
+ ;;^UTILITY(U,$J,358.3,7263,0)
+ ;;=E10.321^^49^479^38
+ ;;^UTILITY(U,$J,358.3,7263,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,7946,1,3,0)
- ;;=3^Orbital Tumor,Neopl,Unspec Nature
- ;;^UTILITY(U,$J,358.3,7946,1,4,0)
- ;;=4^239.2
- ;;^UTILITY(U,$J,358.3,7946,2)
- ;;=Orbital Tumor^267783
- ;;^UTILITY(U,$J,358.3,7947,0)
- ;;=239.7^^58^604^79
- ;;^UTILITY(U,$J,358.3,7947,1,0)
+ ;;^UTILITY(U,$J,358.3,7263,1,3,0)
+ ;;=3^Diabetes Type 1 w/ Mild Nonprlf Diabetic Retinopathy w/ Macular Edema
+ ;;^UTILITY(U,$J,358.3,7263,1,4,0)
+ ;;=4^E10.321
+ ;;^UTILITY(U,$J,358.3,7263,2)
+ ;;=^5002594
+ ;;^UTILITY(U,$J,358.3,7264,0)
+ ;;=E10.329^^49^479^39
+ ;;^UTILITY(U,$J,358.3,7264,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,7947,1,3,0)
- ;;=3^Optic Nerve Neop,Unspec Nature
- ;;^UTILITY(U,$J,358.3,7947,1,4,0)
- ;;=4^239.7
- ;;^UTILITY(U,$J,358.3,7947,2)
- ;;=Optic Nerve Tumor^267785
- ;;^UTILITY(U,$J,358.3,7948,0)
- ;;=V52.2^^58^604^2
- ;;^UTILITY(U,$J,358.3,7948,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,7948,1,3,0)
- ;;=3^Artificial Eye Prosthethic Check
- ;;^UTILITY(U,$J,358.3,7948,1,4,0)
- ;;=4^V52.2
- ;;^UTILITY(U,$J,358.3,7948,2)
- ;;=Prosthethic Eye Check^295498^V43.0
+ ;;^UTILITY(U,$J,358.3,7264,1,3,0)
+ ;;=3^Diabetes Type 1 w/ Mild Nonprlf Diabetic Retinopathy w/o Macular Edema

@@ -1,142 +1,130 @@
-IBDEI023 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI023 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,537,1,2,0)
- ;;=2^36415
- ;;^UTILITY(U,$J,358.3,537,1,3,0)
- ;;=3^Drawing Blood
- ;;^UTILITY(U,$J,358.3,538,0)
- ;;=96360^^6^54^1^^^^1
- ;;^UTILITY(U,$J,358.3,538,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,538,1,2,0)
- ;;=2^96360
- ;;^UTILITY(U,$J,358.3,538,1,3,0)
- ;;=3^Hydration IV Infusion,Init
- ;;^UTILITY(U,$J,358.3,539,0)
- ;;=96361^^6^54^2^^^^1
- ;;^UTILITY(U,$J,358.3,539,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,539,1,2,0)
- ;;=2^96361
- ;;^UTILITY(U,$J,358.3,539,1,3,0)
- ;;=3^Hydrate IV Infusion,Add-On
- ;;^UTILITY(U,$J,358.3,540,0)
- ;;=94010^^6^55^1^^^^1
- ;;^UTILITY(U,$J,358.3,540,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,540,1,2,0)
- ;;=2^94010
- ;;^UTILITY(U,$J,358.3,540,1,3,0)
- ;;=3^Spirometry
- ;;^UTILITY(U,$J,358.3,541,0)
- ;;=31231^^6^55^2^^^^1
- ;;^UTILITY(U,$J,358.3,541,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,541,1,2,0)
- ;;=2^31231
- ;;^UTILITY(U,$J,358.3,541,1,3,0)
- ;;=3^Rhinoscopy
- ;;^UTILITY(U,$J,358.3,542,0)
- ;;=99212^^7^56^2
- ;;^UTILITY(U,$J,358.3,542,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,542,1,1,0)
- ;;=1^Expanded Problem Focused
- ;;^UTILITY(U,$J,358.3,542,1,2,0)
- ;;=2^99212
- ;;^UTILITY(U,$J,358.3,543,0)
- ;;=99213^^7^56^3
- ;;^UTILITY(U,$J,358.3,543,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,543,1,1,0)
- ;;=1^Detailed Visit
- ;;^UTILITY(U,$J,358.3,543,1,2,0)
- ;;=2^99213
- ;;^UTILITY(U,$J,358.3,544,0)
- ;;=99214^^7^56^4
- ;;^UTILITY(U,$J,358.3,544,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,544,1,1,0)
- ;;=1^Comprehensive,Mod Complexity
- ;;^UTILITY(U,$J,358.3,544,1,2,0)
- ;;=2^99214
- ;;^UTILITY(U,$J,358.3,545,0)
- ;;=99211^^7^56^1
- ;;^UTILITY(U,$J,358.3,545,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,545,1,1,0)
- ;;=1^Problem Focused
- ;;^UTILITY(U,$J,358.3,545,1,2,0)
- ;;=2^99211
- ;;^UTILITY(U,$J,358.3,546,0)
- ;;=99242^^7^57^1
- ;;^UTILITY(U,$J,358.3,546,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,546,1,1,0)
- ;;=1^Expanded Problem Focused
- ;;^UTILITY(U,$J,358.3,546,1,2,0)
- ;;=2^99242
- ;;^UTILITY(U,$J,358.3,547,0)
- ;;=99243^^7^57^2
- ;;^UTILITY(U,$J,358.3,547,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,547,1,1,0)
- ;;=1^Detailed Visit
- ;;^UTILITY(U,$J,358.3,547,1,2,0)
- ;;=2^99243
- ;;^UTILITY(U,$J,358.3,548,0)
- ;;=99244^^7^57^3
- ;;^UTILITY(U,$J,358.3,548,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,548,1,1,0)
- ;;=1^Comprehensive,Mod Complexity
- ;;^UTILITY(U,$J,358.3,548,1,2,0)
- ;;=2^99244
- ;;^UTILITY(U,$J,358.3,549,0)
- ;;=99024^^7^58^1
- ;;^UTILITY(U,$J,358.3,549,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,549,1,1,0)
- ;;=1^Post Op visit in Global
- ;;^UTILITY(U,$J,358.3,549,1,2,0)
- ;;=2^99024
- ;;^UTILITY(U,$J,358.3,550,0)
- ;;=64415^^8^59^6^^^^1
- ;;^UTILITY(U,$J,358.3,550,1,0)
+ ;;^UTILITY(U,$J,358.3,203,0)
+ ;;=G20.^^3^27^28
+ ;;^UTILITY(U,$J,358.3,203,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,550,1,2,0)
- ;;=2^NERVE BLOCK BRACHIAL PLEXUS,SING
- ;;^UTILITY(U,$J,358.3,550,1,4,0)
- ;;=4^64415
- ;;^UTILITY(U,$J,358.3,551,0)
- ;;=64416^^8^59^2^^^^1
- ;;^UTILITY(U,$J,358.3,551,1,0)
+ ;;^UTILITY(U,$J,358.3,203,1,3,0)
+ ;;=3^Parkinson's Disease w/ Dementia w/ Behavioral Disturbances
+ ;;^UTILITY(U,$J,358.3,203,1,4,0)
+ ;;=4^G20.
+ ;;^UTILITY(U,$J,358.3,203,2)
+ ;;=^5003770^F02.81
+ ;;^UTILITY(U,$J,358.3,204,0)
+ ;;=G20.^^3^27^29
+ ;;^UTILITY(U,$J,358.3,204,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,551,1,2,0)
- ;;=2^NERVE BLK BRACHIAL PLEXUS,CONT INFUSION
- ;;^UTILITY(U,$J,358.3,551,1,4,0)
- ;;=4^64416
- ;;^UTILITY(U,$J,358.3,552,0)
- ;;=64413^^8^59^9^^^^1
- ;;^UTILITY(U,$J,358.3,552,1,0)
+ ;;^UTILITY(U,$J,358.3,204,1,3,0)
+ ;;=3^Parkinson's Disease w/ Dementia w/o Behavioral Disturbances
+ ;;^UTILITY(U,$J,358.3,204,1,4,0)
+ ;;=4^G20.
+ ;;^UTILITY(U,$J,358.3,204,2)
+ ;;=^5003770^F02.80
+ ;;^UTILITY(U,$J,358.3,205,0)
+ ;;=G23.1^^3^27^34
+ ;;^UTILITY(U,$J,358.3,205,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,552,1,2,0)
- ;;=2^NERVE BLOCK CERVICAL PLEXUS
- ;;^UTILITY(U,$J,358.3,552,1,4,0)
- ;;=4^64413
- ;;^UTILITY(U,$J,358.3,553,0)
- ;;=64402^^8^59^10^^^^1
- ;;^UTILITY(U,$J,358.3,553,1,0)
+ ;;^UTILITY(U,$J,358.3,205,1,3,0)
+ ;;=3^Progressive Supranuclear Palsy
+ ;;^UTILITY(U,$J,358.3,205,1,4,0)
+ ;;=4^G23.1
+ ;;^UTILITY(U,$J,358.3,205,2)
+ ;;=^5003780
+ ;;^UTILITY(U,$J,358.3,206,0)
+ ;;=F03.91^^3^27^15
+ ;;^UTILITY(U,$J,358.3,206,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,553,1,2,0)
- ;;=2^NERVE BLOCK FACIAL NERVE
- ;;^UTILITY(U,$J,358.3,553,1,4,0)
- ;;=4^64402
- ;;^UTILITY(U,$J,358.3,554,0)
- ;;=64447^^8^59^11^^^^1
- ;;^UTILITY(U,$J,358.3,554,1,0)
+ ;;^UTILITY(U,$J,358.3,206,1,3,0)
+ ;;=3^Dementia w/ Behavioral Disturbance,Unspec
+ ;;^UTILITY(U,$J,358.3,206,1,4,0)
+ ;;=4^F03.91
+ ;;^UTILITY(U,$J,358.3,206,2)
+ ;;=^5133350
+ ;;^UTILITY(U,$J,358.3,207,0)
+ ;;=F03.90^^3^27^17
+ ;;^UTILITY(U,$J,358.3,207,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,554,1,2,0)
- ;;=2^NERVE BLOCK FEMORAL NERVE,SING
+ ;;^UTILITY(U,$J,358.3,207,1,3,0)
+ ;;=3^Dementia w/o Behavioral Disturbance,Unspec
+ ;;^UTILITY(U,$J,358.3,207,1,4,0)
+ ;;=4^F03.90
+ ;;^UTILITY(U,$J,358.3,207,2)
+ ;;=^5003050
+ ;;^UTILITY(U,$J,358.3,208,0)
+ ;;=F06.30^^3^28^2
+ ;;^UTILITY(U,$J,358.3,208,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,208,1,3,0)
+ ;;=3^Depressive Disorder d/t Another Medical Condition,Unspec
+ ;;^UTILITY(U,$J,358.3,208,1,4,0)
+ ;;=4^F06.30
+ ;;^UTILITY(U,$J,358.3,208,2)
+ ;;=^5003056
+ ;;^UTILITY(U,$J,358.3,209,0)
+ ;;=F06.31^^3^28^3
+ ;;^UTILITY(U,$J,358.3,209,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,209,1,3,0)
+ ;;=3^Depressive Disorder d/t Another Medical Condition w/ Depressive Features
+ ;;^UTILITY(U,$J,358.3,209,1,4,0)
+ ;;=4^F06.31
+ ;;^UTILITY(U,$J,358.3,209,2)
+ ;;=^5003057
+ ;;^UTILITY(U,$J,358.3,210,0)
+ ;;=F06.32^^3^28^4
+ ;;^UTILITY(U,$J,358.3,210,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,210,1,3,0)
+ ;;=3^Depressive Disorder d/t Another Medical Condition w/ Major Depressive-Like Episode
+ ;;^UTILITY(U,$J,358.3,210,1,4,0)
+ ;;=4^F06.32
+ ;;^UTILITY(U,$J,358.3,210,2)
+ ;;=^5003058
+ ;;^UTILITY(U,$J,358.3,211,0)
+ ;;=F32.9^^3^28^14
+ ;;^UTILITY(U,$J,358.3,211,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,211,1,3,0)
+ ;;=3^Major Depressive Disorder,Single Episode,Unspec
+ ;;^UTILITY(U,$J,358.3,211,1,4,0)
+ ;;=4^F32.9
+ ;;^UTILITY(U,$J,358.3,211,2)
+ ;;=^5003528
+ ;;^UTILITY(U,$J,358.3,212,0)
+ ;;=F32.0^^3^28^15
+ ;;^UTILITY(U,$J,358.3,212,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,212,1,3,0)
+ ;;=3^Major Depressive Disorder,Single Episode,Mild
+ ;;^UTILITY(U,$J,358.3,212,1,4,0)
+ ;;=4^F32.0
+ ;;^UTILITY(U,$J,358.3,212,2)
+ ;;=^5003521
+ ;;^UTILITY(U,$J,358.3,213,0)
+ ;;=F32.1^^3^28^16
+ ;;^UTILITY(U,$J,358.3,213,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,213,1,3,0)
+ ;;=3^Major Depressive Disorder,Single Episode,Moderate
+ ;;^UTILITY(U,$J,358.3,213,1,4,0)
+ ;;=4^F32.1
+ ;;^UTILITY(U,$J,358.3,213,2)
+ ;;=^5003522
+ ;;^UTILITY(U,$J,358.3,214,0)
+ ;;=F32.2^^3^28^17
+ ;;^UTILITY(U,$J,358.3,214,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,214,1,3,0)
+ ;;=3^Major Depressive Disorder,Single Episode,Severe
+ ;;^UTILITY(U,$J,358.3,214,1,4,0)
+ ;;=4^F32.2
+ ;;^UTILITY(U,$J,358.3,214,2)
+ ;;=^5003523
+ ;;^UTILITY(U,$J,358.3,215,0)
+ ;;=F32.3^^3^28^18
+ ;;^UTILITY(U,$J,358.3,215,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,215,1,3,0)
+ ;;=3^Major Depressive Disorder,Single Episode w Psychotic Features

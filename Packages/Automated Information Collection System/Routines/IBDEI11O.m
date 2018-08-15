@@ -1,120 +1,140 @@
-IBDEI11O ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI11O ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,18717,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18717,1,2,0)
- ;;=2^Arthrocentesis, aspiration, aspiration &/or injection; intermediate joint, bursa or ganglion cyst
- ;;^UTILITY(U,$J,358.3,18717,1,3,0)
- ;;=3^20605
- ;;^UTILITY(U,$J,358.3,18718,0)
- ;;=20615^^122^1199^3^^^^1
- ;;^UTILITY(U,$J,358.3,18718,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18718,1,2,0)
- ;;=2^Aspiration and injection for tx of bone cyst
- ;;^UTILITY(U,$J,358.3,18718,1,3,0)
- ;;=3^20615
- ;;^UTILITY(U,$J,358.3,18719,0)
- ;;=20600^^122^1199^2^^^^1
- ;;^UTILITY(U,$J,358.3,18719,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18719,1,2,0)
- ;;=2^Arthroentesis, aspiration and/or injection; small joint, bursa or ganglion cyst 
- ;;^UTILITY(U,$J,358.3,18719,1,3,0)
- ;;=3^20600
- ;;^UTILITY(U,$J,358.3,18720,0)
- ;;=11900^^122^1199^12^^^^1
- ;;^UTILITY(U,$J,358.3,18720,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18720,1,2,0)
- ;;=2^Injection, intralesional; up to and including seven lesion 
- ;;^UTILITY(U,$J,358.3,18720,1,3,0)
- ;;=3^11900
- ;;^UTILITY(U,$J,358.3,18721,0)
- ;;=11901^^122^1199^11^^^^1
- ;;^UTILITY(U,$J,358.3,18721,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18721,1,2,0)
- ;;=2^Injection, intralesional; more than seven lesions
- ;;^UTILITY(U,$J,358.3,18721,1,3,0)
- ;;=3^11901
- ;;^UTILITY(U,$J,358.3,18722,0)
- ;;=64450^^122^1199^10^^^^1
- ;;^UTILITY(U,$J,358.3,18722,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18722,1,2,0)
- ;;=2^Injection, anesthetic agent; other peripheral nerve or branch
- ;;^UTILITY(U,$J,358.3,18722,1,3,0)
- ;;=3^64450
- ;;^UTILITY(U,$J,358.3,18723,0)
- ;;=20550^^122^1199^13^^^^1
- ;;^UTILITY(U,$J,358.3,18723,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18723,1,2,0)
- ;;=2^Injection; tendon sheath, ligament, ganglion cyst
- ;;^UTILITY(U,$J,358.3,18723,1,3,0)
- ;;=3^20550
- ;;^UTILITY(U,$J,358.3,18724,0)
- ;;=20500^^122^1199^7^^^^1
- ;;^UTILITY(U,$J,358.3,18724,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18724,1,2,0)
- ;;=2^Injection of sinus tract; therapeutic diagnostic
- ;;^UTILITY(U,$J,358.3,18724,1,3,0)
- ;;=3^20500
- ;;^UTILITY(U,$J,358.3,18725,0)
- ;;=96402^^122^1199^6^^^^1
- ;;^UTILITY(U,$J,358.3,18725,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18725,1,2,0)
- ;;=2^Injec,IM,anti-neplastic horm
- ;;^UTILITY(U,$J,358.3,18725,1,3,0)
- ;;=3^96402
- ;;^UTILITY(U,$J,358.3,18726,0)
- ;;=64450^^122^1199^9^^^^1
- ;;^UTILITY(U,$J,358.3,18726,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18726,1,2,0)
- ;;=2^Injection, Nerve Block
- ;;^UTILITY(U,$J,358.3,18726,1,3,0)
- ;;=3^64450
- ;;^UTILITY(U,$J,358.3,18727,0)
- ;;=96360^^122^1199^4^^^^1
- ;;^UTILITY(U,$J,358.3,18727,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18727,1,2,0)
- ;;=2^Hydration IV Inf,31-60 min
- ;;^UTILITY(U,$J,358.3,18727,1,3,0)
- ;;=3^96360
- ;;^UTILITY(U,$J,358.3,18728,0)
- ;;=96361^^122^1199^5^^^^1
- ;;^UTILITY(U,$J,358.3,18728,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18728,1,2,0)
- ;;=2^Hydration IV Infus,Ea Add Hr
- ;;^UTILITY(U,$J,358.3,18728,1,3,0)
- ;;=3^96361
- ;;^UTILITY(U,$J,358.3,18729,0)
- ;;=96365^^122^1199^15^^^^1
- ;;^UTILITY(U,$J,358.3,18729,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18729,1,2,0)
- ;;=2^Ther/Proph/Diag IV Inf,Init Hr
- ;;^UTILITY(U,$J,358.3,18729,1,3,0)
- ;;=3^96365
- ;;^UTILITY(U,$J,358.3,18730,0)
- ;;=96366^^122^1199^14^^^^1
- ;;^UTILITY(U,$J,358.3,18730,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18730,1,2,0)
- ;;=2^Ther/Proph/Diag IV Inf,Ea Add Hr
- ;;^UTILITY(U,$J,358.3,18730,1,3,0)
- ;;=3^96366
- ;;^UTILITY(U,$J,358.3,18731,0)
- ;;=96372^^122^1199^16^^^^1
- ;;^UTILITY(U,$J,358.3,18731,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18731,1,2,0)
- ;;=2^Ther/Proph/Diag Inj, SC/IM
+ ;;^UTILITY(U,$J,358.3,17392,1,4,0)
+ ;;=4^Z77.9
+ ;;^UTILITY(U,$J,358.3,17392,2)
+ ;;=^5063326
+ ;;^UTILITY(U,$J,358.3,17393,0)
+ ;;=R50.9^^88^861^57
+ ;;^UTILITY(U,$J,358.3,17393,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17393,1,3,0)
+ ;;=3^Fever,Unspec
+ ;;^UTILITY(U,$J,358.3,17393,1,4,0)
+ ;;=4^R50.9
+ ;;^UTILITY(U,$J,358.3,17393,2)
+ ;;=^5019512
+ ;;^UTILITY(U,$J,358.3,17394,0)
+ ;;=Z96.9^^88^861^58
+ ;;^UTILITY(U,$J,358.3,17394,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17394,1,3,0)
+ ;;=3^Functional Implant,Unspec
+ ;;^UTILITY(U,$J,358.3,17394,1,4,0)
+ ;;=4^Z96.9
+ ;;^UTILITY(U,$J,358.3,17394,2)
+ ;;=^5063719
+ ;;^UTILITY(U,$J,358.3,17395,0)
+ ;;=Z72.6^^88^861^59
+ ;;^UTILITY(U,$J,358.3,17395,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17395,1,3,0)
+ ;;=3^Gambling and Betting
+ ;;^UTILITY(U,$J,358.3,17395,1,4,0)
+ ;;=4^Z72.6
+ ;;^UTILITY(U,$J,358.3,17395,2)
+ ;;=^5063261
+ ;;^UTILITY(U,$J,358.3,17396,0)
+ ;;=Z72.53^^88^861^62
+ ;;^UTILITY(U,$J,358.3,17396,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17396,1,3,0)
+ ;;=3^High Risk Bisexual Behavior
+ ;;^UTILITY(U,$J,358.3,17396,1,4,0)
+ ;;=4^Z72.53
+ ;;^UTILITY(U,$J,358.3,17396,2)
+ ;;=^5063260
+ ;;^UTILITY(U,$J,358.3,17397,0)
+ ;;=Z72.51^^88^861^63
+ ;;^UTILITY(U,$J,358.3,17397,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17397,1,3,0)
+ ;;=3^High Risk Heterosexual Behavior
+ ;;^UTILITY(U,$J,358.3,17397,1,4,0)
+ ;;=4^Z72.51
+ ;;^UTILITY(U,$J,358.3,17397,2)
+ ;;=^5063258
+ ;;^UTILITY(U,$J,358.3,17398,0)
+ ;;=Z72.52^^88^861^64
+ ;;^UTILITY(U,$J,358.3,17398,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17398,1,3,0)
+ ;;=3^High Risk Homosexual Behavior
+ ;;^UTILITY(U,$J,358.3,17398,1,4,0)
+ ;;=4^Z72.52
+ ;;^UTILITY(U,$J,358.3,17398,2)
+ ;;=^5063259
+ ;;^UTILITY(U,$J,358.3,17399,0)
+ ;;=R68.0^^88^861^65
+ ;;^UTILITY(U,$J,358.3,17399,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17399,1,3,0)
+ ;;=3^Hypothermia,Not from Low Environmental Temperature
+ ;;^UTILITY(U,$J,358.3,17399,1,4,0)
+ ;;=4^R68.0
+ ;;^UTILITY(U,$J,358.3,17399,2)
+ ;;=^5019549
+ ;;^UTILITY(U,$J,358.3,17400,0)
+ ;;=R99.^^88^861^66
+ ;;^UTILITY(U,$J,358.3,17400,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17400,1,3,0)
+ ;;=3^Ill-Defined/Unknown Cause of Mortality
+ ;;^UTILITY(U,$J,358.3,17400,1,4,0)
+ ;;=4^R99.
+ ;;^UTILITY(U,$J,358.3,17400,2)
+ ;;=^5019750
+ ;;^UTILITY(U,$J,358.3,17401,0)
+ ;;=R69.^^88^861^67
+ ;;^UTILITY(U,$J,358.3,17401,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17401,1,3,0)
+ ;;=3^Illness,Unspec
+ ;;^UTILITY(U,$J,358.3,17401,1,4,0)
+ ;;=4^R69.
+ ;;^UTILITY(U,$J,358.3,17401,2)
+ ;;=^5019558
+ ;;^UTILITY(U,$J,358.3,17402,0)
+ ;;=D89.9^^88^861^68
+ ;;^UTILITY(U,$J,358.3,17402,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17402,1,3,0)
+ ;;=3^Immune Mechanism Disorder,Unspec
+ ;;^UTILITY(U,$J,358.3,17402,1,4,0)
+ ;;=4^D89.9
+ ;;^UTILITY(U,$J,358.3,17402,2)
+ ;;=^5002459
+ ;;^UTILITY(U,$J,358.3,17403,0)
+ ;;=D84.9^^88^861^70
+ ;;^UTILITY(U,$J,358.3,17403,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17403,1,3,0)
+ ;;=3^Immunodeficiency,Unspec
+ ;;^UTILITY(U,$J,358.3,17403,1,4,0)
+ ;;=4^D84.9
+ ;;^UTILITY(U,$J,358.3,17403,2)
+ ;;=^5002441
+ ;;^UTILITY(U,$J,358.3,17404,0)
+ ;;=R68.82^^88^861^72
+ ;;^UTILITY(U,$J,358.3,17404,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17404,1,3,0)
+ ;;=3^Libido,Decreased
+ ;;^UTILITY(U,$J,358.3,17404,1,4,0)
+ ;;=4^R68.82
+ ;;^UTILITY(U,$J,358.3,17404,2)
+ ;;=^329956
+ ;;^UTILITY(U,$J,358.3,17405,0)
+ ;;=R53.81^^88^861^73
+ ;;^UTILITY(U,$J,358.3,17405,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17405,1,3,0)
+ ;;=3^Malaise,Other
+ ;;^UTILITY(U,$J,358.3,17405,1,4,0)
+ ;;=4^R53.81
+ ;;^UTILITY(U,$J,358.3,17405,2)
+ ;;=^5019518
+ ;;^UTILITY(U,$J,358.3,17406,0)
+ ;;=Z91.11^^88^861^74

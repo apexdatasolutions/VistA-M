@@ -1,134 +1,124 @@
-IBDEI0YE ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0YE ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,17090,1,1,0)
- ;;=1^90732
- ;;^UTILITY(U,$J,358.3,17090,1,3,0)
- ;;=3^Pneumococcal Vaccine
- ;;^UTILITY(U,$J,358.3,17091,0)
- ;;=99358^^109^1071^3^^^^1
- ;;^UTILITY(U,$J,358.3,17091,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,17091,1,1,0)
- ;;=1^99358
- ;;^UTILITY(U,$J,358.3,17091,1,3,0)
- ;;=3^Prolong Srv w/o Pt Contact,1st Hr
- ;;^UTILITY(U,$J,358.3,17092,0)
- ;;=99359^^109^1071^4^^^^1
- ;;^UTILITY(U,$J,358.3,17092,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,17092,1,1,0)
- ;;=1^99359
- ;;^UTILITY(U,$J,358.3,17092,1,3,0)
- ;;=3^Prolong Srv w/o Pt Contact,Ea Addl 30 Min
- ;;^UTILITY(U,$J,358.3,17093,0)
- ;;=99354^^109^1071^1^^^^1
- ;;^UTILITY(U,$J,358.3,17093,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,17093,1,1,0)
- ;;=1^99354
- ;;^UTILITY(U,$J,358.3,17093,1,3,0)
- ;;=3^Outpt E&M Prolonged Svc,1st Hr
- ;;^UTILITY(U,$J,358.3,17094,0)
- ;;=99355^^109^1071^2^^^^1
- ;;^UTILITY(U,$J,358.3,17094,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,17094,1,1,0)
- ;;=1^99355
- ;;^UTILITY(U,$J,358.3,17094,1,3,0)
- ;;=3^Outpt E&M Prolonged Svc,Ea Addl 30 Min
- ;;^UTILITY(U,$J,358.3,17095,0)
- ;;=99201^^110^1072^1
- ;;^UTILITY(U,$J,358.3,17095,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,17095,1,1,0)
- ;;=1^Problem Focus
- ;;^UTILITY(U,$J,358.3,17095,1,2,0)
- ;;=2^99201
- ;;^UTILITY(U,$J,358.3,17096,0)
- ;;=99202^^110^1072^2
- ;;^UTILITY(U,$J,358.3,17096,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,17096,1,1,0)
- ;;=1^Expanded Problem Focus
- ;;^UTILITY(U,$J,358.3,17096,1,2,0)
- ;;=2^99202
- ;;^UTILITY(U,$J,358.3,17097,0)
- ;;=99203^^110^1072^3
- ;;^UTILITY(U,$J,358.3,17097,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,17097,1,1,0)
- ;;=1^Detailed
- ;;^UTILITY(U,$J,358.3,17097,1,2,0)
- ;;=2^99203
- ;;^UTILITY(U,$J,358.3,17098,0)
- ;;=99204^^110^1072^4
- ;;^UTILITY(U,$J,358.3,17098,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,17098,1,1,0)
- ;;=1^Comprehensive, Moderate
- ;;^UTILITY(U,$J,358.3,17098,1,2,0)
- ;;=2^99204
- ;;^UTILITY(U,$J,358.3,17099,0)
- ;;=99205^^110^1072^5
- ;;^UTILITY(U,$J,358.3,17099,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,17099,1,1,0)
- ;;=1^Comprehensive, High
- ;;^UTILITY(U,$J,358.3,17099,1,2,0)
- ;;=2^99205
- ;;^UTILITY(U,$J,358.3,17100,0)
- ;;=99211^^110^1073^1
- ;;^UTILITY(U,$J,358.3,17100,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,17100,1,1,0)
- ;;=1^Brief (no MD seen)
- ;;^UTILITY(U,$J,358.3,17100,1,2,0)
- ;;=2^99211
- ;;^UTILITY(U,$J,358.3,17101,0)
- ;;=99212^^110^1073^2
- ;;^UTILITY(U,$J,358.3,17101,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,17101,1,1,0)
- ;;=1^Problem Focused
- ;;^UTILITY(U,$J,358.3,17101,1,2,0)
- ;;=2^99212
- ;;^UTILITY(U,$J,358.3,17102,0)
- ;;=99213^^110^1073^3
- ;;^UTILITY(U,$J,358.3,17102,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,17102,1,1,0)
- ;;=1^Expanded Problem Focus
- ;;^UTILITY(U,$J,358.3,17102,1,2,0)
- ;;=2^99213
- ;;^UTILITY(U,$J,358.3,17103,0)
- ;;=99214^^110^1073^4
- ;;^UTILITY(U,$J,358.3,17103,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,17103,1,1,0)
- ;;=1^Detailed
- ;;^UTILITY(U,$J,358.3,17103,1,2,0)
- ;;=2^99214
- ;;^UTILITY(U,$J,358.3,17104,0)
- ;;=99215^^110^1073^5
- ;;^UTILITY(U,$J,358.3,17104,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,17104,1,1,0)
- ;;=1^Comprehensive
- ;;^UTILITY(U,$J,358.3,17104,1,2,0)
- ;;=2^99215
- ;;^UTILITY(U,$J,358.3,17105,0)
- ;;=99241^^110^1074^1
- ;;^UTILITY(U,$J,358.3,17105,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,17105,1,1,0)
- ;;=1^Problem Focused
- ;;^UTILITY(U,$J,358.3,17105,1,2,0)
- ;;=2^99241
- ;;^UTILITY(U,$J,358.3,17106,0)
- ;;=99242^^110^1074^2
- ;;^UTILITY(U,$J,358.3,17106,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,17106,1,1,0)
- ;;=1^Expanded Problem Focus
+ ;;^UTILITY(U,$J,358.3,15846,1,3,0)
+ ;;=3^Asymptomatic Varicose Veins of Bilateral Lower Extrem
+ ;;^UTILITY(U,$J,358.3,15846,1,4,0)
+ ;;=4^I83.93
+ ;;^UTILITY(U,$J,358.3,15846,2)
+ ;;=^5008022
+ ;;^UTILITY(U,$J,358.3,15847,0)
+ ;;=I83.92^^85^827^2
+ ;;^UTILITY(U,$J,358.3,15847,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15847,1,3,0)
+ ;;=3^Asymptomatic Varicose Veins of Left Lower Extrem
+ ;;^UTILITY(U,$J,358.3,15847,1,4,0)
+ ;;=4^I83.92
+ ;;^UTILITY(U,$J,358.3,15847,2)
+ ;;=^5008021
+ ;;^UTILITY(U,$J,358.3,15848,0)
+ ;;=G97.32^^85^828^35
+ ;;^UTILITY(U,$J,358.3,15848,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15848,1,3,0)
+ ;;=3^Intraoperative Hemorrhage/Hematoma of Nervous System Organ/Sturcture
+ ;;^UTILITY(U,$J,358.3,15848,1,4,0)
+ ;;=4^G97.32
+ ;;^UTILITY(U,$J,358.3,15848,2)
+ ;;=^5004205
+ ;;^UTILITY(U,$J,358.3,15849,0)
+ ;;=D78.02^^85^828^38
+ ;;^UTILITY(U,$J,358.3,15849,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15849,1,3,0)
+ ;;=3^Intraoperative Hemorrhage/Hematoma of Spleen
+ ;;^UTILITY(U,$J,358.3,15849,1,4,0)
+ ;;=4^D78.02
+ ;;^UTILITY(U,$J,358.3,15849,2)
+ ;;=^5002398
+ ;;^UTILITY(U,$J,358.3,15850,0)
+ ;;=E36.01^^85^828^29
+ ;;^UTILITY(U,$J,358.3,15850,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15850,1,3,0)
+ ;;=3^Intraoperative Hemorrhage/Hematoma of Endocrine System Organ/Structure
+ ;;^UTILITY(U,$J,358.3,15850,1,4,0)
+ ;;=4^E36.01
+ ;;^UTILITY(U,$J,358.3,15850,2)
+ ;;=^5002779
+ ;;^UTILITY(U,$J,358.3,15851,0)
+ ;;=I97.711^^85^828^12
+ ;;^UTILITY(U,$J,358.3,15851,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15851,1,3,0)
+ ;;=3^Intraoperative Cardiac Arrest During Surgery
+ ;;^UTILITY(U,$J,358.3,15851,1,4,0)
+ ;;=4^I97.711
+ ;;^UTILITY(U,$J,358.3,15851,2)
+ ;;=^5008104
+ ;;^UTILITY(U,$J,358.3,15852,0)
+ ;;=I97.791^^85^828^13
+ ;;^UTILITY(U,$J,358.3,15852,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15852,1,3,0)
+ ;;=3^Intraoperative Cardiac Functional Disturbance During Surgery
+ ;;^UTILITY(U,$J,358.3,15852,1,4,0)
+ ;;=4^I97.791
+ ;;^UTILITY(U,$J,358.3,15852,2)
+ ;;=^5008106
+ ;;^UTILITY(U,$J,358.3,15853,0)
+ ;;=I97.411^^85^828^25
+ ;;^UTILITY(U,$J,358.3,15853,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15853,1,3,0)
+ ;;=3^Intraoperative Hemorrhage/Hematoma of Circ System During Cardiac Bypass
+ ;;^UTILITY(U,$J,358.3,15853,1,4,0)
+ ;;=4^I97.411
+ ;;^UTILITY(U,$J,358.3,15853,2)
+ ;;=^5008094
+ ;;^UTILITY(U,$J,358.3,15854,0)
+ ;;=I97.410^^85^828^26
+ ;;^UTILITY(U,$J,358.3,15854,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15854,1,3,0)
+ ;;=3^Intraoperative Hemorrhage/Hematoma of Circ System During Cardiac Cath
+ ;;^UTILITY(U,$J,358.3,15854,1,4,0)
+ ;;=4^I97.410
+ ;;^UTILITY(U,$J,358.3,15854,2)
+ ;;=^5008093
+ ;;^UTILITY(U,$J,358.3,15855,0)
+ ;;=I97.42^^85^828^27
+ ;;^UTILITY(U,$J,358.3,15855,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15855,1,3,0)
+ ;;=3^Intraoperative Hemorrhage/Hematoma of Circ System
+ ;;^UTILITY(U,$J,358.3,15855,1,4,0)
+ ;;=4^I97.42
+ ;;^UTILITY(U,$J,358.3,15855,2)
+ ;;=^5008096
+ ;;^UTILITY(U,$J,358.3,15856,0)
+ ;;=K91.62^^85^828^28
+ ;;^UTILITY(U,$J,358.3,15856,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15856,1,3,0)
+ ;;=3^Intraoperative Hemorrhage/Hematoma of Digestive System
+ ;;^UTILITY(U,$J,358.3,15856,1,4,0)
+ ;;=4^K91.62
+ ;;^UTILITY(U,$J,358.3,15856,2)
+ ;;=^5008904
+ ;;^UTILITY(U,$J,358.3,15857,0)
+ ;;=H95.22^^85^828^30
+ ;;^UTILITY(U,$J,358.3,15857,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15857,1,3,0)
+ ;;=3^Intraoperative Hemorrhage/Hematoma of Ear/Mastoid
+ ;;^UTILITY(U,$J,358.3,15857,1,4,0)
+ ;;=4^H95.22
+ ;;^UTILITY(U,$J,358.3,15857,2)
+ ;;=^5007027
+ ;;^UTILITY(U,$J,358.3,15858,0)
+ ;;=E36.02^^85^828^31
+ ;;^UTILITY(U,$J,358.3,15858,1,0)
+ ;;=^358.31IA^4^2

@@ -1,144 +1,124 @@
-IBDEI04Q ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI04Q ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,1943,2)
- ;;=^295202
- ;;^UTILITY(U,$J,358.3,1944,0)
- ;;=V10.01^^21^187^21
- ;;^UTILITY(U,$J,358.3,1944,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1944,1,4,0)
- ;;=4^V10.01
- ;;^UTILITY(U,$J,358.3,1944,1,5,0)
- ;;=5^HX OF TONGUE MALIGNANCY
- ;;^UTILITY(U,$J,358.3,1944,2)
- ;;=^295203
- ;;^UTILITY(U,$J,358.3,1945,0)
- ;;=V10.02^^21^187^38
- ;;^UTILITY(U,$J,358.3,1945,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1945,1,4,0)
- ;;=4^V10.02
- ;;^UTILITY(U,$J,358.3,1945,1,5,0)
- ;;=5^HX-ORAL/PHARYNX MALG NEC
- ;;^UTILITY(U,$J,358.3,1945,2)
- ;;=^295204
- ;;^UTILITY(U,$J,358.3,1946,0)
- ;;=V10.03^^21^187^25
- ;;^UTILITY(U,$J,358.3,1946,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1946,1,4,0)
- ;;=4^V10.03
- ;;^UTILITY(U,$J,358.3,1946,1,5,0)
- ;;=5^HX-ESOPHAGEAL MALIGNANCY
- ;;^UTILITY(U,$J,358.3,1946,2)
- ;;=^295205
- ;;^UTILITY(U,$J,358.3,1947,0)
- ;;=V10.04^^21^187^7
- ;;^UTILITY(U,$J,358.3,1947,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1947,1,4,0)
- ;;=4^V10.04
- ;;^UTILITY(U,$J,358.3,1947,1,5,0)
- ;;=5^HX OF GASTRIC MALIGNANCY
- ;;^UTILITY(U,$J,358.3,1947,2)
- ;;=^295206
- ;;^UTILITY(U,$J,358.3,1948,0)
- ;;=V10.05^^21^187^5
- ;;^UTILITY(U,$J,358.3,1948,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1948,1,4,0)
- ;;=4^V10.05
- ;;^UTILITY(U,$J,358.3,1948,1,5,0)
- ;;=5^HX OF COLONIC MALIGNANCY
- ;;^UTILITY(U,$J,358.3,1948,2)
- ;;=^295207
- ;;^UTILITY(U,$J,358.3,1949,0)
- ;;=V10.06^^21^187^40
- ;;^UTILITY(U,$J,358.3,1949,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1949,1,4,0)
- ;;=4^V10.06
- ;;^UTILITY(U,$J,358.3,1949,1,5,0)
- ;;=5^HX-RECTAL ANAL MALIGN
- ;;^UTILITY(U,$J,358.3,1949,2)
- ;;=^295208
- ;;^UTILITY(U,$J,358.3,1950,0)
- ;;=V10.07^^21^187^13
- ;;^UTILITY(U,$J,358.3,1950,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1950,1,4,0)
- ;;=4^V10.07
- ;;^UTILITY(U,$J,358.3,1950,1,5,0)
- ;;=5^HX OF LIVER MALIGNANCY
- ;;^UTILITY(U,$J,358.3,1950,2)
- ;;=^295209
- ;;^UTILITY(U,$J,358.3,1951,0)
- ;;=V10.09^^21^187^8
- ;;^UTILITY(U,$J,358.3,1951,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1951,1,4,0)
- ;;=4^V10.09
- ;;^UTILITY(U,$J,358.3,1951,1,5,0)
- ;;=5^HX OF GI MALIGNANCY NEC
- ;;^UTILITY(U,$J,358.3,1951,2)
- ;;=^295210
- ;;^UTILITY(U,$J,358.3,1952,0)
- ;;=V10.11^^21^187^22
- ;;^UTILITY(U,$J,358.3,1952,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1952,1,4,0)
- ;;=4^V10.11
- ;;^UTILITY(U,$J,358.3,1952,1,5,0)
- ;;=5^HX-BRONCHOGENIC MALIGNAN
- ;;^UTILITY(U,$J,358.3,1952,2)
- ;;=^295211
- ;;^UTILITY(U,$J,358.3,1953,0)
- ;;=V10.12^^21^187^44
- ;;^UTILITY(U,$J,358.3,1953,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1953,1,4,0)
- ;;=4^V10.12
- ;;^UTILITY(U,$J,358.3,1953,1,5,0)
- ;;=5^HX-TRACHEAL MALIGNANCY
- ;;^UTILITY(U,$J,358.3,1953,2)
- ;;=^295212
- ;;^UTILITY(U,$J,358.3,1954,0)
- ;;=V10.20^^21^187^41
- ;;^UTILITY(U,$J,358.3,1954,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1954,1,4,0)
- ;;=4^V10.20
- ;;^UTILITY(U,$J,358.3,1954,1,5,0)
- ;;=5^HX-RESP ORG MALIGNAN NOS
- ;;^UTILITY(U,$J,358.3,1954,2)
- ;;=^295213
- ;;^UTILITY(U,$J,358.3,1955,0)
- ;;=V10.21^^21^187^30
- ;;^UTILITY(U,$J,358.3,1955,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1955,1,4,0)
- ;;=4^V10.21
- ;;^UTILITY(U,$J,358.3,1955,1,5,0)
- ;;=5^HX-LARYNGEAL MALIGNANCY
- ;;^UTILITY(U,$J,358.3,1955,2)
- ;;=^295214
- ;;^UTILITY(U,$J,358.3,1956,0)
- ;;=V10.22^^21^187^37
- ;;^UTILITY(U,$J,358.3,1956,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1956,1,4,0)
- ;;=4^V10.22
- ;;^UTILITY(U,$J,358.3,1956,1,5,0)
- ;;=5^HX-NOSE/EAR/SINUS MALIG
- ;;^UTILITY(U,$J,358.3,1956,2)
- ;;=^295215
- ;;^UTILITY(U,$J,358.3,1957,0)
- ;;=V10.29^^21^187^29
- ;;^UTILITY(U,$J,358.3,1957,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1957,1,4,0)
- ;;=4^V10.29
- ;;^UTILITY(U,$J,358.3,1957,1,5,0)
- ;;=5^HX-INTRATHORACIC MAL NEC
+ ;;^UTILITY(U,$J,358.3,1526,2)
+ ;;=^5049404
+ ;;^UTILITY(U,$J,358.3,1527,0)
+ ;;=T36.8X2S^^14^156^49
+ ;;^UTILITY(U,$J,358.3,1527,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1527,1,3,0)
+ ;;=3^Poisoning by oth systemic antibiotics, self-harm, sequela
+ ;;^UTILITY(U,$J,358.3,1527,1,4,0)
+ ;;=4^T36.8X2S
+ ;;^UTILITY(U,$J,358.3,1527,2)
+ ;;=^5049405
+ ;;^UTILITY(U,$J,358.3,1528,0)
+ ;;=T36.8X4A^^14^156^50
+ ;;^UTILITY(U,$J,358.3,1528,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1528,1,3,0)
+ ;;=3^Poisoning by oth systemic antibiotics, undetermined, init
+ ;;^UTILITY(U,$J,358.3,1528,1,4,0)
+ ;;=4^T36.8X4A
+ ;;^UTILITY(U,$J,358.3,1528,2)
+ ;;=^5049409
+ ;;^UTILITY(U,$J,358.3,1529,0)
+ ;;=T36.8X4D^^14^156^51
+ ;;^UTILITY(U,$J,358.3,1529,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1529,1,3,0)
+ ;;=3^Poisoning by oth systemic antibiotics, undetermined, subs
+ ;;^UTILITY(U,$J,358.3,1529,1,4,0)
+ ;;=4^T36.8X4D
+ ;;^UTILITY(U,$J,358.3,1529,2)
+ ;;=^5049410
+ ;;^UTILITY(U,$J,358.3,1530,0)
+ ;;=T36.8X4S^^14^156^52
+ ;;^UTILITY(U,$J,358.3,1530,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1530,1,3,0)
+ ;;=3^Poisoning by oth systemic antibiotics, undetermined, sequela
+ ;;^UTILITY(U,$J,358.3,1530,1,4,0)
+ ;;=4^T36.8X4S
+ ;;^UTILITY(U,$J,358.3,1530,2)
+ ;;=^5049411
+ ;;^UTILITY(U,$J,358.3,1531,0)
+ ;;=T49.6X1A^^14^156^54
+ ;;^UTILITY(U,$J,358.3,1531,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1531,1,3,0)
+ ;;=3^Poisoning by otorhino drugs and prep, accidental, init
+ ;;^UTILITY(U,$J,358.3,1531,1,4,0)
+ ;;=4^T49.6X1A
+ ;;^UTILITY(U,$J,358.3,1531,2)
+ ;;=^5051914
+ ;;^UTILITY(U,$J,358.3,1532,0)
+ ;;=T49.6X1D^^14^156^55
+ ;;^UTILITY(U,$J,358.3,1532,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1532,1,3,0)
+ ;;=3^Poisoning by otorhino drugs and prep, accidental, subs
+ ;;^UTILITY(U,$J,358.3,1532,1,4,0)
+ ;;=4^T49.6X1D
+ ;;^UTILITY(U,$J,358.3,1532,2)
+ ;;=^5051915
+ ;;^UTILITY(U,$J,358.3,1533,0)
+ ;;=T49.6X1S^^14^156^56
+ ;;^UTILITY(U,$J,358.3,1533,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1533,1,3,0)
+ ;;=3^Poisoning by otorhino drugs and prep, accidental, sequela
+ ;;^UTILITY(U,$J,358.3,1533,1,4,0)
+ ;;=4^T49.6X1S
+ ;;^UTILITY(U,$J,358.3,1533,2)
+ ;;=^5051916
+ ;;^UTILITY(U,$J,358.3,1534,0)
+ ;;=T49.6X3D^^14^156^64
+ ;;^UTILITY(U,$J,358.3,1534,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1534,1,3,0)
+ ;;=3^Poisoning by otorhino drugs and preparations, assault, subs
+ ;;^UTILITY(U,$J,358.3,1534,1,4,0)
+ ;;=4^T49.6X3D
+ ;;^UTILITY(U,$J,358.3,1534,2)
+ ;;=^5051921
+ ;;^UTILITY(U,$J,358.3,1535,0)
+ ;;=T49.6X3S^^14^156^57
+ ;;^UTILITY(U,$J,358.3,1535,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1535,1,3,0)
+ ;;=3^Poisoning by otorhino drugs and prep, assault, sequela
+ ;;^UTILITY(U,$J,358.3,1535,1,4,0)
+ ;;=4^T49.6X3S
+ ;;^UTILITY(U,$J,358.3,1535,2)
+ ;;=^5051922
+ ;;^UTILITY(U,$J,358.3,1536,0)
+ ;;=T49.6X2A^^14^156^58
+ ;;^UTILITY(U,$J,358.3,1536,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1536,1,3,0)
+ ;;=3^Poisoning by otorhino drugs and prep, self-harm, init
+ ;;^UTILITY(U,$J,358.3,1536,1,4,0)
+ ;;=4^T49.6X2A
+ ;;^UTILITY(U,$J,358.3,1536,2)
+ ;;=^5051917
+ ;;^UTILITY(U,$J,358.3,1537,0)
+ ;;=T49.6X2D^^14^156^59
+ ;;^UTILITY(U,$J,358.3,1537,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1537,1,3,0)
+ ;;=3^Poisoning by otorhino drugs and prep, self-harm, subs
+ ;;^UTILITY(U,$J,358.3,1537,1,4,0)
+ ;;=4^T49.6X2D
+ ;;^UTILITY(U,$J,358.3,1537,2)
+ ;;=^5051918
+ ;;^UTILITY(U,$J,358.3,1538,0)
+ ;;=T49.6X2S^^14^156^60
+ ;;^UTILITY(U,$J,358.3,1538,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1538,1,3,0)
+ ;;=3^Poisoning by otorhino drugs and prep, self-harm, sequela
+ ;;^UTILITY(U,$J,358.3,1538,1,4,0)
+ ;;=4^T49.6X2S

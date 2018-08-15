@@ -1,148 +1,130 @@
-IBDEI02K ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI02K ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,793,1,0)
+ ;;^UTILITY(U,$J,358.3,432,1,4,0)
+ ;;=4^F13.14
+ ;;^UTILITY(U,$J,358.3,432,2)
+ ;;=^5003193
+ ;;^UTILITY(U,$J,358.3,433,0)
+ ;;=F13.182^^3^55^8
+ ;;^UTILITY(U,$J,358.3,433,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,793,1,3,0)
- ;;=3^382.3
- ;;^UTILITY(U,$J,358.3,793,1,4,0)
- ;;=4^Chr Supp OM, NOS
- ;;^UTILITY(U,$J,358.3,793,2)
- ;;=^186937
- ;;^UTILITY(U,$J,358.3,794,0)
- ;;=382.4^^11^93^86
- ;;^UTILITY(U,$J,358.3,794,1,0)
+ ;;^UTILITY(U,$J,358.3,433,1,3,0)
+ ;;=3^Sedative,Hypnotic or Anxiolytic-Induced Sleep Disorder w/ Mild Use Disorder
+ ;;^UTILITY(U,$J,358.3,433,1,4,0)
+ ;;=4^F13.182
+ ;;^UTILITY(U,$J,358.3,433,2)
+ ;;=^5003199
+ ;;^UTILITY(U,$J,358.3,434,0)
+ ;;=F13.20^^3^55^2
+ ;;^UTILITY(U,$J,358.3,434,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,794,1,3,0)
- ;;=3^382.4
- ;;^UTILITY(U,$J,358.3,794,1,4,0)
- ;;=4^Suppurative OM, Unspec
- ;;^UTILITY(U,$J,358.3,794,2)
- ;;=^88285
- ;;^UTILITY(U,$J,358.3,795,0)
- ;;=382.9^^11^93^68
- ;;^UTILITY(U,$J,358.3,795,1,0)
+ ;;^UTILITY(U,$J,358.3,434,1,3,0)
+ ;;=3^Sedative,Hypnotic or Anxiolytic Use Disorder,Moderate-Severe
+ ;;^UTILITY(U,$J,358.3,434,1,4,0)
+ ;;=4^F13.20
+ ;;^UTILITY(U,$J,358.3,434,2)
+ ;;=^5003202
+ ;;^UTILITY(U,$J,358.3,435,0)
+ ;;=F13.21^^3^55^3
+ ;;^UTILITY(U,$J,358.3,435,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,795,1,3,0)
- ;;=3^382.9
- ;;^UTILITY(U,$J,358.3,795,1,4,0)
- ;;=4^Otitis Media NOS
- ;;^UTILITY(U,$J,358.3,795,2)
- ;;=^123967
- ;;^UTILITY(U,$J,358.3,796,0)
- ;;=383.00^^11^93^5
- ;;^UTILITY(U,$J,358.3,796,1,0)
+ ;;^UTILITY(U,$J,358.3,435,1,3,0)
+ ;;=3^Sedative,Hypnotic or Anxiolytic Use Disorder,Moderate-Severe In Remission
+ ;;^UTILITY(U,$J,358.3,435,1,4,0)
+ ;;=4^F13.21
+ ;;^UTILITY(U,$J,358.3,435,2)
+ ;;=^331934
+ ;;^UTILITY(U,$J,358.3,436,0)
+ ;;=F13.232^^3^55^4
+ ;;^UTILITY(U,$J,358.3,436,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,796,1,3,0)
- ;;=3^383.00
- ;;^UTILITY(U,$J,358.3,796,1,4,0)
- ;;=4^Ac Mastoiditis w/o Compl
- ;;^UTILITY(U,$J,358.3,796,2)
- ;;=^269402
- ;;^UTILITY(U,$J,358.3,797,0)
- ;;=383.01^^11^93^85
- ;;^UTILITY(U,$J,358.3,797,1,0)
+ ;;^UTILITY(U,$J,358.3,436,1,3,0)
+ ;;=3^Sedative,Hypnotic or Anxiolytic Withdrawal w/ Perceptual Disturbances
+ ;;^UTILITY(U,$J,358.3,436,1,4,0)
+ ;;=4^F13.232
+ ;;^UTILITY(U,$J,358.3,436,2)
+ ;;=^5003208
+ ;;^UTILITY(U,$J,358.3,437,0)
+ ;;=F13.239^^3^55^5
+ ;;^UTILITY(U,$J,358.3,437,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,797,1,3,0)
- ;;=3^383.01
- ;;^UTILITY(U,$J,358.3,797,1,4,0)
- ;;=4^Subperiosteal Mastoid Abscess
- ;;^UTILITY(U,$J,358.3,797,2)
- ;;=^269403
- ;;^UTILITY(U,$J,358.3,798,0)
- ;;=383.02^^11^93^6
- ;;^UTILITY(U,$J,358.3,798,1,0)
+ ;;^UTILITY(U,$J,358.3,437,1,3,0)
+ ;;=3^Sedative,Hypnotic or Anxiolytic Withdrawal w/o Perceptual Disturbances
+ ;;^UTILITY(U,$J,358.3,437,1,4,0)
+ ;;=4^F13.239
+ ;;^UTILITY(U,$J,358.3,437,2)
+ ;;=^5003209
+ ;;^UTILITY(U,$J,358.3,438,0)
+ ;;=F13.24^^3^55^9
+ ;;^UTILITY(U,$J,358.3,438,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,798,1,3,0)
- ;;=3^383.02
- ;;^UTILITY(U,$J,358.3,798,1,4,0)
- ;;=4^Ac Mastoiditis w/oth Compl
- ;;^UTILITY(U,$J,358.3,798,2)
- ;;=^269404
- ;;^UTILITY(U,$J,358.3,799,0)
- ;;=383.1^^11^93^32
- ;;^UTILITY(U,$J,358.3,799,1,0)
+ ;;^UTILITY(U,$J,358.3,438,1,3,0)
+ ;;=3^Sedative,Hypnotic or Anxiolytic-Induced Dep,Bip or Related Disorder w/ Mod-Sev Use Disorder
+ ;;^UTILITY(U,$J,358.3,438,1,4,0)
+ ;;=4^F13.24
+ ;;^UTILITY(U,$J,358.3,438,2)
+ ;;=^5003210
+ ;;^UTILITY(U,$J,358.3,439,0)
+ ;;=F13.231^^3^55^6
+ ;;^UTILITY(U,$J,358.3,439,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,799,1,3,0)
- ;;=3^383.1
- ;;^UTILITY(U,$J,358.3,799,1,4,0)
- ;;=4^Chr Mastoiditis
- ;;^UTILITY(U,$J,358.3,799,2)
- ;;=^269405
- ;;^UTILITY(U,$J,358.3,800,0)
- ;;=383.30^^11^93^76
- ;;^UTILITY(U,$J,358.3,800,1,0)
+ ;;^UTILITY(U,$J,358.3,439,1,3,0)
+ ;;=3^Sedative,Hypnotic or Anxiolytic Withdrawal Delirium
+ ;;^UTILITY(U,$J,358.3,439,1,4,0)
+ ;;=4^F13.231
+ ;;^UTILITY(U,$J,358.3,439,2)
+ ;;=^5003207
+ ;;^UTILITY(U,$J,358.3,440,0)
+ ;;=F17.200^^3^56^1
+ ;;^UTILITY(U,$J,358.3,440,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,800,1,3,0)
- ;;=3^383.30
- ;;^UTILITY(U,$J,358.3,800,1,4,0)
- ;;=4^PostMastoidectomy Compl NOS
- ;;^UTILITY(U,$J,358.3,800,2)
- ;;=^269413
- ;;^UTILITY(U,$J,358.3,801,0)
- ;;=383.31^^11^93^77
- ;;^UTILITY(U,$J,358.3,801,1,0)
+ ;;^UTILITY(U,$J,358.3,440,1,3,0)
+ ;;=3^Tobacco Use Disorder,Moderate-Severe
+ ;;^UTILITY(U,$J,358.3,440,1,4,0)
+ ;;=4^F17.200
+ ;;^UTILITY(U,$J,358.3,440,2)
+ ;;=^5003360
+ ;;^UTILITY(U,$J,358.3,441,0)
+ ;;=F17.201^^3^56^2
+ ;;^UTILITY(U,$J,358.3,441,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,801,1,3,0)
- ;;=3^383.31
- ;;^UTILITY(U,$J,358.3,801,1,4,0)
- ;;=4^Postmastoid Mucosal Cyst
- ;;^UTILITY(U,$J,358.3,801,2)
- ;;=^269414
- ;;^UTILITY(U,$J,358.3,802,0)
- ;;=383.32^^11^93^80
- ;;^UTILITY(U,$J,358.3,802,1,0)
+ ;;^UTILITY(U,$J,358.3,441,1,3,0)
+ ;;=3^Tobacco Use Disorder,Moderate-Severe In Remission
+ ;;^UTILITY(U,$J,358.3,441,1,4,0)
+ ;;=4^F17.201
+ ;;^UTILITY(U,$J,358.3,441,2)
+ ;;=^5003361
+ ;;^UTILITY(U,$J,358.3,442,0)
+ ;;=F17.203^^3^56^3
+ ;;^UTILITY(U,$J,358.3,442,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,802,1,3,0)
- ;;=3^383.32
- ;;^UTILITY(U,$J,358.3,802,1,4,0)
- ;;=4^Recurr Cholesteatma
- ;;^UTILITY(U,$J,358.3,802,2)
- ;;=^269415
- ;;^UTILITY(U,$J,358.3,803,0)
- ;;=383.33^^11^93^78
- ;;^UTILITY(U,$J,358.3,803,1,0)
+ ;;^UTILITY(U,$J,358.3,442,1,3,0)
+ ;;=3^Tobacco Withdrawal
+ ;;^UTILITY(U,$J,358.3,442,1,4,0)
+ ;;=4^F17.203
+ ;;^UTILITY(U,$J,358.3,442,2)
+ ;;=^5003362
+ ;;^UTILITY(U,$J,358.3,443,0)
+ ;;=F17.210^^3^56^4
+ ;;^UTILITY(U,$J,358.3,443,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,803,1,3,0)
- ;;=3^383.33
- ;;^UTILITY(U,$J,358.3,803,1,4,0)
- ;;=4^Postmastoidect Granulations
- ;;^UTILITY(U,$J,358.3,803,2)
- ;;=^269418
- ;;^UTILITY(U,$J,358.3,804,0)
- ;;=387.0^^11^93^71
- ;;^UTILITY(U,$J,358.3,804,1,0)
+ ;;^UTILITY(U,$J,358.3,443,1,3,0)
+ ;;=3^Nicotine Dependence,Cigarettes,Uncomplicated
+ ;;^UTILITY(U,$J,358.3,443,1,4,0)
+ ;;=4^F17.210
+ ;;^UTILITY(U,$J,358.3,443,2)
+ ;;=^5003365
+ ;;^UTILITY(U,$J,358.3,444,0)
+ ;;=F17.211^^3^56^5
+ ;;^UTILITY(U,$J,358.3,444,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,804,1,3,0)
- ;;=3^387.0
- ;;^UTILITY(U,$J,358.3,804,1,4,0)
- ;;=4^Otoscler-Oval Wnd, Nonobl
- ;;^UTILITY(U,$J,358.3,804,2)
- ;;=^269515
- ;;^UTILITY(U,$J,358.3,805,0)
- ;;=387.1^^11^93^72
- ;;^UTILITY(U,$J,358.3,805,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,805,1,3,0)
- ;;=3^387.1
- ;;^UTILITY(U,$J,358.3,805,1,4,0)
- ;;=4^Otoscler-Oval Wnd, Obl
- ;;^UTILITY(U,$J,358.3,805,2)
- ;;=^269516
- ;;^UTILITY(U,$J,358.3,806,0)
- ;;=387.2^^11^93^41
- ;;^UTILITY(U,$J,358.3,806,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,806,1,3,0)
- ;;=3^387.2
- ;;^UTILITY(U,$J,358.3,806,1,4,0)
- ;;=4^Cochlear Sclerosis
- ;;^UTILITY(U,$J,358.3,806,2)
- ;;=^269517
- ;;^UTILITY(U,$J,358.3,807,0)
- ;;=387.8^^11^93^73
- ;;^UTILITY(U,$J,358.3,807,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,807,1,3,0)
- ;;=3^387.8
+ ;;^UTILITY(U,$J,358.3,444,1,3,0)
+ ;;=3^Nicotine Dependence,Cigarettes,In Remission
+ ;;^UTILITY(U,$J,358.3,444,1,4,0)
+ ;;=4^F17.211
+ ;;^UTILITY(U,$J,358.3,444,2)
+ ;;=^5003366
+ ;;^UTILITY(U,$J,358.3,445,0)
+ ;;=F17.220^^3^56^6

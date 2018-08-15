@@ -1,0 +1,132 @@
+IBDEI21N ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,34263,0)
+ ;;=G45.9^^157^1740^15
+ ;;^UTILITY(U,$J,358.3,34263,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34263,1,3,0)
+ ;;=3^Transient Cerebral Ischemic Attacks,Unspec
+ ;;^UTILITY(U,$J,358.3,34263,1,4,0)
+ ;;=4^G45.9
+ ;;^UTILITY(U,$J,358.3,34263,2)
+ ;;=^5003959
+ ;;^UTILITY(U,$J,358.3,34264,0)
+ ;;=G46.0^^157^1740^7
+ ;;^UTILITY(U,$J,358.3,34264,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34264,1,3,0)
+ ;;=3^Middle Cerebral Artery Syndrome
+ ;;^UTILITY(U,$J,358.3,34264,1,4,0)
+ ;;=4^G46.0
+ ;;^UTILITY(U,$J,358.3,34264,2)
+ ;;=^5003960
+ ;;^UTILITY(U,$J,358.3,34265,0)
+ ;;=G46.1^^157^1740^2
+ ;;^UTILITY(U,$J,358.3,34265,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34265,1,3,0)
+ ;;=3^Anterior Cerebral Artery Syndrome
+ ;;^UTILITY(U,$J,358.3,34265,1,4,0)
+ ;;=4^G46.1
+ ;;^UTILITY(U,$J,358.3,34265,2)
+ ;;=^5003961
+ ;;^UTILITY(U,$J,358.3,34266,0)
+ ;;=G46.2^^157^1740^11
+ ;;^UTILITY(U,$J,358.3,34266,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34266,1,3,0)
+ ;;=3^Posterior Cerebral Artery Syndrome
+ ;;^UTILITY(U,$J,358.3,34266,1,4,0)
+ ;;=4^G46.2
+ ;;^UTILITY(U,$J,358.3,34266,2)
+ ;;=^5003962
+ ;;^UTILITY(U,$J,358.3,34267,0)
+ ;;=G46.3^^157^1740^3
+ ;;^UTILITY(U,$J,358.3,34267,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34267,1,3,0)
+ ;;=3^Brain Stem Stroke Syndrome
+ ;;^UTILITY(U,$J,358.3,34267,1,4,0)
+ ;;=4^G46.3
+ ;;^UTILITY(U,$J,358.3,34267,2)
+ ;;=^5003963
+ ;;^UTILITY(U,$J,358.3,34268,0)
+ ;;=G46.7^^157^1740^6
+ ;;^UTILITY(U,$J,358.3,34268,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34268,1,3,0)
+ ;;=3^Lacunar Syndromes,Other
+ ;;^UTILITY(U,$J,358.3,34268,1,4,0)
+ ;;=4^G46.7
+ ;;^UTILITY(U,$J,358.3,34268,2)
+ ;;=^5003967
+ ;;^UTILITY(U,$J,358.3,34269,0)
+ ;;=G46.8^^157^1740^17
+ ;;^UTILITY(U,$J,358.3,34269,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34269,1,3,0)
+ ;;=3^Vascular Syndromes of Brain in CVD,Other
+ ;;^UTILITY(U,$J,358.3,34269,1,4,0)
+ ;;=4^G46.8
+ ;;^UTILITY(U,$J,358.3,34269,2)
+ ;;=^5003968
+ ;;^UTILITY(U,$J,358.3,34270,0)
+ ;;=Z86.73^^157^1740^10
+ ;;^UTILITY(U,$J,358.3,34270,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34270,1,3,0)
+ ;;=3^Personal Hx of TIA/Cerebral Inf w/o Resid Deficits
+ ;;^UTILITY(U,$J,358.3,34270,1,4,0)
+ ;;=4^Z86.73
+ ;;^UTILITY(U,$J,358.3,34270,2)
+ ;;=^5063477
+ ;;^UTILITY(U,$J,358.3,34271,0)
+ ;;=G46.4^^157^1740^5
+ ;;^UTILITY(U,$J,358.3,34271,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34271,1,3,0)
+ ;;=3^Cerebellar Stroke Syndrome
+ ;;^UTILITY(U,$J,358.3,34271,1,4,0)
+ ;;=4^G46.4
+ ;;^UTILITY(U,$J,358.3,34271,2)
+ ;;=^5003964
+ ;;^UTILITY(U,$J,358.3,34272,0)
+ ;;=I65.23^^157^1740^8
+ ;;^UTILITY(U,$J,358.3,34272,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34272,1,3,0)
+ ;;=3^Occlusion & Stenosis of Bilateral Carotid Arteries
+ ;;^UTILITY(U,$J,358.3,34272,1,4,0)
+ ;;=4^I65.23
+ ;;^UTILITY(U,$J,358.3,34272,2)
+ ;;=^5007362
+ ;;^UTILITY(U,$J,358.3,34273,0)
+ ;;=I65.29^^157^1740^9
+ ;;^UTILITY(U,$J,358.3,34273,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34273,1,3,0)
+ ;;=3^Occlusion & Stenosis of Unspec Carotid Artery
+ ;;^UTILITY(U,$J,358.3,34273,1,4,0)
+ ;;=4^I65.29
+ ;;^UTILITY(U,$J,358.3,34273,2)
+ ;;=^5007363
+ ;;^UTILITY(U,$J,358.3,34274,0)
+ ;;=G46.5^^157^1740^12
+ ;;^UTILITY(U,$J,358.3,34274,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34274,1,3,0)
+ ;;=3^Pure Motor Lacunar Syndrome
+ ;;^UTILITY(U,$J,358.3,34274,1,4,0)
+ ;;=4^G46.5
+ ;;^UTILITY(U,$J,358.3,34274,2)
+ ;;=^5003965
+ ;;^UTILITY(U,$J,358.3,34275,0)
+ ;;=G46.6^^157^1740^13
+ ;;^UTILITY(U,$J,358.3,34275,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34275,1,3,0)
+ ;;=3^Pure Sensory Lacunar Syndrome
+ ;;^UTILITY(U,$J,358.3,34275,1,4,0)
+ ;;=4^G46.6

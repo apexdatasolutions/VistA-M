@@ -1,142 +1,122 @@
-IBDEI0Q7 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0Q7 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,12928,1,5,0)
- ;;=5^Skin Ca, In Situ (Bowen's Disease)
- ;;^UTILITY(U,$J,358.3,12928,2)
- ;;=^267724
- ;;^UTILITY(U,$J,358.3,12929,0)
- ;;=156.2^^87^827^20
- ;;^UTILITY(U,$J,358.3,12929,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12929,1,4,0)
- ;;=4^156.2
- ;;^UTILITY(U,$J,358.3,12929,1,5,0)
- ;;=5^Ca Ampulla Of Vater
- ;;^UTILITY(U,$J,358.3,12929,2)
- ;;=^267100
- ;;^UTILITY(U,$J,358.3,12930,0)
- ;;=154.3^^87^827^21
- ;;^UTILITY(U,$J,358.3,12930,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12930,1,4,0)
- ;;=4^154.3
- ;;^UTILITY(U,$J,358.3,12930,1,5,0)
- ;;=5^Ca Anus
- ;;^UTILITY(U,$J,358.3,12930,2)
- ;;=CA Anus^267092
- ;;^UTILITY(U,$J,358.3,12931,0)
- ;;=156.1^^87^827^22
- ;;^UTILITY(U,$J,358.3,12931,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12931,1,4,0)
- ;;=4^156.1
- ;;^UTILITY(U,$J,358.3,12931,1,5,0)
- ;;=5^Ca Bile Ducts
- ;;^UTILITY(U,$J,358.3,12931,2)
- ;;=CA Bile Ducts^267099
- ;;^UTILITY(U,$J,358.3,12932,0)
- ;;=153.9^^87^827^23
- ;;^UTILITY(U,$J,358.3,12932,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12932,1,4,0)
- ;;=4^153.9
- ;;^UTILITY(U,$J,358.3,12932,1,5,0)
- ;;=5^Ca Colon
- ;;^UTILITY(U,$J,358.3,12932,2)
- ;;=CA Colon^267078
- ;;^UTILITY(U,$J,358.3,12933,0)
- ;;=150.9^^87^827^24
- ;;^UTILITY(U,$J,358.3,12933,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12933,1,4,0)
- ;;=4^150.9
- ;;^UTILITY(U,$J,358.3,12933,1,5,0)
- ;;=5^Ca Esophagus
- ;;^UTILITY(U,$J,358.3,12933,2)
- ;;=CA Esophagus^267055
- ;;^UTILITY(U,$J,358.3,12934,0)
- ;;=156.0^^87^827^25
- ;;^UTILITY(U,$J,358.3,12934,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12934,1,4,0)
- ;;=4^156.0
- ;;^UTILITY(U,$J,358.3,12934,1,5,0)
- ;;=5^Ca Gallbladder
- ;;^UTILITY(U,$J,358.3,12934,2)
- ;;=^267098
- ;;^UTILITY(U,$J,358.3,12935,0)
- ;;=155.0^^87^827^27
- ;;^UTILITY(U,$J,358.3,12935,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12935,1,4,0)
- ;;=4^155.0
- ;;^UTILITY(U,$J,358.3,12935,1,5,0)
- ;;=5^Ca Liver, Primary
- ;;^UTILITY(U,$J,358.3,12935,2)
- ;;=CA Liver, Primary^73526
- ;;^UTILITY(U,$J,358.3,12936,0)
- ;;=157.9^^87^827^33
- ;;^UTILITY(U,$J,358.3,12936,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12936,1,4,0)
- ;;=4^157.9
- ;;^UTILITY(U,$J,358.3,12936,1,5,0)
- ;;=5^Ca Pancreas
- ;;^UTILITY(U,$J,358.3,12936,2)
- ;;=CA Pancreas^267103
- ;;^UTILITY(U,$J,358.3,12937,0)
- ;;=154.1^^87^827^35
- ;;^UTILITY(U,$J,358.3,12937,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12937,1,4,0)
- ;;=4^154.1
- ;;^UTILITY(U,$J,358.3,12937,1,5,0)
- ;;=5^Ca Rectum
- ;;^UTILITY(U,$J,358.3,12937,2)
- ;;=CA Rectum^267090
- ;;^UTILITY(U,$J,358.3,12938,0)
- ;;=152.9^^87^827^36
- ;;^UTILITY(U,$J,358.3,12938,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12938,1,4,0)
- ;;=4^152.9
- ;;^UTILITY(U,$J,358.3,12938,1,5,0)
- ;;=5^Ca Small Bowel
- ;;^UTILITY(U,$J,358.3,12938,2)
- ;;=CA Small Bowel^267077
- ;;^UTILITY(U,$J,358.3,12939,0)
- ;;=151.9^^87^827^37
- ;;^UTILITY(U,$J,358.3,12939,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12939,1,4,0)
- ;;=4^151.9
- ;;^UTILITY(U,$J,358.3,12939,1,5,0)
- ;;=5^Ca Stomach
- ;;^UTILITY(U,$J,358.3,12939,2)
- ;;=CA Stomach^73532
- ;;^UTILITY(U,$J,358.3,12940,0)
- ;;=160.9^^87^827^18
- ;;^UTILITY(U,$J,358.3,12940,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12940,1,4,0)
- ;;=4^160.9
- ;;^UTILITY(U,$J,358.3,12940,1,5,0)
- ;;=5^Ca Accessory Sinuses
- ;;^UTILITY(U,$J,358.3,12940,2)
- ;;=^267127
- ;;^UTILITY(U,$J,358.3,12941,0)
- ;;=162.9^^87^827^29
- ;;^UTILITY(U,$J,358.3,12941,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12941,1,4,0)
- ;;=4^162.9
- ;;^UTILITY(U,$J,358.3,12941,1,5,0)
- ;;=5^Ca Lung
- ;;^UTILITY(U,$J,358.3,12941,2)
- ;;=CA Lung^73521
- ;;^UTILITY(U,$J,358.3,12942,0)
- ;;=161.9^^87^827^26
- ;;^UTILITY(U,$J,358.3,12942,1,0)
- ;;=^358.31IA^5^2
+ ;;^UTILITY(U,$J,358.3,11998,2)
+ ;;=^5061661
+ ;;^UTILITY(U,$J,358.3,11999,0)
+ ;;=Y36.300D^^68^694^127
+ ;;^UTILITY(U,$J,358.3,11999,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11999,1,3,0)
+ ;;=3^War Op Inv Unspec Fire/Conflagr/Hot Subst,Milt,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,11999,1,4,0)
+ ;;=4^Y36.300D
+ ;;^UTILITY(U,$J,358.3,11999,2)
+ ;;=^5061662
+ ;;^UTILITY(U,$J,358.3,12000,0)
+ ;;=Y36.410A^^68^694^121
+ ;;^UTILITY(U,$J,358.3,12000,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12000,1,3,0)
+ ;;=3^War Op Inv Rubber Bullets,Milt,Init Encntr
+ ;;^UTILITY(U,$J,358.3,12000,1,4,0)
+ ;;=4^Y36.410A
+ ;;^UTILITY(U,$J,358.3,12000,2)
+ ;;=^5061691
+ ;;^UTILITY(U,$J,358.3,12001,0)
+ ;;=Y36.410D^^68^694^123
+ ;;^UTILITY(U,$J,358.3,12001,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12001,1,3,0)
+ ;;=3^War Op Inv Rubber Bullets,Milt,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,12001,1,4,0)
+ ;;=4^Y36.410D
+ ;;^UTILITY(U,$J,358.3,12001,2)
+ ;;=^5061692
+ ;;^UTILITY(U,$J,358.3,12002,0)
+ ;;=Y36.6X0A^^68^694^113
+ ;;^UTILITY(U,$J,358.3,12002,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12002,1,3,0)
+ ;;=3^War Op Inv Biological Weapons,Milt,Init Encntr
+ ;;^UTILITY(U,$J,358.3,12002,1,4,0)
+ ;;=4^Y36.6X0A
+ ;;^UTILITY(U,$J,358.3,12002,2)
+ ;;=^5061775
+ ;;^UTILITY(U,$J,358.3,12003,0)
+ ;;=Y36.6X0D^^68^694^115
+ ;;^UTILITY(U,$J,358.3,12003,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12003,1,3,0)
+ ;;=3^War Op Inv Biological Weapons,Milt,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,12003,1,4,0)
+ ;;=4^Y36.6X0D
+ ;;^UTILITY(U,$J,358.3,12003,2)
+ ;;=^5061776
+ ;;^UTILITY(U,$J,358.3,12004,0)
+ ;;=Y36.7X0A^^68^694^128
+ ;;^UTILITY(U,$J,358.3,12004,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12004,1,3,0)
+ ;;=3^War Op w/ Chem Weapons/Unconvtl Warfare,Milt,Init Encntr
+ ;;^UTILITY(U,$J,358.3,12004,1,4,0)
+ ;;=4^Y36.7X0A
+ ;;^UTILITY(U,$J,358.3,12004,2)
+ ;;=^5061781
+ ;;^UTILITY(U,$J,358.3,12005,0)
+ ;;=Y36.7X0D^^68^694^129
+ ;;^UTILITY(U,$J,358.3,12005,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12005,1,3,0)
+ ;;=3^War Op w/ Chem Weapons/Unconvtl Warfare,Milt,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,12005,1,4,0)
+ ;;=4^Y36.7X0D
+ ;;^UTILITY(U,$J,358.3,12005,2)
+ ;;=^5061782
+ ;;^UTILITY(U,$J,358.3,12006,0)
+ ;;=Y36.810A^^68^694^22
+ ;;^UTILITY(U,$J,358.3,12006,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12006,1,3,0)
+ ;;=3^Explosn of Mine Placed During War Op but Expld Aft,Milt,Init Encntr
+ ;;^UTILITY(U,$J,358.3,12006,1,4,0)
+ ;;=4^Y36.810A
+ ;;^UTILITY(U,$J,358.3,12006,2)
+ ;;=^5061787
+ ;;^UTILITY(U,$J,358.3,12007,0)
+ ;;=Y36.810D^^68^694^23
+ ;;^UTILITY(U,$J,358.3,12007,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12007,1,3,0)
+ ;;=3^Explosn of Mine Placed During War Op but Expld Aft,Milt,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,12007,1,4,0)
+ ;;=4^Y36.810D
+ ;;^UTILITY(U,$J,358.3,12007,2)
+ ;;=^5061788
+ ;;^UTILITY(U,$J,358.3,12008,0)
+ ;;=Y36.820A^^68^694^19
+ ;;^UTILITY(U,$J,358.3,12008,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12008,1,3,0)
+ ;;=3^Explosn of Bomb Placed During War Op But Expld Aft,Milt,Init Encntr
+ ;;^UTILITY(U,$J,358.3,12008,1,4,0)
+ ;;=4^Y36.820A
+ ;;^UTILITY(U,$J,358.3,12008,2)
+ ;;=^5061793
+ ;;^UTILITY(U,$J,358.3,12009,0)
+ ;;=Y36.820D^^68^694^20
+ ;;^UTILITY(U,$J,358.3,12009,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12009,1,3,0)
+ ;;=3^Explosn of Bomb Placed During War Op But Expld Aft,Milt,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,12009,1,4,0)
+ ;;=4^Y36.820D
+ ;;^UTILITY(U,$J,358.3,12009,2)
+ ;;=^5061794
+ ;;^UTILITY(U,$J,358.3,12010,0)
+ ;;=Y37.200A^^68^694^91
+ ;;^UTILITY(U,$J,358.3,12010,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12010,1,3,0)
+ ;;=3^Miltary Op Inv Explosion/Fragments,Milt,Init Encntr

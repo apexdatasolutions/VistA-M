@@ -1,136 +1,124 @@
-IBDEI1AW ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1AW ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,23295,1,5,0)
- ;;=5^Drug Dermatitis(Internal, Taken Appropriately)
- ;;^UTILITY(U,$J,358.3,23295,2)
- ;;=^33042
- ;;^UTILITY(U,$J,358.3,23296,0)
- ;;=692.3^^148^1442^8
- ;;^UTILITY(U,$J,358.3,23296,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23296,1,2,0)
- ;;=2^692.3
- ;;^UTILITY(U,$J,358.3,23296,1,5,0)
- ;;=5^Drug Dermatitis(External)
- ;;^UTILITY(U,$J,358.3,23296,2)
- ;;=^271905
- ;;^UTILITY(U,$J,358.3,23297,0)
- ;;=693.1^^148^1442^11
- ;;^UTILITY(U,$J,358.3,23297,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23297,1,2,0)
- ;;=2^693.1
- ;;^UTILITY(U,$J,358.3,23297,1,5,0)
- ;;=5^Food Dermatitis
- ;;^UTILITY(U,$J,358.3,23297,2)
- ;;=^33044
- ;;^UTILITY(U,$J,358.3,23298,0)
- ;;=692.0^^148^1442^7
- ;;^UTILITY(U,$J,358.3,23298,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23298,1,2,0)
- ;;=2^692.0
- ;;^UTILITY(U,$J,358.3,23298,1,5,0)
- ;;=5^Detergent Dermatitis
- ;;^UTILITY(U,$J,358.3,23298,2)
- ;;=^271902
- ;;^UTILITY(U,$J,358.3,23299,0)
- ;;=692.74^^148^1442^18
- ;;^UTILITY(U,$J,358.3,23299,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23299,1,2,0)
- ;;=2^692.74
- ;;^UTILITY(U,$J,358.3,23299,1,5,0)
- ;;=5^Sun Dermatitis, Chronic
- ;;^UTILITY(U,$J,358.3,23299,2)
- ;;=^293927
- ;;^UTILITY(U,$J,358.3,23300,0)
- ;;=694.9^^148^1442^5
- ;;^UTILITY(U,$J,358.3,23300,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23300,1,2,0)
- ;;=2^694.9
- ;;^UTILITY(U,$J,358.3,23300,1,5,0)
- ;;=5^Bullous dermatoses, NOS
- ;;^UTILITY(U,$J,358.3,23300,2)
- ;;=^187900
- ;;^UTILITY(U,$J,358.3,23301,0)
- ;;=692.73^^148^1442^2
- ;;^UTILITY(U,$J,358.3,23301,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23301,1,2,0)
- ;;=2^692.73
- ;;^UTILITY(U,$J,358.3,23301,1,5,0)
- ;;=5^Actinic Granuloma/Reticuloid
- ;;^UTILITY(U,$J,358.3,23301,2)
- ;;=Actinic Granuloma/Reticuloid^293926
- ;;^UTILITY(U,$J,358.3,23302,0)
- ;;=692.72^^148^1442^14
- ;;^UTILITY(U,$J,358.3,23302,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23302,1,2,0)
- ;;=2^692.72
- ;;^UTILITY(U,$J,358.3,23302,1,5,0)
- ;;=5^Polymorphic Light Eruption
- ;;^UTILITY(U,$J,358.3,23302,2)
- ;;=Polymorphic Light Eruptio^93951
- ;;^UTILITY(U,$J,358.3,23303,0)
- ;;=110.0^^148^1443^5
- ;;^UTILITY(U,$J,358.3,23303,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23303,1,2,0)
- ;;=2^110.0
- ;;^UTILITY(U,$J,358.3,23303,1,5,0)
- ;;=5^Dermatophytosis Scalp
- ;;^UTILITY(U,$J,358.3,23303,2)
- ;;=^33176
- ;;^UTILITY(U,$J,358.3,23304,0)
- ;;=110.5^^148^1443^1
- ;;^UTILITY(U,$J,358.3,23304,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23304,1,2,0)
- ;;=2^110.5
- ;;^UTILITY(U,$J,358.3,23304,1,5,0)
- ;;=5^Dermatophytosis Body(Tinea Imbricata)
- ;;^UTILITY(U,$J,358.3,23304,2)
- ;;=^33179
- ;;^UTILITY(U,$J,358.3,23305,0)
- ;;=110.1^^148^1443^6
- ;;^UTILITY(U,$J,358.3,23305,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23305,1,2,0)
- ;;=2^110.1
- ;;^UTILITY(U,$J,358.3,23305,1,5,0)
- ;;=5^Onychomycosis
- ;;^UTILITY(U,$J,358.3,23305,2)
- ;;=Onychomycosis^33173
- ;;^UTILITY(U,$J,358.3,23306,0)
- ;;=110.4^^148^1443^2
- ;;^UTILITY(U,$J,358.3,23306,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23306,1,2,0)
- ;;=2^110.4
- ;;^UTILITY(U,$J,358.3,23306,1,5,0)
- ;;=5^Dermatophytosis Foot(Tinea Pedis)
- ;;^UTILITY(U,$J,358.3,23306,2)
- ;;=^33168
- ;;^UTILITY(U,$J,358.3,23307,0)
- ;;=110.3^^148^1443^3
- ;;^UTILITY(U,$J,358.3,23307,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23307,1,2,0)
- ;;=2^110.3
- ;;^UTILITY(U,$J,358.3,23307,1,5,0)
- ;;=5^Dermatophytosis Groin(Tinea Cruris)
- ;;^UTILITY(U,$J,358.3,23307,2)
- ;;=^33171
- ;;^UTILITY(U,$J,358.3,23308,0)
- ;;=110.2^^148^1443^4
- ;;^UTILITY(U,$J,358.3,23308,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23308,1,2,0)
- ;;=2^110.2
- ;;^UTILITY(U,$J,358.3,23308,1,5,0)
- ;;=5^Dermatophytosis Hand(Tinea Manuum)
+ ;;^UTILITY(U,$J,358.3,21719,1,3,0)
+ ;;=3^Nondisp medial phalanx fx of right lesser toe(s), sequela
+ ;;^UTILITY(U,$J,358.3,21719,1,4,0)
+ ;;=4^S92.524S
+ ;;^UTILITY(U,$J,358.3,21719,2)
+ ;;=^5045500
+ ;;^UTILITY(U,$J,358.3,21720,0)
+ ;;=S92.415S^^101^1034^102
+ ;;^UTILITY(U,$J,358.3,21720,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21720,1,3,0)
+ ;;=3^Nondisp proximal phalanx fx of left great toe, sequela
+ ;;^UTILITY(U,$J,358.3,21720,1,4,0)
+ ;;=4^S92.415S
+ ;;^UTILITY(U,$J,358.3,21720,2)
+ ;;=^5045332
+ ;;^UTILITY(U,$J,358.3,21721,0)
+ ;;=S92.515S^^101^1034^103
+ ;;^UTILITY(U,$J,358.3,21721,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21721,1,3,0)
+ ;;=3^Nondisp proximal phalanx fx of left lesser toe(s), sequela
+ ;;^UTILITY(U,$J,358.3,21721,1,4,0)
+ ;;=4^S92.515S
+ ;;^UTILITY(U,$J,358.3,21721,2)
+ ;;=^5045465
+ ;;^UTILITY(U,$J,358.3,21722,0)
+ ;;=S92.414S^^101^1034^104
+ ;;^UTILITY(U,$J,358.3,21722,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21722,1,3,0)
+ ;;=3^Nondisp proximal phalanx fx of right great toe, sequela
+ ;;^UTILITY(U,$J,358.3,21722,1,4,0)
+ ;;=4^S92.414S
+ ;;^UTILITY(U,$J,358.3,21722,2)
+ ;;=^5045325
+ ;;^UTILITY(U,$J,358.3,21723,0)
+ ;;=S92.514S^^101^1034^105
+ ;;^UTILITY(U,$J,358.3,21723,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21723,1,3,0)
+ ;;=3^Nondisp proximal phalanx fx of right lesser toe(s), sequela
+ ;;^UTILITY(U,$J,358.3,21723,1,4,0)
+ ;;=4^S92.514S
+ ;;^UTILITY(U,$J,358.3,21723,2)
+ ;;=^5045458
+ ;;^UTILITY(U,$J,358.3,21724,0)
+ ;;=M84.478S^^101^1034^110
+ ;;^UTILITY(U,$J,358.3,21724,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21724,1,3,0)
+ ;;=3^Pathological fracture, left toe(s), sequela
+ ;;^UTILITY(U,$J,358.3,21724,1,4,0)
+ ;;=4^M84.478S
+ ;;^UTILITY(U,$J,358.3,21724,2)
+ ;;=^5014009
+ ;;^UTILITY(U,$J,358.3,21725,0)
+ ;;=M84.477S^^101^1034^113
+ ;;^UTILITY(U,$J,358.3,21725,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21725,1,3,0)
+ ;;=3^Pathological fracture, right toe(s), sequela
+ ;;^UTILITY(U,$J,358.3,21725,1,4,0)
+ ;;=4^M84.477S
+ ;;^UTILITY(U,$J,358.3,21725,2)
+ ;;=^5014003
+ ;;^UTILITY(U,$J,358.3,21726,0)
+ ;;=M84.378S^^101^1034^116
+ ;;^UTILITY(U,$J,358.3,21726,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21726,1,3,0)
+ ;;=3^Stress fracture, left toe(s), sequela
+ ;;^UTILITY(U,$J,358.3,21726,1,4,0)
+ ;;=4^M84.378S
+ ;;^UTILITY(U,$J,358.3,21726,2)
+ ;;=^5013781
+ ;;^UTILITY(U,$J,358.3,21727,0)
+ ;;=M84.377S^^101^1034^119
+ ;;^UTILITY(U,$J,358.3,21727,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21727,1,3,0)
+ ;;=3^Stress fracture, right toe(s), sequela
+ ;;^UTILITY(U,$J,358.3,21727,1,4,0)
+ ;;=4^M84.377S
+ ;;^UTILITY(U,$J,358.3,21727,2)
+ ;;=^5013775
+ ;;^UTILITY(U,$J,358.3,21728,0)
+ ;;=S92.212S^^101^1034^23
+ ;;^UTILITY(U,$J,358.3,21728,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21728,1,3,0)
+ ;;=3^Disp cuboid bone of left foot fx, sequela
+ ;;^UTILITY(U,$J,358.3,21728,1,4,0)
+ ;;=4^S92.212S
+ ;;^UTILITY(U,$J,358.3,21728,2)
+ ;;=^5044849
+ ;;^UTILITY(U,$J,358.3,21729,0)
+ ;;=S92.211S^^101^1034^24
+ ;;^UTILITY(U,$J,358.3,21729,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21729,1,3,0)
+ ;;=3^Disp cuboid bone of right foot, sequela
+ ;;^UTILITY(U,$J,358.3,21729,1,4,0)
+ ;;=4^S92.211S
+ ;;^UTILITY(U,$J,358.3,21729,2)
+ ;;=^5044842
+ ;;^UTILITY(U,$J,358.3,21730,0)
+ ;;=S92.352S^^101^1034^9
+ ;;^UTILITY(U,$J,358.3,21730,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21730,1,3,0)
+ ;;=3^Disp 5th metatarsal fx of left foot,sequela
+ ;;^UTILITY(U,$J,358.3,21730,1,4,0)
+ ;;=4^S92.352S
+ ;;^UTILITY(U,$J,358.3,21730,2)
+ ;;=^5045241
+ ;;^UTILITY(U,$J,358.3,21731,0)
+ ;;=S92.351S^^101^1034^10
+ ;;^UTILITY(U,$J,358.3,21731,1,0)
+ ;;=^358.31IA^4^2

@@ -1,126 +1,130 @@
-IBDEI195 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI195 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,22415,1,3,0)
- ;;=3^DESTR PARAVERT Nerve C/T, single
- ;;^UTILITY(U,$J,358.3,22416,0)
- ;;=64634^^138^1359^8^^^^1
- ;;^UTILITY(U,$J,358.3,22416,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22416,1,2,0)
- ;;=2^64634
- ;;^UTILITY(U,$J,358.3,22416,1,3,0)
- ;;=3^DESTR PARAVERT Nerve C/T, Single
- ;;^UTILITY(U,$J,358.3,22417,0)
- ;;=64635^^138^1359^9^^^^1
- ;;^UTILITY(U,$J,358.3,22417,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22417,1,2,0)
- ;;=2^64635
- ;;^UTILITY(U,$J,358.3,22417,1,3,0)
- ;;=3^DESTR PARAVERT Nerve L/S, single
- ;;^UTILITY(U,$J,358.3,22418,0)
- ;;=64636^^138^1359^10^^^^1
- ;;^UTILITY(U,$J,358.3,22418,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22418,1,2,0)
- ;;=2^64636
- ;;^UTILITY(U,$J,358.3,22418,1,3,0)
- ;;=3^DESTR PN L/S, Ea Addl Level
- ;;^UTILITY(U,$J,358.3,22419,0)
- ;;=64490^^138^1359^11^^^^1
- ;;^UTILITY(U,$J,358.3,22419,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22419,1,2,0)
- ;;=2^64490
- ;;^UTILITY(U,$J,358.3,22419,1,3,0)
- ;;=3^INJ PARAVERT Joint C/T, Single
- ;;^UTILITY(U,$J,358.3,22420,0)
- ;;=64491^^138^1359^12^^^^1
- ;;^UTILITY(U,$J,358.3,22420,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22420,1,2,0)
- ;;=2^64491
- ;;^UTILITY(U,$J,358.3,22420,1,3,0)
- ;;=3^INJ PV Joint C/T, second level
- ;;^UTILITY(U,$J,358.3,22421,0)
- ;;=64492^^138^1359^13^^^^1
- ;;^UTILITY(U,$J,358.3,22421,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22421,1,2,0)
- ;;=2^64492
- ;;^UTILITY(U,$J,358.3,22421,1,3,0)
- ;;=3^INJ PV Joint C/T, third or more
- ;;^UTILITY(U,$J,358.3,22422,0)
- ;;=64493^^138^1359^14^^^^1
- ;;^UTILITY(U,$J,358.3,22422,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22422,1,2,0)
- ;;=2^64493
- ;;^UTILITY(U,$J,358.3,22422,1,3,0)
- ;;=3^INJ PARAVERT Joint L/S, Single
- ;;^UTILITY(U,$J,358.3,22423,0)
- ;;=64494^^138^1359^15^^^^1
- ;;^UTILITY(U,$J,358.3,22423,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22423,1,2,0)
- ;;=2^64494
- ;;^UTILITY(U,$J,358.3,22423,1,3,0)
- ;;=3^INJ PV Joint L/S, second level
- ;;^UTILITY(U,$J,358.3,22424,0)
- ;;=64495^^138^1359^16^^^^1
- ;;^UTILITY(U,$J,358.3,22424,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22424,1,2,0)
- ;;=2^64495
- ;;^UTILITY(U,$J,358.3,22424,1,3,0)
- ;;=3^INJ PV Joint L/S, third or more
- ;;^UTILITY(U,$J,358.3,22425,0)
- ;;=A6196^^138^1360^1^^^^1
- ;;^UTILITY(U,$J,358.3,22425,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22425,1,2,0)
- ;;=2^A6196
- ;;^UTILITY(U,$J,358.3,22425,1,3,0)
- ;;=3^Alginate dressing, 16 sq IN or < EA
- ;;^UTILITY(U,$J,358.3,22426,0)
- ;;=A6222^^138^1360^2^^^^1
- ;;^UTILITY(U,$J,358.3,22426,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22426,1,2,0)
- ;;=2^A6222
- ;;^UTILITY(U,$J,358.3,22426,1,3,0)
- ;;=3^Gauze, 16 sq IN or <, saline
- ;;^UTILITY(U,$J,358.3,22427,0)
- ;;=A6234^^138^1360^3^^^^1
- ;;^UTILITY(U,$J,358.3,22427,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22427,1,2,0)
- ;;=2^A6234
- ;;^UTILITY(U,$J,358.3,22427,1,3,0)
- ;;=3^Hydrocolid drg 16<=IN w/o bdr
- ;;^UTILITY(U,$J,358.3,22428,0)
- ;;=A6242^^138^1360^4^^^^1
- ;;^UTILITY(U,$J,358.3,22428,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22428,1,2,0)
- ;;=2^A6242
- ;;^UTILITY(U,$J,358.3,22428,1,3,0)
- ;;=3^Hydrogel drg <=IN w/o bdr
- ;;^UTILITY(U,$J,358.3,22429,0)
- ;;=A6216^^138^1360^5^^^^1
- ;;^UTILITY(U,$J,358.3,22429,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22429,1,2,0)
- ;;=2^A6216
- ;;^UTILITY(U,$J,358.3,22429,1,3,0)
- ;;=3^Non-Sterile Gauze <=16 Sq IN
- ;;^UTILITY(U,$J,358.3,22430,0)
- ;;=A6250^^138^1360^6^^^^1
- ;;^UTILITY(U,$J,358.3,22430,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,22430,1,2,0)
- ;;=2^A6250
- ;;^UTILITY(U,$J,358.3,22430,1,3,0)
- ;;=3^Skin Seal protect moisturizer
+ ;;^UTILITY(U,$J,358.3,20939,2)
+ ;;=^5063181
+ ;;^UTILITY(U,$J,358.3,20940,0)
+ ;;=Z65.3^^99^1001^2
+ ;;^UTILITY(U,$J,358.3,20940,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20940,1,3,0)
+ ;;=3^Problems Related to Oth Legal Circumstances
+ ;;^UTILITY(U,$J,358.3,20940,1,4,0)
+ ;;=4^Z65.3
+ ;;^UTILITY(U,$J,358.3,20940,2)
+ ;;=^5063182
+ ;;^UTILITY(U,$J,358.3,20941,0)
+ ;;=Z65.8^^99^1002^5
+ ;;^UTILITY(U,$J,358.3,20941,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20941,1,3,0)
+ ;;=3^Religious/Spiritual Problem;Oth Problem Related to Psychosocial Circumstances
+ ;;^UTILITY(U,$J,358.3,20941,1,4,0)
+ ;;=4^Z65.8
+ ;;^UTILITY(U,$J,358.3,20941,2)
+ ;;=^5063185
+ ;;^UTILITY(U,$J,358.3,20942,0)
+ ;;=Z64.0^^99^1002^4
+ ;;^UTILITY(U,$J,358.3,20942,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20942,1,3,0)
+ ;;=3^Problems Related to Unwanted Pregnancy
+ ;;^UTILITY(U,$J,358.3,20942,1,4,0)
+ ;;=4^Z64.0
+ ;;^UTILITY(U,$J,358.3,20942,2)
+ ;;=^5063176
+ ;;^UTILITY(U,$J,358.3,20943,0)
+ ;;=Z64.1^^99^1002^3
+ ;;^UTILITY(U,$J,358.3,20943,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20943,1,3,0)
+ ;;=3^Problems Related to Multiparity
+ ;;^UTILITY(U,$J,358.3,20943,1,4,0)
+ ;;=4^Z64.1
+ ;;^UTILITY(U,$J,358.3,20943,2)
+ ;;=^5063177
+ ;;^UTILITY(U,$J,358.3,20944,0)
+ ;;=Z64.4^^99^1002^1
+ ;;^UTILITY(U,$J,358.3,20944,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20944,1,3,0)
+ ;;=3^Discord w/ Social Service Provider,Including Probation Officer,Case Manager,Social Worker
+ ;;^UTILITY(U,$J,358.3,20944,1,4,0)
+ ;;=4^Z64.4
+ ;;^UTILITY(U,$J,358.3,20944,2)
+ ;;=^5063178
+ ;;^UTILITY(U,$J,358.3,20945,0)
+ ;;=Z65.5^^99^1002^2
+ ;;^UTILITY(U,$J,358.3,20945,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20945,1,3,0)
+ ;;=3^Exposure to Disaster,War or Other Hostilities
+ ;;^UTILITY(U,$J,358.3,20945,1,4,0)
+ ;;=4^Z65.5
+ ;;^UTILITY(U,$J,358.3,20945,2)
+ ;;=^5063184
+ ;;^UTILITY(U,$J,358.3,20946,0)
+ ;;=Z62.820^^99^1003^4
+ ;;^UTILITY(U,$J,358.3,20946,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20946,1,3,0)
+ ;;=3^Parent-Child Relational Problem
+ ;;^UTILITY(U,$J,358.3,20946,1,4,0)
+ ;;=4^Z62.820
+ ;;^UTILITY(U,$J,358.3,20946,2)
+ ;;=^5063157
+ ;;^UTILITY(U,$J,358.3,20947,0)
+ ;;=Z62.891^^99^1003^6
+ ;;^UTILITY(U,$J,358.3,20947,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20947,1,3,0)
+ ;;=3^Sibling Relational Problem
+ ;;^UTILITY(U,$J,358.3,20947,1,4,0)
+ ;;=4^Z62.891
+ ;;^UTILITY(U,$J,358.3,20947,2)
+ ;;=^5063161
+ ;;^UTILITY(U,$J,358.3,20948,0)
+ ;;=Z62.898^^99^1003^1
+ ;;^UTILITY(U,$J,358.3,20948,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20948,1,3,0)
+ ;;=3^Child Affected by Parental Relationship Distress
+ ;;^UTILITY(U,$J,358.3,20948,1,4,0)
+ ;;=4^Z62.898
+ ;;^UTILITY(U,$J,358.3,20948,2)
+ ;;=^5063162
+ ;;^UTILITY(U,$J,358.3,20949,0)
+ ;;=Z63.0^^99^1003^5
+ ;;^UTILITY(U,$J,358.3,20949,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20949,1,3,0)
+ ;;=3^Relationship Distress w/ Spouse/Partner
+ ;;^UTILITY(U,$J,358.3,20949,1,4,0)
+ ;;=4^Z63.0
+ ;;^UTILITY(U,$J,358.3,20949,2)
+ ;;=^5063164
+ ;;^UTILITY(U,$J,358.3,20950,0)
+ ;;=Z63.5^^99^1003^2
+ ;;^UTILITY(U,$J,358.3,20950,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20950,1,3,0)
+ ;;=3^Disruption of Family by Separation or Divorce
+ ;;^UTILITY(U,$J,358.3,20950,1,4,0)
+ ;;=4^Z63.5
+ ;;^UTILITY(U,$J,358.3,20950,2)
+ ;;=^5063169
+ ;;^UTILITY(U,$J,358.3,20951,0)
+ ;;=Z63.8^^99^1003^3
+ ;;^UTILITY(U,$J,358.3,20951,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20951,1,3,0)
+ ;;=3^High Exporessed Emotion Level w/in Family
+ ;;^UTILITY(U,$J,358.3,20951,1,4,0)
+ ;;=4^Z63.8
+ ;;^UTILITY(U,$J,358.3,20951,2)
+ ;;=^5063174
+ ;;^UTILITY(U,$J,358.3,20952,0)
+ ;;=Z63.4^^99^1003^7
+ ;;^UTILITY(U,$J,358.3,20952,1,0)
+ ;;=^358.31IA^4^2

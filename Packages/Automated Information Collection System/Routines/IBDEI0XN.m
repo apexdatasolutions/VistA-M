@@ -1,136 +1,132 @@
-IBDEI0XN ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0XN ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,16693,2)
- ;;=^271250
- ;;^UTILITY(U,$J,358.3,16694,0)
- ;;=655.23^^108^1048^4
- ;;^UTILITY(U,$J,358.3,16694,1,0)
+ ;;^UTILITY(U,$J,358.3,15507,2)
+ ;;=^5009068
+ ;;^UTILITY(U,$J,358.3,15508,0)
+ ;;=D17.0^^85^821^26
+ ;;^UTILITY(U,$J,358.3,15508,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16694,1,3,0)
- ;;=3^655.23
- ;;^UTILITY(U,$J,358.3,16694,1,4,0)
- ;;=4^Famil Hered Disease-Antepartum
- ;;^UTILITY(U,$J,358.3,16694,2)
- ;;=^271254
- ;;^UTILITY(U,$J,358.3,16695,0)
- ;;=655.33^^108^1048^10
- ;;^UTILITY(U,$J,358.3,16695,1,0)
+ ;;^UTILITY(U,$J,358.3,15508,1,3,0)
+ ;;=3^Benign Lipomatous Neop of Skin of Head/Face/Neck
+ ;;^UTILITY(U,$J,358.3,15508,1,4,0)
+ ;;=4^D17.0
+ ;;^UTILITY(U,$J,358.3,15508,2)
+ ;;=^5002005
+ ;;^UTILITY(U,$J,358.3,15509,0)
+ ;;=D17.22^^85^821^27
+ ;;^UTILITY(U,$J,358.3,15509,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16695,1,3,0)
- ;;=3^655.33
- ;;^UTILITY(U,$J,358.3,16695,1,4,0)
- ;;=4^Fetal damg,Virus in mother-Antepar
- ;;^UTILITY(U,$J,358.3,16695,2)
- ;;=^271258
- ;;^UTILITY(U,$J,358.3,16696,0)
- ;;=655.43^^108^1048^11
- ;;^UTILITY(U,$J,358.3,16696,1,0)
+ ;;^UTILITY(U,$J,358.3,15509,1,3,0)
+ ;;=3^Benign Lipomatous Neop of Skin of Left Arm
+ ;;^UTILITY(U,$J,358.3,15509,1,4,0)
+ ;;=4^D17.22
+ ;;^UTILITY(U,$J,358.3,15509,2)
+ ;;=^5002009
+ ;;^UTILITY(U,$J,358.3,15510,0)
+ ;;=D17.24^^85^821^28
+ ;;^UTILITY(U,$J,358.3,15510,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16696,1,3,0)
- ;;=3^655.43
- ;;^UTILITY(U,$J,358.3,16696,1,4,0)
- ;;=4^Fetal damg,oth dis in mother-Ant
- ;;^UTILITY(U,$J,358.3,16696,2)
- ;;=^271262
- ;;^UTILITY(U,$J,358.3,16697,0)
- ;;=655.53^^108^1048^8
- ;;^UTILITY(U,$J,358.3,16697,1,0)
+ ;;^UTILITY(U,$J,358.3,15510,1,3,0)
+ ;;=3^Benign Lipomatous Neop of Skin of Left Leg
+ ;;^UTILITY(U,$J,358.3,15510,1,4,0)
+ ;;=4^D17.24
+ ;;^UTILITY(U,$J,358.3,15510,2)
+ ;;=^5002011
+ ;;^UTILITY(U,$J,358.3,15511,0)
+ ;;=D17.39^^85^821^25
+ ;;^UTILITY(U,$J,358.3,15511,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16697,1,3,0)
- ;;=3^655.53
- ;;^UTILITY(U,$J,358.3,16697,1,4,0)
- ;;=4^Fetal damg, drug-Antepartum
- ;;^UTILITY(U,$J,358.3,16697,2)
- ;;=^271266
- ;;^UTILITY(U,$J,358.3,16698,0)
- ;;=655.63^^108^1048^9
- ;;^UTILITY(U,$J,358.3,16698,1,0)
+ ;;^UTILITY(U,$J,358.3,15511,1,3,0)
+ ;;=3^Benign Lipomatous Neop of Skin NEC
+ ;;^UTILITY(U,$J,358.3,15511,1,4,0)
+ ;;=4^D17.39
+ ;;^UTILITY(U,$J,358.3,15511,2)
+ ;;=^5002013
+ ;;^UTILITY(U,$J,358.3,15512,0)
+ ;;=D17.21^^85^821^29
+ ;;^UTILITY(U,$J,358.3,15512,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16698,1,3,0)
- ;;=3^655.63
- ;;^UTILITY(U,$J,358.3,16698,1,4,0)
- ;;=4^Fetal damg, radiation-Antepartum
- ;;^UTILITY(U,$J,358.3,16698,2)
- ;;=^271270
- ;;^UTILITY(U,$J,358.3,16699,0)
- ;;=655.73^^108^1048^2
- ;;^UTILITY(U,$J,358.3,16699,1,0)
+ ;;^UTILITY(U,$J,358.3,15512,1,3,0)
+ ;;=3^Benign Lipomatous Neop of Skin of Right Arm
+ ;;^UTILITY(U,$J,358.3,15512,1,4,0)
+ ;;=4^D17.21
+ ;;^UTILITY(U,$J,358.3,15512,2)
+ ;;=^5002008
+ ;;^UTILITY(U,$J,358.3,15513,0)
+ ;;=D17.23^^85^821^30
+ ;;^UTILITY(U,$J,358.3,15513,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16699,1,3,0)
- ;;=3^655.73
- ;;^UTILITY(U,$J,358.3,16699,1,4,0)
- ;;=4^Decrease fetal movement-Antepartum
- ;;^UTILITY(U,$J,358.3,16699,2)
- ;;=^317933
- ;;^UTILITY(U,$J,358.3,16700,0)
- ;;=656.03^^108^1048^12
- ;;^UTILITY(U,$J,358.3,16700,1,0)
+ ;;^UTILITY(U,$J,358.3,15513,1,3,0)
+ ;;=3^Benign Lipomatous Neop of Skin of Right Leg
+ ;;^UTILITY(U,$J,358.3,15513,1,4,0)
+ ;;=4^D17.23
+ ;;^UTILITY(U,$J,358.3,15513,2)
+ ;;=^5002010
+ ;;^UTILITY(U,$J,358.3,15514,0)
+ ;;=D17.1^^85^821^31
+ ;;^UTILITY(U,$J,358.3,15514,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16700,1,3,0)
- ;;=3^656.03
- ;;^UTILITY(U,$J,358.3,16700,1,4,0)
- ;;=4^Fetal-Maternal Hem-Antepartum
- ;;^UTILITY(U,$J,358.3,16700,2)
- ;;=^271283
- ;;^UTILITY(U,$J,358.3,16701,0)
- ;;=656.13^^108^1048^16
- ;;^UTILITY(U,$J,358.3,16701,1,0)
+ ;;^UTILITY(U,$J,358.3,15514,1,3,0)
+ ;;=3^Benign Lipomatous Neop of Skin of Trunk
+ ;;^UTILITY(U,$J,358.3,15514,1,4,0)
+ ;;=4^D17.1
+ ;;^UTILITY(U,$J,358.3,15514,2)
+ ;;=^5002006
+ ;;^UTILITY(U,$J,358.3,15515,0)
+ ;;=G56.02^^85^821^32
+ ;;^UTILITY(U,$J,358.3,15515,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16701,1,3,0)
- ;;=3^656.13
- ;;^UTILITY(U,$J,358.3,16701,1,4,0)
- ;;=4^RH Isoimmunization-Antepartum
- ;;^UTILITY(U,$J,358.3,16701,2)
- ;;=^271286
- ;;^UTILITY(U,$J,358.3,16702,0)
- ;;=656.23^^108^1048^1
- ;;^UTILITY(U,$J,358.3,16702,1,0)
+ ;;^UTILITY(U,$J,358.3,15515,1,3,0)
+ ;;=3^Carpal Tunnel Syndrome,Left Upper Limb
+ ;;^UTILITY(U,$J,358.3,15515,1,4,0)
+ ;;=4^G56.02
+ ;;^UTILITY(U,$J,358.3,15515,2)
+ ;;=^5004019
+ ;;^UTILITY(U,$J,358.3,15516,0)
+ ;;=G56.01^^85^821^33
+ ;;^UTILITY(U,$J,358.3,15516,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16702,1,3,0)
- ;;=3^656.23
- ;;^UTILITY(U,$J,358.3,16702,1,4,0)
- ;;=4^ABO Isoimmunization-Antepartum
- ;;^UTILITY(U,$J,358.3,16702,2)
- ;;=^271290
- ;;^UTILITY(U,$J,358.3,16703,0)
- ;;=656.33^^108^1048^7
- ;;^UTILITY(U,$J,358.3,16703,1,0)
+ ;;^UTILITY(U,$J,358.3,15516,1,3,0)
+ ;;=3^Carpal Tunnel Syndrome,Right Upper Limb
+ ;;^UTILITY(U,$J,358.3,15516,1,4,0)
+ ;;=4^G56.01
+ ;;^UTILITY(U,$J,358.3,15516,2)
+ ;;=^5004018
+ ;;^UTILITY(U,$J,358.3,15517,0)
+ ;;=K12.2^^85^821^45
+ ;;^UTILITY(U,$J,358.3,15517,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16703,1,3,0)
- ;;=3^656.33
- ;;^UTILITY(U,$J,358.3,16703,1,4,0)
- ;;=4^Fetal Distress-Antepartum
- ;;^UTILITY(U,$J,358.3,16703,2)
- ;;=^271293
- ;;^UTILITY(U,$J,358.3,16704,0)
- ;;=656.43^^108^1048^14
- ;;^UTILITY(U,$J,358.3,16704,1,0)
+ ;;^UTILITY(U,$J,358.3,15517,1,3,0)
+ ;;=3^Cellulitis of Mouth
+ ;;^UTILITY(U,$J,358.3,15517,1,4,0)
+ ;;=4^K12.2
+ ;;^UTILITY(U,$J,358.3,15517,2)
+ ;;=^5008485
+ ;;^UTILITY(U,$J,358.3,15518,0)
+ ;;=L03.311^^85^821^34
+ ;;^UTILITY(U,$J,358.3,15518,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16704,1,3,0)
- ;;=3^656.43
- ;;^UTILITY(U,$J,358.3,16704,1,4,0)
- ;;=4^Intrauterine Death-Antepartum
- ;;^UTILITY(U,$J,358.3,16704,2)
- ;;=^271297
- ;;^UTILITY(U,$J,358.3,16705,0)
- ;;=656.53^^108^1048^15
- ;;^UTILITY(U,$J,358.3,16705,1,0)
+ ;;^UTILITY(U,$J,358.3,15518,1,3,0)
+ ;;=3^Cellulitis of Abdominal Wall
+ ;;^UTILITY(U,$J,358.3,15518,1,4,0)
+ ;;=4^L03.311
+ ;;^UTILITY(U,$J,358.3,15518,2)
+ ;;=^5009047
+ ;;^UTILITY(U,$J,358.3,15519,0)
+ ;;=L03.317^^85^821^35
+ ;;^UTILITY(U,$J,358.3,15519,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16705,1,3,0)
- ;;=3^656.53
- ;;^UTILITY(U,$J,358.3,16705,1,4,0)
- ;;=4^Poor fetal grth-Antepartum
- ;;^UTILITY(U,$J,358.3,16705,2)
- ;;=^271301
- ;;^UTILITY(U,$J,358.3,16706,0)
- ;;=656.63^^108^1048^3
- ;;^UTILITY(U,$J,358.3,16706,1,0)
+ ;;^UTILITY(U,$J,358.3,15519,1,3,0)
+ ;;=3^Cellulitis of Buttock
+ ;;^UTILITY(U,$J,358.3,15519,1,4,0)
+ ;;=4^L03.317
+ ;;^UTILITY(U,$J,358.3,15519,2)
+ ;;=^5009053
+ ;;^UTILITY(U,$J,358.3,15520,0)
+ ;;=L03.313^^85^821^36
+ ;;^UTILITY(U,$J,358.3,15520,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,16706,1,3,0)
- ;;=3^656.63
- ;;^UTILITY(U,$J,358.3,16706,1,4,0)
- ;;=4^Excess fetal grth-Antepartum
- ;;^UTILITY(U,$J,358.3,16706,2)
- ;;=^271305
+ ;;^UTILITY(U,$J,358.3,15520,1,3,0)
+ ;;=3^Cellulitis of Chest Wall

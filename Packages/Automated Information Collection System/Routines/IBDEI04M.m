@@ -1,144 +1,124 @@
-IBDEI04M ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI04M ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,1885,1,5,0)
- ;;=5^FMILY DSRPT-RET MILITARY
- ;;^UTILITY(U,$J,358.3,1885,2)
- ;;=^336800
- ;;^UTILITY(U,$J,358.3,1886,0)
- ;;=V65.44^^18^177^13
- ;;^UTILITY(U,$J,358.3,1886,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1886,1,2,0)
- ;;=2^V65.44
- ;;^UTILITY(U,$J,358.3,1886,1,5,0)
- ;;=5^HIV COUNSELING
- ;;^UTILITY(U,$J,358.3,1886,2)
- ;;=^303469
- ;;^UTILITY(U,$J,358.3,1887,0)
- ;;=V15.81^^18^177^15
- ;;^UTILITY(U,$J,358.3,1887,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1887,1,2,0)
- ;;=2^V15.81
- ;;^UTILITY(U,$J,358.3,1887,1,5,0)
- ;;=5^HX OF PAST NONCOMPLIANCE
- ;;^UTILITY(U,$J,358.3,1887,2)
- ;;=^295290
- ;;^UTILITY(U,$J,358.3,1888,0)
- ;;=V71.5^^18^177^12
- ;;^UTILITY(U,$J,358.3,1888,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1888,1,2,0)
- ;;=2^V71.5
- ;;^UTILITY(U,$J,358.3,1888,1,5,0)
- ;;=5^H/O SEXUAL ASSAULT
- ;;^UTILITY(U,$J,358.3,1888,2)
- ;;=^295862
- ;;^UTILITY(U,$J,358.3,1889,0)
- ;;=V60.0^^18^177^20
- ;;^UTILITY(U,$J,358.3,1889,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1889,1,2,0)
- ;;=2^V60.0
- ;;^UTILITY(U,$J,358.3,1889,1,5,0)
- ;;=5^LACK OF HOUSING
- ;;^UTILITY(U,$J,358.3,1889,2)
- ;;=^295539
- ;;^UTILITY(U,$J,358.3,1890,0)
- ;;=V61.10^^18^177^26
- ;;^UTILITY(U,$J,358.3,1890,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1890,1,2,0)
- ;;=2^V61.10
- ;;^UTILITY(U,$J,358.3,1890,1,5,0)
- ;;=5^MARITAL PROBLEMS
- ;;^UTILITY(U,$J,358.3,1890,2)
- ;;=^74110
- ;;^UTILITY(U,$J,358.3,1891,0)
- ;;=V40.9^^18^177^27
- ;;^UTILITY(U,$J,358.3,1891,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1891,1,2,0)
- ;;=2^V40.9
- ;;^UTILITY(U,$J,358.3,1891,1,5,0)
- ;;=5^MENTAL/BEHAVIOR PROB NOS
- ;;^UTILITY(U,$J,358.3,1891,2)
- ;;=^259308
- ;;^UTILITY(U,$J,358.3,1892,0)
- ;;=V62.21^^18^177^14
- ;;^UTILITY(U,$J,358.3,1892,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1892,1,2,0)
- ;;=2^V62.21
- ;;^UTILITY(U,$J,358.3,1892,1,5,0)
- ;;=5^HX MILITARY DEPLOYMENT
- ;;^UTILITY(U,$J,358.3,1892,2)
- ;;=^336806
- ;;^UTILITY(U,$J,358.3,1893,0)
- ;;=V62.22^^18^177^16
- ;;^UTILITY(U,$J,358.3,1893,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1893,1,2,0)
- ;;=2^V62.22
- ;;^UTILITY(U,$J,358.3,1893,1,5,0)
- ;;=5^HX RETRN MILITARY DEPLOY
- ;;^UTILITY(U,$J,358.3,1893,2)
- ;;=^336807
- ;;^UTILITY(U,$J,358.3,1894,0)
- ;;=V62.29^^18^177^28
- ;;^UTILITY(U,$J,358.3,1894,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1894,1,2,0)
- ;;=2^V62.29
- ;;^UTILITY(U,$J,358.3,1894,1,5,0)
- ;;=5^OCCUPATION PROBLEMS
- ;;^UTILITY(U,$J,358.3,1894,2)
- ;;=^87746
- ;;^UTILITY(U,$J,358.3,1895,0)
- ;;=V61.20^^18^177^31
- ;;^UTILITY(U,$J,358.3,1895,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1895,1,2,0)
- ;;=2^V61.20
- ;;^UTILITY(U,$J,358.3,1895,1,5,0)
- ;;=5^PARENT-CHILD REL PROB
- ;;^UTILITY(U,$J,358.3,1895,2)
- ;;=^304300
- ;;^UTILITY(U,$J,358.3,1896,0)
- ;;=V62.89^^18^177^32
- ;;^UTILITY(U,$J,358.3,1896,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1896,1,2,0)
- ;;=2^V62.89
- ;;^UTILITY(U,$J,358.3,1896,1,5,0)
- ;;=5^PHASE OF LIFE PROBLEMS
- ;;^UTILITY(U,$J,358.3,1896,2)
- ;;=^303724
- ;;^UTILITY(U,$J,358.3,1897,0)
- ;;=V61.12^^18^177^33
- ;;^UTILITY(U,$J,358.3,1897,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1897,1,2,0)
- ;;=2^V61.12
- ;;^UTILITY(U,$J,358.3,1897,1,5,0)
- ;;=5^PHYS ABUSE BY ADULT
- ;;^UTILITY(U,$J,358.3,1897,2)
- ;;=^303717
- ;;^UTILITY(U,$J,358.3,1898,0)
- ;;=V68.1^^18^177^34
- ;;^UTILITY(U,$J,358.3,1898,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1898,1,2,0)
- ;;=2^V68.1
- ;;^UTILITY(U,$J,358.3,1898,1,5,0)
- ;;=5^PRESCRIPTION REFILL
- ;;^UTILITY(U,$J,358.3,1898,2)
- ;;=^295585
- ;;^UTILITY(U,$J,358.3,1899,0)
- ;;=V62.89^^18^177^35
- ;;^UTILITY(U,$J,358.3,1899,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1899,1,2,0)
- ;;=2^V62.89
+ ;;^UTILITY(U,$J,358.3,1478,1,4,0)
+ ;;=4^T36.5X5S
+ ;;^UTILITY(U,$J,358.3,1478,2)
+ ;;=^5049360
+ ;;^UTILITY(U,$J,358.3,1479,0)
+ ;;=T36.5X5D^^14^156^3
+ ;;^UTILITY(U,$J,358.3,1479,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1479,1,3,0)
+ ;;=3^Adverse effect of aminoglycosides, subsequent encounter
+ ;;^UTILITY(U,$J,358.3,1479,1,4,0)
+ ;;=4^T36.5X5D
+ ;;^UTILITY(U,$J,358.3,1479,2)
+ ;;=^5049359
+ ;;^UTILITY(U,$J,358.3,1480,0)
+ ;;=T45.1X5A^^14^156^5
+ ;;^UTILITY(U,$J,358.3,1480,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1480,1,3,0)
+ ;;=3^Adverse effect of antineoplastic and immunosup drugs, init
+ ;;^UTILITY(U,$J,358.3,1480,1,4,0)
+ ;;=4^T45.1X5A
+ ;;^UTILITY(U,$J,358.3,1480,2)
+ ;;=^5051026
+ ;;^UTILITY(U,$J,358.3,1481,0)
+ ;;=T45.1X5D^^14^156^6
+ ;;^UTILITY(U,$J,358.3,1481,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1481,1,3,0)
+ ;;=3^Adverse effect of antineoplastic and immunosup drugs, subs
+ ;;^UTILITY(U,$J,358.3,1481,1,4,0)
+ ;;=4^T45.1X5D
+ ;;^UTILITY(U,$J,358.3,1481,2)
+ ;;=^5051027
+ ;;^UTILITY(U,$J,358.3,1482,0)
+ ;;=T45.1X5S^^14^156^4
+ ;;^UTILITY(U,$J,358.3,1482,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1482,1,3,0)
+ ;;=3^Adverse effect of antineopl and immunosup drugs, sequela
+ ;;^UTILITY(U,$J,358.3,1482,1,4,0)
+ ;;=4^T45.1X5S
+ ;;^UTILITY(U,$J,358.3,1482,2)
+ ;;=^5051028
+ ;;^UTILITY(U,$J,358.3,1483,0)
+ ;;=T36.8X5A^^14^156^7
+ ;;^UTILITY(U,$J,358.3,1483,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1483,1,3,0)
+ ;;=3^Adverse effect of other systemic antibiotics, init encntr
+ ;;^UTILITY(U,$J,358.3,1483,1,4,0)
+ ;;=4^T36.8X5A
+ ;;^UTILITY(U,$J,358.3,1483,2)
+ ;;=^5049412
+ ;;^UTILITY(U,$J,358.3,1484,0)
+ ;;=T36.8X5D^^14^156^8
+ ;;^UTILITY(U,$J,358.3,1484,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1484,1,3,0)
+ ;;=3^Adverse effect of other systemic antibiotics, subs encntr
+ ;;^UTILITY(U,$J,358.3,1484,1,4,0)
+ ;;=4^T36.8X5D
+ ;;^UTILITY(U,$J,358.3,1484,2)
+ ;;=^5049413
+ ;;^UTILITY(U,$J,358.3,1485,0)
+ ;;=T36.8X5S^^14^156^9
+ ;;^UTILITY(U,$J,358.3,1485,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1485,1,3,0)
+ ;;=3^Adverse effect of other systemic antibiotics, sequela
+ ;;^UTILITY(U,$J,358.3,1485,1,4,0)
+ ;;=4^T36.8X5S
+ ;;^UTILITY(U,$J,358.3,1485,2)
+ ;;=^5049414
+ ;;^UTILITY(U,$J,358.3,1486,0)
+ ;;=T49.6X5A^^14^156^10
+ ;;^UTILITY(U,$J,358.3,1486,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1486,1,3,0)
+ ;;=3^Adverse effect of otorhino drugs and preparations, init
+ ;;^UTILITY(U,$J,358.3,1486,1,4,0)
+ ;;=4^T49.6X5A
+ ;;^UTILITY(U,$J,358.3,1486,2)
+ ;;=^5051926
+ ;;^UTILITY(U,$J,358.3,1487,0)
+ ;;=T49.6X5D^^14^156^11
+ ;;^UTILITY(U,$J,358.3,1487,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1487,1,3,0)
+ ;;=3^Adverse effect of otorhino drugs and preparations, subs
+ ;;^UTILITY(U,$J,358.3,1487,1,4,0)
+ ;;=4^T49.6X5D
+ ;;^UTILITY(U,$J,358.3,1487,2)
+ ;;=^5051927
+ ;;^UTILITY(U,$J,358.3,1488,0)
+ ;;=T49.6X5S^^14^156^12
+ ;;^UTILITY(U,$J,358.3,1488,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1488,1,3,0)
+ ;;=3^Adverse effect of otorhino drugs and preparations, sequela
+ ;;^UTILITY(U,$J,358.3,1488,1,4,0)
+ ;;=4^T49.6X5S
+ ;;^UTILITY(U,$J,358.3,1488,2)
+ ;;=^5051928
+ ;;^UTILITY(U,$J,358.3,1489,0)
+ ;;=T36.95XA^^14^156^13
+ ;;^UTILITY(U,$J,358.3,1489,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1489,1,3,0)
+ ;;=3^Adverse effect of unsp systemic antibiotic, init encntr
+ ;;^UTILITY(U,$J,358.3,1489,1,4,0)
+ ;;=4^T36.95XA
+ ;;^UTILITY(U,$J,358.3,1489,2)
+ ;;=^5049430
+ ;;^UTILITY(U,$J,358.3,1490,0)
+ ;;=T36.95XD^^14^156^14
+ ;;^UTILITY(U,$J,358.3,1490,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1490,1,3,0)
+ ;;=3^Adverse effect of unsp systemic antibiotic, subs encntr

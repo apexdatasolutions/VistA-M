@@ -1,6 +1,6 @@
-IBCNERTQ ;ALB/BI - Real-time Insurance Verification ;27-AUG-2010
- ;;2.0;INTEGRATED BILLING;**438,467,497**;21-MAR-94;Build 120
- ;;Per VHA Directive 2004-038, this routine should not be modified.
+IBCNERTQ ;ALB/BI - Real-time Insurance Verification ;15-OCT-2015
+ ;;2.0;INTEGRATED BILLING;**438,467,497,549,582,593,601**;21-MAR-94;Build 14
+ ;;Per VA Directive 6402, this routine should not be modified.
  Q
  ;
 TRIG(N2) ; Called by triggers in the INSURANCE BUFFER FILE Dictionary (355.33)
@@ -20,12 +20,18 @@ TRIG(N2) ; Called by triggers in the INSURANCE BUFFER FILE Dictionary (355.33)
  ;          60.08 - INSURED'S DOB (if patient is not the subscriber)
  ;          62.01 - PATIENT ID (if patient is not the subscriber)
  ;
+ ;
  N TQIEN,TQN0,NODE20,NODE60,NODE90,QF,N4,PTID,SUBID,MGRP,DFN,PREL
  N RESPONSE S RESPONSE=0
  ; Protect the FileMan variables.
  N DA,DB,DC,DH,DI,DK,DL,DM,DP,DQ,DR,INI,MR,NX,UP
  ;
  I N2="" Q RESPONSE
+ ;IB*582/HAN - Do not allow entries to process if the user is INTERFACE,IB EIV
+ N EIVDUZ S EIVDUZ=$$FIND1^DIC(200,"","X","INTERFACE,IB EIV")
+ ;IB*2.0*593/HN - Added to allow nightly extract entries to go out immediately.
+ I $G(IDUZ)'="",IDUZ=EIVDUZ,$G(CALLEDBY)'="",CALLEDBY="IBCNEHL1" Q RESPONSE
+ ;IB*582 - End
  S MGRP=$$MGRP^IBCNEUT5()
  S NODE20=$G(^IBA(355.33,N2,20))
  S NODE60=$G(^IBA(355.33,N2,60))
@@ -96,7 +102,6 @@ IBE(IEN) ; Insurance Buffer Extract
  ;
  S QUEUED=0
  S SETSTR=$$SETTINGS^IBCNEDE7(1)     ;Returns buffer extract settings
- I 'SETSTR Q QUEUED                  ;Quit if extract is not active
  S MAXCNT=$P(SETSTR,U,4)             ;Max # TQ entries that may be created
  S:MAXCNT="" MAXCNT=9999999999
  ;
@@ -105,6 +110,10 @@ IBE(IEN) ; Insurance Buffer Extract
  ; Get symbol, if symbol'=" " OR "!" OR "#" then quit
  S ISYMBOL=$$SYMBOL^IBCNBLL(IEN)                  ;Insurance buffer symbol
  I (ISYMBOL'=" ")&(ISYMBOL'="!")&(ISYMBOL'="#") Q QUEUED
+ ;
+ ; IB*2.0*549 -  Quit if Realtime  Extract Master switch is off
+ ; Note: Checking here instead of the top of TRIG to check for above error conditions first
+ Q:$$GET1^DIQ(350.9,"1,",51.27,"I")="N" 0
  ;
  ; Get the eIV STATUS IEN and quit for response related errors
  S STATIEN=+$P($G(^IBA(355.33,IEN,0)),U,12)
@@ -117,7 +126,9 @@ IBE(IEN) ; Insurance Buffer Extract
  ;
  S PDOD=$P($G(^DPT(DFN,.35)),U,1)\1               ;Patient's date of death
  S SRVICEDT=+$P($G(^IBA(355.33,IEN,0)),U,18) S:'SRVICEDT SRVICEDT=DT ; Service Date
- I PDOD,PDOD<SRVICEDT S SRVICEDT=PDOD
+ ;
+ ; IB*2.0*549 Removed following line
+ ;I PDOD,PDOD<SRVICEDT S SRVICEDT=PDOD
  S FRESHDT=$$FMADD^XLFDT(SRVICEDT,-FRESHDAY)
  S PAYERSTR=$$INSERROR^IBCNEUT3("B",IEN)          ;Payer String
  S PAYERID=$P(PAYERSTR,U,3),PIEN=$P(PAYERSTR,U,2) ;Payer ID
@@ -140,8 +151,11 @@ IBE(IEN) ; Insurance Buffer Extract
  D TQUPDSV^IBCNEUT5(DFN,PIEN,SRVICEDT)
  ;
  ; Allow only one MEDICARE transmission per patient
- S INSNAME=$P($G(^IBA(355.33,IEN,20)),U)
- I INSNAME["MEDICARE",$G(MCAREFLG(DFN)) Q QUEUED
+ ; IB*2*601/DM 
+ ;S INSNAME=$P($G(^IBA(355.33,IEN,20)),U)
+ ;I INSNAME["MEDICARE",$G(MCAREFLG(DFN)) Q QUEUED
+ S INSNAME=$$GET1^DIQ(355.33,IEN_",","INSURANCE COMPANY NAME")
+ I '$$MBICHK^IBCNEUT7(IEN),INSNAME["MEDICARE",$G(MCAREFLG(DFN)) Q QUEUED
  ; make sure that entries have pat. relationship set to "self"
  D SETREL^IBCNEDE1(IEN)
  ;
@@ -174,6 +188,10 @@ PROCSEND(TQIEN) ; Make call to PROC^IBCNEDEP to build the HL7 message.  Then sen
  S QUERY=$P($G(^IBCN(365.1,IEN,0)),U,11)
  I QUERY="V" S VNUM=3
  I $D(VNUM)=0 Q 0
+ ;
+ ; IB*2.0*549 - quit if test site and not a valid test case
+ Q:'$$XMITOK^IBCNETST(IEN) 0
+ ;
  ;  Initialize HL7 variables protocol for Verifications
  S IBCNHLP="IBCNE IIV RQV OUT"
  D INIT^IBCNEHLO

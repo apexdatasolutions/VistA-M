@@ -1,6 +1,6 @@
 IBCNEDE1 ;DAOU/DAC - eIV INSURANCE BUFFER EXTRACT ;04-JUN-2002
- ;;2.0;INTEGRATED BILLING;**184,271,416,438,435,467,497**;21-MAR-94;Build 120
- ;;Per VHA Directive 2004-038, this routine should not be modified.
+ ;;2.0;INTEGRATED BILLING;**184,271,416,438,435,467,497,528,549,601**;21-MAR-94;Build 14
+ ;;Per VA Directive 6402, this routine should not be modified.
  ;
  ;**Program Description**
  ; This routine loops through the insurance buffer and 
@@ -18,12 +18,14 @@ EN ; Loop through designated cross-references for updates
  N ORIGINSR,ORGRPSTR,ORGRPNUM,ORGRPNAM,ORGSUBCR
  N MAXCNT,CNT,ISYMBOLM,DATA1,DATA2,ORIG,SETSTR,ISYMBOL,IBCNETOT
  N SIDDATA,SID,SIDACT,BSID,FDA,PASSBUF,SIDCNT,SIDARRAY
- N TQDT,TQIENS,TQOK,STATIEN,PATID,MCAREFLG,INSNAME,PREL
+ N TQDT,TQIENS,TQOK,STATIEN,PATID,MCAREFLG,INSNAME,PREL,IFSRC
  ;
  S SETSTR=$$SETTINGS^IBCNEDE7(1) ; Returns buffer extract settings
  I 'SETSTR Q                    ; Quit if extract is not active
  S MAXCNT=$P(SETSTR,U,4)        ; Max # TQ entries that may be created
  S:MAXCNT="" MAXCNT=9999999999
+ ;
+ S IFSRC=$O(^IBE(355.12,"C","INTERFACILITY INS UPDATE",""))  ;10/24/14 *528* baa
  ;
  S FRESHDAY=$P($G(^IBE(350.9,1,51)),U,1) ; System freshness days
  ;
@@ -34,6 +36,12 @@ EN ; Loop through designated cross-references for updates
  F  S LOOPDT=$O(^IBA(355.33,"AEST","E",LOOPDT)) Q:LOOPDT=""!(CNT=MAXCNT)  D  Q:$G(ZTSTOP)
  . S IEN=""
  . F  S IEN=$O(^IBA(355.33,"AEST","E",LOOPDT,IEN)) Q:IEN=""!(CNT=MAXCNT)  D  Q:$G(ZTSTOP)
+ .. ;
+ .. ; IBCN 10/24/14 *528* baa
+ .. ;  prevent when SOURCE OF INFORMATION field = "Inter-facility Insurance update.
+ .. I $P($G(^IBA(355.33,IEN,0)),U,3)=IFSRC Q
+ .. ; IBCN END MOD
+ .. ;
  .. ; Update count for periodic check
  .. S IBCNETOT=IBCNETOT+1
  .. ; Check for request to stop background job, periodically
@@ -42,7 +50,6 @@ EN ; Loop through designated cross-references for updates
  .. ; Get symbol, if symbol'=" " OR "!" then quit
  .. S ISYMBOL=$$SYMBOL^IBCNBLL(IEN) ; Insurance buffer symbol
  .. I (ISYMBOL'=" ")&(ISYMBOL'="!") Q
- .. ;
  .. ; Don't extract ePharmacy buffer entries - IB*2*435
  .. I +$P($G(^IBA(355.33,IEN,0)),U,17) Q
  .. ;
@@ -56,8 +63,11 @@ EN ; Loop through designated cross-references for updates
  .. I $P($G(^DPT(DFN,0)),U,21) Q           ; Exclude if test patient
  .. ;
  .. S PDOD=$P($G(^DPT(DFN,.35)),U,1)\1     ; Patient's date of death
- .. S SRVICEDT=+$P($G(^IBA(355.33,IEN,0)),U,18) S:'SRVICEDT SRVICEDT=DT ; Service Date
- .. I PDOD,PDOD<SRVICEDT S SRVICEDT=PDOD
+ .. S SRVICEDT=+$P($G(^IBA(355.33,IEN,0)),U,18)
+ .. S:'SRVICEDT SRVICEDT=DT                         ; Service Date
+ .. ;
+ .. ; IB*2.0*549 Removed following line
+ .. ;I PDOD,PDOD<SRVICEDT S SRVICEDT=PDOD
  .. S FRESHDT=$$FMADD^XLFDT(SRVICEDT,-FRESHDAY)
  .. S PAYERSTR=$$INSERROR^IBCNEUT3("B",IEN)          ; Payer String
  .. S PAYERID=$P(PAYERSTR,U,3),PIEN=$P(PAYERSTR,U,2) ; Payer ID
@@ -134,6 +144,7 @@ RET ; Record Retrieval - Insurance Buffer
  Q
  ;
 SET(BUFFIEN,OVRFRESH,PASSBUF,SID1) ; Set data and check if set already
+ N DATA5
  D RET
  ;
  ; The hard coded '1' in the 3rd piece of DATA1 sets the Transmission
@@ -146,7 +157,9 @@ SET(BUFFIEN,OVRFRESH,PASSBUF,SID1) ; Set data and check if set already
  S DATA2=1_U_"V"_U_SRVICEDT_U_"" ; SETTQ parameter 2
  ;
  S ORIG=ORIGINSR_U_ORGRPNUM_U_ORGRPNAM_U_ORGSUBCR ; SETTQ parameter 3
- S TQIEN=$$SETTQ^IBCNEDE7(DATA1,DATA2,ORIG,$G(OVRFRESH)) ; File TQ entry
+ ;
+ S DATA5=$$GET1^DIQ(355.33,BUFFIEN_",",.03,"I") ; IB*2*601/DM copy SOI IEN to TQ
+ S TQIEN=$$SETTQ^IBCNEDE7(DATA1,DATA2,ORIG,$G(OVRFRESH),DATA5) ; File TQ entry
  I TQIEN'="" S CNT=CNT+1 ; If filed increment count
  ;
  Q

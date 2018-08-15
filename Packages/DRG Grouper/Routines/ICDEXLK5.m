@@ -1,16 +1,18 @@
-ICDEXLK5 ;SLC/KER - ICD Extractor - Lookup, List ;04/21/2014
- ;;18.0;DRG Grouper;**57**;Oct 20, 2000;Build 1
+ICDEXLK5 ;SLC/KER - ICD Extractor - Lookup, EXM/IEN/List ;07/15/2015
+ ;;18.0;DRG Grouper;**57,67,82**;Oct 20, 2000;Build 21
  ;               
  ; Global Variables
  ;    ^ICDS(              N/A
  ;    ^TMP(SUB,$J         SACC 2.3.2.5.1
  ;               
  ; External References
- ;    ^DIM                ICR  10016
  ;    $$MIX^LEXXM         ICR   5781
  ;    $$DT^XLFDT          ICR  10103
  ;    $$FMTE^XLFDT        ICR  10103
  ;    $$UP^XLFSTR         ICR  10104
+ ;    
+ ; Marked Items
+ ;    $T(MIX^LEXXM)
  ;    
  ; Local Variables Newed or Killed by calling application
  ;     DIC(0)    Fileman Lookup Parameters
@@ -23,7 +25,7 @@ ICDEXLK5 ;SLC/KER - ICD Extractor - Lookup, List ;04/21/2014
  ;     ICDVDT    Date to use during lookup 
  ;     ICDSYS    Coding System
  ;     ICDVER    Versioned Lookup
- ;     ICDDICSS  Secondary Screen
+ ;     ICDDICS   Screen
  ;     INP2      User Input (processed)
  ;     LOUD      Output to Screen
  ;     
@@ -66,43 +68,50 @@ EXM(TXT,ROOT,Y,CDT,SYS,VER) ; Lookup Exact Match
  . . . Q:VAL'=ORG  S EXM(IEN)="",LOR=1
  ; Exact Match Text
  I $O(EXM(0))'>0 D
+ . N TI,TOK,KI,KEY,PARS,ORD,EROOT,IEN
  . Q:$D(ICDBYCD)  S KEY=$$UP^XLFSTR($G(ORG)) K PARS D TOKEN^ICDEXLK3(KEY,ROOT,SYS,.PARS)
- . S NUM=$O(PARS(0)),SEQ=$O(PARS(+NUM,0)),KEY=$G(PARS(+NUM,+SEQ))
- . K PARS(+NUM,+SEQ)  Q:$L(KEY)'>1
+ . S (KI,TI)=0,(KEY,TOK)="" F  S TI=$O(PARS(TI)) Q:+TI'>0  D
+ . . S TOK=$G(PARS(TI)) S:$E(TOK,1)?1U&($L(TOK)>$L(KEY)) KEY=$G(TOK),KI=TI
+ . K PARS(+($G(KI)))  Q:$L(KEY)'>1
  . S ORD=$E(KEY,1,($L(KEY)-1))_$C(($A($E(KEY,$L(KEY)))-1))_"~"
  . S EROOT=ROOT_"""D""," S:+SYS>0&($D(@(ROOT_"""AD"","_+SYS_")"))) EROOT=ROOT_"""AD"","_+SYS_","
- . F  S ORD=$O(@(EROOT_""""_ORD_""")")) Q:'$$ISORD  D
- . . S IEN=0 I $G(DIC(0))["X",ORD'=KEY Q
- . . F  S IEN=$O(@(EROOT_""""_ORD_""","_+IEN_")")) Q:+IEN'>0  D
- . . . N VAL,STA S STA=1 S:VER>0 STA=$$LS^ICDEXLK3(ROOT,IEN,CDT)
- . . . Q:+($G(VER))>0&(+STA'>0)
- . . . S VAL=$$LD^ICDEXLK3(ROOT,IEN,CDT,VER)
- . . . Q:$$UP^XLFSTR(VAL)'=$$UP^XLFSTR(ORG)
- . . . S EXM(IEN)="",LOR=0
+ . I $G(DIC(0))["X",$O(@(EROOT_""""_ORD_""")"))'=KEY Q
+ . S IEN=0 F  S IEN=$O(@(EROOT_""""_KEY_""","_+IEN_")")) Q:+IEN'>0  D
+ . . N VAL,STA S STA=1 S:VER>0 STA=$$LS^ICDEXLK3(ROOT,IEN,CDT)
+ . . Q:+($G(VER))>0&(+STA'>0)
+ . . S VAL=$$LD^ICDEXLK3(ROOT,IEN,CDT,VER)
+ . . Q:$$UP^XLFSTR(VAL)'=$$UP^XLFSTR(ORG)
+ . . S EXM(IEN)="",LOR=0
  S (X,IEN)=0 F  S IEN=$O(EXM(IEN)) Q:+IEN'>0  D
  . N ICDI S ICDI=$O(Y(" "),-1)+1,Y(ICDI)=IEN,(X,Y(0))=ICDI
  Q X
 IEN ; Lookup by IEN
- K Y S FND=0,Y=-1 Q:'$L(INP2)  Q:INP2'?1N.N  Q:+INP2'>0  Q:'$L(ROOT)  Q:+FILE'>0
+ K Y S ICDOFND=0,Y=-1 Q:'$L(INP2)  Q:INP2'?1N.N  Q:+INP2'>0  Q:'$L(ROOT)  Q:+FILE'>0
  N XX,VDES,UDES,IEN,SNAME,ICS,INAME,STA,ORG S IEN=INP2 Q:'$D(@(ROOT_+IEN_",0)"))
  S ORG="`"_IEN,VDES=$$LD^ICDEX(FILE,IEN,ICDCDT),UDES=$$LD^ICDEX(FILE,IEN,9999999)
  S ICS=$$CSI^ICDEX(FILE,IEN),XX=VDES,(SNAME,INAME)=$$SYS^ICDEX(ICS,,"E")
  S:$L($G(ICDSYS)) SNAME=$$SYS^ICDEX($G(ICDSYS),,"E")
  S STA=$$LS^ICDEX(FILE,IEN,$G(ICDCDT))
  I $L($G(ICDSYS))>0,ICS>0,$G(ICDSYS)'=ICS D  Q
- . K X,Y S X="" S:$L($G(ORG)) X=$G(ORG) S Y=-1,FND=0 Q
+ . K X,Y S X="" S:$L($G(ORG)) X=$G(ORG) S Y=-1,ICDOFND=0 Q
  . S X=UDES,Y="-1^IEN "_IEN_" is not of the "_SNAME_" coding system"
  I +($G(ICDVER))>0,STA'>0 D  Q
- . K X,Y S X="" S:$L($G(ORG)) X=$G(ORG) S Y=-1,FND=0 Q
+ . K X,Y S X="" S:$L($G(ORG)) X=$G(ORG) S Y=-1,ICDOFND=0 Q
  . S X=UDES,Y="-1^IEN "_IEN_" is not active on "_$$FMTE^XLFDT($G(ICDCDT),"5Z")
  I +($G(ICDVER))'>0,$E(XX,1,2)="-1",$L(UDES),$E(UDES,1,2)'="-1" S XX=UDES
  W:$D(LOUD)&($G(DIC(0))["E")&($E(XX,1,2)'="-1") "   ",XX
  D FND(ROOT,IEN,ICDCDT,$G(ICS),$G(ICDVER),+($G(LOR)),$G(ICDOUT))
- D SEL(ROOT,1) S FND=+($G(^TMP(SUB,$J,"SEL",0)))
- I FND=1,+($G(^TMP(SUB,$J,"SEL",1)))>0 D
- . S Y=$G(^TMP(SUB,$J,"SEL",1)) S:Y[" " Y=$P(Y," ",1)
- . D Y^ICDEXLK2($G(ROOT),+Y,$G(ICDCDT))
- S:+($G(Y))'>0 Y=-1 S:$L($G(ORG)) X=$G(ORG)
+ D SEL(ROOT,1) I +($G(^TMP(SUB,$J,"SEL",1)))>0 D
+ . S ICDOFND=1 N ANS S ANS=$$ONE^ICDEXLK2
+ . I ANS'>0 D  Q
+ . . S ICDOFND=0,X=""
+ . . ;+($G(^TMP(SUB,$J,"SEL",1)))
+ . . S Y=-1 K ^TMP(SUB,$J,"SEL") Q
+ . D X^ICDEXLK2(1,SUB) S (ICDOFND,ICDOSEL,ICDOREV)=1
+ . D Y^ICDEXLK2($G(ROOT),+($G(^TMP(SUB,$J,"SEL",1))),$G(ICDCDT))
+ . I +($G(Y))'>0,$L($G(INP)) S X=$G(INP) Q
+ . I +($G(Y))>0 D:$G(DIC(0))'["F" SAV^ICDEXLK6(+($G(Y)),ROOT)
+ K ^TMP(SUB,$J,"SEL")
  Q
  ;
 FND(ROOT,IEN,CDT,SYS,VER,LOR,OUT) ; Add Item to Found List
@@ -206,7 +215,7 @@ SEL(ROOT,LOR) ; Add Items to Selection List
  ; Uses    ^TMP(NAME,$J,"FND") (Optional)
  ; Kills   ^TMP(NAME,$J,"FND")
  ;   
- N CTR,FILE,FND,SEQ,SUB,TEXT S ROOT=$$ROOT^ICDEX($G(ROOT)),LOR=+($G(LOR))
+ N CTR,FILE,SEQ,SUB,TEXT S ROOT=$$ROOT^ICDEX($G(ROOT)),LOR=+($G(LOR))
  S FILE=$$FILE^ICDEX(ROOT),SUB=$TR(ROOT,"^(") K ^TMP(SUB,$J,"SEL")
  Q:+FILE'>0  Q:'$L(SUB)  K ^TMP(SUB,$J,"SEL")
  I +($G(LOR))'>0 D
@@ -216,8 +225,8 @@ SEL(ROOT,LOR) ; Add Items to Selection List
  K ^TMP(SUB,$J,"FND")
  Q
 SEL2 ;  Add Items to Selection List (part 2)
- N FND S FND=0 F  S FND=$O(^TMP(SUB,$J,"FND",+SEQ,FND)) Q:+FND'>0  D
- . N CTR,TEXT S TEXT=$G(^TMP(SUB,$J,"FND",+SEQ,FND))
+ N ICDI S ICDI=0 F  S ICDI=$O(^TMP(SUB,$J,"FND",+SEQ,ICDI)) Q:+ICDI'>0  D
+ . N CTR,TEXT S TEXT=$G(^TMP(SUB,$J,"FND",+SEQ,ICDI))
  . Q:'$L(TEXT)  Q:+TEXT'>0  Q:'$L($P(TEXT,"^",2))
  . S CTR=$O(^TMP(SUB,$J,"SEL"," "),-1)+1
  . S ^TMP(SUB,$J,"SEL",CTR)=TEXT,^TMP(SUB,$J,"SEL",0)=CTR
@@ -232,26 +241,11 @@ SH ;   Display TMP
  W !
  Q
 SCREEN(X) ;   Screen Entries - Boolean Truth Value
- Q:+($G(Y))'>0 1   Q:'$L($G(ROOT)) 1
- N ICDNR,ICDO,ICDS,ICDY S ICDY=+($G(Y)),ROOT=$$ROOT^ICDEX($G(ROOT)) Q:'$L(ROOT) 1
+ Q:+($G(Y))'>0 1   Q:'$L($G(ROOT)) 1  N ICDNR,ICDO,ICDS,ICDY
+ S ICDY=+($G(Y)),ROOT=$$ROOT^ICDEX($G(ROOT)) Q:'$L(ROOT) 1
  S ICDS=$G(ICDDICS) Q:'$L(ICDS) 1  S Y=+($G(ICDY))
  S ICDNR=$D(@(ROOT_+Y_",0)")) X ICDS S ICDO=$T
  Q:'ICDO 0
- Q 1
- Q
- ; QUASAR
- N ICDREF,ICDSC1,ICDSC2,ICDF1,ICDF2,ICDIN
- I $L($G(DICR(2,"S"))) D
- . I $G(DIC("S"))["X DICR(2,""S"")" S ICDF2=""
- . I $G(DICR(1,31))=ICDF2,$L($G(DICR(2,"S"))),$G(ICDF2)["DICR(2,""S"")" S ICDF2=""
- Q:'$L((ICDF1_ICDF2)) 1  S ICDIN=$D(@(ROOT_+ICDY_",0)")) Q:ICDIN'>0 0
- ; SCHEDULING
- S X=ICDF1 D ^DIM S:$D(X) ICDSC1=X D:$L(ICDSC1)
- . S Y=+($G(ICDY)),ICDREF=$D(@(ROOT_+Y_",0)")) X ICDSC1 S ICDSC1=$T
- Q:+ICDSC1'>0&('$L(ICDF2)) 0  Q:'$L(ICDF2) 1
- S X=ICDF2 D ^DIM S:$D(X) ICDSC2=X D:$L(ICDSC2)&($L(ICDF1))
- . S Y=+($G(ICDY)),ICDREF=$D(@(ROOT_+Y_",0)")) X ICDSC2 S ICDSC2=$T
- Q:+ICDSC1'>0!(+(ICDSC2'>0)) 0
  Q 1
 ISORD(X) ;   Check if in $ORDER
  Q:'$L($G(ORD)) 0  Q:'$L($G(KEY)) 0

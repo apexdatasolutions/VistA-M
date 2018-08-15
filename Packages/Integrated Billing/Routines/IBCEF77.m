@@ -1,6 +1,6 @@
 IBCEF77 ;WOIFO/SS - FORMATTER/EXTRACT BILL FUNCTIONS ;31-JUL-03
- ;;2.0;INTEGRATED BILLING;**232,280,155,290,291,320,348,349**;21-MAR-94;Build 46
- ;;Per VHA Directive 2004-038, this routine should not be modified.
+ ;;2.0;INTEGRATED BILLING;**232,280,155,290,291,320,348,349,516,577**;21-MAR-94;Build 38
+ ;;Per VA Directive 6402, this routine should not be modified.
  ;
 SORT(IBPRNUM,IBPRTYP,IB399,IBSRC,IBDST,IBN,IBEXC,IBSEQ,IBLIMIT) ;
  N IBXIEN,IBXDATA,IBNET,IBTRI,IB1,IB2,IBID,Z,IBZ,IBZ1,IBSVP
@@ -133,9 +133,29 @@ REMARK(IBIFN,IBXDATA,OFLG) ; procedure to return array of UB-04 remark text
  ; OFLG=1 only when called in the output formatter.  In this case, only
  ; 4 lines in IBXDATA will be returned.
  ;
- NEW TEXT,LEN,IBZ,J,PCE,CHS,NEWCHS,IBK,J,TX
+ NEW TEXT,LEN,IBZ,J,PCE,CHS,NEWCHS,IBK,J,TX,IBCP1
  K IBXDATA
- S TEXT=$P($G(^DGCR(399,+$G(IBIFN),"UF2")),U,3) I TEXT="" Q
+ ;
+ ; MRD;IB*2.0*516 - Pull the Bill Remarks for the claim.  If this was
+ ; called from the Output Formatter, then look at lines of claim for
+ ; NDC's.  If any are found, they should be added to the end of TEXT.
+ ;
+ S TEXT=$P($G(^DGCR(399,+$G(IBIFN),"UF2")),U,3)
+ ; VAD/ Begin of IB*2*577 changes
+ ; NDC, Quantity, and Unit of Measure now printed in FL-43
+ ; instead of here in FL-80
+ ;I $G(OFLG) D
+ ;. S J=0
+ ;. F  S J=$O(^DGCR(399,+$G(IBIFN),"CP",J)) Q:'J  S IBCP1=$G(^(J,1)) I $P(IBCP1,U,7)'="" D
+ ;. . I TEXT'="" S TEXT=TEXT_" "
+ ;. . S TEXT=TEXT_"N4"_$TR($P(IBCP1,U,7),"-")_" UN"_$P(IBCP1,U,8)
+ ;. . Q
+ ;. Q
+ ; VAD/ End of IB*2*577 changes
+ ;
+ ; If there's nothing in TEXT, then Quit.
+ ;
+ I TEXT="" Q
  ;
  ; need to break up large words for word wrapping purposes to get
  ; as many characters as possible in the box.
@@ -163,4 +183,18 @@ REMARK(IBIFN,IBXDATA,OFLG) ; procedure to return array of UB-04 remark text
  . I TX'="" S IBXDATA(J+1)=TX
  . Q
  Q
+ ;
+B43(NDCDATA) ; This is passed a string and properly formats if there is NDC drug information.
+ ; The drug information is in pieces 21-23 of that string.
+ ; It was part of the output formatter entry 364.7[1406] used for FL43 but that got too big for a FileMan Mumps data element
+ ; It returns a string with N4 - the NDC Drug qualifier
+ ;                        NDC Code without the hyphens
+ ;                        a space
+ ;                        Units qualifier
+ ;                        Units
+ ; Ex "N412345678901 ML1.5"
+ I NDCDATA="" Q ""
+ S NDCDATA=$P(NDCDATA,U,21,23)
+ Q:$P(NDCDATA,U)="" ""
+ Q "N4"_$TR($P(NDCDATA,U),"-")_" "_$TR($P(NDCDATA,U,2,3),U)
  ;

@@ -1,0 +1,132 @@
+IBDEI225 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,34497,2)
+ ;;=^5019309
+ ;;^UTILITY(U,$J,358.3,34498,0)
+ ;;=R26.1^^157^1753^8
+ ;;^UTILITY(U,$J,358.3,34498,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34498,1,3,0)
+ ;;=3^Paralytic Gait
+ ;;^UTILITY(U,$J,358.3,34498,1,4,0)
+ ;;=4^R26.1
+ ;;^UTILITY(U,$J,358.3,34498,2)
+ ;;=^5019305
+ ;;^UTILITY(U,$J,358.3,34499,0)
+ ;;=R27.0^^157^1753^5
+ ;;^UTILITY(U,$J,358.3,34499,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34499,1,3,0)
+ ;;=3^Ataxia,Unspec
+ ;;^UTILITY(U,$J,358.3,34499,1,4,0)
+ ;;=4^R27.0
+ ;;^UTILITY(U,$J,358.3,34499,2)
+ ;;=^5019310
+ ;;^UTILITY(U,$J,358.3,34500,0)
+ ;;=R29.5^^157^1753^10
+ ;;^UTILITY(U,$J,358.3,34500,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34500,1,3,0)
+ ;;=3^Transient Paralysis
+ ;;^UTILITY(U,$J,358.3,34500,1,4,0)
+ ;;=4^R29.5
+ ;;^UTILITY(U,$J,358.3,34500,2)
+ ;;=^5019316
+ ;;^UTILITY(U,$J,358.3,34501,0)
+ ;;=H53.462^^157^1754^1
+ ;;^UTILITY(U,$J,358.3,34501,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34501,1,3,0)
+ ;;=3^Homonymous Bilateral Field Defects,Left Side
+ ;;^UTILITY(U,$J,358.3,34501,1,4,0)
+ ;;=4^H53.462
+ ;;^UTILITY(U,$J,358.3,34501,2)
+ ;;=^5006342
+ ;;^UTILITY(U,$J,358.3,34502,0)
+ ;;=H53.461^^157^1754^2
+ ;;^UTILITY(U,$J,358.3,34502,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34502,1,3,0)
+ ;;=3^Homonymous Bilateral Field Defects,Right Side
+ ;;^UTILITY(U,$J,358.3,34502,1,4,0)
+ ;;=4^H53.461
+ ;;^UTILITY(U,$J,358.3,34502,2)
+ ;;=^5006341
+ ;;^UTILITY(U,$J,358.3,34503,0)
+ ;;=H54.61^^157^1754^4
+ ;;^UTILITY(U,$J,358.3,34503,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34503,1,3,0)
+ ;;=3^Unqualified Visual Loss,Right Eye
+ ;;^UTILITY(U,$J,358.3,34503,1,4,0)
+ ;;=4^H54.61
+ ;;^UTILITY(U,$J,358.3,34503,2)
+ ;;=^5006367
+ ;;^UTILITY(U,$J,358.3,34504,0)
+ ;;=H54.62^^157^1754^3
+ ;;^UTILITY(U,$J,358.3,34504,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34504,1,3,0)
+ ;;=3^Unqualified Visual Loss,Left Eye
+ ;;^UTILITY(U,$J,358.3,34504,1,4,0)
+ ;;=4^H54.62
+ ;;^UTILITY(U,$J,358.3,34504,2)
+ ;;=^5133520
+ ;;^UTILITY(U,$J,358.3,34505,0)
+ ;;=S64.11XA^^157^1755^7
+ ;;^UTILITY(U,$J,358.3,34505,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34505,1,3,0)
+ ;;=3^Inj of Median Nerve,Rt Arm at Wrs/Hand Level,Init Encntr
+ ;;^UTILITY(U,$J,358.3,34505,1,4,0)
+ ;;=4^S64.11XA
+ ;;^UTILITY(U,$J,358.3,34505,2)
+ ;;=^5035772
+ ;;^UTILITY(U,$J,358.3,34506,0)
+ ;;=S64.11XD^^157^1755^8
+ ;;^UTILITY(U,$J,358.3,34506,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34506,1,3,0)
+ ;;=3^Inj of Median Nerve,Rt Arm at Wrs/Hand Level,Subs
+ ;;^UTILITY(U,$J,358.3,34506,1,4,0)
+ ;;=4^S64.11XD
+ ;;^UTILITY(U,$J,358.3,34506,2)
+ ;;=^5035773
+ ;;^UTILITY(U,$J,358.3,34507,0)
+ ;;=S64.12XA^^157^1755^5
+ ;;^UTILITY(U,$J,358.3,34507,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34507,1,3,0)
+ ;;=3^Inj of Median Nerve,Lt Arm at Wrs/Hand Level,Init Encntr
+ ;;^UTILITY(U,$J,358.3,34507,1,4,0)
+ ;;=4^S64.12XA
+ ;;^UTILITY(U,$J,358.3,34507,2)
+ ;;=^5035775
+ ;;^UTILITY(U,$J,358.3,34508,0)
+ ;;=S64.12XD^^157^1755^6
+ ;;^UTILITY(U,$J,358.3,34508,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34508,1,3,0)
+ ;;=3^Inj of Median Nerve,Lt Arm at Wrs/Hand Level,Subs
+ ;;^UTILITY(U,$J,358.3,34508,1,4,0)
+ ;;=4^S64.12XD
+ ;;^UTILITY(U,$J,358.3,34508,2)
+ ;;=^5035776
+ ;;^UTILITY(U,$J,358.3,34509,0)
+ ;;=G56.22^^157^1755^11
+ ;;^UTILITY(U,$J,358.3,34509,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34509,1,3,0)
+ ;;=3^Lesion of Ulnar Nerve,Left Upper Limb
+ ;;^UTILITY(U,$J,358.3,34509,1,4,0)
+ ;;=4^G56.22
+ ;;^UTILITY(U,$J,358.3,34509,2)
+ ;;=^5004025
+ ;;^UTILITY(U,$J,358.3,34510,0)
+ ;;=G56.21^^157^1755^12
+ ;;^UTILITY(U,$J,358.3,34510,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34510,1,3,0)
+ ;;=3^Lesion of Ulnar Nerve,Right Upper Limb

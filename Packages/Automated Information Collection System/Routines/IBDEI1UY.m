@@ -1,0 +1,126 @@
+IBDEI1UY ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,31100,2)
+ ;;=^5055938
+ ;;^UTILITY(U,$J,358.3,31101,0)
+ ;;=V00.812A^^135^1391^133
+ ;;^UTILITY(U,$J,358.3,31101,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31101,1,3,0)
+ ;;=3^Wheelchair Colliding w/ Stationary Obj,Init Encntr
+ ;;^UTILITY(U,$J,358.3,31101,1,4,0)
+ ;;=4^V00.812A
+ ;;^UTILITY(U,$J,358.3,31101,2)
+ ;;=^5055940
+ ;;^UTILITY(U,$J,358.3,31102,0)
+ ;;=V00.812D^^135^1391^134
+ ;;^UTILITY(U,$J,358.3,31102,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31102,1,3,0)
+ ;;=3^Wheelchair Colliding w/ Stationary Obj,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,31102,1,4,0)
+ ;;=4^V00.812D
+ ;;^UTILITY(U,$J,358.3,31102,2)
+ ;;=^5055941
+ ;;^UTILITY(U,$J,358.3,31103,0)
+ ;;=V00.818A^^135^1391^131
+ ;;^UTILITY(U,$J,358.3,31103,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31103,1,3,0)
+ ;;=3^Wheelchair Accident NEC,Init Encntr
+ ;;^UTILITY(U,$J,358.3,31103,1,4,0)
+ ;;=4^V00.818A
+ ;;^UTILITY(U,$J,358.3,31103,2)
+ ;;=^5055943
+ ;;^UTILITY(U,$J,358.3,31104,0)
+ ;;=V00.818D^^135^1391^132
+ ;;^UTILITY(U,$J,358.3,31104,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31104,1,3,0)
+ ;;=3^Wheelchair Accident NEC,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,31104,1,4,0)
+ ;;=4^V00.818D
+ ;;^UTILITY(U,$J,358.3,31104,2)
+ ;;=^5055944
+ ;;^UTILITY(U,$J,358.3,31105,0)
+ ;;=V00.831A^^135^1391^43
+ ;;^UTILITY(U,$J,358.3,31105,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31105,1,3,0)
+ ;;=3^Fall from Mobility Scooter,Init Encntr
+ ;;^UTILITY(U,$J,358.3,31105,1,4,0)
+ ;;=4^V00.831A
+ ;;^UTILITY(U,$J,358.3,31105,2)
+ ;;=^5055955
+ ;;^UTILITY(U,$J,358.3,31106,0)
+ ;;=V00.831D^^135^1391^44
+ ;;^UTILITY(U,$J,358.3,31106,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31106,1,3,0)
+ ;;=3^Fall from Mobility Scooter,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,31106,1,4,0)
+ ;;=4^V00.831D
+ ;;^UTILITY(U,$J,358.3,31106,2)
+ ;;=^5055956
+ ;;^UTILITY(U,$J,358.3,31107,0)
+ ;;=V00.832A^^135^1391^95
+ ;;^UTILITY(U,$J,358.3,31107,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31107,1,3,0)
+ ;;=3^Mobility Scooter Colliding w/ Stationary Obj,Init Encntr
+ ;;^UTILITY(U,$J,358.3,31107,1,4,0)
+ ;;=4^V00.832A
+ ;;^UTILITY(U,$J,358.3,31107,2)
+ ;;=^5055958
+ ;;^UTILITY(U,$J,358.3,31108,0)
+ ;;=V00.832D^^135^1391^96
+ ;;^UTILITY(U,$J,358.3,31108,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31108,1,3,0)
+ ;;=3^Mobility Scooter Colliding w/ Stationary Obj,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,31108,1,4,0)
+ ;;=4^V00.832D
+ ;;^UTILITY(U,$J,358.3,31108,2)
+ ;;=^5055959
+ ;;^UTILITY(U,$J,358.3,31109,0)
+ ;;=V00.838A^^135^1391^93
+ ;;^UTILITY(U,$J,358.3,31109,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31109,1,3,0)
+ ;;=3^Mobility Scooter Accident NEC,Init Encntr
+ ;;^UTILITY(U,$J,358.3,31109,1,4,0)
+ ;;=4^V00.838A
+ ;;^UTILITY(U,$J,358.3,31109,2)
+ ;;=^5055961
+ ;;^UTILITY(U,$J,358.3,31110,0)
+ ;;=V00.838D^^135^1391^94
+ ;;^UTILITY(U,$J,358.3,31110,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31110,1,3,0)
+ ;;=3^Mobility Scooter Accident NEC,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,31110,1,4,0)
+ ;;=4^V00.838D
+ ;;^UTILITY(U,$J,358.3,31110,2)
+ ;;=^5055962
+ ;;^UTILITY(U,$J,358.3,31111,0)
+ ;;=V00.891A^^135^1391^57
+ ;;^UTILITY(U,$J,358.3,31111,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31111,1,3,0)
+ ;;=3^Fall from Pedestrian Conveyance,Init Encntr
+ ;;^UTILITY(U,$J,358.3,31111,1,4,0)
+ ;;=4^V00.891A
+ ;;^UTILITY(U,$J,358.3,31111,2)
+ ;;=^5055964
+ ;;^UTILITY(U,$J,358.3,31112,0)
+ ;;=V00.891D^^135^1391^58
+ ;;^UTILITY(U,$J,358.3,31112,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,31112,1,3,0)
+ ;;=3^Fall from Pedestrian Conveyance,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,31112,1,4,0)
+ ;;=4^V00.891D
+ ;;^UTILITY(U,$J,358.3,31112,2)
+ ;;=^5055965

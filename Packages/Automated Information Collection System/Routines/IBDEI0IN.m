@@ -1,144 +1,128 @@
-IBDEI0IN ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0IN ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,9083,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9083,1,4,0)
- ;;=4^Ulcer of Esophagus
- ;;^UTILITY(U,$J,358.3,9083,1,5,0)
- ;;=5^530.20
- ;;^UTILITY(U,$J,358.3,9083,2)
- ;;=^329929
- ;;^UTILITY(U,$J,358.3,9084,0)
- ;;=555.0^^61^636^45
- ;;^UTILITY(U,$J,358.3,9084,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9084,1,4,0)
- ;;=4^Crohn's/Enteritis Sm Intes
- ;;^UTILITY(U,$J,358.3,9084,1,5,0)
- ;;=5^555.0
- ;;^UTILITY(U,$J,358.3,9084,2)
- ;;=^270247
- ;;^UTILITY(U,$J,358.3,9085,0)
- ;;=555.1^^61^636^44
- ;;^UTILITY(U,$J,358.3,9085,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9085,1,4,0)
- ;;=4^Crohn's/Enteritis Lg Intes
- ;;^UTILITY(U,$J,358.3,9085,1,5,0)
- ;;=5^555.1
- ;;^UTILITY(U,$J,358.3,9085,2)
- ;;=^270248
- ;;^UTILITY(U,$J,358.3,9086,0)
- ;;=555.2^^61^636^47
- ;;^UTILITY(U,$J,358.3,9086,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9086,1,4,0)
- ;;=4^Crohn/Enteri Sm/Lg Intes
- ;;^UTILITY(U,$J,358.3,9086,1,5,0)
- ;;=5^555.2
- ;;^UTILITY(U,$J,358.3,9086,2)
- ;;=^270249
- ;;^UTILITY(U,$J,358.3,9087,0)
- ;;=531.90^^61^636^53
- ;;^UTILITY(U,$J,358.3,9087,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9087,1,4,0)
- ;;=4^Gastric Ulcer
- ;;^UTILITY(U,$J,358.3,9087,1,5,0)
- ;;=5^531.90
- ;;^UTILITY(U,$J,358.3,9087,2)
- ;;=^51128
- ;;^UTILITY(U,$J,358.3,9088,0)
- ;;=536.41^^61^636^66
- ;;^UTILITY(U,$J,358.3,9088,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9088,1,4,0)
- ;;=4^Infection of Gastrostomy
- ;;^UTILITY(U,$J,358.3,9088,1,5,0)
- ;;=5^536.41
- ;;^UTILITY(U,$J,358.3,9088,2)
- ;;=^321189
- ;;^UTILITY(U,$J,358.3,9089,0)
- ;;=536.42^^61^636^70
- ;;^UTILITY(U,$J,358.3,9089,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9089,1,4,0)
- ;;=4^Mech Compl of Gastrostomy
- ;;^UTILITY(U,$J,358.3,9089,1,5,0)
- ;;=5^536.42
- ;;^UTILITY(U,$J,358.3,9089,2)
- ;;=^321190
- ;;^UTILITY(U,$J,358.3,9090,0)
- ;;=536.49^^61^636^76
- ;;^UTILITY(U,$J,358.3,9090,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9090,1,4,0)
- ;;=4^Oth Gastrostomy Compl
- ;;^UTILITY(U,$J,358.3,9090,1,5,0)
- ;;=5^536.49
- ;;^UTILITY(U,$J,358.3,9090,2)
- ;;=^321191
- ;;^UTILITY(U,$J,358.3,9091,0)
- ;;=569.61^^61^636^65
- ;;^UTILITY(U,$J,358.3,9091,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9091,1,4,0)
- ;;=4^Infect Colos/Enteros
- ;;^UTILITY(U,$J,358.3,9091,1,5,0)
- ;;=5^569.61
- ;;^UTILITY(U,$J,358.3,9091,2)
- ;;=^303300
- ;;^UTILITY(U,$J,358.3,9092,0)
- ;;=569.62^^61^636^69
- ;;^UTILITY(U,$J,358.3,9092,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9092,1,4,0)
- ;;=4^Mech Compl Colost/Enterost
- ;;^UTILITY(U,$J,358.3,9092,1,5,0)
- ;;=5^569.62
- ;;^UTILITY(U,$J,358.3,9092,2)
- ;;=^321192
- ;;^UTILITY(U,$J,358.3,9093,0)
- ;;=569.69^^61^636^75
- ;;^UTILITY(U,$J,358.3,9093,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9093,1,4,0)
- ;;=4^Oth Compl Colost/Enterost
- ;;^UTILITY(U,$J,358.3,9093,1,5,0)
- ;;=5^569.69
- ;;^UTILITY(U,$J,358.3,9093,2)
- ;;=^303301
- ;;^UTILITY(U,$J,358.3,9094,0)
- ;;=278.00^^61^636^73
- ;;^UTILITY(U,$J,358.3,9094,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9094,1,4,0)
- ;;=4^Obesity, Unsp
- ;;^UTILITY(U,$J,358.3,9094,1,5,0)
- ;;=5^278.00
- ;;^UTILITY(U,$J,358.3,9094,2)
- ;;=^84823
- ;;^UTILITY(U,$J,358.3,9095,0)
- ;;=278.01^^61^636^72
- ;;^UTILITY(U,$J,358.3,9095,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9095,1,4,0)
- ;;=4^Morbid Obesity
- ;;^UTILITY(U,$J,358.3,9095,1,5,0)
- ;;=5^278.01
- ;;^UTILITY(U,$J,358.3,9095,2)
- ;;=^84844
- ;;^UTILITY(U,$J,358.3,9096,0)
- ;;=560.9^^61^636^67
- ;;^UTILITY(U,$J,358.3,9096,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9096,1,4,0)
- ;;=4^Intestinal Obstruct NOS
- ;;^UTILITY(U,$J,358.3,9096,1,5,0)
- ;;=5^560.9
- ;;^UTILITY(U,$J,358.3,9096,2)
- ;;=^64849
- ;;^UTILITY(U,$J,358.3,9097,0)
- ;;=V45.86^^61^636^2
+ ;;^UTILITY(U,$J,358.3,8377,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8377,1,3,0)
+ ;;=3^Secondary malignant neoplasm of bone
+ ;;^UTILITY(U,$J,358.3,8377,1,4,0)
+ ;;=4^C79.51
+ ;;^UTILITY(U,$J,358.3,8377,2)
+ ;;=^5001350
+ ;;^UTILITY(U,$J,358.3,8378,0)
+ ;;=C79.52^^55^538^120
+ ;;^UTILITY(U,$J,358.3,8378,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8378,1,3,0)
+ ;;=3^Secondary malignant neoplasm of bone marrow
+ ;;^UTILITY(U,$J,358.3,8378,1,4,0)
+ ;;=4^C79.52
+ ;;^UTILITY(U,$J,358.3,8378,2)
+ ;;=^5001351
+ ;;^UTILITY(U,$J,358.3,8379,0)
+ ;;=C79.71^^55^538^125
+ ;;^UTILITY(U,$J,358.3,8379,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8379,1,3,0)
+ ;;=3^Secondary malignant neoplasm of right adrenal gland
+ ;;^UTILITY(U,$J,358.3,8379,1,4,0)
+ ;;=4^C79.71
+ ;;^UTILITY(U,$J,358.3,8379,2)
+ ;;=^5001356
+ ;;^UTILITY(U,$J,358.3,8380,0)
+ ;;=C79.72^^55^538^122
+ ;;^UTILITY(U,$J,358.3,8380,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8380,1,3,0)
+ ;;=3^Secondary malignant neoplasm of left adrenal gland
+ ;;^UTILITY(U,$J,358.3,8380,1,4,0)
+ ;;=4^C79.72
+ ;;^UTILITY(U,$J,358.3,8380,2)
+ ;;=^5001357
+ ;;^UTILITY(U,$J,358.3,8381,0)
+ ;;=C83.50^^55^538^46
+ ;;^UTILITY(U,$J,358.3,8381,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8381,1,3,0)
+ ;;=3^Lymphoblastic (diffuse) lymphoma, unspecified site
+ ;;^UTILITY(U,$J,358.3,8381,1,4,0)
+ ;;=4^C83.50
+ ;;^UTILITY(U,$J,358.3,8381,2)
+ ;;=^5001581
+ ;;^UTILITY(U,$J,358.3,8382,0)
+ ;;=C83.59^^55^538^47
+ ;;^UTILITY(U,$J,358.3,8382,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8382,1,3,0)
+ ;;=3^Lymphoblastic lymphoma, extrnod and solid organ sites
+ ;;^UTILITY(U,$J,358.3,8382,1,4,0)
+ ;;=4^C83.59
+ ;;^UTILITY(U,$J,358.3,8382,2)
+ ;;=^5001590
+ ;;^UTILITY(U,$J,358.3,8383,0)
+ ;;=C83.70^^55^538^18
+ ;;^UTILITY(U,$J,358.3,8383,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8383,1,3,0)
+ ;;=3^Burkitt lymphoma, unspecified site
+ ;;^UTILITY(U,$J,358.3,8383,1,4,0)
+ ;;=4^C83.70
+ ;;^UTILITY(U,$J,358.3,8383,2)
+ ;;=^5001591
+ ;;^UTILITY(U,$J,358.3,8384,0)
+ ;;=C83.79^^55^538^17
+ ;;^UTILITY(U,$J,358.3,8384,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8384,1,3,0)
+ ;;=3^Burkitt lymphoma, extranodal and solid organ sites
+ ;;^UTILITY(U,$J,358.3,8384,1,4,0)
+ ;;=4^C83.79
+ ;;^UTILITY(U,$J,358.3,8384,2)
+ ;;=^5001600
+ ;;^UTILITY(U,$J,358.3,8385,0)
+ ;;=C81.90^^55^538^40
+ ;;^UTILITY(U,$J,358.3,8385,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8385,1,3,0)
+ ;;=3^Hodgkin lymphoma, unspecified, unspecified site
+ ;;^UTILITY(U,$J,358.3,8385,1,4,0)
+ ;;=4^C81.90
+ ;;^UTILITY(U,$J,358.3,8385,2)
+ ;;=^5001451
+ ;;^UTILITY(U,$J,358.3,8386,0)
+ ;;=C81.99^^55^538^39
+ ;;^UTILITY(U,$J,358.3,8386,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8386,1,3,0)
+ ;;=3^Hodgkin lymphoma, unsp, extranodal and solid organ sites
+ ;;^UTILITY(U,$J,358.3,8386,1,4,0)
+ ;;=4^C81.99
+ ;;^UTILITY(U,$J,358.3,8386,2)
+ ;;=^5001460
+ ;;^UTILITY(U,$J,358.3,8387,0)
+ ;;=C82.90^^55^538^33
+ ;;^UTILITY(U,$J,358.3,8387,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8387,1,3,0)
+ ;;=3^Follicular lymphoma, unspecified, unspecified site
+ ;;^UTILITY(U,$J,358.3,8387,1,4,0)
+ ;;=4^C82.90
+ ;;^UTILITY(U,$J,358.3,8387,2)
+ ;;=^5001541
+ ;;^UTILITY(U,$J,358.3,8388,0)
+ ;;=C82.99^^55^538^32
+ ;;^UTILITY(U,$J,358.3,8388,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8388,1,3,0)
+ ;;=3^Follicular lymphoma, unsp, extranodal and solid organ sites
+ ;;^UTILITY(U,$J,358.3,8388,1,4,0)
+ ;;=4^C82.99
+ ;;^UTILITY(U,$J,358.3,8388,2)
+ ;;=^5001550
+ ;;^UTILITY(U,$J,358.3,8389,0)
+ ;;=C91.40^^55^538^34
+ ;;^UTILITY(U,$J,358.3,8389,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8389,1,3,0)
+ ;;=3^Hairy cell leukemia not having achieved remission

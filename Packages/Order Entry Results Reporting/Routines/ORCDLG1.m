@@ -1,6 +1,7 @@
-ORCDLG1 ; SLC/MKB - Order dialogs cont ;12/15/2006
- ;;3.0;ORDER ENTRY/RESULTS REPORTING;**60,71,95,110,243**;Dec 17, 1997;Build 242
- ;Per VHA Directive 2004-038, this routine should not be modified.
+ORCDLG1 ;SLC/MKB - ORDER DIALOGS CONT ;11/14/17  09:49
+ ;;3.0;ORDER ENTRY/RESULTS REPORTING;**60,71,95,110,243,350,467**;Dec 17, 1997;Build 4
+ ;Per VA Directive 6402, this routine should not be modified.
+ ;
 EN(ITM,INST) ; -- ask each ITM prompt where
  ;    ORDIALOG(PROMPT,#) = internal form of each response
  ;
@@ -49,16 +50,17 @@ REQUIRED() ; -- Required response message
  Q "A response is required!  Enter '^' to quit."
  ;
 SELECT() ; -- select instance of multiple to edit
- N DIR,X,Y,CNT,I,MAX,TOTAL,DONE
+ N DIR,X,Y,CNT,I,MAX,TOTAL,DONE,LAST
  S MAX=+$G(ORDIALOG(PROMPT,"MAX")),TOTAL=+$G(ORDIALOG(PROMPT,"TOT"))
  S DIR("A",1)=$S($L($G(ORDIALOG(PROMPT,"TTL"))):ORDIALOG(PROMPT,"TTL"),1:ORDIALOG(PROMPT,"A"))
- S (I,CNT)=0 F  S I=$O(ORDIALOG(PROMPT,I)) Q:I'>0  S CNT=CNT+1,CNT(CNT)=I,DIR("A",CNT+1)=$J(CNT,3)_": "_$$ITEM^ORCDLG(PROMPT,I) ; parent+children
+ S (I,CNT,LAST)=0 F  S I=$O(ORDIALOG(PROMPT,I)) Q:I'>0  S LAST=I,CNT=CNT+1,CNT(CNT)=I,DIR("A",CNT+1)=$J(CNT,3)_": "_$$ITEM^ORCDLG(PROMPT,I) ; parent+children
  I 'MAX!(MAX&(MAX>TOTAL)) S CNT=CNT+1,CNT(CNT)="A",DIR("A",CNT+1)=$J(CNT,3)_": <enter more>"
  S DIR("A")="Select "_$S(CNT>1:"(1-"_CNT_")",1:1)_" or <return> to continue: "
  S DIR(0)="NAO^1:"_CNT,DIR("?")="Select the instance you wish to change"
 S1 D ^DIR I $D(DTOUT)!(Y="^") Q "^"
  I Y?1"^".E D UJUMP Q:$G(ORQUIT)!($G(DONE)) "" G S1
  I Y="" Q Y
+ I CNT(Y)="A" S ORDIALOG("CURINST")=LAST
  Q CNT(Y)
  ;
 ONLY(I) ; -- I the only instance?
@@ -67,33 +69,41 @@ ONLY(I) ; -- I the only instance?
  Q Z
  ;
 ADDMULT ; -- add new instances of multiple
- N DONE,LAST,INST,MAX,ANOTHER
+ N DONE,LAST,MAX,ANOTHER,ORADDMUL
+ S ORADDMUL=1
  S MAX=+$G(ORDIALOG(PROMPT,"MAX")) I MAX,MAX'>$G(ORDIALOG(PROMPT,"TOT")) W $C(7),!,"Only "_MAX_" items may be selected!",! Q
  S ANOTHER=$G(ORDIALOG(PROMPT,"MORE")) S:'$L(ANOTHER) ANOTHER="Another "
  S DIR("A")=$S($O(ORDIALOG(PROMPT,0)):ANOTHER,1:"")_ORDIALOG(PROMPT,"A")
  F  D  Q:$G(ORQUIT)!($G(DONE))  I MAX Q:MAX'>$G(ORDIALOG(PROMPT,"TOT"))
- . S INST=$O(ORDIALOG(PROMPT,"?"),-1)+1
- . D ONE(INST,0) I '$D(ORDIALOG(PROMPT,INST)) S DONE=1 Q
+ . S ORDIALOG("CURINST")=1+$G(ORDIALOG("CURINST"))
+ . D ONE(ORDIALOG("CURINST"),0) I '$D(ORDIALOG(PROMPT,ORDIALOG("CURINST"))) S DONE=1 Q
  . S ORDIALOG(PROMPT,"TOT")=+$G(ORDIALOG(PROMPT,"TOT"))+1,DIR("A")=ANOTHER_ORDIALOG(PROMPT,"A")
  Q
  ;
 ONE(ORI,REQD) ; -- ask single-valued prompt
- N DONE,ORESET
+ N DONE,ORESET,QUERY
  S:$D(ORDIALOG(PROMPT,ORI)) DIR("B")=$$EXT^ORCD(PROMPT,ORI),ORESET=ORDIALOG(PROMPT,ORI)
+ S QUERY=0 I $G(ORTYPE)="Z",PROMPT=$$PTR^ORCD("OR GTX INSTRUCTIONS") D  ;DJE/VM *350 Quick Order creation should query for schedule after dose.
+ . N SCHEDITEM S SCHEDITEM=$O(^ORD(101.41,+ORDIALOG,10,"D",$$PTR^ORCD("OR GTX SCHEDULE"),"")) Q:'SCHEDITEM
+ . I $P(^ORD(101.41,+ORDIALOG,10,SCHEDITEM,0),U,11)=PROMPT S QUERY=1  ;see if schedule is a child of dose
  F  D  Q:$G(DONE)  I $G(ORQUIT) Q:FIRST  Q:'REQD!$D(ORDIALOG(PROMPT,ORI))  S FIRST=$$DONE^ORCDLG2 Q:FIRST  K ORQUIT
  . D DIR^ORCDLG2 I $D(DTOUT)!$D(DIROUT)!(X=U) S ORQUIT=1 Q
- . I X="" S DONE=1 Q
+ . I 'QUERY,X="" S DONE=1 Q
  . I X?1"^".E D UJUMP Q
- . I X="@" D DELETE Q
+ . I X="@" D DELETE Q:'QUERY
  . I $E(DIR(0))="N",Y<1,$E(Y,1,2)'="0." S Y=0_Y
  . S ORDIALOG(PROMPT,ORI)=$P(Y,U),DONE=1
  . X:$L($G(^ORD(101.41,+ORDIALOG,10,ITM,5))) ^(5) I '$G(DONE) D RESET Q  ; validate - if failed, K DONE to reask
  . D:$D(^ORD(101.41,+ORDIALOG,10,"DAD",PROMPT)) CHILDREN(PROMPT,ORI) I '$G(DONE),'FIRST D DELCHILD(PROMPT,ORI),RESET Q
+ . I QUERY,ORDIALOG(PROMPT,ORI)="" D  ;DJE/VM *350 disable empty parent node if children have no data
+ . . N SEQ,DA,PTR,VALUE
+ . . S SEQ=0 F  S SEQ=$O(^ORD(101.41,+ORDIALOG,10,"DAD",PROMPT,SEQ)) Q:SEQ'>0  S DA=$O(^(SEQ,0)),PTR=+$P($G(^ORD(101.41,+ORDIALOG,10,DA,0)),U,2) S:PTR&$D(ORDIALOG(PTR,ORI)) VALUE=1
+ . . I '$G(VALUE) K ORDIALOG(PROMPT,ORI)
  Q
  ;
 CHILDREN(PARENT,INST) ; -- ask child prompts
  N SEQ,DA,ORQUIT S SEQ=0
- F  S SEQ=$O(^ORD(101.41,+ORDIALOG,10,"DAD",PARENT,SEQ)) Q:SEQ'>0  S DA=$O(^(SEQ,0)) D EN(DA,INST) Q:$G(ORQUIT)
+ F  S SEQ=$O(^ORD(101.41,+ORDIALOG,10,"DAD",PARENT,SEQ)) Q:SEQ'>0  S DA=$O(^(SEQ,0)) D EN(DA,INST) K:$G(ORJUMP) ORJUMP Q:$G(ORQUIT)
  K:$G(ORQUIT) DONE ; reask parent
  Q
  ;
@@ -117,6 +127,7 @@ UJUMP ; -- ^-jump
  S NEWSEQ=+MATCH(Y)
 UJQ I FIRST,NEWSEQ'<SEQ W $C(7),"  ^-jumping ahead not allowed now!" Q
  S SEQ=NEWSEQ-.01,DONE=1
+ I $G(ORADDMUL) S ORJUMP=1
  Q
  ;
 DELETE ; -- delete response
@@ -124,7 +135,7 @@ DELETE ; -- delete response
  Q:'$$SURE  S DONE=1
  K ORDIALOG(PROMPT,ORI),DIR("B")
  S:$G(ORDIALOG(PROMPT,"TOT")) ORDIALOG(PROMPT,"TOT")=ORDIALOG(PROMPT,"TOT")-1
- I $D(^ORD(101.41,+ORDIALOG,10,"DAD",PROMPT)) D DELCHILD(PROMPT,ORI)
+ I 'QUERY,$D(^ORD(101.41,+ORDIALOG,10,"DAD",PROMPT)) D DELCHILD(PROMPT,ORI)
  Q
  ;
 DELCHILD(PARENT,INST) ; -- delete child prompts

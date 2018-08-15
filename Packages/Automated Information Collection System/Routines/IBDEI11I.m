@@ -1,110 +1,138 @@
-IBDEI11I ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI11I ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,18637,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18637,1,2,0)
- ;;=2^Incision and Drainage of abscess; complicated or multiple
- ;;^UTILITY(U,$J,358.3,18637,1,3,0)
- ;;=3^10061
- ;;^UTILITY(U,$J,358.3,18638,0)
- ;;=10120^^122^1188^3
- ;;^UTILITY(U,$J,358.3,18638,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18638,1,2,0)
- ;;=2^Incision & Removal foreign body, subcutaneous tissues; simple
- ;;^UTILITY(U,$J,358.3,18638,1,3,0)
- ;;=3^10120
- ;;^UTILITY(U,$J,358.3,18639,0)
- ;;=10121^^122^1188^4
- ;;^UTILITY(U,$J,358.3,18639,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18639,1,2,0)
- ;;=2^Incision & Removal foreign body, subcutaneous tissues; complicated
- ;;^UTILITY(U,$J,358.3,18639,1,3,0)
- ;;=3^10121
- ;;^UTILITY(U,$J,358.3,18640,0)
- ;;=10140^^122^1188^5
- ;;^UTILITY(U,$J,358.3,18640,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18640,1,2,0)
- ;;=2^Incision and Drainage of hematoma, seroma or fluid collection
- ;;^UTILITY(U,$J,358.3,18640,1,3,0)
- ;;=3^10140
- ;;^UTILITY(U,$J,358.3,18641,0)
- ;;=10160^^122^1188^6
- ;;^UTILITY(U,$J,358.3,18641,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18641,1,2,0)
- ;;=2^Puncture aspiration of abscess, hemtoma, bulla, or cyst
- ;;^UTILITY(U,$J,358.3,18641,1,3,0)
- ;;=3^10160
- ;;^UTILITY(U,$J,358.3,18642,0)
- ;;=10180^^122^1188^7
- ;;^UTILITY(U,$J,358.3,18642,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18642,1,2,0)
- ;;=2^Incision and Drainage, complex, postoperative wound infection
- ;;^UTILITY(U,$J,358.3,18642,1,3,0)
- ;;=3^10180
- ;;^UTILITY(U,$J,358.3,18643,0)
- ;;=11000^^122^1189^1
- ;;^UTILITY(U,$J,358.3,18643,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18643,1,2,0)
- ;;=2^Debr of extensive eczematous 10%
- ;;^UTILITY(U,$J,358.3,18643,1,3,0)
- ;;=3^11000
- ;;^UTILITY(U,$J,358.3,18644,0)
- ;;=11010^^122^1189^3
- ;;^UTILITY(U,$J,358.3,18644,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18644,1,2,0)
- ;;=2^Debridement including removal of foreign material associated w/open fracture(s) &/or dislocation(s); skin and subcutaneous tissues
- ;;^UTILITY(U,$J,358.3,18644,1,3,0)
- ;;=3^11010
- ;;^UTILITY(U,$J,358.3,18645,0)
- ;;=11011^^122^1189^4
- ;;^UTILITY(U,$J,358.3,18645,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18645,1,2,0)
- ;;=2^Debridement including removal of foreign material associated w/ open FX(s) and/or dislocation(s);skin, subcutaneous tissue, muscle fascia, & muscle
- ;;^UTILITY(U,$J,358.3,18645,1,3,0)
- ;;=3^11011
- ;;^UTILITY(U,$J,358.3,18646,0)
- ;;=11042^^122^1189^8
- ;;^UTILITY(U,$J,358.3,18646,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18646,1,2,0)
- ;;=2^Debridement; Skin & Subcutaneous Tissue
- ;;^UTILITY(U,$J,358.3,18646,1,3,0)
- ;;=3^11042
- ;;^UTILITY(U,$J,358.3,18647,0)
- ;;=11043^^122^1189^9
- ;;^UTILITY(U,$J,358.3,18647,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18647,1,2,0)
- ;;=2^Debridement; Skin, Subcutaneous Tissue & Muscle 
- ;;^UTILITY(U,$J,358.3,18647,1,3,0)
- ;;=3^11043
- ;;^UTILITY(U,$J,358.3,18648,0)
- ;;=11044^^122^1189^10
- ;;^UTILITY(U,$J,358.3,18648,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18648,1,2,0)
- ;;=2^Debridement; Skin, Subcutaneous Tissue, Muscle & Bone
- ;;^UTILITY(U,$J,358.3,18648,1,3,0)
- ;;=3^11044
- ;;^UTILITY(U,$J,358.3,18649,0)
- ;;=11012^^122^1189^5^^^^1
- ;;^UTILITY(U,$J,358.3,18649,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18649,1,2,0)
- ;;=2^Debridement incl. removal of foreign material associate w/ openFx(s) &/or dislocation(s); skin, subcutaneous tissue, muscle fascia, muscle & bone
- ;;^UTILITY(U,$J,358.3,18649,1,3,0)
- ;;=3^11012
- ;;^UTILITY(U,$J,358.3,18650,0)
- ;;=11001^^122^1189^2^^^^1
- ;;^UTILITY(U,$J,358.3,18650,1,0)
- ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,17313,1,3,0)
+ ;;=3^Sleep Disorder,Unspec
+ ;;^UTILITY(U,$J,358.3,17313,1,4,0)
+ ;;=4^F51.9
+ ;;^UTILITY(U,$J,358.3,17313,2)
+ ;;=^5003617
+ ;;^UTILITY(U,$J,358.3,17314,0)
+ ;;=G47.14^^88^860^5
+ ;;^UTILITY(U,$J,358.3,17314,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17314,1,3,0)
+ ;;=3^Hypersomnia d/t Medical Condition
+ ;;^UTILITY(U,$J,358.3,17314,1,4,0)
+ ;;=4^G47.14
+ ;;^UTILITY(U,$J,358.3,17314,2)
+ ;;=^5003972
+ ;;^UTILITY(U,$J,358.3,17315,0)
+ ;;=G47.10^^88^860^8
+ ;;^UTILITY(U,$J,358.3,17315,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17315,1,3,0)
+ ;;=3^Hypersomnia,Unspec
+ ;;^UTILITY(U,$J,358.3,17315,1,4,0)
+ ;;=4^G47.10
+ ;;^UTILITY(U,$J,358.3,17315,2)
+ ;;=^332926
+ ;;^UTILITY(U,$J,358.3,17316,0)
+ ;;=G47.01^^88^860^9
+ ;;^UTILITY(U,$J,358.3,17316,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17316,1,3,0)
+ ;;=3^Insomnia d/t Medical Condition
+ ;;^UTILITY(U,$J,358.3,17316,1,4,0)
+ ;;=4^G47.01
+ ;;^UTILITY(U,$J,358.3,17316,2)
+ ;;=^5003969
+ ;;^UTILITY(U,$J,358.3,17317,0)
+ ;;=G47.00^^88^860^17
+ ;;^UTILITY(U,$J,358.3,17317,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17317,1,3,0)
+ ;;=3^Insomnia,Unspec
+ ;;^UTILITY(U,$J,358.3,17317,1,4,0)
+ ;;=4^G47.00
+ ;;^UTILITY(U,$J,358.3,17317,2)
+ ;;=^332924
+ ;;^UTILITY(U,$J,358.3,17318,0)
+ ;;=Z72.821^^88^860^23
+ ;;^UTILITY(U,$J,358.3,17318,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17318,1,3,0)
+ ;;=3^Sleep Hygiene,Inadequate
+ ;;^UTILITY(U,$J,358.3,17318,1,4,0)
+ ;;=4^Z72.821
+ ;;^UTILITY(U,$J,358.3,17318,2)
+ ;;=^5063265
+ ;;^UTILITY(U,$J,358.3,17319,0)
+ ;;=G47.63^^88^860^24
+ ;;^UTILITY(U,$J,358.3,17319,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17319,1,3,0)
+ ;;=3^Sleep Related Bruxism
+ ;;^UTILITY(U,$J,358.3,17319,1,4,0)
+ ;;=4^G47.63
+ ;;^UTILITY(U,$J,358.3,17319,2)
+ ;;=^332783
+ ;;^UTILITY(U,$J,358.3,17320,0)
+ ;;=G47.9^^88^860^25
+ ;;^UTILITY(U,$J,358.3,17320,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17320,1,3,0)
+ ;;=3^Sleep Related Disorder,Unspec
+ ;;^UTILITY(U,$J,358.3,17320,1,4,0)
+ ;;=4^G47.9
+ ;;^UTILITY(U,$J,358.3,17320,2)
+ ;;=^5003990
+ ;;^UTILITY(U,$J,358.3,17321,0)
+ ;;=G47.62^^88^860^26
+ ;;^UTILITY(U,$J,358.3,17321,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17321,1,3,0)
+ ;;=3^Sleep Related Leg Cramps
+ ;;^UTILITY(U,$J,358.3,17321,1,4,0)
+ ;;=4^G47.62
+ ;;^UTILITY(U,$J,358.3,17321,2)
+ ;;=^332782
+ ;;^UTILITY(U,$J,358.3,17322,0)
+ ;;=G47.61^^88^860^27
+ ;;^UTILITY(U,$J,358.3,17322,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17322,1,3,0)
+ ;;=3^Sleep Related Movement Disorder,Periodic
+ ;;^UTILITY(U,$J,358.3,17322,1,4,0)
+ ;;=4^G47.61
+ ;;^UTILITY(U,$J,358.3,17322,2)
+ ;;=^5003987
+ ;;^UTILITY(U,$J,358.3,17323,0)
+ ;;=F51.12^^88^860^28
+ ;;^UTILITY(U,$J,358.3,17323,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17323,1,3,0)
+ ;;=3^Sleep Syndrome,Insufficient Sleep
+ ;;^UTILITY(U,$J,358.3,17323,1,4,0)
+ ;;=4^F51.12
+ ;;^UTILITY(U,$J,358.3,17323,2)
+ ;;=^5003610
+ ;;^UTILITY(U,$J,358.3,17324,0)
+ ;;=F51.4^^88^860^29
+ ;;^UTILITY(U,$J,358.3,17324,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17324,1,3,0)
+ ;;=3^Sleep Terrors
+ ;;^UTILITY(U,$J,358.3,17324,1,4,0)
+ ;;=4^F51.4
+ ;;^UTILITY(U,$J,358.3,17324,2)
+ ;;=^5003614
+ ;;^UTILITY(U,$J,358.3,17325,0)
+ ;;=F51.3^^88^860^30
+ ;;^UTILITY(U,$J,358.3,17325,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17325,1,3,0)
+ ;;=3^Sleepwalking
+ ;;^UTILITY(U,$J,358.3,17325,1,4,0)
+ ;;=4^F51.3
+ ;;^UTILITY(U,$J,358.3,17325,2)
+ ;;=^5003613
+ ;;^UTILITY(U,$J,358.3,17326,0)
+ ;;=Z88.6^^88^861^2
+ ;;^UTILITY(U,$J,358.3,17326,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17326,1,3,0)
+ ;;=3^Allergy to Analgesic Agent
+ ;;^UTILITY(U,$J,358.3,17326,1,4,0)
+ ;;=4^Z88.6

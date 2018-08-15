@@ -1,140 +1,126 @@
-IBDEI19R ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI19R ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,22722,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22722,1,4,0)
- ;;=4^V65.40
- ;;^UTILITY(U,$J,358.3,22722,1,5,0)
- ;;=5^Counseling NOS
- ;;^UTILITY(U,$J,358.3,22722,2)
- ;;=^87449
- ;;^UTILITY(U,$J,358.3,22723,0)
- ;;=V65.42^^141^1399^7
- ;;^UTILITY(U,$J,358.3,22723,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22723,1,4,0)
- ;;=4^V65.42
- ;;^UTILITY(U,$J,358.3,22723,1,5,0)
- ;;=5^Substance Use/Abuse Counseling
- ;;^UTILITY(U,$J,358.3,22723,2)
- ;;=^303467
- ;;^UTILITY(U,$J,358.3,22724,0)
- ;;=V65.44^^141^1399^3
- ;;^UTILITY(U,$J,358.3,22724,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22724,1,4,0)
- ;;=4^V65.44
- ;;^UTILITY(U,$J,358.3,22724,1,5,0)
- ;;=5^HIV Counseling
- ;;^UTILITY(U,$J,358.3,22724,2)
- ;;=^303469
- ;;^UTILITY(U,$J,358.3,22725,0)
- ;;=V65.49^^141^1399^5
- ;;^UTILITY(U,$J,358.3,22725,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22725,1,4,0)
- ;;=4^V65.49
- ;;^UTILITY(U,$J,358.3,22725,1,5,0)
- ;;=5^Oth Specified Counseling
- ;;^UTILITY(U,$J,358.3,22725,2)
- ;;=^303471
- ;;^UTILITY(U,$J,358.3,22726,0)
- ;;=V68.1^^141^1399^4
- ;;^UTILITY(U,$J,358.3,22726,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22726,1,4,0)
- ;;=4^V68.1
- ;;^UTILITY(U,$J,358.3,22726,1,5,0)
- ;;=5^Issue Repeat Prescription
- ;;^UTILITY(U,$J,358.3,22726,2)
- ;;=^295585
- ;;^UTILITY(U,$J,358.3,22727,0)
- ;;=V70.2^^141^1399^6
- ;;^UTILITY(U,$J,358.3,22727,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22727,1,4,0)
- ;;=4^V70.2
- ;;^UTILITY(U,$J,358.3,22727,1,5,0)
- ;;=5^Psychiatric Examination
- ;;^UTILITY(U,$J,358.3,22727,2)
- ;;=^295592
- ;;^UTILITY(U,$J,358.3,22728,0)
- ;;=297.0^^141^1400^3
- ;;^UTILITY(U,$J,358.3,22728,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22728,1,4,0)
- ;;=4^297.0
- ;;^UTILITY(U,$J,358.3,22728,1,5,0)
- ;;=5^Paranoid State, Simple
- ;;^UTILITY(U,$J,358.3,22728,2)
- ;;=^268149
- ;;^UTILITY(U,$J,358.3,22729,0)
- ;;=298.9^^141^1400^4
- ;;^UTILITY(U,$J,358.3,22729,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22729,1,4,0)
- ;;=4^298.9
- ;;^UTILITY(U,$J,358.3,22729,1,5,0)
- ;;=5^Psychosis, NOS
- ;;^UTILITY(U,$J,358.3,22729,2)
- ;;=^259059
- ;;^UTILITY(U,$J,358.3,22730,0)
- ;;=298.8^^141^1400^5
- ;;^UTILITY(U,$J,358.3,22730,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22730,1,4,0)
- ;;=4^298.8
- ;;^UTILITY(U,$J,358.3,22730,1,5,0)
- ;;=5^Psychosis, Reactive
- ;;^UTILITY(U,$J,358.3,22730,2)
- ;;=^87326
- ;;^UTILITY(U,$J,358.3,22731,0)
- ;;=297.9^^141^1400^2
- ;;^UTILITY(U,$J,358.3,22731,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22731,1,4,0)
- ;;=4^297.9
- ;;^UTILITY(U,$J,358.3,22731,1,5,0)
- ;;=5^Paranoia
- ;;^UTILITY(U,$J,358.3,22731,2)
- ;;=^123970
- ;;^UTILITY(U,$J,358.3,22732,0)
- ;;=297.1^^141^1400^1
- ;;^UTILITY(U,$J,358.3,22732,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22732,1,4,0)
- ;;=4^297.1
- ;;^UTILITY(U,$J,358.3,22732,1,5,0)
- ;;=5^Delusional Disorder
- ;;^UTILITY(U,$J,358.3,22732,2)
- ;;=^331896
- ;;^UTILITY(U,$J,358.3,22733,0)
- ;;=295.12^^141^1401^2
- ;;^UTILITY(U,$J,358.3,22733,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22733,1,4,0)
- ;;=4^295.12
- ;;^UTILITY(U,$J,358.3,22733,1,5,0)
- ;;=5^Disorganized Schizophrenia, Chronic
- ;;^UTILITY(U,$J,358.3,22733,2)
- ;;=^268051
- ;;^UTILITY(U,$J,358.3,22734,0)
- ;;=295.14^^141^1401^3
- ;;^UTILITY(U,$J,358.3,22734,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22734,1,4,0)
- ;;=4^295.14
- ;;^UTILITY(U,$J,358.3,22734,1,5,0)
- ;;=5^Disorganized Schizophrenia,Chr w/Exacerbation
- ;;^UTILITY(U,$J,358.3,22734,2)
- ;;=^268053
- ;;^UTILITY(U,$J,358.3,22735,0)
- ;;=295.52^^141^1401^6
- ;;^UTILITY(U,$J,358.3,22735,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22735,1,4,0)
- ;;=4^295.52
- ;;^UTILITY(U,$J,358.3,22735,1,5,0)
- ;;=5^Latent Schizophrenia, Chronic
+ ;;^UTILITY(U,$J,358.3,21219,1,3,0)
+ ;;=3^Monoplg low lmb fol oth ntrm intcrn hemor aff l nondom side
+ ;;^UTILITY(U,$J,358.3,21219,1,4,0)
+ ;;=4^I69.244
+ ;;^UTILITY(U,$J,358.3,21219,2)
+ ;;=^5007471
+ ;;^UTILITY(U,$J,358.3,21220,0)
+ ;;=G35.^^101^1027^78
+ ;;^UTILITY(U,$J,358.3,21220,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21220,1,3,0)
+ ;;=3^Multiple sclerosis
+ ;;^UTILITY(U,$J,358.3,21220,1,4,0)
+ ;;=4^G35.
+ ;;^UTILITY(U,$J,358.3,21220,2)
+ ;;=^79761
+ ;;^UTILITY(U,$J,358.3,21221,0)
+ ;;=G20.^^101^1027^79
+ ;;^UTILITY(U,$J,358.3,21221,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21221,1,3,0)
+ ;;=3^Parkinson's disease
+ ;;^UTILITY(U,$J,358.3,21221,1,4,0)
+ ;;=4^G20.
+ ;;^UTILITY(U,$J,358.3,21221,2)
+ ;;=^5003770
+ ;;^UTILITY(U,$J,358.3,21222,0)
+ ;;=G21.4^^101^1027^80
+ ;;^UTILITY(U,$J,358.3,21222,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21222,1,3,0)
+ ;;=3^Vascular parkinsonism
+ ;;^UTILITY(U,$J,358.3,21222,1,4,0)
+ ;;=4^G21.4
+ ;;^UTILITY(U,$J,358.3,21222,2)
+ ;;=^5003776
+ ;;^UTILITY(U,$J,358.3,21223,0)
+ ;;=I69.051^^101^1027^48
+ ;;^UTILITY(U,$J,358.3,21223,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21223,1,3,0)
+ ;;=3^Hemiplga fol ntrm subarach hemor aff right dominant side
+ ;;^UTILITY(U,$J,358.3,21223,1,4,0)
+ ;;=4^I69.051
+ ;;^UTILITY(U,$J,358.3,21223,2)
+ ;;=^5007409
+ ;;^UTILITY(U,$J,358.3,21224,0)
+ ;;=I69.052^^101^1027^46
+ ;;^UTILITY(U,$J,358.3,21224,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21224,1,3,0)
+ ;;=3^Hemiplga fol ntrm subarach hemor aff left dominant side
+ ;;^UTILITY(U,$J,358.3,21224,1,4,0)
+ ;;=4^I69.052
+ ;;^UTILITY(U,$J,358.3,21224,2)
+ ;;=^5007410
+ ;;^UTILITY(U,$J,358.3,21225,0)
+ ;;=I69.053^^101^1027^49
+ ;;^UTILITY(U,$J,358.3,21225,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21225,1,3,0)
+ ;;=3^Hemiplga fol ntrm subarach hemor aff right nondom side
+ ;;^UTILITY(U,$J,358.3,21225,1,4,0)
+ ;;=4^I69.053
+ ;;^UTILITY(U,$J,358.3,21225,2)
+ ;;=^5007411
+ ;;^UTILITY(U,$J,358.3,21226,0)
+ ;;=I69.054^^101^1027^47
+ ;;^UTILITY(U,$J,358.3,21226,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21226,1,3,0)
+ ;;=3^Hemiplga fol ntrm subarach hemor aff left nondom side
+ ;;^UTILITY(U,$J,358.3,21226,1,4,0)
+ ;;=4^I69.054
+ ;;^UTILITY(U,$J,358.3,21226,2)
+ ;;=^5007412
+ ;;^UTILITY(U,$J,358.3,21227,0)
+ ;;=I50.41^^101^1028^1
+ ;;^UTILITY(U,$J,358.3,21227,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21227,1,3,0)
+ ;;=3^Acute combined systolic and diastolic (congestive) hrt fail
+ ;;^UTILITY(U,$J,358.3,21227,1,4,0)
+ ;;=4^I50.41
+ ;;^UTILITY(U,$J,358.3,21227,2)
+ ;;=^5007248
+ ;;^UTILITY(U,$J,358.3,21228,0)
+ ;;=I50.31^^101^1028^2
+ ;;^UTILITY(U,$J,358.3,21228,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21228,1,3,0)
+ ;;=3^Acute diastolic (congestive) heart failure
+ ;;^UTILITY(U,$J,358.3,21228,1,4,0)
+ ;;=4^I50.31
+ ;;^UTILITY(U,$J,358.3,21228,2)
+ ;;=^5007244
+ ;;^UTILITY(U,$J,358.3,21229,0)
+ ;;=I50.43^^101^1028^3
+ ;;^UTILITY(U,$J,358.3,21229,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21229,1,3,0)
+ ;;=3^Acute on chronic combined systolic and diastolic hrt fail
+ ;;^UTILITY(U,$J,358.3,21229,1,4,0)
+ ;;=4^I50.43
+ ;;^UTILITY(U,$J,358.3,21229,2)
+ ;;=^5007250
+ ;;^UTILITY(U,$J,358.3,21230,0)
+ ;;=I50.33^^101^1028^4
+ ;;^UTILITY(U,$J,358.3,21230,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21230,1,3,0)
+ ;;=3^Acute on chronic diastolic (congestive) heart failure
+ ;;^UTILITY(U,$J,358.3,21230,1,4,0)
+ ;;=4^I50.33
+ ;;^UTILITY(U,$J,358.3,21230,2)
+ ;;=^5007246
+ ;;^UTILITY(U,$J,358.3,21231,0)
+ ;;=I50.23^^101^1028^5
+ ;;^UTILITY(U,$J,358.3,21231,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21231,1,3,0)
+ ;;=3^Acute on chronic systolic (congestive) heart failure

@@ -1,136 +1,128 @@
-IBDEI0YM ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0YM ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,17201,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17201,1,1,0)
- ;;=1^238.75
- ;;^UTILITY(U,$J,358.3,17201,1,8,0)
- ;;=8^Myelodysplastic Syndrome
- ;;^UTILITY(U,$J,358.3,17201,2)
- ;;=^334031
- ;;^UTILITY(U,$J,358.3,17202,0)
- ;;=289.9^^111^1077^66
- ;;^UTILITY(U,$J,358.3,17202,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17202,1,1,0)
- ;;=1^289.9
- ;;^UTILITY(U,$J,358.3,17202,1,8,0)
- ;;=8^Unspecified Blood Disease
- ;;^UTILITY(U,$J,358.3,17202,2)
- ;;=^55344
- ;;^UTILITY(U,$J,358.3,17203,0)
- ;;=205.02^^111^1077^30
- ;;^UTILITY(U,$J,358.3,17203,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17203,1,1,0)
- ;;=1^205.02
- ;;^UTILITY(U,$J,358.3,17203,1,8,0)
- ;;=8^Myeloid Leukemia in Relapse
- ;;^UTILITY(U,$J,358.3,17203,2)
- ;;=^336470
- ;;^UTILITY(U,$J,358.3,17204,0)
- ;;=205.12^^111^1077^16
- ;;^UTILITY(U,$J,358.3,17204,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17204,1,1,0)
- ;;=1^205.12
- ;;^UTILITY(U,$J,358.3,17204,1,8,0)
- ;;=8^Chr Myeloid Leukemia in Relapse
- ;;^UTILITY(U,$J,358.3,17204,2)
- ;;=^336471
- ;;^UTILITY(U,$J,358.3,17205,0)
- ;;=205.20^^111^1077^59
- ;;^UTILITY(U,$J,358.3,17205,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17205,1,1,0)
- ;;=1^205.20
- ;;^UTILITY(U,$J,358.3,17205,1,8,0)
- ;;=8^Subacute Myeloid Leuk w/o Remiss
- ;;^UTILITY(U,$J,358.3,17205,2)
- ;;=^336857
- ;;^UTILITY(U,$J,358.3,17206,0)
- ;;=205.21^^111^1077^58
- ;;^UTILITY(U,$J,358.3,17206,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17206,1,1,0)
- ;;=1^205.21
- ;;^UTILITY(U,$J,358.3,17206,1,8,0)
- ;;=8^Subacute Myeloid Leuk in Remiss
- ;;^UTILITY(U,$J,358.3,17206,2)
- ;;=^267536
- ;;^UTILITY(U,$J,358.3,17207,0)
- ;;=205.22^^111^1077^57
- ;;^UTILITY(U,$J,358.3,17207,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17207,1,1,0)
- ;;=1^205.22
- ;;^UTILITY(U,$J,358.3,17207,1,8,0)
- ;;=8^Subacute Myeloid Leuk in Relapse
- ;;^UTILITY(U,$J,358.3,17207,2)
- ;;=^336472
- ;;^UTILITY(U,$J,358.3,17208,0)
- ;;=205.30^^111^1077^35
- ;;^UTILITY(U,$J,358.3,17208,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17208,1,1,0)
- ;;=1^205.30
- ;;^UTILITY(U,$J,358.3,17208,1,8,0)
- ;;=8^Myeloid Sarcoma w/o Remission
- ;;^UTILITY(U,$J,358.3,17208,2)
- ;;=^336858
- ;;^UTILITY(U,$J,358.3,17209,0)
- ;;=205.31^^111^1077^34
- ;;^UTILITY(U,$J,358.3,17209,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17209,1,1,0)
- ;;=1^205.31
- ;;^UTILITY(U,$J,358.3,17209,1,8,0)
- ;;=8^Myeloid Sarcoma in Remission
- ;;^UTILITY(U,$J,358.3,17209,2)
- ;;=^267538
- ;;^UTILITY(U,$J,358.3,17210,0)
- ;;=205.32^^111^1077^33
- ;;^UTILITY(U,$J,358.3,17210,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17210,1,1,0)
- ;;=1^205.32
- ;;^UTILITY(U,$J,358.3,17210,1,8,0)
- ;;=8^Myeloid Sarcoma in Relapse
- ;;^UTILITY(U,$J,358.3,17210,2)
- ;;=^336473
- ;;^UTILITY(U,$J,358.3,17211,0)
- ;;=205.80^^111^1077^44
- ;;^UTILITY(U,$J,358.3,17211,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17211,1,1,0)
- ;;=1^205.80
- ;;^UTILITY(U,$J,358.3,17211,1,8,0)
- ;;=8^Oth Myeloid Leukemia w/o Remission
- ;;^UTILITY(U,$J,358.3,17211,2)
- ;;=^336859
- ;;^UTILITY(U,$J,358.3,17212,0)
- ;;=205.81^^111^1077^43
- ;;^UTILITY(U,$J,358.3,17212,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17212,1,1,0)
- ;;=1^205.81
- ;;^UTILITY(U,$J,358.3,17212,1,8,0)
- ;;=8^Oth Myeloid Leukemia in Remission
- ;;^UTILITY(U,$J,358.3,17212,2)
- ;;=^267540
- ;;^UTILITY(U,$J,358.3,17213,0)
- ;;=205.82^^111^1077^42
- ;;^UTILITY(U,$J,358.3,17213,1,0)
- ;;=^358.31IA^8^2
- ;;^UTILITY(U,$J,358.3,17213,1,1,0)
- ;;=1^205.82
- ;;^UTILITY(U,$J,358.3,17213,1,8,0)
- ;;=8^Oth Myeloid Leukemia in Relapse
- ;;^UTILITY(U,$J,358.3,17213,2)
- ;;=^336474
- ;;^UTILITY(U,$J,358.3,17214,0)
- ;;=205.90^^111^1077^65
- ;;^UTILITY(U,$J,358.3,17214,1,0)
- ;;=^358.31IA^8^2
+ ;;^UTILITY(U,$J,358.3,15943,0)
+ ;;=S61.151A^^85^829^60
+ ;;^UTILITY(U,$J,358.3,15943,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15943,1,3,0)
+ ;;=3^Open Bite of Right Thumb w/ Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15943,1,4,0)
+ ;;=4^S61.151A
+ ;;^UTILITY(U,$J,358.3,15943,2)
+ ;;=^5032738
+ ;;^UTILITY(U,$J,358.3,15944,0)
+ ;;=S61.051A^^85^829^61
+ ;;^UTILITY(U,$J,358.3,15944,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15944,1,3,0)
+ ;;=3^Open Bite of Right Thumb w/o Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15944,1,4,0)
+ ;;=4^S61.051A
+ ;;^UTILITY(U,$J,358.3,15944,2)
+ ;;=^5032714
+ ;;^UTILITY(U,$J,358.3,15945,0)
+ ;;=S61.551A^^85^829^62
+ ;;^UTILITY(U,$J,358.3,15945,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15945,1,3,0)
+ ;;=3^Open Bite of Right Wrist,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15945,1,4,0)
+ ;;=4^S61.551A
+ ;;^UTILITY(U,$J,358.3,15945,2)
+ ;;=^5033050
+ ;;^UTILITY(U,$J,358.3,15946,0)
+ ;;=S01.05XA^^85^829^63
+ ;;^UTILITY(U,$J,358.3,15946,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15946,1,3,0)
+ ;;=3^Open Bite of Scalp,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15946,1,4,0)
+ ;;=4^S01.05XA
+ ;;^UTILITY(U,$J,358.3,15946,2)
+ ;;=^5020048
+ ;;^UTILITY(U,$J,358.3,15947,0)
+ ;;=S01.95XA^^85^829^2
+ ;;^UTILITY(U,$J,358.3,15947,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15947,1,3,0)
+ ;;=3^Open Bite of Head,Unspec Part,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15947,1,4,0)
+ ;;=4^S01.95XA
+ ;;^UTILITY(U,$J,358.3,15947,2)
+ ;;=^5020249
+ ;;^UTILITY(U,$J,358.3,15948,0)
+ ;;=S11.95XA^^85^829^33
+ ;;^UTILITY(U,$J,358.3,15948,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15948,1,3,0)
+ ;;=3^Open Bite of Neck,Unspec Part,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15948,1,4,0)
+ ;;=4^S11.95XA
+ ;;^UTILITY(U,$J,358.3,15948,2)
+ ;;=^5021542
+ ;;^UTILITY(U,$J,358.3,15949,0)
+ ;;=S01.03XA^^85^830^64
+ ;;^UTILITY(U,$J,358.3,15949,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15949,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Scalp,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15949,1,4,0)
+ ;;=4^S01.03XA
+ ;;^UTILITY(U,$J,358.3,15949,2)
+ ;;=^5020042
+ ;;^UTILITY(U,$J,358.3,15950,0)
+ ;;=S01.331A^^85^830^40
+ ;;^UTILITY(U,$J,358.3,15950,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15950,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Right Ear,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15950,1,4,0)
+ ;;=4^S01.331A
+ ;;^UTILITY(U,$J,358.3,15950,2)
+ ;;=^5020126
+ ;;^UTILITY(U,$J,358.3,15951,0)
+ ;;=S01.332A^^85^830^8
+ ;;^UTILITY(U,$J,358.3,15951,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15951,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Left Ear,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15951,1,4,0)
+ ;;=4^S01.332A
+ ;;^UTILITY(U,$J,358.3,15951,2)
+ ;;=^5020129
+ ;;^UTILITY(U,$J,358.3,15952,0)
+ ;;=S01.23XA^^85^830^34
+ ;;^UTILITY(U,$J,358.3,15952,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15952,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Nose,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15952,1,4,0)
+ ;;=4^S01.23XA
+ ;;^UTILITY(U,$J,358.3,15952,2)
+ ;;=^5020099
+ ;;^UTILITY(U,$J,358.3,15953,0)
+ ;;=S01.432A^^85^830^7
+ ;;^UTILITY(U,$J,358.3,15953,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15953,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Left Cheek/TMJ Area,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15953,1,4,0)
+ ;;=4^S01.432A
+ ;;^UTILITY(U,$J,358.3,15953,2)
+ ;;=^5020168
+ ;;^UTILITY(U,$J,358.3,15954,0)
+ ;;=S01.431A^^85^830^39
+ ;;^UTILITY(U,$J,358.3,15954,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15954,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Right Cheek/TMJ Area,Init Encntr
+ ;;^UTILITY(U,$J,358.3,15954,1,4,0)
+ ;;=4^S01.431A
+ ;;^UTILITY(U,$J,358.3,15954,2)
+ ;;=^5020165
+ ;;^UTILITY(U,$J,358.3,15955,0)
+ ;;=S01.83XA^^85^830^1
+ ;;^UTILITY(U,$J,358.3,15955,1,0)
+ ;;=^358.31IA^4^2

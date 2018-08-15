@@ -1,5 +1,5 @@
-PXKFIMM ;ISL/JVS - Fields for V IMMUNIZATIONS file ;5/21/96  13:16
- ;;1.0;PCE PATIENT CARE ENCOUNTER;**22,124**;Aug 12, 1996
+PXKFIMM ;ISL/JVS,SLC/ajb - Fields for V IMMUNIZATIONS file ;06/17/16  13:55
+ ;;1.0;PCE PATIENT CARE ENCOUNTER;**22,124,201,209,210,215,216**;Aug 12, 1996;Build 11
  ;
  ;  Adding or Editing of data in a particular field can be controlled
  ;by adding a ~ as a delimiter and the letters A and/or E to the
@@ -32,6 +32,9 @@ PXKFIMM ;ISL/JVS - Fields for V IMMUNIZATIONS file ;5/21/96  13:16
  ; The following is the file's global name.  Each global must have a
  ;unique name and can not have any subscripts as part of the global root.
 GLOBAL ;;^AUPNVIMM
+ ; If deleted entries should be copied to another global, include the
+ ; explicit global root in the form ^GLOBAL( or ^GLOBAL(X, below.
+DELGBL ;;^AUPDVIMM(
  ;
 EN1 ;
  S PXKER=""
@@ -48,7 +51,7 @@ ADD ;Add an entry to the file
  ;;.01////^S X=$G(
  ;;.02////^S X=$G(
  ;;.03////^S X=$G(
- ;;.04///^S X=$G(
+ ;;.04////^S X=$G(
  ;;
  ;;.06///^S X=$G(
  ;;.07///^S X=$G(
@@ -67,8 +70,48 @@ ADD ;Add an entry to the file
  ;;1202////^S X=$G(
  ;;
  ;;1204////^S X=$G(
+ ;;1205////^S X=$G(
+ ;;
+ ;;1207////^S X=$G(
  ;;
  ;;
+ ;;
+ ;;
+ ;;
+ ;;
+ ;;
+ ;;
+ ;;
+ ;;
+ ;;
+ ;;
+ ;;1220////^S X=$G(
+ ;;1221////^S X=$G(PXKNOW);
+13 ;;
+ ;;1301////^S X=$G(
+ ;;1302////^S X=$G(
+ ;;1303////^S X=$G(
+ ;;1304////^S X=$G(
+ ;;
+ ;;
+ ;;
+ ;;
+ ;;
+ ;;
+ ;;
+ ;;1312////^S X=$G(
+ ;;1313////^S X=$G(
+14 ;;
+ ;;1401////^S X=$G(
+ ;;1402///^S X=$G(
+ ;;1403///^S X=$G(
+ ;;1404////^S X=$G(
+ ;;1405///^S X=$G(
+ ;;1406///^S X=$G(
+15 ;;
+ ;;1501///^S X=$G(
+16 ;;
+ ;;1601///^S X=$G(
 801 ;;
  ;;80101///^S X=1;
  ;;80102///^S X=$G(PXKAUDIT);

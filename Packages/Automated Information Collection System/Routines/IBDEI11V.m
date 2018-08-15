@@ -1,116 +1,128 @@
-IBDEI11V ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI11V ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,18813,1,3,0)
- ;;=3^64774
- ;;^UTILITY(U,$J,358.3,18814,0)
- ;;=64776^^122^1203^31^^^^1
- ;;^UTILITY(U,$J,358.3,18814,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18814,1,2,0)
- ;;=2^Excision of neuroma; digital nerve, one or both, same digit
- ;;^UTILITY(U,$J,358.3,18814,1,3,0)
- ;;=3^64776
- ;;^UTILITY(U,$J,358.3,18815,0)
- ;;=64778^^122^1203^32^^^^1
- ;;^UTILITY(U,$J,358.3,18815,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18815,1,2,0)
- ;;=2^Excision of neuroma; digital nerve, each additional digit (list separately in addition to code for primary procedure)
- ;;^UTILITY(U,$J,358.3,18815,1,3,0)
- ;;=3^64778
- ;;^UTILITY(U,$J,358.3,18816,0)
- ;;=64782^^122^1203^33^^^^1
- ;;^UTILITY(U,$J,358.3,18816,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18816,1,2,0)
- ;;=2^Excision of neuroma; hand or foot, except digital nerve
- ;;^UTILITY(U,$J,358.3,18816,1,3,0)
- ;;=3^64782
- ;;^UTILITY(U,$J,358.3,18817,0)
- ;;=64783^^122^1203^34^^^^1
- ;;^UTILITY(U,$J,358.3,18817,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18817,1,2,0)
- ;;=2^Excision of neuroma; hand or foot, each additional nerve, except same digit
- ;;^UTILITY(U,$J,358.3,18817,1,3,0)
- ;;=3^64783
- ;;^UTILITY(U,$J,358.3,18818,0)
- ;;=29999^^122^1204^11^^^^1
- ;;^UTILITY(U,$J,358.3,18818,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18818,1,2,0)
- ;;=2^Unlisted procedure, arthroscopy
- ;;^UTILITY(U,$J,358.3,18818,1,3,0)
- ;;=3^29999
- ;;^UTILITY(U,$J,358.3,18819,0)
- ;;=29893^^122^1204^3^^^^1
- ;;^UTILITY(U,$J,358.3,18819,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18819,1,2,0)
- ;;=2^Endoscopic plantar fasciotomy
- ;;^UTILITY(U,$J,358.3,18819,1,3,0)
- ;;=3^29893
- ;;^UTILITY(U,$J,358.3,18820,0)
- ;;=29894^^122^1204^4^^^^1
- ;;^UTILITY(U,$J,358.3,18820,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18820,1,2,0)
- ;;=2^Arthroscopy, ankle, surgical; w/removalof loose body or foreign body
- ;;^UTILITY(U,$J,358.3,18820,1,3,0)
- ;;=3^29894
- ;;^UTILITY(U,$J,358.3,18821,0)
- ;;=29897^^122^1204^5^^^^1
- ;;^UTILITY(U,$J,358.3,18821,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18821,1,2,0)
- ;;=2^Arthroscopy, ankle, surgical; debridement, limited
- ;;^UTILITY(U,$J,358.3,18821,1,3,0)
- ;;=3^29897
- ;;^UTILITY(U,$J,358.3,18822,0)
- ;;=29898^^122^1204^6^^^^1
- ;;^UTILITY(U,$J,358.3,18822,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18822,1,2,0)
- ;;=2^Arthroscopy, ankle, surgical; debridement, extensive
- ;;^UTILITY(U,$J,358.3,18822,1,3,0)
- ;;=3^29898
- ;;^UTILITY(U,$J,358.3,18823,0)
- ;;=20220^^122^1204^1^^^^1
- ;;^UTILITY(U,$J,358.3,18823,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18823,1,2,0)
- ;;=2^Biopsy, bone, trocar, or needle; superficial
- ;;^UTILITY(U,$J,358.3,18823,1,3,0)
- ;;=3^20220
- ;;^UTILITY(U,$J,358.3,18824,0)
- ;;=20650^^122^1204^2^^^^1
- ;;^UTILITY(U,$J,358.3,18824,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18824,1,2,0)
- ;;=2^Insertion of wire or pin with application of skeletal traction, including removal
- ;;^UTILITY(U,$J,358.3,18824,1,3,0)
- ;;=3^20650
- ;;^UTILITY(U,$J,358.3,18825,0)
- ;;=64726^^122^1204^12^^^^1
- ;;^UTILITY(U,$J,358.3,18825,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18825,1,2,0)
- ;;=2^Decompression; plantar digital nerve
- ;;^UTILITY(U,$J,358.3,18825,1,3,0)
- ;;=3^64726
- ;;^UTILITY(U,$J,358.3,18826,0)
- ;;=64999^^122^1204^13^^^^1
- ;;^UTILITY(U,$J,358.3,18826,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18826,1,2,0)
- ;;=2^Unlisted procedure, nervous system
- ;;^UTILITY(U,$J,358.3,18826,1,3,0)
- ;;=3^64999
- ;;^UTILITY(U,$J,358.3,18827,0)
- ;;=93922^^122^1204^14^^^^1
- ;;^UTILITY(U,$J,358.3,18827,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18827,1,2,0)
- ;;=2^Non-invasive physiologic studies of upper or lower extremity arteries, single level, bilateral
+ ;;^UTILITY(U,$J,358.3,17482,1,3,0)
+ ;;=3^Problems Related to Reduced Mobility
+ ;;^UTILITY(U,$J,358.3,17482,1,4,0)
+ ;;=4^Z74.09
+ ;;^UTILITY(U,$J,358.3,17482,2)
+ ;;=^5063283
+ ;;^UTILITY(U,$J,358.3,17483,0)
+ ;;=Z60.9^^88^861^156
+ ;;^UTILITY(U,$J,358.3,17483,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17483,1,3,0)
+ ;;=3^Problems Related to Social Environment
+ ;;^UTILITY(U,$J,358.3,17483,1,4,0)
+ ;;=4^Z60.9
+ ;;^UTILITY(U,$J,358.3,17483,2)
+ ;;=^5063145
+ ;;^UTILITY(U,$J,358.3,17484,0)
+ ;;=Z60.4^^88^861^157
+ ;;^UTILITY(U,$J,358.3,17484,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17484,1,3,0)
+ ;;=3^Problems Related to Social Exclusion/Rejection
+ ;;^UTILITY(U,$J,358.3,17484,1,4,0)
+ ;;=4^Z60.4
+ ;;^UTILITY(U,$J,358.3,17484,2)
+ ;;=^5063142
+ ;;^UTILITY(U,$J,358.3,17485,0)
+ ;;=Z60.5^^88^861^125
+ ;;^UTILITY(U,$J,358.3,17485,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17485,1,3,0)
+ ;;=3^Problems Related to Adverse Discrimination/Persecution
+ ;;^UTILITY(U,$J,358.3,17485,1,4,0)
+ ;;=4^Z60.5
+ ;;^UTILITY(U,$J,358.3,17485,2)
+ ;;=^5063143
+ ;;^UTILITY(U,$J,358.3,17486,0)
+ ;;=Z75.3^^88^861^158
+ ;;^UTILITY(U,$J,358.3,17486,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17486,1,3,0)
+ ;;=3^Problems Related to Unavailability/Inaccessibility of Health-Care Facilities
+ ;;^UTILITY(U,$J,358.3,17486,1,4,0)
+ ;;=4^Z75.3
+ ;;^UTILITY(U,$J,358.3,17486,2)
+ ;;=^5063292
+ ;;^UTILITY(U,$J,358.3,17487,0)
+ ;;=Z75.4^^88^861^159
+ ;;^UTILITY(U,$J,358.3,17487,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17487,1,3,0)
+ ;;=3^Problems Related to Unavailability/Inaccessibility of Helping Agencies
+ ;;^UTILITY(U,$J,358.3,17487,1,4,0)
+ ;;=4^Z75.4
+ ;;^UTILITY(U,$J,358.3,17487,2)
+ ;;=^5063293
+ ;;^UTILITY(U,$J,358.3,17488,0)
+ ;;=Z65.9^^88^861^153
+ ;;^UTILITY(U,$J,358.3,17488,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17488,1,3,0)
+ ;;=3^Problems Related to Psychosocial Circumstances
+ ;;^UTILITY(U,$J,358.3,17488,1,4,0)
+ ;;=4^Z65.9
+ ;;^UTILITY(U,$J,358.3,17488,2)
+ ;;=^5063186
+ ;;^UTILITY(U,$J,358.3,17489,0)
+ ;;=Z75.2^^88^861^160
+ ;;^UTILITY(U,$J,358.3,17489,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17489,1,3,0)
+ ;;=3^Problems Related to Waiting Period for Investigation/Treatment
+ ;;^UTILITY(U,$J,358.3,17489,1,4,0)
+ ;;=4^Z75.2
+ ;;^UTILITY(U,$J,358.3,17489,2)
+ ;;=^5063291
+ ;;^UTILITY(U,$J,358.3,17490,0)
+ ;;=Z75.5^^88^861^161
+ ;;^UTILITY(U,$J,358.3,17490,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17490,1,3,0)
+ ;;=3^Respite/Holiday Relief Care
+ ;;^UTILITY(U,$J,358.3,17490,1,4,0)
+ ;;=4^Z75.5
+ ;;^UTILITY(U,$J,358.3,17490,2)
+ ;;=^5063294
+ ;;^UTILITY(U,$J,358.3,17491,0)
+ ;;=R68.89^^88^861^165
+ ;;^UTILITY(U,$J,358.3,17491,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17491,1,3,0)
+ ;;=3^Symptoms/Signs,General,Other
+ ;;^UTILITY(U,$J,358.3,17491,1,4,0)
+ ;;=4^R68.89
+ ;;^UTILITY(U,$J,358.3,17491,2)
+ ;;=^5019557
+ ;;^UTILITY(U,$J,358.3,17492,0)
+ ;;=Z72.0^^88^861^168
+ ;;^UTILITY(U,$J,358.3,17492,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17492,1,3,0)
+ ;;=3^Tobacco Use
+ ;;^UTILITY(U,$J,358.3,17492,1,4,0)
+ ;;=4^Z72.0
+ ;;^UTILITY(U,$J,358.3,17492,2)
+ ;;=^5063255
+ ;;^UTILITY(U,$J,358.3,17493,0)
+ ;;=Z94.9^^88^861^169
+ ;;^UTILITY(U,$J,358.3,17493,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17493,1,3,0)
+ ;;=3^Transplanted Organ/Tissue Status,Unspec
+ ;;^UTILITY(U,$J,358.3,17493,1,4,0)
+ ;;=4^Z94.9
+ ;;^UTILITY(U,$J,358.3,17493,2)
+ ;;=^5063667
+ ;;^UTILITY(U,$J,358.3,17494,0)
+ ;;=R76.11^^88^861^166
+ ;;^UTILITY(U,$J,358.3,17494,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17494,1,3,0)
+ ;;=3^TB Skin Test,Nonspecific Reaction w/o Active Tuberculosis
+ ;;^UTILITY(U,$J,358.3,17494,1,4,0)
+ ;;=4^R76.11

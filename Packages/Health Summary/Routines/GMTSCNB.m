@@ -1,5 +1,5 @@
-GMTSCNB ; SLC/KER - Consults Components Brief          ;05/14/09  17:36
- ;;2.7;Health Summary;**46,47,58,90**;Oct 20, 1995;Build 4
+GMTSCNB ; SLC/KER - Consults Components Brief          ; 5/30/17 6:35pm
+ ;;2.7;Health Summary;**46,47,58,90,112,121**;Oct 20, 1995;Build 5
  ;
  ; External References
  ;   DBIA  3358  ^GMR(123,
@@ -13,12 +13,13 @@ GMTSCNB ; SLC/KER - Consults Components Brief          ;05/14/09  17:36
  ;
  Q
 MAIN ; Consults - Brief
- K ^TMP("GMTSCN")
+ K ^TMP("GMTSCN",$J)
  N GMTSMAX,GMTSNMC,GMTSI,GMTSDFN S GMTSDFN=+($G(DFN))
  S:'$L($G(GMTS1)) GMTS1=6666666 S:'$L($G(GMTS2)) GMTS2=9999999
  S GMTS1=+($G(GMTS1)),GMTS2=+($G(GMTS2)),GMTSMAX=+($G(GMTSNDM)) S:GMTSMAX'>0 GMTSMAX=999999999
  S GMTSDFN=+($G(GMTSDFN)) Q:GMTSDFN=0  Q:'$D(^GMR(123,"AD",GMTSDFN))
  S:GMTS2>GMTS1 GMTSI=GMTS1,GMTS1=GMTS2,GMTS2=GMTSI S GMTSI=GMTS2-.00000001
+ S GMTSNMC=1
  F  S GMTSI=$O(^GMR(123,"AD",GMTSDFN,GMTSI)) Q:+GMTSI=0!(GMTSI>GMTS1)  D  Q:$D(GMTSQIT)
  . S GMTSIEN=0 F  S GMTSIEN=$O(^GMR(123,"AD",GMTSDFN,GMTSI,GMTSIEN)) Q:+GMTSIEN=0  D  Q:$D(GMTSQIT)
  . . Q:+($G(GMTSNMC))>+($G(GMTSMAX))  K ^TMP("GMTSCN",$J)
@@ -45,7 +46,7 @@ BCD ;   Brief Consults Display
  Q
 BHDR ;   Brief Header
  N GMTSL S $P(GMTSL,"-",79)=""
- D CKP^GMTSUP Q:$D(GMTSQIT)  W !,"Request Date/",?15,"Request From",?52,"Earliest Date"
+ D CKP^GMTSUP Q:$D(GMTSQIT)  W !,"Request Date/",?15,"Request From",?52,"Clinically Ind. Date"
  D CKP^GMTSUP Q:$D(GMTSQIT)  W !,"Number",?15,"Request To",?52,"Last Action",?67,"Action Date"
  D CKP^GMTSUP Q:$D(GMTSQIT)  W !,GMTSL
  Q

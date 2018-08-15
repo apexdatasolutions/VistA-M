@@ -1,5 +1,5 @@
 MPIFAPI ;CMC/BP-APIS FOR MPI ;DEC 21, 1998
- ;;1.0;MASTER PATIENT INDEX VISTA;**1,3,14,16,17,21,27,28,33,35,37,43,45,44,46,48,55,56**;30 Apr 99;Build 2
+ ;;1.0;MASTER PATIENT INDEX VISTA;**1,3,14,16,17,21,27,28,33,35,37,43,45,44,46,48,55,56,60,61,62**;30 Apr 99;Build 3
  ; Integration Agreements Utilized:
  ;   ^DPT( - #2070 and #4079
  ;   ^DPT("AICN", ^DPT("AMPIMIS", ^DPT("ASCN2" - #2070
@@ -73,6 +73,20 @@ GETADFN(ICN) ; return DFN ONLY if ICN is the active ICN
  S DFN=$O(^DPT("AICN",ICN,0))
  I $G(DFN)'>0 Q "-1^BAD AICN CROSS-REFERENCE"
  I $P($G(^DPT(DFN,"MPI")),"^")'=ICN Q "-1^ICN is not Active one"
+ Q DFN
+ ;
+AICN2DFN(ICN) ; return DFN ONLY if Full ICN is the active ICN
+ ;**60 (elz) MVI_793 create APIs for Full ICN field
+ ; ICN - Integration Control Number for patient to be returned (FULL)
+ ; returns:  -1^error message
+ ;           DFN - IEN for the patient entry in the Patient file (#2)
+ N RETURN,DFN
+ I $G(ICN)'>0 Q "-1^NO ICN"
+ I ICN'["V" Q "-1^Full ICN required"
+ I '$D(^DPT("AFICN",ICN)) Q "-1^ICN NOT IN DATABASE"
+ S DFN=$O(^DPT("AFICN",ICN,0))
+ I $G(DFN)'>0 Q "-1^BAD AFICN CROSS-REFERENCE"
+ I $P($G(^DPT(DFN,"MPI")),"^",10)'=ICN Q "-1^ICN is not Active one"
  Q DFN
  ;
 UPDATE(DFN,ARR,MPISILNT,REMOVE) ;api to edit 'mpi','mpifhis' and 'mpicmor' nodes
@@ -183,13 +197,29 @@ VALDT(VAL) ;**37 Validate value passed in.
  I $E($$UP^XLFSTR(VAL),1,2)="DC" Q 1
  Q 0
  ;
-VIC40(DFN,ICN,CHK) ; -- only allowed for approved package use
- ; this will file the icn/chk for a patient and update correlations
+VIC40(DFN,ICN) ; -- only allowed for approved package use
+ ; this will file the FULL icn for a patient and update correlations
  ; so the local site is now a subscribing package.  This is used with the
  ; VIC 4.0 card registration where PV data was obtained from MVI.  
  ;*56 (elz)
  N MPIX,TIME,LIST
  S TIME=$$NOW^XLFDT
  S INDEX=1
- D UPDATE^MPIFQ0(DFN,ICN_"V"_CHK,"")
+ D UPDATE^MPIFQ0(DFN,ICN,"")
+ Q
+ ;
+CARDLOG(MPIFID,MPIFTYPE,MPIFEVNT) ; - Function to log cards swiped or scanned
+ ; input:   MPIFID = ID from card swiped or scanned
+ ;        MPIFTYPE = type of card, either VHIC or CAC
+ ;        MPIFEVNT = type of event, either SWIPE or SCAN
+ N MPIFNEXT
+ I '$G(MPIFID) Q
+ I $G(MPIFTYPE)'="VHIC",$G(MPIFTYPE)'="CAC" Q
+ I $G(MPIFEVNT)'="SWIPE",$G(MPIFEVNT)'="SCAN" Q
+ L +^XTMP("MPIFCARD",0):5
+ S MPIFID=MPIFID_$S(MPIFTYPE="VHIC":"~PI~USVHA~742V1",1:"~NI~USDOD~200DOD")
+ S ^XTMP("MPIFCARD",0)=$$FMADD^XLFDT(DT,90)_"^"_DT_"^"_"VHIC/CAC card swipe/scan log"
+ S MPIFNEXT=$O(^XTMP("MPIFCARD",DT,":"),-1)+1
+ S ^XTMP("MPIFCARD",DT,MPIFNEXT)=$$NOW^XLFDT_"^"_MPIFID_"^"_MPIFTYPE_"^"_MPIFEVNT_"^"_$P($G(XQY0),"^",2)
+ L -^XTMP("MPIFCARD",0)
  Q

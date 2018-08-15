@@ -1,130 +1,134 @@
-IBDEI08Y ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI08Y ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,4094,1,4,0)
- ;;=4^11006
- ;;^UTILITY(U,$J,358.3,4095,0)
- ;;=11100^^36^309^9^^^^1
- ;;^UTILITY(U,$J,358.3,4095,1,0)
+ ;;^UTILITY(U,$J,358.3,3642,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4095,1,2,0)
- ;;=2^Bx,Skin/Sub,1st lesion
- ;;^UTILITY(U,$J,358.3,4095,1,4,0)
- ;;=4^11100
- ;;^UTILITY(U,$J,358.3,4096,0)
- ;;=11101^^36^309^10^^^^1
- ;;^UTILITY(U,$J,358.3,4096,1,0)
+ ;;^UTILITY(U,$J,358.3,3642,1,3,0)
+ ;;=3^Renal Tubular Function Impaired,Disorder from,Unspec
+ ;;^UTILITY(U,$J,358.3,3642,1,4,0)
+ ;;=4^N25.9
+ ;;^UTILITY(U,$J,358.3,3642,2)
+ ;;=^5015619
+ ;;^UTILITY(U,$J,358.3,3643,0)
+ ;;=M89.00^^28^258^1
+ ;;^UTILITY(U,$J,358.3,3643,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4096,1,2,0)
- ;;=2^Bx,Skin/Sub,Ea Addl lesion
- ;;^UTILITY(U,$J,358.3,4096,1,4,0)
- ;;=4^11101
- ;;^UTILITY(U,$J,358.3,4097,0)
- ;;=11004^^36^309^15^^^^1
- ;;^UTILITY(U,$J,358.3,4097,1,0)
+ ;;^UTILITY(U,$J,358.3,3643,1,3,0)
+ ;;=3^Algoneurodystrophy (RSD),Unspec Site
+ ;;^UTILITY(U,$J,358.3,3643,1,4,0)
+ ;;=4^M89.00
+ ;;^UTILITY(U,$J,358.3,3643,2)
+ ;;=^5014900
+ ;;^UTILITY(U,$J,358.3,3644,0)
+ ;;=Z89.612^^28^258^2
+ ;;^UTILITY(U,$J,358.3,3644,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4097,1,2,0)
- ;;=2^Debride Genital/Perineum/Mus/Fascia
- ;;^UTILITY(U,$J,358.3,4097,1,4,0)
- ;;=4^11004
- ;;^UTILITY(U,$J,358.3,4098,0)
- ;;=11000^^36^309^16^^^^1
- ;;^UTILITY(U,$J,358.3,4098,1,0)
+ ;;^UTILITY(U,$J,358.3,3644,1,3,0)
+ ;;=3^Amputation,Acquired Absence,Left Leg above Knee
+ ;;^UTILITY(U,$J,358.3,3644,1,4,0)
+ ;;=4^Z89.612
+ ;;^UTILITY(U,$J,358.3,3644,2)
+ ;;=^5063573
+ ;;^UTILITY(U,$J,358.3,3645,0)
+ ;;=Z89.512^^28^258^3
+ ;;^UTILITY(U,$J,358.3,3645,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4098,1,2,0)
- ;;=2^Debride infect skin 10% or less
- ;;^UTILITY(U,$J,358.3,4098,1,4,0)
- ;;=4^11000
- ;;^UTILITY(U,$J,358.3,4099,0)
- ;;=11042^^36^309^20^^^^1
- ;;^UTILITY(U,$J,358.3,4099,1,0)
+ ;;^UTILITY(U,$J,358.3,3645,1,3,0)
+ ;;=3^Amputation,Acquired Absence,Left Leg below Knee
+ ;;^UTILITY(U,$J,358.3,3645,1,4,0)
+ ;;=4^Z89.512
+ ;;^UTILITY(U,$J,358.3,3645,2)
+ ;;=^5063567
+ ;;^UTILITY(U,$J,358.3,3646,0)
+ ;;=Z89.611^^28^258^4
+ ;;^UTILITY(U,$J,358.3,3646,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4099,1,2,0)
- ;;=2^Debride skin/SQ,20sq cm or <
- ;;^UTILITY(U,$J,358.3,4099,1,4,0)
- ;;=4^11042
- ;;^UTILITY(U,$J,358.3,4100,0)
- ;;=11043^^36^309^18^^^^1
- ;;^UTILITY(U,$J,358.3,4100,1,0)
+ ;;^UTILITY(U,$J,358.3,3646,1,3,0)
+ ;;=3^Amputation,Acquired Absence,Right Leg above Knee
+ ;;^UTILITY(U,$J,358.3,3646,1,4,0)
+ ;;=4^Z89.611
+ ;;^UTILITY(U,$J,358.3,3646,2)
+ ;;=^5063572
+ ;;^UTILITY(U,$J,358.3,3647,0)
+ ;;=Z89.511^^28^258^5
+ ;;^UTILITY(U,$J,358.3,3647,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4100,1,2,0)
- ;;=2^Debride muscle,20sq cm or <
- ;;^UTILITY(U,$J,358.3,4100,1,4,0)
- ;;=4^11043
- ;;^UTILITY(U,$J,358.3,4101,0)
- ;;=11044^^36^309^12^^^^1
- ;;^UTILITY(U,$J,358.3,4101,1,0)
+ ;;^UTILITY(U,$J,358.3,3647,1,3,0)
+ ;;=3^Amputation,Acquired Absence,Right Leg below Knee
+ ;;^UTILITY(U,$J,358.3,3647,1,4,0)
+ ;;=4^Z89.511
+ ;;^UTILITY(U,$J,358.3,3647,2)
+ ;;=^5063566
+ ;;^UTILITY(U,$J,358.3,3648,0)
+ ;;=M48.10^^28^258^6
+ ;;^UTILITY(U,$J,358.3,3648,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4101,1,2,0)
- ;;=2^Debride Bone,20sq cm or <
- ;;^UTILITY(U,$J,358.3,4101,1,4,0)
- ;;=4^11044
- ;;^UTILITY(U,$J,358.3,4102,0)
- ;;=11001^^36^309^17^^^^1
- ;;^UTILITY(U,$J,358.3,4102,1,0)
+ ;;^UTILITY(U,$J,358.3,3648,1,3,0)
+ ;;=3^Ankylosing Hyperostosis,Unspec Site
+ ;;^UTILITY(U,$J,358.3,3648,1,4,0)
+ ;;=4^M48.10
+ ;;^UTILITY(U,$J,358.3,3648,2)
+ ;;=^5012096
+ ;;^UTILITY(U,$J,358.3,3649,0)
+ ;;=M45.9^^28^258^7
+ ;;^UTILITY(U,$J,358.3,3649,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4102,1,2,0)
- ;;=2^Debride infect skin Ea Addl 10%
- ;;^UTILITY(U,$J,358.3,4102,1,4,0)
- ;;=4^11001
- ;;^UTILITY(U,$J,358.3,4103,0)
- ;;=11045^^36^309^21^^^^1
- ;;^UTILITY(U,$J,358.3,4103,1,0)
+ ;;^UTILITY(U,$J,358.3,3649,1,3,0)
+ ;;=3^Ankylosing Spondylitis,Spine,Unspec Site
+ ;;^UTILITY(U,$J,358.3,3649,1,4,0)
+ ;;=4^M45.9
+ ;;^UTILITY(U,$J,358.3,3649,2)
+ ;;=^5011969
+ ;;^UTILITY(U,$J,358.3,3650,0)
+ ;;=M13.0^^28^258^11
+ ;;^UTILITY(U,$J,358.3,3650,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4103,1,2,0)
- ;;=2^Debride skin/SQ,ea addl 20sq cm
- ;;^UTILITY(U,$J,358.3,4103,1,4,0)
- ;;=4^11045
- ;;^UTILITY(U,$J,358.3,4104,0)
- ;;=11046^^36^309^19^^^^1
- ;;^UTILITY(U,$J,358.3,4104,1,0)
+ ;;^UTILITY(U,$J,358.3,3650,1,3,0)
+ ;;=3^Arthritis,Polyarthritis,Unspec
+ ;;^UTILITY(U,$J,358.3,3650,1,4,0)
+ ;;=4^M13.0
+ ;;^UTILITY(U,$J,358.3,3650,2)
+ ;;=^5010667
+ ;;^UTILITY(U,$J,358.3,3651,0)
+ ;;=M15.9^^28^258^12
+ ;;^UTILITY(U,$J,358.3,3651,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4104,1,2,0)
- ;;=2^Debride muscle,ea addl 20sq cm
- ;;^UTILITY(U,$J,358.3,4104,1,4,0)
- ;;=4^11046
- ;;^UTILITY(U,$J,358.3,4105,0)
- ;;=11047^^36^309^13^^^^1
- ;;^UTILITY(U,$J,358.3,4105,1,0)
+ ;;^UTILITY(U,$J,358.3,3651,1,3,0)
+ ;;=3^Arthritis,Polyosteoarthritis,Unspec
+ ;;^UTILITY(U,$J,358.3,3651,1,4,0)
+ ;;=4^M15.9
+ ;;^UTILITY(U,$J,358.3,3651,2)
+ ;;=^5010768
+ ;;^UTILITY(U,$J,358.3,3652,0)
+ ;;=M15.4^^28^258^8
+ ;;^UTILITY(U,$J,358.3,3652,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4105,1,2,0)
- ;;=2^Debride Bone,ea addl 20sq cm
- ;;^UTILITY(U,$J,358.3,4105,1,4,0)
- ;;=4^11047
- ;;^UTILITY(U,$J,358.3,4106,0)
- ;;=19081^^36^309^3^^^^1
- ;;^UTILITY(U,$J,358.3,4106,1,0)
+ ;;^UTILITY(U,$J,358.3,3652,1,3,0)
+ ;;=3^Arthritis (Osteo),Erosive
+ ;;^UTILITY(U,$J,358.3,3652,1,4,0)
+ ;;=4^M15.4
+ ;;^UTILITY(U,$J,358.3,3652,2)
+ ;;=^5010766
+ ;;^UTILITY(U,$J,358.3,3653,0)
+ ;;=M15.0^^28^258^9
+ ;;^UTILITY(U,$J,358.3,3653,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4106,1,2,0)
- ;;=2^Bx,Breast w/Device w/Stereotactic Guide,1st Lesion
- ;;^UTILITY(U,$J,358.3,4106,1,4,0)
- ;;=4^19081
- ;;^UTILITY(U,$J,358.3,4107,0)
- ;;=19082^^36^309^4^^^^1
- ;;^UTILITY(U,$J,358.3,4107,1,0)
+ ;;^UTILITY(U,$J,358.3,3653,1,3,0)
+ ;;=3^Arthritis (Osteo),Primary Generalized
+ ;;^UTILITY(U,$J,358.3,3653,1,4,0)
+ ;;=4^M15.0
+ ;;^UTILITY(U,$J,358.3,3653,2)
+ ;;=^5010762
+ ;;^UTILITY(U,$J,358.3,3654,0)
+ ;;=M13.10^^28^258^10
+ ;;^UTILITY(U,$J,358.3,3654,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4107,1,2,0)
- ;;=2^Bx,Breast w/Device w/Stereotactic Guide,Ea Addl Lesion
- ;;^UTILITY(U,$J,358.3,4107,1,4,0)
- ;;=4^19082
- ;;^UTILITY(U,$J,358.3,4108,0)
- ;;=19083^^36^309^5^^^^1
- ;;^UTILITY(U,$J,358.3,4108,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4108,1,2,0)
- ;;=2^Bx,Breast w/Device w/US,1st Lesion
- ;;^UTILITY(U,$J,358.3,4108,1,4,0)
- ;;=4^19083
- ;;^UTILITY(U,$J,358.3,4109,0)
- ;;=19084^^36^309^6^^^^1
- ;;^UTILITY(U,$J,358.3,4109,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4109,1,2,0)
- ;;=2^Bx,Breast w/Device w/US,Ea Addl Lesion
- ;;^UTILITY(U,$J,358.3,4109,1,4,0)
- ;;=4^19084
- ;;^UTILITY(U,$J,358.3,4110,0)
- ;;=19085^^36^309^1^^^^1
- ;;^UTILITY(U,$J,358.3,4110,1,0)
- ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3654,1,3,0)
+ ;;=3^Arthritis,Monoarthritis,Unspec Site NEC
+ ;;^UTILITY(U,$J,358.3,3654,1,4,0)
+ ;;=4^M13.10
+ ;;^UTILITY(U,$J,358.3,3654,2)
+ ;;=^5010668
+ ;;^UTILITY(U,$J,358.3,3655,0)
+ ;;=M15.3^^28^258^13

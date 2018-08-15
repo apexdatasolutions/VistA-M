@@ -1,142 +1,134 @@
-IBDEI0JG ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0JG ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,9521,0)
- ;;=611.1^^67^663^16
- ;;^UTILITY(U,$J,358.3,9521,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9521,1,4,0)
- ;;=4^611.1
- ;;^UTILITY(U,$J,358.3,9521,1,5,0)
- ;;=5^Gynecomastia
- ;;^UTILITY(U,$J,358.3,9521,2)
- ;;=^60454
- ;;^UTILITY(U,$J,358.3,9522,0)
- ;;=704.1^^67^663^17
- ;;^UTILITY(U,$J,358.3,9522,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9522,1,4,0)
- ;;=4^704.1
- ;;^UTILITY(U,$J,358.3,9522,1,5,0)
- ;;=5^Hirsutism
- ;;^UTILITY(U,$J,358.3,9522,2)
- ;;=^57407
- ;;^UTILITY(U,$J,358.3,9523,0)
- ;;=251.2^^67^663^30
- ;;^UTILITY(U,$J,358.3,9523,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9523,1,4,0)
- ;;=4^251.2
- ;;^UTILITY(U,$J,358.3,9523,1,5,0)
- ;;=5^Hypoglycemia NOS
- ;;^UTILITY(U,$J,358.3,9523,2)
- ;;=^60580
- ;;^UTILITY(U,$J,358.3,9524,0)
- ;;=253.2^^67^663^34
- ;;^UTILITY(U,$J,358.3,9524,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9524,1,4,0)
- ;;=4^253.2
- ;;^UTILITY(U,$J,358.3,9524,1,5,0)
- ;;=5^Hypopituitarism
- ;;^UTILITY(U,$J,358.3,9524,2)
- ;;=^60686
- ;;^UTILITY(U,$J,358.3,9525,0)
- ;;=733.00^^67^663^43
- ;;^UTILITY(U,$J,358.3,9525,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9525,1,4,0)
- ;;=4^733.00
- ;;^UTILITY(U,$J,358.3,9525,1,5,0)
- ;;=5^Osteoporosis NOS
- ;;^UTILITY(U,$J,358.3,9525,2)
- ;;=^87159
- ;;^UTILITY(U,$J,358.3,9526,0)
- ;;=278.00^^67^663^40
- ;;^UTILITY(U,$J,358.3,9526,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9526,1,4,0)
- ;;=4^278.00
- ;;^UTILITY(U,$J,358.3,9526,1,5,0)
- ;;=5^Obesity
- ;;^UTILITY(U,$J,358.3,9526,2)
- ;;=^84823
- ;;^UTILITY(U,$J,358.3,9527,0)
- ;;=278.01^^67^663^39
- ;;^UTILITY(U,$J,358.3,9527,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9527,1,4,0)
- ;;=4^278.01
- ;;^UTILITY(U,$J,358.3,9527,1,5,0)
- ;;=5^Morbid Obesity
- ;;^UTILITY(U,$J,358.3,9527,2)
- ;;=^84844
- ;;^UTILITY(U,$J,358.3,9528,0)
- ;;=250.80^^67^663^10
- ;;^UTILITY(U,$J,358.3,9528,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9528,1,4,0)
- ;;=4^250.80
- ;;^UTILITY(U,$J,358.3,9528,1,5,0)
- ;;=5^DM Type II with LE Ulcer
- ;;^UTILITY(U,$J,358.3,9528,2)
- ;;=DM Type II with LE Ulcer^267846^707.10
- ;;^UTILITY(U,$J,358.3,9529,0)
- ;;=250.00^^67^663^5
- ;;^UTILITY(U,$J,358.3,9529,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9529,1,4,0)
- ;;=4^250.00
- ;;^UTILITY(U,$J,358.3,9529,1,5,0)
- ;;=5^DM Type II Dm W/O Complications
- ;;^UTILITY(U,$J,358.3,9529,2)
- ;;=^33605
- ;;^UTILITY(U,$J,358.3,9530,0)
- ;;=250.40^^67^663^6
- ;;^UTILITY(U,$J,358.3,9530,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9530,1,4,0)
- ;;=4^250.40
- ;;^UTILITY(U,$J,358.3,9530,1,5,0)
- ;;=5^DM Type II Dm with Nephropathy
- ;;^UTILITY(U,$J,358.3,9530,2)
- ;;=^267837^583.81
- ;;^UTILITY(U,$J,358.3,9531,0)
- ;;=250.50^^67^663^9
- ;;^UTILITY(U,$J,358.3,9531,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9531,1,4,0)
- ;;=4^250.50
- ;;^UTILITY(U,$J,358.3,9531,1,5,0)
- ;;=5^DM Type II w/ PDR
- ;;^UTILITY(U,$J,358.3,9531,2)
- ;;=DM Type II w/ PDR^267839^362.02
- ;;^UTILITY(U,$J,358.3,9532,0)
- ;;=250.60^^67^663^7
- ;;^UTILITY(U,$J,358.3,9532,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9532,1,4,0)
- ;;=4^250.60
- ;;^UTILITY(U,$J,358.3,9532,1,5,0)
- ;;=5^DM Type II Dm with Neuropathy
- ;;^UTILITY(U,$J,358.3,9532,2)
- ;;=^267841^357.2
- ;;^UTILITY(U,$J,358.3,9533,0)
- ;;=250.70^^67^663^8
- ;;^UTILITY(U,$J,358.3,9533,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9533,1,4,0)
- ;;=4^250.70
- ;;^UTILITY(U,$J,358.3,9533,1,5,0)
- ;;=5^DM Type II Dm with Peripheral Vasc Dis
- ;;^UTILITY(U,$J,358.3,9533,2)
- ;;=^267843^443.81
- ;;^UTILITY(U,$J,358.3,9534,0)
- ;;=250.01^^67^663^4
- ;;^UTILITY(U,$J,358.3,9534,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9534,1,4,0)
- ;;=4^250.01
- ;;^UTILITY(U,$J,358.3,9534,1,5,0)
- ;;=5^DM Type I DM W/O Complications
+ ;;^UTILITY(U,$J,358.3,8759,0)
+ ;;=G43.809^^55^545^48
+ ;;^UTILITY(U,$J,358.3,8759,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8759,1,3,0)
+ ;;=3^Other migraine, not intractable, without status migrainosus
+ ;;^UTILITY(U,$J,358.3,8759,1,4,0)
+ ;;=4^G43.809
+ ;;^UTILITY(U,$J,358.3,8759,2)
+ ;;=^5003901
+ ;;^UTILITY(U,$J,358.3,8760,0)
+ ;;=G43.A0^^55^545^23
+ ;;^UTILITY(U,$J,358.3,8760,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8760,1,3,0)
+ ;;=3^Cyclical vomiting, not intractable
+ ;;^UTILITY(U,$J,358.3,8760,1,4,0)
+ ;;=4^G43.A0
+ ;;^UTILITY(U,$J,358.3,8760,2)
+ ;;=^5003912
+ ;;^UTILITY(U,$J,358.3,8761,0)
+ ;;=G43.B0^^55^545^46
+ ;;^UTILITY(U,$J,358.3,8761,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8761,1,3,0)
+ ;;=3^Ophthalmoplegic migraine, not intractable
+ ;;^UTILITY(U,$J,358.3,8761,1,4,0)
+ ;;=4^G43.B0
+ ;;^UTILITY(U,$J,358.3,8761,2)
+ ;;=^5003914
+ ;;^UTILITY(U,$J,358.3,8762,0)
+ ;;=G43.C0^^55^545^54
+ ;;^UTILITY(U,$J,358.3,8762,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8762,1,3,0)
+ ;;=3^Periodic Headache Syndromes,Not Intractable
+ ;;^UTILITY(U,$J,358.3,8762,1,4,0)
+ ;;=4^G43.C0
+ ;;^UTILITY(U,$J,358.3,8762,2)
+ ;;=^5003916
+ ;;^UTILITY(U,$J,358.3,8763,0)
+ ;;=G43.D0^^55^545^2
+ ;;^UTILITY(U,$J,358.3,8763,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8763,1,3,0)
+ ;;=3^Abdominal migraine, not intractable
+ ;;^UTILITY(U,$J,358.3,8763,1,4,0)
+ ;;=4^G43.D0
+ ;;^UTILITY(U,$J,358.3,8763,2)
+ ;;=^5003918
+ ;;^UTILITY(U,$J,358.3,8764,0)
+ ;;=G43.A1^^55^545^22
+ ;;^UTILITY(U,$J,358.3,8764,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8764,1,3,0)
+ ;;=3^Cyclical vomiting, intractable
+ ;;^UTILITY(U,$J,358.3,8764,1,4,0)
+ ;;=4^G43.A1
+ ;;^UTILITY(U,$J,358.3,8764,2)
+ ;;=^5003913
+ ;;^UTILITY(U,$J,358.3,8765,0)
+ ;;=G43.B1^^55^545^45
+ ;;^UTILITY(U,$J,358.3,8765,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8765,1,3,0)
+ ;;=3^Ophthalmoplegic migraine, intractable
+ ;;^UTILITY(U,$J,358.3,8765,1,4,0)
+ ;;=4^G43.B1
+ ;;^UTILITY(U,$J,358.3,8765,2)
+ ;;=^5003915
+ ;;^UTILITY(U,$J,358.3,8766,0)
+ ;;=G43.C1^^55^545^53
+ ;;^UTILITY(U,$J,358.3,8766,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8766,1,3,0)
+ ;;=3^Periodic Headache Syndromes,Intractable
+ ;;^UTILITY(U,$J,358.3,8766,1,4,0)
+ ;;=4^G43.C1
+ ;;^UTILITY(U,$J,358.3,8766,2)
+ ;;=^5003917
+ ;;^UTILITY(U,$J,358.3,8767,0)
+ ;;=G43.D1^^55^545^1
+ ;;^UTILITY(U,$J,358.3,8767,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8767,1,3,0)
+ ;;=3^Abdominal migraine, intractable
+ ;;^UTILITY(U,$J,358.3,8767,1,4,0)
+ ;;=4^G43.D1
+ ;;^UTILITY(U,$J,358.3,8767,2)
+ ;;=^5003919
+ ;;^UTILITY(U,$J,358.3,8768,0)
+ ;;=G43.909^^55^545^42
+ ;;^UTILITY(U,$J,358.3,8768,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8768,1,3,0)
+ ;;=3^Migraine, unsp, not intractable, without status migrainosus
+ ;;^UTILITY(U,$J,358.3,8768,1,4,0)
+ ;;=4^G43.909
+ ;;^UTILITY(U,$J,358.3,8768,2)
+ ;;=^5003909
+ ;;^UTILITY(U,$J,358.3,8769,0)
+ ;;=G43.919^^55^545^41
+ ;;^UTILITY(U,$J,358.3,8769,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8769,1,3,0)
+ ;;=3^Migraine, unsp, intractable, without status migrainosus
+ ;;^UTILITY(U,$J,358.3,8769,1,4,0)
+ ;;=4^G43.919
+ ;;^UTILITY(U,$J,358.3,8769,2)
+ ;;=^5003911
+ ;;^UTILITY(U,$J,358.3,8770,0)
+ ;;=G51.0^^55^545^12
+ ;;^UTILITY(U,$J,358.3,8770,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8770,1,3,0)
+ ;;=3^Bell's palsy
+ ;;^UTILITY(U,$J,358.3,8770,1,4,0)
+ ;;=4^G51.0
+ ;;^UTILITY(U,$J,358.3,8770,2)
+ ;;=^13238
+ ;;^UTILITY(U,$J,358.3,8771,0)
+ ;;=G57.11^^55^545^40
+ ;;^UTILITY(U,$J,358.3,8771,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8771,1,3,0)
+ ;;=3^Meralgia paresthetica, right lower limb
+ ;;^UTILITY(U,$J,358.3,8771,1,4,0)
+ ;;=4^G57.11
+ ;;^UTILITY(U,$J,358.3,8771,2)
+ ;;=^5004042

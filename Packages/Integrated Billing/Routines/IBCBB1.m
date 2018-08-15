@@ -1,6 +1,6 @@
 IBCBB1 ;ALB/AAS - CONTINUATION OF EDIT CHECK ROUTINE ;2-NOV-89
- ;;2.0;INTEGRATED BILLING;**27,52,80,93,106,51,151,148,153,137,232,280,155,320,343,349,363,371,395,384,432,447,488**;21-MAR-94;Build 184
- ;;Per VHA Directive 2004-038, this routine should not be modified.
+ ;;2.0;INTEGRATED BILLING;**27,52,80,93,106,51,151,148,153,137,232,280,155,320,343,349,363,371,395,384,432,447,488,554,577**;21-MAR-94;Build 38
+ ;Per VA Directive 6402, this routine should not be modified.
  ;
  ; *** Begin IB*2.0*488 VD  (Issue 46 RBN)
  N I
@@ -152,6 +152,15 @@ IBCBB1 ;ALB/AAS - CONTINUATION OF EDIT CHECK ROUTINE ;2-NOV-89
  I $P($G(^IBE(355.2,+$P($G(^DIC(36,+IBNDMP,0)),U,13),0)),U,1)="CHAMPVA" S IBPICHV=1
  I (+IBRTCHV!+IBPICHV)&('IBRTCHV!'IBPICHV) S IBER=IBER_"IB085;"
  ;
+ ;Non-VA bill must use FEE REIMB INS rate type; FEE REIMB INS rate type can only be used for Non-VA bill
+ ;IB*2.0*554/DRF 10/9/2015
+ ;N IBNVART,IBNVAST
+ ;S (IBNVART,IBNVAST)=0
+ ;I $P($G(^DGCR(399.3,+IBAT,0)),U,1)="FEE REIMB INS" S IBNVART=1
+ ;S IBNVAST=$$NONVAFLG(IBIFN)
+ ;I IBNVART,'IBNVAST S IBER=IBER_"IB360;"  ;Non-VA rate type used for bill that is not Non-VA
+ ;I 'IBNVART,IBNVAST S IBER=IBER_"IB361;"  ;Non-VA rate type not used for bill that is Non-VA
+ ;
  N IBZPRC,IBZPRCUB
  D F^IBCEF("N-ALL PROCEDURES","IBZPRC",,IBIFN)
  ; Procedure Clinic is required for Surgical Procedures Outpt Facility Charges
@@ -174,6 +183,9 @@ IBCBB1 ;ALB/AAS - CONTINUATION OF EDIT CHECK ROUTINE ;2-NOV-89
  I $$LNTMCK^IBCBB11(IBIFN)=1 S IBER=IBER_"IB331;"  ; DEM;432
  I $$LNACCK^IBCBB11(IBIFN)=1 S IBER=IBER_"IB332;"  ; DEM;432
  ;
+ ; vd/Beginning of IB*2*577 - Validate Line Level NDC edits.
+ I $$LNNDCCK^IBCBB11(IBIFN)=1 S IBER=IBER_"IB365;"  ;IB*2*577
+ ; vd/End of IB*2*577
  I $$ISRX^IBCEF1(IBIFN) D
  . N IBZ,IBRXDEF
  . S IBRXDEF=$P($G(^IBE(350.9,1,1)),U,30),IBZ=0
@@ -286,3 +298,13 @@ MRA N IBEOB S IBEOB=0
  ;
  ;; PREGNANCY DX CODES: V22**-V24**, V27**-V28**, 630**-677**
  ;; FLU SHOTS PROCEDURE CODES: 90724, G0008, 90732, G0009
+ ;
+NONVAFLG(IBIFN) ; Check if Non-VA bill
+ ; Function returns 1 if Non-VA bill
+ ; IB*2.0*554/DRF 10/9/2015
+ N FLAG,PTF
+ S FLAG=0
+ I $P($G(^DGCR(399,IBIFN,"U2")),U,10)]"" S FLAG=1 ;Non-VA provider defined
+ S PTF=$P($G(^DGCR(399,IBIFN,0)),U,8)
+ I PTF,$P($G(^DGPT(PTF,0)),U,4)=1 S FLAG=1 ;PTF entry indicates Non-VA
+ Q FLAG

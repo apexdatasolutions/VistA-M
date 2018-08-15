@@ -1,142 +1,124 @@
-IBDEI0SK ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0SK ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,14102,1,5,0)
- ;;=5^Hyper Or Hypomagnesemia
- ;;^UTILITY(U,$J,358.3,14102,2)
- ;;=^35626
- ;;^UTILITY(U,$J,358.3,14103,0)
- ;;=276.0^^90^856^30
- ;;^UTILITY(U,$J,358.3,14103,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14103,1,4,0)
- ;;=4^276.0
- ;;^UTILITY(U,$J,358.3,14103,1,5,0)
- ;;=5^Hypernatremia
- ;;^UTILITY(U,$J,358.3,14103,2)
- ;;=^60144
- ;;^UTILITY(U,$J,358.3,14104,0)
- ;;=276.1^^90^856^33
- ;;^UTILITY(U,$J,358.3,14104,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14104,1,4,0)
- ;;=4^276.1
- ;;^UTILITY(U,$J,358.3,14104,1,5,0)
- ;;=5^Hyponatremia
- ;;^UTILITY(U,$J,358.3,14104,2)
- ;;=Hyponatremia^60722
- ;;^UTILITY(U,$J,358.3,14105,0)
- ;;=275.3^^90^856^27
- ;;^UTILITY(U,$J,358.3,14105,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14105,1,4,0)
- ;;=4^275.3
- ;;^UTILITY(U,$J,358.3,14105,1,5,0)
- ;;=5^Hyper Or Hypophosphatemia
- ;;^UTILITY(U,$J,358.3,14105,2)
- ;;=^93796
- ;;^UTILITY(U,$J,358.3,14106,0)
- ;;=250.40^^90^856^16
- ;;^UTILITY(U,$J,358.3,14106,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14106,1,4,0)
- ;;=4^250.40
- ;;^UTILITY(U,$J,358.3,14106,1,5,0)
- ;;=5^DM type II with Nephropathy
- ;;^UTILITY(U,$J,358.3,14106,2)
- ;;=DM type II with Nephropathy^267837^583.81
- ;;^UTILITY(U,$J,358.3,14107,0)
- ;;=790.93^^90^856^1
- ;;^UTILITY(U,$J,358.3,14107,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14107,1,4,0)
- ;;=4^790.93
- ;;^UTILITY(U,$J,358.3,14107,1,5,0)
- ;;=5^Abnormal PSA
- ;;^UTILITY(U,$J,358.3,14107,2)
- ;;=Abnormal PSA^295772
- ;;^UTILITY(U,$J,358.3,14108,0)
- ;;=627.3^^90^856^3
- ;;^UTILITY(U,$J,358.3,14108,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14108,1,4,0)
- ;;=4^627.3
- ;;^UTILITY(U,$J,358.3,14108,1,5,0)
- ;;=5^Atrophic Vaginitis
- ;;^UTILITY(U,$J,358.3,14108,2)
- ;;=^270577
- ;;^UTILITY(U,$J,358.3,14109,0)
- ;;=607.1^^90^856^6
- ;;^UTILITY(U,$J,358.3,14109,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14109,1,4,0)
- ;;=4^607.1
- ;;^UTILITY(U,$J,358.3,14109,1,5,0)
- ;;=5^Balanitis
- ;;^UTILITY(U,$J,358.3,14109,2)
- ;;=^12530
- ;;^UTILITY(U,$J,358.3,14110,0)
- ;;=596.0^^90^856^7
- ;;^UTILITY(U,$J,358.3,14110,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14110,1,4,0)
- ;;=4^596.0
- ;;^UTILITY(U,$J,358.3,14110,1,5,0)
- ;;=5^Bladder Neck Obstruction
- ;;^UTILITY(U,$J,358.3,14110,2)
- ;;=^15144
- ;;^UTILITY(U,$J,358.3,14111,0)
- ;;=595.0^^90^856^10
- ;;^UTILITY(U,$J,358.3,14111,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14111,1,4,0)
- ;;=4^595.0
- ;;^UTILITY(U,$J,358.3,14111,1,5,0)
- ;;=5^Cystitis, Acute
- ;;^UTILITY(U,$J,358.3,14111,2)
- ;;=^259104
- ;;^UTILITY(U,$J,358.3,14112,0)
- ;;=595.82^^90^856^11
- ;;^UTILITY(U,$J,358.3,14112,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14112,1,4,0)
- ;;=4^595.82
- ;;^UTILITY(U,$J,358.3,14112,1,5,0)
- ;;=5^Cystitis, Radiation
- ;;^UTILITY(U,$J,358.3,14112,2)
- ;;=^270391
- ;;^UTILITY(U,$J,358.3,14113,0)
- ;;=596.59^^90^856^17
- ;;^UTILITY(U,$J,358.3,14113,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14113,1,4,0)
- ;;=4^596.59
- ;;^UTILITY(U,$J,358.3,14113,1,5,0)
- ;;=5^Detrusor Muscle Insuff
- ;;^UTILITY(U,$J,358.3,14113,2)
- ;;=^270393
- ;;^UTILITY(U,$J,358.3,14114,0)
- ;;=788.1^^90^856^18
- ;;^UTILITY(U,$J,358.3,14114,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14114,1,4,0)
- ;;=4^788.1
- ;;^UTILITY(U,$J,358.3,14114,1,5,0)
- ;;=5^Dysuria
- ;;^UTILITY(U,$J,358.3,14114,2)
- ;;=^37716
- ;;^UTILITY(U,$J,358.3,14115,0)
- ;;=604.90^^90^856^41
- ;;^UTILITY(U,$J,358.3,14115,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14115,1,4,0)
- ;;=4^604.90
- ;;^UTILITY(U,$J,358.3,14115,1,5,0)
- ;;=5^Orchitis/Epididymit
- ;;^UTILITY(U,$J,358.3,14115,2)
- ;;=^86178
- ;;^UTILITY(U,$J,358.3,14116,0)
- ;;=607.84^^90^856^34
- ;;^UTILITY(U,$J,358.3,14116,1,0)
- ;;=^358.31IA^5^2
+ ;;^UTILITY(U,$J,358.3,13141,1,4,0)
+ ;;=4^H40.2211
+ ;;^UTILITY(U,$J,358.3,13141,2)
+ ;;=^5005823
+ ;;^UTILITY(U,$J,358.3,13142,0)
+ ;;=H40.2212^^80^754^24
+ ;;^UTILITY(U,$J,358.3,13142,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13142,1,3,0)
+ ;;=3^Chr Angle-Closure Glaucoma,Right Eye,Moderate Stage
+ ;;^UTILITY(U,$J,358.3,13142,1,4,0)
+ ;;=4^H40.2212
+ ;;^UTILITY(U,$J,358.3,13142,2)
+ ;;=^5005824
+ ;;^UTILITY(U,$J,358.3,13143,0)
+ ;;=H40.2213^^80^754^25
+ ;;^UTILITY(U,$J,358.3,13143,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13143,1,3,0)
+ ;;=3^Chr Angle-Closure Glaucoma,Right Eye,Severe Stage
+ ;;^UTILITY(U,$J,358.3,13143,1,4,0)
+ ;;=4^H40.2213
+ ;;^UTILITY(U,$J,358.3,13143,2)
+ ;;=^5005825
+ ;;^UTILITY(U,$J,358.3,13144,0)
+ ;;=H40.2214^^80^754^22
+ ;;^UTILITY(U,$J,358.3,13144,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13144,1,3,0)
+ ;;=3^Chr Angle-Closure Glaucoma,Right Eye,Indeterminate Stage
+ ;;^UTILITY(U,$J,358.3,13144,1,4,0)
+ ;;=4^H40.2214
+ ;;^UTILITY(U,$J,358.3,13144,2)
+ ;;=^5005826
+ ;;^UTILITY(U,$J,358.3,13145,0)
+ ;;=H40.2221^^80^754^19
+ ;;^UTILITY(U,$J,358.3,13145,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13145,1,3,0)
+ ;;=3^Chr Angle-Closure Glaucoma,Left Eye,Mild Stage
+ ;;^UTILITY(U,$J,358.3,13145,1,4,0)
+ ;;=4^H40.2221
+ ;;^UTILITY(U,$J,358.3,13145,2)
+ ;;=^5005828
+ ;;^UTILITY(U,$J,358.3,13146,0)
+ ;;=H40.2222^^80^754^20
+ ;;^UTILITY(U,$J,358.3,13146,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13146,1,3,0)
+ ;;=3^Chr Angle-Closure Glaucoma,Left Eye,Moderate Stage
+ ;;^UTILITY(U,$J,358.3,13146,1,4,0)
+ ;;=4^H40.2222
+ ;;^UTILITY(U,$J,358.3,13146,2)
+ ;;=^5005829
+ ;;^UTILITY(U,$J,358.3,13147,0)
+ ;;=H40.2223^^80^754^21
+ ;;^UTILITY(U,$J,358.3,13147,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13147,1,3,0)
+ ;;=3^Chr Angle-Closure Glaucoma,Left Eye,Severe Stage
+ ;;^UTILITY(U,$J,358.3,13147,1,4,0)
+ ;;=4^H40.2223
+ ;;^UTILITY(U,$J,358.3,13147,2)
+ ;;=^5133501
+ ;;^UTILITY(U,$J,358.3,13148,0)
+ ;;=H40.2224^^80^754^18
+ ;;^UTILITY(U,$J,358.3,13148,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13148,1,3,0)
+ ;;=3^Chr Angle-Closure Glaucoma,Left Eye,Indeterminate Stage
+ ;;^UTILITY(U,$J,358.3,13148,1,4,0)
+ ;;=4^H40.2224
+ ;;^UTILITY(U,$J,358.3,13148,2)
+ ;;=^5005830
+ ;;^UTILITY(U,$J,358.3,13149,0)
+ ;;=H40.2231^^80^754^15
+ ;;^UTILITY(U,$J,358.3,13149,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13149,1,3,0)
+ ;;=3^Chr Angle-Closure Glaucoma,Bilateral,Mild Stage
+ ;;^UTILITY(U,$J,358.3,13149,1,4,0)
+ ;;=4^H40.2231
+ ;;^UTILITY(U,$J,358.3,13149,2)
+ ;;=^5005832
+ ;;^UTILITY(U,$J,358.3,13150,0)
+ ;;=H40.2232^^80^754^16
+ ;;^UTILITY(U,$J,358.3,13150,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13150,1,3,0)
+ ;;=3^Chr Angle-Closure Glaucoma,Bilateral,Moderate Stage
+ ;;^UTILITY(U,$J,358.3,13150,1,4,0)
+ ;;=4^H40.2232
+ ;;^UTILITY(U,$J,358.3,13150,2)
+ ;;=^5005833
+ ;;^UTILITY(U,$J,358.3,13151,0)
+ ;;=H40.2233^^80^754^17
+ ;;^UTILITY(U,$J,358.3,13151,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13151,1,3,0)
+ ;;=3^Chr Angle-Closure Glaucoma,Bilateral,Severe Stage
+ ;;^UTILITY(U,$J,358.3,13151,1,4,0)
+ ;;=4^H40.2233
+ ;;^UTILITY(U,$J,358.3,13151,2)
+ ;;=^5005834
+ ;;^UTILITY(U,$J,358.3,13152,0)
+ ;;=H40.2234^^80^754^14
+ ;;^UTILITY(U,$J,358.3,13152,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13152,1,3,0)
+ ;;=3^Chr Angle-Closure Glaucoma,Bilateral,Indeterminate Stage
+ ;;^UTILITY(U,$J,358.3,13152,1,4,0)
+ ;;=4^H40.2234
+ ;;^UTILITY(U,$J,358.3,13152,2)
+ ;;=^5005835
+ ;;^UTILITY(U,$J,358.3,13153,0)
+ ;;=H40.241^^80^754^115
+ ;;^UTILITY(U,$J,358.3,13153,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13153,1,3,0)
+ ;;=3^Residual Stage Angle-Closure Glaucoma,Right Eye

@@ -1,136 +1,128 @@
-IBDEI15S ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI15S ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,20750,1,4,0)
- ;;=4^338.21
- ;;^UTILITY(U,$J,358.3,20750,1,5,0)
- ;;=5^Chronic Pain due to Trauma
- ;;^UTILITY(U,$J,358.3,20750,2)
- ;;=^334074
- ;;^UTILITY(U,$J,358.3,20751,0)
- ;;=338.22^^131^1294^13
- ;;^UTILITY(U,$J,358.3,20751,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20751,1,4,0)
- ;;=4^338.22
- ;;^UTILITY(U,$J,358.3,20751,1,5,0)
- ;;=5^Chronic Post-Thoracotomy Pain
- ;;^UTILITY(U,$J,358.3,20751,2)
- ;;=^334075
- ;;^UTILITY(U,$J,358.3,20752,0)
- ;;=338.28^^131^1294^28
- ;;^UTILITY(U,$J,358.3,20752,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20752,1,4,0)
- ;;=4^338.28
- ;;^UTILITY(U,$J,358.3,20752,1,5,0)
- ;;=5^Other Chronic Postop Pain
- ;;^UTILITY(U,$J,358.3,20752,2)
- ;;=^334076
- ;;^UTILITY(U,$J,358.3,20753,0)
- ;;=338.29^^131^1294^27
- ;;^UTILITY(U,$J,358.3,20753,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20753,1,4,0)
- ;;=4^338.29
- ;;^UTILITY(U,$J,358.3,20753,1,5,0)
- ;;=5^Other Chronic Pain
- ;;^UTILITY(U,$J,358.3,20753,2)
- ;;=^334077
- ;;^UTILITY(U,$J,358.3,20754,0)
- ;;=338.3^^131^1294^8
- ;;^UTILITY(U,$J,358.3,20754,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20754,1,4,0)
- ;;=4^338.3
- ;;^UTILITY(U,$J,358.3,20754,1,5,0)
- ;;=5^Cancer Associated Pain
- ;;^UTILITY(U,$J,358.3,20754,2)
- ;;=^334078
- ;;^UTILITY(U,$J,358.3,20755,0)
- ;;=338.4^^131^1294^11
- ;;^UTILITY(U,$J,358.3,20755,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20755,1,4,0)
- ;;=4^338.4
- ;;^UTILITY(U,$J,358.3,20755,1,5,0)
- ;;=5^Chronic Pain Syndrome
- ;;^UTILITY(U,$J,358.3,20755,2)
- ;;=^334079
- ;;^UTILITY(U,$J,358.3,20756,0)
- ;;=780.96^^131^1294^17
- ;;^UTILITY(U,$J,358.3,20756,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20756,1,4,0)
- ;;=4^780.96
- ;;^UTILITY(U,$J,358.3,20756,1,5,0)
- ;;=5^Generalized Pain
- ;;^UTILITY(U,$J,358.3,20756,2)
- ;;=^334163
- ;;^UTILITY(U,$J,358.3,20757,0)
- ;;=607.9^^131^1294^30
- ;;^UTILITY(U,$J,358.3,20757,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20757,1,4,0)
- ;;=4^607.9
- ;;^UTILITY(U,$J,358.3,20757,1,5,0)
- ;;=5^Penile Pain
- ;;^UTILITY(U,$J,358.3,20757,2)
- ;;=^270442
- ;;^UTILITY(U,$J,358.3,20758,0)
- ;;=608.9^^131^1294^32
- ;;^UTILITY(U,$J,358.3,20758,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20758,1,4,0)
- ;;=4^608.9
- ;;^UTILITY(U,$J,358.3,20758,1,5,0)
- ;;=5^Scrotal Pain
- ;;^UTILITY(U,$J,358.3,20758,2)
- ;;=^123856
- ;;^UTILITY(U,$J,358.3,20759,0)
- ;;=V68.1^^131^1295^4
- ;;^UTILITY(U,$J,358.3,20759,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20759,1,4,0)
- ;;=4^V68.1
- ;;^UTILITY(U,$J,358.3,20759,1,5,0)
- ;;=5^Rx Refill (Also mark Condition)
- ;;^UTILITY(U,$J,358.3,20759,2)
- ;;=RX Refill (also mark Condition)^295585
- ;;^UTILITY(U,$J,358.3,20760,0)
- ;;=V68.81^^131^1295^6
- ;;^UTILITY(U,$J,358.3,20760,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20760,1,4,0)
- ;;=4^V68.81
- ;;^UTILITY(U,$J,358.3,20760,1,5,0)
- ;;=5^Transfer of Care (Also Mark Dx)
- ;;^UTILITY(U,$J,358.3,20760,2)
- ;;=Transfer of Care ^295587
- ;;^UTILITY(U,$J,358.3,20761,0)
- ;;=V58.83^^131^1295^5
- ;;^UTILITY(U,$J,358.3,20761,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20761,1,4,0)
- ;;=4^V58.83
- ;;^UTILITY(U,$J,358.3,20761,1,5,0)
- ;;=5^Therapeutic Drug Monitoring
- ;;^UTILITY(U,$J,358.3,20761,2)
- ;;=Encounter for Therapeutic Drug Monitoring^322076
- ;;^UTILITY(U,$J,358.3,20762,0)
- ;;=V65.19^^131^1295^3
- ;;^UTILITY(U,$J,358.3,20762,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20762,1,4,0)
- ;;=4^V65.19
- ;;^UTILITY(U,$J,358.3,20762,1,5,0)
- ;;=5^Person Consulting on Behalf of Pt
- ;;^UTILITY(U,$J,358.3,20762,2)
- ;;=^329985
- ;;^UTILITY(U,$J,358.3,20763,0)
- ;;=V60.89^^131^1295^1
- ;;^UTILITY(U,$J,358.3,20763,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20763,1,4,0)
- ;;=4^V60.89
+ ;;^UTILITY(U,$J,358.3,19358,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19358,1,3,0)
+ ;;=3^Effusion,Unspec
+ ;;^UTILITY(U,$J,358.3,19358,1,4,0)
+ ;;=4^M25.40
+ ;;^UTILITY(U,$J,358.3,19358,2)
+ ;;=^5011575
+ ;;^UTILITY(U,$J,358.3,19359,0)
+ ;;=M45.0^^94^922^6
+ ;;^UTILITY(U,$J,358.3,19359,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19359,1,3,0)
+ ;;=3^Ankylosing Spondylitis of Spine,Mult Sites
+ ;;^UTILITY(U,$J,358.3,19359,1,4,0)
+ ;;=4^M45.0
+ ;;^UTILITY(U,$J,358.3,19359,2)
+ ;;=^5011960
+ ;;^UTILITY(U,$J,358.3,19360,0)
+ ;;=M45.2^^94^922^3
+ ;;^UTILITY(U,$J,358.3,19360,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19360,1,3,0)
+ ;;=3^Ankylosing Spondylitis of Cervical Region
+ ;;^UTILITY(U,$J,358.3,19360,1,4,0)
+ ;;=4^M45.2
+ ;;^UTILITY(U,$J,358.3,19360,2)
+ ;;=^5011962
+ ;;^UTILITY(U,$J,358.3,19361,0)
+ ;;=M45.4^^94^922^7
+ ;;^UTILITY(U,$J,358.3,19361,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19361,1,3,0)
+ ;;=3^Ankylosing Spondylitis of Thoracic Region
+ ;;^UTILITY(U,$J,358.3,19361,1,4,0)
+ ;;=4^M45.4
+ ;;^UTILITY(U,$J,358.3,19361,2)
+ ;;=^5011964
+ ;;^UTILITY(U,$J,358.3,19362,0)
+ ;;=M45.7^^94^922^4
+ ;;^UTILITY(U,$J,358.3,19362,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19362,1,3,0)
+ ;;=3^Ankylosing Spondylitis of Lumbosacral Region
+ ;;^UTILITY(U,$J,358.3,19362,1,4,0)
+ ;;=4^M45.7
+ ;;^UTILITY(U,$J,358.3,19362,2)
+ ;;=^5011967
+ ;;^UTILITY(U,$J,358.3,19363,0)
+ ;;=M45.8^^94^922^5
+ ;;^UTILITY(U,$J,358.3,19363,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19363,1,3,0)
+ ;;=3^Ankylosing Spondylitis of Sacral/Sacrococcygeal Region
+ ;;^UTILITY(U,$J,358.3,19363,1,4,0)
+ ;;=4^M45.8
+ ;;^UTILITY(U,$J,358.3,19363,2)
+ ;;=^5011968
+ ;;^UTILITY(U,$J,358.3,19364,0)
+ ;;=M47.22^^94^922^155
+ ;;^UTILITY(U,$J,358.3,19364,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19364,1,3,0)
+ ;;=3^Sponylosis w/ Radiculopathy,Cervical Region NEC
+ ;;^UTILITY(U,$J,358.3,19364,1,4,0)
+ ;;=4^M47.22
+ ;;^UTILITY(U,$J,358.3,19364,2)
+ ;;=^5012061
+ ;;^UTILITY(U,$J,358.3,19365,0)
+ ;;=M47.24^^94^922^157
+ ;;^UTILITY(U,$J,358.3,19365,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19365,1,3,0)
+ ;;=3^Sponylosis w/ Radiculopathy,Thoracic Region NEC
+ ;;^UTILITY(U,$J,358.3,19365,1,4,0)
+ ;;=4^M47.24
+ ;;^UTILITY(U,$J,358.3,19365,2)
+ ;;=^5012063
+ ;;^UTILITY(U,$J,358.3,19366,0)
+ ;;=M47.27^^94^922^156
+ ;;^UTILITY(U,$J,358.3,19366,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19366,1,3,0)
+ ;;=3^Sponylosis w/ Radiculopathy,Lumbosacral Region NEC
+ ;;^UTILITY(U,$J,358.3,19366,1,4,0)
+ ;;=4^M47.27
+ ;;^UTILITY(U,$J,358.3,19366,2)
+ ;;=^5012066
+ ;;^UTILITY(U,$J,358.3,19367,0)
+ ;;=M47.812^^94^922^152
+ ;;^UTILITY(U,$J,358.3,19367,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19367,1,3,0)
+ ;;=3^Spondylosis w/o Myelopathy/Radiculopathy,Cervical Region
+ ;;^UTILITY(U,$J,358.3,19367,1,4,0)
+ ;;=4^M47.812
+ ;;^UTILITY(U,$J,358.3,19367,2)
+ ;;=^5012069
+ ;;^UTILITY(U,$J,358.3,19368,0)
+ ;;=M47.814^^94^922^153
+ ;;^UTILITY(U,$J,358.3,19368,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19368,1,3,0)
+ ;;=3^Spondylosis w/o Myelopathy/Radiculopathy,Thoracic Region
+ ;;^UTILITY(U,$J,358.3,19368,1,4,0)
+ ;;=4^M47.814
+ ;;^UTILITY(U,$J,358.3,19368,2)
+ ;;=^5012071
+ ;;^UTILITY(U,$J,358.3,19369,0)
+ ;;=M47.817^^94^922^154
+ ;;^UTILITY(U,$J,358.3,19369,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19369,1,3,0)
+ ;;=3^Spondylosis w/o Myelopathy/Radiculopathy,Lumbosacral Region
+ ;;^UTILITY(U,$J,358.3,19369,1,4,0)
+ ;;=4^M47.817
+ ;;^UTILITY(U,$J,358.3,19369,2)
+ ;;=^5012074
+ ;;^UTILITY(U,$J,358.3,19370,0)
+ ;;=M48.50XA^^94^922^21
+ ;;^UTILITY(U,$J,358.3,19370,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,19370,1,3,0)
+ ;;=3^Collapsed Vertebra NEC,Site Unspec,Init Encntr

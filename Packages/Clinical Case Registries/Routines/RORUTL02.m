@@ -1,9 +1,23 @@
-RORUTL02 ;HCIOFO/SG - UTILITIES  ; 8/25/05 10:20am
- ;;1.5;CLINICAL CASE REGISTRIES;;Feb 17, 2006
+RORUTL02 ;HCIOFO/SG - UTILITIES  ;8/25/05 10:20am
+ ;;1.5;CLINICAL CASE REGISTRIES;**21,27,31**;Feb 17, 2006;Build 62
+ ;
+ ;******************************************************************************
+ ;******************************************************************************
+ ;                 --- ROUTINE MODIFICATION LOG ---
+ ;        
+ ;PKG/PATCH    DATE        DEVELOPER    MODIFICATION
+ ;-----------  ----------  -----------  ----------------------------------------
+ ;ROR*1.5*27   FEB 2015    T KOPP       Changed LOCKREG entry point to loop thru
+ ;                                      registries to lock only 15 at a time to
+ ;                                      prevent maxstring errors when lock
+ ;                                      command is executed.
+ ;ROR*1.5*31   MAY 2017    M FERRARESE  Adding PACT and PCP as additional identifiers.
+ ;******************************************************************************
  ;
  ; This routine uses the following IAs:
  ;
  ; #2701         $$GETICN^MPIF001 Gets ICN (supported)
+ ;               $$IFLOCAL^MPIF001 (checks for local ICN) (supported)
  ; #3556         $$GCPR^LA7QRY
  ; #3557         Access to the field .01 and x-ref "B"
  ;               of the file 95.3
@@ -51,23 +65,40 @@ ARLST(REGLST) ;
  . S REGLST(REGNAME)=REGIEN
  Q RC
  ;
- ;***** RETURNS A FULL ICN OF THE PATIENT
+ ;***** RETURNS A FULL NATIONAL ICN OF THE PATIENT
  ;
  ; PTIEN         Patient IEN
  ;
  ; Return Values:
  ;       <0  Error code
- ;       ""  ICN has not been assigned
- ;       >0  Patient ICN
+ ;       ""  ICN has not been assigned or ICN is a local ICN
+ ;       >0  Patient National ICN
  ;
 ICN(PTIEN) ;
  N ICN,L,TMP
+ I $$IFLOCAL^MPIF001(PTIEN) Q ""
  S ICN=$$GETICN^MPIF001(PTIEN)
  I ICN'>0  D  Q ""
  . S TMP=$$ERROR^RORERR(-57,,$P(ICN,U,2),PTIEN,+ICN,"$$GETICN^MPIF001")
  ;--- Validate the checksum (just in case ;-)
  S L=$L($P(ICN,"V",2))
  Q $S(L<6:$P(ICN,"V")_"V"_$E("000000",1,6-L)_$P(ICN,"V",2),1:ICN)
+ ;
+PACT(DFN) ;returns ien & name of pc team PATCH 30
+ ; DFN - pointer to patient file
+ ; Date of interest (Default=DT)
+ ;
+ Q $P($$OUTPTTM^SDUTL3(DFN,DT),U,2)
+ ;
+PCP(DFN)  ;returns ien & name of pract filling pc position PATCH 30
+ ; DFN - pointer to patient file
+ ; DATE - date of interest
+ ; PCROLE - Practitioner Position where '1' = PC provider         ;                                      '2' = PC attending 
+ ;                                      '3' = PC associate provider
+ ;
+ ; returns (ien^name), or "" if none or -1 if error
+ ;
+ Q $P($$OUTPTPR^SDUTL3(DFN,DT,1),"^",2)
  ;
  ;***** LOADS THE LAB RESULTS
  ;
@@ -139,17 +170,40 @@ LNCODE(LNCODE) ;
  ;
 LOCKREG(REGLST,MODE,TO,NAME) ;
  Q:$D(REGLST)<10 1
- N LOCKLST,RC,REGIEN,REGNAME
- S REGNAME=""
+ N LOCKLST,RORLIST,RC,REGIEN,REGNAME
+ N CT,FAILS,Q,Q0,Z
+ ; RORLIST = 0 if less than 15 entries to lock
+ ;         = 1 if 15 or more entries to lock
+ ;        (n,x,y) = the array in LOCKLST(x,y) at that point
+ ;                  (where n = the # identifying the set of 15
+ ;                   registries being locked at one time)
+ ; FAILS = <0 or 1 ... lock failed     = 0 ... lock was successful
+ S REGNAME="",CT=0,RORLIST=0
  F  S REGNAME=$O(REGLST(REGNAME))  Q:REGNAME=""  D  Q:REGIEN<0
  . S REGIEN=+$G(REGLST(REGNAME))
  . I REGIEN'>0  S REGIEN=$$REGIEN^RORUTL02(REGNAME)  Q:REGIEN'>0
+ . S CT=CT+1
  . S LOCKLST(798.1,REGIEN_",")=""
+ . I '(CT#15) D  ; Split the locks into smaller chunks every 15 entries
+ .. M RORLIST(CT/15)=LOCKLST S RORLIST=1
+ .. K LOCKLST
  Q:$G(REGIEN)<0 REGIEN
- Q:$D(LOCKLST)<10 1
- I $G(MODE)  D
- . S RC=$$LOCK^RORLOCK(.LOCKLST,,,+$G(TO,3),$G(NAME))
- E  S RC=$$UNLOCK^RORLOCK(.LOCKLST)
+ I RORLIST,$O(LOCKLST(""))'="" M RORLIST((CT/15\1)+1)=LOCKLST K LOCKLST
+ Q:$D(LOCKLST)<10&'$O(RORLIST(0)) 1
+ I $G(MODE) S RC=0 D
+ . I 'RORLIST S RC=$$LOCK^RORLOCK(.LOCKLST,,,+$G(TO,3),$G(NAME)) Q
+ . F Q=1:1 Q:'$D(RORLIST(Q))!RC  D
+ .. K LOCKLST M LOCKLST=RORLIST(Q)
+ .. S FAILS=$$LOCK^RORLOCK(.LOCKLST,,,+$G(TO,3),$G(NAME)),RC=FAILS
+ .. ; If lock fails for at least one set of nodes [=1 or <0] - unlock previous locks
+ .. I FAILS D:Q>1
+ ... F Q0=1:1:Q-1 K LOCKLST M LOCKLST=RORLIST(Q0) S Z=$$UNLOCK^RORLOCK(.LOCKLST)
+ E  D
+ . I 'RORLIST S RC=$$UNLOCK^RORLOCK(.LOCKLST) Q
+ . S RC=0
+ . F Q=1:1 K LOCKLST Q:'$D(RORLIST(Q))  D
+ .. M LOCKLST=RORLIST(Q) S FAILS=$$UNLOCK^RORLOCK(.LOCKLST)
+ .. S:FAILS RC=FAILS
  Q $S('RC:1,RC<0:RC,1:0)
  ;
  ;***** RETURNS A PATIENT ID (ICN OR SSN)

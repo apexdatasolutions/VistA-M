@@ -1,0 +1,132 @@
+IBDEI1SP ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,30057,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30057,1,3,0)
+ ;;=3^Malig Neop Bone,Secondary
+ ;;^UTILITY(U,$J,358.3,30057,1,4,0)
+ ;;=4^C79.51
+ ;;^UTILITY(U,$J,358.3,30057,2)
+ ;;=^5001350
+ ;;^UTILITY(U,$J,358.3,30058,0)
+ ;;=C79.52^^135^1372^110
+ ;;^UTILITY(U,$J,358.3,30058,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30058,1,3,0)
+ ;;=3^Malig Neop Bone Marrow,Secondary
+ ;;^UTILITY(U,$J,358.3,30058,1,4,0)
+ ;;=4^C79.52
+ ;;^UTILITY(U,$J,358.3,30058,2)
+ ;;=^5001351
+ ;;^UTILITY(U,$J,358.3,30059,0)
+ ;;=C79.31^^135^1372^112
+ ;;^UTILITY(U,$J,358.3,30059,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30059,1,3,0)
+ ;;=3^Malig Neop Brain,Secondary
+ ;;^UTILITY(U,$J,358.3,30059,1,4,0)
+ ;;=4^C79.31
+ ;;^UTILITY(U,$J,358.3,30059,2)
+ ;;=^5001347
+ ;;^UTILITY(U,$J,358.3,30060,0)
+ ;;=C79.72^^135^1372^127
+ ;;^UTILITY(U,$J,358.3,30060,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30060,1,3,0)
+ ;;=3^Malig Neop Left Adrenal Gland,Secondary
+ ;;^UTILITY(U,$J,358.3,30060,1,4,0)
+ ;;=4^C79.72
+ ;;^UTILITY(U,$J,358.3,30060,2)
+ ;;=^5001357
+ ;;^UTILITY(U,$J,358.3,30061,0)
+ ;;=C78.02^^135^1372^131
+ ;;^UTILITY(U,$J,358.3,30061,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30061,1,3,0)
+ ;;=3^Malig Neop Left Lung,Secondary
+ ;;^UTILITY(U,$J,358.3,30061,1,4,0)
+ ;;=4^C78.02
+ ;;^UTILITY(U,$J,358.3,30061,2)
+ ;;=^5001336
+ ;;^UTILITY(U,$J,358.3,30062,0)
+ ;;=C78.7^^135^1372^136
+ ;;^UTILITY(U,$J,358.3,30062,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30062,1,3,0)
+ ;;=3^Malig Neop Liver/Intrahepatic Bile Duct,Secondary
+ ;;^UTILITY(U,$J,358.3,30062,1,4,0)
+ ;;=4^C78.7
+ ;;^UTILITY(U,$J,358.3,30062,2)
+ ;;=^5001339
+ ;;^UTILITY(U,$J,358.3,30063,0)
+ ;;=C79.71^^135^1372^149
+ ;;^UTILITY(U,$J,358.3,30063,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30063,1,3,0)
+ ;;=3^Malig Neop Right Adrenal Gland,Secondary
+ ;;^UTILITY(U,$J,358.3,30063,1,4,0)
+ ;;=4^C79.71
+ ;;^UTILITY(U,$J,358.3,30063,2)
+ ;;=^5001356
+ ;;^UTILITY(U,$J,358.3,30064,0)
+ ;;=C78.01^^135^1372^153
+ ;;^UTILITY(U,$J,358.3,30064,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30064,1,3,0)
+ ;;=3^Malig Neop Right Lung,Secondary
+ ;;^UTILITY(U,$J,358.3,30064,1,4,0)
+ ;;=4^C78.01
+ ;;^UTILITY(U,$J,358.3,30064,2)
+ ;;=^5001335
+ ;;^UTILITY(U,$J,358.3,30065,0)
+ ;;=C79.70^^135^1372^104
+ ;;^UTILITY(U,$J,358.3,30065,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30065,1,3,0)
+ ;;=3^Malig Neop Adrenal Gland Unspec,Secondary
+ ;;^UTILITY(U,$J,358.3,30065,1,4,0)
+ ;;=4^C79.70
+ ;;^UTILITY(U,$J,358.3,30065,2)
+ ;;=^5001355
+ ;;^UTILITY(U,$J,358.3,30066,0)
+ ;;=C78.00^^135^1372^137
+ ;;^UTILITY(U,$J,358.3,30066,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30066,1,3,0)
+ ;;=3^Malig Neop Lung Unspec,Secondary
+ ;;^UTILITY(U,$J,358.3,30066,1,4,0)
+ ;;=4^C78.00
+ ;;^UTILITY(U,$J,358.3,30066,2)
+ ;;=^5001334
+ ;;^UTILITY(U,$J,358.3,30067,0)
+ ;;=D57.1^^135^1372^178
+ ;;^UTILITY(U,$J,358.3,30067,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30067,1,3,0)
+ ;;=3^Sickle-Cell Disease w/o Crisis
+ ;;^UTILITY(U,$J,358.3,30067,1,4,0)
+ ;;=4^D57.1
+ ;;^UTILITY(U,$J,358.3,30067,2)
+ ;;=^5002309
+ ;;^UTILITY(U,$J,358.3,30068,0)
+ ;;=D75.1^^135^1372^176
+ ;;^UTILITY(U,$J,358.3,30068,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30068,1,3,0)
+ ;;=3^Polycythemia,Secondary
+ ;;^UTILITY(U,$J,358.3,30068,1,4,0)
+ ;;=4^D75.1
+ ;;^UTILITY(U,$J,358.3,30068,2)
+ ;;=^186856
+ ;;^UTILITY(U,$J,358.3,30069,0)
+ ;;=C90.30^^135^1372^179
+ ;;^UTILITY(U,$J,358.3,30069,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30069,1,3,0)
+ ;;=3^Solitary Plasmacytoma,Not in Remission
+ ;;^UTILITY(U,$J,358.3,30069,1,4,0)
+ ;;=4^C90.30
+ ;;^UTILITY(U,$J,358.3,30069,2)
+ ;;=^5001759

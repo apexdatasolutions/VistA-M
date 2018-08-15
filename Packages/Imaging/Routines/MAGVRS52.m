@@ -1,5 +1,5 @@
-MAGVRS52 ;WOIFO/EdM/DAC/NST - Imaging RPCs for Query/Retrieve ; 29 Aug 2013  2:00 PM
- ;;3.0;IMAGING;**118,138**;Mar 19, 2002;Build 5380;Sep 03, 2013
+MAGVRS52 ;WOIFO/EdM/DAC/NST/JSL - Imaging RPCs ,156for Query/Retrieve ; 30 Jan 2015 3:05 PM
+ ;;3.0;IMAGING;**118,145,138,156**;Mar 19, 2002;Build 10;Jan 3, 2015
  ;; Per VHA Directive 2004-038, this routine should not be modified.
  ;; +---------------------------------------------------------------+
  ;; | Property of the US Government.                                |
@@ -35,10 +35,11 @@ AETITLE(OUT,RTITLE,LOCATION) ; MAG DICOM CHECK AE TITLE RPC
  . S AEINST=$G(^MAGV(2006.9192,AEIEN,0))
  . S LOCIEN=$P(AEINST,U,3)
  . Q:LOCIEN=""
+ . S STATION=$$STA^XUAF4(LOCIEN) ; P145 DAC
  . ; Perform case-insensitive DICOM AE Title check
  . S AEINST=$$UP^XLFSTR(AEINST) ; IA #10104
  . S RTITLE=$$UP^XLFSTR(RTITLE) ; IA #10104
- . I $P(AEINST,U,6)=RTITLE D
+ . I (LOCATION=STATION)&(($P(AEINST,U,6))=RTITLE) D  ; P145 DAC
  . . ; If 1st match write all AE Instance info and Service Role
  . . I MATCH=0 D AEINST(.OUT,AEIEN,AEINST,LOCATION) S OUT(1)=OUT(1)_"SERVICE MESSAGE="
  . . S I=I+1

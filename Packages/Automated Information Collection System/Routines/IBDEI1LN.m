@@ -1,0 +1,130 @@
+IBDEI1LN ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,26753,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26753,1,3,0)
+ ;;=3^Scotoma Involving Central Area OS
+ ;;^UTILITY(U,$J,358.3,26753,1,4,0)
+ ;;=4^H53.412
+ ;;^UTILITY(U,$J,358.3,26753,2)
+ ;;=^5006326
+ ;;^UTILITY(U,$J,358.3,26754,0)
+ ;;=H53.413^^130^1297^22
+ ;;^UTILITY(U,$J,358.3,26754,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26754,1,3,0)
+ ;;=3^Scotoma Involving Central Area Bilateral
+ ;;^UTILITY(U,$J,358.3,26754,1,4,0)
+ ;;=4^H53.413
+ ;;^UTILITY(U,$J,358.3,26754,2)
+ ;;=^5006327
+ ;;^UTILITY(U,$J,358.3,26755,0)
+ ;;=H53.481^^130^1297^23
+ ;;^UTILITY(U,$J,358.3,26755,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26755,1,3,0)
+ ;;=3^Generalized Contraction of Visual Field OD
+ ;;^UTILITY(U,$J,358.3,26755,1,4,0)
+ ;;=4^H53.481
+ ;;^UTILITY(U,$J,358.3,26755,2)
+ ;;=^5006344
+ ;;^UTILITY(U,$J,358.3,26756,0)
+ ;;=H53.482^^130^1297^24
+ ;;^UTILITY(U,$J,358.3,26756,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26756,1,3,0)
+ ;;=3^Generalized Contraction of Visual Field OS
+ ;;^UTILITY(U,$J,358.3,26756,1,4,0)
+ ;;=4^H53.482
+ ;;^UTILITY(U,$J,358.3,26756,2)
+ ;;=^5006345
+ ;;^UTILITY(U,$J,358.3,26757,0)
+ ;;=H53.483^^130^1297^25
+ ;;^UTILITY(U,$J,358.3,26757,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26757,1,3,0)
+ ;;=3^Generalized Contraction of Visual Field Bilateral
+ ;;^UTILITY(U,$J,358.3,26757,1,4,0)
+ ;;=4^H53.483
+ ;;^UTILITY(U,$J,358.3,26757,2)
+ ;;=^5006346
+ ;;^UTILITY(U,$J,358.3,26758,0)
+ ;;=H53.461^^130^1297^26
+ ;;^UTILITY(U,$J,358.3,26758,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26758,1,3,0)
+ ;;=3^Homonymous Bilateral Field Defects Right Side
+ ;;^UTILITY(U,$J,358.3,26758,1,4,0)
+ ;;=4^H53.461
+ ;;^UTILITY(U,$J,358.3,26758,2)
+ ;;=^5006341
+ ;;^UTILITY(U,$J,358.3,26759,0)
+ ;;=H53.462^^130^1297^27
+ ;;^UTILITY(U,$J,358.3,26759,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26759,1,3,0)
+ ;;=3^Homonymous Bilateral Field Defects Left Side
+ ;;^UTILITY(U,$J,358.3,26759,1,4,0)
+ ;;=4^H53.462
+ ;;^UTILITY(U,$J,358.3,26759,2)
+ ;;=^5006342
+ ;;^UTILITY(U,$J,358.3,26760,0)
+ ;;=H53.47^^130^1297^28
+ ;;^UTILITY(U,$J,358.3,26760,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26760,1,3,0)
+ ;;=3^Heteronymous Bilateral Field Defects
+ ;;^UTILITY(U,$J,358.3,26760,1,4,0)
+ ;;=4^H53.47
+ ;;^UTILITY(U,$J,358.3,26760,2)
+ ;;=^268847
+ ;;^UTILITY(U,$J,358.3,26761,0)
+ ;;=H53.40^^130^1297^29
+ ;;^UTILITY(U,$J,358.3,26761,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26761,1,3,0)
+ ;;=3^Visual Field Defects,Unspec
+ ;;^UTILITY(U,$J,358.3,26761,1,4,0)
+ ;;=4^H53.40
+ ;;^UTILITY(U,$J,358.3,26761,2)
+ ;;=^5006324
+ ;;^UTILITY(U,$J,358.3,26762,0)
+ ;;=H47.9^^130^1297^30
+ ;;^UTILITY(U,$J,358.3,26762,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26762,1,3,0)
+ ;;=3^Visual Pathway Disorders,Unspec
+ ;;^UTILITY(U,$J,358.3,26762,1,4,0)
+ ;;=4^H47.9
+ ;;^UTILITY(U,$J,358.3,26762,2)
+ ;;=^5006178
+ ;;^UTILITY(U,$J,358.3,26763,0)
+ ;;=G0155^^131^1298^1^^^^1
+ ;;^UTILITY(U,$J,358.3,26763,1,0)
+ ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,26763,1,2,0)
+ ;;=2^G0155
+ ;;^UTILITY(U,$J,358.3,26763,1,3,0)
+ ;;=3^MFH Coord (LCSW) vst in home,ea 15min
+ ;;^UTILITY(U,$J,358.3,26764,0)
+ ;;=G0154^^131^1298^5^^^^1
+ ;;^UTILITY(U,$J,358.3,26764,1,0)
+ ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,26764,1,2,0)
+ ;;=2^G0154
+ ;;^UTILITY(U,$J,358.3,26764,1,3,0)
+ ;;=3^MFH Nurse in home,ea 15min
+ ;;^UTILITY(U,$J,358.3,26765,0)
+ ;;=G0151^^131^1298^7^^^^1
+ ;;^UTILITY(U,$J,358.3,26765,1,0)
+ ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,26765,1,2,0)
+ ;;=2^G0151
+ ;;^UTILITY(U,$J,358.3,26765,1,3,0)
+ ;;=3^MFH Phy Ther in home,ea 15min
+ ;;^UTILITY(U,$J,358.3,26766,0)
+ ;;=G0152^^131^1298^6^^^^1
+ ;;^UTILITY(U,$J,358.3,26766,1,0)
+ ;;=^358.31IA^3^2

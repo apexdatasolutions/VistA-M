@@ -1,138 +1,124 @@
-IBDEI04P ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI04P ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,1928,1,3,0)
- ;;=3^COLLECT/REVIEW DATA FROM PT
- ;;^UTILITY(U,$J,358.3,1929,0)
- ;;=G0155^^19^182^1^^^^1
- ;;^UTILITY(U,$J,358.3,1929,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1929,1,2,0)
- ;;=2^G0155
- ;;^UTILITY(U,$J,358.3,1929,1,3,0)
- ;;=3^HOME VISIT BY CSW,EA 15 MIN
- ;;^UTILITY(U,$J,358.3,1930,0)
- ;;=90847^^19^183^1^^^^1
- ;;^UTILITY(U,$J,358.3,1930,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1930,1,2,0)
- ;;=2^90847
- ;;^UTILITY(U,$J,358.3,1930,1,3,0)
- ;;=3^FAMILY PSYTX W/PATIENT
- ;;^UTILITY(U,$J,358.3,1931,0)
- ;;=90849^^19^183^3^^^^1
- ;;^UTILITY(U,$J,358.3,1931,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1931,1,2,0)
- ;;=2^90849
- ;;^UTILITY(U,$J,358.3,1931,1,3,0)
- ;;=3^MULTIPLE FAMILY GROUP PSYTX
- ;;^UTILITY(U,$J,358.3,1932,0)
- ;;=90853^^19^183^2^^^^1
- ;;^UTILITY(U,$J,358.3,1932,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1932,1,2,0)
- ;;=2^90853
- ;;^UTILITY(U,$J,358.3,1932,1,3,0)
- ;;=3^GROUP PSYCHOTHERAPY
- ;;^UTILITY(U,$J,358.3,1933,0)
- ;;=90832^^19^183^4^^^^1
- ;;^UTILITY(U,$J,358.3,1933,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1933,1,2,0)
- ;;=2^90832
- ;;^UTILITY(U,$J,358.3,1933,1,3,0)
- ;;=3^PSYTX PT OR FAMILY 17-32 MIN
- ;;^UTILITY(U,$J,358.3,1934,0)
- ;;=90834^^19^183^5^^^^1
- ;;^UTILITY(U,$J,358.3,1934,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1934,1,2,0)
- ;;=2^90834
- ;;^UTILITY(U,$J,358.3,1934,1,3,0)
- ;;=3^PSYTX PT OR FAMILY 38-52 MIN
- ;;^UTILITY(U,$J,358.3,1935,0)
- ;;=90837^^19^183^6^^^^1
- ;;^UTILITY(U,$J,358.3,1935,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1935,1,2,0)
- ;;=2^90837
- ;;^UTILITY(U,$J,358.3,1935,1,3,0)
- ;;=3^PSYTX PT OR FAMILY 53+ MIN
- ;;^UTILITY(U,$J,358.3,1936,0)
- ;;=T1016^^19^184^1^^^^1
- ;;^UTILITY(U,$J,358.3,1936,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,1936,1,2,0)
- ;;=2^T1016
- ;;^UTILITY(U,$J,358.3,1936,1,3,0)
- ;;=3^CASE MANAGEMENT EA 15MIN
- ;;^UTILITY(U,$J,358.3,1937,0)
- ;;=V71.89^^20^185^1
- ;;^UTILITY(U,$J,358.3,1937,1,0)
+ ;;^UTILITY(U,$J,358.3,1514,2)
+ ;;=^5051018
+ ;;^UTILITY(U,$J,358.3,1515,0)
+ ;;=T45.1X2S^^14^156^18
+ ;;^UTILITY(U,$J,358.3,1515,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,1937,1,3,0)
- ;;=3^ENROLLMENT IN CCHT PROGRAM
- ;;^UTILITY(U,$J,358.3,1937,1,4,0)
- ;;=4^V71.89
- ;;^UTILITY(U,$J,358.3,1937,2)
- ;;=^322082
- ;;^UTILITY(U,$J,358.3,1938,0)
- ;;=V79.0^^21^186^5
- ;;^UTILITY(U,$J,358.3,1938,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1938,1,4,0)
- ;;=4^V79.0
- ;;^UTILITY(U,$J,358.3,1938,1,5,0)
- ;;=5^SCREENING FOR DEPRESSION
- ;;^UTILITY(U,$J,358.3,1938,2)
- ;;=^295677
- ;;^UTILITY(U,$J,358.3,1939,0)
- ;;=V79.1^^21^186^4
- ;;^UTILITY(U,$J,358.3,1939,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1939,1,4,0)
- ;;=4^V79.1
- ;;^UTILITY(U,$J,358.3,1939,1,5,0)
- ;;=5^SCREENING FOR ALCOHOLISM
- ;;^UTILITY(U,$J,358.3,1939,2)
- ;;=^295678
- ;;^UTILITY(U,$J,358.3,1940,0)
- ;;=V79.2^^21^186^3
- ;;^UTILITY(U,$J,358.3,1940,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1940,1,4,0)
- ;;=4^V79.2
- ;;^UTILITY(U,$J,358.3,1940,1,5,0)
- ;;=5^SCREEN-MENTAL RETARDAT
- ;;^UTILITY(U,$J,358.3,1940,2)
- ;;=^340656
- ;;^UTILITY(U,$J,358.3,1941,0)
- ;;=V79.3^^21^186^1
- ;;^UTILITY(U,$J,358.3,1941,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1941,1,4,0)
- ;;=4^V79.3
- ;;^UTILITY(U,$J,358.3,1941,1,5,0)
- ;;=5^SCREEN-DEVELOPMENT PROB
- ;;^UTILITY(U,$J,358.3,1941,2)
- ;;=^295680
- ;;^UTILITY(U,$J,358.3,1942,0)
- ;;=V79.8^^21^186^2
- ;;^UTILITY(U,$J,358.3,1942,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1942,1,4,0)
- ;;=4^V79.8
- ;;^UTILITY(U,$J,358.3,1942,1,5,0)
- ;;=5^SCREEN-MENTAL DIS NEC
- ;;^UTILITY(U,$J,358.3,1942,2)
- ;;=^295681
- ;;^UTILITY(U,$J,358.3,1943,0)
- ;;=V10.00^^21^187^9
- ;;^UTILITY(U,$J,358.3,1943,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1943,1,4,0)
- ;;=4^V10.00
- ;;^UTILITY(U,$J,358.3,1943,1,5,0)
- ;;=5^HX OF GI MALIGNANCY NOS
+ ;;^UTILITY(U,$J,358.3,1515,1,3,0)
+ ;;=3^Poisn by antineopl and immunosup drugs, self-harm, sequela
+ ;;^UTILITY(U,$J,358.3,1515,1,4,0)
+ ;;=4^T45.1X2S
+ ;;^UTILITY(U,$J,358.3,1515,2)
+ ;;=^5051019
+ ;;^UTILITY(U,$J,358.3,1516,0)
+ ;;=T45.1X4A^^14^156^39
+ ;;^UTILITY(U,$J,358.3,1516,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1516,1,3,0)
+ ;;=3^Poisoning by antineopl and immunosup drugs, undet, init
+ ;;^UTILITY(U,$J,358.3,1516,1,4,0)
+ ;;=4^T45.1X4A
+ ;;^UTILITY(U,$J,358.3,1516,2)
+ ;;=^5051023
+ ;;^UTILITY(U,$J,358.3,1517,0)
+ ;;=T45.1X4D^^14^156^40
+ ;;^UTILITY(U,$J,358.3,1517,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1517,1,3,0)
+ ;;=3^Poisoning by antineopl and immunosup drugs, undet, subs
+ ;;^UTILITY(U,$J,358.3,1517,1,4,0)
+ ;;=4^T45.1X4D
+ ;;^UTILITY(U,$J,358.3,1517,2)
+ ;;=^5051024
+ ;;^UTILITY(U,$J,358.3,1518,0)
+ ;;=T45.1X4S^^14^156^41
+ ;;^UTILITY(U,$J,358.3,1518,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1518,1,3,0)
+ ;;=3^Poisoning by antineopl and immunosup drugs, undet, sequela
+ ;;^UTILITY(U,$J,358.3,1518,1,4,0)
+ ;;=4^T45.1X4S
+ ;;^UTILITY(U,$J,358.3,1518,2)
+ ;;=^5051025
+ ;;^UTILITY(U,$J,358.3,1519,0)
+ ;;=T36.8X1A^^14^156^42
+ ;;^UTILITY(U,$J,358.3,1519,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1519,1,3,0)
+ ;;=3^Poisoning by oth systemic antibiotics, accidental, init
+ ;;^UTILITY(U,$J,358.3,1519,1,4,0)
+ ;;=4^T36.8X1A
+ ;;^UTILITY(U,$J,358.3,1519,2)
+ ;;=^5049400
+ ;;^UTILITY(U,$J,358.3,1520,0)
+ ;;=T36.8X1D^^14^156^43
+ ;;^UTILITY(U,$J,358.3,1520,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1520,1,3,0)
+ ;;=3^Poisoning by oth systemic antibiotics, accidental, subs
+ ;;^UTILITY(U,$J,358.3,1520,1,4,0)
+ ;;=4^T36.8X1D
+ ;;^UTILITY(U,$J,358.3,1520,2)
+ ;;=^5049401
+ ;;^UTILITY(U,$J,358.3,1521,0)
+ ;;=T36.8X1S^^14^156^44
+ ;;^UTILITY(U,$J,358.3,1521,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1521,1,3,0)
+ ;;=3^Poisoning by oth systemic antibiotics, accidental, sequela
+ ;;^UTILITY(U,$J,358.3,1521,1,4,0)
+ ;;=4^T36.8X1S
+ ;;^UTILITY(U,$J,358.3,1521,2)
+ ;;=^5049402
+ ;;^UTILITY(U,$J,358.3,1522,0)
+ ;;=T36.8X3A^^14^156^45
+ ;;^UTILITY(U,$J,358.3,1522,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1522,1,3,0)
+ ;;=3^Poisoning by oth systemic antibiotics, assault, init encntr
+ ;;^UTILITY(U,$J,358.3,1522,1,4,0)
+ ;;=4^T36.8X3A
+ ;;^UTILITY(U,$J,358.3,1522,2)
+ ;;=^5049406
+ ;;^UTILITY(U,$J,358.3,1523,0)
+ ;;=T36.8X3D^^14^156^46
+ ;;^UTILITY(U,$J,358.3,1523,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1523,1,3,0)
+ ;;=3^Poisoning by oth systemic antibiotics, assault, subs encntr
+ ;;^UTILITY(U,$J,358.3,1523,1,4,0)
+ ;;=4^T36.8X3D
+ ;;^UTILITY(U,$J,358.3,1523,2)
+ ;;=^5049407
+ ;;^UTILITY(U,$J,358.3,1524,0)
+ ;;=T36.8X3S^^14^156^53
+ ;;^UTILITY(U,$J,358.3,1524,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1524,1,3,0)
+ ;;=3^Poisoning by other systemic antibiotics, assault, sequela
+ ;;^UTILITY(U,$J,358.3,1524,1,4,0)
+ ;;=4^T36.8X3S
+ ;;^UTILITY(U,$J,358.3,1524,2)
+ ;;=^5049408
+ ;;^UTILITY(U,$J,358.3,1525,0)
+ ;;=T36.8X2A^^14^156^47
+ ;;^UTILITY(U,$J,358.3,1525,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1525,1,3,0)
+ ;;=3^Poisoning by oth systemic antibiotics, self-harm, init
+ ;;^UTILITY(U,$J,358.3,1525,1,4,0)
+ ;;=4^T36.8X2A
+ ;;^UTILITY(U,$J,358.3,1525,2)
+ ;;=^5049403
+ ;;^UTILITY(U,$J,358.3,1526,0)
+ ;;=T36.8X2D^^14^156^48
+ ;;^UTILITY(U,$J,358.3,1526,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1526,1,3,0)
+ ;;=3^Poisoning by oth systemic antibiotics, self-harm, subs
+ ;;^UTILITY(U,$J,358.3,1526,1,4,0)
+ ;;=4^T36.8X2D

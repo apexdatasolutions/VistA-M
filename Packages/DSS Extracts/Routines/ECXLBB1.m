@@ -1,6 +1,6 @@
-ECXLBB1 ;ALB/JRC - DSS VBECS EXTRACT ;4/16/13  16:06
- ;;3.0;DSS EXTRACTS;**105,102,120,127,144**;Dec 22, 1997;Build 9
- ;Per VHA Directive 97-033 this routine should not be modified.  Medical Device # BK970021
+ECXLBB1 ;ALB/JRC - DSS VBECS EXTRACT ;4/20/16  10:18
+ ;;3.0;DSS EXTRACTS;**105,102,120,127,144,156,161**;Dec 22, 1997;Build 6
+ ;Per VA Directive 6402, this routine should not be modified.  Medical Device # BK970021
  ; access to the VBECS EXTRACT file (#6002.03) is supported by
  ; controlled subscription to IA #4953  (global root ^VBECS(6002.03)
 BEG ;entry point from option
@@ -77,7 +77,7 @@ GETDATA ; gather rest of extract data that will be recorded in an
  I $G(ECXLOGIC)>2006 D
  .S ECXSTR=ECXSTR_U_ECXERI_U_ECARRY(11)_U_ECARRY(12)_U_ECARRY(9)_U_ECARRY(10)_U_ECARRY(13)_U
  I '$D(ECXRPT) D FILE(ECXSTR) Q
- S ^TMP("ECXLBB",$J,ECXDFN,ECD)=ECXSTR  ;temporary global array
+ S ^TMP("ECXLBB",$J,ECXDFN,ECD,RECORD)=ECXSTR  ;temporary global array,156-added additional subscript
  I $D(ECXCRPT) D
  . N ECCOUNT S ECCOUNT=0
  . F  S ECCOUNT=ECCOUNT+1 Q:'$D(^TMP("ECXLBBC",$J,$S($G(ECXCFLG)=1:ECARRY(4),1:"ZZNOZZ"),ECXDFN,ECTRFDT_"."_ECTRFTM_"."_ECCOUNT,"S"))
@@ -106,13 +106,11 @@ FILE(ECODE) ;
  ; sequence #^year/month of extract^extract #^facility^patient dfn^SSN^
  ; name^i/o pt indicator^encounter #^date of transfusion^time of 
  ; transfusion^component^component abbrev^# of units^volume in mm^
- ; reaction^reaction type^feeder location^DSS product dept^DSS IP #
+ ; reaction^reaction type^feeder location^placeholder^DSS IP #
  ; ordering physician^ordering physician pc^emergency response indicator
  ; (FEMA)^unit modified^unit modification^requesting provider^request. 
  ; provider person class^ordering provider npi ECPHYNPI
  ;ECODE1- requesting provider npi ECREQNPI^PATCAT^Encounter SC ECXESC
- ;note:  DSS product dept and DSS IP # are dependent on the release of
- ; ECX*3*61
  N DA,DIK,EC7
  S EC7=$O(^ECX(ECFILE,999999999),-1),EC7=EC7+1
  S ECODE=EC7_"^"_ECODE

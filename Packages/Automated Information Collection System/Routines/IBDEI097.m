@@ -1,134 +1,134 @@
-IBDEI097 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI097 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,4237,0)
- ;;=96366^^36^327^4^^^^1
- ;;^UTILITY(U,$J,358.3,4237,1,0)
+ ;;^UTILITY(U,$J,358.3,3762,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4237,1,2,0)
- ;;=2^IV Inf Ther/Proph/Diag Ea Addl Hr
- ;;^UTILITY(U,$J,358.3,4237,1,4,0)
- ;;=4^96366
- ;;^UTILITY(U,$J,358.3,4238,0)
- ;;=J1750^^36^328^13^^^^1
- ;;^UTILITY(U,$J,358.3,4238,1,0)
+ ;;^UTILITY(U,$J,358.3,3762,1,3,0)
+ ;;=3^Osteolysis,Unspec Site
+ ;;^UTILITY(U,$J,358.3,3762,1,4,0)
+ ;;=4^M89.50
+ ;;^UTILITY(U,$J,358.3,3762,2)
+ ;;=^5015037
+ ;;^UTILITY(U,$J,358.3,3763,0)
+ ;;=M83.9^^28^258^121
+ ;;^UTILITY(U,$J,358.3,3763,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4238,1,2,0)
- ;;=2^Iron Dextran Inj 50mg
- ;;^UTILITY(U,$J,358.3,4238,1,4,0)
- ;;=4^J1750
- ;;^UTILITY(U,$J,358.3,4239,0)
- ;;=J1756^^36^328^14^^^^1
- ;;^UTILITY(U,$J,358.3,4239,1,0)
+ ;;^UTILITY(U,$J,358.3,3763,1,3,0)
+ ;;=3^Osteomalacia,Unspec
+ ;;^UTILITY(U,$J,358.3,3763,1,4,0)
+ ;;=4^M83.9
+ ;;^UTILITY(U,$J,358.3,3763,2)
+ ;;=^5013565
+ ;;^UTILITY(U,$J,358.3,3764,0)
+ ;;=M86.9^^28^258^122
+ ;;^UTILITY(U,$J,358.3,3764,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4239,1,2,0)
- ;;=2^Iron Sucrose Inj 1mg/ml
- ;;^UTILITY(U,$J,358.3,4239,1,4,0)
- ;;=4^J1756
- ;;^UTILITY(U,$J,358.3,4240,0)
- ;;=J2323^^36^328^17^^^^1
- ;;^UTILITY(U,$J,358.3,4240,1,0)
+ ;;^UTILITY(U,$J,358.3,3764,1,3,0)
+ ;;=3^Osteomyelitis,Unspec
+ ;;^UTILITY(U,$J,358.3,3764,1,4,0)
+ ;;=4^M86.9
+ ;;^UTILITY(U,$J,358.3,3764,2)
+ ;;=^5014656
+ ;;^UTILITY(U,$J,358.3,3765,0)
+ ;;=M87.9^^28^258^123
+ ;;^UTILITY(U,$J,358.3,3765,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4240,1,2,0)
- ;;=2^Natalizumab Inj 1mg
- ;;^UTILITY(U,$J,358.3,4240,1,4,0)
- ;;=4^J2323
- ;;^UTILITY(U,$J,358.3,4241,0)
- ;;=J9310^^36^328^19^^^^1
- ;;^UTILITY(U,$J,358.3,4241,1,0)
+ ;;^UTILITY(U,$J,358.3,3765,1,3,0)
+ ;;=3^Osteonecrosis,Unspec
+ ;;^UTILITY(U,$J,358.3,3765,1,4,0)
+ ;;=4^M87.9
+ ;;^UTILITY(U,$J,358.3,3765,2)
+ ;;=^5014873
+ ;;^UTILITY(U,$J,358.3,3766,0)
+ ;;=M89.60^^28^258^124
+ ;;^UTILITY(U,$J,358.3,3766,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4241,1,2,0)
- ;;=2^Rituximab Inj 100mg
- ;;^UTILITY(U,$J,358.3,4241,1,4,0)
- ;;=4^J9310
- ;;^UTILITY(U,$J,358.3,4242,0)
- ;;=J1094^^36^328^5^^^^1
- ;;^UTILITY(U,$J,358.3,4242,1,0)
+ ;;^UTILITY(U,$J,358.3,3766,1,3,0)
+ ;;=3^Osteopathy after Poliomyelitis,Unspec Site
+ ;;^UTILITY(U,$J,358.3,3766,1,4,0)
+ ;;=4^M89.60
+ ;;^UTILITY(U,$J,358.3,3766,2)
+ ;;=^5015061
+ ;;^UTILITY(U,$J,358.3,3767,0)
+ ;;=M90.80^^28^258^125
+ ;;^UTILITY(U,$J,358.3,3767,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4242,1,2,0)
- ;;=2^Dexamethasone Acetate 1mg
- ;;^UTILITY(U,$J,358.3,4242,1,4,0)
- ;;=4^J1094
- ;;^UTILITY(U,$J,358.3,4243,0)
- ;;=J0256^^36^328^1^^^^1
- ;;^UTILITY(U,$J,358.3,4243,1,0)
+ ;;^UTILITY(U,$J,358.3,3767,1,3,0)
+ ;;=3^Osteopathy in Dieseases Classified Elsewhere
+ ;;^UTILITY(U,$J,358.3,3767,1,4,0)
+ ;;=4^M90.80
+ ;;^UTILITY(U,$J,358.3,3767,2)
+ ;;=^5015168
+ ;;^UTILITY(U,$J,358.3,3768,0)
+ ;;=M80.00XA^^28^258^127
+ ;;^UTILITY(U,$J,358.3,3768,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4243,1,2,0)
- ;;=2^Alpha 1 Proteinase Inhib 10mg
- ;;^UTILITY(U,$J,358.3,4243,1,4,0)
- ;;=4^J0256
- ;;^UTILITY(U,$J,358.3,4244,0)
- ;;=J3370^^36^328^20^^^^1
- ;;^UTILITY(U,$J,358.3,4244,1,0)
+ ;;^UTILITY(U,$J,358.3,3768,1,3,0)
+ ;;=3^Osteoporosis,Age-Related Fx,Unspec Site,Init Encntr
+ ;;^UTILITY(U,$J,358.3,3768,1,4,0)
+ ;;=4^M80.00XA
+ ;;^UTILITY(U,$J,358.3,3768,2)
+ ;;=^5013363
+ ;;^UTILITY(U,$J,358.3,3769,0)
+ ;;=M80.00XG^^28^258^128
+ ;;^UTILITY(U,$J,358.3,3769,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4244,1,2,0)
- ;;=2^Vancomycin HCL Inj 500mg
- ;;^UTILITY(U,$J,358.3,4244,1,4,0)
- ;;=4^J3370
- ;;^UTILITY(U,$J,358.3,4245,0)
- ;;=J3475^^36^328^15^^^^1
- ;;^UTILITY(U,$J,358.3,4245,1,0)
+ ;;^UTILITY(U,$J,358.3,3769,1,3,0)
+ ;;=3^Osteoporosis,Age-Related Fx,Unspec Site,Delayed Healing
+ ;;^UTILITY(U,$J,358.3,3769,1,4,0)
+ ;;=4^M80.00XG
+ ;;^UTILITY(U,$J,358.3,3769,2)
+ ;;=^5013365
+ ;;^UTILITY(U,$J,358.3,3770,0)
+ ;;=M80.00XP^^28^258^129
+ ;;^UTILITY(U,$J,358.3,3770,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4245,1,2,0)
- ;;=2^Magnesium Sulfate Inj 500mg
- ;;^UTILITY(U,$J,358.3,4245,1,4,0)
- ;;=4^J3475
- ;;^UTILITY(U,$J,358.3,4246,0)
- ;;=J3480^^36^328^18^^^^1
- ;;^UTILITY(U,$J,358.3,4246,1,0)
+ ;;^UTILITY(U,$J,358.3,3770,1,3,0)
+ ;;=3^Osteoporosis,Age-Related Fx,Unspec Site,Malunion
+ ;;^UTILITY(U,$J,358.3,3770,1,4,0)
+ ;;=4^M80.00XP
+ ;;^UTILITY(U,$J,358.3,3770,2)
+ ;;=^5013367
+ ;;^UTILITY(U,$J,358.3,3771,0)
+ ;;=M80.00XK^^28^258^130
+ ;;^UTILITY(U,$J,358.3,3771,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4246,1,2,0)
- ;;=2^Potassium Chloride Inj 2mEq
- ;;^UTILITY(U,$J,358.3,4246,1,4,0)
- ;;=4^J3480
- ;;^UTILITY(U,$J,358.3,4247,0)
- ;;=J9070^^36^328^2^^^^1
- ;;^UTILITY(U,$J,358.3,4247,1,0)
+ ;;^UTILITY(U,$J,358.3,3771,1,3,0)
+ ;;=3^Osteoporosis,Age-Related Fx,Unspec Site,Nonunion
+ ;;^UTILITY(U,$J,358.3,3771,1,4,0)
+ ;;=4^M80.00XK
+ ;;^UTILITY(U,$J,358.3,3771,2)
+ ;;=^5013366
+ ;;^UTILITY(U,$J,358.3,3772,0)
+ ;;=M80.00XD^^28^258^131
+ ;;^UTILITY(U,$J,358.3,3772,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4247,1,2,0)
- ;;=2^Cyclophosphamide Inj 100mg
- ;;^UTILITY(U,$J,358.3,4247,1,4,0)
- ;;=4^J9070
- ;;^UTILITY(U,$J,358.3,4248,0)
- ;;=J8530^^36^328^3^^^^1
- ;;^UTILITY(U,$J,358.3,4248,1,0)
+ ;;^UTILITY(U,$J,358.3,3772,1,3,0)
+ ;;=3^Osteoporosis,Age-Related Fx,Unspec Site,Routine Healing
+ ;;^UTILITY(U,$J,358.3,3772,1,4,0)
+ ;;=4^M80.00XD
+ ;;^UTILITY(U,$J,358.3,3772,2)
+ ;;=^5013364
+ ;;^UTILITY(U,$J,358.3,3773,0)
+ ;;=M80.00XS^^28^258^132
+ ;;^UTILITY(U,$J,358.3,3773,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4248,1,2,0)
- ;;=2^Cyclophosphamide Oral 25mg
- ;;^UTILITY(U,$J,358.3,4248,1,4,0)
- ;;=4^J8530
- ;;^UTILITY(U,$J,358.3,4249,0)
- ;;=J1020^^36^328^16^^^^1
- ;;^UTILITY(U,$J,358.3,4249,1,0)
+ ;;^UTILITY(U,$J,358.3,3773,1,3,0)
+ ;;=3^Osteoporosis,Age-Related Fx,Unspec Site,Sequela
+ ;;^UTILITY(U,$J,358.3,3773,1,4,0)
+ ;;=4^M80.00XS
+ ;;^UTILITY(U,$J,358.3,3773,2)
+ ;;=^5013368
+ ;;^UTILITY(U,$J,358.3,3774,0)
+ ;;=M81.0^^28^258^126
+ ;;^UTILITY(U,$J,358.3,3774,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4249,1,2,0)
- ;;=2^Methylprednisolone Inj 20mg
- ;;^UTILITY(U,$J,358.3,4249,1,4,0)
- ;;=4^J1020
- ;;^UTILITY(U,$J,358.3,4250,0)
- ;;=J1745^^36^328^12^^^^1
- ;;^UTILITY(U,$J,358.3,4250,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4250,1,2,0)
- ;;=2^Infliximab Inj 10mg
- ;;^UTILITY(U,$J,358.3,4250,1,4,0)
- ;;=4^J1745
- ;;^UTILITY(U,$J,358.3,4251,0)
- ;;=J1200^^36^328^6^^^^1
- ;;^UTILITY(U,$J,358.3,4251,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4251,1,2,0)
- ;;=2^Diphenhydramine HCL Inj 50mg
- ;;^UTILITY(U,$J,358.3,4251,1,4,0)
- ;;=4^J1200
- ;;^UTILITY(U,$J,358.3,4252,0)
- ;;=J1569^^36^328^9^^^^1
- ;;^UTILITY(U,$J,358.3,4252,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4252,1,2,0)
- ;;=2^Gammagard Liquid Inj 500mg
- ;;^UTILITY(U,$J,358.3,4252,1,4,0)
- ;;=4^J1569
- ;;^UTILITY(U,$J,358.3,4253,0)
- ;;=J2916^^36^328^7^^^^1
+ ;;^UTILITY(U,$J,358.3,3774,1,3,0)
+ ;;=3^Osteoporosis,Age-Related
+ ;;^UTILITY(U,$J,358.3,3774,1,4,0)
+ ;;=4^M81.0
+ ;;^UTILITY(U,$J,358.3,3774,2)
+ ;;=^5013555
+ ;;^UTILITY(U,$J,358.3,3775,0)
+ ;;=Z87.310^^28^258^137

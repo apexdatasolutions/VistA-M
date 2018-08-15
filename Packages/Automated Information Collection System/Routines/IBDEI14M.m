@@ -1,138 +1,128 @@
-IBDEI14M ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI14M ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,20180,1,5,0)
- ;;=5^Vulvovaginal candidiasis
- ;;^UTILITY(U,$J,358.3,20180,2)
- ;;=^18615
- ;;^UTILITY(U,$J,358.3,20181,0)
- ;;=131.01^^131^1285^60
- ;;^UTILITY(U,$J,358.3,20181,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20181,1,4,0)
- ;;=4^131.01
- ;;^UTILITY(U,$J,358.3,20181,1,5,0)
- ;;=5^Vaginitis, Trichomonas
- ;;^UTILITY(U,$J,358.3,20181,2)
- ;;=^121763
- ;;^UTILITY(U,$J,358.3,20182,0)
- ;;=698.1^^131^1285^64
- ;;^UTILITY(U,$J,358.3,20182,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20182,1,4,0)
- ;;=4^698.1
- ;;^UTILITY(U,$J,358.3,20182,1,5,0)
- ;;=5^Vulvar Pruritis
- ;;^UTILITY(U,$J,358.3,20182,2)
- ;;=Vulvar Pruritis^100071
- ;;^UTILITY(U,$J,358.3,20183,0)
- ;;=793.80^^131^1285^1
- ;;^UTILITY(U,$J,358.3,20183,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20183,1,4,0)
- ;;=4^793.80
- ;;^UTILITY(U,$J,358.3,20183,1,5,0)
- ;;=5^Abnormal Mammogram
- ;;^UTILITY(U,$J,358.3,20183,2)
- ;;=Abnormal Mammogram^323613
- ;;^UTILITY(U,$J,358.3,20184,0)
- ;;=795.00^^131^1285^2
- ;;^UTILITY(U,$J,358.3,20184,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20184,1,4,0)
- ;;=4^795.00
- ;;^UTILITY(U,$J,358.3,20184,1,5,0)
- ;;=5^Abnormal Pap Smear
- ;;^UTILITY(U,$J,358.3,20184,2)
- ;;=Abnormal Pap Smear^328609
- ;;^UTILITY(U,$J,358.3,20185,0)
- ;;=625.9^^131^1285^41
- ;;^UTILITY(U,$J,358.3,20185,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20185,1,4,0)
- ;;=4^625.9
- ;;^UTILITY(U,$J,358.3,20185,1,5,0)
- ;;=5^Pelvic Pain
- ;;^UTILITY(U,$J,358.3,20185,2)
- ;;=Pelvic Pain^123993
- ;;^UTILITY(U,$J,358.3,20186,0)
- ;;=624.09^^131^1285^63
- ;;^UTILITY(U,$J,358.3,20186,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20186,1,4,0)
- ;;=4^624.09
- ;;^UTILITY(U,$J,358.3,20186,1,5,0)
- ;;=5^Vulvar Dystrophy
- ;;^UTILITY(U,$J,358.3,20186,2)
- ;;=^335272
- ;;^UTILITY(U,$J,358.3,20187,0)
- ;;=611.81^^131^1285^50
- ;;^UTILITY(U,$J,358.3,20187,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20187,1,4,0)
- ;;=4^611.81
- ;;^UTILITY(U,$J,358.3,20187,1,5,0)
- ;;=5^Ptosis of Breast
- ;;^UTILITY(U,$J,358.3,20187,2)
- ;;=^336613
- ;;^UTILITY(U,$J,358.3,20188,0)
- ;;=611.82^^131^1285^27
- ;;^UTILITY(U,$J,358.3,20188,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20188,1,4,0)
- ;;=4^611.82
- ;;^UTILITY(U,$J,358.3,20188,1,5,0)
- ;;=5^Hypoplasia of Breast
- ;;^UTILITY(U,$J,358.3,20188,2)
- ;;=^336614
- ;;^UTILITY(U,$J,358.3,20189,0)
- ;;=625.70^^131^1285^62
- ;;^UTILITY(U,$J,358.3,20189,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20189,1,4,0)
- ;;=4^625.70
- ;;^UTILITY(U,$J,358.3,20189,1,5,0)
- ;;=5^Volvodynia NOS
- ;;^UTILITY(U,$J,358.3,20189,2)
- ;;=^336753
- ;;^UTILITY(U,$J,358.3,20190,0)
- ;;=625.71^^131^1285^65
- ;;^UTILITY(U,$J,358.3,20190,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20190,1,4,0)
- ;;=4^625.71
- ;;^UTILITY(U,$J,358.3,20190,1,5,0)
- ;;=5^Vulvar Vestibulitis
- ;;^UTILITY(U,$J,358.3,20190,2)
- ;;=^336618
- ;;^UTILITY(U,$J,358.3,20191,0)
- ;;=625.79^^131^1285^66
- ;;^UTILITY(U,$J,358.3,20191,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20191,1,4,0)
- ;;=4^625.79
- ;;^UTILITY(U,$J,358.3,20191,1,5,0)
- ;;=5^Vulvodynia NEC
- ;;^UTILITY(U,$J,358.3,20191,2)
- ;;=^336619
- ;;^UTILITY(U,$J,358.3,20192,0)
- ;;=795.07^^131^1285^11
- ;;^UTILITY(U,$J,358.3,20192,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20192,1,4,0)
- ;;=4^795.07
- ;;^UTILITY(U,$J,358.3,20192,1,5,0)
- ;;=5^Cervical Smear w/o Transformation Zone
- ;;^UTILITY(U,$J,358.3,20192,2)
- ;;=^336674
- ;;^UTILITY(U,$J,358.3,20193,0)
- ;;=795.08^^131^1285^53
- ;;^UTILITY(U,$J,358.3,20193,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,20193,1,4,0)
- ;;=4^795.08
- ;;^UTILITY(U,$J,358.3,20193,1,5,0)
- ;;=5^Unsatis Cerv Cytology Smear
- ;;^UTILITY(U,$J,358.3,20193,2)
- ;;=^336842
+ ;;^UTILITY(U,$J,358.3,18813,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18813,1,3,0)
+ ;;=3^Acute Myeloblastic Leukemia,Not in Remission
+ ;;^UTILITY(U,$J,358.3,18813,1,4,0)
+ ;;=4^C92.00
+ ;;^UTILITY(U,$J,358.3,18813,2)
+ ;;=^5001789
+ ;;^UTILITY(U,$J,358.3,18814,0)
+ ;;=C92.61^^94^916^9
+ ;;^UTILITY(U,$J,358.3,18814,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18814,1,3,0)
+ ;;=3^Acute Myeloid Leukemia w/ 11q23-Abnormality,In Remission
+ ;;^UTILITY(U,$J,358.3,18814,1,4,0)
+ ;;=4^C92.61
+ ;;^UTILITY(U,$J,358.3,18814,2)
+ ;;=^5001808
+ ;;^UTILITY(U,$J,358.3,18815,0)
+ ;;=C92.60^^94^916^10
+ ;;^UTILITY(U,$J,358.3,18815,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18815,1,3,0)
+ ;;=3^Acute Myeloid Leukemia w/ 11q23-Abnormality,Not in Remission
+ ;;^UTILITY(U,$J,358.3,18815,1,4,0)
+ ;;=4^C92.60
+ ;;^UTILITY(U,$J,358.3,18815,2)
+ ;;=^5001807
+ ;;^UTILITY(U,$J,358.3,18816,0)
+ ;;=C92.A1^^94^916^11
+ ;;^UTILITY(U,$J,358.3,18816,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18816,1,3,0)
+ ;;=3^Acute Myeloid Leukemia w/ Multilin Dysplasia,In Remission
+ ;;^UTILITY(U,$J,358.3,18816,1,4,0)
+ ;;=4^C92.A1
+ ;;^UTILITY(U,$J,358.3,18816,2)
+ ;;=^5001814
+ ;;^UTILITY(U,$J,358.3,18817,0)
+ ;;=C92.A0^^94^916^12
+ ;;^UTILITY(U,$J,358.3,18817,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18817,1,3,0)
+ ;;=3^Acute Myeloid Leukemia w/ Multilin Dysplasia,Not in Remission
+ ;;^UTILITY(U,$J,358.3,18817,1,4,0)
+ ;;=4^C92.A0
+ ;;^UTILITY(U,$J,358.3,18817,2)
+ ;;=^5001813
+ ;;^UTILITY(U,$J,358.3,18818,0)
+ ;;=C92.51^^94^916^13
+ ;;^UTILITY(U,$J,358.3,18818,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18818,1,3,0)
+ ;;=3^Acute Myelomonocytic Leukemia,In Remission
+ ;;^UTILITY(U,$J,358.3,18818,1,4,0)
+ ;;=4^C92.51
+ ;;^UTILITY(U,$J,358.3,18818,2)
+ ;;=^5001805
+ ;;^UTILITY(U,$J,358.3,18819,0)
+ ;;=C92.50^^94^916^14
+ ;;^UTILITY(U,$J,358.3,18819,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18819,1,3,0)
+ ;;=3^Acute Myelomonocytic Leukemia,Not in Remission
+ ;;^UTILITY(U,$J,358.3,18819,1,4,0)
+ ;;=4^C92.50
+ ;;^UTILITY(U,$J,358.3,18819,2)
+ ;;=^5001804
+ ;;^UTILITY(U,$J,358.3,18820,0)
+ ;;=C94.40^^94^916^17
+ ;;^UTILITY(U,$J,358.3,18820,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18820,1,3,0)
+ ;;=3^Acute Panmyelosis w/ Myelofibrosis,Not in Remission
+ ;;^UTILITY(U,$J,358.3,18820,1,4,0)
+ ;;=4^C94.40
+ ;;^UTILITY(U,$J,358.3,18820,2)
+ ;;=^5001843
+ ;;^UTILITY(U,$J,358.3,18821,0)
+ ;;=C94.42^^94^916^15
+ ;;^UTILITY(U,$J,358.3,18821,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18821,1,3,0)
+ ;;=3^Acute Panmyelosis w/ Myelofibrosis,In Relapse
+ ;;^UTILITY(U,$J,358.3,18821,1,4,0)
+ ;;=4^C94.42
+ ;;^UTILITY(U,$J,358.3,18821,2)
+ ;;=^5001845
+ ;;^UTILITY(U,$J,358.3,18822,0)
+ ;;=C94.41^^94^916^16
+ ;;^UTILITY(U,$J,358.3,18822,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18822,1,3,0)
+ ;;=3^Acute Panmyelosis w/ Myelofibrosis,In Remission
+ ;;^UTILITY(U,$J,358.3,18822,1,4,0)
+ ;;=4^C94.41
+ ;;^UTILITY(U,$J,358.3,18822,2)
+ ;;=^5001844
+ ;;^UTILITY(U,$J,358.3,18823,0)
+ ;;=D62.^^94^916^18
+ ;;^UTILITY(U,$J,358.3,18823,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18823,1,3,0)
+ ;;=3^Acute Posthemorrhagic Anemia
+ ;;^UTILITY(U,$J,358.3,18823,1,4,0)
+ ;;=4^D62.
+ ;;^UTILITY(U,$J,358.3,18823,2)
+ ;;=^267986
+ ;;^UTILITY(U,$J,358.3,18824,0)
+ ;;=C92.41^^94^916^19
+ ;;^UTILITY(U,$J,358.3,18824,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18824,1,3,0)
+ ;;=3^Acute Promyelocytic Leukemia,In Remission
+ ;;^UTILITY(U,$J,358.3,18824,1,4,0)
+ ;;=4^C92.41
+ ;;^UTILITY(U,$J,358.3,18824,2)
+ ;;=^5001802
+ ;;^UTILITY(U,$J,358.3,18825,0)
+ ;;=C92.40^^94^916^20
+ ;;^UTILITY(U,$J,358.3,18825,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18825,1,3,0)
+ ;;=3^Acute Promyelocytic Leukemia,Not in Remission

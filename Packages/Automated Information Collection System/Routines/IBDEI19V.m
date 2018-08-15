@@ -1,142 +1,122 @@
-IBDEI19V ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI19V ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,22775,1,4,0)
- ;;=4^292.85
- ;;^UTILITY(U,$J,358.3,22775,1,5,0)
- ;;=5^Drug Induced Sleep D/O
- ;;^UTILITY(U,$J,358.3,22775,2)
- ;;=^332751
- ;;^UTILITY(U,$J,358.3,22776,0)
- ;;=300.11^^141^1404^1
- ;;^UTILITY(U,$J,358.3,22776,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22776,1,4,0)
- ;;=4^300.11
- ;;^UTILITY(U,$J,358.3,22776,1,5,0)
- ;;=5^Conversion Disorder
- ;;^UTILITY(U,$J,358.3,22776,2)
- ;;=^28139
- ;;^UTILITY(U,$J,358.3,22777,0)
- ;;=300.7^^141^1404^2
- ;;^UTILITY(U,$J,358.3,22777,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22777,1,4,0)
- ;;=4^300.7
- ;;^UTILITY(U,$J,358.3,22777,1,5,0)
- ;;=5^Hyponchondriasis
- ;;^UTILITY(U,$J,358.3,22777,2)
- ;;=^60556
- ;;^UTILITY(U,$J,358.3,22778,0)
- ;;=300.81^^141^1404^3
- ;;^UTILITY(U,$J,358.3,22778,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22778,1,4,0)
- ;;=4^300.81
- ;;^UTILITY(U,$J,358.3,22778,1,5,0)
- ;;=5^Somatization Disorder
- ;;^UTILITY(U,$J,358.3,22778,2)
- ;;=^112280
- ;;^UTILITY(U,$J,358.3,22779,0)
- ;;=303.90^^141^1405^12
- ;;^UTILITY(U,$J,358.3,22779,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22779,1,4,0)
- ;;=4^303.90
- ;;^UTILITY(U,$J,358.3,22779,1,5,0)
- ;;=5^Alcohol Dependence
- ;;^UTILITY(U,$J,358.3,22779,2)
- ;;=^268187
- ;;^UTILITY(U,$J,358.3,22780,0)
- ;;=303.93^^141^1405^11
- ;;^UTILITY(U,$J,358.3,22780,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22780,1,4,0)
- ;;=4^303.93
- ;;^UTILITY(U,$J,358.3,22780,1,5,0)
- ;;=5^Alcohol Dep-Remission
- ;;^UTILITY(U,$J,358.3,22780,2)
- ;;=^268190
- ;;^UTILITY(U,$J,358.3,22781,0)
- ;;=305.00^^141^1405^9
- ;;^UTILITY(U,$J,358.3,22781,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22781,1,4,0)
- ;;=4^305.00
- ;;^UTILITY(U,$J,358.3,22781,1,5,0)
- ;;=5^Alcohol Abuse
- ;;^UTILITY(U,$J,358.3,22781,2)
- ;;=^268227
- ;;^UTILITY(U,$J,358.3,22782,0)
- ;;=305.03^^141^1405^10
- ;;^UTILITY(U,$J,358.3,22782,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22782,1,4,0)
- ;;=4^305.03
- ;;^UTILITY(U,$J,358.3,22782,1,5,0)
- ;;=5^Alcohol Abuse-Remission
- ;;^UTILITY(U,$J,358.3,22782,2)
- ;;=^268230
- ;;^UTILITY(U,$J,358.3,22783,0)
- ;;=304.00^^141^1405^74
- ;;^UTILITY(U,$J,358.3,22783,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22783,1,4,0)
- ;;=4^304.00
- ;;^UTILITY(U,$J,358.3,22783,1,5,0)
- ;;=5^Opioid Dependence
- ;;^UTILITY(U,$J,358.3,22783,2)
- ;;=^81364
- ;;^UTILITY(U,$J,358.3,22784,0)
- ;;=304.23^^141^1405^72
- ;;^UTILITY(U,$J,358.3,22784,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22784,1,4,0)
- ;;=4^304.23
- ;;^UTILITY(U,$J,358.3,22784,1,5,0)
- ;;=5^Opioid Dep-Remission
- ;;^UTILITY(U,$J,358.3,22784,2)
- ;;=^268200
- ;;^UTILITY(U,$J,358.3,22785,0)
- ;;=305.50^^141^1405^68
- ;;^UTILITY(U,$J,358.3,22785,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22785,1,4,0)
- ;;=4^305.50
- ;;^UTILITY(U,$J,358.3,22785,1,5,0)
- ;;=5^Opioid Abuse
- ;;^UTILITY(U,$J,358.3,22785,2)
- ;;=^85868
- ;;^UTILITY(U,$J,358.3,22786,0)
- ;;=305.53^^141^1405^71
- ;;^UTILITY(U,$J,358.3,22786,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22786,1,4,0)
- ;;=4^305.53
- ;;^UTILITY(U,$J,358.3,22786,1,5,0)
- ;;=5^Opioid Abuse-Remission
- ;;^UTILITY(U,$J,358.3,22786,2)
- ;;=^268246
- ;;^UTILITY(U,$J,358.3,22787,0)
- ;;=304.10^^141^1405^31
- ;;^UTILITY(U,$J,358.3,22787,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22787,1,4,0)
- ;;=4^304.10
- ;;^UTILITY(U,$J,358.3,22787,1,5,0)
- ;;=5^Anxiolytic Dependence
- ;;^UTILITY(U,$J,358.3,22787,2)
- ;;=^268194
- ;;^UTILITY(U,$J,358.3,22788,0)
- ;;=304.13^^141^1405^28
- ;;^UTILITY(U,$J,358.3,22788,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22788,1,4,0)
- ;;=4^304.13
- ;;^UTILITY(U,$J,358.3,22788,1,5,0)
- ;;=5^Anxiolytic Dep-Remis
- ;;^UTILITY(U,$J,358.3,22788,2)
- ;;=^268197
- ;;^UTILITY(U,$J,358.3,22789,0)
- ;;=305.40^^141^1405^24
+ ;;^UTILITY(U,$J,358.3,21268,2)
+ ;;=^5055460
+ ;;^UTILITY(U,$J,358.3,21269,0)
+ ;;=T84.83XD^^101^1029^11
+ ;;^UTILITY(U,$J,358.3,21269,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21269,1,3,0)
+ ;;=3^Hemorrhage due to internal orthopedic prosth dev/grft, subs
+ ;;^UTILITY(U,$J,358.3,21269,1,4,0)
+ ;;=4^T84.83XD
+ ;;^UTILITY(U,$J,358.3,21269,2)
+ ;;=^5055461
+ ;;^UTILITY(U,$J,358.3,21270,0)
+ ;;=T84.83XS^^101^1029^12
+ ;;^UTILITY(U,$J,358.3,21270,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21270,1,3,0)
+ ;;=3^Hemorrhage due to internal orthopedic prosth dev/grft, sequela
+ ;;^UTILITY(U,$J,358.3,21270,1,4,0)
+ ;;=4^T84.83XS
+ ;;^UTILITY(U,$J,358.3,21270,2)
+ ;;=^5055462
+ ;;^UTILITY(U,$J,358.3,21271,0)
+ ;;=T84.89XA^^101^1029^1
+ ;;^UTILITY(U,$J,358.3,21271,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21271,1,3,0)
+ ;;=3^Comp of internal orthopedic prosth dev/grft, init
+ ;;^UTILITY(U,$J,358.3,21271,1,4,0)
+ ;;=4^T84.89XA
+ ;;^UTILITY(U,$J,358.3,21271,2)
+ ;;=^5055472
+ ;;^UTILITY(U,$J,358.3,21272,0)
+ ;;=T84.89XD^^101^1029^2
+ ;;^UTILITY(U,$J,358.3,21272,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21272,1,3,0)
+ ;;=3^Comp of internal orthopedic prosth dev/grft, subs
+ ;;^UTILITY(U,$J,358.3,21272,1,4,0)
+ ;;=4^T84.89XD
+ ;;^UTILITY(U,$J,358.3,21272,2)
+ ;;=^5055473
+ ;;^UTILITY(U,$J,358.3,21273,0)
+ ;;=T84.89XS^^101^1029^3
+ ;;^UTILITY(U,$J,358.3,21273,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21273,1,3,0)
+ ;;=3^Comp of internal orthopedic prosth dev/grft, sequela
+ ;;^UTILITY(U,$J,358.3,21273,1,4,0)
+ ;;=4^T84.89XS
+ ;;^UTILITY(U,$J,358.3,21273,2)
+ ;;=^5055474
+ ;;^UTILITY(U,$J,358.3,21274,0)
+ ;;=T84.84XA^^101^1029^13
+ ;;^UTILITY(U,$J,358.3,21274,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21274,1,3,0)
+ ;;=3^Pain due to internal orthopedic prosth dev/grft, init
+ ;;^UTILITY(U,$J,358.3,21274,1,4,0)
+ ;;=4^T84.84XA
+ ;;^UTILITY(U,$J,358.3,21274,2)
+ ;;=^5055463
+ ;;^UTILITY(U,$J,358.3,21275,0)
+ ;;=T84.84XD^^101^1029^14
+ ;;^UTILITY(U,$J,358.3,21275,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21275,1,3,0)
+ ;;=3^Pain due to internal orthopedic prosth dev/grft, subs
+ ;;^UTILITY(U,$J,358.3,21275,1,4,0)
+ ;;=4^T84.84XD
+ ;;^UTILITY(U,$J,358.3,21275,2)
+ ;;=^5055464
+ ;;^UTILITY(U,$J,358.3,21276,0)
+ ;;=T84.84XS^^101^1029^15
+ ;;^UTILITY(U,$J,358.3,21276,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21276,1,3,0)
+ ;;=3^Pain due to internal orthopedic prosth dev/grft, sequela
+ ;;^UTILITY(U,$J,358.3,21276,1,4,0)
+ ;;=4^T84.84XS
+ ;;^UTILITY(U,$J,358.3,21276,2)
+ ;;=^5055465
+ ;;^UTILITY(U,$J,358.3,21277,0)
+ ;;=T84.85XA^^101^1029^16
+ ;;^UTILITY(U,$J,358.3,21277,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21277,1,3,0)
+ ;;=3^Stenosis due to internal orthopedic prosth dev/grft, init
+ ;;^UTILITY(U,$J,358.3,21277,1,4,0)
+ ;;=4^T84.85XA
+ ;;^UTILITY(U,$J,358.3,21277,2)
+ ;;=^5055466
+ ;;^UTILITY(U,$J,358.3,21278,0)
+ ;;=T84.85XD^^101^1029^17
+ ;;^UTILITY(U,$J,358.3,21278,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21278,1,3,0)
+ ;;=3^Stenosis due to internal orthopedic prosth dev/grft, subs
+ ;;^UTILITY(U,$J,358.3,21278,1,4,0)
+ ;;=4^T84.85XD
+ ;;^UTILITY(U,$J,358.3,21278,2)
+ ;;=^5055467
+ ;;^UTILITY(U,$J,358.3,21279,0)
+ ;;=T84.85XS^^101^1029^18
+ ;;^UTILITY(U,$J,358.3,21279,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21279,1,3,0)
+ ;;=3^Stenosis due to internal orthopedic prosth dev/grft, sequela
+ ;;^UTILITY(U,$J,358.3,21279,1,4,0)
+ ;;=4^T84.85XS
+ ;;^UTILITY(U,$J,358.3,21279,2)
+ ;;=^5055468
+ ;;^UTILITY(U,$J,358.3,21280,0)
+ ;;=T84.86XA^^101^1029^20
+ ;;^UTILITY(U,$J,358.3,21280,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21280,1,3,0)
+ ;;=3^Thrombosis due to internal orthopedic prosth dev/grft, init

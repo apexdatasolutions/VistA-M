@@ -1,6 +1,6 @@
 RCDPBPLM ;WISC/RFJ - bill profile ;1 Jun 99
- ;;4.5;Accounts Receivable;**114,153,159,241,276**;Mar 20, 1995;Build 87
- ;;Per VHA Directive 2004-038, this routine should not be modified.
+ ;;4.5;Accounts Receivable;**114,153,159,241,276,303,301**;Mar 20, 1995;Build 144
+ ;;Per VA Directive 6402, this routine should not be modified.
  ;
  ;
  ;  called from menu option (19)
@@ -47,6 +47,8 @@ INIT ;  initialization for list manager list
  S PRCOUT=$$COMP3^PRCAAPR(RCBILLDA)
  I PRCOUT'="%" S PRCOUT=$$IBEEOBCK^PRCAAPR1(RCBILLDA)
  S RCLINE=RCLINE+1 ; D SET("Bill Number",RCLINE,1,80,.01,IOUON,IOUOFF)
+ ; IA# 6060 for $$BILLREJ^IBJTU6
+ S PRCOUT=PRCOUT_$S($$BILLREJ^IBJTU6($P($P($G(RCDPDATA(430,RCBILLDA,.01,"E")),"^"),"-",2)):"c",1:"") ;PRCA*4.5*303 Add indicator for rejects
  D SET("Bill Number: "_$G(PRCOUT)_$P(RCDPDATA(430,RCBILLDA,.01,"E"),"^"),RCLINE,1,80,0,IOUON,IOUOFF)
  D SET("Category",RCLINE,40,80,2)
  S RCLINE=RCLINE+1 D SET("Date  Prepared",RCLINE,1,80,10)
@@ -141,6 +143,9 @@ INIT ;  initialization for list manager list
  . D SET("To",RCLINE,40,80,65)
  . D SET("Amount",RCLINE,65,80,66)
  ;
+BILLRJ ;====== BILL PROFILE REJECT INSERTED HERE ;LEG
+ I $D(^PRCA(430,RCBILLDA,18)) D REJECT^RCDPBPLI ; prca*4.5*301
+ ;
  ;  repayment plan (show only if there)
  I RCDPDATA(430,RCBILLDA,41,"I") D REPAY^RCDPBPLI
  ;
@@ -152,6 +157,15 @@ INIT ;  initialization for list manager list
  ;
  ;  top data (show only if there)
  I $G(RCDPDATA(430,RCBILLDA,141,"I")) D TOP^RCDPBPLI
+ ;
+ ;
+ ;  cross-servicing referral data(show only if there)
+ I $G(RCDPDATA(430,RCBILLDA,151,"I")) D TCSP^RCDPBPLI
+ ;
+ ;
+ ;  cross-servicing recall data(show only if there)
+ I $G(RCDPDATA(430,RCBILLDA,152,"I"))!$G(RCDPDATA(430,RCBILLDA,153,"I"))!$G(RCDPDATA(430,RCBILLDA,154,"I")) D TCSPRC^RCDPBPLI
+ ;
  ;
  ;  get the report type based on category.  if third party show
  ;  insurance data

@@ -1,110 +1,140 @@
-IBDEI11J ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI11J ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,18650,1,2,0)
- ;;=2^Debr of extensive eczematous;ea addl 10%
- ;;^UTILITY(U,$J,358.3,18650,1,3,0)
- ;;=3^11001
- ;;^UTILITY(U,$J,358.3,18651,0)
- ;;=11300^^122^1190^1
- ;;^UTILITY(U,$J,358.3,18651,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18651,1,2,0)
- ;;=2^Shaving of Epidermal or Dermal Lesions, Single; trunk, arms, legs- 0.5 cm or less
- ;;^UTILITY(U,$J,358.3,18651,1,3,0)
- ;;=3^11300
- ;;^UTILITY(U,$J,358.3,18652,0)
- ;;=11301^^122^1190^2
- ;;^UTILITY(U,$J,358.3,18652,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18652,1,2,0)
- ;;=2^Shaving of Epidermal or Dermal Lesion, Single; trunk, arms or legs- 0.6 to 1.0 cm
- ;;^UTILITY(U,$J,358.3,18652,1,3,0)
- ;;=3^11301
- ;;^UTILITY(U,$J,358.3,18653,0)
- ;;=11302^^122^1190^3
- ;;^UTILITY(U,$J,358.3,18653,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18653,1,2,0)
- ;;=2^Shaving of Epidermal or Dermal Lesion, Single- trunk, arms or legs 1.1 to 2.0 cm
- ;;^UTILITY(U,$J,358.3,18653,1,3,0)
- ;;=3^11302
- ;;^UTILITY(U,$J,358.3,18654,0)
- ;;=11305^^122^1190^5
- ;;^UTILITY(U,$J,358.3,18654,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18654,1,2,0)
- ;;=2^Shaving of Epidermal or Dermal Lesion Single; scalp, neck, hands, feet, genitalia- 0.5 cm or less
- ;;^UTILITY(U,$J,358.3,18654,1,3,0)
- ;;=3^11305
- ;;^UTILITY(U,$J,358.3,18655,0)
- ;;=11306^^122^1190^6
- ;;^UTILITY(U,$J,358.3,18655,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18655,1,2,0)
- ;;=2^Shaving of Epidermal or Dermal Lesion, Single; scalp, neck, hands, feet, genitalia- 0.6 to 1.0 cm 
- ;;^UTILITY(U,$J,358.3,18655,1,3,0)
- ;;=3^11306
- ;;^UTILITY(U,$J,358.3,18656,0)
- ;;=11307^^122^1190^7
- ;;^UTILITY(U,$J,358.3,18656,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18656,1,2,0)
- ;;=2^Shaving of Epidermal or Dermal Lesion, Single; scalp, neck, hands, feet, genitalia- 1.1 to 2.0 cm
- ;;^UTILITY(U,$J,358.3,18656,1,3,0)
- ;;=3^11307
- ;;^UTILITY(U,$J,358.3,18657,0)
- ;;=11308^^122^1190^8
- ;;^UTILITY(U,$J,358.3,18657,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18657,1,2,0)
- ;;=2^Shaving of Epidermal or Dermal Lesion, Single; scalp, neck, hands, feet, genitalia- over 2.0 cm
- ;;^UTILITY(U,$J,358.3,18657,1,3,0)
- ;;=3^11308
- ;;^UTILITY(U,$J,358.3,18658,0)
- ;;=11303^^122^1190^4^^^^1
- ;;^UTILITY(U,$J,358.3,18658,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18658,1,2,0)
- ;;=2^Shaving of Epidermal or Dermal Lesion, Single; trunk, arms or legs- over 2.0 cm
- ;;^UTILITY(U,$J,358.3,18658,1,3,0)
- ;;=3^11303
- ;;^UTILITY(U,$J,358.3,18659,0)
- ;;=11719^^122^1191^1^^^^1
- ;;^UTILITY(U,$J,358.3,18659,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18659,1,2,0)
- ;;=2^Trimming Nondystrophic Nails, any number
- ;;^UTILITY(U,$J,358.3,18659,1,3,0)
- ;;=3^11719
- ;;^UTILITY(U,$J,358.3,18660,0)
- ;;=G0127^^122^1191^2^^^^1
- ;;^UTILITY(U,$J,358.3,18660,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18660,1,2,0)
- ;;=2^Trimming Dystrophic Nails, any number
- ;;^UTILITY(U,$J,358.3,18660,1,3,0)
- ;;=3^G0127
- ;;^UTILITY(U,$J,358.3,18661,0)
- ;;=11720^^122^1191^3^^^^1
- ;;^UTILITY(U,$J,358.3,18661,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18661,1,2,0)
- ;;=2^Debridement of Nail(s)any method(s); 1-5 
- ;;^UTILITY(U,$J,358.3,18661,1,3,0)
- ;;=3^11720
- ;;^UTILITY(U,$J,358.3,18662,0)
- ;;=11721^^122^1191^4^^^^1
- ;;^UTILITY(U,$J,358.3,18662,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18662,1,2,0)
- ;;=2^Debridement of Nails any method; 6 or more
- ;;^UTILITY(U,$J,358.3,18662,1,3,0)
- ;;=3^11721
- ;;^UTILITY(U,$J,358.3,18663,0)
- ;;=11730^^122^1191^5^^^^1
- ;;^UTILITY(U,$J,358.3,18663,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18663,1,2,0)
- ;;=2^Avulsion of Nail Plate,part/comp,single
+ ;;^UTILITY(U,$J,358.3,17326,2)
+ ;;=^5063527
+ ;;^UTILITY(U,$J,358.3,17327,0)
+ ;;=Z88.4^^88^861^3
+ ;;^UTILITY(U,$J,358.3,17327,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17327,1,3,0)
+ ;;=3^Allergy to Anesthetic Agent
+ ;;^UTILITY(U,$J,358.3,17327,1,4,0)
+ ;;=4^Z88.4
+ ;;^UTILITY(U,$J,358.3,17327,2)
+ ;;=^5063525
+ ;;^UTILITY(U,$J,358.3,17328,0)
+ ;;=Z88.3^^88^861^4
+ ;;^UTILITY(U,$J,358.3,17328,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17328,1,3,0)
+ ;;=3^Allergy to Anti-Infective Agents
+ ;;^UTILITY(U,$J,358.3,17328,1,4,0)
+ ;;=4^Z88.3
+ ;;^UTILITY(U,$J,358.3,17328,2)
+ ;;=^5063524
+ ;;^UTILITY(U,$J,358.3,17329,0)
+ ;;=Z91.030^^88^861^5
+ ;;^UTILITY(U,$J,358.3,17329,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17329,1,3,0)
+ ;;=3^Allergy to Bee Sting
+ ;;^UTILITY(U,$J,358.3,17329,1,4,0)
+ ;;=4^Z91.030
+ ;;^UTILITY(U,$J,358.3,17329,2)
+ ;;=^5063605
+ ;;^UTILITY(U,$J,358.3,17330,0)
+ ;;=Z88.9^^88^861^6
+ ;;^UTILITY(U,$J,358.3,17330,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17330,1,3,0)
+ ;;=3^Allergy to Drug/Meds/Biol Substance,Unspec
+ ;;^UTILITY(U,$J,358.3,17330,1,4,0)
+ ;;=4^Z88.9
+ ;;^UTILITY(U,$J,358.3,17330,2)
+ ;;=^5063530
+ ;;^UTILITY(U,$J,358.3,17331,0)
+ ;;=Z91.012^^88^861^7
+ ;;^UTILITY(U,$J,358.3,17331,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17331,1,3,0)
+ ;;=3^Allergy to Eggs
+ ;;^UTILITY(U,$J,358.3,17331,1,4,0)
+ ;;=4^Z91.012
+ ;;^UTILITY(U,$J,358.3,17331,2)
+ ;;=^5063601
+ ;;^UTILITY(U,$J,358.3,17332,0)
+ ;;=Z91.02^^88^861^8
+ ;;^UTILITY(U,$J,358.3,17332,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17332,1,3,0)
+ ;;=3^Allergy to Food Additives
+ ;;^UTILITY(U,$J,358.3,17332,1,4,0)
+ ;;=4^Z91.02
+ ;;^UTILITY(U,$J,358.3,17332,2)
+ ;;=^5063604
+ ;;^UTILITY(U,$J,358.3,17333,0)
+ ;;=Z91.018^^88^861^9
+ ;;^UTILITY(U,$J,358.3,17333,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17333,1,3,0)
+ ;;=3^Allergy to Food,Other
+ ;;^UTILITY(U,$J,358.3,17333,1,4,0)
+ ;;=4^Z91.018
+ ;;^UTILITY(U,$J,358.3,17333,2)
+ ;;=^5063603
+ ;;^UTILITY(U,$J,358.3,17334,0)
+ ;;=Z91.040^^88^861^10
+ ;;^UTILITY(U,$J,358.3,17334,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17334,1,3,0)
+ ;;=3^Allergy to Latex
+ ;;^UTILITY(U,$J,358.3,17334,1,4,0)
+ ;;=4^Z91.040
+ ;;^UTILITY(U,$J,358.3,17334,2)
+ ;;=^5063607
+ ;;^UTILITY(U,$J,358.3,17335,0)
+ ;;=Z91.011^^88^861^11
+ ;;^UTILITY(U,$J,358.3,17335,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17335,1,3,0)
+ ;;=3^Allergy to Milk Products
+ ;;^UTILITY(U,$J,358.3,17335,1,4,0)
+ ;;=4^Z91.011
+ ;;^UTILITY(U,$J,358.3,17335,2)
+ ;;=^5063600
+ ;;^UTILITY(U,$J,358.3,17336,0)
+ ;;=Z88.5^^88^861^12
+ ;;^UTILITY(U,$J,358.3,17336,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17336,1,3,0)
+ ;;=3^Allergy to Narcotic Agent
+ ;;^UTILITY(U,$J,358.3,17336,1,4,0)
+ ;;=4^Z88.5
+ ;;^UTILITY(U,$J,358.3,17336,2)
+ ;;=^5063526
+ ;;^UTILITY(U,$J,358.3,17337,0)
+ ;;=Z91.09^^88^861^13
+ ;;^UTILITY(U,$J,358.3,17337,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17337,1,3,0)
+ ;;=3^Allergy to Other Substances
+ ;;^UTILITY(U,$J,358.3,17337,1,4,0)
+ ;;=4^Z91.09
+ ;;^UTILITY(U,$J,358.3,17337,2)
+ ;;=^5063610
+ ;;^UTILITY(U,$J,358.3,17338,0)
+ ;;=Z91.010^^88^861^14
+ ;;^UTILITY(U,$J,358.3,17338,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17338,1,3,0)
+ ;;=3^Allergy to Peanuts
+ ;;^UTILITY(U,$J,358.3,17338,1,4,0)
+ ;;=4^Z91.010
+ ;;^UTILITY(U,$J,358.3,17338,2)
+ ;;=^5063599
+ ;;^UTILITY(U,$J,358.3,17339,0)
+ ;;=Z88.0^^88^861^15
+ ;;^UTILITY(U,$J,358.3,17339,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17339,1,3,0)
+ ;;=3^Allergy to Penicillin
+ ;;^UTILITY(U,$J,358.3,17339,1,4,0)
+ ;;=4^Z88.0
+ ;;^UTILITY(U,$J,358.3,17339,2)
+ ;;=^5063521
+ ;;^UTILITY(U,$J,358.3,17340,0)
+ ;;=Z91.041^^88^861^16
+ ;;^UTILITY(U,$J,358.3,17340,1,0)
+ ;;=^358.31IA^4^2

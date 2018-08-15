@@ -1,6 +1,6 @@
-RCBEADJ ;WISC/RFJ-adjustment ;1 Mar 2001
- ;;4.5;Accounts Receivable;**169,172,204,173,208,233**;Mar 20, 1995;Build 4
- ;;Per VHA Directive 2004-038, this routine should not be modified.
+RCBEADJ ;WISC/RFJ-adjustment ;Jun 06, 2014@19:11:19
+ ;;4.5;Accounts Receivable;**169,172,204,173,208,233,298,301**;Mar 20, 1995;Build 144
+ ;Per VA Directive 6402, this routine should not be modified.
  Q
  ;
  ;
@@ -16,7 +16,7 @@ INCREASE ;  menu option: create an increase adjustment
 ADJUST(RCBETYPE,RCEDI) ;  create an adjustment
  ;  rcbetype = INCREASE for increase or DECREASE for decrease
  ;  rcedi = the ien of the bill selected via the EDI Worklist;ien of 
- ;          the ERA entry or null/undefined if bill should be selected
+ ;    XX      the ERA entry or null/undefined if bill should be selected
  N RCBILLDA
  F  D  Q:RCBILLDA<0!$G(RCEDI)
  .   K RCTRANDA,RCLIST
@@ -24,6 +24,8 @@ ADJUST(RCBETYPE,RCEDI) ;  create an adjustment
  .   ;  select a bill
  .   S RCBILLDA=$S('$G(RCEDI):$$GETABILL^RCBEUBIL,1:+RCEDI)
  .   I RCBILLDA<1 Q
+ .   I $D(^PRCA(430,"TCSP",RCBILLDA)),(RCBETYPE="INCREASE") W !,"BILL HAS BEEN REFERRED TO CROSS-SERVICING.",!,"NO MANUAL INCREASE ADJUSTMENTS ARE ALLOWED." Q  ;prca*4.5*301
+ .   I $D(^PRCA(430,"TCSP",RCBILLDA)),(RCBETYPE="DECREASE") S %=2 W !!,"IS THIS ACTION BEING PERFORMED DUE TO THE CLAIMS MATCHING PROCESS? " D YN^DICN Q:(%<0)!(%=2)  ;prca*4.5*301
  .   ;
  .   ;  adjust the bill
  .   D ADJBILL(RCBETYPE,RCBILLDA,$P($G(RCEDI),";",2))
@@ -33,7 +35,7 @@ ADJBILL(RCBETYPE,RCBILLDA,RCEDIWL) ;  adjust a bill
  ; RCEDIWL = ien of ERA entry if called from worklist
  N RCAMOUNT,RCBALANC,RCDATA7,RCLIST,RCONTADJ,RCTRANDA,TOTALCAL,TOTALSTO,I,X,Y
  ;  lock the bill
- L +^PRCA(430,RCBILLDA):5 I '$T W !,"ANOTHER USER IS CURRENTLY WORKING WITH THIS BILL." Q
+ L +^PRCA(430,RCBILLDA):5 E  W !,"ANOTHER USER IS CURRENTLY WORKING WITH THIS BILL." Q
  ;
  ;  show data for the bill
  D SHOWBILL^RCWROFF1(RCBILLDA)
@@ -82,17 +84,17 @@ ADJBILL(RCBETYPE,RCBILLDA,RCEDIWL) ;  adjust a bill
  ;  ask to close/cancel it
  I RCBETYPE="DECREASE",'$G(^PRCA(430,RCBILLDA,7)) W !!,"Note: This bill has NO PRINCIPAL BALANCE to decrease !" D INTADMIN(RCBILLDA),UNLOCK Q
  ;
- ; if entry is from EDI Lockbox worklist, display total adjusments in ERA
- I $G(RCEDIWL) D
- . N X,Y,Z,Z0,Z1
- . S Z0=$J(+$P($$BILL^RCJIBFN2(RCBILLDA),U,3),"",2),Y=0
- . S Z=0 F  S Z=$O(^TMP("RC_BILL",$J,RCBILLDA,Z)) Q:'Z  D
- .. S X=+$P($G(^TMP("RCDPE-EOB_WLDX",$J,Z)),U,2)
- .. Q:'X
- .. S Y=Y+$P($G(^RCY(344.49,RCEDIWL,1,X,0)),U,6)
- . Q:'Y
- . W !,"          TOTAL PAYMENT(s) TO POST FROM THIS ERA: ",$J(Y,"",2)
- . W !,"EXPECTED CLAIM ADJUSTMENT IF ALL POST SUCCESSFUL: ",$J($G(^PRCA(430,RCBILLDA,7))-Y,"",2)
+ ; If entry is from EDI Lockbox worklist, display total adjustments in ERA
+ N AP D
+ .N BILL,EOB,ERA,SEQ S ERA="",AP=0
+ .F  S ERA=$O(^RCY(344.4,"AP",1,ERA)) Q:'ERA  D  Q:AP
+ ..S SEQ=0
+ ..F  S SEQ=$O(^RCY(344.4,"AP",1,ERA,SEQ)) Q:'SEQ  D  Q:AP
+ ...S EOB=$P($G(^RCY(344.4,ERA,1,SEQ,0)),U,2) Q:'EOB
+ ...S:$P($G(^IBM(361.1,EOB,0)),U)=RCBILLDA AP=1 ;IA #4051
+ ;
+ ;  Ask to enter transaction even though it is marked for autopost PRCA*4.5*298
+ I RCBETYPE="DECREASE",AP S Y=$$ASKAUPO() I Y'=1 W !,"Exiting bill adjustment." D UNLOCK Q
  ;
  ;  ask to enter adjustment amount
  S RCAMOUNT=$$AMOUNT(RCBILLDA,RCBETYPE)
@@ -115,10 +117,11 @@ ADJBILL(RCBETYPE,RCBILLDA,RCEDIWL) ;  adjust a bill
  ;  ask to enter transaction
  S Y=$$ASKOK(RCBETYPE) I Y'=1 D UNLOCK Q
  ;
- ;  add adjustment
+ADDADJ ;  add adjustment
  S RCTRANDA=$$INCDEC^RCBEUTR1(RCBILLDA,RCAMOUNT,"","","",$G(RCONTADJ))
  I 'RCTRANDA W !,"  *** W A R N I N G: Adjustment NOT Processed! ***" D UNLOCK Q
  I RCTRANDA W !,"  Adjustment Transaction: ",RCTRANDA," has been added."
+ I RCTRANDA,'$G(RCEDIWL),(RCBETYPE="DECREASE"),$D(^PRCA(430,"TCSP",RCBILLDA)) D DECADJ^RCTCSPU(RCBILLDA,RCTRANDA) ;prca*4.5*301 add cs decrease adjustment
  I '$G(REFMS)&(DT>$$LDATE^RCRJR(DT)) S Y=$E($$FPS^RCAMFN01(DT,1),1,5)_"01" D DD^%DT W !!,"   * * * * Transmission will be held until "_Y_" * * * *"
  ;
  ;  ask to enter a comment
@@ -165,6 +168,9 @@ INTADMIN(RCBILLDA) ;  ask and adjust the interest and admin
  S RCTRANDA=$$EXEMPT^RCBEUTR2(RCBILLDA,$P(RCAMOUNT,"^",2)_"^"_$P(RCAMOUNT,"^",3)_"^^"_$P(RCAMOUNT,"^",4)_"^"_$P(RCAMOUNT,"^",5))
  I 'RCTRANDA W !,"  *** W A R N I N G: EXEMPTION NOT Processed! ***" Q
  I RCTRANDA W !,"   Exempt Transaction: ",RCTRANDA," has been added."
+INTC35B ;Check if CS5B entry needed for exempt transaction
+ I RCTRANDA,'$G(RCEDIWL),(RCBETYPE="DECREASE"),$D(^PRCA(430,"TCSP",RCBILLDA)) D DECADJ^RCTCSPU(RCBILLDA,RCTRANDA) ;prca*4.5*301 add cs exempt
+ I '$G(REFMS)&(DT>$$LDATE^RCRJR(DT)) S Y=$E($$FPS^RCAMFN01(DT,1),1,5)_"01" D DD^%DT W !!,"   * * * * Transmission will be held until "_Y_" * * * *"
  ;
  W !,"  Current Bill Status: ",$P($G(^PRCA(430.3,+$P($G(^PRCA(430,RCBILLDA,0)),"^",8),0)),"^")
  Q
@@ -177,6 +183,13 @@ ASKOK(RCBETYPE) ;  ask record decrease or increase transaction
  I $G(DTOUT)!($G(DUOUT)) S Y=-1
  Q Y
  ;
+ASKAUPO() ;  ask record even though marked for auto post PRCA*4.5*298
+ N DIR,DIQ2,DIRUT,DTOUT,DUOUT,X,Y
+ S DIR(0)="YOA",DIR("B")="NO"
+ S DIR("A")="Marked for Auto-Post. Are you sure? (Y/N) "
+ W ! D ^DIR
+ I $G(DTOUT)!($G(DUOUT)) S Y=-1
+ Q Y
  ;
 ASKFIX() ;  ask to fix bill's balance
  N DIR,DIQ2,DIRUT,DTOUT,DUOUT,X,Y
@@ -204,7 +217,6 @@ ASKCONT() ;  ask if contract adjustment
  I $G(DTOUT)!($G(DUOUT)) S Y=-1
  Q Y
  ;
- ;
 ADJNUM(RCBILLDA) ;  get next adjustment number for a bill
  N %,ADJUST,DATA1,RCTRANDA
  S RCTRANDA=0
@@ -222,3 +234,4 @@ AMOUNT(RCBILLDA,RCBETYPE) ;  enter the adjustment amount for a bill
  D ^DIR
  I $G(DTOUT)!($G(DUOUT)) S Y=-1
  Q $S(Y'="":Y,1:-1)
+ ;

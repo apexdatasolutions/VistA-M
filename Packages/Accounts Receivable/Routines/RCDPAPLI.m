@@ -1,8 +1,7 @@
 RCDPAPLI ;WISC/RFJ-account profile top list manager init ;1 Jun 99
- ;;4.5;Accounts Receivable;**114,141,241**;Mar 20, 1995
- ;;Per VHA Directive 10-93-142, this routine should not be modified.
+ ;;4.5;Accounts Receivable;**114,141,241,303,301**;Mar 20, 1995;Build 144
+ ;;Per VA Directive 6402, this routine should not be modified.
  Q
- ;
  ;
 INIT ;  init for list manager screen
  N DMCDATA,RCBILLDA,RCCOMM,RCDATA,RCDATE,RCLINE,RCSTATDA,RCTOTAL
@@ -114,6 +113,13 @@ INIT ;  init for list manager screen
  .   .   D SET(" ",RCLINE,1,80)
  .   .   D SET("TOP Hold Date: "_$$SLH^RCFN01($P(TOP6,"^",6)),RCLINE,45,80)
  ;
+ ;   cross-servicing info
+ I $D(^RCD(340,"TCSP",+RCDEBTDA)) D
+ .   S RCLINE=RCLINE+1 D SET(" ",RCLINE,1,80)
+ .   S RCLINE=RCLINE+1
+ .   D SET^RCDPBPLM("Debt Referred to Cross-Servicing",RCLINE,1,80)
+ .   D SET("Total CS Debt: "_$J($$TOTALB^RCTCSPU(+RCDEBTDA),13,2),RCLINE,45,80)
+ ;
  ;  show if hurricane katrina vet
  I $P(^RCD(340,+RCDEBTDA,0),U)["DPT(" S DFN=+^(0) D
  .   Q:$$EMGRES^DGUTL(DFN)'["K"
@@ -136,7 +142,7 @@ INIT ;  init for list manager screen
  ;
  ;
 SETBILL ;  set a bill on the listmanager line
- N DATE,IBCNDATA,RCDPDATA,VALUE
+ N DATE,IBCNDATA,RCDPDATA,REJECT,VALUE
  D DIQ430^RCDPBPLM(RCBILLDA,".01;2;3;8;60;")
  ;
  S RCLINE=RCLINE+1
@@ -145,8 +151,11 @@ SETBILL ;  set a bill on the listmanager line
  S ^TMP("RCDPAPLM",$J,"IDX",RCLINE,RCLINE)=RCBILLDA
  ;
  ;  bill number
+ ;PRCA*4.5*303 - add reject indicator to kbill ; IA# 6060
+ S REJECT=$$BILLREJ^IBJTU6($P(RCDPDATA(430,RCBILLDA,.01,"E"),"-",2))
  D SET(RCLINE,RCLINE,1,80,0,IORVON,IORVOFF)
- D SET($E($P(RCDPDATA(430,RCBILLDA,.01,"E"),"-",2)_"       ",1,7),RCLINE,4,10,0)
+ D SET($S(REJECT:"c",1:"")_$E($P(RCDPDATA(430,RCBILLDA,.01,"E"),"-",2)_"       ",1,7),RCLINE,4,10,0)
+ ;PRCA*4.5*303 - End
  ;
  ;  get date of care
  D DIQ399^RCXFMSUR(RCBILLDA)

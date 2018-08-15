@@ -1,0 +1,130 @@
+IBDEI1I8 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,25141,2)
+ ;;=^5007979
+ ;;^UTILITY(U,$J,358.3,25142,0)
+ ;;=I83.029^^124^1240^56
+ ;;^UTILITY(U,$J,358.3,25142,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25142,1,3,0)
+ ;;=3^Varicose Veins Left Lower Extremity w/ Ulcer
+ ;;^UTILITY(U,$J,358.3,25142,1,4,0)
+ ;;=4^I83.029
+ ;;^UTILITY(U,$J,358.3,25142,2)
+ ;;=^5007986
+ ;;^UTILITY(U,$J,358.3,25143,0)
+ ;;=I87.2^^124^1240^58
+ ;;^UTILITY(U,$J,358.3,25143,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25143,1,3,0)
+ ;;=3^Venous Insufficiency
+ ;;^UTILITY(U,$J,358.3,25143,1,4,0)
+ ;;=4^I87.2
+ ;;^UTILITY(U,$J,358.3,25143,2)
+ ;;=^5008047
+ ;;^UTILITY(U,$J,358.3,25144,0)
+ ;;=R07.9^^124^1240^16
+ ;;^UTILITY(U,$J,358.3,25144,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25144,1,3,0)
+ ;;=3^Chest Pain,Unspec
+ ;;^UTILITY(U,$J,358.3,25144,1,4,0)
+ ;;=4^R07.9
+ ;;^UTILITY(U,$J,358.3,25144,2)
+ ;;=^5019201
+ ;;^UTILITY(U,$J,358.3,25145,0)
+ ;;=Z95.2^^124^1240^36
+ ;;^UTILITY(U,$J,358.3,25145,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25145,1,3,0)
+ ;;=3^Presence of Prosthetic Heart Valve
+ ;;^UTILITY(U,$J,358.3,25145,1,4,0)
+ ;;=4^Z95.2
+ ;;^UTILITY(U,$J,358.3,25145,2)
+ ;;=^5063670
+ ;;^UTILITY(U,$J,358.3,25146,0)
+ ;;=Z95.0^^124^1240^35
+ ;;^UTILITY(U,$J,358.3,25146,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25146,1,3,0)
+ ;;=3^Presence of Cardiac Pacemaker
+ ;;^UTILITY(U,$J,358.3,25146,1,4,0)
+ ;;=4^Z95.0
+ ;;^UTILITY(U,$J,358.3,25146,2)
+ ;;=^5063668
+ ;;^UTILITY(U,$J,358.3,25147,0)
+ ;;=Z95.810^^124^1240^34
+ ;;^UTILITY(U,$J,358.3,25147,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25147,1,3,0)
+ ;;=3^Presence of Automatic Cardiac Defibrillator
+ ;;^UTILITY(U,$J,358.3,25147,1,4,0)
+ ;;=4^Z95.810
+ ;;^UTILITY(U,$J,358.3,25147,2)
+ ;;=^5063674
+ ;;^UTILITY(U,$J,358.3,25148,0)
+ ;;=Z95.1^^124^1240^33
+ ;;^UTILITY(U,$J,358.3,25148,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25148,1,3,0)
+ ;;=3^Presence of Aortocoronary Bypass Graft
+ ;;^UTILITY(U,$J,358.3,25148,1,4,0)
+ ;;=4^Z95.1
+ ;;^UTILITY(U,$J,358.3,25148,2)
+ ;;=^5063669
+ ;;^UTILITY(U,$J,358.3,25149,0)
+ ;;=I71.3^^124^1240^1
+ ;;^UTILITY(U,$J,358.3,25149,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25149,1,3,0)
+ ;;=3^Abdominal Aortic Aneurysm w/ Rupture
+ ;;^UTILITY(U,$J,358.3,25149,1,4,0)
+ ;;=4^I71.3
+ ;;^UTILITY(U,$J,358.3,25149,2)
+ ;;=^5007788
+ ;;^UTILITY(U,$J,358.3,25150,0)
+ ;;=I25.110^^124^1240^11
+ ;;^UTILITY(U,$J,358.3,25150,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25150,1,3,0)
+ ;;=3^Athscl Hrt Disease of native Coronary Artery w/ Unstable Ang Pctrs
+ ;;^UTILITY(U,$J,358.3,25150,1,4,0)
+ ;;=4^I25.110
+ ;;^UTILITY(U,$J,358.3,25150,2)
+ ;;=^5007108
+ ;;^UTILITY(U,$J,358.3,25151,0)
+ ;;=I25.119^^124^1240^12
+ ;;^UTILITY(U,$J,358.3,25151,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25151,1,3,0)
+ ;;=3^Athscl Hrt Disease of native Coronary Artery w/ Unspec Ang Pctrs
+ ;;^UTILITY(U,$J,358.3,25151,1,4,0)
+ ;;=4^I25.119
+ ;;^UTILITY(U,$J,358.3,25151,2)
+ ;;=^5007111
+ ;;^UTILITY(U,$J,358.3,25152,0)
+ ;;=I25.118^^124^1240^13
+ ;;^UTILITY(U,$J,358.3,25152,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25152,1,3,0)
+ ;;=3^Athscl Hrt Disease of native Coronary Artery w/ Oth Forms Ang Pctrs
+ ;;^UTILITY(U,$J,358.3,25152,1,4,0)
+ ;;=4^I25.118
+ ;;^UTILITY(U,$J,358.3,25152,2)
+ ;;=^5007110
+ ;;^UTILITY(U,$J,358.3,25153,0)
+ ;;=I42.6^^124^1240^9
+ ;;^UTILITY(U,$J,358.3,25153,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25153,1,3,0)
+ ;;=3^Alcoholic Cardiomyopathy
+ ;;^UTILITY(U,$J,358.3,25153,1,4,0)
+ ;;=4^I42.6
+ ;;^UTILITY(U,$J,358.3,25153,2)
+ ;;=^5007197
+ ;;^UTILITY(U,$J,358.3,25154,0)
+ ;;=I42.0^^124^1240^20
+ ;;^UTILITY(U,$J,358.3,25154,1,0)
+ ;;=^358.31IA^4^2

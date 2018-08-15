@@ -1,136 +1,130 @@
-IBDEI12O ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI12O ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,19201,1,3,0)
- ;;=3^845.11
- ;;^UTILITY(U,$J,358.3,19201,1,5,0)
- ;;=5^Sprain of Tarsometatarsal Joint
- ;;^UTILITY(U,$J,358.3,19201,2)
- ;;=Sprain of Tarsometatarsal Joint^274514
- ;;^UTILITY(U,$J,358.3,19202,0)
- ;;=845.12^^125^1234^10
- ;;^UTILITY(U,$J,358.3,19202,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19202,1,3,0)
- ;;=3^845.12
- ;;^UTILITY(U,$J,358.3,19202,1,5,0)
- ;;=5^Sprain of Metatarsophalageal Jt
- ;;^UTILITY(U,$J,358.3,19202,2)
- ;;=Sprain of Metatarsophalageal jt^274515
- ;;^UTILITY(U,$J,358.3,19203,0)
- ;;=845.13^^125^1234^13
- ;;^UTILITY(U,$J,358.3,19203,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19203,1,3,0)
- ;;=3^845.13
- ;;^UTILITY(U,$J,358.3,19203,1,5,0)
- ;;=5^Sprain of Toe
- ;;^UTILITY(U,$J,358.3,19203,2)
- ;;=Sprain of toe^274516
- ;;^UTILITY(U,$J,358.3,19204,0)
- ;;=733.16^^125^1234^14
- ;;^UTILITY(U,$J,358.3,19204,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19204,1,3,0)
- ;;=3^733.16
- ;;^UTILITY(U,$J,358.3,19204,1,5,0)
- ;;=5^Stress Fracture of Tibia/Fibula
- ;;^UTILITY(U,$J,358.3,19204,2)
- ;;=Stress Fracture of Tibia/Fibula^295757
- ;;^UTILITY(U,$J,358.3,19205,0)
- ;;=719.07^^125^1234^15
- ;;^UTILITY(U,$J,358.3,19205,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19205,1,3,0)
- ;;=3^719.07
- ;;^UTILITY(U,$J,358.3,19205,1,5,0)
- ;;=5^Swelling of Ankle/Foot Joint
- ;;^UTILITY(U,$J,358.3,19205,2)
- ;;=^272366
- ;;^UTILITY(U,$J,358.3,19206,0)
- ;;=729.81^^125^1234^16
- ;;^UTILITY(U,$J,358.3,19206,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19206,1,3,0)
- ;;=3^729.81
- ;;^UTILITY(U,$J,358.3,19206,1,5,0)
- ;;=5^Swelling of Limb
- ;;^UTILITY(U,$J,358.3,19206,2)
- ;;=^272609
- ;;^UTILITY(U,$J,358.3,19207,0)
- ;;=727.06^^125^1234^17
- ;;^UTILITY(U,$J,358.3,19207,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19207,1,3,0)
- ;;=3^727.06
- ;;^UTILITY(U,$J,358.3,19207,1,5,0)
- ;;=5^Synovitis, Foot/Ankle
- ;;^UTILITY(U,$J,358.3,19207,2)
- ;;=^272564
- ;;^UTILITY(U,$J,358.3,19208,0)
- ;;=727.1^^125^1235^1
- ;;^UTILITY(U,$J,358.3,19208,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19208,1,3,0)
- ;;=3^727.1
- ;;^UTILITY(U,$J,358.3,19208,1,5,0)
- ;;=5^Tailor's Bunion/Bunionette
- ;;^UTILITY(U,$J,358.3,19208,2)
- ;;=^17456
- ;;^UTILITY(U,$J,358.3,19209,0)
- ;;=736.71^^125^1235^2
- ;;^UTILITY(U,$J,358.3,19209,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19209,1,3,0)
- ;;=3^736.71
- ;;^UTILITY(U,$J,358.3,19209,1,5,0)
- ;;=5^Talipes Equinovarus
- ;;^UTILITY(U,$J,358.3,19209,2)
- ;;=^272743
- ;;^UTILITY(U,$J,358.3,19210,0)
- ;;=755.67^^125^1235^3
- ;;^UTILITY(U,$J,358.3,19210,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19210,1,3,0)
- ;;=3^755.67
- ;;^UTILITY(U,$J,358.3,19210,1,5,0)
- ;;=5^Tarsal Coalition
- ;;^UTILITY(U,$J,358.3,19210,2)
- ;;=^273060
- ;;^UTILITY(U,$J,358.3,19211,0)
- ;;=355.5^^125^1235^4
- ;;^UTILITY(U,$J,358.3,19211,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19211,1,3,0)
- ;;=3^355.5
- ;;^UTILITY(U,$J,358.3,19211,1,5,0)
- ;;=5^Tarsal Tunnel Syndrom
- ;;^UTILITY(U,$J,358.3,19211,2)
- ;;=^117247
- ;;^UTILITY(U,$J,358.3,19212,0)
- ;;=726.70^^125^1235^5
- ;;^UTILITY(U,$J,358.3,19212,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19212,1,3,0)
- ;;=3^726.70
- ;;^UTILITY(U,$J,358.3,19212,1,5,0)
- ;;=5^Tendinitis of Ankle
- ;;^UTILITY(U,$J,358.3,19212,2)
- ;;=^272548
- ;;^UTILITY(U,$J,358.3,19213,0)
- ;;=726.71^^125^1235^6
- ;;^UTILITY(U,$J,358.3,19213,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19213,1,3,0)
- ;;=3^726.71
- ;;^UTILITY(U,$J,358.3,19213,1,5,0)
- ;;=5^Tendinitis, Achilles
- ;;^UTILITY(U,$J,358.3,19213,2)
- ;;=^272550
- ;;^UTILITY(U,$J,358.3,19214,0)
- ;;=727.06^^125^1235^7
- ;;^UTILITY(U,$J,358.3,19214,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19214,1,3,0)
- ;;=3^727.06
+ ;;^UTILITY(U,$J,358.3,17887,2)
+ ;;=^5008544
+ ;;^UTILITY(U,$J,358.3,17888,0)
+ ;;=K29.90^^91^886^19
+ ;;^UTILITY(U,$J,358.3,17888,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17888,1,3,0)
+ ;;=3^Gastroduodenitis, unspecified, without bleeding
+ ;;^UTILITY(U,$J,358.3,17888,1,4,0)
+ ;;=4^K29.90
+ ;;^UTILITY(U,$J,358.3,17888,2)
+ ;;=^5008556
+ ;;^UTILITY(U,$J,358.3,17889,0)
+ ;;=K29.70^^91^886^17
+ ;;^UTILITY(U,$J,358.3,17889,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17889,1,3,0)
+ ;;=3^Gastritis, unspecified, without bleeding
+ ;;^UTILITY(U,$J,358.3,17889,1,4,0)
+ ;;=4^K29.70
+ ;;^UTILITY(U,$J,358.3,17889,2)
+ ;;=^5008552
+ ;;^UTILITY(U,$J,358.3,17890,0)
+ ;;=K29.71^^91^886^16
+ ;;^UTILITY(U,$J,358.3,17890,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17890,1,3,0)
+ ;;=3^Gastritis, unspecified, with bleeding
+ ;;^UTILITY(U,$J,358.3,17890,1,4,0)
+ ;;=4^K29.71
+ ;;^UTILITY(U,$J,358.3,17890,2)
+ ;;=^5008553
+ ;;^UTILITY(U,$J,358.3,17891,0)
+ ;;=K29.91^^91^886^18
+ ;;^UTILITY(U,$J,358.3,17891,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17891,1,3,0)
+ ;;=3^Gastroduodenitis, unspecified, with bleeding
+ ;;^UTILITY(U,$J,358.3,17891,1,4,0)
+ ;;=4^K29.91
+ ;;^UTILITY(U,$J,358.3,17891,2)
+ ;;=^5008557
+ ;;^UTILITY(U,$J,358.3,17892,0)
+ ;;=E08.43^^91^886^10
+ ;;^UTILITY(U,$J,358.3,17892,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17892,1,3,0)
+ ;;=3^Diab due to undrl cond w diabetic autonm (poly)neuropathy
+ ;;^UTILITY(U,$J,358.3,17892,1,4,0)
+ ;;=4^E08.43
+ ;;^UTILITY(U,$J,358.3,17892,2)
+ ;;=^5002525
+ ;;^UTILITY(U,$J,358.3,17893,0)
+ ;;=E09.43^^91^886^11
+ ;;^UTILITY(U,$J,358.3,17893,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17893,1,3,0)
+ ;;=3^Drug/chem diab w neuro comp w diab autonm (poly)neuropathy
+ ;;^UTILITY(U,$J,358.3,17893,1,4,0)
+ ;;=4^E09.43
+ ;;^UTILITY(U,$J,358.3,17893,2)
+ ;;=^5002567
+ ;;^UTILITY(U,$J,358.3,17894,0)
+ ;;=E10.43^^91^886^28
+ ;;^UTILITY(U,$J,358.3,17894,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17894,1,3,0)
+ ;;=3^Type 1 diabetes w diabetic autonomic (poly)neuropathy
+ ;;^UTILITY(U,$J,358.3,17894,1,4,0)
+ ;;=4^E10.43
+ ;;^UTILITY(U,$J,358.3,17894,2)
+ ;;=^5002607
+ ;;^UTILITY(U,$J,358.3,17895,0)
+ ;;=E11.43^^91^886^29
+ ;;^UTILITY(U,$J,358.3,17895,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17895,1,3,0)
+ ;;=3^Type 2 diabetes w diabetic autonomic (poly)neuropathy
+ ;;^UTILITY(U,$J,358.3,17895,1,4,0)
+ ;;=4^E11.43
+ ;;^UTILITY(U,$J,358.3,17895,2)
+ ;;=^5002647
+ ;;^UTILITY(U,$J,358.3,17896,0)
+ ;;=K31.89^^91^886^27
+ ;;^UTILITY(U,$J,358.3,17896,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17896,1,3,0)
+ ;;=3^Stomach and Duodenum Diseases NEC
+ ;;^UTILITY(U,$J,358.3,17896,1,4,0)
+ ;;=4^K31.89
+ ;;^UTILITY(U,$J,358.3,17896,2)
+ ;;=^5008569
+ ;;^UTILITY(U,$J,358.3,17897,0)
+ ;;=K31.89^^91^886^26
+ ;;^UTILITY(U,$J,358.3,17897,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17897,1,3,0)
+ ;;=3^Portal hypertensive gastropathy
+ ;;^UTILITY(U,$J,358.3,17897,1,4,0)
+ ;;=4^K31.89
+ ;;^UTILITY(U,$J,358.3,17897,2)
+ ;;=^5008569
+ ;;^UTILITY(U,$J,358.3,17898,0)
+ ;;=K94.23^^91^886^21
+ ;;^UTILITY(U,$J,358.3,17898,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17898,1,3,0)
+ ;;=3^Gastrostomy malfunction
+ ;;^UTILITY(U,$J,358.3,17898,1,4,0)
+ ;;=4^K94.23
+ ;;^UTILITY(U,$J,358.3,17898,2)
+ ;;=^5008931
+ ;;^UTILITY(U,$J,358.3,17899,0)
+ ;;=K94.29^^91^886^9
+ ;;^UTILITY(U,$J,358.3,17899,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17899,1,3,0)
+ ;;=3^Complications of gastrostomy NEC
+ ;;^UTILITY(U,$J,358.3,17899,1,4,0)
+ ;;=4^K94.29
+ ;;^UTILITY(U,$J,358.3,17899,2)
+ ;;=^5008932
+ ;;^UTILITY(U,$J,358.3,17900,0)
+ ;;=K94.21^^91^886^20
+ ;;^UTILITY(U,$J,358.3,17900,1,0)
+ ;;=^358.31IA^4^2

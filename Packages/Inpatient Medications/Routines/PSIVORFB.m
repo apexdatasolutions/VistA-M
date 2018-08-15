@@ -1,5 +1,5 @@
-PSIVORFB ;BIR/MLM-FILE/RETRIEVE ORDERS IN ^PS(55 ;25 Sep 98 / 2:24 PM
- ;;5.0;INPATIENT MEDICATIONS ;**3,18,28,68,58,85,110,111,120,134,213,161,181,273,267,285,257,299**;16 DEC 97;Build 11
+PSIVORFB ;BIR/MLM - FILE/RETRIEVE ORDERS IN ^PS(55 ;25 Sep 98 / 2:24 PM
+ ;;5.0;INPATIENT MEDICATIONS;**3,18,28,68,58,85,110,111,120,134,213,161,181,273,267,285,257,299,323,335**;16 DEC 97;Build 6
  ;
  ; Reference to ^PS(50.7 is supported by DBIA #2180.
  ; Reference to ^PS(51.2 is supported by DBIA #2178.
@@ -53,12 +53,14 @@ LOCK0 F  L +^PS(55,DFN,"IV",0):$S($G(DILOCKTM)>0:DILOCKTM,1:3) I  Q
 SET55 ; Move data from local variables to 55.
  I '$D(ON55) W !,"*** Can't create this order at this time ***" Q
  N DA,DIK,ND,PSIVACT,PSIVDUR,PSJTROPI,PSJTROPL
+ I P(9)["PRN" S $P(ZZND,"^",3)="",PSGS0XT="",P(15)=""  ;*323 - If the schedule is changed to PRN, make sure the frequency of the original schedule is removed.
  I (($P($G(ZZND),"^",3))=""&($G(PSGS0XT)="")) S P(15)="" ;*285 - Prevent frequency hangover when changing from non-null to null
  S:'$D(P(21)) (P(21),P("21FLG"))="" S ND(0)=+ON55,P(22)=$S(VAIN(4):+VAIN(4),1:.5) F X=2:1:23 I $D(P(X)) S $P(ND(0),U,X)=P(X)
  S ND(.3)=$G(P("INS")),ND(2.5)="" N X S X=$S($G(PSGORD):PSGORD,1:$G(ON)) I X D
  .N PKG S PKG=$E(X,$L(X)) S PKG=$S(PKG="V":"""IV""",PKG="U":5,PKG="P":"P",1:"") Q:PKG=""
  .S PSIVDUR=$$GETDUR^PSJLIVMD(DFN,+X,$E(X,$L(X)),1) Q:PSIVDUR=""
  .I $G(IVLIMIT) S ND(2.5)="^^^"_PSIVDUR K IVLIMIT Q
+ I P("DTYP")]"" S P("DO")=""
  S $P(ND(0),U,17)="A",ND(1)=P("REM"),ND(3)=P("OPI"),ND(.2)=$P($G(P("PD")),U)_U_$G(P("DO"))_U_+P("MR")_U_$G(P("PRY"))_U_$G(P("NAT"))_U_U_U_$G(P("PRNTON"))
  F X=0,1,2.5,3,.2,.3 S ^PS(55,DFN,"IV",+ON55,X)=ND(X)
  ; PSJ*5*213 - if Piggyback, intermittent syringe, or

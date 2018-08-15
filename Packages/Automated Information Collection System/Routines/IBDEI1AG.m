@@ -1,138 +1,124 @@
-IBDEI1AG ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1AG ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,23066,1,5,0)
- ;;=5^Nausea & vomiting
- ;;^UTILITY(U,$J,358.3,23066,2)
- ;;=nausea and vomiting^81644
- ;;^UTILITY(U,$J,358.3,23067,0)
- ;;=787.03^^144^1419^145
- ;;^UTILITY(U,$J,358.3,23067,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23067,1,4,0)
- ;;=4^787.03
- ;;^UTILITY(U,$J,358.3,23067,1,5,0)
- ;;=5^Vomiting Alone
- ;;^UTILITY(U,$J,358.3,23067,2)
- ;;=Vomiting Alone^127237
- ;;^UTILITY(U,$J,358.3,23068,0)
- ;;=784.8^^144^1419^29
- ;;^UTILITY(U,$J,358.3,23068,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23068,1,4,0)
- ;;=4^784.8
- ;;^UTILITY(U,$J,358.3,23068,1,5,0)
- ;;=5^Bleeding from throat
- ;;^UTILITY(U,$J,358.3,23068,2)
- ;;=^273371
- ;;^UTILITY(U,$J,358.3,23069,0)
- ;;=525.9^^144^1419^46
- ;;^UTILITY(U,$J,358.3,23069,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23069,1,4,0)
- ;;=4^525.9
- ;;^UTILITY(U,$J,358.3,23069,1,5,0)
- ;;=5^Dental Pain
- ;;^UTILITY(U,$J,358.3,23069,2)
- ;;=Dental Pain^123871
- ;;^UTILITY(U,$J,358.3,23070,0)
- ;;=784.7^^144^1419^64
- ;;^UTILITY(U,$J,358.3,23070,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23070,1,4,0)
- ;;=4^784.7
- ;;^UTILITY(U,$J,358.3,23070,1,5,0)
- ;;=5^Epistaxis
- ;;^UTILITY(U,$J,358.3,23070,2)
- ;;=Epistaxis^41658
- ;;^UTILITY(U,$J,358.3,23071,0)
- ;;=784.0^^144^1419^71
- ;;^UTILITY(U,$J,358.3,23071,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23071,1,4,0)
- ;;=4^784.0
- ;;^UTILITY(U,$J,358.3,23071,1,5,0)
- ;;=5^Headache
- ;;^UTILITY(U,$J,358.3,23071,2)
- ;;=Headache^54133
- ;;^UTILITY(U,$J,358.3,23072,0)
- ;;=784.2^^144^1419^98
- ;;^UTILITY(U,$J,358.3,23072,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23072,1,4,0)
- ;;=4^784.2
- ;;^UTILITY(U,$J,358.3,23072,1,5,0)
- ;;=5^Mass or Lump in Head/Neck
- ;;^UTILITY(U,$J,358.3,23072,2)
- ;;=Mass or Lump in Head/Neck^273367
- ;;^UTILITY(U,$J,358.3,23073,0)
- ;;=784.1^^144^1419^139
- ;;^UTILITY(U,$J,358.3,23073,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23073,1,4,0)
- ;;=4^784.1
- ;;^UTILITY(U,$J,358.3,23073,1,5,0)
- ;;=5^Throat Pain
- ;;^UTILITY(U,$J,358.3,23073,2)
- ;;=Throat Pain^276881
- ;;^UTILITY(U,$J,358.3,23074,0)
- ;;=781.0^^144^1419^12
- ;;^UTILITY(U,$J,358.3,23074,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23074,1,4,0)
- ;;=4^781.0
- ;;^UTILITY(U,$J,358.3,23074,1,5,0)
- ;;=5^Abnormal Involuntary Movement
- ;;^UTILITY(U,$J,358.3,23074,2)
- ;;=Abnormal Involuntary MMovement^23827
- ;;^UTILITY(U,$J,358.3,23075,0)
- ;;=781.2^^144^1419^16
- ;;^UTILITY(U,$J,358.3,23075,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23075,1,4,0)
- ;;=4^781.2
- ;;^UTILITY(U,$J,358.3,23075,1,5,0)
- ;;=5^Abnormality of Gait
- ;;^UTILITY(U,$J,358.3,23075,2)
- ;;=^48820
- ;;^UTILITY(U,$J,358.3,23076,0)
- ;;=305.00^^144^1419^19
- ;;^UTILITY(U,$J,358.3,23076,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23076,1,4,0)
- ;;=4^305.00
- ;;^UTILITY(U,$J,358.3,23076,1,5,0)
- ;;=5^Alcohol Abuse, unsp
- ;;^UTILITY(U,$J,358.3,23076,2)
- ;;=^268227
- ;;^UTILITY(U,$J,358.3,23077,0)
- ;;=784.3^^144^1419^25
- ;;^UTILITY(U,$J,358.3,23077,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23077,1,4,0)
- ;;=4^784.3
- ;;^UTILITY(U,$J,358.3,23077,1,5,0)
- ;;=5^Aphasia
- ;;^UTILITY(U,$J,358.3,23077,2)
- ;;=Aphasia^9453
- ;;^UTILITY(U,$J,358.3,23078,0)
- ;;=781.3^^144^1419^93
- ;;^UTILITY(U,$J,358.3,23078,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23078,1,4,0)
- ;;=4^781.3
- ;;^UTILITY(U,$J,358.3,23078,1,5,0)
- ;;=5^Lack of Coordination
- ;;^UTILITY(U,$J,358.3,23078,2)
- ;;=^11172
- ;;^UTILITY(U,$J,358.3,23079,0)
- ;;=733.6^^144^1419^42
- ;;^UTILITY(U,$J,358.3,23079,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23079,1,4,0)
- ;;=4^733.6
- ;;^UTILITY(U,$J,358.3,23079,1,5,0)
- ;;=5^Costochondritis
- ;;^UTILITY(U,$J,358.3,23079,2)
- ;;=Costochondritis^119586
+ ;;^UTILITY(U,$J,358.3,21528,1,4,0)
+ ;;=4^S06.2X4S
+ ;;^UTILITY(U,$J,358.3,21528,2)
+ ;;=^5020740
+ ;;^UTILITY(U,$J,358.3,21529,0)
+ ;;=S06.2X9S^^101^1032^53
+ ;;^UTILITY(U,$J,358.3,21529,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21529,1,3,0)
+ ;;=3^Diffuse TBI w LOC of unsp duration, sequela
+ ;;^UTILITY(U,$J,358.3,21529,1,4,0)
+ ;;=4^S06.2X9S
+ ;;^UTILITY(U,$J,358.3,21529,2)
+ ;;=^5020755
+ ;;^UTILITY(U,$J,358.3,21530,0)
+ ;;=S06.2X0S^^101^1032^54
+ ;;^UTILITY(U,$J,358.3,21530,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21530,1,3,0)
+ ;;=3^Diffuse TBI w/o LOC, sequela
+ ;;^UTILITY(U,$J,358.3,21530,1,4,0)
+ ;;=4^S06.2X0S
+ ;;^UTILITY(U,$J,358.3,21530,2)
+ ;;=^5020728
+ ;;^UTILITY(U,$J,358.3,21531,0)
+ ;;=S06.4X5S^^101^1032^55
+ ;;^UTILITY(U,$J,358.3,21531,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21531,1,3,0)
+ ;;=3^Epidural hemorrhage w LOC >24 hr w ret consc lev, sequela
+ ;;^UTILITY(U,$J,358.3,21531,1,4,0)
+ ;;=4^S06.4X5S
+ ;;^UTILITY(U,$J,358.3,21531,2)
+ ;;=^5021043
+ ;;^UTILITY(U,$J,358.3,21532,0)
+ ;;=S06.4X6S^^101^1032^56
+ ;;^UTILITY(U,$J,358.3,21532,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21532,1,3,0)
+ ;;=3^Epidural hemorrhage w LOC >24 hr w/o ret consc w surv, sequela
+ ;;^UTILITY(U,$J,358.3,21532,1,4,0)
+ ;;=4^S06.4X6S
+ ;;^UTILITY(U,$J,358.3,21532,2)
+ ;;=^5021046
+ ;;^UTILITY(U,$J,358.3,21533,0)
+ ;;=S06.4X3S^^101^1032^57
+ ;;^UTILITY(U,$J,358.3,21533,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21533,1,3,0)
+ ;;=3^Epidural hemorrhage w LOC of 1-5 hrs 59 min, sequela
+ ;;^UTILITY(U,$J,358.3,21533,1,4,0)
+ ;;=4^S06.4X3S
+ ;;^UTILITY(U,$J,358.3,21533,2)
+ ;;=^5021037
+ ;;^UTILITY(U,$J,358.3,21534,0)
+ ;;=S06.4X1S^^101^1032^58
+ ;;^UTILITY(U,$J,358.3,21534,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21534,1,3,0)
+ ;;=3^Epidural hemorrhage w LOC of 30 minutes or less, sequela
+ ;;^UTILITY(U,$J,358.3,21534,1,4,0)
+ ;;=4^S06.4X1S
+ ;;^UTILITY(U,$J,358.3,21534,2)
+ ;;=^5021031
+ ;;^UTILITY(U,$J,358.3,21535,0)
+ ;;=S06.4X2S^^101^1032^59
+ ;;^UTILITY(U,$J,358.3,21535,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21535,1,3,0)
+ ;;=3^Epidural hemorrhage w LOC of 31-59 min, sequela
+ ;;^UTILITY(U,$J,358.3,21535,1,4,0)
+ ;;=4^S06.4X2S
+ ;;^UTILITY(U,$J,358.3,21535,2)
+ ;;=^5021034
+ ;;^UTILITY(U,$J,358.3,21536,0)
+ ;;=S06.4X4S^^101^1032^60
+ ;;^UTILITY(U,$J,358.3,21536,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21536,1,3,0)
+ ;;=3^Epidural hemorrhage w LOC of 6 hours to 24 hours, sequela
+ ;;^UTILITY(U,$J,358.3,21536,1,4,0)
+ ;;=4^S06.4X4S
+ ;;^UTILITY(U,$J,358.3,21536,2)
+ ;;=^5021040
+ ;;^UTILITY(U,$J,358.3,21537,0)
+ ;;=S06.4X9S^^101^1032^61
+ ;;^UTILITY(U,$J,358.3,21537,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21537,1,3,0)
+ ;;=3^Epidural hemorrhage w LOC of unsp duration, sequela
+ ;;^UTILITY(U,$J,358.3,21537,1,4,0)
+ ;;=4^S06.4X9S
+ ;;^UTILITY(U,$J,358.3,21537,2)
+ ;;=^5021055
+ ;;^UTILITY(U,$J,358.3,21538,0)
+ ;;=S06.4X0S^^101^1032^62
+ ;;^UTILITY(U,$J,358.3,21538,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21538,1,3,0)
+ ;;=3^Epidural hemorrhage without LOC, sequela
+ ;;^UTILITY(U,$J,358.3,21538,1,4,0)
+ ;;=4^S06.4X0S
+ ;;^UTILITY(U,$J,358.3,21538,2)
+ ;;=^5021028
+ ;;^UTILITY(U,$J,358.3,21539,0)
+ ;;=S06.825S^^101^1032^63
+ ;;^UTILITY(U,$J,358.3,21539,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21539,1,3,0)
+ ;;=3^Inj left int carotid, intcr w LOC >24 hr w ret consc lev, sequela
+ ;;^UTILITY(U,$J,358.3,21539,1,4,0)
+ ;;=4^S06.825S
+ ;;^UTILITY(U,$J,358.3,21539,2)
+ ;;=^5021163
+ ;;^UTILITY(U,$J,358.3,21540,0)
+ ;;=S06.826S^^101^1032^64
+ ;;^UTILITY(U,$J,358.3,21540,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21540,1,3,0)
+ ;;=3^Inj left int carotid, intcr w LOC >24 hr w/o ret consc w surv, sqla

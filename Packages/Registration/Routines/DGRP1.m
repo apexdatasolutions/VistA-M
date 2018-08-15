@@ -1,5 +1,5 @@
 DGRP1 ;ALB/MRL,ERC,BAJ,PWC - DEMOGRAPHIC DATA ; 8/15/08 11:30am
- ;;5.3;Registration;**109,161,506,244,546,570,629,638,649,700,653,688,750,851**;Aug 13, 1993;Build 10
+ ;;5.3;Registration;**109,161,506,244,546,570,629,638,649,700,653,688,750,851,907,925**;Aug 13, 1993;Build 15
  ;
 EN ;
  S (DGRPS,DGRPW)=1 D H^DGRPU F I=0,.11,.121,.122,.13,.15,.24,57,"SSN" S DGRP(I)=$S($D(^DPT(DFN,I)):^(I),1:"")
@@ -22,8 +22,10 @@ EN ;
  . . W DGREAS
  D GETNCAL  ;Display name component, sex, and alias information
  S Z=3,DGRPX=DGRP(0) D WW^DGRPV W " Remarks: ",$S($P(DGRPX,"^",10)]"":$E($P(DGRPX,"^",10),1,65),1:"NO REMARKS ENTERED FOR THIS PATIENT") S DGAD=.11,(DGA1,DGA2)=1 D A^DGRPU I $P(DGRP(.121),"^",9)="Y" S DGAD=.121,DGA1=1,DGA2=2 D A^DGRPU
- S Z=4 D WW^DGRPV W " Permanent Address: " S Z=" ",Z1=17
- D WW1^DGRPV S Z=5,DGRPW=0 D WW^DGRPV W " Temporary Address: "
+ ;jam DG*5.3*925 RM#788099 Add/Edit Residential Address - change label to Permanent Mailing Address:
+ S Z=4 D WW^DGRPV W " Permanent Mailing Address: " S Z=" ",Z1=17
+ ;jam DG*5.3*925 RM#788099 Add/Edit Residential address - Change field label to Temporary Mailing Address:
+ D WW1^DGRPV S Z=5,DGRPW=0 D WW^DGRPV W " Temporary Mailing Address: "
  W !?9
  S Z1=39,Z=$S($D(DGA(1)):DGA(1),1:"NONE ON FILE") D WW1^DGRPV W $S($D(DGA(2)):DGA(2),1:"NO TEMPORARY ADDRESS")
  ; loop through DGA array beginning with DGA(2) and print data at ?9 (odds) and ?48 (evens)
@@ -74,16 +76,22 @@ A2 .S DGA=$O(^DPT(DFN,.01,DGA))
  ..S DGALIAS(DGI)=$E(DGALIAS(DGI),1,19)
  ..S $E(DGALIAS(DGI),20)=DGX Q
  .S DGALIAS(DGI)=$E(DGALIAS(DGI),1,32)
- .Q
+ .Q  ;
  ;Display name component, sex, multiple birth indicator and alias data
  F DGI=1:1:6 D
  .W !?5,$J($P(DGNC,U,DGI),6),": ",$E($G(DGCOMP(20,DGCOMP,DGI)),1,$S(DGI=1:28,1:27))
  .; BAJ DG*5.3*700 retrofit 06/22/06
- .I DGI=1 S (Z,DGRPW)=1 W ?43,"Sex: " S X=$P(DGRP(0),"^",2),Z=$S(X="M":"MALE",X="F":"FEMALE",1:DGRPU),Z1=3 D WW1^DGRPV
+ .; ob - 10/22/14 added "Birth" on the next line
+ .I DGI=1 S (Z,DGRPW)=1 W ?37,"Birth Sex: " S X=$P(DGRP(0),"^",2),Z=$S(X="M":"MALE",X="F":"FEMALE",1:DGRPU),Z1=3 D WW1^DGRPV ;DG*5.3*907
  .I DGI=1 S (Z,DGRPW)=1 W ?56,"MBI: " S X=$P($G(^DPT(DFN,"MPIMB")),U),Z=$S(X="N":"NO",X="Y":"*MULTIPLE BIRTH*",1:DGRPU),Z1=16 D WW1^DGRPV
  .I DGI=2 S DGRPW=0,Z=2 W ?37 D WW^DGRPV W " Alias: "
  .I DGI>1 W ?47,$G(DGALIAS(DGI-1))
  .Q
+ ;*** display Self-Identified Gender Identity DG*5.3*907
+ ;Get node with SIGI in it already done at EN+1
+ W !?5,"Self-Identified Gender Identity: "
+ S X=$P(DGRP(.24),"^",4),Z=$S(X="M":"MALE",X="F":"FEMALE",X="TM":"TRANSMALE/TRANSMAN/FEMALE-TO-MALE",X="TF":"TRANSFEMALE/TRANSWOMAN/MALE-TO-FEMALE",X="O":"OTHER",X="N":"INDIVIDUAL CHOOSES NOT TO ANSWER",1:DGRPU) W Z ;D WW1^DGRPV
+ ; *** end of change 
  Q
 GETSTAT(SSNV) ;get SSN VERIFIED STATUS DG*5.3*688 BAJ 11/22/2005
  N T

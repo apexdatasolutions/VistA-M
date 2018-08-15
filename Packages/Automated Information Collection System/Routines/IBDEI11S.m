@@ -1,112 +1,132 @@
-IBDEI11S ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI11S ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,18774,0)
- ;;=28002^^122^1202^2^^^^1
- ;;^UTILITY(U,$J,358.3,18774,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18774,1,2,0)
- ;;=2^Incision and Drainage below fascia, with/without tendon sheath involvement, foot; single bursal space 
- ;;^UTILITY(U,$J,358.3,18774,1,3,0)
- ;;=3^28002
- ;;^UTILITY(U,$J,358.3,18775,0)
- ;;=28003^^122^1202^3^^^^1
- ;;^UTILITY(U,$J,358.3,18775,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18775,1,2,0)
- ;;=2^Incision and Drainage below fascia, with/without tendon sheath involvement, foot; multiple areas 
- ;;^UTILITY(U,$J,358.3,18775,1,3,0)
- ;;=3^28003
- ;;^UTILITY(U,$J,358.3,18776,0)
- ;;=28008^^122^1202^4^^^^1
- ;;^UTILITY(U,$J,358.3,18776,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18776,1,2,0)
- ;;=2^Fasciotomy, foot and/or toe
- ;;^UTILITY(U,$J,358.3,18776,1,3,0)
- ;;=3^28008
- ;;^UTILITY(U,$J,358.3,18777,0)
- ;;=28010^^122^1202^5^^^^1
- ;;^UTILITY(U,$J,358.3,18777,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18777,1,2,0)
- ;;=2^Tenotomy, percutaneous, toe; single tendon
- ;;^UTILITY(U,$J,358.3,18777,1,3,0)
- ;;=3^28010
- ;;^UTILITY(U,$J,358.3,18778,0)
- ;;=28011^^122^1202^6^^^^1
- ;;^UTILITY(U,$J,358.3,18778,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18778,1,2,0)
- ;;=2^Tenotomy, percutaneous, toe; multiple tendons
- ;;^UTILITY(U,$J,358.3,18778,1,3,0)
- ;;=3^28011
- ;;^UTILITY(U,$J,358.3,18779,0)
- ;;=28020^^122^1202^7^^^^1
- ;;^UTILITY(U,$J,358.3,18779,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18779,1,2,0)
- ;;=2^Arthrotomy, including exploration, drainage, or removal of loose or foreign body; intertarsal or tarsometatarsal joint
- ;;^UTILITY(U,$J,358.3,18779,1,3,0)
- ;;=3^28020
- ;;^UTILITY(U,$J,358.3,18780,0)
- ;;=28022^^122^1202^8^^^^1
- ;;^UTILITY(U,$J,358.3,18780,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18780,1,2,0)
- ;;=2^Arthrotomy, including exploration, drainage, or removal of loose or foreign body; metatarsophalangeal joint 
- ;;^UTILITY(U,$J,358.3,18780,1,3,0)
- ;;=3^28022
- ;;^UTILITY(U,$J,358.3,18781,0)
- ;;=28024^^122^1202^9^^^^1
- ;;^UTILITY(U,$J,358.3,18781,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18781,1,2,0)
- ;;=2^Arthrotomy, including exploration, drainage, or removal of loose or foreign body; interphalangeal joint
- ;;^UTILITY(U,$J,358.3,18781,1,3,0)
- ;;=3^28024
- ;;^UTILITY(U,$J,358.3,18782,0)
- ;;=28035^^122^1202^11^^^^1
- ;;^UTILITY(U,$J,358.3,18782,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18782,1,2,0)
- ;;=2^Release, tarsal tunnel
- ;;^UTILITY(U,$J,358.3,18782,1,3,0)
- ;;=3^28035
- ;;^UTILITY(U,$J,358.3,18783,0)
- ;;=28055^^122^1202^10^^^^1
- ;;^UTILITY(U,$J,358.3,18783,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18783,1,2,0)
- ;;=2^Neurectomy, Foot
- ;;^UTILITY(U,$J,358.3,18783,1,3,0)
- ;;=3^28055
- ;;^UTILITY(U,$J,358.3,18784,0)
- ;;=28043^^122^1203^1^^^^1
- ;;^UTILITY(U,$J,358.3,18784,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18784,1,2,0)
- ;;=2^Excision Tumor-Foot,SQ Tissue >1.5cm
- ;;^UTILITY(U,$J,358.3,18784,1,3,0)
- ;;=3^28043
- ;;^UTILITY(U,$J,358.3,18785,0)
- ;;=28045^^122^1203^2^^^^1
- ;;^UTILITY(U,$J,358.3,18785,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18785,1,2,0)
- ;;=2^Excision Tumor-Foot,Deep Subfascial >1.5cm
- ;;^UTILITY(U,$J,358.3,18785,1,3,0)
- ;;=3^28045
- ;;^UTILITY(U,$J,358.3,18786,0)
- ;;=28050^^122^1203^3^^^^1
- ;;^UTILITY(U,$J,358.3,18786,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18786,1,2,0)
- ;;=2^Arthrotomy with biopsy; intertarsal or tarsometatarsal joint 
- ;;^UTILITY(U,$J,358.3,18786,1,3,0)
- ;;=3^28050
- ;;^UTILITY(U,$J,358.3,18787,0)
- ;;=28052^^122^1203^4^^^^1
- ;;^UTILITY(U,$J,358.3,18787,1,0)
- ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,17444,1,4,0)
+ ;;=4^Z91.5
+ ;;^UTILITY(U,$J,358.3,17444,2)
+ ;;=^5063624
+ ;;^UTILITY(U,$J,358.3,17445,0)
+ ;;=Z86.73^^88^861^116
+ ;;^UTILITY(U,$J,358.3,17445,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17445,1,3,0)
+ ;;=3^Personal Hx of TIA/Cerebral Infarction w/o Resid Deficits
+ ;;^UTILITY(U,$J,358.3,17445,1,4,0)
+ ;;=4^Z86.73
+ ;;^UTILITY(U,$J,358.3,17445,2)
+ ;;=^5063477
+ ;;^UTILITY(U,$J,358.3,17446,0)
+ ;;=Z86.11^^88^861^117
+ ;;^UTILITY(U,$J,358.3,17446,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17446,1,3,0)
+ ;;=3^Personal Hx of Tuberculosis
+ ;;^UTILITY(U,$J,358.3,17446,1,4,0)
+ ;;=4^Z86.11
+ ;;^UTILITY(U,$J,358.3,17446,2)
+ ;;=^5063461
+ ;;^UTILITY(U,$J,358.3,17447,0)
+ ;;=Z87.440^^88^861^119
+ ;;^UTILITY(U,$J,358.3,17447,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17447,1,3,0)
+ ;;=3^Personal Hx of Urinary Tract Infections
+ ;;^UTILITY(U,$J,358.3,17447,1,4,0)
+ ;;=4^Z87.440
+ ;;^UTILITY(U,$J,358.3,17447,2)
+ ;;=^5063495
+ ;;^UTILITY(U,$J,358.3,17448,0)
+ ;;=Z87.442^^88^861^118
+ ;;^UTILITY(U,$J,358.3,17448,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17448,1,3,0)
+ ;;=3^Personal Hx of Urinary Calculi
+ ;;^UTILITY(U,$J,358.3,17448,1,4,0)
+ ;;=4^Z87.442
+ ;;^UTILITY(U,$J,358.3,17448,2)
+ ;;=^5063497
+ ;;^UTILITY(U,$J,358.3,17449,0)
+ ;;=Z91.83^^88^861^120
+ ;;^UTILITY(U,$J,358.3,17449,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17449,1,3,0)
+ ;;=3^Personal Hx of Wandering
+ ;;^UTILITY(U,$J,358.3,17449,1,4,0)
+ ;;=4^Z91.83
+ ;;^UTILITY(U,$J,358.3,17449,2)
+ ;;=^5063627
+ ;;^UTILITY(U,$J,358.3,17450,0)
+ ;;=Z76.89^^88^861^121
+ ;;^UTILITY(U,$J,358.3,17450,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17450,1,3,0)
+ ;;=3^Persons Encountering Health Services
+ ;;^UTILITY(U,$J,358.3,17450,1,4,0)
+ ;;=4^Z76.89
+ ;;^UTILITY(U,$J,358.3,17450,2)
+ ;;=^5063304
+ ;;^UTILITY(U,$J,358.3,17451,0)
+ ;;=Z60.0^^88^861^122
+ ;;^UTILITY(U,$J,358.3,17451,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17451,1,3,0)
+ ;;=3^Problems Adjusting to Life-Cycle Transitions
+ ;;^UTILITY(U,$J,358.3,17451,1,4,0)
+ ;;=4^Z60.0
+ ;;^UTILITY(U,$J,358.3,17451,2)
+ ;;=^5063139
+ ;;^UTILITY(U,$J,358.3,17452,0)
+ ;;=Z63.31^^88^861^148
+ ;;^UTILITY(U,$J,358.3,17452,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17452,1,3,0)
+ ;;=3^Problems Related to Military Deployment Absence
+ ;;^UTILITY(U,$J,358.3,17452,1,4,0)
+ ;;=4^Z63.31
+ ;;^UTILITY(U,$J,358.3,17452,2)
+ ;;=^5063166
+ ;;^UTILITY(U,$J,358.3,17453,0)
+ ;;=Z63.32^^88^861^135
+ ;;^UTILITY(U,$J,358.3,17453,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17453,1,3,0)
+ ;;=3^Problems Related to Family Member Absence
+ ;;^UTILITY(U,$J,358.3,17453,1,4,0)
+ ;;=4^Z63.32
+ ;;^UTILITY(U,$J,358.3,17453,2)
+ ;;=^5063167
+ ;;^UTILITY(U,$J,358.3,17454,0)
+ ;;=Z60.3^^88^861^123
+ ;;^UTILITY(U,$J,358.3,17454,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17454,1,3,0)
+ ;;=3^Problems Related to Acculturation Difficulty
+ ;;^UTILITY(U,$J,358.3,17454,1,4,0)
+ ;;=4^Z60.3
+ ;;^UTILITY(U,$J,358.3,17454,2)
+ ;;=^5063141
+ ;;^UTILITY(U,$J,358.3,17455,0)
+ ;;=Z74.9^^88^861^128
+ ;;^UTILITY(U,$J,358.3,17455,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17455,1,3,0)
+ ;;=3^Problems Related to Care Provider Dependency,Unspec
+ ;;^UTILITY(U,$J,358.3,17455,1,4,0)
+ ;;=4^Z74.9
+ ;;^UTILITY(U,$J,358.3,17455,2)
+ ;;=^5063288
+ ;;^UTILITY(U,$J,358.3,17456,0)
+ ;;=Z63.4^^88^861^127
+ ;;^UTILITY(U,$J,358.3,17456,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17456,1,3,0)
+ ;;=3^Problems Related to Bereavement
+ ;;^UTILITY(U,$J,358.3,17456,1,4,0)
+ ;;=4^Z63.4
+ ;;^UTILITY(U,$J,358.3,17456,2)
+ ;;=^5063168
+ ;;^UTILITY(U,$J,358.3,17457,0)
+ ;;=Z63.6^^88^861^129
+ ;;^UTILITY(U,$J,358.3,17457,1,0)
+ ;;=^358.31IA^4^2

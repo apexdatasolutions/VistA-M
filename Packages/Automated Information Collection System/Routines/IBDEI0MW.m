@@ -1,128 +1,132 @@
-IBDEI0MW ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0MW ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,11247,0)
- ;;=45307^^72^732^27^^^^1
- ;;^UTILITY(U,$J,358.3,11247,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11247,1,2,0)
- ;;=2^45307
- ;;^UTILITY(U,$J,358.3,11247,1,3,0)
- ;;=3^Rigid Proctosig w/Removal FB
- ;;^UTILITY(U,$J,358.3,11248,0)
- ;;=45308^^72^732^29^^^^1
- ;;^UTILITY(U,$J,358.3,11248,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11248,1,2,0)
- ;;=2^45308
- ;;^UTILITY(U,$J,358.3,11248,1,3,0)
- ;;=3^Rigid Proctosig w/Tumor Rem-Hot Forceps
- ;;^UTILITY(U,$J,358.3,11249,0)
- ;;=45309^^72^732^31^^^^1
- ;;^UTILITY(U,$J,358.3,11249,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11249,1,2,0)
- ;;=2^45309
- ;;^UTILITY(U,$J,358.3,11249,1,3,0)
- ;;=3^Rigid Proctosig w/Tumor Rem-Snare
- ;;^UTILITY(U,$J,358.3,11250,0)
- ;;=45315^^72^732^30^^^^1
- ;;^UTILITY(U,$J,358.3,11250,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11250,1,2,0)
- ;;=2^45315
- ;;^UTILITY(U,$J,358.3,11250,1,3,0)
- ;;=3^Rigid Proctosig w/Tumor Rem-Ht FRCP/Snar
- ;;^UTILITY(U,$J,358.3,11251,0)
- ;;=45317^^72^732^24^^^^1
- ;;^UTILITY(U,$J,358.3,11251,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11251,1,2,0)
- ;;=2^45317
- ;;^UTILITY(U,$J,358.3,11251,1,3,0)
- ;;=3^Rigid Proctosig w/Control of Bleed
- ;;^UTILITY(U,$J,358.3,11252,0)
- ;;=45320^^72^732^22^^^^1
- ;;^UTILITY(U,$J,358.3,11252,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11252,1,2,0)
- ;;=2^45320
- ;;^UTILITY(U,$J,358.3,11252,1,3,0)
- ;;=3^Rigid Proctosig w/Ablation Tumor
- ;;^UTILITY(U,$J,358.3,11253,0)
- ;;=45321^^72^732^25^^^^1
- ;;^UTILITY(U,$J,358.3,11253,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11253,1,2,0)
- ;;=2^45321
- ;;^UTILITY(U,$J,358.3,11253,1,3,0)
- ;;=3^Rigid Proctosig w/Decomp Volvulus
- ;;^UTILITY(U,$J,358.3,11254,0)
- ;;=45327^^72^732^28^^^^1
- ;;^UTILITY(U,$J,358.3,11254,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11254,1,2,0)
- ;;=2^45327
- ;;^UTILITY(U,$J,358.3,11254,1,3,0)
- ;;=3^Rigid Proctosig w/Stent Placement
- ;;^UTILITY(U,$J,358.3,11255,0)
- ;;=45335^^72^732^19^^^^1
- ;;^UTILITY(U,$J,358.3,11255,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11255,1,2,0)
- ;;=2^45335
- ;;^UTILITY(U,$J,358.3,11255,1,3,0)
- ;;=3^Flex Sig w/Submucosal Inj
- ;;^UTILITY(U,$J,358.3,11256,0)
- ;;=45337^^72^732^18^^^^1
- ;;^UTILITY(U,$J,358.3,11256,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11256,1,2,0)
- ;;=2^45337
- ;;^UTILITY(U,$J,358.3,11256,1,3,0)
- ;;=3^Flex Sig w/Decompression Volvulus
- ;;^UTILITY(U,$J,358.3,11257,0)
- ;;=46604^^72^732^1^^^^1
- ;;^UTILITY(U,$J,358.3,11257,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11257,1,2,0)
- ;;=2^46604
- ;;^UTILITY(U,$J,358.3,11257,1,3,0)
- ;;=3^Anoscopy & Dilation (Balloon,Guidewire)
- ;;^UTILITY(U,$J,358.3,11258,0)
- ;;=0226T^^72^732^3^^^^1
- ;;^UTILITY(U,$J,358.3,11258,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11258,1,2,0)
- ;;=2^0226T
- ;;^UTILITY(U,$J,358.3,11258,1,3,0)
- ;;=3^Anoscopy HRA w/Spec Collect
- ;;^UTILITY(U,$J,358.3,11259,0)
- ;;=0227T^^72^732^2^^^^1
- ;;^UTILITY(U,$J,358.3,11259,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11259,1,2,0)
- ;;=2^0227T
- ;;^UTILITY(U,$J,358.3,11259,1,3,0)
- ;;=3^Anoscopy HRA w/Biopsy
- ;;^UTILITY(U,$J,358.3,11260,0)
- ;;=0228T^^72^732^21^^^^1
- ;;^UTILITY(U,$J,358.3,11260,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11260,1,2,0)
- ;;=2^0228T
- ;;^UTILITY(U,$J,358.3,11260,1,3,0)
- ;;=3^Inj Trfml Eprl w/US Cer/Thor
- ;;^UTILITY(U,$J,358.3,11261,0)
- ;;=46615^^72^732^4^^^^1
- ;;^UTILITY(U,$J,358.3,11261,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,11261,1,2,0)
- ;;=2^46615
- ;;^UTILITY(U,$J,358.3,11261,1,3,0)
- ;;=3^Anoscopy w/Ablation of Tumor
- ;;^UTILITY(U,$J,358.3,11262,0)
- ;;=46608^^72^732^9^^^^1
- ;;^UTILITY(U,$J,358.3,11262,1,0)
- ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,10456,2)
+ ;;=^5046387
+ ;;^UTILITY(U,$J,358.3,10457,0)
+ ;;=T15.01XA^^68^669^2
+ ;;^UTILITY(U,$J,358.3,10457,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10457,1,3,0)
+ ;;=3^Foreign Body in Cornea,Right Eye,Init Encntr
+ ;;^UTILITY(U,$J,358.3,10457,1,4,0)
+ ;;=4^T15.01XA
+ ;;^UTILITY(U,$J,358.3,10457,2)
+ ;;=^5046384
+ ;;^UTILITY(U,$J,358.3,10458,0)
+ ;;=S00.252A^^68^669^5
+ ;;^UTILITY(U,$J,358.3,10458,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10458,1,3,0)
+ ;;=3^Superficial FB of Left Eyelid/Periocular Area,Init Encntr
+ ;;^UTILITY(U,$J,358.3,10458,1,4,0)
+ ;;=4^S00.252A
+ ;;^UTILITY(U,$J,358.3,10458,2)
+ ;;=^5019820
+ ;;^UTILITY(U,$J,358.3,10459,0)
+ ;;=S00.251A^^68^669^6
+ ;;^UTILITY(U,$J,358.3,10459,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10459,1,3,0)
+ ;;=3^Superficial FB of Right Eyelid/Periocular Area,Init Encntr
+ ;;^UTILITY(U,$J,358.3,10459,1,4,0)
+ ;;=4^S00.251A
+ ;;^UTILITY(U,$J,358.3,10459,2)
+ ;;=^5019817
+ ;;^UTILITY(U,$J,358.3,10460,0)
+ ;;=B96.81^^68^670^56
+ ;;^UTILITY(U,$J,358.3,10460,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10460,1,3,0)
+ ;;=3^H. Pylori as the Cause of Diseases Classified Elsewhere
+ ;;^UTILITY(U,$J,358.3,10460,1,4,0)
+ ;;=4^B96.81
+ ;;^UTILITY(U,$J,358.3,10460,2)
+ ;;=^5000857
+ ;;^UTILITY(U,$J,358.3,10461,0)
+ ;;=B15.9^^68^670^58
+ ;;^UTILITY(U,$J,358.3,10461,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10461,1,3,0)
+ ;;=3^Hepatitis A,Acute w/o Hepatic Coma
+ ;;^UTILITY(U,$J,358.3,10461,1,4,0)
+ ;;=4^B15.9
+ ;;^UTILITY(U,$J,358.3,10461,2)
+ ;;=^5000536
+ ;;^UTILITY(U,$J,358.3,10462,0)
+ ;;=B16.9^^68^670^59
+ ;;^UTILITY(U,$J,358.3,10462,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10462,1,3,0)
+ ;;=3^Hepatitis B,Acute w/o Delta-Agent & w/o Hepatic Coma
+ ;;^UTILITY(U,$J,358.3,10462,1,4,0)
+ ;;=4^B16.9
+ ;;^UTILITY(U,$J,358.3,10462,2)
+ ;;=^5000540
+ ;;^UTILITY(U,$J,358.3,10463,0)
+ ;;=B19.10^^68^670^61
+ ;;^UTILITY(U,$J,358.3,10463,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10463,1,3,0)
+ ;;=3^Hepatitis B,Viral w/o Hepatic Coma,Unspec
+ ;;^UTILITY(U,$J,358.3,10463,1,4,0)
+ ;;=4^B19.10
+ ;;^UTILITY(U,$J,358.3,10463,2)
+ ;;=^5000552
+ ;;^UTILITY(U,$J,358.3,10464,0)
+ ;;=B18.1^^68^670^60
+ ;;^UTILITY(U,$J,358.3,10464,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10464,1,3,0)
+ ;;=3^Hepatitis B,Chronic Viral w/o Delta-Agent
+ ;;^UTILITY(U,$J,358.3,10464,1,4,0)
+ ;;=4^B18.1
+ ;;^UTILITY(U,$J,358.3,10464,2)
+ ;;=^5000547
+ ;;^UTILITY(U,$J,358.3,10465,0)
+ ;;=B17.10^^68^670^62
+ ;;^UTILITY(U,$J,358.3,10465,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10465,1,3,0)
+ ;;=3^Hepatitis C,Acute w/o Hepatic Coma
+ ;;^UTILITY(U,$J,358.3,10465,1,4,0)
+ ;;=4^B17.10
+ ;;^UTILITY(U,$J,358.3,10465,2)
+ ;;=^5000542
+ ;;^UTILITY(U,$J,358.3,10466,0)
+ ;;=B18.2^^68^670^63
+ ;;^UTILITY(U,$J,358.3,10466,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10466,1,3,0)
+ ;;=3^Hepatitis C,Chronic Viral
+ ;;^UTILITY(U,$J,358.3,10466,1,4,0)
+ ;;=4^B18.2
+ ;;^UTILITY(U,$J,358.3,10466,2)
+ ;;=^5000548
+ ;;^UTILITY(U,$J,358.3,10467,0)
+ ;;=B18.8^^68^670^65
+ ;;^UTILITY(U,$J,358.3,10467,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10467,1,3,0)
+ ;;=3^Hepatitis,Oth Chronic Viral
+ ;;^UTILITY(U,$J,358.3,10467,1,4,0)
+ ;;=4^B18.8
+ ;;^UTILITY(U,$J,358.3,10467,2)
+ ;;=^5000549
+ ;;^UTILITY(U,$J,358.3,10468,0)
+ ;;=B17.8^^68^670^66
+ ;;^UTILITY(U,$J,358.3,10468,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10468,1,3,0)
+ ;;=3^Hepatitis,Oth Spec Acute Viral
+ ;;^UTILITY(U,$J,358.3,10468,1,4,0)
+ ;;=4^B17.8
+ ;;^UTILITY(U,$J,358.3,10468,2)
+ ;;=^5000544
+ ;;^UTILITY(U,$J,358.3,10469,0)
+ ;;=B18.9^^68^670^64
+ ;;^UTILITY(U,$J,358.3,10469,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10469,1,3,0)
+ ;;=3^Hepatitis,Chronic Viral Unspec

@@ -1,114 +1,130 @@
-IBDEI1GJ ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
- Q:'DIFQR(358.6)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+IBDEI1GJ ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.6,9,12)
- ;;=PROCEDURE^1^6^7^3^2
- ;;^UTILITY(U,$J,358.6,9,13,0)
- ;;=^358.613V^2^2
- ;;^UTILITY(U,$J,358.6,9,13,1,0)
- ;;=1;IBD(358.98,^^0
- ;;^UTILITY(U,$J,358.6,9,13,2,0)
- ;;=2;IBD(358.98,^^0
- ;;^UTILITY(U,$J,358.6,9,14)
- ;;=S Y=$$DSPLYCPT^IBDFN9(Y)
- ;;^UTILITY(U,$J,358.6,9,17)
- ;;=D SLCTCPT^IBDFN12(.X)
- ;;^UTILITY(U,$J,358.6,9,18)
- ;;=S IBDF("OTHER")="81^I '$P(^(0),U,4)" D LIST^IBDFDE2(.IBDSEL,.IBDF,"CPT Procedure Code")
- ;;^UTILITY(U,$J,358.6,9,19)
- ;;=D CPT^IBDFN14(X)
- ;;^UTILITY(U,$J,358.6,10,0)
- ;;=DG SELECT ICD-9 DIAGNOSIS CODES^ICD9^IBDFN4^SCHEDULING^^3^2^^1^^^1^11^^^^1^1^^^^1
- ;;^UTILITY(U,$J,358.6,10,1,0)
- ;;=^^2^2^2970304^^^^
- ;;^UTILITY(U,$J,358.6,10,1,1,0)
- ;;=Allows the user to select ICD-9 diagnosis codes from the ICD Diagnosis
- ;;^UTILITY(U,$J,358.6,10,1,2,0)
- ;;=file. Allows only active codes to be selected.
- ;;^UTILITY(U,$J,358.6,10,2)
- ;;=CODE^7^DIAGNOSIS^30^DESCRIPTION^200^^^^^^^^^^^1^1
- ;;^UTILITY(U,$J,358.6,10,3)
- ;;=SELECT ICD9 ICD-9 CODES DIAGNOSIS
- ;;^UTILITY(U,$J,358.6,10,9)
- ;;=D INPUTICD^IBDFN8(.X)
- ;;^UTILITY(U,$J,358.6,10,11)
- ;;=D TESTICD^IBDFN7
- ;;^UTILITY(U,$J,358.6,10,13,0)
- ;;=^358.613V^2^2
- ;;^UTILITY(U,$J,358.6,10,13,1,0)
- ;;=1;IBD(358.98,
- ;;^UTILITY(U,$J,358.6,10,13,2,0)
- ;;=2;IBD(358.98,
- ;;^UTILITY(U,$J,358.6,10,15,0)
- ;;=^357.615I^2^2
- ;;^UTILITY(U,$J,358.6,10,15,1,0)
- ;;=DIAGNOSIS^30^2^^DIAGNOSIS
- ;;^UTILITY(U,$J,358.6,10,15,2,0)
- ;;=DESCRIPTION^200^3^^DIAGNOSIS
- ;;^UTILITY(U,$J,358.6,10,16)
- ;;=o^4^Diagnosis^^r^1^ICD-9 Code^^1
- ;;^UTILITY(U,$J,358.6,10,17)
- ;;=D SLCTDX^IBDFN12(.X)
- ;;^UTILITY(U,$J,358.6,10,19)
- ;;=D DX^IBDFN14(X)
- ;;^UTILITY(U,$J,358.6,11,0)
- ;;=INPUT DIAGNOSIS CODE (ICD9)^^^PATIENT CARE ENCOUNTER^^1^^^1^^^1^^^^SMP^^^1
- ;;^UTILITY(U,$J,358.6,11,1,0)
- ;;=^^1^1^2970304^^^^
- ;;^UTILITY(U,$J,358.6,11,1,1,0)
- ;;=Used for inputting ICD9 diagnosis codes.
- ;;^UTILITY(U,$J,358.6,11,2)
- ;;=^^^^^^^^^^^^^^^^^1
- ;;^UTILITY(U,$J,358.6,11,3)
- ;;=INPUT ICD9 ICD-9 DIAGNOSIS CODES
- ;;^UTILITY(U,$J,358.6,11,9)
- ;;=D INPUTICD^IBDFN8(.X)
- ;;^UTILITY(U,$J,358.6,11,10)
- ;;=Enter an active ICD9 diagnosis code.
- ;;^UTILITY(U,$J,358.6,11,11)
- ;;=D TESTICD^IBDFN7
- ;;^UTILITY(U,$J,358.6,11,12)
- ;;=DIAGNOSIS/PROBLEM^1^13^14^2
- ;;^UTILITY(U,$J,358.6,11,13,0)
- ;;=^358.613V^10^10
- ;;^UTILITY(U,$J,358.6,11,13,1,0)
- ;;=1;IBD(358.98,^^1^^^^^2
- ;;^UTILITY(U,$J,358.6,11,13,2,0)
- ;;=2;IBD(358.98,^^1^^^^^2
- ;;^UTILITY(U,$J,358.6,11,13,3,0)
- ;;=3;IBD(358.98,^^1^^^^^9
- ;;^UTILITY(U,$J,358.6,11,13,4,0)
- ;;=1;IBE(358.99,^^0
- ;;^UTILITY(U,$J,358.6,11,13,5,0)
- ;;=4;IBD(358.98,^^1^^^^^10
- ;;^UTILITY(U,$J,358.6,11,13,6,0)
- ;;=5;IBD(358.98,^^1^^^^^11
- ;;^UTILITY(U,$J,358.6,11,13,7,0)
- ;;=6;IBD(358.98,^^1^^^^^12
- ;;^UTILITY(U,$J,358.6,11,13,8,0)
- ;;=7;IBD(358.98,^^1^^^^^5
- ;;^UTILITY(U,$J,358.6,11,13,9,0)
- ;;=8;IBD(358.98,^^1^^^^^6
- ;;^UTILITY(U,$J,358.6,11,13,10,0)
- ;;=9;IBD(358.98,^^1^^^^^6
- ;;^UTILITY(U,$J,358.6,11,14)
- ;;=S Y=$$DSPLYICD^IBDFN9(Y)
- ;;^UTILITY(U,$J,358.6,11,15,0)
- ;;=^357.615I^0^0
- ;;^UTILITY(U,$J,358.6,11,17)
- ;;=D SLCTDX^IBDFN12(.X)
- ;;^UTILITY(U,$J,358.6,11,18)
- ;;=S IBDF("OTHER")="80^I '$P(^(0),U,9)" D LIST^IBDFDE2(.IBDSEL,.IBDF,"ICD-9 Diagnosis Code")
- ;;^UTILITY(U,$J,358.6,11,19)
- ;;=D DX^IBDFN14(X)
- ;;^UTILITY(U,$J,358.6,12,0)
- ;;=IBDF UTILITY FOR LABELS ONLY^LABELS^IBDFN^AUTOMATED INFO COLLECTION SYS^0^2^2^^1^^^1
- ;;^UTILITY(U,$J,358.6,12,1,0)
- ;;=^^2^2^2970319^^^
- ;;^UTILITY(U,$J,358.6,12,1,1,0)
- ;;=This interface returns no data. Its purpose is to print labels without
- ;;^UTILITY(U,$J,358.6,12,1,2,0)
- ;;=data to the form.
- ;;^UTILITY(U,$J,358.6,12,2)
- ;;=Underscore Only^0^^^^^^^^^^^^^^^1
+ ;;^UTILITY(U,$J,358.3,24346,1,3,0)
+ ;;=3^Acquired Absence of Right Hand
+ ;;^UTILITY(U,$J,358.3,24346,1,4,0)
+ ;;=4^Z89.111
+ ;;^UTILITY(U,$J,358.3,24346,2)
+ ;;=^5063537
+ ;;^UTILITY(U,$J,358.3,24347,0)
+ ;;=Z89.112^^118^1211^1
+ ;;^UTILITY(U,$J,358.3,24347,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24347,1,3,0)
+ ;;=3^Acquired Absence of Left Hand
+ ;;^UTILITY(U,$J,358.3,24347,1,4,0)
+ ;;=4^Z89.112
+ ;;^UTILITY(U,$J,358.3,24347,2)
+ ;;=^5063538
+ ;;^UTILITY(U,$J,358.3,24348,0)
+ ;;=Z89.121^^118^1211^11
+ ;;^UTILITY(U,$J,358.3,24348,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24348,1,3,0)
+ ;;=3^Acquired Absence of Right Wrist
+ ;;^UTILITY(U,$J,358.3,24348,1,4,0)
+ ;;=4^Z89.121
+ ;;^UTILITY(U,$J,358.3,24348,2)
+ ;;=^5063540
+ ;;^UTILITY(U,$J,358.3,24349,0)
+ ;;=Z89.122^^118^1211^5
+ ;;^UTILITY(U,$J,358.3,24349,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24349,1,3,0)
+ ;;=3^Acquired Absence of Left Wrist
+ ;;^UTILITY(U,$J,358.3,24349,1,4,0)
+ ;;=4^Z89.122
+ ;;^UTILITY(U,$J,358.3,24349,2)
+ ;;=^5063541
+ ;;^UTILITY(U,$J,358.3,24350,0)
+ ;;=Z89.211^^118^1211^9
+ ;;^UTILITY(U,$J,358.3,24350,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24350,1,3,0)
+ ;;=3^Acquired Absence of Right Upper Limb Below Elbow
+ ;;^UTILITY(U,$J,358.3,24350,1,4,0)
+ ;;=4^Z89.211
+ ;;^UTILITY(U,$J,358.3,24350,2)
+ ;;=^5063545
+ ;;^UTILITY(U,$J,358.3,24351,0)
+ ;;=Z89.212^^118^1211^12
+ ;;^UTILITY(U,$J,358.3,24351,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24351,1,3,0)
+ ;;=3^Acquired Absence of Upper Limb Below Elbow
+ ;;^UTILITY(U,$J,358.3,24351,1,4,0)
+ ;;=4^Z89.212
+ ;;^UTILITY(U,$J,358.3,24351,2)
+ ;;=^5063546
+ ;;^UTILITY(U,$J,358.3,24352,0)
+ ;;=Z89.221^^118^1211^8
+ ;;^UTILITY(U,$J,358.3,24352,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24352,1,3,0)
+ ;;=3^Acquired Absence of Right Upper Limb Above Elbow
+ ;;^UTILITY(U,$J,358.3,24352,1,4,0)
+ ;;=4^Z89.221
+ ;;^UTILITY(U,$J,358.3,24352,2)
+ ;;=^5063548
+ ;;^UTILITY(U,$J,358.3,24353,0)
+ ;;=Z89.222^^118^1211^3
+ ;;^UTILITY(U,$J,358.3,24353,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24353,1,3,0)
+ ;;=3^Acquired Absence of Left Upper Limb Above Elbow
+ ;;^UTILITY(U,$J,358.3,24353,1,4,0)
+ ;;=4^Z89.222
+ ;;^UTILITY(U,$J,358.3,24353,2)
+ ;;=^5063549
+ ;;^UTILITY(U,$J,358.3,24354,0)
+ ;;=Z89.231^^118^1211^7
+ ;;^UTILITY(U,$J,358.3,24354,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24354,1,3,0)
+ ;;=3^Acquired Absence of Right Shoulder
+ ;;^UTILITY(U,$J,358.3,24354,1,4,0)
+ ;;=4^Z89.231
+ ;;^UTILITY(U,$J,358.3,24354,2)
+ ;;=^5063551
+ ;;^UTILITY(U,$J,358.3,24355,0)
+ ;;=Z89.232^^118^1211^2
+ ;;^UTILITY(U,$J,358.3,24355,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24355,1,3,0)
+ ;;=3^Acquired Absence of Left Shoulder
+ ;;^UTILITY(U,$J,358.3,24355,1,4,0)
+ ;;=4^Z89.232
+ ;;^UTILITY(U,$J,358.3,24355,2)
+ ;;=^5063552
+ ;;^UTILITY(U,$J,358.3,24356,0)
+ ;;=Z89.411^^118^1212^10
+ ;;^UTILITY(U,$J,358.3,24356,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24356,1,3,0)
+ ;;=3^Acquired Absence of Right Great Toe
+ ;;^UTILITY(U,$J,358.3,24356,1,4,0)
+ ;;=4^Z89.411
+ ;;^UTILITY(U,$J,358.3,24356,2)
+ ;;=^5063554
+ ;;^UTILITY(U,$J,358.3,24357,0)
+ ;;=Z89.412^^118^1212^3
+ ;;^UTILITY(U,$J,358.3,24357,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24357,1,3,0)
+ ;;=3^Acquired Absence of Left Great Toe
+ ;;^UTILITY(U,$J,358.3,24357,1,4,0)
+ ;;=4^Z89.412
+ ;;^UTILITY(U,$J,358.3,24357,2)
+ ;;=^5063555
+ ;;^UTILITY(U,$J,358.3,24358,0)
+ ;;=Z89.421^^118^1212^14
+ ;;^UTILITY(U,$J,358.3,24358,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24358,1,3,0)
+ ;;=3^Acquired Absence of Right Toe(s)
+ ;;^UTILITY(U,$J,358.3,24358,1,4,0)
+ ;;=4^Z89.421
+ ;;^UTILITY(U,$J,358.3,24358,2)
+ ;;=^5063557

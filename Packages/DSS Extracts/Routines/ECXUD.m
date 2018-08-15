@@ -1,5 +1,5 @@
-ECXUD ;ALB/JAP,BIR/DMA,PTD-Extract from UNIT DOSE EXTRACT DATA File (#728.904) ;6/4/14  13:50
- ;;3.0;DSS EXTRACTS;**10,8,24,33,39,46,49,71,84,92,107,105,120,127,144,149**;Dec 22, 1997;Build 27
+ECXUD ;ALB/JAP,BIR/DMA,PTD-Extract from UNIT DOSE EXTRACT DATA File (#728.904) ;4/25/17  14:09
+ ;;3.0;DSS EXTRACTS;**10,8,24,33,39,46,49,71,84,92,107,105,120,127,144,149,154,161,166**;Dec 22, 1997;Build 24
 BEG ;entry point from option
  I '$O(^ECX(728.904,"A",0)) W !,"There are no unit dose orders to extract",!! R X:5 K X Q
  D SETUP I ECFILE="" Q
@@ -22,6 +22,7 @@ START ;start package specific extract
  ;
 STUFF ;get data
  N X,W,OK,P1,P3,PSTAT,PT,ECXPHA,ON,ECDRG,ECXESC,ECXECL,ECXCLST,ECPROIEN,ECXUDDT,ECXUDTM,ECXNEW ;144,149
+ N ECXSTANO  ;166
  S (ECXESC,ECXECL,ECXCLST)="" ;144
  S ECXDFN=$P(DATA,U,2),ECDRG=$P(DATA,U,4)
  ;
@@ -33,7 +34,8 @@ STUFF ;get data
  S ECXPRNPI=$$NPI^XUSNPI("Individual_ID",ECPROIEN,ECD)
  S:+ECXPRNPI'>0 ECXPRNPI="" S ECXPRNPI=$P(ECXPRNPI,U)
  S W=$P(DATA,U,6)
- S ECXDIV=$P($G(^DIC(42,+W,0)),U,11),ECXW=$P($G(^DIC(42,+W,44)),U)
+ S ECXDIV=$P($G(^DIC(42,+W,0)),U,11),ECXW=$S(ECXADM="":"",1:$P($G(^DIC(42,+W,44)),U)) ;154 Ward gets set to null if this is an order for an outpatient
+ S ECXSTANO=$$GETDIV^ECXDEPT(ECXDIV) ;166 tjl - Get Patient Division based on Facility
  S ECXUDDT=$$ECXDATE^ECXUTL($P(DATA,U,3),ECXYM)
  S ECXUDTM=$E($P($P(DATA,U,3),".",2)_"000000",1,6)
  S ECXQTY=$P(DATA,U,5),ECXCOST=$P(DATA,U,8),ON=$P(DATA,U,10)
@@ -146,7 +148,7 @@ FILE ;file record
  ;provider^cost^mov #^treat spec^ndc^new feeder key^investigational^
  ;udp time^adm date^adm time
  ;node1
- ;mpi^dss dept^provider npi^dom^observ pat ind^encounter num^
+ ;mpi^placeholder^provider npi^dom^observ pat ind^encounter num^
  ;prod div code^means tst^elig^dob^sex^state^county^zip+4^vet^
  ;period of svc^pow stat^pow loc^ir status^ao status^ao loc^
  ;purple heart ind.^mst status^cnh/sh status^enrollment loc^
@@ -164,6 +166,7 @@ FILE ;file record
  ;ECXERI^environ contamin ECXEST^OEF/OIF ECXOEF^OEF/OIF return date ECXOEFDT^associate pc provider npi ECASNPI^primary care provider npi ECPTNPI^provider npi ECXPRNPI
  ;^country ECXCNTRY^PATCAT^Encounter SC ECXESC^Camp Lejeune Status ECXCLST^Encounter Camp Lejeune ECXECL
  ;Combat Service Indicator (ECXSVCI) ^ Combat Service Location (ECXSVCL) ^ New Script (ECXNEW)
+ ;^Patient Division (ECXSTANO)
  ;
  ;convert specialty to PTF Code for transmission
  N ECXDATA
@@ -193,6 +196,7 @@ FILE ;file record
  I ECXLOGIC>2010 S ECODE2=ECODE2_U_ECXPATCAT ; 127 PATCAT ADDED
  I ECXLOGIC>2013 S ECODE2=ECODE2_U_ECXESC_U_ECXCLST_U_ECXECL ;144
  I ECXLOGIC>2014 S ECODE2=ECODE2_U_ECXSVCI_U_ECXSVCL_U_ECXNEW ;149
+ I ECXLOGIC>2017 S ECODE2=ECODE2_U_ECXSTANO ;166 tjl
  S ^ECX(ECFILE,EC7,0)=ECODE,^ECX(ECFILE,EC7,1)=ECODE1
  S ^ECX(ECFILE,EC7,2)=ECODE2,ECRN=ECRN+1
  S DA=EC7,DIK="^ECX("_ECFILE_"," D IX1^DIK K DIK,DA

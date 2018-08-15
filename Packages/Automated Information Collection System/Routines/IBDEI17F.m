@@ -1,136 +1,122 @@
-IBDEI17F ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI17F ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,21552,2)
- ;;=^267165
- ;;^UTILITY(U,$J,358.3,21553,0)
- ;;=186.9^^133^1317^44
- ;;^UTILITY(U,$J,358.3,21553,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21553,1,4,0)
- ;;=4^186.9
- ;;^UTILITY(U,$J,358.3,21553,1,5,0)
- ;;=5^CA of Testis
- ;;^UTILITY(U,$J,358.3,21553,2)
- ;;=^267242
- ;;^UTILITY(U,$J,358.3,21554,0)
- ;;=198.7^^133^1317^98
- ;;^UTILITY(U,$J,358.3,21554,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21554,1,4,0)
- ;;=4^198.7
- ;;^UTILITY(U,$J,358.3,21554,1,5,0)
- ;;=5^Mets to Adrenal Gland
- ;;^UTILITY(U,$J,358.3,21554,2)
- ;;=^267337
- ;;^UTILITY(U,$J,358.3,21555,0)
- ;;=198.5^^133^1317^99
- ;;^UTILITY(U,$J,358.3,21555,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21555,1,4,0)
- ;;=4^198.5
- ;;^UTILITY(U,$J,358.3,21555,1,5,0)
- ;;=5^Mets to Bone or Bone Marrow
- ;;^UTILITY(U,$J,358.3,21555,2)
- ;;=^267336
- ;;^UTILITY(U,$J,358.3,21556,0)
- ;;=198.3^^133^1317^100
- ;;^UTILITY(U,$J,358.3,21556,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21556,1,4,0)
- ;;=4^198.3
- ;;^UTILITY(U,$J,358.3,21556,1,5,0)
- ;;=5^Mets to Brain
- ;;^UTILITY(U,$J,358.3,21556,2)
- ;;=Brain Metatastasis^267334
- ;;^UTILITY(U,$J,358.3,21557,0)
- ;;=197.7^^133^1317^31
- ;;^UTILITY(U,$J,358.3,21557,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21557,1,4,0)
- ;;=4^197.7
- ;;^UTILITY(U,$J,358.3,21557,1,5,0)
- ;;=5^CA of Liver, Secondary
- ;;^UTILITY(U,$J,358.3,21557,2)
- ;;=CA Liver, Secondary^267328
- ;;^UTILITY(U,$J,358.3,21558,0)
- ;;=197.0^^133^1317^93
- ;;^UTILITY(U,$J,358.3,21558,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21558,1,4,0)
- ;;=4^197.0
- ;;^UTILITY(U,$J,358.3,21558,1,5,0)
- ;;=5^Mets To Lung
- ;;^UTILITY(U,$J,358.3,21558,2)
- ;;=Mets to Lung^267322
- ;;^UTILITY(U,$J,358.3,21559,0)
- ;;=196.2^^133^1317^101
- ;;^UTILITY(U,$J,358.3,21559,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21559,1,4,0)
- ;;=4^196.2
- ;;^UTILITY(U,$J,358.3,21559,1,5,0)
- ;;=5^Mets to Lymph Nodes, Intra-Abdominal
- ;;^UTILITY(U,$J,358.3,21559,2)
- ;;=^267316
- ;;^UTILITY(U,$J,358.3,21560,0)
- ;;=196.3^^133^1317^94
- ;;^UTILITY(U,$J,358.3,21560,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21560,1,4,0)
- ;;=4^196.3
- ;;^UTILITY(U,$J,358.3,21560,1,5,0)
- ;;=5^Mets To Lymph Nodes, Axillary Or Brachial
- ;;^UTILITY(U,$J,358.3,21560,2)
- ;;=^267317
- ;;^UTILITY(U,$J,358.3,21561,0)
- ;;=196.0^^133^1317^95
- ;;^UTILITY(U,$J,358.3,21561,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21561,1,4,0)
- ;;=4^196.0
- ;;^UTILITY(U,$J,358.3,21561,1,5,0)
- ;;=5^Mets To Lymph Nodes, Cervical
- ;;^UTILITY(U,$J,358.3,21561,2)
- ;;=Lymph Nodes^267314
- ;;^UTILITY(U,$J,358.3,21562,0)
- ;;=196.1^^133^1317^96
- ;;^UTILITY(U,$J,358.3,21562,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21562,1,4,0)
- ;;=4^196.1
- ;;^UTILITY(U,$J,358.3,21562,1,5,0)
- ;;=5^Mets To Lymph Nodes, Mediastinal 
- ;;^UTILITY(U,$J,358.3,21562,2)
- ;;=Lymph Nodes^267315
- ;;^UTILITY(U,$J,358.3,21563,0)
- ;;=196.8^^133^1317^97
- ;;^UTILITY(U,$J,358.3,21563,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21563,1,4,0)
- ;;=4^196.8
- ;;^UTILITY(U,$J,358.3,21563,1,5,0)
- ;;=5^Mets To Lymph Nodes, Multiple Sites
- ;;^UTILITY(U,$J,358.3,21563,2)
- ;;=^267320
- ;;^UTILITY(U,$J,358.3,21564,0)
- ;;=V10.51^^133^1317^54
- ;;^UTILITY(U,$J,358.3,21564,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21564,1,4,0)
- ;;=4^V10.51
- ;;^UTILITY(U,$J,358.3,21564,1,5,0)
- ;;=5^H/O Bladder Cancer
- ;;^UTILITY(U,$J,358.3,21564,2)
- ;;=^295228
- ;;^UTILITY(U,$J,358.3,21565,0)
- ;;=V10.3^^133^1317^55
- ;;^UTILITY(U,$J,358.3,21565,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21565,1,4,0)
- ;;=4^V10.3
- ;;^UTILITY(U,$J,358.3,21565,1,5,0)
- ;;=5^H/O Breast Cancer
- ;;^UTILITY(U,$J,358.3,21565,2)
- ;;=^295217
+ ;;^UTILITY(U,$J,358.3,20119,0)
+ ;;=Y36.6X0A^^94^935^113
+ ;;^UTILITY(U,$J,358.3,20119,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20119,1,3,0)
+ ;;=3^War Op Inv Biological Weapons,Milt,Init Encntr
+ ;;^UTILITY(U,$J,358.3,20119,1,4,0)
+ ;;=4^Y36.6X0A
+ ;;^UTILITY(U,$J,358.3,20119,2)
+ ;;=^5061775
+ ;;^UTILITY(U,$J,358.3,20120,0)
+ ;;=Y36.6X0D^^94^935^115
+ ;;^UTILITY(U,$J,358.3,20120,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20120,1,3,0)
+ ;;=3^War Op Inv Biological Weapons,Milt,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,20120,1,4,0)
+ ;;=4^Y36.6X0D
+ ;;^UTILITY(U,$J,358.3,20120,2)
+ ;;=^5061776
+ ;;^UTILITY(U,$J,358.3,20121,0)
+ ;;=Y36.7X0A^^94^935^128
+ ;;^UTILITY(U,$J,358.3,20121,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20121,1,3,0)
+ ;;=3^War Op w/ Chem Weapons/Unconvtl Warfare,Milt,Init Encntr
+ ;;^UTILITY(U,$J,358.3,20121,1,4,0)
+ ;;=4^Y36.7X0A
+ ;;^UTILITY(U,$J,358.3,20121,2)
+ ;;=^5061781
+ ;;^UTILITY(U,$J,358.3,20122,0)
+ ;;=Y36.7X0D^^94^935^129
+ ;;^UTILITY(U,$J,358.3,20122,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20122,1,3,0)
+ ;;=3^War Op w/ Chem Weapons/Unconvtl Warfare,Milt,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,20122,1,4,0)
+ ;;=4^Y36.7X0D
+ ;;^UTILITY(U,$J,358.3,20122,2)
+ ;;=^5061782
+ ;;^UTILITY(U,$J,358.3,20123,0)
+ ;;=Y36.810A^^94^935^22
+ ;;^UTILITY(U,$J,358.3,20123,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20123,1,3,0)
+ ;;=3^Explosn of Mine Placed During War Op but Expld Aft,Milt,Init Encntr
+ ;;^UTILITY(U,$J,358.3,20123,1,4,0)
+ ;;=4^Y36.810A
+ ;;^UTILITY(U,$J,358.3,20123,2)
+ ;;=^5061787
+ ;;^UTILITY(U,$J,358.3,20124,0)
+ ;;=Y36.810D^^94^935^23
+ ;;^UTILITY(U,$J,358.3,20124,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20124,1,3,0)
+ ;;=3^Explosn of Mine Placed During War Op but Expld Aft,Milt,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,20124,1,4,0)
+ ;;=4^Y36.810D
+ ;;^UTILITY(U,$J,358.3,20124,2)
+ ;;=^5061788
+ ;;^UTILITY(U,$J,358.3,20125,0)
+ ;;=Y36.820A^^94^935^19
+ ;;^UTILITY(U,$J,358.3,20125,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20125,1,3,0)
+ ;;=3^Explosn of Bomb Placed During War Op But Expld Aft,Milt,Init Encntr
+ ;;^UTILITY(U,$J,358.3,20125,1,4,0)
+ ;;=4^Y36.820A
+ ;;^UTILITY(U,$J,358.3,20125,2)
+ ;;=^5061793
+ ;;^UTILITY(U,$J,358.3,20126,0)
+ ;;=Y36.820D^^94^935^20
+ ;;^UTILITY(U,$J,358.3,20126,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20126,1,3,0)
+ ;;=3^Explosn of Bomb Placed During War Op But Expld Aft,Milt,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,20126,1,4,0)
+ ;;=4^Y36.820D
+ ;;^UTILITY(U,$J,358.3,20126,2)
+ ;;=^5061794
+ ;;^UTILITY(U,$J,358.3,20127,0)
+ ;;=Y37.200A^^94^935^91
+ ;;^UTILITY(U,$J,358.3,20127,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20127,1,3,0)
+ ;;=3^Miltary Op Inv Explosion/Fragments,Milt,Init Encntr
+ ;;^UTILITY(U,$J,358.3,20127,1,4,0)
+ ;;=4^Y37.200A
+ ;;^UTILITY(U,$J,358.3,20127,2)
+ ;;=^5137997
+ ;;^UTILITY(U,$J,358.3,20128,0)
+ ;;=Y37.200D^^94^935^92
+ ;;^UTILITY(U,$J,358.3,20128,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20128,1,3,0)
+ ;;=3^Miltary Op Inv Explosion/Fragments,Milt,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,20128,1,4,0)
+ ;;=4^Y37.200D
+ ;;^UTILITY(U,$J,358.3,20128,2)
+ ;;=^5137999
+ ;;^UTILITY(U,$J,358.3,20129,0)
+ ;;=X00.1XXA^^94^935^13
+ ;;^UTILITY(U,$J,358.3,20129,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20129,1,3,0)
+ ;;=3^Exp to Smoke in Uncontrolled Bldg Fire,Init Encntr
+ ;;^UTILITY(U,$J,358.3,20129,1,4,0)
+ ;;=4^X00.1XXA
+ ;;^UTILITY(U,$J,358.3,20129,2)
+ ;;=^5060664
+ ;;^UTILITY(U,$J,358.3,20130,0)
+ ;;=X00.1XXD^^94^935^14
+ ;;^UTILITY(U,$J,358.3,20130,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20130,1,3,0)
+ ;;=3^Exp to Smoke in Uncontrolled Bldg Fire,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,20130,1,4,0)
+ ;;=4^X00.1XXD

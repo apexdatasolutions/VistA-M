@@ -1,144 +1,128 @@
-IBDEI062 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI062 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,2624,1,5,0)
- ;;=5^Ca Brain
- ;;^UTILITY(U,$J,358.3,2624,2)
- ;;=Brain CA^267279
- ;;^UTILITY(U,$J,358.3,2625,0)
- ;;=174.9^^27^240^7
- ;;^UTILITY(U,$J,358.3,2625,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2625,1,4,0)
- ;;=4^174.9
- ;;^UTILITY(U,$J,358.3,2625,1,5,0)
- ;;=5^Ca Breast
- ;;^UTILITY(U,$J,358.3,2625,2)
- ;;=Breast CA^267202
- ;;^UTILITY(U,$J,358.3,2626,0)
- ;;=176.9^^27^240^61
- ;;^UTILITY(U,$J,358.3,2626,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2626,1,4,0)
- ;;=4^176.9
- ;;^UTILITY(U,$J,358.3,2626,1,5,0)
- ;;=5^Kaposi's Sarcoma
- ;;^UTILITY(U,$J,358.3,2626,2)
- ;;=Kaposi's Sarcoma^107993
- ;;^UTILITY(U,$J,358.3,2627,0)
- ;;=172.9^^27^240^67
- ;;^UTILITY(U,$J,358.3,2627,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2627,1,4,0)
- ;;=4^172.9
- ;;^UTILITY(U,$J,358.3,2627,1,5,0)
- ;;=5^Malignant Melanoma
- ;;^UTILITY(U,$J,358.3,2627,2)
- ;;=^75462
- ;;^UTILITY(U,$J,358.3,2628,0)
- ;;=185.^^27^240^25
- ;;^UTILITY(U,$J,358.3,2628,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2628,1,4,0)
- ;;=4^185.
- ;;^UTILITY(U,$J,358.3,2628,1,5,0)
- ;;=5^Ca Prostate
- ;;^UTILITY(U,$J,358.3,2628,2)
- ;;=Prostate CA^99481
- ;;^UTILITY(U,$J,358.3,2629,0)
- ;;=189.0^^27^240^27
- ;;^UTILITY(U,$J,358.3,2629,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2629,1,4,0)
- ;;=4^189.0
- ;;^UTILITY(U,$J,358.3,2629,1,5,0)
- ;;=5^Ca Renal
- ;;^UTILITY(U,$J,358.3,2629,2)
- ;;=Renal Cancer^73523
- ;;^UTILITY(U,$J,358.3,2630,0)
- ;;=189.1^^27^240^28
- ;;^UTILITY(U,$J,358.3,2630,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2630,1,4,0)
- ;;=4^189.1
- ;;^UTILITY(U,$J,358.3,2630,1,5,0)
- ;;=5^Ca Renal Pelvis
- ;;^UTILITY(U,$J,358.3,2630,2)
- ;;=   ^267264
- ;;^UTILITY(U,$J,358.3,2631,0)
- ;;=171.9^^27^240^82
- ;;^UTILITY(U,$J,358.3,2631,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2631,1,4,0)
- ;;=4^171.9
- ;;^UTILITY(U,$J,358.3,2631,1,5,0)
- ;;=5^Soft Tissue Sarcoma
- ;;^UTILITY(U,$J,358.3,2631,2)
- ;;=^267165
- ;;^UTILITY(U,$J,358.3,2632,0)
- ;;=186.9^^27^240^31
- ;;^UTILITY(U,$J,358.3,2632,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2632,1,4,0)
- ;;=4^186.9
- ;;^UTILITY(U,$J,358.3,2632,1,5,0)
- ;;=5^Ca Testicular
- ;;^UTILITY(U,$J,358.3,2632,2)
- ;;=^267242
- ;;^UTILITY(U,$J,358.3,2633,0)
- ;;=198.5^^27^240^68
- ;;^UTILITY(U,$J,358.3,2633,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2633,1,4,0)
- ;;=4^198.5
- ;;^UTILITY(U,$J,358.3,2633,1,5,0)
- ;;=5^Mets to Bone or Bone Marrow
- ;;^UTILITY(U,$J,358.3,2633,2)
- ;;=^267336
- ;;^UTILITY(U,$J,358.3,2634,0)
- ;;=198.3^^27^240^69
- ;;^UTILITY(U,$J,358.3,2634,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2634,1,4,0)
- ;;=4^198.3
- ;;^UTILITY(U,$J,358.3,2634,1,5,0)
- ;;=5^Mets to Brain
- ;;^UTILITY(U,$J,358.3,2634,2)
- ;;=Brain Metatastasis^267334
- ;;^UTILITY(U,$J,358.3,2635,0)
- ;;=197.7^^27^240^18
- ;;^UTILITY(U,$J,358.3,2635,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2635,1,4,0)
- ;;=4^197.7
- ;;^UTILITY(U,$J,358.3,2635,1,5,0)
- ;;=5^Ca Liver, Secondary
- ;;^UTILITY(U,$J,358.3,2635,2)
- ;;=CA Liver, Secondary^267328
- ;;^UTILITY(U,$J,358.3,2636,0)
- ;;=197.0^^27^240^70
- ;;^UTILITY(U,$J,358.3,2636,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2636,1,4,0)
- ;;=4^197.0
- ;;^UTILITY(U,$J,358.3,2636,1,5,0)
- ;;=5^Mets to Lung
- ;;^UTILITY(U,$J,358.3,2636,2)
- ;;=Mets to Lung^267322
- ;;^UTILITY(U,$J,358.3,2637,0)
- ;;=196.2^^27^240^71
- ;;^UTILITY(U,$J,358.3,2637,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2637,1,4,0)
- ;;=4^196.2
- ;;^UTILITY(U,$J,358.3,2637,1,5,0)
- ;;=5^Mets to Lymph Nodes,Abdominal
- ;;^UTILITY(U,$J,358.3,2637,2)
- ;;=^267316
- ;;^UTILITY(U,$J,358.3,2638,0)
- ;;=196.3^^27^240^72
- ;;^UTILITY(U,$J,358.3,2638,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2638,1,4,0)
- ;;=4^196.3
+ ;;^UTILITY(U,$J,358.3,2237,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2237,1,3,0)
+ ;;=3^Pulmonary Embolism w/ Acute Cor Pulmonale
+ ;;^UTILITY(U,$J,358.3,2237,1,4,0)
+ ;;=4^I26.09
+ ;;^UTILITY(U,$J,358.3,2237,2)
+ ;;=^5007147
+ ;;^UTILITY(U,$J,358.3,2238,0)
+ ;;=I26.90^^19^192^53
+ ;;^UTILITY(U,$J,358.3,2238,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2238,1,3,0)
+ ;;=3^Septic Pulmonary Embolism w/o Acute Cor Pulmonale
+ ;;^UTILITY(U,$J,358.3,2238,1,4,0)
+ ;;=4^I26.90
+ ;;^UTILITY(U,$J,358.3,2238,2)
+ ;;=^5007148
+ ;;^UTILITY(U,$J,358.3,2239,0)
+ ;;=I26.99^^19^192^48
+ ;;^UTILITY(U,$J,358.3,2239,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2239,1,3,0)
+ ;;=3^Pulmonary Embolism w/o Acute Cor Pulmonale NEC
+ ;;^UTILITY(U,$J,358.3,2239,1,4,0)
+ ;;=4^I26.99
+ ;;^UTILITY(U,$J,358.3,2239,2)
+ ;;=^5007150
+ ;;^UTILITY(U,$J,358.3,2240,0)
+ ;;=T80.0XXA^^19^192^3
+ ;;^UTILITY(U,$J,358.3,2240,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2240,1,3,0)
+ ;;=3^Air Embolism Following Infusion/Transfusion/Therapeutic Inj,Init Encntr
+ ;;^UTILITY(U,$J,358.3,2240,1,4,0)
+ ;;=4^T80.0XXA
+ ;;^UTILITY(U,$J,358.3,2240,2)
+ ;;=^5054344
+ ;;^UTILITY(U,$J,358.3,2241,0)
+ ;;=T81.718A^^19^192^10
+ ;;^UTILITY(U,$J,358.3,2241,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2241,1,3,0)
+ ;;=3^Complication of Artery Following Procedure NEC,Init Encntr
+ ;;^UTILITY(U,$J,358.3,2241,1,4,0)
+ ;;=4^T81.718A
+ ;;^UTILITY(U,$J,358.3,2241,2)
+ ;;=^5054644
+ ;;^UTILITY(U,$J,358.3,2242,0)
+ ;;=T81.72XA^^19^192^15
+ ;;^UTILITY(U,$J,358.3,2242,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2242,1,3,0)
+ ;;=3^Complication of Vein Following Procedure NEC,Init Encntr
+ ;;^UTILITY(U,$J,358.3,2242,1,4,0)
+ ;;=4^T81.72XA
+ ;;^UTILITY(U,$J,358.3,2242,2)
+ ;;=^5054650
+ ;;^UTILITY(U,$J,358.3,2243,0)
+ ;;=T82.817A^^19^192^20
+ ;;^UTILITY(U,$J,358.3,2243,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2243,1,3,0)
+ ;;=3^Embolism of Cardiac Prosthetic Device/Implant/Graft,Init Encntr
+ ;;^UTILITY(U,$J,358.3,2243,1,4,0)
+ ;;=4^T82.817A
+ ;;^UTILITY(U,$J,358.3,2243,2)
+ ;;=^5054914
+ ;;^UTILITY(U,$J,358.3,2244,0)
+ ;;=T82.818A^^19^192^21
+ ;;^UTILITY(U,$J,358.3,2244,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2244,1,3,0)
+ ;;=3^Embolism of Vascular Prosthetic Device/Implant/Graft,Init Encntr
+ ;;^UTILITY(U,$J,358.3,2244,1,4,0)
+ ;;=4^T82.818A
+ ;;^UTILITY(U,$J,358.3,2244,2)
+ ;;=^5054917
+ ;;^UTILITY(U,$J,358.3,2245,0)
+ ;;=I26.99^^19^192^49
+ ;;^UTILITY(U,$J,358.3,2245,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2245,1,3,0)
+ ;;=3^Pulmonary Embolism w/o Acute Cor Pulmonale NEC
+ ;;^UTILITY(U,$J,358.3,2245,1,4,0)
+ ;;=4^I26.99
+ ;;^UTILITY(U,$J,358.3,2245,2)
+ ;;=^5007150
+ ;;^UTILITY(U,$J,358.3,2246,0)
+ ;;=I27.0^^19^192^46
+ ;;^UTILITY(U,$J,358.3,2246,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2246,1,3,0)
+ ;;=3^Primary Pulmonary Hypertension
+ ;;^UTILITY(U,$J,358.3,2246,1,4,0)
+ ;;=4^I27.0
+ ;;^UTILITY(U,$J,358.3,2246,2)
+ ;;=^265310
+ ;;^UTILITY(U,$J,358.3,2247,0)
+ ;;=I27.1^^19^192^32
+ ;;^UTILITY(U,$J,358.3,2247,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2247,1,3,0)
+ ;;=3^Kyphoscoliotic Hrt Disease
+ ;;^UTILITY(U,$J,358.3,2247,1,4,0)
+ ;;=4^I27.1
+ ;;^UTILITY(U,$J,358.3,2247,2)
+ ;;=^265120
+ ;;^UTILITY(U,$J,358.3,2248,0)
+ ;;=I27.2^^19^192^52
+ ;;^UTILITY(U,$J,358.3,2248,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2248,1,3,0)
+ ;;=3^Secondary Pulmonary Hypertension NEC
+ ;;^UTILITY(U,$J,358.3,2248,1,4,0)
+ ;;=4^I27.2
+ ;;^UTILITY(U,$J,358.3,2248,2)
+ ;;=^5007151
+ ;;^UTILITY(U,$J,358.3,2249,0)
+ ;;=I27.89^^19^192^50
+ ;;^UTILITY(U,$J,358.3,2249,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2249,1,3,0)
+ ;;=3^Pulmonary Hrt Diseases NEC

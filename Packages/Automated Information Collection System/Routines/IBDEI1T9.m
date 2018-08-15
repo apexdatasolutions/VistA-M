@@ -1,0 +1,134 @@
+IBDEI1T9 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,30315,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30315,1,3,0)
+ ;;=3^Osteomyelitis,Acute Hematogenous,Unspec Site
+ ;;^UTILITY(U,$J,358.3,30315,1,4,0)
+ ;;=4^M86.00
+ ;;^UTILITY(U,$J,358.3,30315,2)
+ ;;=^5014497
+ ;;^UTILITY(U,$J,358.3,30316,0)
+ ;;=M86.50^^135^1374^59
+ ;;^UTILITY(U,$J,358.3,30316,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30316,1,3,0)
+ ;;=3^Osteomyelitis,Chronic Hematogenous,Unspec Site
+ ;;^UTILITY(U,$J,358.3,30316,1,4,0)
+ ;;=4^M86.50
+ ;;^UTILITY(U,$J,358.3,30316,2)
+ ;;=^5014607
+ ;;^UTILITY(U,$J,358.3,30317,0)
+ ;;=M86.30^^135^1374^60
+ ;;^UTILITY(U,$J,358.3,30317,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30317,1,3,0)
+ ;;=3^Osteomyelitis,Chronic Multifocal,Unspec Site
+ ;;^UTILITY(U,$J,358.3,30317,1,4,0)
+ ;;=4^M86.30
+ ;;^UTILITY(U,$J,358.3,30317,2)
+ ;;=^5014559
+ ;;^UTILITY(U,$J,358.3,30318,0)
+ ;;=M86.8X9^^135^1374^63
+ ;;^UTILITY(U,$J,358.3,30318,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30318,1,3,0)
+ ;;=3^Osteomyelitis,Unspec Sites
+ ;;^UTILITY(U,$J,358.3,30318,1,4,0)
+ ;;=4^M86.8X9
+ ;;^UTILITY(U,$J,358.3,30318,2)
+ ;;=^5014655
+ ;;^UTILITY(U,$J,358.3,30319,0)
+ ;;=M86.60^^135^1374^61
+ ;;^UTILITY(U,$J,358.3,30319,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30319,1,3,0)
+ ;;=3^Osteomyelitis,Chronic,Unspec Site
+ ;;^UTILITY(U,$J,358.3,30319,1,4,0)
+ ;;=4^M86.60
+ ;;^UTILITY(U,$J,358.3,30319,2)
+ ;;=^5014630
+ ;;^UTILITY(U,$J,358.3,30320,0)
+ ;;=M86.40^^135^1374^56
+ ;;^UTILITY(U,$J,358.3,30320,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30320,1,3,0)
+ ;;=3^Osteomyelitis w/ Draining Sinus,Chronic,Unspec Site
+ ;;^UTILITY(U,$J,358.3,30320,1,4,0)
+ ;;=4^M86.40
+ ;;^UTILITY(U,$J,358.3,30320,2)
+ ;;=^5014583
+ ;;^UTILITY(U,$J,358.3,30321,0)
+ ;;=R50.2^^135^1374^23
+ ;;^UTILITY(U,$J,358.3,30321,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30321,1,3,0)
+ ;;=3^Fever,Drug-Induced
+ ;;^UTILITY(U,$J,358.3,30321,1,4,0)
+ ;;=4^R50.2
+ ;;^UTILITY(U,$J,358.3,30321,2)
+ ;;=^5019507
+ ;;^UTILITY(U,$J,358.3,30322,0)
+ ;;=R50.9^^135^1374^27
+ ;;^UTILITY(U,$J,358.3,30322,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30322,1,3,0)
+ ;;=3^Fever,Unspec
+ ;;^UTILITY(U,$J,358.3,30322,1,4,0)
+ ;;=4^R50.9
+ ;;^UTILITY(U,$J,358.3,30322,2)
+ ;;=^5019512
+ ;;^UTILITY(U,$J,358.3,30323,0)
+ ;;=R76.11^^135^1374^1
+ ;;^UTILITY(U,$J,358.3,30323,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30323,1,3,0)
+ ;;=3^Abnormal Reaction to TB Test w/o Active TB
+ ;;^UTILITY(U,$J,358.3,30323,1,4,0)
+ ;;=4^R76.11
+ ;;^UTILITY(U,$J,358.3,30323,2)
+ ;;=^5019570
+ ;;^UTILITY(U,$J,358.3,30324,0)
+ ;;=Z21.^^135^1374^30
+ ;;^UTILITY(U,$J,358.3,30324,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30324,1,3,0)
+ ;;=3^HIV Asymptomatic,Infection Status
+ ;;^UTILITY(U,$J,358.3,30324,1,4,0)
+ ;;=4^Z21.
+ ;;^UTILITY(U,$J,358.3,30324,2)
+ ;;=^5062777
+ ;;^UTILITY(U,$J,358.3,30325,0)
+ ;;=B37.0^^135^1374^16
+ ;;^UTILITY(U,$J,358.3,30325,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30325,1,3,0)
+ ;;=3^Candidal Stomatitis (Oral Thrush)
+ ;;^UTILITY(U,$J,358.3,30325,1,4,0)
+ ;;=4^B37.0
+ ;;^UTILITY(U,$J,358.3,30325,2)
+ ;;=^5000612
+ ;;^UTILITY(U,$J,358.3,30326,0)
+ ;;=B97.10^^135^1374^22
+ ;;^UTILITY(U,$J,358.3,30326,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30326,1,3,0)
+ ;;=3^Enterovirus,Unspec,as Cause of Disease
+ ;;^UTILITY(U,$J,358.3,30326,1,4,0)
+ ;;=4^B97.10
+ ;;^UTILITY(U,$J,358.3,30326,2)
+ ;;=^5000861
+ ;;^UTILITY(U,$J,358.3,30327,0)
+ ;;=R50.82^^135^1374^24
+ ;;^UTILITY(U,$J,358.3,30327,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,30327,1,3,0)
+ ;;=3^Fever,Postprocedural
+ ;;^UTILITY(U,$J,358.3,30327,1,4,0)
+ ;;=4^R50.82
+ ;;^UTILITY(U,$J,358.3,30327,2)
+ ;;=^5019509
+ ;;^UTILITY(U,$J,358.3,30328,0)
+ ;;=R50.83^^135^1374^26

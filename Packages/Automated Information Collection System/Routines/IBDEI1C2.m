@@ -1,138 +1,122 @@
-IBDEI1C2 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1C2 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,23890,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23890,1,2,0)
- ;;=2^593.70
- ;;^UTILITY(U,$J,358.3,23890,1,5,0)
- ;;=5^VUR w/o Nephropathy Unspec
- ;;^UTILITY(U,$J,358.3,23890,2)
- ;;=^303304
- ;;^UTILITY(U,$J,358.3,23891,0)
- ;;=593.71^^153^1524^45
- ;;^UTILITY(U,$J,358.3,23891,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23891,1,2,0)
- ;;=2^593.71
- ;;^UTILITY(U,$J,358.3,23891,1,5,0)
- ;;=5^VUR w/ Reflux Nephropathy Unilat
- ;;^UTILITY(U,$J,358.3,23891,2)
- ;;=^303302
- ;;^UTILITY(U,$J,358.3,23892,0)
- ;;=593.72^^153^1524^43
- ;;^UTILITY(U,$J,358.3,23892,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23892,1,2,0)
- ;;=2^593.72
- ;;^UTILITY(U,$J,358.3,23892,1,5,0)
- ;;=5^VUR w/ Reflux Nephropathy Bilat
- ;;^UTILITY(U,$J,358.3,23892,2)
- ;;=^303303
- ;;^UTILITY(U,$J,358.3,23893,0)
- ;;=593.73^^153^1524^44
- ;;^UTILITY(U,$J,358.3,23893,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23893,1,2,0)
- ;;=2^593.73
- ;;^UTILITY(U,$J,358.3,23893,1,5,0)
- ;;=5^VUR w/ Reflux Nephropathy NOS
- ;;^UTILITY(U,$J,358.3,23893,2)
- ;;=^303305
- ;;^UTILITY(U,$J,358.3,23894,0)
- ;;=403.90^^153^1524^20
- ;;^UTILITY(U,$J,358.3,23894,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23894,1,2,0)
- ;;=2^403.90
- ;;^UTILITY(U,$J,358.3,23894,1,5,0)
- ;;=5^HTN Chr Renal Disease,Stages I-IV
- ;;^UTILITY(U,$J,358.3,23894,2)
- ;;=^334272
- ;;^UTILITY(U,$J,358.3,23895,0)
- ;;=403.91^^153^1524^19
- ;;^UTILITY(U,$J,358.3,23895,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23895,1,2,0)
- ;;=2^403.91
- ;;^UTILITY(U,$J,358.3,23895,1,5,0)
- ;;=5^HTN Chr Renal Disease Stage V-ESRD
- ;;^UTILITY(U,$J,358.3,23895,2)
- ;;=^334242
- ;;^UTILITY(U,$J,358.3,23896,0)
- ;;=585.9^^153^1524^12
- ;;^UTILITY(U,$J,358.3,23896,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23896,1,2,0)
- ;;=2^585.9
- ;;^UTILITY(U,$J,358.3,23896,1,5,0)
- ;;=5^Chr Kidney Disease/Failure
- ;;^UTILITY(U,$J,358.3,23896,2)
- ;;=^332812
- ;;^UTILITY(U,$J,358.3,23897,0)
- ;;=586.^^153^1524^38
- ;;^UTILITY(U,$J,358.3,23897,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23897,1,2,0)
- ;;=2^586.
- ;;^UTILITY(U,$J,358.3,23897,1,5,0)
- ;;=5^Renal Failure NOS
- ;;^UTILITY(U,$J,358.3,23897,2)
- ;;=^104733
- ;;^UTILITY(U,$J,358.3,23898,0)
- ;;=584.9^^153^1524^39
- ;;^UTILITY(U,$J,358.3,23898,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23898,1,2,0)
- ;;=2^584.9
- ;;^UTILITY(U,$J,358.3,23898,1,5,0)
- ;;=5^Renal Failure,Acute,Unspec
- ;;^UTILITY(U,$J,358.3,23898,2)
- ;;=^338532
- ;;^UTILITY(U,$J,358.3,23899,0)
- ;;=585.1^^153^1524^7
- ;;^UTILITY(U,$J,358.3,23899,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23899,1,2,0)
- ;;=2^585.1
- ;;^UTILITY(U,$J,358.3,23899,1,5,0)
- ;;=5^Chr Kidney Disease Stage I
- ;;^UTILITY(U,$J,358.3,23899,2)
- ;;=^332807
- ;;^UTILITY(U,$J,358.3,23900,0)
- ;;=585.2^^153^1524^8
- ;;^UTILITY(U,$J,358.3,23900,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23900,1,2,0)
- ;;=2^585.2
- ;;^UTILITY(U,$J,358.3,23900,1,5,0)
- ;;=5^Chr Kidney Disease Stage II
- ;;^UTILITY(U,$J,358.3,23900,2)
- ;;=^332808
- ;;^UTILITY(U,$J,358.3,23901,0)
- ;;=585.3^^153^1524^9
- ;;^UTILITY(U,$J,358.3,23901,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23901,1,2,0)
- ;;=2^585.3
- ;;^UTILITY(U,$J,358.3,23901,1,5,0)
- ;;=5^Chr Kidney Disease Stage III
- ;;^UTILITY(U,$J,358.3,23901,2)
- ;;=^332809
- ;;^UTILITY(U,$J,358.3,23902,0)
- ;;=585.4^^153^1524^10
- ;;^UTILITY(U,$J,358.3,23902,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23902,1,2,0)
- ;;=2^585.4
- ;;^UTILITY(U,$J,358.3,23902,1,5,0)
- ;;=5^Chr Kidney Disease Stage IV
- ;;^UTILITY(U,$J,358.3,23902,2)
- ;;=^332810
- ;;^UTILITY(U,$J,358.3,23903,0)
- ;;=585.5^^153^1524^11
- ;;^UTILITY(U,$J,358.3,23903,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23903,1,2,0)
- ;;=2^585.5
+ ;;^UTILITY(U,$J,358.3,22220,2)
+ ;;=^5013955
+ ;;^UTILITY(U,$J,358.3,22221,0)
+ ;;=M84.463S^^101^1038^77
+ ;;^UTILITY(U,$J,358.3,22221,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22221,1,3,0)
+ ;;=3^Pathological fracture, right fibula, sequela
+ ;;^UTILITY(U,$J,358.3,22221,1,4,0)
+ ;;=4^M84.463S
+ ;;^UTILITY(U,$J,358.3,22221,2)
+ ;;=^5013949
+ ;;^UTILITY(U,$J,358.3,22222,0)
+ ;;=S89.312S^^101^1038^81
+ ;;^UTILITY(U,$J,358.3,22222,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22222,1,3,0)
+ ;;=3^Sltr-haris Type I physeal fx lower end of l fibula, sequela
+ ;;^UTILITY(U,$J,358.3,22222,1,4,0)
+ ;;=4^S89.312S
+ ;;^UTILITY(U,$J,358.3,22222,2)
+ ;;=^5137372
+ ;;^UTILITY(U,$J,358.3,22223,0)
+ ;;=S89.311S^^101^1038^82
+ ;;^UTILITY(U,$J,358.3,22223,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22223,1,3,0)
+ ;;=3^Sltr-haris Type I physeal fx lower end of r fibula, sequela
+ ;;^UTILITY(U,$J,358.3,22223,1,4,0)
+ ;;=4^S89.311S
+ ;;^UTILITY(U,$J,358.3,22223,2)
+ ;;=^5043822
+ ;;^UTILITY(U,$J,358.3,22224,0)
+ ;;=S89.212S^^101^1038^85
+ ;;^UTILITY(U,$J,358.3,22224,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22224,1,3,0)
+ ;;=3^Sltr-haris Type I physeal fx upper end of l fibula, sequela
+ ;;^UTILITY(U,$J,358.3,22224,1,4,0)
+ ;;=4^S89.212S
+ ;;^UTILITY(U,$J,358.3,22224,2)
+ ;;=^5043780
+ ;;^UTILITY(U,$J,358.3,22225,0)
+ ;;=S89.211S^^101^1038^86
+ ;;^UTILITY(U,$J,358.3,22225,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22225,1,3,0)
+ ;;=3^Sltr-haris Type I physeal fx upper end of r fibula, sequela
+ ;;^UTILITY(U,$J,358.3,22225,1,4,0)
+ ;;=4^S89.211S
+ ;;^UTILITY(U,$J,358.3,22225,2)
+ ;;=^5043774
+ ;;^UTILITY(U,$J,358.3,22226,0)
+ ;;=S89.322S^^101^1038^89
+ ;;^UTILITY(U,$J,358.3,22226,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22226,1,3,0)
+ ;;=3^Sltr-haris Type II physeal fx lower end of l fibula, sequela
+ ;;^UTILITY(U,$J,358.3,22226,1,4,0)
+ ;;=4^S89.322S
+ ;;^UTILITY(U,$J,358.3,22226,2)
+ ;;=^5137378
+ ;;^UTILITY(U,$J,358.3,22227,0)
+ ;;=S89.221S^^101^1038^93
+ ;;^UTILITY(U,$J,358.3,22227,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22227,1,3,0)
+ ;;=3^Sltr-haris Type II physeal fx upper end of r fibula, sequela
+ ;;^UTILITY(U,$J,358.3,22227,1,4,0)
+ ;;=4^S89.221S
+ ;;^UTILITY(U,$J,358.3,22227,2)
+ ;;=^5043792
+ ;;^UTILITY(U,$J,358.3,22228,0)
+ ;;=S89.321S^^101^1038^90
+ ;;^UTILITY(U,$J,358.3,22228,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22228,1,3,0)
+ ;;=3^Sltr-haris Type II physeal fx lower end of r fibula, sequela
+ ;;^UTILITY(U,$J,358.3,22228,1,4,0)
+ ;;=4^S89.321S
+ ;;^UTILITY(U,$J,358.3,22228,2)
+ ;;=^5043834
+ ;;^UTILITY(U,$J,358.3,22229,0)
+ ;;=S89.222S^^101^1038^94
+ ;;^UTILITY(U,$J,358.3,22229,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22229,1,3,0)
+ ;;=3^Sltr-haris Type II physeal fx upper end of l fibula, sequela
+ ;;^UTILITY(U,$J,358.3,22229,1,4,0)
+ ;;=4^S89.222S
+ ;;^UTILITY(U,$J,358.3,22229,2)
+ ;;=^5043798
+ ;;^UTILITY(U,$J,358.3,22230,0)
+ ;;=M84.364S^^101^1038^103
+ ;;^UTILITY(U,$J,358.3,22230,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22230,1,3,0)
+ ;;=3^Stress fracture, left fibula, sequela
+ ;;^UTILITY(U,$J,358.3,22230,1,4,0)
+ ;;=4^M84.364S
+ ;;^UTILITY(U,$J,358.3,22230,2)
+ ;;=^5013727
+ ;;^UTILITY(U,$J,358.3,22231,0)
+ ;;=M84.363S^^101^1038^105
+ ;;^UTILITY(U,$J,358.3,22231,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22231,1,3,0)
+ ;;=3^Stress fracture, right fibula, sequela
+ ;;^UTILITY(U,$J,358.3,22231,1,4,0)
+ ;;=4^M84.363S
+ ;;^UTILITY(U,$J,358.3,22231,2)
+ ;;=^5013721
+ ;;^UTILITY(U,$J,358.3,22232,0)
+ ;;=S82.822S^^101^1038^107
+ ;;^UTILITY(U,$J,358.3,22232,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22232,1,3,0)
+ ;;=3^Torus fracture of lower end of left fibula, sequela

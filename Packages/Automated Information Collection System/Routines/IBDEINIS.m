@@ -1,5 +1,5 @@
-IBDEINIS ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEINIS ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
 PAC(PKG,VER) ; called from package init (DIFROM7 created this routine)
  ; PKG = $T(IXF) of the INIT routine.
  ; VER is an array that is contained in DIFROM from the INIT routine

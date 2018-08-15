@@ -1,140 +1,122 @@
-IBDEI1AI ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1AI ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,23093,1,5,0)
- ;;=5^Onychocryptosis
- ;;^UTILITY(U,$J,358.3,23093,2)
- ;;=Onychocryptosis^81221
- ;;^UTILITY(U,$J,358.3,23094,0)
- ;;=782.4^^144^1419^92
- ;;^UTILITY(U,$J,358.3,23094,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23094,1,4,0)
- ;;=4^782.4
- ;;^UTILITY(U,$J,358.3,23094,1,5,0)
- ;;=5^Jaundice
- ;;^UTILITY(U,$J,358.3,23094,2)
- ;;=Jaundice^66155
- ;;^UTILITY(U,$J,358.3,23095,0)
- ;;=782.2^^144^1419^100
- ;;^UTILITY(U,$J,358.3,23095,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23095,1,4,0)
- ;;=4^782.2
- ;;^UTILITY(U,$J,358.3,23095,1,5,0)
- ;;=5^Mass, Lump of skin
- ;;^UTILITY(U,$J,358.3,23095,2)
- ;;=^71690
- ;;^UTILITY(U,$J,358.3,23096,0)
- ;;=703.8^^144^1419^111
- ;;^UTILITY(U,$J,358.3,23096,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23096,1,4,0)
- ;;=4^703.8
- ;;^UTILITY(U,$J,358.3,23096,1,5,0)
- ;;=5^Onychodystrophy/Onycholysis
- ;;^UTILITY(U,$J,358.3,23096,2)
- ;;=Onychodystrophy/Onycholysis^271926
- ;;^UTILITY(U,$J,358.3,23097,0)
- ;;=110.1^^144^1419^112
- ;;^UTILITY(U,$J,358.3,23097,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23097,1,4,0)
- ;;=4^110.1
- ;;^UTILITY(U,$J,358.3,23097,1,5,0)
- ;;=5^Onychomycosis finger or toe
- ;;^UTILITY(U,$J,358.3,23097,2)
- ;;=^33173
- ;;^UTILITY(U,$J,358.3,23098,0)
- ;;=782.61^^144^1419^115
- ;;^UTILITY(U,$J,358.3,23098,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23098,1,4,0)
- ;;=4^782.61
- ;;^UTILITY(U,$J,358.3,23098,1,5,0)
- ;;=5^Pallor
- ;;^UTILITY(U,$J,358.3,23098,2)
- ;;=Pallor^89216
- ;;^UTILITY(U,$J,358.3,23099,0)
- ;;=782.1^^144^1419^127
- ;;^UTILITY(U,$J,358.3,23099,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23099,1,4,0)
- ;;=4^782.1
- ;;^UTILITY(U,$J,358.3,23099,1,5,0)
- ;;=5^Skin eruption, nonspec
- ;;^UTILITY(U,$J,358.3,23099,2)
- ;;=^102948
- ;;^UTILITY(U,$J,358.3,23100,0)
- ;;=788.35^^144^1419^53
- ;;^UTILITY(U,$J,358.3,23100,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23100,1,4,0)
- ;;=4^788.35
- ;;^UTILITY(U,$J,358.3,23100,1,5,0)
- ;;=5^Dribbling, post-void
- ;;^UTILITY(U,$J,358.3,23100,2)
- ;;=^293938
- ;;^UTILITY(U,$J,358.3,23101,0)
- ;;=788.1^^144^1419^56
- ;;^UTILITY(U,$J,358.3,23101,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23101,1,4,0)
- ;;=4^788.1
- ;;^UTILITY(U,$J,358.3,23101,1,5,0)
- ;;=5^Dysuria
- ;;^UTILITY(U,$J,358.3,23101,2)
- ;;=Dysuria^37716
- ;;^UTILITY(U,$J,358.3,23102,0)
- ;;=788.36^^144^1419^63
- ;;^UTILITY(U,$J,358.3,23102,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23102,1,4,0)
- ;;=4^788.36
- ;;^UTILITY(U,$J,358.3,23102,1,5,0)
- ;;=5^Enuresis, nocturnal
- ;;^UTILITY(U,$J,358.3,23102,2)
- ;;=^293939
- ;;^UTILITY(U,$J,358.3,23103,0)
- ;;=788.41^^144^1419^69
- ;;^UTILITY(U,$J,358.3,23103,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23103,1,4,0)
- ;;=4^788.41
- ;;^UTILITY(U,$J,358.3,23103,1,5,0)
- ;;=5^Frequency of urine
- ;;^UTILITY(U,$J,358.3,23103,2)
- ;;=^124396
- ;;^UTILITY(U,$J,358.3,23104,0)
- ;;=788.21^^144^1419^82
- ;;^UTILITY(U,$J,358.3,23104,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23104,1,4,0)
- ;;=4^788.21
- ;;^UTILITY(U,$J,358.3,23104,1,5,0)
- ;;=5^Incomplet bladder emptying
- ;;^UTILITY(U,$J,358.3,23104,2)
- ;;=^295766
- ;;^UTILITY(U,$J,358.3,23105,0)
- ;;=788.34^^144^1419^84
- ;;^UTILITY(U,$J,358.3,23105,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23105,1,4,0)
- ;;=4^788.34
- ;;^UTILITY(U,$J,358.3,23105,1,5,0)
- ;;=5^Incontinence, continuous
- ;;^UTILITY(U,$J,358.3,23105,2)
- ;;=^293937
- ;;^UTILITY(U,$J,358.3,23106,0)
- ;;=788.33^^144^1419^85
- ;;^UTILITY(U,$J,358.3,23106,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23106,1,4,0)
- ;;=4^788.33
- ;;^UTILITY(U,$J,358.3,23106,1,5,0)
- ;;=5^Incontinence, mixed
- ;;^UTILITY(U,$J,358.3,23106,2)
- ;;=^293936
- ;;^UTILITY(U,$J,358.3,23107,0)
- ;;=788.30^^144^1419^86
+ ;;^UTILITY(U,$J,358.3,21552,1,3,0)
+ ;;=3^Inj right int carotid, intcr w LOC of 6-24 hrs, sequela
+ ;;^UTILITY(U,$J,358.3,21552,1,4,0)
+ ;;=4^S06.814S
+ ;;^UTILITY(U,$J,358.3,21552,2)
+ ;;=^5021130
+ ;;^UTILITY(U,$J,358.3,21553,0)
+ ;;=S06.819S^^101^1032^77
+ ;;^UTILITY(U,$J,358.3,21553,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21553,1,3,0)
+ ;;=3^Inj right int carotid, intcr w LOC of unsp duration, sequela
+ ;;^UTILITY(U,$J,358.3,21553,1,4,0)
+ ;;=4^S06.819S
+ ;;^UTILITY(U,$J,358.3,21553,2)
+ ;;=^5021145
+ ;;^UTILITY(U,$J,358.3,21554,0)
+ ;;=S06.810S^^101^1032^78
+ ;;^UTILITY(U,$J,358.3,21554,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21554,1,3,0)
+ ;;=3^Inj right int carotid, intcr w/o LOC, sequela
+ ;;^UTILITY(U,$J,358.3,21554,1,4,0)
+ ;;=4^S06.810S
+ ;;^UTILITY(U,$J,358.3,21554,2)
+ ;;=^5021118
+ ;;^UTILITY(U,$J,358.3,21555,0)
+ ;;=S06.1X5S^^101^1032^79
+ ;;^UTILITY(U,$J,358.3,21555,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21555,1,3,0)
+ ;;=3^Traum cerebral edema w LOC >24 hr w ret consc lev, sequela
+ ;;^UTILITY(U,$J,358.3,21555,1,4,0)
+ ;;=4^S06.1X5S
+ ;;^UTILITY(U,$J,358.3,21555,2)
+ ;;=^5020713
+ ;;^UTILITY(U,$J,358.3,21556,0)
+ ;;=S06.1X6S^^101^1032^80
+ ;;^UTILITY(U,$J,358.3,21556,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21556,1,3,0)
+ ;;=3^Traum cerebral edema w LOC >24 hr w/o ret consc w surv, sequela
+ ;;^UTILITY(U,$J,358.3,21556,1,4,0)
+ ;;=4^S06.1X6S
+ ;;^UTILITY(U,$J,358.3,21556,2)
+ ;;=^5020716
+ ;;^UTILITY(U,$J,358.3,21557,0)
+ ;;=S06.1X3S^^101^1032^114
+ ;;^UTILITY(U,$J,358.3,21557,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21557,1,3,0)
+ ;;=3^Traumatic cerebral edema w LOC of 1-5 hrs 59 min, sequela
+ ;;^UTILITY(U,$J,358.3,21557,1,4,0)
+ ;;=4^S06.1X3S
+ ;;^UTILITY(U,$J,358.3,21557,2)
+ ;;=^5020707
+ ;;^UTILITY(U,$J,358.3,21558,0)
+ ;;=S06.1X1S^^101^1032^81
+ ;;^UTILITY(U,$J,358.3,21558,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21558,1,3,0)
+ ;;=3^Traum cerebral edema w LOC of 30 minutes or less, sequela
+ ;;^UTILITY(U,$J,358.3,21558,1,4,0)
+ ;;=4^S06.1X1S
+ ;;^UTILITY(U,$J,358.3,21558,2)
+ ;;=^5020701
+ ;;^UTILITY(U,$J,358.3,21559,0)
+ ;;=S06.1X2S^^101^1032^115
+ ;;^UTILITY(U,$J,358.3,21559,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21559,1,3,0)
+ ;;=3^Traumatic cerebral edema w LOC of 31-59 min, sequela
+ ;;^UTILITY(U,$J,358.3,21559,1,4,0)
+ ;;=4^S06.1X2S
+ ;;^UTILITY(U,$J,358.3,21559,2)
+ ;;=^5020704
+ ;;^UTILITY(U,$J,358.3,21560,0)
+ ;;=S06.1X4S^^101^1032^116
+ ;;^UTILITY(U,$J,358.3,21560,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21560,1,3,0)
+ ;;=3^Traumatic cerebral edema w LOC of 6-24 hrs, sequela
+ ;;^UTILITY(U,$J,358.3,21560,1,4,0)
+ ;;=4^S06.1X4S
+ ;;^UTILITY(U,$J,358.3,21560,2)
+ ;;=^5020710
+ ;;^UTILITY(U,$J,358.3,21561,0)
+ ;;=S06.1X9S^^101^1032^117
+ ;;^UTILITY(U,$J,358.3,21561,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21561,1,3,0)
+ ;;=3^Traumatic cerebral edema w LOC of unsp duration, sequela
+ ;;^UTILITY(U,$J,358.3,21561,1,4,0)
+ ;;=4^S06.1X9S
+ ;;^UTILITY(U,$J,358.3,21561,2)
+ ;;=^5020725
+ ;;^UTILITY(U,$J,358.3,21562,0)
+ ;;=S06.1X0S^^101^1032^118
+ ;;^UTILITY(U,$J,358.3,21562,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21562,1,3,0)
+ ;;=3^Traumatic cerebral edema w/o LOC, sequela
+ ;;^UTILITY(U,$J,358.3,21562,1,4,0)
+ ;;=4^S06.1X0S
+ ;;^UTILITY(U,$J,358.3,21562,2)
+ ;;=^5020698
+ ;;^UTILITY(U,$J,358.3,21563,0)
+ ;;=S06.355S^^101^1032^82
+ ;;^UTILITY(U,$J,358.3,21563,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21563,1,3,0)
+ ;;=3^Traum hemor left cerebrum w LOC >24 hr w ret consc lev, sequela
+ ;;^UTILITY(U,$J,358.3,21563,1,4,0)
+ ;;=4^S06.355S
+ ;;^UTILITY(U,$J,358.3,21563,2)
+ ;;=^5020923
+ ;;^UTILITY(U,$J,358.3,21564,0)
+ ;;=S06.356S^^101^1032^83

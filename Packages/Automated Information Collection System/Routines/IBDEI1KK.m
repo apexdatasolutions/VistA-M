@@ -1,0 +1,132 @@
+IBDEI1KK ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,26236,2)
+ ;;=^5001346
+ ;;^UTILITY(U,$J,358.3,26237,0)
+ ;;=C79.2^^127^1273^20
+ ;;^UTILITY(U,$J,358.3,26237,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26237,1,3,0)
+ ;;=3^Secondary Malig Neop of Skin
+ ;;^UTILITY(U,$J,358.3,26237,1,4,0)
+ ;;=4^C79.2
+ ;;^UTILITY(U,$J,358.3,26237,2)
+ ;;=^267333
+ ;;^UTILITY(U,$J,358.3,26238,0)
+ ;;=C79.31^^127^1273^5
+ ;;^UTILITY(U,$J,358.3,26238,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26238,1,3,0)
+ ;;=3^Secondary Malig Neop of Brain
+ ;;^UTILITY(U,$J,358.3,26238,1,4,0)
+ ;;=4^C79.31
+ ;;^UTILITY(U,$J,358.3,26238,2)
+ ;;=^5001347
+ ;;^UTILITY(U,$J,358.3,26239,0)
+ ;;=C79.32^^127^1273^7
+ ;;^UTILITY(U,$J,358.3,26239,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26239,1,3,0)
+ ;;=3^Secondary Malig Neop of Cerebral Meninges
+ ;;^UTILITY(U,$J,358.3,26239,1,4,0)
+ ;;=4^C79.32
+ ;;^UTILITY(U,$J,358.3,26239,2)
+ ;;=^5001348
+ ;;^UTILITY(U,$J,358.3,26240,0)
+ ;;=C79.51^^127^1273^3
+ ;;^UTILITY(U,$J,358.3,26240,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26240,1,3,0)
+ ;;=3^Secondary Malig Neop of Bone
+ ;;^UTILITY(U,$J,358.3,26240,1,4,0)
+ ;;=4^C79.51
+ ;;^UTILITY(U,$J,358.3,26240,2)
+ ;;=^5001350
+ ;;^UTILITY(U,$J,358.3,26241,0)
+ ;;=C79.52^^127^1273^4
+ ;;^UTILITY(U,$J,358.3,26241,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26241,1,3,0)
+ ;;=3^Secondary Malig Neop of Bone Marrow
+ ;;^UTILITY(U,$J,358.3,26241,1,4,0)
+ ;;=4^C79.52
+ ;;^UTILITY(U,$J,358.3,26241,2)
+ ;;=^5001351
+ ;;^UTILITY(U,$J,358.3,26242,0)
+ ;;=C79.61^^127^1273^19
+ ;;^UTILITY(U,$J,358.3,26242,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26242,1,3,0)
+ ;;=3^Secondary Malig Neop of Right Ovary
+ ;;^UTILITY(U,$J,358.3,26242,1,4,0)
+ ;;=4^C79.61
+ ;;^UTILITY(U,$J,358.3,26242,2)
+ ;;=^5001353
+ ;;^UTILITY(U,$J,358.3,26243,0)
+ ;;=C79.62^^127^1273^15
+ ;;^UTILITY(U,$J,358.3,26243,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26243,1,3,0)
+ ;;=3^Secondary Malig Neop of Left Ovary
+ ;;^UTILITY(U,$J,358.3,26243,1,4,0)
+ ;;=4^C79.62
+ ;;^UTILITY(U,$J,358.3,26243,2)
+ ;;=^5001354
+ ;;^UTILITY(U,$J,358.3,26244,0)
+ ;;=C79.71^^127^1273^17
+ ;;^UTILITY(U,$J,358.3,26244,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26244,1,3,0)
+ ;;=3^Secondary Malig Neop of Right Adrenal Gland
+ ;;^UTILITY(U,$J,358.3,26244,1,4,0)
+ ;;=4^C79.71
+ ;;^UTILITY(U,$J,358.3,26244,2)
+ ;;=^5001356
+ ;;^UTILITY(U,$J,358.3,26245,0)
+ ;;=C79.72^^127^1273^13
+ ;;^UTILITY(U,$J,358.3,26245,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26245,1,3,0)
+ ;;=3^Secondary Malig Neop of Left Adrenal Gland
+ ;;^UTILITY(U,$J,358.3,26245,1,4,0)
+ ;;=4^C79.72
+ ;;^UTILITY(U,$J,358.3,26245,2)
+ ;;=^5001357
+ ;;^UTILITY(U,$J,358.3,26246,0)
+ ;;=C79.81^^127^1273^6
+ ;;^UTILITY(U,$J,358.3,26246,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26246,1,3,0)
+ ;;=3^Secondary Malig Neop of Breast
+ ;;^UTILITY(U,$J,358.3,26246,1,4,0)
+ ;;=4^C79.81
+ ;;^UTILITY(U,$J,358.3,26246,2)
+ ;;=^267338
+ ;;^UTILITY(U,$J,358.3,26247,0)
+ ;;=K91.3^^127^1274^5
+ ;;^UTILITY(U,$J,358.3,26247,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26247,1,3,0)
+ ;;=3^Postprocedural Intestinal Obstruction
+ ;;^UTILITY(U,$J,358.3,26247,1,4,0)
+ ;;=4^K91.3
+ ;;^UTILITY(U,$J,358.3,26247,2)
+ ;;=^5008902
+ ;;^UTILITY(U,$J,358.3,26248,0)
+ ;;=T88.8XXA^^127^1274^6
+ ;;^UTILITY(U,$J,358.3,26248,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26248,1,3,0)
+ ;;=3^Surgical/Medical Care Complications NEC,Init Encntr
+ ;;^UTILITY(U,$J,358.3,26248,1,4,0)
+ ;;=4^T88.8XXA
+ ;;^UTILITY(U,$J,358.3,26248,2)
+ ;;=^5055814
+ ;;^UTILITY(U,$J,358.3,26249,0)
+ ;;=T81.31XA^^127^1274^2
+ ;;^UTILITY(U,$J,358.3,26249,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26249,1,3,0)
+ ;;=3^Disruption of External Operation Surgical Wound NEC,Init Encntr

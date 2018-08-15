@@ -1,5 +1,5 @@
 ONCOTN ;Hines OIFO/GWB - TNM Staging ;02/28/11
- ;;2.2;ONCOLOGY;**1**;Jul 31, 2013;Build 8
+ ;;2.2;ONCOLOGY;**1,4,5,6**;Jul 31, 2013;Build 10
  ;
  N DATEDX,H,ONCED,S,YR
  S DATEDX=$P(^ONCO(165.5,D0,0),U,16)
@@ -34,7 +34,7 @@ ONCOTN ;Hines OIFO/GWB - TNM Staging ;02/28/11
  I (S=62)!($$LYMPHOMA^ONCFUNC(D0)) D  Q
  .I ONCED>6,(T=67441)!(T=67690)!(T=67695)!(T=67696) Q
  .W !!?3,"No TNM classification is available for Lymphoid Neoplasms.",!
- .D CTNM88,PTNM88
+ .;D CTNM88,PTNM88 ;changed to call these from within the input template
  .S Y="@376"
  ;
  I (T=67301)!(T=67339)!(T=67379)!($E(T,1,4)=6739)!(T=67630)!(T=67631)!(T=67637)!(T=67638)!(T=67639)!(T=67691)!(T=67750)!(T=67754)!(T=67755)!(T=67758)!(T=67759)!($E(T,1,4)=6776)!($E(T,1,4)=6726) D  S Y="@313" Q
@@ -70,8 +70,8 @@ ONCOTN ;Hines OIFO/GWB - TNM Staging ;02/28/11
  .D CTNM88,CSTG88,CSB,PTNM88,PSTG88,PSB
  ;
  ;Carcinoid Tumors
- I ($E(T,3,4)=16)!($E(T,3,4)=17)!($E(T,3,4)=18)!(T=67199)!(T=67209)!($E(T,3,4)=21)!(T=67239)!($E(T,3,4)=24)!($E(T,3,4)=25),($E(H,1,4)=8240)!($E(H,1,4)=8241)!($E(H,1,4)=8242)!($E(H,1,4)=8243)!($E(H,1,4)=8249)!($E(H,1,4)=9091) D  Q
- .I ONCED>6,($E(T,3,4)=16)!($E(T,3,4)=17)!(T=67180)!(T=67182)!(T=67183)!(T=67184)!(T=67185)!(T=67186)!(T=67187)!(T=67188)!(T=67189)!(T=67199)!(T=67209)!(T=67241) Q
+ I ($E(T,3,4)=16)!($E(T,3,4)=17)!($E(T,3,4)=18)!(T=67199)!(T=67209)!($E(T,3,4)=21)!(T=67239)!($E(T,3,4)=24)!($E(T,3,4)=25),($E(H,1,4)=8249)!($E(H,1,4)=9091) D  Q
+ .I ONCED>6,($E(T,3,4)=16)!($E(T,3,4)=17)!(T=67180)!(T=67181)!(T=67182)!(T=67183)!(T=67184)!(T=67185)!(T=67186)!(T=67187)!(T=67188)!(T=67189)!(T=67199)!(T=67209)!(T=67241) Q
  .W !!?3,"No TNM coding/staging is available for carcinoid tumors" D
  ..I ($E(T,3,4)=16)!($E(T,3,4)=17)!($E(T,3,4)=18)!($E(T,3,4)=21)!(T=67239)!($E(T,3,4)=24)!(T=67241)!($E(T,3,4)=25) W !?3,"of the ",$P($G(^ONCO(164,T,0)),U,1),"."
  ..W !
@@ -84,9 +84,9 @@ ONCOTN ;Hines OIFO/GWB - TNM Staging ;02/28/11
  .K ONCLUNG
  K ONCLUNG
  ;
- I (T=67380)!(T=67381)!(T=67382)!(T=67383)!(T=67388)!($E(T,1,4)=6747)!($E(T,1,4)=6748)!($E(T,1,4)=6749),(H=91203)!(H=89903) D   S Y="@313" Q 
- .W !!?3,"No TNM coding/staging available for angiosarcoma or malignant mesenchymoma.",! D
- .D CTNM88,CSTG88,CSB,PTNM88,PSTG88,PSB
+ ;I (T=67380)!(T=67381)!(T=67382)!(T=67383)!(T=67388)!($E(T,1,4)=6747)!($E(T,1,4)=6748)!($E(T,1,4)=6749),(H=91203)!(H=89903) D   S Y="@313" Q 
+ ;.W !!?3,"No TNM coding/staging available for angiosarcoma or malignant mesenchymoma.",! D   ;removed these in p5
+ ;.D CTNM88,CSTG88,CSB,PTNM88,PSTG88,PSB
  ;
  I $E(T,1,4)=6748,H=90503 D   S Y="@313" Q 
  .W !!?3,"No TNM coding/staging available for malignant peritoneal mesothelioma.",! D
@@ -295,7 +295,7 @@ CTNM88 ;CLINICAL TNM 88
  Q
  ;
 CSB I DATEDX>2951231 D
- .S $P(^ONCO(165.5,D0,3),U,32)=0
+ .S $P(^ONCO(165.5,D0,3),U,32)=1  ;ONC*2.2*6 use pointer value now
  .W !,"STAGED BY (CLINICAL STAGE): Not staged",!
  Q
  ;
@@ -311,7 +311,7 @@ PTNM88 ;PATHOLOGIC TNM 88
  Q
  ;
 PSB I DATEDX>2951231 D
- .S $P(^ONCO(165.5,D0,2.1),U,5)=0
+ .S $P(^ONCO(165.5,D0,2.1),U,5)=1  ;ONC*2.2*6 use pointer value now
  .W !,"STAGED BY (PATHOLOGIC STAGE): Not staged",!
  Q
  ;

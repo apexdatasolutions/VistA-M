@@ -1,138 +1,124 @@
-IBDEI0UT ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0UT ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,15231,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15231,1,2,0)
- ;;=2^304.61
- ;;^UTILITY(U,$J,358.3,15231,1,5,0)
- ;;=5^Drug Depend-Other, Continuous
- ;;^UTILITY(U,$J,358.3,15231,2)
- ;;=^268211
- ;;^UTILITY(U,$J,358.3,15232,0)
- ;;=304.62^^93^914^53
- ;;^UTILITY(U,$J,358.3,15232,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15232,1,2,0)
- ;;=2^304.62
- ;;^UTILITY(U,$J,358.3,15232,1,5,0)
- ;;=5^Drug Depend-Other, Episodic
- ;;^UTILITY(U,$J,358.3,15232,2)
- ;;=^268212
- ;;^UTILITY(U,$J,358.3,15233,0)
- ;;=304.71^^93^914^66
- ;;^UTILITY(U,$J,358.3,15233,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15233,1,2,0)
- ;;=2^304.71
- ;;^UTILITY(U,$J,358.3,15233,1,5,0)
- ;;=5^Opioid + Other Depend, Continuous
- ;;^UTILITY(U,$J,358.3,15233,2)
- ;;=^268215
- ;;^UTILITY(U,$J,358.3,15234,0)
- ;;=304.72^^93^914^67
- ;;^UTILITY(U,$J,358.3,15234,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15234,1,2,0)
- ;;=2^304.72
- ;;^UTILITY(U,$J,358.3,15234,1,5,0)
- ;;=5^Opioid + Other Depend, Episodic
- ;;^UTILITY(U,$J,358.3,15234,2)
- ;;=^268216
- ;;^UTILITY(U,$J,358.3,15235,0)
- ;;=304.81^^93^914^48
- ;;^UTILITY(U,$J,358.3,15235,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15235,1,2,0)
- ;;=2^304.81
- ;;^UTILITY(U,$J,358.3,15235,1,5,0)
- ;;=5^Comb Drug Depend, Continuous
- ;;^UTILITY(U,$J,358.3,15235,2)
- ;;=^268219
- ;;^UTILITY(U,$J,358.3,15236,0)
- ;;=304.82^^93^914^49
- ;;^UTILITY(U,$J,358.3,15236,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15236,1,2,0)
- ;;=2^304.82
- ;;^UTILITY(U,$J,358.3,15236,1,5,0)
- ;;=5^Comb Drug Depend, Episodic
- ;;^UTILITY(U,$J,358.3,15236,2)
- ;;=^268220
- ;;^UTILITY(U,$J,358.3,15237,0)
- ;;=305.01^^93^914^1
- ;;^UTILITY(U,$J,358.3,15237,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15237,1,2,0)
- ;;=2^305.01
- ;;^UTILITY(U,$J,358.3,15237,1,5,0)
- ;;=5^Alc Abuse, Continuous
- ;;^UTILITY(U,$J,358.3,15237,2)
- ;;=^268228
- ;;^UTILITY(U,$J,358.3,15238,0)
- ;;=305.02^^93^914^2
- ;;^UTILITY(U,$J,358.3,15238,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15238,1,2,0)
- ;;=2^305.02
- ;;^UTILITY(U,$J,358.3,15238,1,5,0)
- ;;=5^Alc Abuse, Episodic
- ;;^UTILITY(U,$J,358.3,15238,2)
- ;;=^268229
- ;;^UTILITY(U,$J,358.3,15239,0)
- ;;=305.21^^93^914^33
- ;;^UTILITY(U,$J,358.3,15239,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15239,1,2,0)
- ;;=2^305.21
- ;;^UTILITY(U,$J,358.3,15239,1,5,0)
- ;;=5^Cannabis Abuse, Continued
- ;;^UTILITY(U,$J,358.3,15239,2)
- ;;=^268234
- ;;^UTILITY(U,$J,358.3,15240,0)
- ;;=305.22^^93^914^34
- ;;^UTILITY(U,$J,358.3,15240,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15240,1,2,0)
- ;;=2^305.22
- ;;^UTILITY(U,$J,358.3,15240,1,5,0)
- ;;=5^Cannabis Abuse, Episodic
- ;;^UTILITY(U,$J,358.3,15240,2)
- ;;=^268235
- ;;^UTILITY(U,$J,358.3,15241,0)
- ;;=305.31^^93^914^57
- ;;^UTILITY(U,$J,358.3,15241,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15241,1,2,0)
- ;;=2^305.31
- ;;^UTILITY(U,$J,358.3,15241,1,5,0)
- ;;=5^Hallucinogen Abuse, Continuous
- ;;^UTILITY(U,$J,358.3,15241,2)
- ;;=^268237
- ;;^UTILITY(U,$J,358.3,15242,0)
- ;;=305.32^^93^914^58
- ;;^UTILITY(U,$J,358.3,15242,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15242,1,2,0)
- ;;=2^305.32
- ;;^UTILITY(U,$J,358.3,15242,1,5,0)
- ;;=5^Hallucinogen Abuse, Episodic
- ;;^UTILITY(U,$J,358.3,15242,2)
- ;;=^268238
- ;;^UTILITY(U,$J,358.3,15243,0)
- ;;=305.41^^93^914^25
- ;;^UTILITY(U,$J,358.3,15243,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15243,1,2,0)
- ;;=2^305.41
- ;;^UTILITY(U,$J,358.3,15243,1,5,0)
- ;;=5^Anxiolytic Abuse, Continuous
- ;;^UTILITY(U,$J,358.3,15243,2)
- ;;=^331936
- ;;^UTILITY(U,$J,358.3,15244,0)
- ;;=305.42^^93^914^26
- ;;^UTILITY(U,$J,358.3,15244,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15244,1,2,0)
- ;;=2^305.42
+ ;;^UTILITY(U,$J,358.3,14180,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14180,1,3,0)
+ ;;=3^DM Type 2 w/ Moderate NonProlif Diab Retinopathy w/o Macular Edema
+ ;;^UTILITY(U,$J,358.3,14180,1,4,0)
+ ;;=4^E11.339
+ ;;^UTILITY(U,$J,358.3,14180,2)
+ ;;=^5002637
+ ;;^UTILITY(U,$J,358.3,14181,0)
+ ;;=E11.331^^82^774^19
+ ;;^UTILITY(U,$J,358.3,14181,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14181,1,3,0)
+ ;;=3^DM Type 2 w/ Moderate NonProlif Diab Retinopathy w/ Macular Edema
+ ;;^UTILITY(U,$J,358.3,14181,1,4,0)
+ ;;=4^E11.331
+ ;;^UTILITY(U,$J,358.3,14181,2)
+ ;;=^5002636
+ ;;^UTILITY(U,$J,358.3,14182,0)
+ ;;=E11.329^^82^774^16
+ ;;^UTILITY(U,$J,358.3,14182,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14182,1,3,0)
+ ;;=3^DM Type 2 w/ Mild NonProlif Diab Retinopathy w/o Macular Edema
+ ;;^UTILITY(U,$J,358.3,14182,1,4,0)
+ ;;=4^E11.329
+ ;;^UTILITY(U,$J,358.3,14182,2)
+ ;;=^5002635
+ ;;^UTILITY(U,$J,358.3,14183,0)
+ ;;=E11.321^^82^774^17
+ ;;^UTILITY(U,$J,358.3,14183,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14183,1,3,0)
+ ;;=3^DM Type 2 w/ Mild NonProlif Diab Retinopathy w/ Macular Edema
+ ;;^UTILITY(U,$J,358.3,14183,1,4,0)
+ ;;=4^E11.321
+ ;;^UTILITY(U,$J,358.3,14183,2)
+ ;;=^5002634
+ ;;^UTILITY(U,$J,358.3,14184,0)
+ ;;=E11.319^^82^774^24
+ ;;^UTILITY(U,$J,358.3,14184,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14184,1,3,0)
+ ;;=3^DM Type 2 w/ Unspec Diab Retinopathy w/o Macular Edema
+ ;;^UTILITY(U,$J,358.3,14184,1,4,0)
+ ;;=4^E11.319
+ ;;^UTILITY(U,$J,358.3,14184,2)
+ ;;=^5002633
+ ;;^UTILITY(U,$J,358.3,14185,0)
+ ;;=E11.311^^82^774^25
+ ;;^UTILITY(U,$J,358.3,14185,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14185,1,3,0)
+ ;;=3^DM Type 2 w/ Unspec Diab Retinopathy w/ Macular Edema
+ ;;^UTILITY(U,$J,358.3,14185,1,4,0)
+ ;;=4^E11.311
+ ;;^UTILITY(U,$J,358.3,14185,2)
+ ;;=^5002632
+ ;;^UTILITY(U,$J,358.3,14186,0)
+ ;;=E10.9^^82^774^13
+ ;;^UTILITY(U,$J,358.3,14186,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14186,1,3,0)
+ ;;=3^DM Type 1 w/o Complications
+ ;;^UTILITY(U,$J,358.3,14186,1,4,0)
+ ;;=4^E10.9
+ ;;^UTILITY(U,$J,358.3,14186,2)
+ ;;=^5002626
+ ;;^UTILITY(U,$J,358.3,14187,0)
+ ;;=E10.311^^82^774^11
+ ;;^UTILITY(U,$J,358.3,14187,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14187,1,3,0)
+ ;;=3^DM Type 1 w/ Unspec Diab Retinopathy w/ Macular Edema
+ ;;^UTILITY(U,$J,358.3,14187,1,4,0)
+ ;;=4^E10.311
+ ;;^UTILITY(U,$J,358.3,14187,2)
+ ;;=^5002592
+ ;;^UTILITY(U,$J,358.3,14188,0)
+ ;;=E10.319^^82^774^12
+ ;;^UTILITY(U,$J,358.3,14188,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14188,1,3,0)
+ ;;=3^DM Type 1 w/ Unspec Diab Retinopathy w/o Macular Edema
+ ;;^UTILITY(U,$J,358.3,14188,1,4,0)
+ ;;=4^E10.319
+ ;;^UTILITY(U,$J,358.3,14188,2)
+ ;;=^5002593
+ ;;^UTILITY(U,$J,358.3,14189,0)
+ ;;=E10.36^^82^774^1
+ ;;^UTILITY(U,$J,358.3,14189,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14189,1,3,0)
+ ;;=3^DM Type 1 w/ Diabetic Cataract
+ ;;^UTILITY(U,$J,358.3,14189,1,4,0)
+ ;;=4^E10.36
+ ;;^UTILITY(U,$J,358.3,14189,2)
+ ;;=^5002602
+ ;;^UTILITY(U,$J,358.3,14190,0)
+ ;;=E10.39^^82^774^2
+ ;;^UTILITY(U,$J,358.3,14190,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14190,1,3,0)
+ ;;=3^DM Type 1 w/ Diabetic Ophthalmic Complication
+ ;;^UTILITY(U,$J,358.3,14190,1,4,0)
+ ;;=4^E10.39
+ ;;^UTILITY(U,$J,358.3,14190,2)
+ ;;=^5002603
+ ;;^UTILITY(U,$J,358.3,14191,0)
+ ;;=E10.321^^82^774^3
+ ;;^UTILITY(U,$J,358.3,14191,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14191,1,3,0)
+ ;;=3^DM Type 1 w/ Mild Nonprolif Diab Retinopathy w/ Macular Edema
+ ;;^UTILITY(U,$J,358.3,14191,1,4,0)
+ ;;=4^E10.321
+ ;;^UTILITY(U,$J,358.3,14191,2)
+ ;;=^5002594
+ ;;^UTILITY(U,$J,358.3,14192,0)
+ ;;=E10.329^^82^774^4

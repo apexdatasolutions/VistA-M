@@ -1,134 +1,126 @@
-IBDEI0UI ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0UI ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,15083,2)
- ;;=^268009
- ;;^UTILITY(U,$J,358.3,15084,0)
- ;;=294.8^^93^906^6
- ;;^UTILITY(U,$J,358.3,15084,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15084,1,2,0)
- ;;=2^294.8
- ;;^UTILITY(U,$J,358.3,15084,1,5,0)
- ;;=5^Dementia NOS
- ;;^UTILITY(U,$J,358.3,15084,2)
- ;;=^331843
- ;;^UTILITY(U,$J,358.3,15085,0)
- ;;=294.11^^93^906^10
- ;;^UTILITY(U,$J,358.3,15085,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15085,1,2,0)
- ;;=2^294.11
- ;;^UTILITY(U,$J,358.3,15085,1,5,0)
- ;;=5^Dementia d/t HIV w/ Behav Disturb
- ;;^UTILITY(U,$J,358.3,15085,2)
- ;;=^321982^042.
- ;;^UTILITY(U,$J,358.3,15086,0)
- ;;=294.20^^93^906^8
- ;;^UTILITY(U,$J,358.3,15086,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15086,1,2,0)
- ;;=2^294.20
- ;;^UTILITY(U,$J,358.3,15086,1,5,0)
- ;;=5^Dementia NOS w/o Behv Dstrb
- ;;^UTILITY(U,$J,358.3,15086,2)
- ;;=^340607
- ;;^UTILITY(U,$J,358.3,15087,0)
- ;;=294.21^^93^906^7
- ;;^UTILITY(U,$J,358.3,15087,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15087,1,2,0)
- ;;=2^294.21
- ;;^UTILITY(U,$J,358.3,15087,1,5,0)
- ;;=5^Dementia NOS w/Behav Distrb
- ;;^UTILITY(U,$J,358.3,15087,2)
- ;;=^340505
- ;;^UTILITY(U,$J,358.3,15088,0)
- ;;=331.83^^93^906^18
- ;;^UTILITY(U,$J,358.3,15088,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15088,1,2,0)
- ;;=2^331.83
- ;;^UTILITY(U,$J,358.3,15088,1,5,0)
- ;;=5^Mild Cognitive Impairment
- ;;^UTILITY(U,$J,358.3,15088,2)
- ;;=^334065
- ;;^UTILITY(U,$J,358.3,15089,0)
- ;;=294.8^^93^906^9
- ;;^UTILITY(U,$J,358.3,15089,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15089,1,2,0)
- ;;=2^294.8
- ;;^UTILITY(U,$J,358.3,15089,1,5,0)
- ;;=5^Dementia d/t Brain Tumor
- ;;^UTILITY(U,$J,358.3,15089,2)
- ;;=^331843
- ;;^UTILITY(U,$J,358.3,15090,0)
- ;;=294.10^^93^906^11
- ;;^UTILITY(U,$J,358.3,15090,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15090,1,2,0)
- ;;=2^294.10
- ;;^UTILITY(U,$J,358.3,15090,1,5,0)
- ;;=5^Dementia d/t HIV w/o Behav Disturb
- ;;^UTILITY(U,$J,358.3,15090,2)
- ;;=^321980^042.
- ;;^UTILITY(U,$J,358.3,15091,0)
- ;;=294.11^^93^906^3
- ;;^UTILITY(U,$J,358.3,15091,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15091,1,2,0)
- ;;=2^294.11
- ;;^UTILITY(U,$J,358.3,15091,1,5,0)
- ;;=5^Alzheimers Dementia w/ Behav Disturb
- ;;^UTILITY(U,$J,358.3,15091,2)
- ;;=^321982^331.0
- ;;^UTILITY(U,$J,358.3,15092,0)
- ;;=294.10^^93^906^5
- ;;^UTILITY(U,$J,358.3,15092,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15092,1,2,0)
- ;;=2^294.10
- ;;^UTILITY(U,$J,358.3,15092,1,5,0)
- ;;=5^Alzheimers Dementia w/o Behav Disturb
- ;;^UTILITY(U,$J,358.3,15092,2)
- ;;=^321980^331.0
- ;;^UTILITY(U,$J,358.3,15093,0)
- ;;=294.10^^93^906^15
- ;;^UTILITY(U,$J,358.3,15093,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15093,1,2,0)
- ;;=2^294.10
- ;;^UTILITY(U,$J,358.3,15093,1,5,0)
- ;;=5^Dementia d/t Parkinson w/o Behav Disturb
- ;;^UTILITY(U,$J,358.3,15093,2)
- ;;=^321980^332.0
- ;;^UTILITY(U,$J,358.3,15094,0)
- ;;=294.11^^93^906^14
- ;;^UTILITY(U,$J,358.3,15094,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15094,1,2,0)
- ;;=2^294.11
- ;;^UTILITY(U,$J,358.3,15094,1,5,0)
- ;;=5^Dementia d/t Parkinson w/ Behav Disturb
- ;;^UTILITY(U,$J,358.3,15094,2)
- ;;=^321982^332.0
- ;;^UTILITY(U,$J,358.3,15095,0)
- ;;=294.11^^93^906^12
- ;;^UTILITY(U,$J,358.3,15095,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15095,1,2,0)
- ;;=2^294.11
- ;;^UTILITY(U,$J,358.3,15095,1,5,0)
- ;;=5^Dementia d/t MS w/ Behav Disturb
- ;;^UTILITY(U,$J,358.3,15095,2)
- ;;=^321982^340.
- ;;^UTILITY(U,$J,358.3,15096,0)
- ;;=294.10^^93^906^13
- ;;^UTILITY(U,$J,358.3,15096,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,15096,1,2,0)
- ;;=2^294.10
- ;;^UTILITY(U,$J,358.3,15096,1,5,0)
- ;;=5^Dementia d/t MS w/o Behav Disturb
+ ;;^UTILITY(U,$J,358.3,14042,1,4,0)
+ ;;=4^H40.2221
+ ;;^UTILITY(U,$J,358.3,14042,2)
+ ;;=^5005828
+ ;;^UTILITY(U,$J,358.3,14043,0)
+ ;;=H40.2222^^82^770^20
+ ;;^UTILITY(U,$J,358.3,14043,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14043,1,3,0)
+ ;;=3^Chr Angle-Closure Glaucoma,Left Eye,Moderate Stage
+ ;;^UTILITY(U,$J,358.3,14043,1,4,0)
+ ;;=4^H40.2222
+ ;;^UTILITY(U,$J,358.3,14043,2)
+ ;;=^5005829
+ ;;^UTILITY(U,$J,358.3,14044,0)
+ ;;=H40.2223^^82^770^21
+ ;;^UTILITY(U,$J,358.3,14044,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14044,1,3,0)
+ ;;=3^Chr Angle-Closure Glaucoma,Left Eye,Severe Stage
+ ;;^UTILITY(U,$J,358.3,14044,1,4,0)
+ ;;=4^H40.2223
+ ;;^UTILITY(U,$J,358.3,14044,2)
+ ;;=^5133501
+ ;;^UTILITY(U,$J,358.3,14045,0)
+ ;;=H40.2224^^82^770^18
+ ;;^UTILITY(U,$J,358.3,14045,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14045,1,3,0)
+ ;;=3^Chr Angle-Closure Glaucoma,Left Eye,Indeterminate Stage
+ ;;^UTILITY(U,$J,358.3,14045,1,4,0)
+ ;;=4^H40.2224
+ ;;^UTILITY(U,$J,358.3,14045,2)
+ ;;=^5005830
+ ;;^UTILITY(U,$J,358.3,14046,0)
+ ;;=H40.2231^^82^770^15
+ ;;^UTILITY(U,$J,358.3,14046,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14046,1,3,0)
+ ;;=3^Chr Angle-Closure Glaucoma,Bilateral,Mild Stage
+ ;;^UTILITY(U,$J,358.3,14046,1,4,0)
+ ;;=4^H40.2231
+ ;;^UTILITY(U,$J,358.3,14046,2)
+ ;;=^5005832
+ ;;^UTILITY(U,$J,358.3,14047,0)
+ ;;=H40.2232^^82^770^16
+ ;;^UTILITY(U,$J,358.3,14047,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14047,1,3,0)
+ ;;=3^Chr Angle-Closure Glaucoma,Bilateral,Moderate Stage
+ ;;^UTILITY(U,$J,358.3,14047,1,4,0)
+ ;;=4^H40.2232
+ ;;^UTILITY(U,$J,358.3,14047,2)
+ ;;=^5005833
+ ;;^UTILITY(U,$J,358.3,14048,0)
+ ;;=H40.2233^^82^770^17
+ ;;^UTILITY(U,$J,358.3,14048,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14048,1,3,0)
+ ;;=3^Chr Angle-Closure Glaucoma,Bilateral,Severe Stage
+ ;;^UTILITY(U,$J,358.3,14048,1,4,0)
+ ;;=4^H40.2233
+ ;;^UTILITY(U,$J,358.3,14048,2)
+ ;;=^5005834
+ ;;^UTILITY(U,$J,358.3,14049,0)
+ ;;=H40.2234^^82^770^14
+ ;;^UTILITY(U,$J,358.3,14049,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14049,1,3,0)
+ ;;=3^Chr Angle-Closure Glaucoma,Bilateral,Indeterminate Stage
+ ;;^UTILITY(U,$J,358.3,14049,1,4,0)
+ ;;=4^H40.2234
+ ;;^UTILITY(U,$J,358.3,14049,2)
+ ;;=^5005835
+ ;;^UTILITY(U,$J,358.3,14050,0)
+ ;;=H40.241^^82^770^115
+ ;;^UTILITY(U,$J,358.3,14050,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14050,1,3,0)
+ ;;=3^Residual Stage Angle-Closure Glaucoma,Right Eye
+ ;;^UTILITY(U,$J,358.3,14050,1,4,0)
+ ;;=4^H40.241
+ ;;^UTILITY(U,$J,358.3,14050,2)
+ ;;=^5005843
+ ;;^UTILITY(U,$J,358.3,14051,0)
+ ;;=H40.242^^82^770^114
+ ;;^UTILITY(U,$J,358.3,14051,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14051,1,3,0)
+ ;;=3^Residual Stage Angle-Closure Glaucoma,Left Eye
+ ;;^UTILITY(U,$J,358.3,14051,1,4,0)
+ ;;=4^H40.242
+ ;;^UTILITY(U,$J,358.3,14051,2)
+ ;;=^5005844
+ ;;^UTILITY(U,$J,358.3,14052,0)
+ ;;=H40.61X0^^82^770^43
+ ;;^UTILITY(U,$J,358.3,14052,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14052,1,3,0)
+ ;;=3^Drug-Induced Glaucoma,Right Eye,Unspec Stage
+ ;;^UTILITY(U,$J,358.3,14052,1,4,0)
+ ;;=4^H40.61X0
+ ;;^UTILITY(U,$J,358.3,14052,2)
+ ;;=^5005906
+ ;;^UTILITY(U,$J,358.3,14053,0)
+ ;;=H40.61X2^^82^770^41
+ ;;^UTILITY(U,$J,358.3,14053,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14053,1,3,0)
+ ;;=3^Drug-Induced Glaucoma,Right Eye,Moderate Stage
+ ;;^UTILITY(U,$J,358.3,14053,1,4,0)
+ ;;=4^H40.61X2
+ ;;^UTILITY(U,$J,358.3,14053,2)
+ ;;=^5005908
+ ;;^UTILITY(U,$J,358.3,14054,0)
+ ;;=H40.61X3^^82^770^42
+ ;;^UTILITY(U,$J,358.3,14054,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,14054,1,3,0)
+ ;;=3^Drug-Induced Glaucoma,Right Eye,Severe Stage
+ ;;^UTILITY(U,$J,358.3,14054,1,4,0)
+ ;;=4^H40.61X3

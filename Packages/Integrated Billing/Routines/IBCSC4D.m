@@ -1,6 +1,6 @@
 IBCSC4D ;ALB/ARH - ADD/ENTER DIAGNOSIS ;11/9/93
- ;;2.0;INTEGRATED BILLING;**55,62,91,106,124,51,210,403,400,461**;21-MAR-94;Build 58
- ;;Per VHA Directive 2004-038, this routine should not be modified.
+ ;;2.0;INTEGRATED BILLING;**55,62,91,106,124,51,210,403,400,461,516,522**;21-MAR-94;Build 11
+ ;;Per VA Directive 6402, this routine should not be modified.
  ;
 EN ;add/edit diagnosis for a bill, IBIFN required
  N IBINP,POAEDIT
@@ -44,9 +44,10 @@ AD S DIR("??")="^D HELP^IBCSC4D"
  . W !!,*7,"The Diagnosis code is inactive for the date of service ("_IBDTTX_").",!
  Q Y
  ;
-ADD(DX,IFN) ;
+ADD(DX,IFN,DXPOA) ;
  I $$ICD9VER^IBACSV(DX)=1,$E($$ICD9^IBACSV(DX,$$BDATE^IBACSV(IFN)))="E",$$MAXECODE^IBCSC4F(IFN) W !!,*7,"Only 3 External Cause of Injury diagnoses are allowed per claim.",! Q 0
- S DIC="^IBA(362.3,",DIC(0)="AQL",DIC("DR")=".02////"_IFN,X=DX K DA,DO D FILE^DICN K DA,DO,DIC,X
+ S DIC("DR")=".02////"_IFN I $G(DXPOA)'="" S DIC("DR")=DIC("DR")_";.04///"_DXPOA
+ S DIC="^IBA(362.3,",DIC(0)="AQL",X=DX K DA,DO D FILE^DICN K DA,DO,DIC,X
  Q Y
  ;
 EDIT(IBDXIFN) ;
@@ -62,12 +63,36 @@ EDIT(IBDXIFN) ;
  . S IB0=^IBA(362.3,IBDXIFN,0)
  . S DIE="^DGCR(399,",DA=+$P(IB0,U,2),DR="215////"_+IB0 D ^DIE
  ;
- ; - if the entry was deleted, remove dangling pointers from #399.0304
- N IBPROC,IBPROCD,IBPIECE,IBHIT
- S (IBHIT,IBPROC)=0
- F  S IBPROC=$O(^DGCR(399,IBIFN,"CP",IBPROC)) Q:'IBPROC  S IBPROCD=$G(^(IBPROC,0)) I IBPROCD]"" D
- .F IBPIECE=11:1:14 I +$P(IBPROCD,"^",IBPIECE)=IBDXIFN S IBHIT=1 D UPD^IBCU72("@",IBPIECE-1)
- I IBHIT W *7,!,"This diagnosis was removed as a procedure diagnosis."
+ ; MRD;IB*2.0*516 - Added '$D check *before* removing the dangling
+ ; pointers; and added code to 'shift' subsequent pointers, if any.
+ ; If the entry was deleted, remove dangling pointers from #399.0304.
+ I '$D(^IBA(362.3,IBDXIFN)) D
+ . N IBPROC,IBPROCD,IBPIECE,IBHIT
+ . S (IBHIT,IBPROC)=0
+ . F  S IBPROC=$O(^DGCR(399,IBIFN,"CP",IBPROC)) Q:'IBPROC  S IBPROCD=$G(^(IBPROC,0)) I IBPROCD]"" D
+ . . F IBPIECE=11:1:14 I +$P(IBPROCD,"^",IBPIECE)=IBDXIFN S IBHIT=1 D UPD^IBCU72("@",IBPIECE-1)
+ . . Q
+ . ;
+ . ; If a pointer to the deleted DX code was found and removed, then
+ . ; sound <bell>, display message, and 'shift' any other associated
+ . ; DX codes to close the gap, if any.
+ . I IBHIT D
+ . . W *7,!,"This diagnosis was removed as a procedure diagnosis."
+ . . ;
+ . . S IBPROC=0
+ . . F  S IBPROC=$O(^DGCR(399,IBIFN,"CP",IBPROC)) Q:'IBPROC  S IBPROCD=$G(^(IBPROC,0)) I IBPROCD]"" D
+ . . . F IBPIECE=11:1:13 D
+ . . . . ; If DX field is blank, and next one is not blank, then shift it 'up'.
+ . . . . I $P(IBPROCD,"^",IBPIECE)="",$P(IBPROCD,"^",IBPIECE+1)'="" D
+ . . . . . D UPD^IBCU72("@",IBPIECE)                          ; Delete from one slot...
+ . . . . . D UPD^IBCU72($P(IBPROCD,"^",IBPIECE+1),IBPIECE-1)  ; Add to the blank slot.
+ . . . . . S IBPROCD=$G(^DGCR(399,IBIFN,"CP",IBPROC,0))  ; Grab updated version of this node.
+ . . . . . Q
+ . . . . Q
+ . . . Q
+ . . Q
+ . Q
+ ;
 EDITQ Q
  ;
 SET(IFN,DXARR,POARR) ;setup arrays of all dx's for bill, array names should be passed by reference

@@ -1,136 +1,126 @@
-IBDEI0QM ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0QM ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,13133,2)
- ;;=Hx of Prostate Cancer^295224
- ;;^UTILITY(U,$J,358.3,13134,0)
- ;;=V10.83^^87^830^74
- ;;^UTILITY(U,$J,358.3,13134,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13134,1,4,0)
- ;;=4^V10.83
- ;;^UTILITY(U,$J,358.3,13134,1,5,0)
- ;;=5^Personal h/o Skin Cancer
- ;;^UTILITY(U,$J,358.3,13134,2)
- ;;=^295241
- ;;^UTILITY(U,$J,358.3,13135,0)
- ;;=V15.1^^87^830^51
- ;;^UTILITY(U,$J,358.3,13135,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13135,1,4,0)
- ;;=4^V15.1
- ;;^UTILITY(U,$J,358.3,13135,1,5,0)
- ;;=5^Personal h/o Heart Surgery
- ;;^UTILITY(U,$J,358.3,13135,2)
- ;;=^295283
- ;;^UTILITY(U,$J,358.3,13136,0)
- ;;=V15.82^^87^830^79
- ;;^UTILITY(U,$J,358.3,13136,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13136,1,4,0)
- ;;=4^V15.82
- ;;^UTILITY(U,$J,358.3,13136,1,5,0)
- ;;=5^Personal h/o Tobacco Use
- ;;^UTILITY(U,$J,358.3,13136,2)
- ;;=Hx of Tobacco Use (not current)^303405
- ;;^UTILITY(U,$J,358.3,13137,0)
- ;;=V12.01^^87^830^77
- ;;^UTILITY(U,$J,358.3,13137,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13137,1,4,0)
- ;;=4^V12.01
- ;;^UTILITY(U,$J,358.3,13137,1,5,0)
- ;;=5^Personal h/o TB
- ;;^UTILITY(U,$J,358.3,13137,2)
- ;;=Hx of TB^303393
- ;;^UTILITY(U,$J,358.3,13138,0)
- ;;=V12.51^^87^830^81
- ;;^UTILITY(U,$J,358.3,13138,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13138,1,4,0)
- ;;=4^V12.51
- ;;^UTILITY(U,$J,358.3,13138,1,5,0)
- ;;=5^Personal h/o Venous Thrombosis/Embolism
- ;;^UTILITY(U,$J,358.3,13138,2)
- ;;=^303397
- ;;^UTILITY(U,$J,358.3,13139,0)
- ;;=V17.89^^87^830^25
- ;;^UTILITY(U,$J,358.3,13139,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13139,1,4,0)
- ;;=4^V17.89
- ;;^UTILITY(U,$J,358.3,13139,1,5,0)
- ;;=5^Family h/o Musculosk Dis
- ;;^UTILITY(U,$J,358.3,13139,2)
- ;;=^332861
- ;;^UTILITY(U,$J,358.3,13140,0)
- ;;=V12.54^^87^830^76
- ;;^UTILITY(U,$J,358.3,13140,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13140,1,4,0)
- ;;=4^V12.54
- ;;^UTILITY(U,$J,358.3,13140,1,5,0)
- ;;=5^Personal h/o Stroke w/o Residual
- ;;^UTILITY(U,$J,358.3,13140,2)
- ;;=^335309
- ;;^UTILITY(U,$J,358.3,13141,0)
- ;;=V15.88^^87^830^50
- ;;^UTILITY(U,$J,358.3,13141,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13141,1,4,0)
- ;;=4^V15.88
- ;;^UTILITY(U,$J,358.3,13141,1,5,0)
- ;;=5^Personal h/o Fall(s)
- ;;^UTILITY(U,$J,358.3,13141,2)
- ;;=^332859
- ;;^UTILITY(U,$J,358.3,13142,0)
- ;;=V15.52^^87^830^80
- ;;^UTILITY(U,$J,358.3,13142,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13142,1,4,0)
- ;;=4^V15.52
- ;;^UTILITY(U,$J,358.3,13142,1,5,0)
- ;;=5^Personal h/o Traum Brain Inj
- ;;^UTILITY(U,$J,358.3,13142,2)
- ;;=^338495
- ;;^UTILITY(U,$J,358.3,13143,0)
- ;;=V12.55^^87^830^70
- ;;^UTILITY(U,$J,358.3,13143,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13143,1,4,0)
- ;;=4^V12.55
- ;;^UTILITY(U,$J,358.3,13143,1,5,0)
- ;;=5^Personal h/o Pulmonary Embolism
- ;;^UTILITY(U,$J,358.3,13143,2)
- ;;=^340615
- ;;^UTILITY(U,$J,358.3,13144,0)
- ;;=V58.61^^87^830^1
- ;;^UTILITY(U,$J,358.3,13144,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13144,1,4,0)
- ;;=4^V58.61
- ;;^UTILITY(U,$J,358.3,13144,1,5,0)
- ;;=5^Anticoag Rx,Chronic
- ;;^UTILITY(U,$J,358.3,13144,2)
- ;;=^303459
- ;;^UTILITY(U,$J,358.3,13145,0)
- ;;=V12.72^^87^830^2
- ;;^UTILITY(U,$J,358.3,13145,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13145,1,4,0)
- ;;=4^V12.72
- ;;^UTILITY(U,$J,358.3,13145,1,5,0)
- ;;=5^Colon Polyps (Removed)
- ;;^UTILITY(U,$J,358.3,13145,2)
- ;;=^303401
- ;;^UTILITY(U,$J,358.3,13146,0)
- ;;=V25.09^^87^830^3
- ;;^UTILITY(U,$J,358.3,13146,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13146,1,4,0)
- ;;=4^V25.09
- ;;^UTILITY(U,$J,358.3,13146,1,5,0)
- ;;=5^Contraceptive Counseling
- ;;^UTILITY(U,$J,358.3,13146,2)
- ;;=^87608
+ ;;^UTILITY(U,$J,358.3,12196,0)
+ ;;=T15.92XA^^71^708^60
+ ;;^UTILITY(U,$J,358.3,12196,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12196,1,3,0)
+ ;;=3^FB on Left External Eye,Part Unspec,Init Encntr
+ ;;^UTILITY(U,$J,358.3,12196,1,4,0)
+ ;;=4^T15.92XA
+ ;;^UTILITY(U,$J,358.3,12196,2)
+ ;;=^5046414
+ ;;^UTILITY(U,$J,358.3,12197,0)
+ ;;=S82.891A^^71^708^63
+ ;;^UTILITY(U,$J,358.3,12197,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12197,1,3,0)
+ ;;=3^Fx of Right Lower Leg NEC,Init for Clos Fx
+ ;;^UTILITY(U,$J,358.3,12197,1,4,0)
+ ;;=4^S82.891A
+ ;;^UTILITY(U,$J,358.3,12197,2)
+ ;;=^5042863
+ ;;^UTILITY(U,$J,358.3,12198,0)
+ ;;=S82.892A^^71^708^62
+ ;;^UTILITY(U,$J,358.3,12198,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12198,1,3,0)
+ ;;=3^Fx of Left Lower Leg NEC,Init for Clos Fx
+ ;;^UTILITY(U,$J,358.3,12198,1,4,0)
+ ;;=4^S82.892A
+ ;;^UTILITY(U,$J,358.3,12198,2)
+ ;;=^5136944
+ ;;^UTILITY(U,$J,358.3,12199,0)
+ ;;=S62.101A^^71^708^89
+ ;;^UTILITY(U,$J,358.3,12199,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12199,1,3,0)
+ ;;=3^Fx of unsp carpal bone, right wrist, init for clos fx
+ ;;^UTILITY(U,$J,358.3,12199,1,4,0)
+ ;;=4^S62.101A
+ ;;^UTILITY(U,$J,358.3,12199,2)
+ ;;=^5033199
+ ;;^UTILITY(U,$J,358.3,12200,0)
+ ;;=S62.102A^^71^708^88
+ ;;^UTILITY(U,$J,358.3,12200,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12200,1,3,0)
+ ;;=3^Fx of unsp carpal bone, left wrist, init for clos fx
+ ;;^UTILITY(U,$J,358.3,12200,1,4,0)
+ ;;=4^S62.102A
+ ;;^UTILITY(U,$J,358.3,12200,2)
+ ;;=^5033206
+ ;;^UTILITY(U,$J,358.3,12201,0)
+ ;;=S42.001A^^71^708^93
+ ;;^UTILITY(U,$J,358.3,12201,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12201,1,3,0)
+ ;;=3^Fx of unsp part of right clavicle, init for clos fx
+ ;;^UTILITY(U,$J,358.3,12201,1,4,0)
+ ;;=4^S42.001A
+ ;;^UTILITY(U,$J,358.3,12201,2)
+ ;;=^5026369
+ ;;^UTILITY(U,$J,358.3,12202,0)
+ ;;=S42.002A^^71^708^92
+ ;;^UTILITY(U,$J,358.3,12202,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12202,1,3,0)
+ ;;=3^Fx of unsp part of left clavicle, init for clos fx
+ ;;^UTILITY(U,$J,358.3,12202,1,4,0)
+ ;;=4^S42.002A
+ ;;^UTILITY(U,$J,358.3,12202,2)
+ ;;=^5026376
+ ;;^UTILITY(U,$J,358.3,12203,0)
+ ;;=S42.401A^^71^708^82
+ ;;^UTILITY(U,$J,358.3,12203,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12203,1,3,0)
+ ;;=3^Fx of right lower end of humerus unspec, init
+ ;;^UTILITY(U,$J,358.3,12203,1,4,0)
+ ;;=4^S42.401A
+ ;;^UTILITY(U,$J,358.3,12203,2)
+ ;;=^5027294
+ ;;^UTILITY(U,$J,358.3,12204,0)
+ ;;=S42.402A^^71^708^69
+ ;;^UTILITY(U,$J,358.3,12204,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12204,1,3,0)
+ ;;=3^Fx of left lower end of humerus unspec, init for cl
+ ;;^UTILITY(U,$J,358.3,12204,1,4,0)
+ ;;=4^S42.402A
+ ;;^UTILITY(U,$J,358.3,12204,2)
+ ;;=^5134713
+ ;;^UTILITY(U,$J,358.3,12205,0)
+ ;;=S72.91XA^^71^708^77
+ ;;^UTILITY(U,$J,358.3,12205,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12205,1,3,0)
+ ;;=3^Fx of right femur unspec, init for clos fx
+ ;;^UTILITY(U,$J,358.3,12205,1,4,0)
+ ;;=4^S72.91XA
+ ;;^UTILITY(U,$J,358.3,12205,2)
+ ;;=^5136471
+ ;;^UTILITY(U,$J,358.3,12206,0)
+ ;;=S72.92XA^^71^708^64
+ ;;^UTILITY(U,$J,358.3,12206,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12206,1,3,0)
+ ;;=3^Fx of left femur unspec, init encntr for closed fx
+ ;;^UTILITY(U,$J,358.3,12206,1,4,0)
+ ;;=4^S72.92XA
+ ;;^UTILITY(U,$J,358.3,12206,2)
+ ;;=^5136472
+ ;;^UTILITY(U,$J,358.3,12207,0)
+ ;;=S82.401A^^71^708^78
+ ;;^UTILITY(U,$J,358.3,12207,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12207,1,3,0)
+ ;;=3^Fx of right fibula shaft unspec, init for clos fx
+ ;;^UTILITY(U,$J,358.3,12207,1,4,0)
+ ;;=4^S82.401A
+ ;;^UTILITY(U,$J,358.3,12207,2)
+ ;;=^5041677
+ ;;^UTILITY(U,$J,358.3,12208,0)
+ ;;=S82.402A^^71^708^65

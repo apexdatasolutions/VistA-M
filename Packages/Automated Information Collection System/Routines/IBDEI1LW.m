@@ -1,0 +1,132 @@
+IBDEI1LW ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,26880,1,3,0)
+ ;;=3^Cardiovascular Preprocedural Exam
+ ;;^UTILITY(U,$J,358.3,26880,1,4,0)
+ ;;=4^Z01.810
+ ;;^UTILITY(U,$J,358.3,26880,2)
+ ;;=^5062625
+ ;;^UTILITY(U,$J,358.3,26881,0)
+ ;;=Z01.811^^132^1305^16
+ ;;^UTILITY(U,$J,358.3,26881,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26881,1,3,0)
+ ;;=3^Respiratory Preprocedural Exam
+ ;;^UTILITY(U,$J,358.3,26881,1,4,0)
+ ;;=4^Z01.811
+ ;;^UTILITY(U,$J,358.3,26881,2)
+ ;;=^5062626
+ ;;^UTILITY(U,$J,358.3,26882,0)
+ ;;=Z01.812^^132^1305^13
+ ;;^UTILITY(U,$J,358.3,26882,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26882,1,3,0)
+ ;;=3^Lab Preprocedural Exam
+ ;;^UTILITY(U,$J,358.3,26882,1,4,0)
+ ;;=4^Z01.812
+ ;;^UTILITY(U,$J,358.3,26882,2)
+ ;;=^5062627
+ ;;^UTILITY(U,$J,358.3,26883,0)
+ ;;=Z01.818^^132^1305^15
+ ;;^UTILITY(U,$J,358.3,26883,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26883,1,3,0)
+ ;;=3^Preprocedural Exam NEC
+ ;;^UTILITY(U,$J,358.3,26883,1,4,0)
+ ;;=4^Z01.818
+ ;;^UTILITY(U,$J,358.3,26883,2)
+ ;;=^5062628
+ ;;^UTILITY(U,$J,358.3,26884,0)
+ ;;=Z71.0^^132^1305^9
+ ;;^UTILITY(U,$J,358.3,26884,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26884,1,3,0)
+ ;;=3^Hlth Service to Consult on Behalf of Another
+ ;;^UTILITY(U,$J,358.3,26884,1,4,0)
+ ;;=4^Z71.0
+ ;;^UTILITY(U,$J,358.3,26884,2)
+ ;;=^5063242
+ ;;^UTILITY(U,$J,358.3,26885,0)
+ ;;=Z59.8^^132^1305^10
+ ;;^UTILITY(U,$J,358.3,26885,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26885,1,3,0)
+ ;;=3^Housing/Economic Circumstance Problems
+ ;;^UTILITY(U,$J,358.3,26885,1,4,0)
+ ;;=4^Z59.8
+ ;;^UTILITY(U,$J,358.3,26885,2)
+ ;;=^5063137
+ ;;^UTILITY(U,$J,358.3,26886,0)
+ ;;=I20.0^^132^1306^14
+ ;;^UTILITY(U,$J,358.3,26886,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26886,1,3,0)
+ ;;=3^Unstable Angina
+ ;;^UTILITY(U,$J,358.3,26886,1,4,0)
+ ;;=4^I20.0
+ ;;^UTILITY(U,$J,358.3,26886,2)
+ ;;=^5007076
+ ;;^UTILITY(U,$J,358.3,26887,0)
+ ;;=I25.110^^132^1306^7
+ ;;^UTILITY(U,$J,358.3,26887,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26887,1,3,0)
+ ;;=3^Athscl Hrt Dis of Native Cor Art w/ Unstable Ang Pctrs
+ ;;^UTILITY(U,$J,358.3,26887,1,4,0)
+ ;;=4^I25.110
+ ;;^UTILITY(U,$J,358.3,26887,2)
+ ;;=^5007108
+ ;;^UTILITY(U,$J,358.3,26888,0)
+ ;;=I25.700^^132^1306^12
+ ;;^UTILITY(U,$J,358.3,26888,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26888,1,3,0)
+ ;;=3^Athscl of CABG,Unspec w/ Unstable Angina Pectoris
+ ;;^UTILITY(U,$J,358.3,26888,1,4,0)
+ ;;=4^I25.700
+ ;;^UTILITY(U,$J,358.3,26888,2)
+ ;;=^5007117
+ ;;^UTILITY(U,$J,358.3,26889,0)
+ ;;=I25.2^^132^1306^13
+ ;;^UTILITY(U,$J,358.3,26889,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26889,1,3,0)
+ ;;=3^Old Myocardial Infarction
+ ;;^UTILITY(U,$J,358.3,26889,1,4,0)
+ ;;=4^I25.2
+ ;;^UTILITY(U,$J,358.3,26889,2)
+ ;;=^259884
+ ;;^UTILITY(U,$J,358.3,26890,0)
+ ;;=I20.8^^132^1306^2
+ ;;^UTILITY(U,$J,358.3,26890,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26890,1,3,0)
+ ;;=3^Angina Pectoris,Oth Forms
+ ;;^UTILITY(U,$J,358.3,26890,1,4,0)
+ ;;=4^I20.8
+ ;;^UTILITY(U,$J,358.3,26890,2)
+ ;;=^5007078
+ ;;^UTILITY(U,$J,358.3,26891,0)
+ ;;=I20.1^^132^1306^1
+ ;;^UTILITY(U,$J,358.3,26891,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26891,1,3,0)
+ ;;=3^Angina Pectoris w/ Documented Spasm
+ ;;^UTILITY(U,$J,358.3,26891,1,4,0)
+ ;;=4^I20.1
+ ;;^UTILITY(U,$J,358.3,26891,2)
+ ;;=^5007077
+ ;;^UTILITY(U,$J,358.3,26892,0)
+ ;;=I25.119^^132^1306^5
+ ;;^UTILITY(U,$J,358.3,26892,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26892,1,3,0)
+ ;;=3^Athscl HRT Dis of Native Cor Art w/ Ang Pctrs,Unspec
+ ;;^UTILITY(U,$J,358.3,26892,1,4,0)
+ ;;=4^I25.119
+ ;;^UTILITY(U,$J,358.3,26892,2)
+ ;;=^5007111
+ ;;^UTILITY(U,$J,358.3,26893,0)
+ ;;=I25.701^^132^1306^9

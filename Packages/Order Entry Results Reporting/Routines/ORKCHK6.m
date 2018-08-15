@@ -1,5 +1,5 @@
-ORKCHK6 ; SLC/CLA - Support routine called by ORKCHK to do SESSION mode order checks ;05/10/12  13:30
- ;;3.0;ORDER ENTRY/RESULTS REPORTING;**6,32,74,87,94,123,162,190,249,280,272,346,345**;Dec 17, 1997;Build 32
+ORKCHK6 ; SLC/CLA - Support routine called by ORKCHK to do SESSION mode order checks ;12/14/17  09:01
+ ;;3.0;ORDER ENTRY/RESULTS REPORTING;**6,32,74,87,94,123,162,190,249,280,272,346,345,269,469**;Dec 17, 1997;Build 3
  Q
  ;
 EN(ORKS,ORKDFN,ORKA,ORENT,ORKTMODE) ;perform order checking for entire ordering session
@@ -67,7 +67,8 @@ PHARM ;process pharmacy order checks:
 RXOCS ;drug-drug interaction, duplicate drug order, duplicate drug class
  Q:ORCRITF_ORSIGF_ORDUPF_ORDUPCF_ORALLRF'["E"  ;quit if none are "E"nabled
  N ORKRX,ORPSNUM,ORY,CHK,XX
- I $L($G(HL7LPTR)),($G(HL7LCOD)="99PSD") D
+ ;I $L($G(HL7LPTR)),($G(HL7LCOD)="99PSD") D
+ I 1 D
  .D CHKSESS^ORKPS(.ORKRX,ORKDFN,HL7LPTR_U_HL7LTXT,OI,ORKPDATA,ORKDG,+$P($G(ORPSA),";",4),$P(ORKA,"|",7))
  .S CHK=0,XX="" F  S CHK=$O(ORKRX(CHK)) Q:'CHK  D
  ..S XX=ORKRX(CHK)
@@ -106,13 +107,7 @@ RXOCS ;drug-drug interaction, duplicate drug order, duplicate drug class
  ...S ORPSNUM=$P(XX,U,2)  ;get the associated order number
  ...S ORKMSG=$P(XX,U,4)
  ...S ORKS("ORK",ORDUPCD_","_$G(ORNUM)_","_ORPSNUM_","_$E(ORKMSG,1,225))=ORNUM_U_ORDUPCN_U_ORDUPCD_U_ORKMSG
- Q:ORALLRF="D"
- N ORKAL
- I $L($G(HL7NPTR)),($G(HL7NCOD)="99NDF") D
- .D RXN^ORQQAL(.ORKAL,ORKDFN,"DR",HL7NPTR,$G(HL7LPTR)) I (ORKAL>0) D
- ..Q:$L($P(ORKAL,U,2))<1
- ..S ORKMSG="Previous adverse reaction to: "_$P(ORKAL,U,2)
- ..S ORKS("ORK",ORALLRD_","_$G(ORNUM)_","_$E(ORKMSG,1,225))=ORNUM_U_ORALLRN_U_ORALLRD_U_ORKMSG
+ D RXOCS^ORKCHK5
  Q
  ;
 PARAMS(ORKNAME,ORKNUM,ORKFLAG,ORKDNGR) ; get parameter values for an order chk

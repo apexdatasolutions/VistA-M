@@ -1,120 +1,132 @@
-IBDEI10N ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI10N ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,18208,1,2,0)
- ;;=2^12006
- ;;^UTILITY(U,$J,358.3,18208,1,3,0)
- ;;=3^Simple repair Scalp/Nk/Trunk; 20.1 cm to 30 cm
- ;;^UTILITY(U,$J,358.3,18209,0)
- ;;=12007^^119^1134^6^^^^1
- ;;^UTILITY(U,$J,358.3,18209,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18209,1,2,0)
- ;;=2^12007
- ;;^UTILITY(U,$J,358.3,18209,1,3,0)
- ;;=3^Simple repair Scalp/Nk/Trunk; over 30 cm
- ;;^UTILITY(U,$J,358.3,18210,0)
- ;;=12031^^119^1135^1^^^^1
- ;;^UTILITY(U,$J,358.3,18210,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18210,1,2,0)
- ;;=2^12031
- ;;^UTILITY(U,$J,358.3,18210,1,3,0)
- ;;=3^Interm Repair Scalp/Trunk; 2.5 cm or less
- ;;^UTILITY(U,$J,358.3,18211,0)
- ;;=12032^^119^1135^2^^^^1
- ;;^UTILITY(U,$J,358.3,18211,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18211,1,2,0)
- ;;=2^12032
- ;;^UTILITY(U,$J,358.3,18211,1,3,0)
- ;;=3^Interm Repair Scalp/Trunk; 2.6 cm to 7.5 cm
- ;;^UTILITY(U,$J,358.3,18212,0)
- ;;=12034^^119^1135^3^^^^1
- ;;^UTILITY(U,$J,358.3,18212,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18212,1,2,0)
- ;;=2^12034
- ;;^UTILITY(U,$J,358.3,18212,1,3,0)
- ;;=3^Interm Repair Scalp/Trunk; 7.6 cm to 12.5 cm
- ;;^UTILITY(U,$J,358.3,18213,0)
- ;;=12035^^119^1135^4^^^^1
- ;;^UTILITY(U,$J,358.3,18213,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18213,1,2,0)
- ;;=2^12035
- ;;^UTILITY(U,$J,358.3,18213,1,3,0)
- ;;=3^Interm Repair Scalp/Trunk; 12.6 cm to 20 cm
- ;;^UTILITY(U,$J,358.3,18214,0)
- ;;=12036^^119^1135^5^^^^1
- ;;^UTILITY(U,$J,358.3,18214,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18214,1,2,0)
- ;;=2^12036
- ;;^UTILITY(U,$J,358.3,18214,1,3,0)
- ;;=3^Interm Repair Scalp/Trunk; 20.1 cm to 30 cm
- ;;^UTILITY(U,$J,358.3,18215,0)
- ;;=12037^^119^1135^6^^^^1
- ;;^UTILITY(U,$J,358.3,18215,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18215,1,2,0)
- ;;=2^12037
- ;;^UTILITY(U,$J,358.3,18215,1,3,0)
- ;;=3^Interm Repair Scalp/Trunk; over 30 cm
- ;;^UTILITY(U,$J,358.3,18216,0)
- ;;=17270^^119^1136^1^^^^1
- ;;^UTILITY(U,$J,358.3,18216,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18216,1,2,0)
- ;;=2^17270
- ;;^UTILITY(U,$J,358.3,18216,1,3,0)
- ;;=3^Dest Mal Lesion Sclp/NK/Ft/Hd/Gen,0.5cm or less
- ;;^UTILITY(U,$J,358.3,18217,0)
- ;;=17271^^119^1136^2^^^^1
- ;;^UTILITY(U,$J,358.3,18217,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18217,1,2,0)
- ;;=2^17271
- ;;^UTILITY(U,$J,358.3,18217,1,3,0)
- ;;=3^Dest Mal Lesion Sclp/NK/Ft/Hd/Gen,0.6-1.0cm
- ;;^UTILITY(U,$J,358.3,18218,0)
- ;;=17272^^119^1136^3^^^^1
- ;;^UTILITY(U,$J,358.3,18218,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18218,1,2,0)
- ;;=2^17272
- ;;^UTILITY(U,$J,358.3,18218,1,3,0)
- ;;=3^Dest Mal Lesion Sclp/NK/Ft/Hd/Gen,1.1-2.0cm
- ;;^UTILITY(U,$J,358.3,18219,0)
- ;;=17273^^119^1136^4^^^^1
- ;;^UTILITY(U,$J,358.3,18219,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18219,1,2,0)
- ;;=2^17273
- ;;^UTILITY(U,$J,358.3,18219,1,3,0)
- ;;=3^Dest Mal Lesion Sclp/NK/Ft/Hd/Gen,2.1-3.0cm
- ;;^UTILITY(U,$J,358.3,18220,0)
- ;;=17274^^119^1136^5^^^^1
- ;;^UTILITY(U,$J,358.3,18220,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18220,1,2,0)
- ;;=2^17274
- ;;^UTILITY(U,$J,358.3,18220,1,3,0)
- ;;=3^Dest Mal Lesion Sclp/NK/Ft/Hd/Gen,3.1-4.0cm
- ;;^UTILITY(U,$J,358.3,18221,0)
- ;;=17276^^119^1136^6^^^^1
- ;;^UTILITY(U,$J,358.3,18221,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18221,1,2,0)
- ;;=2^17276
- ;;^UTILITY(U,$J,358.3,18221,1,3,0)
- ;;=3^Dest Mal Lesion Sclp/NK/Ft/Hd/Gen > 4.0cm
- ;;^UTILITY(U,$J,358.3,18222,0)
- ;;=17280^^119^1137^1^^^^1
- ;;^UTILITY(U,$J,358.3,18222,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18222,1,2,0)
- ;;=2^17280
- ;;^UTILITY(U,$J,358.3,18222,1,3,0)
- ;;=3^Dest Mal Lesion Face/Mucous,0.5cm or less
+ ;;^UTILITY(U,$J,358.3,16903,2)
+ ;;=^5013566
+ ;;^UTILITY(U,$J,358.3,16904,0)
+ ;;=M84.30XD^^88^856^53
+ ;;^UTILITY(U,$J,358.3,16904,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16904,1,3,0)
+ ;;=3^Fx,Stress,Unspec Site,Routine Healing
+ ;;^UTILITY(U,$J,358.3,16904,1,4,0)
+ ;;=4^M84.30XD
+ ;;^UTILITY(U,$J,358.3,16904,2)
+ ;;=^5013567
+ ;;^UTILITY(U,$J,358.3,16905,0)
+ ;;=M84.30XS^^88^856^54
+ ;;^UTILITY(U,$J,358.3,16905,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16905,1,3,0)
+ ;;=3^Fx,Stress,Unspec Site,Sequela
+ ;;^UTILITY(U,$J,358.3,16905,1,4,0)
+ ;;=4^M84.30XS
+ ;;^UTILITY(U,$J,358.3,16905,2)
+ ;;=^5013571
+ ;;^UTILITY(U,$J,358.3,16906,0)
+ ;;=M84.30XG^^88^856^49
+ ;;^UTILITY(U,$J,358.3,16906,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16906,1,3,0)
+ ;;=3^Fx,Stress,Unspec Site,Delayed Healing
+ ;;^UTILITY(U,$J,358.3,16906,1,4,0)
+ ;;=4^M84.30XG
+ ;;^UTILITY(U,$J,358.3,16906,2)
+ ;;=^5013568
+ ;;^UTILITY(U,$J,358.3,16907,0)
+ ;;=M84.30XK^^88^856^52
+ ;;^UTILITY(U,$J,358.3,16907,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16907,1,3,0)
+ ;;=3^Fx,Stress,Unspec Site,Nonunion
+ ;;^UTILITY(U,$J,358.3,16907,1,4,0)
+ ;;=4^M84.30XK
+ ;;^UTILITY(U,$J,358.3,16907,2)
+ ;;=^5013569
+ ;;^UTILITY(U,$J,358.3,16908,0)
+ ;;=M84.30XP^^88^856^51
+ ;;^UTILITY(U,$J,358.3,16908,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16908,1,3,0)
+ ;;=3^Fx,Stress,Unspec Site,Malunion
+ ;;^UTILITY(U,$J,358.3,16908,1,4,0)
+ ;;=4^M84.30XP
+ ;;^UTILITY(U,$J,358.3,16908,2)
+ ;;=^5013570
+ ;;^UTILITY(U,$J,358.3,16909,0)
+ ;;=M84.9^^88^856^47
+ ;;^UTILITY(U,$J,358.3,16909,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16909,1,3,0)
+ ;;=3^Fx,Disorder of Continuity of Bone,Unspec
+ ;;^UTILITY(U,$J,358.3,16909,1,4,0)
+ ;;=4^M84.9
+ ;;^UTILITY(U,$J,358.3,16909,2)
+ ;;=^5014330
+ ;;^UTILITY(U,$J,358.3,16910,0)
+ ;;=M84.80^^88^856^48
+ ;;^UTILITY(U,$J,358.3,16910,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16910,1,3,0)
+ ;;=3^Fx,Disorder of Continuity of Bone,Unspec Site
+ ;;^UTILITY(U,$J,358.3,16910,1,4,0)
+ ;;=4^M84.80
+ ;;^UTILITY(U,$J,358.3,16910,2)
+ ;;=^5014304
+ ;;^UTILITY(U,$J,358.3,16911,0)
+ ;;=M10.00^^88^856^67
+ ;;^UTILITY(U,$J,358.3,16911,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16911,1,3,0)
+ ;;=3^Gout,Idiopathic,Unspec Site
+ ;;^UTILITY(U,$J,358.3,16911,1,4,0)
+ ;;=4^M10.00
+ ;;^UTILITY(U,$J,358.3,16911,2)
+ ;;=^5010284
+ ;;^UTILITY(U,$J,358.3,16912,0)
+ ;;=M10.9^^88^856^68
+ ;;^UTILITY(U,$J,358.3,16912,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16912,1,3,0)
+ ;;=3^Gout,Unspec
+ ;;^UTILITY(U,$J,358.3,16912,1,4,0)
+ ;;=4^M10.9
+ ;;^UTILITY(U,$J,358.3,16912,2)
+ ;;=^5010404
+ ;;^UTILITY(U,$J,358.3,16913,0)
+ ;;=M1A.00X1^^88^856^61
+ ;;^UTILITY(U,$J,358.3,16913,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16913,1,3,0)
+ ;;=3^Gout,Chr Idiopathic w/ Tophus,Unspec Site
+ ;;^UTILITY(U,$J,358.3,16913,1,4,0)
+ ;;=4^M1A.00X1
+ ;;^UTILITY(U,$J,358.3,16913,2)
+ ;;=^5010858
+ ;;^UTILITY(U,$J,358.3,16914,0)
+ ;;=M1A.00X0^^88^856^62
+ ;;^UTILITY(U,$J,358.3,16914,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16914,1,3,0)
+ ;;=3^Gout,Chr Idiopathic w/o Tophus,Unspec Site
+ ;;^UTILITY(U,$J,358.3,16914,1,4,0)
+ ;;=4^M1A.00X0
+ ;;^UTILITY(U,$J,358.3,16914,2)
+ ;;=^5010857
+ ;;^UTILITY(U,$J,358.3,16915,0)
+ ;;=M1A.40X1^^88^856^63
+ ;;^UTILITY(U,$J,358.3,16915,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16915,1,3,0)
+ ;;=3^Gout,Chr Secondary w/ Tophus,Unspec Site
+ ;;^UTILITY(U,$J,358.3,16915,1,4,0)
+ ;;=4^M1A.40X1
+ ;;^UTILITY(U,$J,358.3,16915,2)
+ ;;=^5010994
+ ;;^UTILITY(U,$J,358.3,16916,0)
+ ;;=M1A.40X0^^88^856^64
+ ;;^UTILITY(U,$J,358.3,16916,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,16916,1,3,0)
+ ;;=3^Gout,Chr Secondary w/o Tophus,Unspec Site

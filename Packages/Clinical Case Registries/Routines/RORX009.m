@@ -1,5 +1,16 @@
-RORX009 ;HCIOFO/SG - PHARMACY PRESCRIPTION UTILIZATION ; 11/16/05 10:49am
- ;;1.5;CLINICAL CASE REGISTRIES;;Feb 17, 2006
+RORX009 ;HCIOFO/SG - PHARMACY PRESCRIPTION UTILIZATION ;11/16/05 10:49am
+ ;;1.5;CLINICAL CASE REGISTRIES;**21,31**;Feb 17, 2006;Build 62
+ ;
+ ;******************************************************************************
+ ;                       --- ROUTINE MODIFICATION LOG ---
+ ;        
+ ;PKG/PATCH    DATE        DEVELOPER    MODIFICATION
+ ;-----------  ----------  -----------  ----------------------------------------
+ ;ROR*1.5*21   SEP 2013    T KOPP       Added ICN as last report column if
+ ;                                      additional identifier option selected
+ ;ROR*1.5*31   MAY 2017    M FERRARESE  Adding PACT, PCP, and AGE/DOB as additional
+ ;                                      identifiers.
+ ;******************************************************************************
  ;
  Q
  ;
@@ -16,9 +27,15 @@ HEADER(PARTAG) ;
  ;;DRUGS_DOSES(#,NAME,NP,IPNRX,MAXNRPP,MAXNP)
  ;;DRUGS_FILLS(#,NAME,NP,OPNRX,MAXNRPP,MAXNP)
  ;;FILLS(NP,OPNRX)^I $$PARAM^RORTSK01("PATIENTS","OUTPATIENT")
- ;;HU_DOSES(#,NAME,LAST4,DOD,IPNRX,ND)^I $$PARAM^RORTSK01("PATIENTS","INPATIENT")
- ;;HU_FILLS(#,NAME,LAST4,DOD,OPNRX,ND)^I $$PARAM^RORTSK01("PATIENTS","OUTPATIENT")
- ;;HU_NRX(#,NAME,LAST4,DOD,OPNRX,IPNRX,ND)^I $$PARAM^RORTSK01("PATIENTS","OUTPATIENT"),$$PARAM^RORTSK01("PATIENTS","INPATIENT")
+ ;;HU_DOSES(#,NAME,LAST4,DOD,IPNRX,ND,ICN,PACT,PCP)^I $$PARAM^RORTSK01("PATIENTS","INPATIENT"),$$PARAM^RORTSK01("AGE_RANGE","TYPE")="ALL"
+ ;;HU_DOSES(#,NAME,LAST4,AGE,DOD,IPNRX,ND,ICN,PACT,PCP)^I $$PARAM^RORTSK01("PATIENTS","INPATIENT"),$$PARAM^RORTSK01("AGE_RANGE","TYPE")="AGE"
+ ;;HU_DOSES(#,NAME,LAST4,DOB,DOD,IPNRX,ND,ICN,PACT,PCP)^I $$PARAM^RORTSK01("PATIENTS","INPATIENT"),$$PARAM^RORTSK01("AGE_RANGE","TYPE")="DOB"
+ ;;HU_FILLS(#,NAME,LAST4,DOD,OPNRX,ND,ICN,PACT,PCP)^I $$PARAM^RORTSK01("PATIENTS","OUTPATIENT"),$$PARAM^RORTSK01("AGE_RANGE","TYPE")="ALL"
+ ;;HU_FILLS(#,NAME,LAST4,AGE,DOD,OPNRX,ND,ICN,PACT,PCP)^I $$PARAM^RORTSK01("PATIENTS","OUTPATIENT"),$$PARAM^RORTSK01("AGE_RANGE","TYPE")="AGE"
+ ;;HU_FILLS(#,NAME,LAST4,DOB,DOD,OPNRX,ND,ICN,PACT,PCP)^I $$PARAM^RORTSK01("PATIENTS","OUTPATIENT"),$$PARAM^RORTSK01("AGE_RANGE","TYPE")="DOB"
+ ;;HU_NRX(#,NAME,LAST4,DOD,OPNRX,IPNRX,ND,ICN,PACT,PCP)^I $$PARAM^RORTSK01("PATIENTS","OUTPATIENT"),$$PARAM^RORTSK01("PATIENTS","INPATIENT"),$$PARAM^RORTSK01("AGE_RANGE","TYPE")="ALL"
+ ;;HU_NRX(#,NAME,LAST4,AGE,DOD,OPNRX,IPNRX,ND,ICN,PACT,PCP)^I $$PARAM^RORTSK01("PATIENTS","OUTPATIENT"),$$PARAM^RORTSK01("PATIENTS","INPATIENT"),$$PARAM^RORTSK01("AGE_RANGE","TYPE")="AGE"
+ ;;HU_NRX(#,NAME,LAST4,DOB,DOD,OPNRX,IPNRX,ND,ICN,PACT,PCP)^I $$PARAM^RORTSK01("PATIENTS","OUTPATIENT"),$$PARAM^RORTSK01("PATIENTS","INPATIENT"),$$PARAM^RORTSK01("AGE_RANGE","TYPE")="DOB"
  ;
  N HEADER,RC
  S HEADER=$$HEADER^RORXU002(.RORTSK,PARTAG)
@@ -41,7 +58,7 @@ HEADER(PARTAG) ;
  ;       >0  IEN of the PARAMETERS element
  ;
 PARAMS(PARTAG,STDT,ENDT,FLAGS) ;
- N PARAMS,TMP
+ N NAME,PARAMS,TMP
  S PARAMS=$$PARAMS^RORXU002(.RORTSK,PARTAG,.STDT,.ENDT,.FLAGS)
  Q:PARAMS<0 PARAMS
  ;--- Process the drug list and options
@@ -70,6 +87,10 @@ PARAMS(PARTAG,STDT,ENDT,FLAGS) ;
  ;                         ^03: Date of Death
  ;                         ^04: Total number of doses
  ;                         ^05: Number of different drugs
+ ;                         ^06: National ICN
+ ;                         ^07: PACT Patient care team
+ ;                         ^08: PCP Primary care physician
+ ;                         ^09: AGE/DOB
  ;         "D",
  ;           DrugIEN)    Quantity
  ;
@@ -97,6 +118,10 @@ PARAMS(PARTAG,STDT,ENDT,FLAGS) ;
  ;                         ^03: Date of Death
  ;                         ^04: Total number of fills
  ;                         ^05: Number of different drugs
+ ;                         ^06: National ICN
+ ;                         ^07: PACT Patient care team
+ ;                         ^08: PCP Primary care physician
+ ;                         ^09: AGE/DOB
  ;         "D",
  ;           DrugIEN)    Quantity
  ;

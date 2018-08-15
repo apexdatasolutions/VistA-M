@@ -1,142 +1,126 @@
-IBDEI0HA ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0HA ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,8397,1,3,0)
- ;;=3^Hi-Risk Med,Long Term Current Use
- ;;^UTILITY(U,$J,358.3,8397,1,4,0)
- ;;=4^V58.69
- ;;^UTILITY(U,$J,358.3,8397,2)
- ;;=^303460
- ;;^UTILITY(U,$J,358.3,8398,0)
- ;;=871.4^^58^609^54
- ;;^UTILITY(U,$J,358.3,8398,1,0)
+ ;;^UTILITY(U,$J,358.3,7729,1,4,0)
+ ;;=4^N06.3
+ ;;^UTILITY(U,$J,358.3,7729,2)
+ ;;=^5015552
+ ;;^UTILITY(U,$J,358.3,7730,0)
+ ;;=N06.4^^52^518^35
+ ;;^UTILITY(U,$J,358.3,7730,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8398,1,3,0)
- ;;=3^Laceration of Eyeball
- ;;^UTILITY(U,$J,358.3,8398,1,4,0)
- ;;=4^871.4
- ;;^UTILITY(U,$J,358.3,8398,2)
- ;;=Laceration of Eyeball^274889
- ;;^UTILITY(U,$J,358.3,8399,0)
- ;;=242.90^^58^609^108
- ;;^UTILITY(U,$J,358.3,8399,1,0)
+ ;;^UTILITY(U,$J,358.3,7730,1,3,0)
+ ;;=3^Isolated proteinuria w/ diffuse endocaplry prolif glomrlneph
+ ;;^UTILITY(U,$J,358.3,7730,1,4,0)
+ ;;=4^N06.4
+ ;;^UTILITY(U,$J,358.3,7730,2)
+ ;;=^5015553
+ ;;^UTILITY(U,$J,358.3,7731,0)
+ ;;=N06.5^^52^518^38
+ ;;^UTILITY(U,$J,358.3,7731,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8399,1,3,0)
- ;;=3^Thyroid Eye Dis
- ;;^UTILITY(U,$J,358.3,8399,1,4,0)
- ;;=4^242.90
- ;;^UTILITY(U,$J,358.3,8399,2)
- ;;=Thyroid Eye Dis^267811^376.21
- ;;^UTILITY(U,$J,358.3,8400,0)
- ;;=135.^^58^609^101
- ;;^UTILITY(U,$J,358.3,8400,1,0)
+ ;;^UTILITY(U,$J,358.3,7731,1,3,0)
+ ;;=3^Isolated proteinuria w/ diffuse mesangiocapillary glomrlneph
+ ;;^UTILITY(U,$J,358.3,7731,1,4,0)
+ ;;=4^N06.5
+ ;;^UTILITY(U,$J,358.3,7731,2)
+ ;;=^5015554
+ ;;^UTILITY(U,$J,358.3,7732,0)
+ ;;=N06.6^^52^518^33
+ ;;^UTILITY(U,$J,358.3,7732,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8400,1,3,0)
- ;;=3^Sarcoidosis
- ;;^UTILITY(U,$J,358.3,8400,1,4,0)
- ;;=4^135.
- ;;^UTILITY(U,$J,358.3,8400,2)
- ;;=Sarcoidosis^107916
- ;;^UTILITY(U,$J,358.3,8401,0)
- ;;=446.5^^58^609^107
- ;;^UTILITY(U,$J,358.3,8401,1,0)
+ ;;^UTILITY(U,$J,358.3,7732,1,3,0)
+ ;;=3^Isolated proteinuria w/ dense deposit disease
+ ;;^UTILITY(U,$J,358.3,7732,1,4,0)
+ ;;=4^N06.6
+ ;;^UTILITY(U,$J,358.3,7732,2)
+ ;;=^5015555
+ ;;^UTILITY(U,$J,358.3,7733,0)
+ ;;=N06.7^^52^518^34
+ ;;^UTILITY(U,$J,358.3,7733,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8401,1,3,0)
- ;;=3^Temporal Arteritis
- ;;^UTILITY(U,$J,358.3,8401,1,4,0)
- ;;=4^446.5
- ;;^UTILITY(U,$J,358.3,8401,2)
- ;;=Temporal Arteritis^117658
- ;;^UTILITY(U,$J,358.3,8402,0)
- ;;=401.9^^58^609^49
- ;;^UTILITY(U,$J,358.3,8402,1,0)
+ ;;^UTILITY(U,$J,358.3,7733,1,3,0)
+ ;;=3^Isolated proteinuria w/ diffuse crescentic glomerulonephritis
+ ;;^UTILITY(U,$J,358.3,7733,1,4,0)
+ ;;=4^N06.7
+ ;;^UTILITY(U,$J,358.3,7733,2)
+ ;;=^5015556
+ ;;^UTILITY(U,$J,358.3,7734,0)
+ ;;=N06.8^^52^518^41
+ ;;^UTILITY(U,$J,358.3,7734,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8402,1,3,0)
- ;;=3^Hypertension
- ;;^UTILITY(U,$J,358.3,8402,1,4,0)
- ;;=4^401.9
- ;;^UTILITY(U,$J,358.3,8402,2)
- ;;=Hypertension^186630
- ;;^UTILITY(U,$J,358.3,8403,0)
- ;;=V72.0^^58^609^32
- ;;^UTILITY(U,$J,358.3,8403,1,0)
+ ;;^UTILITY(U,$J,358.3,7734,1,3,0)
+ ;;=3^Isolated proteinuria w/ other morphologic lesion
+ ;;^UTILITY(U,$J,358.3,7734,1,4,0)
+ ;;=4^N06.8
+ ;;^UTILITY(U,$J,358.3,7734,2)
+ ;;=^5015557
+ ;;^UTILITY(U,$J,358.3,7735,0)
+ ;;=N06.9^^52^518^42
+ ;;^UTILITY(U,$J,358.3,7735,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8403,1,3,0)
- ;;=3^Eye Exam
- ;;^UTILITY(U,$J,358.3,8403,1,4,0)
- ;;=4^V72.0
- ;;^UTILITY(U,$J,358.3,8403,2)
- ;;=Eye Exam^43432
- ;;^UTILITY(U,$J,358.3,8404,0)
- ;;=V41.0^^58^609^91
- ;;^UTILITY(U,$J,358.3,8404,1,0)
+ ;;^UTILITY(U,$J,358.3,7735,1,3,0)
+ ;;=3^Isolated proteinuria w/ unspecified morphologic lesion
+ ;;^UTILITY(U,$J,358.3,7735,1,4,0)
+ ;;=4^N06.9
+ ;;^UTILITY(U,$J,358.3,7735,2)
+ ;;=^5015558
+ ;;^UTILITY(U,$J,358.3,7736,0)
+ ;;=N07.0^^52^518^30
+ ;;^UTILITY(U,$J,358.3,7736,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8404,1,3,0)
- ;;=3^Problems with Sight
- ;;^UTILITY(U,$J,358.3,8404,1,4,0)
- ;;=4^V41.0
- ;;^UTILITY(U,$J,358.3,8404,2)
- ;;=^295427
- ;;^UTILITY(U,$J,358.3,8405,0)
- ;;=998.59^^58^609^89
- ;;^UTILITY(U,$J,358.3,8405,1,0)
+ ;;^UTILITY(U,$J,358.3,7736,1,3,0)
+ ;;=3^Hereditary nephropathy, NEC w/ minor glomerular abnormality
+ ;;^UTILITY(U,$J,358.3,7736,1,4,0)
+ ;;=4^N07.0
+ ;;^UTILITY(U,$J,358.3,7736,2)
+ ;;=^5015559
+ ;;^UTILITY(U,$J,358.3,7737,0)
+ ;;=N07.1^^52^518^29
+ ;;^UTILITY(U,$J,358.3,7737,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8405,1,3,0)
- ;;=3^Post Op Infection
- ;;^UTILITY(U,$J,358.3,8405,1,4,0)
- ;;=4^998.59
- ;;^UTILITY(U,$J,358.3,8405,2)
- ;;=Post Op Infection^97081
- ;;^UTILITY(U,$J,358.3,8406,0)
- ;;=042.^^58^609^1
- ;;^UTILITY(U,$J,358.3,8406,1,0)
+ ;;^UTILITY(U,$J,358.3,7737,1,3,0)
+ ;;=3^Hereditary nephropathy, NEC w/ focal & seg glomerular lesions
+ ;;^UTILITY(U,$J,358.3,7737,1,4,0)
+ ;;=4^N07.1
+ ;;^UTILITY(U,$J,358.3,7737,2)
+ ;;=^5015560
+ ;;^UTILITY(U,$J,358.3,7738,0)
+ ;;=N07.2^^52^518^24
+ ;;^UTILITY(U,$J,358.3,7738,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8406,1,3,0)
- ;;=3^AIDS,Unspec
- ;;^UTILITY(U,$J,358.3,8406,1,4,0)
- ;;=4^042.
- ;;^UTILITY(U,$J,358.3,8406,2)
- ;;=^266500
- ;;^UTILITY(U,$J,358.3,8407,0)
- ;;=053.29^^58^609^43
- ;;^UTILITY(U,$J,358.3,8407,1,0)
+ ;;^UTILITY(U,$J,358.3,7738,1,3,0)
+ ;;=3^Hereditary nephropathy, NEC w/ diffuse membranous glomrlneph
+ ;;^UTILITY(U,$J,358.3,7738,1,4,0)
+ ;;=4^N07.2
+ ;;^UTILITY(U,$J,358.3,7738,2)
+ ;;=^5015561
+ ;;^UTILITY(U,$J,358.3,7739,0)
+ ;;=N07.3^^52^518^25
+ ;;^UTILITY(U,$J,358.3,7739,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8407,1,3,0)
- ;;=3^Herpes Zoster,Oth
- ;;^UTILITY(U,$J,358.3,8407,1,4,0)
- ;;=4^053.29
- ;;^UTILITY(U,$J,358.3,8407,2)
- ;;=^266555
- ;;^UTILITY(U,$J,358.3,8408,0)
- ;;=054.40^^58^609^42
- ;;^UTILITY(U,$J,358.3,8408,1,0)
+ ;;^UTILITY(U,$J,358.3,7739,1,3,0)
+ ;;=3^Hereditary nephropathy, NEC w/ diffuse mesangial prolif glomrlneph
+ ;;^UTILITY(U,$J,358.3,7739,1,4,0)
+ ;;=4^N07.3
+ ;;^UTILITY(U,$J,358.3,7739,2)
+ ;;=^5015562
+ ;;^UTILITY(U,$J,358.3,7740,0)
+ ;;=N07.3^^52^518^26
+ ;;^UTILITY(U,$J,358.3,7740,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8408,1,3,0)
- ;;=3^Herpes Simplex
- ;;^UTILITY(U,$J,358.3,8408,1,4,0)
- ;;=4^054.40
- ;;^UTILITY(U,$J,358.3,8408,2)
- ;;=^266562
- ;;^UTILITY(U,$J,358.3,8409,0)
- ;;=190.1^^58^609^83
- ;;^UTILITY(U,$J,358.3,8409,1,0)
+ ;;^UTILITY(U,$J,358.3,7740,1,3,0)
+ ;;=3^Hereditary nephropathy, NEC w/ diffuse mesangial prolif glomrlneph
+ ;;^UTILITY(U,$J,358.3,7740,1,4,0)
+ ;;=4^N07.3
+ ;;^UTILITY(U,$J,358.3,7740,2)
+ ;;=^5015562
+ ;;^UTILITY(U,$J,358.3,7741,0)
+ ;;=N07.4^^52^518^23
+ ;;^UTILITY(U,$J,358.3,7741,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8409,1,3,0)
- ;;=3^Orbit Malig Neoplasm
- ;;^UTILITY(U,$J,358.3,8409,1,4,0)
- ;;=4^190.1
- ;;^UTILITY(U,$J,358.3,8409,2)
- ;;=^267272
- ;;^UTILITY(U,$J,358.3,8410,0)
- ;;=190.2^^58^609^50
- ;;^UTILITY(U,$J,358.3,8410,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8410,1,3,0)
- ;;=3^Lac Gland Malig Neoplasm
- ;;^UTILITY(U,$J,358.3,8410,1,4,0)
- ;;=4^190.2
- ;;^UTILITY(U,$J,358.3,8410,2)
- ;;=^267273
- ;;^UTILITY(U,$J,358.3,8411,0)
- ;;=190.7^^58^609^52
+ ;;^UTILITY(U,$J,358.3,7741,1,3,0)
+ ;;=3^Hereditary nephropathy, NEC w/ diffus endocaplry prolif glomrlneph
+ ;;^UTILITY(U,$J,358.3,7741,1,4,0)
+ ;;=4^N07.4

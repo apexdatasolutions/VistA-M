@@ -1,134 +1,144 @@
-IBDEI09R ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI09R ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,4517,1,5,0)
- ;;=5^553.3
- ;;^UTILITY(U,$J,358.3,4517,2)
- ;;=^33903
- ;;^UTILITY(U,$J,358.3,4518,0)
- ;;=153.5^^37^345^5
- ;;^UTILITY(U,$J,358.3,4518,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4518,1,4,0)
- ;;=4^CA of Appendix
- ;;^UTILITY(U,$J,358.3,4518,1,5,0)
- ;;=5^153.5
- ;;^UTILITY(U,$J,358.3,4518,2)
- ;;=CA of Appendix^267084
- ;;^UTILITY(U,$J,358.3,4519,0)
- ;;=153.4^^37^345^18
- ;;^UTILITY(U,$J,358.3,4519,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4519,1,4,0)
- ;;=4^CA of Ileocecal Valve
- ;;^UTILITY(U,$J,358.3,4519,1,5,0)
- ;;=5^153.4
- ;;^UTILITY(U,$J,358.3,4519,2)
- ;;=CA of Ileocecal Valve^267083
- ;;^UTILITY(U,$J,358.3,4520,0)
- ;;=154.0^^37^345^9
- ;;^UTILITY(U,$J,358.3,4520,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4520,1,4,0)
- ;;=4^CA of Colon and Rectum
- ;;^UTILITY(U,$J,358.3,4520,1,5,0)
- ;;=5^154.0
- ;;^UTILITY(U,$J,358.3,4520,2)
- ;;=CA of Colon and Rectum^267089
- ;;^UTILITY(U,$J,358.3,4521,0)
- ;;=153.6^^37^345^6
- ;;^UTILITY(U,$J,358.3,4521,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4521,1,4,0)
- ;;=4^CA of Ascending Colon
- ;;^UTILITY(U,$J,358.3,4521,1,5,0)
- ;;=5^153.6
- ;;^UTILITY(U,$J,358.3,4521,2)
- ;;=CA of Ascending Colon^267085
- ;;^UTILITY(U,$J,358.3,4522,0)
- ;;=153.8^^37^345^12
- ;;^UTILITY(U,$J,358.3,4522,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4522,1,4,0)
- ;;=4^CA of Colon/Contiguous Sites
- ;;^UTILITY(U,$J,358.3,4522,1,5,0)
- ;;=5^153.8
- ;;^UTILITY(U,$J,358.3,4522,2)
- ;;=CA of Colon/Contiguous Sites^267087
- ;;^UTILITY(U,$J,358.3,4523,0)
- ;;=153.2^^37^345^13
- ;;^UTILITY(U,$J,358.3,4523,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4523,1,4,0)
- ;;=4^CA of Descending Colon
- ;;^UTILITY(U,$J,358.3,4523,1,5,0)
- ;;=5^153.2
- ;;^UTILITY(U,$J,358.3,4523,2)
- ;;=CA of Descending Colon^267081
- ;;^UTILITY(U,$J,358.3,4524,0)
- ;;=153.3^^37^345^28
- ;;^UTILITY(U,$J,358.3,4524,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4524,1,4,0)
- ;;=4^CA of Sigmoid Colon
- ;;^UTILITY(U,$J,358.3,4524,1,5,0)
- ;;=5^153.3
- ;;^UTILITY(U,$J,358.3,4524,2)
- ;;=Ca of Sigmoid Colon^267082
- ;;^UTILITY(U,$J,358.3,4525,0)
- ;;=153.1^^37^345^37
- ;;^UTILITY(U,$J,358.3,4525,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4525,1,4,0)
- ;;=4^CA of Transverse Colon
- ;;^UTILITY(U,$J,358.3,4525,1,5,0)
- ;;=5^153.1
- ;;^UTILITY(U,$J,358.3,4525,2)
- ;;=CA of Transverse Colon^267080
- ;;^UTILITY(U,$J,358.3,4526,0)
- ;;=153.0^^37^345^11
- ;;^UTILITY(U,$J,358.3,4526,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4526,1,4,0)
- ;;=4^CA of Colon, Hepatic Flexure.
- ;;^UTILITY(U,$J,358.3,4526,1,5,0)
- ;;=5^153.0
- ;;^UTILITY(U,$J,358.3,4526,2)
- ;;=CA of Colon at Hepatic Flexure^267079
- ;;^UTILITY(U,$J,358.3,4527,0)
- ;;=153.7^^37^345^10
- ;;^UTILITY(U,$J,358.3,4527,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4527,1,4,0)
- ;;=4^CA of Colon at Splenic Flexure
- ;;^UTILITY(U,$J,358.3,4527,1,5,0)
- ;;=5^153.7
- ;;^UTILITY(U,$J,358.3,4527,2)
- ;;=CA of Colon at Splenic Flexure^267086
- ;;^UTILITY(U,$J,358.3,4528,0)
- ;;=151.9^^37^345^29
- ;;^UTILITY(U,$J,358.3,4528,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4528,1,4,0)
- ;;=4^CA of Stomach
- ;;^UTILITY(U,$J,358.3,4528,1,5,0)
- ;;=5^151.9
- ;;^UTILITY(U,$J,358.3,4528,2)
- ;;=CA of Stomach^73532
- ;;^UTILITY(U,$J,358.3,4529,0)
- ;;=151.2^^37^345^4
- ;;^UTILITY(U,$J,358.3,4529,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4529,1,4,0)
- ;;=4^CA of Antrum of Stomach
- ;;^UTILITY(U,$J,358.3,4529,1,5,0)
- ;;=5^151.2
- ;;^UTILITY(U,$J,358.3,4529,2)
- ;;=CA of Antrum of Stomach^267065
- ;;^UTILITY(U,$J,358.3,4530,0)
- ;;=151.4^^37^345^30
- ;;^UTILITY(U,$J,358.3,4530,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4530,1,4,0)
- ;;=4^CA of Stomach Body
+ ;;^UTILITY(U,$J,358.3,4029,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4029,1,3,0)
+ ;;=3^Bronchitis,Chronic,Simple
+ ;;^UTILITY(U,$J,358.3,4029,1,4,0)
+ ;;=4^J41.0
+ ;;^UTILITY(U,$J,358.3,4029,2)
+ ;;=^269946
+ ;;^UTILITY(U,$J,358.3,4030,0)
+ ;;=J42.^^28^261^16
+ ;;^UTILITY(U,$J,358.3,4030,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4030,1,3,0)
+ ;;=3^Bronchitis,Chronic,Unspec
+ ;;^UTILITY(U,$J,358.3,4030,1,4,0)
+ ;;=4^J42.
+ ;;^UTILITY(U,$J,358.3,4030,2)
+ ;;=^5008234
+ ;;^UTILITY(U,$J,358.3,4031,0)
+ ;;=J40.^^28^261^17
+ ;;^UTILITY(U,$J,358.3,4031,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4031,1,3,0)
+ ;;=3^Bronchitis,Unspec as Acute/Chronic
+ ;;^UTILITY(U,$J,358.3,4031,1,4,0)
+ ;;=4^J40.
+ ;;^UTILITY(U,$J,358.3,4031,2)
+ ;;=^17164
+ ;;^UTILITY(U,$J,358.3,4032,0)
+ ;;=J44.1^^28^261^18
+ ;;^UTILITY(U,$J,358.3,4032,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4032,1,3,0)
+ ;;=3^COPD w/ Acute Exacerbation
+ ;;^UTILITY(U,$J,358.3,4032,1,4,0)
+ ;;=4^J44.1
+ ;;^UTILITY(U,$J,358.3,4032,2)
+ ;;=^5008240
+ ;;^UTILITY(U,$J,358.3,4033,0)
+ ;;=J44.0^^28^261^19
+ ;;^UTILITY(U,$J,358.3,4033,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4033,1,3,0)
+ ;;=3^COPD w/ Acute Lower Respiratory Infection
+ ;;^UTILITY(U,$J,358.3,4033,1,4,0)
+ ;;=4^J44.0
+ ;;^UTILITY(U,$J,358.3,4033,2)
+ ;;=^5008239
+ ;;^UTILITY(U,$J,358.3,4034,0)
+ ;;=J44.9^^28^261^20
+ ;;^UTILITY(U,$J,358.3,4034,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4034,1,3,0)
+ ;;=3^COPD,Unspec
+ ;;^UTILITY(U,$J,358.3,4034,1,4,0)
+ ;;=4^J44.9
+ ;;^UTILITY(U,$J,358.3,4034,2)
+ ;;=^5008241
+ ;;^UTILITY(U,$J,358.3,4035,0)
+ ;;=R05.^^28^261^21
+ ;;^UTILITY(U,$J,358.3,4035,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4035,1,3,0)
+ ;;=3^Cough
+ ;;^UTILITY(U,$J,358.3,4035,1,4,0)
+ ;;=4^R05.
+ ;;^UTILITY(U,$J,358.3,4035,2)
+ ;;=^5019179
+ ;;^UTILITY(U,$J,358.3,4036,0)
+ ;;=R06.00^^28^261^22
+ ;;^UTILITY(U,$J,358.3,4036,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4036,1,3,0)
+ ;;=3^Dyspnea,Unspec
+ ;;^UTILITY(U,$J,358.3,4036,1,4,0)
+ ;;=4^R06.00
+ ;;^UTILITY(U,$J,358.3,4036,2)
+ ;;=^5019180
+ ;;^UTILITY(U,$J,358.3,4037,0)
+ ;;=J43.9^^28^261^23
+ ;;^UTILITY(U,$J,358.3,4037,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4037,1,3,0)
+ ;;=3^Emphysema,Unspec
+ ;;^UTILITY(U,$J,358.3,4037,1,4,0)
+ ;;=4^J43.9
+ ;;^UTILITY(U,$J,358.3,4037,2)
+ ;;=^5008238
+ ;;^UTILITY(U,$J,358.3,4038,0)
+ ;;=R04.0^^28^261^24
+ ;;^UTILITY(U,$J,358.3,4038,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4038,1,3,0)
+ ;;=3^Epistaxis
+ ;;^UTILITY(U,$J,358.3,4038,1,4,0)
+ ;;=4^R04.0
+ ;;^UTILITY(U,$J,358.3,4038,2)
+ ;;=^5019173
+ ;;^UTILITY(U,$J,358.3,4039,0)
+ ;;=R04.2^^28^261^25
+ ;;^UTILITY(U,$J,358.3,4039,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4039,1,3,0)
+ ;;=3^Hemoptysis
+ ;;^UTILITY(U,$J,358.3,4039,1,4,0)
+ ;;=4^R04.2
+ ;;^UTILITY(U,$J,358.3,4039,2)
+ ;;=^5019175
+ ;;^UTILITY(U,$J,358.3,4040,0)
+ ;;=R04.9^^28^261^26
+ ;;^UTILITY(U,$J,358.3,4040,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4040,1,3,0)
+ ;;=3^Hemorrhage from Respiratory Passages,Unspec
+ ;;^UTILITY(U,$J,358.3,4040,1,4,0)
+ ;;=4^R04.9
+ ;;^UTILITY(U,$J,358.3,4040,2)
+ ;;=^5019178
+ ;;^UTILITY(U,$J,358.3,4041,0)
+ ;;=R09.02^^28^261^27
+ ;;^UTILITY(U,$J,358.3,4041,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4041,1,3,0)
+ ;;=3^Hypoxemia
+ ;;^UTILITY(U,$J,358.3,4041,1,4,0)
+ ;;=4^R09.02
+ ;;^UTILITY(U,$J,358.3,4041,2)
+ ;;=^332831
+ ;;^UTILITY(U,$J,358.3,4042,0)
+ ;;=J11.2^^28^261^28
+ ;;^UTILITY(U,$J,358.3,4042,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4042,1,3,0)
+ ;;=3^Influenza w/ GI Manifestation
+ ;;^UTILITY(U,$J,358.3,4042,1,4,0)
+ ;;=4^J11.2
+ ;;^UTILITY(U,$J,358.3,4042,2)
+ ;;=^5008159
+ ;;^UTILITY(U,$J,358.3,4043,0)
+ ;;=J11.89^^28^261^29

@@ -1,132 +1,128 @@
-IBDEI18J ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI18J ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,22093,1,5,0)
- ;;=5^Fall After Tripping Or Slipping
- ;;^UTILITY(U,$J,358.3,22093,2)
- ;;=Fall after tripping or slipping^322105
- ;;^UTILITY(U,$J,358.3,22094,0)
- ;;=E886.0^^133^1327^12
- ;;^UTILITY(U,$J,358.3,22094,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22094,1,4,0)
- ;;=4^E886.0
- ;;^UTILITY(U,$J,358.3,22094,1,5,0)
- ;;=5^Fall In Sports
- ;;^UTILITY(U,$J,358.3,22094,2)
- ;;=Fall in Sports^294656
- ;;^UTILITY(U,$J,358.3,22095,0)
- ;;=E886.9^^133^1327^15
- ;;^UTILITY(U,$J,358.3,22095,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22095,1,4,0)
- ;;=4^E886.9
- ;;^UTILITY(U,$J,358.3,22095,1,5,0)
- ;;=5^Fall, Collision With Another Person
- ;;^UTILITY(U,$J,358.3,22095,2)
- ;;=Fall, Collision with another person^294657
- ;;^UTILITY(U,$J,358.3,22096,0)
- ;;=E888.9^^133^1327^16
- ;;^UTILITY(U,$J,358.3,22096,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22096,1,4,0)
- ;;=4^E888.9
- ;;^UTILITY(U,$J,358.3,22096,1,5,0)
- ;;=5^Fall, Not Specified
- ;;^UTILITY(U,$J,358.3,22096,2)
- ;;=Fall, Not Specified^323639
- ;;^UTILITY(U,$J,358.3,22097,0)
- ;;=E819.0^^133^1327^19
- ;;^UTILITY(U,$J,358.3,22097,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22097,1,4,0)
- ;;=4^E819.0
- ;;^UTILITY(U,$J,358.3,22097,1,5,0)
- ;;=5^Traffic Accident, Driver
- ;;^UTILITY(U,$J,358.3,22097,2)
- ;;=Traffic Accident, Driver^294215
- ;;^UTILITY(U,$J,358.3,22098,0)
- ;;=E819.1^^133^1327^20
- ;;^UTILITY(U,$J,358.3,22098,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22098,1,4,0)
- ;;=4^E819.1
- ;;^UTILITY(U,$J,358.3,22098,1,5,0)
- ;;=5^Traffic Accident, Passenger
- ;;^UTILITY(U,$J,358.3,22098,2)
- ;;=^294216
- ;;^UTILITY(U,$J,358.3,22099,0)
- ;;=E891.9^^133^1327^17
- ;;^UTILITY(U,$J,358.3,22099,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22099,1,4,0)
- ;;=4^E891.9
- ;;^UTILITY(U,$J,358.3,22099,1,5,0)
- ;;=5^Fire In Building
- ;;^UTILITY(U,$J,358.3,22099,2)
- ;;=Fire in Building^294669
- ;;^UTILITY(U,$J,358.3,22100,0)
- ;;=0^1^133^1327^0^CODE THE CONDITION OR SYMPTOM FIRST
- ;;^UTILITY(U,$J,358.3,22100,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22100,1,4,0)
- ;;=4
- ;;^UTILITY(U,$J,358.3,22100,1,5,0)
- ;;=5
- ;;^UTILITY(U,$J,358.3,22101,0)
- ;;=99201^^134^1328^1
- ;;^UTILITY(U,$J,358.3,22101,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,22101,1,1,0)
- ;;=1^Problem Focus
- ;;^UTILITY(U,$J,358.3,22101,1,2,0)
- ;;=2^99201
- ;;^UTILITY(U,$J,358.3,22102,0)
- ;;=99202^^134^1328^2
- ;;^UTILITY(U,$J,358.3,22102,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,22102,1,1,0)
- ;;=1^Expanded Problem Focus
- ;;^UTILITY(U,$J,358.3,22102,1,2,0)
- ;;=2^99202
- ;;^UTILITY(U,$J,358.3,22103,0)
- ;;=99203^^134^1328^3
- ;;^UTILITY(U,$J,358.3,22103,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,22103,1,1,0)
- ;;=1^Detailed
- ;;^UTILITY(U,$J,358.3,22103,1,2,0)
- ;;=2^99203
- ;;^UTILITY(U,$J,358.3,22104,0)
- ;;=99204^^134^1328^4
- ;;^UTILITY(U,$J,358.3,22104,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,22104,1,1,0)
- ;;=1^Comprehensive, Moderate
- ;;^UTILITY(U,$J,358.3,22104,1,2,0)
- ;;=2^99204
- ;;^UTILITY(U,$J,358.3,22105,0)
- ;;=99205^^134^1328^5
- ;;^UTILITY(U,$J,358.3,22105,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,22105,1,1,0)
- ;;=1^Comprehensive, High
- ;;^UTILITY(U,$J,358.3,22105,1,2,0)
- ;;=2^99205
- ;;^UTILITY(U,$J,358.3,22106,0)
- ;;=99211^^134^1329^1
- ;;^UTILITY(U,$J,358.3,22106,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,22106,1,1,0)
- ;;=1^Brief (no MD seen)
- ;;^UTILITY(U,$J,358.3,22106,1,2,0)
- ;;=2^99211
- ;;^UTILITY(U,$J,358.3,22107,0)
- ;;=99212^^134^1329^2
- ;;^UTILITY(U,$J,358.3,22107,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,22107,1,1,0)
- ;;=1^Problem Focused
- ;;^UTILITY(U,$J,358.3,22107,1,2,0)
- ;;=2^99212
+ ;;^UTILITY(U,$J,358.3,20651,1,2,0)
+ ;;=2^90847
+ ;;^UTILITY(U,$J,358.3,20651,1,3,0)
+ ;;=3^Family Psychotherapy w/ Pt
+ ;;^UTILITY(U,$J,358.3,20652,0)
+ ;;=90875^^98^973^4^^^^1
+ ;;^UTILITY(U,$J,358.3,20652,1,0)
+ ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,20652,1,2,0)
+ ;;=2^90875
+ ;;^UTILITY(U,$J,358.3,20652,1,3,0)
+ ;;=3^Ind Psychophysiological Tx w/ Biofeed,30min
+ ;;^UTILITY(U,$J,358.3,20653,0)
+ ;;=90876^^98^973^5^^^^1
+ ;;^UTILITY(U,$J,358.3,20653,1,0)
+ ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,20653,1,2,0)
+ ;;=2^90876
+ ;;^UTILITY(U,$J,358.3,20653,1,3,0)
+ ;;=3^Ind Psychophysiological Tx w/ Biofeed,45min
+ ;;^UTILITY(U,$J,358.3,20654,0)
+ ;;=99354^^98^973^6^^^^1
+ ;;^UTILITY(U,$J,358.3,20654,1,0)
+ ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,20654,1,2,0)
+ ;;=2^99354
+ ;;^UTILITY(U,$J,358.3,20654,1,3,0)
+ ;;=3^Prolonged Svcs,OPT,1st hr,add-on
+ ;;^UTILITY(U,$J,358.3,20655,0)
+ ;;=99355^^98^973^7^^^^1
+ ;;^UTILITY(U,$J,358.3,20655,1,0)
+ ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,20655,1,2,0)
+ ;;=2^99355
+ ;;^UTILITY(U,$J,358.3,20655,1,3,0)
+ ;;=3^Prolonged Svcs,OPT,ea addl 30min
+ ;;^UTILITY(U,$J,358.3,20656,0)
+ ;;=90839^^98^974^1^^^^1
+ ;;^UTILITY(U,$J,358.3,20656,1,0)
+ ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,20656,1,2,0)
+ ;;=2^90839
+ ;;^UTILITY(U,$J,358.3,20656,1,3,0)
+ ;;=3^PsyTx Crisis;Init 30-74 Min
+ ;;^UTILITY(U,$J,358.3,20657,0)
+ ;;=90840^^98^974^2^^^^1
+ ;;^UTILITY(U,$J,358.3,20657,1,0)
+ ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,20657,1,2,0)
+ ;;=2^90840
+ ;;^UTILITY(U,$J,358.3,20657,1,3,0)
+ ;;=3^PsyTx Crisis;Ea Addl 30 Min
+ ;;^UTILITY(U,$J,358.3,20658,0)
+ ;;=97545^^98^975^26^^^^1
+ ;;^UTILITY(U,$J,358.3,20658,1,0)
+ ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,20658,1,2,0)
+ ;;=2^97545
+ ;;^UTILITY(U,$J,358.3,20658,1,3,0)
+ ;;=3^Work Hardening/Conditioning,Init 2 hrs
+ ;;^UTILITY(U,$J,358.3,20659,0)
+ ;;=97546^^98^975^27^^^^1
+ ;;^UTILITY(U,$J,358.3,20659,1,0)
+ ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,20659,1,2,0)
+ ;;=2^97546
+ ;;^UTILITY(U,$J,358.3,20659,1,3,0)
+ ;;=3^Work Hardening/Conditioning,ea addl hr
+ ;;^UTILITY(U,$J,358.3,20660,0)
+ ;;=97537^^98^975^4^^^^1
+ ;;^UTILITY(U,$J,358.3,20660,1,0)
+ ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,20660,1,2,0)
+ ;;=2^97537
+ ;;^UTILITY(U,$J,358.3,20660,1,3,0)
+ ;;=3^Community/Work Reintegration per 15 min
+ ;;^UTILITY(U,$J,358.3,20661,0)
+ ;;=97532^^98^975^3^^^^1
+ ;;^UTILITY(U,$J,358.3,20661,1,0)
+ ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,20661,1,2,0)
+ ;;=2^97532
+ ;;^UTILITY(U,$J,358.3,20661,1,3,0)
+ ;;=3^Cognitive Skills Development (PhD/OT)per 15min
+ ;;^UTILITY(U,$J,358.3,20662,0)
+ ;;=97533^^98^975^18^^^^1
+ ;;^UTILITY(U,$J,358.3,20662,1,0)
+ ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,20662,1,2,0)
+ ;;=2^97533
+ ;;^UTILITY(U,$J,358.3,20662,1,3,0)
+ ;;=3^Sensory Integrative Techniques,per 15 min
+ ;;^UTILITY(U,$J,358.3,20663,0)
+ ;;=H0046^^98^975^12^^^^1
+ ;;^UTILITY(U,$J,358.3,20663,1,0)
+ ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,20663,1,2,0)
+ ;;=2^H0046
+ ;;^UTILITY(U,$J,358.3,20663,1,3,0)
+ ;;=3^PTSD Group
+ ;;^UTILITY(U,$J,358.3,20664,0)
+ ;;=96119^^98^975^9^^^^1
+ ;;^UTILITY(U,$J,358.3,20664,1,0)
+ ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,20664,1,2,0)
+ ;;=2^96119
+ ;;^UTILITY(U,$J,358.3,20664,1,3,0)
+ ;;=3^Neuropsych Test admin by tech,per hr
+ ;;^UTILITY(U,$J,358.3,20665,0)
+ ;;=96102^^98^975^15^^^^1
+ ;;^UTILITY(U,$J,358.3,20665,1,0)
+ ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,20665,1,2,0)
+ ;;=2^96102
+ ;;^UTILITY(U,$J,358.3,20665,1,3,0)
+ ;;=3^Psych Test by Tech,per hr
+ ;;^UTILITY(U,$J,358.3,20666,0)
+ ;;=96103^^98^975^16^^^^1
+ ;;^UTILITY(U,$J,358.3,20666,1,0)
+ ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,20666,1,2,0)
+ ;;=2^96103
+ ;;^UTILITY(U,$J,358.3,20666,1,3,0)
+ ;;=3^Psych Test by computer

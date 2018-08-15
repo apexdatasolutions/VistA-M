@@ -1,144 +1,118 @@
-IBDEI0EH ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0EH ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,6983,2)
- ;;=Abnormal PSA^295772
- ;;^UTILITY(U,$J,358.3,6984,0)
- ;;=627.3^^55^575^3
- ;;^UTILITY(U,$J,358.3,6984,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6984,1,4,0)
- ;;=4^627.3
- ;;^UTILITY(U,$J,358.3,6984,1,5,0)
- ;;=5^Atrophic Vaginitis
- ;;^UTILITY(U,$J,358.3,6984,2)
- ;;=^270577
- ;;^UTILITY(U,$J,358.3,6985,0)
- ;;=607.1^^55^575^6
- ;;^UTILITY(U,$J,358.3,6985,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6985,1,4,0)
- ;;=4^607.1
- ;;^UTILITY(U,$J,358.3,6985,1,5,0)
- ;;=5^Balanitis
- ;;^UTILITY(U,$J,358.3,6985,2)
- ;;=^12530
- ;;^UTILITY(U,$J,358.3,6986,0)
- ;;=596.0^^55^575^7
- ;;^UTILITY(U,$J,358.3,6986,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6986,1,4,0)
- ;;=4^596.0
- ;;^UTILITY(U,$J,358.3,6986,1,5,0)
- ;;=5^Bladder Neck Obstruction
- ;;^UTILITY(U,$J,358.3,6986,2)
- ;;=^15144
- ;;^UTILITY(U,$J,358.3,6987,0)
- ;;=595.0^^55^575^10
- ;;^UTILITY(U,$J,358.3,6987,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6987,1,4,0)
- ;;=4^595.0
- ;;^UTILITY(U,$J,358.3,6987,1,5,0)
- ;;=5^Cystitis, Acute
- ;;^UTILITY(U,$J,358.3,6987,2)
- ;;=^259104
- ;;^UTILITY(U,$J,358.3,6988,0)
- ;;=595.82^^55^575^11
- ;;^UTILITY(U,$J,358.3,6988,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6988,1,4,0)
- ;;=4^595.82
- ;;^UTILITY(U,$J,358.3,6988,1,5,0)
- ;;=5^Cystitis, Radiation
- ;;^UTILITY(U,$J,358.3,6988,2)
- ;;=^270391
- ;;^UTILITY(U,$J,358.3,6989,0)
- ;;=596.59^^55^575^17
- ;;^UTILITY(U,$J,358.3,6989,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6989,1,4,0)
- ;;=4^596.59
- ;;^UTILITY(U,$J,358.3,6989,1,5,0)
- ;;=5^Detrusor Muscle Insuff
- ;;^UTILITY(U,$J,358.3,6989,2)
- ;;=^270393
- ;;^UTILITY(U,$J,358.3,6990,0)
- ;;=788.1^^55^575^18
- ;;^UTILITY(U,$J,358.3,6990,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6990,1,4,0)
- ;;=4^788.1
- ;;^UTILITY(U,$J,358.3,6990,1,5,0)
- ;;=5^Dysuria
- ;;^UTILITY(U,$J,358.3,6990,2)
- ;;=^37716
- ;;^UTILITY(U,$J,358.3,6991,0)
- ;;=604.90^^55^575^41
- ;;^UTILITY(U,$J,358.3,6991,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6991,1,4,0)
- ;;=4^604.90
- ;;^UTILITY(U,$J,358.3,6991,1,5,0)
- ;;=5^Orchitis/Epididymit
- ;;^UTILITY(U,$J,358.3,6991,2)
- ;;=^86178
- ;;^UTILITY(U,$J,358.3,6992,0)
- ;;=607.84^^55^575^34
- ;;^UTILITY(U,$J,358.3,6992,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6992,1,4,0)
- ;;=4^607.84
- ;;^UTILITY(U,$J,358.3,6992,1,5,0)
- ;;=5^Impotence, Organic Origin
- ;;^UTILITY(U,$J,358.3,6992,2)
- ;;=^270441
- ;;^UTILITY(U,$J,358.3,6993,0)
- ;;=098.0^^55^575^56
- ;;^UTILITY(U,$J,358.3,6993,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6993,1,4,0)
- ;;=4^098.0
- ;;^UTILITY(U,$J,358.3,6993,1,5,0)
- ;;=5^Urethritis, Gonococcal
- ;;^UTILITY(U,$J,358.3,6993,2)
- ;;=^52567
- ;;^UTILITY(U,$J,358.3,6994,0)
- ;;=550.92^^55^575^23
- ;;^UTILITY(U,$J,358.3,6994,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6994,1,4,0)
- ;;=4^550.92
- ;;^UTILITY(U,$J,358.3,6994,1,5,0)
- ;;=5^Hernia, Inguinal, Bilat
- ;;^UTILITY(U,$J,358.3,6994,2)
- ;;=^270212
- ;;^UTILITY(U,$J,358.3,6995,0)
- ;;=550.90^^55^575^24
- ;;^UTILITY(U,$J,358.3,6995,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6995,1,4,0)
- ;;=4^550.90
- ;;^UTILITY(U,$J,358.3,6995,1,5,0)
- ;;=5^Hernia, Inguinal, Unilat
- ;;^UTILITY(U,$J,358.3,6995,2)
- ;;=^63302
- ;;^UTILITY(U,$J,358.3,6996,0)
- ;;=302.72^^55^575^35
- ;;^UTILITY(U,$J,358.3,6996,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6996,1,4,0)
- ;;=4^302.72
- ;;^UTILITY(U,$J,358.3,6996,1,5,0)
- ;;=5^Impotence, Psychosocial
- ;;^UTILITY(U,$J,358.3,6996,2)
- ;;=^100632
- ;;^UTILITY(U,$J,358.3,6997,0)
- ;;=788.30^^55^575^61
- ;;^UTILITY(U,$J,358.3,6997,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6997,1,4,0)
- ;;=4^788.30
- ;;^UTILITY(U,$J,358.3,6997,1,5,0)
- ;;=5^Urinary Incontinence,Unspec
+ ;;^UTILITY(U,$J,358.3,6321,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6321,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Right Thumb w/o Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6321,1,4,0)
+ ;;=4^S61.031A
+ ;;^UTILITY(U,$J,358.3,6321,2)
+ ;;=^5032702
+ ;;^UTILITY(U,$J,358.3,6322,0)
+ ;;=S61.032A^^40^388^30
+ ;;^UTILITY(U,$J,358.3,6322,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6322,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Left Thumb w/o Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6322,1,4,0)
+ ;;=4^S61.032A
+ ;;^UTILITY(U,$J,358.3,6322,2)
+ ;;=^5032705
+ ;;^UTILITY(U,$J,358.3,6323,0)
+ ;;=S61.237A^^40^388^20
+ ;;^UTILITY(U,$J,358.3,6323,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6323,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Left Little Finger w/o Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6323,1,4,0)
+ ;;=4^S61.237A
+ ;;^UTILITY(U,$J,358.3,6323,2)
+ ;;=^5032837
+ ;;^UTILITY(U,$J,358.3,6324,0)
+ ;;=S91.232A^^40^388^11
+ ;;^UTILITY(U,$J,358.3,6324,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6324,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Left Great Toe w/ Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6324,1,4,0)
+ ;;=4^S91.232A
+ ;;^UTILITY(U,$J,358.3,6324,2)
+ ;;=^5044293
+ ;;^UTILITY(U,$J,358.3,6325,0)
+ ;;=S91.132A^^40^388^12
+ ;;^UTILITY(U,$J,358.3,6325,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6325,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Left Great Toe w/o Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6325,1,4,0)
+ ;;=4^S91.132A
+ ;;^UTILITY(U,$J,358.3,6325,2)
+ ;;=^5044216
+ ;;^UTILITY(U,$J,358.3,6326,0)
+ ;;=S61.331A^^40^388^15
+ ;;^UTILITY(U,$J,358.3,6326,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6326,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Left Index Finger w/ Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6326,1,4,0)
+ ;;=4^S61.331A
+ ;;^UTILITY(U,$J,358.3,6326,2)
+ ;;=^5032939
+ ;;^UTILITY(U,$J,358.3,6327,0)
+ ;;=S61.231A^^40^388^16
+ ;;^UTILITY(U,$J,358.3,6327,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6327,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Left Index Finger w/o Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6327,1,4,0)
+ ;;=4^S61.231A
+ ;;^UTILITY(U,$J,358.3,6327,2)
+ ;;=^5032819
+ ;;^UTILITY(U,$J,358.3,6328,0)
+ ;;=S91.235A^^40^388^18
+ ;;^UTILITY(U,$J,358.3,6328,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6328,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Left Lesser Toe(s) w/ Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6328,1,4,0)
+ ;;=4^S91.235A
+ ;;^UTILITY(U,$J,358.3,6328,2)
+ ;;=^5044299
+ ;;^UTILITY(U,$J,358.3,6329,0)
+ ;;=S91.135A^^40^388^19
+ ;;^UTILITY(U,$J,358.3,6329,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6329,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Left Lesser Toe(s) w/o Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6329,1,4,0)
+ ;;=4^S91.135A
+ ;;^UTILITY(U,$J,358.3,6329,2)
+ ;;=^5044225
+ ;;^UTILITY(U,$J,358.3,6330,0)
+ ;;=S61.337A^^40^388^21
+ ;;^UTILITY(U,$J,358.3,6330,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6330,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Left Little Finger w/ Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6330,1,4,0)
+ ;;=4^S61.337A
+ ;;^UTILITY(U,$J,358.3,6330,2)
+ ;;=^5032957
+ ;;^UTILITY(U,$J,358.3,6331,0)
+ ;;=S61.333A^^40^388^23
+ ;;^UTILITY(U,$J,358.3,6331,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6331,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Left Middle Finger w/ Nail Damage,Init Encntr
+ ;;^UTILITY(U,$J,358.3,6331,1,4,0)
+ ;;=4^S61.333A
+ ;;^UTILITY(U,$J,358.3,6331,2)
+ ;;=^5032945
+ ;;^UTILITY(U,$J,358.3,6332,0)
+ ;;=S61.233A^^40^388^24
+ ;;^UTILITY(U,$J,358.3,6332,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6332,1,3,0)
+ ;;=3^Puncture Wound w/o FB of Left Middle Finger w/o Nail Damage,Init Encntr

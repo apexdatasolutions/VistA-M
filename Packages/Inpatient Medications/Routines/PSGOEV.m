@@ -1,20 +1,27 @@
-PSGOEV ;BIR/CML3-VERIFY (MAKE ACTIVE) ORDERS ; 4/16/10 9:18am
- ;;5.0;INPATIENT MEDICATIONS;**5,7,15,28,33,50,64,58,77,78,80,110,111,133,171,207,241,267,268,260,288,199**;16 DEC 97;Build 25
+PSGOEV ;BIR/CML3 - VERIFY (MAKE ACTIVE) ORDERS ;4/16/10 9:18am
+ ;;5.0;INPATIENT MEDICATIONS;**5,7,15,28,33,50,64,58,77,78,80,110,111,133,171,207,241,267,268,260,288,199,281,256,347**;16 DEC 97;Build 6
  ;
  ; Reference to ^ORD(101 supported by DBIA #872.
  ; Reference to ^PS(50.7 supported by DBIA #2180.
  ; Reference to ^PS(55 supported by DBIA #2191.
  ; Reference to ^PSSLOCK supported by DBIA #2789.
+ ; Reference to ^PSDRUG( supported by DBIA# 2192.
  ; Reference to MAIN^TIUEDIT is supported by DBIA #2410.
+ ; Reference to ^TMP("PSODAOC",$J supported by DBIA 6071
  ;
 EN(PSGORD) ;
 ENSF ; This entry point is used by Speed finish only.
  ; Send SN update to CPRS if auto-verify off and from Order Set entry
+ NEW PSJOLDNM,PSJOLDX
  S:'$D(PSGOEAV) PSGOEAV=$P($G(PSJSYSP0),"^",9)&$G(PSJSYSU)
  I $D(PSGOES),'PSGOEAV,PSGORD["P",$P($G(^PS(53.1,+PSGORD,0)),"^",21)']"" D ORSET^PSGOETO1
  D FULL^VALM1 I 'PSJSYSU W $C(7),$C(7),!!," THIS FUNCTION NOT AVAILABLE TO WARD STAFF." Q
  S CHK=0 I PSGORD["P" S X=$P($G(^PS(53.1,+PSGORD,0)),"^",19) I X,$D(^PS(55,PSGP,5,$P(^(0),"^",19))) S CHK=+PSGORD,PSGORD=X_"U" L -^PS(53.1,CHK) L +^PS(55,PSGP,5,+PSGORD):1 E  W !!,"Another terminal is editing this order." G DONE
  I +PSJSYSU=3 D DDCHK G:CHK DONE
+ ;PSJ*5*256 - inform user of old schedule name and quit
+ I $S((PSGORD["P"):$P($G(^PS(53.1,+PSGORD,0)),U,24)="R",(PSGORD["U"):$P($G(^PS(55,+PSGP,5,+PSGORD,0)),U,24)="R",1:0) S PSJOLDX="R"
+ S PSJOLDNM("ORD_SCHD")=$G(PSGSCH)
+ I $$CHKSCHD^PSJMISC2(.PSJOLDNM,$S($G(PSJOLDX)="R":"R",1:"V")) S CHK=1 G DONE
  I PSGORD["P" D CHK($G(^PS(53.1,+PSGORD,0)),$G(^(.2)),$G(^(2)))
  I $G(PSGSCH)]"" D
  .N X,Y,PSGS0Y,PSGS0XT,PSGOES S PSGOES=1 S X=PSGSCH D ENOS^PSGS0 I $G(X)="" S CHK=4
@@ -29,14 +36,15 @@ VFY ; change status, move to 55, and change label record **ENHANCEMENTS MADE IN 
  SET PSJFLG=+$G(PSGORD)
  FOR  SET PSJCNT=$O(^PS(53.1,PSJFLG,1,PSJCNT)) Q:'+PSJCNT  D
  .IF $D(^PS(53.1,PSJFLG,1,PSJCNT,0)) SET PSGDN=$P($G(^PS(53.1,PSJFLG,1,PSJCNT,0)),U,1)
- .IF ($P($G(^PSDRUG(PSGDN,0)),U,3)'["S")&($E($P($G(^PSDRUG(PSGDN,0)),U,2),1,2)'="XA")  D
+ .IF +$G(PSGDN),($P($G(^PSDRUG(PSGDN,0)),U,3)'["S")&($E($P($G(^PSDRUG(PSGDN,0)),U,2),1,2)'="XA")  D
  ..D PROFILE^PSJBLDOC($G(DFN),LIST,"I;"_$G(PSGORD))
  ..FOR  SET PSJCNT1=$O(^TMP($J,LIST,"IN","PROFILE",PSJCNT1)) Q:(PSJCNT1="")!(PSJDIS'="")  D
  ...SET PSJCNT2=$P(PSJCNT1,";",2)
  ...IF PSJCNT2=$G(PSGORD) SET PSJDIS=$P(^TMP($J,LIST,"IN","PROFILE",PSJCNT1),U,3)
  ..;**Do order checks if PSJDIS (Dispense drug IEN) has a value
- ..IF $G(PSJNEWOE)=0,'$G(PSJLMFIN),'$G(PSJSTARI),'$G(PSGCOPY),$G(PSJDIS)  D 
- ...D EN^PSJGMRA($G(DFN),PSJDIS),IN^PSJOCDS($G(PSGORD),"UD",PSJDIS),ENDDC^PSGSICHK($G(PSGP),PSJDIS) IF $G(PSGORQF) K ^TMP($J,LIST) D EN^VALM("PSJ LM UD ACTION") QUIT
+ ..;IF $G(PSJNEWOE)=0,'$G(PSJLMFIN),'$G(PSJSTARI),'$G(PSGCOPY),$G(PSJDIS),'$G(PSJSPEED)  D
+ ..IF '+$G(PSJNEWOE),'$G(PSJLMFIN),'$G(PSJSTARI),'$G(PSGCOPY),$G(PSJDIS),'$G(PSJSPEED)  D
+ ...D ALLERGY($G(PSJORD),.PSJALLGY),ENDDC^PSGSICHK($G(PSGP),PSJDIS) D:('$G(PSGORQF)&'$G(PSJDSVFY)&'$G(PSJSTARI)) IN^PSJOCDS($G(PSGORD),"UD",PSJDIS) IF $G(PSGORQF) K ^TMP($J,LIST) D:$G(PSJORD)]"" EN^VALM("PSJ LM UD ACTION") QUIT
  IF $G(PSGORQF) QUIT
  D FULL^VALM1 ;PSJ*5*241
  I +$G(PSJDSFLG) D SETVAR^PSJDOSE W !!,PSJDOSE("WARN"),!,PSJDOSE("WARN1") I '$$CONT() W !,"...order was not verified..." D PAUSE^VALM1 D  Q:'$G(PSJACEPT)
@@ -86,6 +94,9 @@ VFY ; change status, move to 55, and change label record **ENHANCEMENTS MADE IN 
  I '$D(PSJSPEED) K DIR S DIR(0)="E" D ^DIR K DIR
  S:+PSJSYSU=3 ^PS(55,"AUE",PSGP,+PSGORD)="" S PSGACT="C"_$S('$D(^PS(55,PSGP,5,+PSGORD,4)):"E",$P(^(4),"^",16):"",1:"E")_"RS",PSGCANFL=2
  S VALMBCK="Q" D EN1^PSJHL2(PSGP,$S(+PSJSYSU=3:"SC",+PSJSYSU=1:"SC",1:"XX"),+PSGORD_"U")     ; allow status change to be sent for pharmacists & nurses
+ S ^TMP("PSODAOC",$J,"IP IEN")=$G(PSJORD),^TMP("PSODAOC",$J,"IP NEW IEN")=$G(PSGORD)
+ ; -- RTC 198753 - clean-up variable - K PSJAGYSV
+ D SETOC^PSJNEWOC(PSGORD) K PSJAGYSV
   ; **This is where the Automated Dispensing Machine hook is called. Do NOT DELETE or change this location **
  D NEWJ^PSJADM
   ; **END of Interface hook **
@@ -96,11 +107,20 @@ DONE ;
  .N DIR W ! S DIR(0)="S^Y:Yes;N:No",DIR("A")="Do you want to enter a Progress Note",DIR("B")="No" D ^DIR
  .Q:Y="N"
  .D MAIN^TIUEDIT(3,.TIUDA,PSGP,"","","","",1)
- S VALMBCK="Q" K CHK,DA,DIE,F,DP,DR,ND,PSGAL,PSGODA,PSJDOSE,PSJVAR,VND4,X,ZZND Q
+ S VALMBCK="Q" K CHK,DA,DIE,F,DP,DR,ND,PSGAL,PSGODA,PSGTOL,PSGTOO,PSGUOW,PSJDOSE,PSJVAR,VND4,X,ZZND Q
  ;
 LBL ;
  Q
  ;
+ALLERGY(PSGORD,PSJALLGY) ;setup PSJALLGY when non-vf was selected to verify
+ NEW PSGDDI,PSJDD,PSJX
+ I '+$G(PSGORD),($G(PSGORD)'["P") Q
+ F PSGDDI=0:0 S PSGDDI=$O(^PS(53.1,+PSGORD,1,PSGDDI)) Q:'PSGDDI  D
+ . S PSJDD=+$G(^PS(53.1,+PSGORD,1,PSGDDI,0))
+ . S PSJX=$S('$D(^PSDRUG(+PSJDD,0)):1,$P($G(^(2)),U,3)'["U":1,$G(^("I"))="":0,1:^("I")'>$G(DT))
+ . Q:PSJX
+ . S PSJALLGY(PSJDD)=""
+ Q
 CHK(ND,DRG,ND2) ; checks for data in required fields
  ; Input: ND  - ^(PS(53.1,PSGORD,0)
  ;        DRG - ^(.2)
@@ -129,7 +149,7 @@ CHKM ;
  W !!,"THE FOLLOWING ",$S($L(CHK)>1:"ARE",1:"IS")," EITHER INVALID OR MISSING FROM THIS ORDER:" F X=1:1:8 W:CHK[X !?5,$P("ORDERABLE ITEM^MED ROUTE^SCHEDULE TYPE^SCHEDULE^START DATE/TIME^STOP DATE/TIME^DISPENSE DRUG^DOSAGE ORDERED","^",X)
  I CHK=7 W !,"Orders with no dispense drugs or multiple dispense drugs",!,"require dosage ordered"
  W:CHK]"" !!,$S($L(CHK)>1:"THESE FIELDS ARE",1:"THIS FIELD IS")," NECESSARY FOR VERIFICATION."
- N DIR S DIR(0)="E" D ^DIR I $D(DUOUT)!$D(DTOUT) S CHK=1 Q
+ N DIR,DUOUT,DTOUT S DIR(0)="E" D ^DIR I $D(DUOUT)!$D(DTOUT) S CHK=1 Q
  Q
  ;
 CONT() ;
@@ -154,7 +174,7 @@ DDEDIT ;
  I X S ^PS(53.45,PSJSYSP,2,0)="^53.4502P^"_X_"^"_X
  D ENDRG^PSGOEF1(PSGPD,X)
  I 'CHK S %X="^PS(53.45,"_PSJSYSP_",2,",%Y=DRGF_"1," D %XY^%RCR S $P(@(DRGF_"1,0)"),"^",2)=$S(DRGF[53.1:"53.11P",1:"55.07P")
- K DRG,DRGF Q
+ K DRG,DRGF,%X,%Y,PSGPD Q
  ;
 AESCREEN() ;
  ; Output: 0 - Required fields missing and DON'T allow accept

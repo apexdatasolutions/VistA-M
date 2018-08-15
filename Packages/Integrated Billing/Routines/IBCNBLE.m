@@ -1,6 +1,6 @@
 IBCNBLE ;ALB/ARH - Ins Buffer: LM buffer entry screen ;1-Jun-97
- ;;2.0;INTEGRATED BILLING;**82,231,184,251,371,416,435,452,497**;21-MAR-94;Build 120
- ;;Per VHA Directive 2004-038, this routine should not be modified.
+ ;;2.0;INTEGRATED BILLING;**82,231,184,251,371,416,435,452,497,519,516,528**;21-MAR-94;Build 163
+ ;;Per VA Directive 6402, this routine should not be modified.
  ;
 EN ; - main entry point for list manager display
  N DFN
@@ -106,7 +106,7 @@ BLD ; display buffer entry
  D SET(IBLINE) S IBLINE=""
  S IBL="Expiration: ",IBY=$$DATE($P(IB60,U,3)) S IBLINE=$$SETL(IBLINE,IBY,IBL,62,13)
  D SET(IBLINE) S IBLINE=""
- S IBL="Insured's Name: ",IBY=$P(IB91,U,1) S IBLINE=$$SETL("",IBY,IBL,18,56) D SET(IBLINE) S IBLINE=""
+ S IBL="Subscriber Name: ",IBY=$P(IB91,U,1) S IBLINE=$$SETL("",IBY,IBL,18,56) D SET(IBLINE) S IBLINE=""
  I $TR($E(IBY,57,130)," ","")'="" S IBLINE=$$SETL("",$E(IBY,57,130),"",18,56) D SET(IBLINE) S IBLINE=""
  I $TR($E(IBY,113,130)," ","")'="" S IBLINE=$$SETL("",$E(IBY,113,130),"",18,18) D SET(IBLINE) S IBLINE=""
  S IBL="Subscriber Id: ",IBY=$P(IB90,U,3) S IBLINE=$$SETL("",IBY,IBL,18,56) D SET(IBLINE) S IBLINE=""
@@ -222,10 +222,15 @@ SERVLN(IBBUFDA,SRVARRAY) ; create a service date/service type line for the displ
  N NODE0,RIEN,SRVCODE,SRVDT,SRVSTR,TQIEN
  S SRVSTR=""
  I '$G(IBBUFDA) G SERVLNX
+ ;IB*2.0*519 Start: Fix retrieving RIEN and TQIEN so display gets correct values
+ S RIEN=+$O(^IBCN(365,"AF",IBBUFDA,""))
  S TQIEN=+$O(^IBCN(365.1,"D",IBBUFDA,""),-1)
+ I TQIEN=0 S TQIEN=$P($G(^IBCN(365,RIEN,0)),U,5)
+ ;IB*2.0*519 End: Fix retrieving RIEN and TQIEN so display gets correct values
+ ;
  S (SRVDT,SRVCODE)="" I TQIEN D
  .S NODE0=$G(^IBCN(365.1,TQIEN,0)),SRVCODE=$P(NODE0,U,20)
- .S RIEN=+$O(^IBCN(365,"AF",IBBUFDA,""))
+ .;S RIEN=+$O(^IBCN(365,"AF",IBBUFDA,""))  ;IB*2.0*519: RIEN already retrieved above
  .I RIEN S SRVDT=$P($G(^IBCN(365,RIEN,1)),U,10) ; try to get service date from file 365
  .I SRVDT="" S SRVDT=$P(NODE0,U,12) ; if unsuccessful, get it from file 365.1
  .Q

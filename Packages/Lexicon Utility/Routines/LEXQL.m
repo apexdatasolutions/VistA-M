@@ -1,12 +1,11 @@
-LEXQL ;ISL/KER - Query - Lookup Code ;04/21/2014
- ;;2.0;LEXICON UTILITY;**62,80**;Sep 23, 1996;Build 1
+LEXQL ;ISL/KER - Query - Lookup Code ;05/23/2017
+ ;;2.0;LEXICON UTILITY;**62,80,86,103**;Sep 23, 1996;Build 2
  ;               
  ; Global Variables
  ;    ^DIC(81.3,          ICR   4492
  ;    ^ICPT(              ICR   4489
  ;    ^ICPT("BA")         ICR   4489
  ;    ^TMP("LEXQL")       SACC 2.3.2.5.1
- ;    ^UTILITY($J)        ICR  10011
  ;               
  ; External References
  ;    ^DIR                ICR  10026
@@ -22,7 +21,7 @@ LEXQL ;ISL/KER - Query - Lookup Code ;04/21/2014
  N DIR,DIRB,DIROUT,DIRUT,DIW,DIWF,DIWI,DIWL,DIWR,DIWT,DIWTC,DIWX,DN,DTOUT,DUOUT,LEX,LEXC,LEXCOM,LEXCT,LEXCTY,LEXD,LEXDS,LEXDT,LEXE,LEXENT,LEXFD
  N LEXFI,LEXI,LEXIEN,LEXIN,LEXIT,LEXIX,LEXKEY,LEXL,LEXLAST,LEXLEN,LEXMAX,LEXN,LEXNM,LEXO,LEXOC,LEXRTN,LEXS,LEXSEL,LEXSO,LEXSS,LEXSTR,LEXT
  N LEXT1,LEXT2,LEXT3,LEXTAG,LEXTD,LEXTMP,LEXTN,LEXTOT,LEXTQ,LEXTS,LEXTTT,LEXTY,LEXUSR,LEXV,LEXVAL,LEXX,Y
- K ^TMP("LEXQL",$J),^UTILITY($J) S X=$$SO K ^TMP("LEXQL",$J),^UTILITY($J)
+ K ^TMP("LEXQL",$J) S X=$$SO K ^TMP("LEXQL",$J)
  Q
 SO(X) ; Select a Code
  ;               
@@ -38,7 +37,8 @@ SO(X) ; Select a Code
  ;            
  ;            or "^" if no code is found/selected
  ;               
- K ^TMP("LEXQL",$J) Q:+($G(LEXEXIT))>0 "^^"  N DIR,DIROUT,DIRUT,DTOUT,DUOUT,DIRB,LEXTD,Y,LEX S LEXTD=$G(LEXVDT) S:LEXTD'?7N LEXTD=$$DT^XLFDT
+ K ^TMP("LEXQL",$J) Q:+($G(LEXEXIT))>0 "^^"  N DIR,DIROUT,DIRUT,DTOUT,DUOUT,DIRB,LEXTD,Y,LEX,LEXIT
+ S LEXTD=$G(LEXVDT) S:LEXTD'?7N LEXTD=$$DT^XLFDT S LEXIT=0
  S DIR(0)="FAO^1:30",DIR("A")=" Select a Code:  "
  S DIRB=$$RET^LEXQD("LEXQL","SO",+($G(DUZ)),"Select a Code") S:$L(DIRB) DIR("B")=DIRB
  S DIR("PRE")="S:'$L(X)&($L($G(DIR(""B"")))) X=$G(DIR(""B"")) S X=$TR($$UP^XLFSTR(X),""#"""""",""""),X=$$VSO^LEXQL2(X) S X=$$SEL^LEXQL(X)"
@@ -84,7 +84,7 @@ SOGD(X) ;   Select a Code Global/Data
  ;            
 SEL(X) ; Select from List
  Q:'$L($G(X)) ""  Q:$G(X)["^" $G(X)  Q:$G(X)["?" "??"  K ^TMP("LEXQL",$J) D ADD^LEXQL2($G(X)) Q:'$D(^TMP("LEXQL",$J)) "??"  D ASK
- K ^TMP("LEXQL",$J) Q:+X'>0 "??"  S:+($G(X))>0 ^TMP("LEXQL",$J,"X")=X S:+($G(X))>0 X=$P($G(X),"^",4)
+ K ^TMP("LEXQL",$J) Q:+($G(LEXEXIT))>0 "^^"  Q:+X'>0 "??"  I +($G(X))>0 S ^TMP("LEXQL",$J,"X")=X,X=+($P($G(X),"^",4))
  Q X
 ASK ;   Ask for Selection
  K X N LEXTOT S LEXTOT=+($G(^TMP("LEXQL",$J,0))) S:+LEXTOT'>0 X="^" Q:+LEXTOT'>0  K X
@@ -94,11 +94,11 @@ ONE(X) ;     One Entry Found
  Q:+($G(LEXEXIT))>0 "^^"  N LEXT1,LEXT2,LEXT3,LEX,LEXC,LEXCT,LEXIEN,LEXX,DIR,Y,DTOUT,DUOUT,DIROUT,DIRUT
  S LEXT1=$G(^TMP("LEXQL",$J,1)),LEXCT=$$CT(LEXT1),LEXIEN=+LEXT1,LEXT1=$P(LEXT1,U,2),LEXT2=$G(^TMP("LEXQL",$J,1,2))
  S:$L(LEXT1)&($L(LEXT2)) LEXT1=LEXT1_" "_LEXT2 S (LEXT3,LEX(1))=LEXT1
- S LEXX=LEXIEN_U_$$FI(LEXT3)_U_LEXCT D PR^LEXQL2(.LEX,64)
+ S LEXX=LEXIEN_U_$$FI(LEXT3)_U_LEXCT D PR^LEXU(.LEX,64)
  S DIR("A",1)=" One code found",DIR("A",2)=" ",DIR("A",3)="     "_$G(LEX(1)),LEXC=3
  S:$L($G(LEX(2))) LEXC=LEXC+1,DIR("A",LEXC)="                         "_$G(LEX(2))
  S LEXC=LEXC+1,DIR("A",LEXC)=" ",LEXC=LEXC+1,DIR("A")="   OK?  (Yes/No)  ",DIR("B")="Yes",DIR(0)="YAO" W !
- D ^DIR S:X["^^"!($D(DTOUT)) LEXEXIT=1,X="^^" I X["^^"!(+($G(LEXEXIT))>0) K ^TMP("LEXQL",$J) Q "^^"
+ D ^DIR S:X["^^"!($D(DTOUT)) LEXEXIT=1,X="^^" I X["^^"!(+($G(LEXEXIT))>0)!($D(DIROUT)) K ^TMP("LEXQL",$J) S LEXEXIT=1 Q "^^"
  S X=$S(+Y>0:$$X(1),1:-1)
  Q X
 MUL(X) ;     Multiple Entries Found
@@ -113,7 +113,7 @@ MUL(X) ;     Multiple Entries Found
 MULW ;       Write Multiple
  N LEXT1,LEXT2,LEXT3,LEXIEN,LEX S LEXT1=$P(LEXENT,U,2),LEXT2=$G(^TMP("LEXQL",$J,LEXI,2)),LEXCT=$$CT(LEXT1),LEXIEN=+LEXENT
  K LEX S:$L(LEXT1)&($L(LEXT2)) LEXT1=LEXT1_" "_LEXT2
- S (LEXT3,LEX(1))=LEXT1 D PR^LEXQL2(.LEX,63)
+ S (LEXT3,LEX(1))=LEXT1 D PR^LEXU(.LEX,63)
  W !,$J(LEXI,5),".  ",$G(LEX(1)) F LEXT1=2:1:5 S LEXT2=$G(LEX(LEXT1)) W:$L(LEXT2) !,"                            ",LEXT2
  Q
 MULS(LEXS,LEXI) ;       Select Multiple

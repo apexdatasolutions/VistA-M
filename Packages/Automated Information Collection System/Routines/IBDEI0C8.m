@@ -1,146 +1,126 @@
-IBDEI0C8 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0C8 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,5808,1,4,0)
- ;;=4^MULTINODULAR
- ;;^UTILITY(U,$J,358.3,5808,1,5,0)
- ;;=5^241.1
- ;;^UTILITY(U,$J,358.3,5808,2)
- ;;=^267790
- ;;^UTILITY(U,$J,358.3,5809,0)
- ;;=242.20^^49^521^11
- ;;^UTILITY(U,$J,358.3,5809,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,5809,1,4,0)
- ;;=4^MULTINODULAR,TOXIC
- ;;^UTILITY(U,$J,358.3,5809,1,5,0)
- ;;=5^242.20
- ;;^UTILITY(U,$J,358.3,5809,2)
- ;;=^267801
- ;;^UTILITY(U,$J,358.3,5810,0)
- ;;=242.00^^49^521^4
- ;;^UTILITY(U,$J,358.3,5810,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,5810,1,4,0)
- ;;=4^GRAVES DISEASE
- ;;^UTILITY(U,$J,358.3,5810,1,5,0)
- ;;=5^242.00
- ;;^UTILITY(U,$J,358.3,5810,2)
- ;;=^267793
- ;;^UTILITY(U,$J,358.3,5811,0)
- ;;=244.9^^49^521^8
- ;;^UTILITY(U,$J,358.3,5811,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,5811,1,4,0)
- ;;=4^HYPOTHYROIDISM NOS
- ;;^UTILITY(U,$J,358.3,5811,1,5,0)
- ;;=5^244.9
- ;;^UTILITY(U,$J,358.3,5811,2)
- ;;=^123752
- ;;^UTILITY(U,$J,358.3,5812,0)
- ;;=244.1^^49^521^12
- ;;^UTILITY(U,$J,358.3,5812,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,5812,1,4,0)
- ;;=4^POST I-131
- ;;^UTILITY(U,$J,358.3,5812,1,5,0)
- ;;=5^244.1
- ;;^UTILITY(U,$J,358.3,5812,2)
- ;;=^267816
- ;;^UTILITY(U,$J,358.3,5813,0)
- ;;=244.0^^49^521^13
- ;;^UTILITY(U,$J,358.3,5813,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,5813,1,4,0)
- ;;=4^POSTSURGICAL HYPOTHYROID
- ;;^UTILITY(U,$J,358.3,5813,1,5,0)
- ;;=5^244.0
- ;;^UTILITY(U,$J,358.3,5813,2)
- ;;=^267814
- ;;^UTILITY(U,$J,358.3,5814,0)
- ;;=246.0^^49^521^6
- ;;^UTILITY(U,$J,358.3,5814,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,5814,1,4,0)
- ;;=4^HYPERTHYROCALCITONIN
- ;;^UTILITY(U,$J,358.3,5814,1,5,0)
- ;;=5^246.0
- ;;^UTILITY(U,$J,358.3,5814,2)
- ;;=^267827
- ;;^UTILITY(U,$J,358.3,5815,0)
- ;;=241.0^^49^521^16
- ;;^UTILITY(U,$J,358.3,5815,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,5815,1,4,0)
- ;;=4^THYROID NODULE
- ;;^UTILITY(U,$J,358.3,5815,1,5,0)
- ;;=5^241.0
- ;;^UTILITY(U,$J,358.3,5815,2)
- ;;=^83865
- ;;^UTILITY(U,$J,358.3,5816,0)
- ;;=242.10^^49^521^17
- ;;^UTILITY(U,$J,358.3,5816,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,5816,1,4,0)
- ;;=4^THYROID NODULE,HOT
- ;;^UTILITY(U,$J,358.3,5816,1,5,0)
- ;;=5^242.10
- ;;^UTILITY(U,$J,358.3,5816,2)
- ;;=^267797
- ;;^UTILITY(U,$J,358.3,5817,0)
- ;;=245.0^^49^521^1
- ;;^UTILITY(U,$J,358.3,5817,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,5817,1,4,0)
- ;;=4^ACUTE THYROIDITIS
- ;;^UTILITY(U,$J,358.3,5817,1,5,0)
- ;;=5^245.0
- ;;^UTILITY(U,$J,358.3,5817,2)
- ;;=^2692
- ;;^UTILITY(U,$J,358.3,5818,0)
- ;;=245.2^^49^521^2
- ;;^UTILITY(U,$J,358.3,5818,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,5818,1,4,0)
- ;;=4^CHR LYMPHOCYT THYROIDIT
- ;;^UTILITY(U,$J,358.3,5818,1,5,0)
- ;;=5^245.2
- ;;^UTILITY(U,$J,358.3,5818,2)
- ;;=^119344
- ;;^UTILITY(U,$J,358.3,5819,0)
- ;;=245.1^^49^521^14
- ;;^UTILITY(U,$J,358.3,5819,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,5819,1,4,0)
- ;;=4^SUBACUTE THYROIDITIS
- ;;^UTILITY(U,$J,358.3,5819,1,5,0)
- ;;=5^245.1
- ;;^UTILITY(U,$J,358.3,5819,2)
- ;;=^119376
- ;;^UTILITY(U,$J,358.3,5820,0)
- ;;=252.1^^49^521^7
- ;;^UTILITY(U,$J,358.3,5820,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,5820,1,4,0)
- ;;=4^HYPOPARATHYROIDISM
- ;;^UTILITY(U,$J,358.3,5820,1,5,0)
- ;;=5^252.1
- ;;^UTILITY(U,$J,358.3,5820,2)
- ;;=^60635
- ;;^UTILITY(U,$J,358.3,5821,0)
- ;;=252.01^^49^521^5
- ;;^UTILITY(U,$J,358.3,5821,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,5821,1,4,0)
- ;;=4^HYPERPARATHYROID,PRIMARY
- ;;^UTILITY(U,$J,358.3,5821,1,5,0)
- ;;=5^252.01
- ;;^UTILITY(U,$J,358.3,5821,2)
- ;;=^331439
- ;;^UTILITY(U,$J,358.3,5822,0)
- ;;=252.02^^49^521^9
- ;;^UTILITY(U,$J,358.3,5822,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,5822,1,4,0)
- ;;=4^HYPRPRTHYRD NONRENAL,SEC
+ ;;^UTILITY(U,$J,358.3,5275,1,4,0)
+ ;;=4^K57.20
+ ;;^UTILITY(U,$J,358.3,5275,2)
+ ;;=^5008721
+ ;;^UTILITY(U,$J,358.3,5276,0)
+ ;;=K57.92^^40^361^2
+ ;;^UTILITY(U,$J,358.3,5276,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5276,1,3,0)
+ ;;=3^Diverticulitis of Intestine w/o Perforation/Abscess w/o Bleeding
+ ;;^UTILITY(U,$J,358.3,5276,1,4,0)
+ ;;=4^K57.92
+ ;;^UTILITY(U,$J,358.3,5276,2)
+ ;;=^5008737
+ ;;^UTILITY(U,$J,358.3,5277,0)
+ ;;=K57.80^^40^361^1
+ ;;^UTILITY(U,$J,358.3,5277,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5277,1,3,0)
+ ;;=3^Diverticulitis of Intestine w/ Perforation/Abscess w/o Bleeding
+ ;;^UTILITY(U,$J,358.3,5277,1,4,0)
+ ;;=4^K57.80
+ ;;^UTILITY(U,$J,358.3,5277,2)
+ ;;=^5008733
+ ;;^UTILITY(U,$J,358.3,5278,0)
+ ;;=K57.52^^40^361^5
+ ;;^UTILITY(U,$J,358.3,5278,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5278,1,3,0)
+ ;;=3^Diverticulitis of Small/Large Intestine w/o Perforation/Abscess w/o Bleeding
+ ;;^UTILITY(U,$J,358.3,5278,1,4,0)
+ ;;=4^K57.52
+ ;;^UTILITY(U,$J,358.3,5278,2)
+ ;;=^5008731
+ ;;^UTILITY(U,$J,358.3,5279,0)
+ ;;=K57.40^^40^361^6
+ ;;^UTILITY(U,$J,358.3,5279,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5279,1,3,0)
+ ;;=3^Diverticulitis of Small/Large Intestine w/ Perforation/Abscess w/o Bleeding
+ ;;^UTILITY(U,$J,358.3,5279,1,4,0)
+ ;;=4^K57.40
+ ;;^UTILITY(U,$J,358.3,5279,2)
+ ;;=^5008727
+ ;;^UTILITY(U,$J,358.3,5280,0)
+ ;;=K57.32^^40^361^4
+ ;;^UTILITY(U,$J,358.3,5280,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5280,1,3,0)
+ ;;=3^Diverticulitis of Large Intestine w/o Perforation/Abscess w/o Bleeding
+ ;;^UTILITY(U,$J,358.3,5280,1,4,0)
+ ;;=4^K57.32
+ ;;^UTILITY(U,$J,358.3,5280,2)
+ ;;=^5008725
+ ;;^UTILITY(U,$J,358.3,5281,0)
+ ;;=K57.90^^40^362^1
+ ;;^UTILITY(U,$J,358.3,5281,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5281,1,3,0)
+ ;;=3^Diverticulosis of Intestine w/o Perforation/Abscess w/o Bleeding
+ ;;^UTILITY(U,$J,358.3,5281,1,4,0)
+ ;;=4^K57.90
+ ;;^UTILITY(U,$J,358.3,5281,2)
+ ;;=^5008735
+ ;;^UTILITY(U,$J,358.3,5282,0)
+ ;;=K57.50^^40^362^4
+ ;;^UTILITY(U,$J,358.3,5282,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5282,1,3,0)
+ ;;=3^Diverticulosis of Small/Large Intestine w/o Perforation/Abscess w/o Bleeding
+ ;;^UTILITY(U,$J,358.3,5282,1,4,0)
+ ;;=4^K57.50
+ ;;^UTILITY(U,$J,358.3,5282,2)
+ ;;=^5008729
+ ;;^UTILITY(U,$J,358.3,5283,0)
+ ;;=K57.30^^40^362^2
+ ;;^UTILITY(U,$J,358.3,5283,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5283,1,3,0)
+ ;;=3^Diverticulosis of Large Intestine w/o Perforation/Abscess w/o Bleeding
+ ;;^UTILITY(U,$J,358.3,5283,1,4,0)
+ ;;=4^K57.30
+ ;;^UTILITY(U,$J,358.3,5283,2)
+ ;;=^5008723
+ ;;^UTILITY(U,$J,358.3,5284,0)
+ ;;=K57.10^^40^362^3
+ ;;^UTILITY(U,$J,358.3,5284,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5284,1,3,0)
+ ;;=3^Diverticulosis of Small Intestine w/o Perforation/Abscess w/o Bleeding
+ ;;^UTILITY(U,$J,358.3,5284,1,4,0)
+ ;;=4^K57.10
+ ;;^UTILITY(U,$J,358.3,5284,2)
+ ;;=^5008717
+ ;;^UTILITY(U,$J,358.3,5285,0)
+ ;;=C02.9^^40^363^33
+ ;;^UTILITY(U,$J,358.3,5285,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5285,1,3,0)
+ ;;=3^Malig Neop of Tongue,Unspec
+ ;;^UTILITY(U,$J,358.3,5285,1,4,0)
+ ;;=4^C02.9
+ ;;^UTILITY(U,$J,358.3,5285,2)
+ ;;=^5000891
+ ;;^UTILITY(U,$J,358.3,5286,0)
+ ;;=C06.9^^40^363^30
+ ;;^UTILITY(U,$J,358.3,5286,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5286,1,3,0)
+ ;;=3^Malig Neop of Mouth,Unspec
+ ;;^UTILITY(U,$J,358.3,5286,1,4,0)
+ ;;=4^C06.9
+ ;;^UTILITY(U,$J,358.3,5286,2)
+ ;;=^5000901
+ ;;^UTILITY(U,$J,358.3,5287,0)
+ ;;=C32.9^^40^363^29
+ ;;^UTILITY(U,$J,358.3,5287,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5287,1,3,0)
+ ;;=3^Malig Neop of Larynx,Unspec
+ ;;^UTILITY(U,$J,358.3,5287,1,4,0)
+ ;;=4^C32.9

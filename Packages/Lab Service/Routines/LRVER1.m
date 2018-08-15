@@ -1,5 +1,7 @@
 LRVER1 ;DALOI/STAFF - LAB ROUTINE DATA VERIFICATION ;01/20/11  18:00
- ;;5.2;LAB SERVICE;**42,153,201,215,239,240,263,232,286,291,350**;Sep 27, 1994;Build 230
+ ;;5.2;LAB SERVICE;**42,153,201,215,239,240,263,232,286,291,350,468,484,461**;Sep 27, 1994;Build 15
+ ;
+ ;5.2;LAB SERVICE; CHANGE FOR PATCH LR*5.2*468; Feb 10 2016
  ;
 VER ; from LRGVP
  N LRBEY
@@ -23,14 +25,15 @@ LD S LRSS="CH" ;ONLY WORKS FOR 'CH'
  ;
  ;
 EXP ; Get the list of tests for this ACC. from LRGVG1
- ; Do not process tests which have been "NP" (not performed).
+ ; Do not process tests which have been "NP" (not performed)
+ ; or merged to another accession
  N I,N,IX,LRNLT,T1,X
  K LRTEST,LRNAME,LRSM60
  S LRALERT=LROUTINE,N=0,I=0,IX=+$G(^LRO(68,LRAA,1,LRAD,1,LRAN,5,1,0))
  F  S I=$O(^LRO(68,LRAA,1,LRAD,1,LRAN,4,I)) Q:I<.5  D
  . S X=$G(^LRO(68,LRAA,1,LRAD,1,LRAN,4,I,0))
  . I 'X Q
- . I $P(X,"^",6)="*Not Performed" Q
+ . I $P(X,"^",6)="*Not Performed"!($P(X,"^",6)="*Merged") Q
  . S N=N+1,LRTEST(N)=I,LRNLT=$S($P(X,"^",2)>50:$P(X,U,9),1:$P(X,"^"))
  . I $P(X,"^",9),$P(X,"^")'=$P(X,"^",9),'$D(^LRO(68,LRAA,1,LRAD,1,LRAN,4,$P(X,"^",9))) S LRNLT=$P(X,"^",9)
  . S LRTEST(N,"P")=LRNLT_U_$$NLT(LRNLT)
@@ -69,12 +72,15 @@ EX2 ;
  . D:'$D(^TMP("LR",$J,"TMP",S2)) ORD
  ;
  ; Explode panel tests
- ; Do not process tests which have been "NP" (not performed).
+ ; Do not process tests which have been "NP" (not performed)
+ ; or merged to another accession
+ N LRDISP
  S S1=S1+1,S1(S1)=X,S1(S1,1)=J
  S J=0
  F  S J=$O(^LAB(60,+S1(S1),2,J)) Q:J<1  D
  . S Y=+^(J,0),X=Y_U_^LAB(60,Y,0)
- . I $P($G(^LRO(68,+$G(LRAA),1,+$G(LRAD),1,+$G(LRAN),4,Y,0)),"^",6)="*Not Performed" Q
+ . S LRDISP=$P($G(^LRO(68,+$G(LRAA),1,+$G(LRAD),1,+$G(LRAN),4,Y,0)),"^",6)
+ . I LRDISP="*Not Performed"!(LRDISP="*Merged") Q
  . D EX2
  S X=S1(S1),J=S1(S1,1),S1=S1-1
  Q
@@ -109,14 +115,37 @@ RNLT(X) ;
  N Y
  S Y(1)=+$P($G(^LAB(60,X,64)),U,2)
  S Y=$S($P($G(^LAM(Y(1),0)),U,2):$P(^(0),U,2),1:"")
- I Y S $P(Y,"!",2)=$$LNC(Y,$G(LRCDEF),$G(LRSPEC))
+ ; START OF CHANGE FOR LR*5.2*468
+ ;I Y S $P(Y,"!",2)=$$LNC(Y,$G(LRCDEF),$G(LRSPEC))
+ I Y S $P(Y,"!",2)=$$LNC(Y,$G(LRCDEF),$G(LRSPEC),X)
+ ; END OF CHANGE FOR LR*5.2*468
  S $P(Y,"!",3)=$G(LRCDEF),$P(Y,"!",6)=X
  Q Y
  ;
  ;
-LNC(LRNLT,LRCDEF,LRSPEC) ;reture the LOINC code for WKLD Code/Specimen
+ ; THE FOLLOWING ENTRY POINT WAS CHANGED BY PATCH LR*5.2.468 TO RECEIVE LAB TEST IEN
+LNC(LRNLT,LRCDEF,LRSPEC,LRLTST) ;return the LOINC code for WKLD Code/Specimen
+ ; orig entry point code
+ ; (LRNLT,LRCDEF,LRSPEC) ;reture the LOINC code for WKLD Code/Specimen
+ ; END OF CHANGE FOR LR*5.2*468
  ; Call with (nlt code,method suffix,test specimen)
  ; TA = Time Aspect
+ ; START OF CHANGE FOR LR*5.2*468 check for new VUID LOINC in LAB(60,test,1,specimen N6,P1 (#30)
+ N LRMLTF,BL,C S LRLTST=$G(LRLTST)+0,LRSPEC=+LRSPEC
+ I LRSPEC&(LRLTST>0) S (LRMLTF,BL,C)="" D  I BL'="" D LNCSET Q BL
+ . S LRSPECN=$S($D(^LAB(61,LRSPEC,0))#2:$$GET1^DIQ(61,LRSPEC_",",.01),1:"Unknown")
+ . S LRMLTF=$$GET1^DIQ(60.01,LRSPEC_","_LRLTST,30,"I") I LRMLTF="" Q  ; does not have a vuid associated
+ . S BL=$$GET1^DIQ(66.3,LRMLTF_",",.04,"I")
+ . ; fix to strip off the check digit per agreement 20160920
+ . I BL'="" S BL=$P(BL,"-",1)
+ K LRMLTF,BL,C
+ ; END OF CHANGE FOR LR*5.2*468
+ ; START OF CHANGE FOR LR*5.2*484
+ G LNCO
+ ; new entry point for mapping routine LRLNCV to skip checking of MLTF
+LNCM(LRNLT,LRCDEF,LRSPEC,LRLTST) ; entry for LRLNCV
+LNCO ; skip around point for LNC
+ ; END OF CHANGE FOR LR*5.2*484
  N X,N,Y,LRSPECN,VAL,ERR,TA S X=""
  Q:'LRNLT X
  K LRMSGM
@@ -156,7 +185,24 @@ LNC(LRNLT,LRCDEF,LRSPEC) ;reture the LOINC code for WKLD Code/Specimen
  I 'X S X=""
  Q X
  ;
+ ; START OF CHANGE FOR LR*5.2*484
+LNCSET ; set up string for MLTF msg
  ;
+ S:$G(LRCDEF)="" LRCDEF="0000"
+ I $P(LRCDEF,".",2) S LRCDEF=$P(LRCDEF,".",2)
+ S LRCDEF=$S($P(LRNLT,".",2):$P(LRNLT,".",2),1:LRCDEF)
+ I $L(LRCDEF)'=4 S LRCDEF=LRCDEF_$E("0000",$L(LRCDEF),($L(LRCDEF-4)))
+ S LRCDEF=LRCDEF_" "
+ ;Get time aspect from 61
+ S TA=$$GET1^DIQ(61,LRSPEC_",",.0961,"I")
+ S LRSPECN=$S($D(^LAB(61,LRSPEC,0))#2:$$GET1^DIQ(61,LRSPEC_",",.01),1:"Unknown")
+ S LRNLT=$P(LRNLT,".")_"."
+ I $G(TA) S TANAME=$$GET1^DIQ(64.061,TA_",",.01,"E") ;TA Name
+ S LRMSGM="1-"_LRNLT_$E(LRCDEF,1,4)_" - "_LRSPECN
+ I $G(TA) S LRMSGM=LRMSGM_" Time Aspect "_TANAME
+ Q
+ ;
+ ; END OF CHANGE FOR LR*5.2*484
 LDEF(Y) ;Find the default LOINC code for WKLD CODE
  I 'Y Q ""
  S X=$$GET1^DIQ(64,Y_",",25,"I")
@@ -167,7 +213,10 @@ LDEF(Y) ;Find the default LOINC code for WKLD CODE
 TMPSB(LRSB) ; Get LOINC code from ^TMP("LR",$J,"TMP",LRSB,"P")
  S NODE=$G(^TMP("LR",$J,"TMP",LRSB,"P"))
  I 'NODE Q ""
- S $P(NODE,"!",3)=$$LNC($P(NODE,"!",2),$G(LRCDEF),$G(LRSPEC))
+ ; START CHANGE FOR LR*5.2*468
+ ; S $P(NODE,"!",3)=$$LNC($P(NODE,"!",2),$G(LRCDEF),$G(LRSPEC))
+ S $P(NODE,"!",3)=$$LNC($P(NODE,"!",2),$G(LRCDEF),$G(LRSPEC),$G(LRTS))
+ ; END CHANGE FOR LR*5.2*468
  S $P(NODE,"!",4)=$G(LRCDEF)
  Q $P(NODE,U,2)
  ;

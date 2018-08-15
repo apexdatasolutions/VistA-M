@@ -1,5 +1,5 @@
 RORX015A ;HOIFO/SG,VAC - OUTPATIENT PROCEDURES (QUERY & SORT) ;4/7/09 2:10pm
- ;;1.5;CLINICAL CASE REGISTRIES;**1,8,13,19**;Feb 17, 2006;Build 43
+ ;;1.5;CLINICAL CASE REGISTRIES;**1,8,13,19,21,25,31**;Feb 17, 2006;Build 62
  ;
  ; This routine uses the following IAs:
  ;
@@ -10,6 +10,7 @@ RORX015A ;HOIFO/SG,VAC - OUTPATIENT PROCEDURES (QUERY & SORT) ;4/7/09 2:10pm
  ; #2548         Multiple APIs in SDQ routine (supported)
  ; #10103        FMADD^XLFDT (supported)
  ; #5747         $$CODEC^ICDEX, $$CODEN^ICDEX, $$VSTP^ICDEX (controlled)
+ ; #6130         PTFICD^DGPTFUT
  ;
  ;******************************************************************************
  ;******************************************************************************
@@ -22,6 +23,11 @@ RORX015A ;HOIFO/SG,VAC - OUTPATIENT PROCEDURES (QUERY & SORT) ;4/7/09 2:10pm
  ;ROR*1.5*13   DEC 2010   A SAUNDERS    User can select specific patients,
  ;                                      clinics, or divisions for the report.
  ;ROR*1.5*19   FEB 2012   J SCOTT       Support for ICD-10 Coding System.
+ ;ROR*1.5*21   SEP 2013   T KOPP        Added ICN as report column if
+ ;                                      additional identifier option selected
+ ;ROR*1.5*25   OCT 2014   T KOPP        Added PTF ICD-10 support for 25 diagnoses
+ ;ROR*1.5*31   MAY 2017   M FERRARESE    Adding PACT, PCP, and AGE/DOB as additional
+ ;                                       identifiers.
  ;                                      
  ;******************************************************************************
  ;******************************************************************************
@@ -37,58 +43,45 @@ RORX015A ;HOIFO/SG,VAC - OUTPATIENT PROCEDURES (QUERY & SORT) ;4/7/09 2:10pm
  ;       >0  Number of non-fatal errors
  ;
 INPAT(PTIEN) ;
- N DATE,ERRCNT,FLDLST,IEN,IEN45,IENS,NODE,RC,RORBUF,RORMSG,XREF
+ N DATE,ERRCNT,IEN,IEN45,IENS,NODE,RC,RORBUF,RORIBUF,RORMSG,XREF,FLD
  S (ERRCNT,RC)=0
  S XREF=$$ROOT^DILFD(45,,1),XREF=$NA(@XREF@("B",PTIEN))
  S IEN45=0
  F  S IEN45=$O(@XREF@(IEN45))  Q:IEN45'>0  D
- . ;Q:$$GET1^DIQ(45,IEN45_",",6,"I",,"RORMSG")<1  ; Skip open records
- . ;S IENS=IEN45_","
- . ;S FLDLST="45.01;45.02;45.03;45.04;45.05"
- . ;D GETS^DIQ(45,IENS,FLDLST,"I","RORBUF","RORMSG")
- . ;I $G(DIERR)  D  S ERRCNT=ERRCNT+1
- . ;. D DBS^RORERR("RORMSG",-99,,PTIEN,45,IENS)
- . ;D INP(PTIEN,$NA(RORBUF(IENS)),FLDLST,???)
  . ;--- Surgical procedures
  . S NODE=$$ROOT^DILFD(45.01,","_IEN45_",",1)
  . S IEN=0
  . F  S IEN=$O(@NODE@(IEN))  Q:IEN'>0  D
  . . S IENS=IEN_","_IEN45_","  K RORBUF
- . . S FLDLST="8;9;10;11;12"
  . . ;--- Load the data
- . . K RORMSG D GETS^DIQ(45.01,IENS,".01;"_FLDLST,"I","RORBUF","RORMSG")
- . . ;I $G(DIERR)  D  S ERRCNT=ERRCNT+1
+ . . K RORMSG D GETS^DIQ(45.01,IENS,".01;","I","RORBUF","RORMSG")
  . . I $G(RORMSG("DIERR"))  D  S ERRCNT=ERRCNT+1
  . . . D DBS^RORERR("RORMSG",-99,,PTIEN,45.01,IENS)
  . . S DATE=$G(RORBUF(45.01,IENS,.01,"I"))
  . . Q:(DATE<RORSDT)!(DATE'<ROREDT1)
  . . ;--- Generate the output
- . . D INP(PTIEN,$NA(RORBUF(45.01,IENS)),FLDLST,DATE)
+ . . K RORIBUF
+ . . D PTFICD^DGPTFUT(401,IEN45,IEN,.RORIBUF)
+ . . S FLD="" F  S FLD=$O(RORIBUF(FLD)) Q:FLD=""  I $G(RORIBUF(FLD)) D
+ . . . D PROCSET(PTIEN,"I",+RORIBUF(FLD),DATE)
  . ;--- Other procedures
  . S NODE=$$ROOT^DILFD(45.05,","_IEN45_",",1)
  . S IEN=0
  . F  S IEN=$O(@NODE@(IEN))  Q:IEN'>0  D
  . . S IENS=IEN_","_IEN45_","  K RORBUF
- . . S FLDLST="4;5;6;7;8"
  . . ;--- Load the data
- . . K RORMSG D GETS^DIQ(45.05,IENS,".01;"_FLDLST,"I","RORBUF","RORMSG")
- . . ;I $G(DIERR)  D  S ERRCNT=ERRCNT+1
+ . . K RORMSG D GETS^DIQ(45.05,IENS,".01","I","RORBUF","RORMSG")
  . . I $G(RORMSG("DIERR"))  D  S ERRCNT=ERRCNT+1
  . . . D DBS^RORERR("RORMSG",-99,,PTIEN,45.05,IENS)
  . . S DATE=$G(RORBUF(45.05,IENS,.01,"I"))
  . . Q:(DATE<RORSDT)!(DATE'<ROREDT1)
  . . ;--- Generate the output
- . . D INP(PTIEN,$NA(RORBUF(45.05,IENS)),FLDLST,DATE)
+ . . K RORIBUF
+ . . D PTFICD^DGPTFUT(601,IEN45,IEN,.RORIBUF)
+ . . S FLD="" F  S FLD=$O(RORIBUF(FLD)) Q:FLD=""  I $G(RORIBUF(FLD)) D
+ . . . D PROCSET(PTIEN,"I",+RORIBUF(FLD),DATE)
  ;---
  Q $S(RC<0:RC,1:ERRCNT)
- ;
- ;****
-INP(PTIEN,ROR8BUF,FLDLST,DATE) ;
- N I,ICDIEN,FLD
- F I=1:1  S FLD=$P(FLDLST,";",I)  Q:FLD=""  D
- . S ICDIEN=+$G(@ROR8BUF@(FLD,"I"))
- . D:ICDIEN>0 PROCSET(PTIEN,"I",ICDIEN,DATE)
- Q
  ;
  ;***** CALL-BACK PROCEDURE FOR THE OUTPATIENT SEARCH
  ;
@@ -173,7 +166,7 @@ QUERY(FLAGS) ;
  N RORCDENDT     ; End date for clinic/division utilization search
  ;
  N CNT,ECNT,IEN,IENS,MODE,PTIEN,RC,SKIP,SKIPEDT,SKIPSDT,TMP,UTEDT,UTSDT,XREFNODE
- N RCC,FLAG
+ N RCC,FLAG,UTIL
  S XREFNODE=$NA(^RORDATA(798,"AC",+RORREG))
  S ROREDT1=$$FMADD^XLFDT(ROREDT\1,1)
  S (CNT,ECNT,RC)=0,SKIPEDT=ROREDT,SKIPSDT=RORSDT
@@ -278,11 +271,16 @@ SORT() ;
  ;       >0  Number of non-fatal errors
  ;
 TOTALS(PTIEN) ;
- N CNT,CODE,IEN,NAME,PNODE,RC,SRC,TMP,VA,VADM
+ N CNT,CODE,IEN,NAME,PNODE,RC,SRC,TMP,TMP1,TMP2,VA,VADM,AGE,AGETYPE
  S PNODE=$NA(@RORTMP@("PAT",PTIEN))
  ;--- Get and store the patient's data
  D VADEM^RORUTL05(PTIEN,1)
- S @PNODE=VA("BID")_U_VADM(1)_U_$$DATE^RORXU002(VADM(6)\1)
+ S TMP=$S($$PARAM^RORTSK01("PATIENTS","ICN"):$$ICN^RORUTL02(PTIEN),1:"")
+ S TMP1=$S($$PARAM^RORTSK01("PATIENTS","PACT"):$$PACT^RORUTL02(PTIEN),1:"")
+ S TMP2=$S($$PARAM^RORTSK01("PATIENTS","PCP"):$$PCP^RORUTL02(PTIEN),1:"")
+ S AGETYPE=$$PARAM^RORTSK01("AGE_RANGE","TYPE")
+ S AGE=$S(AGETYPE="AGE":$P(VADM(4),U),AGETYPE="DOB":$$DATE^RORXU002($P(VADM(3),U)\1),1:"")
+ S @PNODE=VA("BID")_U_VADM(1)_U_$$DATE^RORXU002(VADM(6)\1)_U_TMP_U_TMP1_U_TMP2_U_AGE
  S ^("PAT")=$G(@RORTMP@("PAT"))+1 ;naked reference: ^TMP($J,"RORTMP-n") from RORX015
  ;
  F SRC="I","O"  D

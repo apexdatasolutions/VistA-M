@@ -1,134 +1,140 @@
-IBDEI08Z ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI08Z ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,4110,1,2,0)
- ;;=2^Bx,Breast w/Device w/MRI,1st Lesion
- ;;^UTILITY(U,$J,358.3,4110,1,4,0)
- ;;=4^19085
- ;;^UTILITY(U,$J,358.3,4111,0)
- ;;=19086^^36^309^2^^^^1
- ;;^UTILITY(U,$J,358.3,4111,1,0)
+ ;;^UTILITY(U,$J,358.3,3655,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4111,1,2,0)
- ;;=2^Bx,Breast w/Device w/MRI,Ea Addl Lesion
- ;;^UTILITY(U,$J,358.3,4111,1,4,0)
- ;;=4^19086
- ;;^UTILITY(U,$J,358.3,4112,0)
- ;;=10060^^36^310^15
- ;;^UTILITY(U,$J,358.3,4112,1,0)
+ ;;^UTILITY(U,$J,358.3,3655,1,3,0)
+ ;;=3^Arthritis,Secondary Multiple
+ ;;^UTILITY(U,$J,358.3,3655,1,4,0)
+ ;;=4^M15.3
+ ;;^UTILITY(U,$J,358.3,3655,2)
+ ;;=^5010765
+ ;;^UTILITY(U,$J,358.3,3656,0)
+ ;;=M11.9^^28^258^14
+ ;;^UTILITY(U,$J,358.3,3656,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4112,1,2,0)
- ;;=2^I&D abscess,simple or single
- ;;^UTILITY(U,$J,358.3,4112,1,4,0)
- ;;=4^10060
- ;;^UTILITY(U,$J,358.3,4113,0)
- ;;=10061^^36^310^14
- ;;^UTILITY(U,$J,358.3,4113,1,0)
+ ;;^UTILITY(U,$J,358.3,3656,1,3,0)
+ ;;=3^Arthropathy,Crystal,Unspec
+ ;;^UTILITY(U,$J,358.3,3656,1,4,0)
+ ;;=4^M11.9
+ ;;^UTILITY(U,$J,358.3,3656,2)
+ ;;=^5010497
+ ;;^UTILITY(U,$J,358.3,3657,0)
+ ;;=M12.9^^28^258^15
+ ;;^UTILITY(U,$J,358.3,3657,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4113,1,2,0)
- ;;=2^I&D abscess,complic or multip
- ;;^UTILITY(U,$J,358.3,4113,1,4,0)
- ;;=4^10061
- ;;^UTILITY(U,$J,358.3,4114,0)
- ;;=10160^^36^310^20
- ;;^UTILITY(U,$J,358.3,4114,1,0)
+ ;;^UTILITY(U,$J,358.3,3657,1,3,0)
+ ;;=3^Arthropathy,Unspec
+ ;;^UTILITY(U,$J,358.3,3657,1,4,0)
+ ;;=4^M12.9
+ ;;^UTILITY(U,$J,358.3,3657,2)
+ ;;=^5010666
+ ;;^UTILITY(U,$J,358.3,3658,0)
+ ;;=Z97.10^^28^258^16
+ ;;^UTILITY(U,$J,358.3,3658,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4114,1,2,0)
- ;;=2^Needle asp absc/cyst/hematoma
- ;;^UTILITY(U,$J,358.3,4114,1,4,0)
- ;;=4^10160
- ;;^UTILITY(U,$J,358.3,4115,0)
- ;;=10140^^36^310^17
- ;;^UTILITY(U,$J,358.3,4115,1,0)
+ ;;^UTILITY(U,$J,358.3,3658,1,3,0)
+ ;;=3^Artificial Limb,Unspec
+ ;;^UTILITY(U,$J,358.3,3658,1,4,0)
+ ;;=4^Z97.10
+ ;;^UTILITY(U,$J,358.3,3658,2)
+ ;;=^5063721
+ ;;^UTILITY(U,$J,358.3,3659,0)
+ ;;=M99.9^^28^258^17
+ ;;^UTILITY(U,$J,358.3,3659,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4115,1,2,0)
- ;;=2^I&D hematoma/seroma,skin
- ;;^UTILITY(U,$J,358.3,4115,1,4,0)
- ;;=4^10140
- ;;^UTILITY(U,$J,358.3,4116,0)
- ;;=19000^^36^310^5
- ;;^UTILITY(U,$J,358.3,4116,1,0)
+ ;;^UTILITY(U,$J,358.3,3659,1,3,0)
+ ;;=3^Biomechanical Lesion,Unspec
+ ;;^UTILITY(U,$J,358.3,3659,1,4,0)
+ ;;=4^M99.9
+ ;;^UTILITY(U,$J,358.3,3659,2)
+ ;;=^5015490
+ ;;^UTILITY(U,$J,358.3,3660,0)
+ ;;=M85.9^^28^258^27
+ ;;^UTILITY(U,$J,358.3,3660,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4116,1,2,0)
- ;;=2^Aspirate breast cyst, first
- ;;^UTILITY(U,$J,358.3,4116,1,4,0)
- ;;=4^19000
- ;;^UTILITY(U,$J,358.3,4117,0)
- ;;=19001^^36^310^6
- ;;^UTILITY(U,$J,358.3,4117,1,0)
+ ;;^UTILITY(U,$J,358.3,3660,1,3,0)
+ ;;=3^Done Density/Structure Disorder,Unspec
+ ;;^UTILITY(U,$J,358.3,3660,1,4,0)
+ ;;=4^M85.9
+ ;;^UTILITY(U,$J,358.3,3660,2)
+ ;;=^5014496
+ ;;^UTILITY(U,$J,358.3,3661,0)
+ ;;=M89.20^^28^258^18
+ ;;^UTILITY(U,$J,358.3,3661,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4117,1,2,0)
- ;;=2^Aspirate each addit breast cyst
- ;;^UTILITY(U,$J,358.3,4117,1,4,0)
- ;;=4^19001
- ;;^UTILITY(U,$J,358.3,4118,0)
- ;;=26011^^36^310^7
- ;;^UTILITY(U,$J,358.3,4118,1,0)
+ ;;^UTILITY(U,$J,358.3,3661,1,3,0)
+ ;;=3^Bone Development/Growth Disorder,Unspec Site
+ ;;^UTILITY(U,$J,358.3,3661,1,4,0)
+ ;;=4^M89.20
+ ;;^UTILITY(U,$J,358.3,3661,2)
+ ;;=^5014959
+ ;;^UTILITY(U,$J,358.3,3662,0)
+ ;;=M89.9^^28^258^19
+ ;;^UTILITY(U,$J,358.3,3662,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4118,1,2,0)
- ;;=2^Drain abscess finger,complic
- ;;^UTILITY(U,$J,358.3,4118,1,4,0)
- ;;=4^26011
- ;;^UTILITY(U,$J,358.3,4119,0)
- ;;=26020^^36^310^11
- ;;^UTILITY(U,$J,358.3,4119,1,0)
+ ;;^UTILITY(U,$J,358.3,3662,1,3,0)
+ ;;=3^Bone Disorder,Unspec
+ ;;^UTILITY(U,$J,358.3,3662,1,4,0)
+ ;;=4^M89.9
+ ;;^UTILITY(U,$J,358.3,3662,2)
+ ;;=^5015119
+ ;;^UTILITY(U,$J,358.3,3663,0)
+ ;;=M15.2^^28^258^20
+ ;;^UTILITY(U,$J,358.3,3663,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4119,1,2,0)
- ;;=2^Drain tendon sheath,Ea Hand
- ;;^UTILITY(U,$J,358.3,4119,1,4,0)
- ;;=4^26020
- ;;^UTILITY(U,$J,358.3,4120,0)
- ;;=10120^^36^310^22
- ;;^UTILITY(U,$J,358.3,4120,1,0)
+ ;;^UTILITY(U,$J,358.3,3663,1,3,0)
+ ;;=3^Bouchard's Nodes w/ Arthropathy
+ ;;^UTILITY(U,$J,358.3,3663,1,4,0)
+ ;;=4^M15.2
+ ;;^UTILITY(U,$J,358.3,3663,2)
+ ;;=^5010764
+ ;;^UTILITY(U,$J,358.3,3664,0)
+ ;;=M75.52^^28^258^21
+ ;;^UTILITY(U,$J,358.3,3664,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4120,1,2,0)
- ;;=2^Removal,foreign body,simple
- ;;^UTILITY(U,$J,358.3,4120,1,4,0)
- ;;=4^10120
- ;;^UTILITY(U,$J,358.3,4121,0)
- ;;=10121^^36^310^21
- ;;^UTILITY(U,$J,358.3,4121,1,0)
+ ;;^UTILITY(U,$J,358.3,3664,1,3,0)
+ ;;=3^Bursitis Left Shoulder
+ ;;^UTILITY(U,$J,358.3,3664,1,4,0)
+ ;;=4^M75.52
+ ;;^UTILITY(U,$J,358.3,3664,2)
+ ;;=^5133691
+ ;;^UTILITY(U,$J,358.3,3665,0)
+ ;;=M75.51^^28^258^22
+ ;;^UTILITY(U,$J,358.3,3665,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4121,1,2,0)
- ;;=2^Removal,foreign body,complex
- ;;^UTILITY(U,$J,358.3,4121,1,4,0)
- ;;=4^10121
- ;;^UTILITY(U,$J,358.3,4122,0)
- ;;=26010^^36^310^8^^^^1
- ;;^UTILITY(U,$J,358.3,4122,1,0)
+ ;;^UTILITY(U,$J,358.3,3665,1,3,0)
+ ;;=3^Bursitis Right Shoulder
+ ;;^UTILITY(U,$J,358.3,3665,1,4,0)
+ ;;=4^M75.51
+ ;;^UTILITY(U,$J,358.3,3665,2)
+ ;;=^5133690
+ ;;^UTILITY(U,$J,358.3,3666,0)
+ ;;=M71.9^^28^258^23
+ ;;^UTILITY(U,$J,358.3,3666,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4122,1,2,0)
- ;;=2^Drain abscess finger,simple
- ;;^UTILITY(U,$J,358.3,4122,1,4,0)
- ;;=4^26010
- ;;^UTILITY(U,$J,358.3,4123,0)
- ;;=10180^^36^310^16^^^^1
- ;;^UTILITY(U,$J,358.3,4123,1,0)
+ ;;^UTILITY(U,$J,358.3,3666,1,3,0)
+ ;;=3^Bursopathy,Unspec
+ ;;^UTILITY(U,$J,358.3,3666,1,4,0)
+ ;;=4^M71.9
+ ;;^UTILITY(U,$J,358.3,3666,2)
+ ;;=^5013232
+ ;;^UTILITY(U,$J,358.3,3667,0)
+ ;;=M94.9^^28^258^24
+ ;;^UTILITY(U,$J,358.3,3667,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4123,1,2,0)
- ;;=2^I&D complex postop wound
- ;;^UTILITY(U,$J,358.3,4123,1,4,0)
- ;;=4^10180
- ;;^UTILITY(U,$J,358.3,4124,0)
- ;;=20600^^36^310^4^^^^1
- ;;^UTILITY(U,$J,358.3,4124,1,0)
+ ;;^UTILITY(U,$J,358.3,3667,1,3,0)
+ ;;=3^Cartilage Disorder,Unspec
+ ;;^UTILITY(U,$J,358.3,3667,1,4,0)
+ ;;=4^M94.9
+ ;;^UTILITY(U,$J,358.3,3667,2)
+ ;;=^5015366
+ ;;^UTILITY(U,$J,358.3,3668,0)
+ ;;=M95.9^^28^258^26
+ ;;^UTILITY(U,$J,358.3,3668,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4124,1,2,0)
- ;;=2^Aspir/inject bursa/small joint
- ;;^UTILITY(U,$J,358.3,4124,1,4,0)
- ;;=4^20600
- ;;^UTILITY(U,$J,358.3,4125,0)
- ;;=20605^^36^310^2^^^^1
- ;;^UTILITY(U,$J,358.3,4125,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4125,1,2,0)
- ;;=2^Aspir/inject bursa/intmed joint
- ;;^UTILITY(U,$J,358.3,4125,1,4,0)
- ;;=4^20605
- ;;^UTILITY(U,$J,358.3,4126,0)
- ;;=20610^^36^310^3^^^^1
- ;;^UTILITY(U,$J,358.3,4126,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,4126,1,2,0)
- ;;=2^Aspir/inject bursa/large joint
+ ;;^UTILITY(U,$J,358.3,3668,1,3,0)
+ ;;=3^Deformity of Musculoskeletal System,Acquired,Unspec
+ ;;^UTILITY(U,$J,358.3,3668,1,4,0)
+ ;;=4^M95.9

@@ -1,5 +1,6 @@
 DVBABURL ;ALB/SPH - CAPRI URL ;14/MAY/2012
- ;;2.7;AMIE;**104,136,143,149,168,181,186**;Apr 10, 1995;Build 21
+ ;;2.7;AMIE;**104,136,143,149,168,181,186,192,205**;Apr 10, 1995;Build 1
+ ;ALB/RTW - added 7=VICAP website
  ;
 URL(Y,WHICH) ;
  ;This procedure supports the DVBAB GET URL remote procedure 
@@ -9,7 +10,9 @@ URL(Y,WHICH) ;
  ; 3=VistAWeb website
  ; 5=HIA download website
  ; 6=VIRTUAL VA web service server
+ ; 7=VICAP website
  ; 8=VLER DAS web service server
+ ; 9=JLV website
  ; 999=Debug/Test Code
  I WHICH=1 S Y="http://152.124.238.193/bl/21/rating/Medical/exams/index.htm"
  I WHICH=2 S Y="http://vaww.demo.domain.ext/"
@@ -23,11 +26,15 @@ URL(Y,WHICH) ;
  . . S Y=$$GET^XPAR("PKG","DVBAB CAPRI VIRTUALVA PROD URL",1,"Q")
  . E  D
  . . S Y=$$GET^XPAR("PKG","DVBAB CAPRI VIRTUALVA TEST URL",1,"Q")
+ I WHICH=7 S Y=$$GET^XPAR("PKG","DVBAB CAPRI VICAP URL",1,"Q")
  I WHICH=8 D  ;VLER DAS web service server
  . I $$PROD^XUPROD D
  . . S Y=$$GET^XPAR("PKG","DVBAB CAPRI VLER DAS PROD URL",1,"Q")
  . E  D
  . . S Y=$$GET^XPAR("PKG","DVBAB CAPRI VLER DAS CH3 URL",1,"Q")
+  I WHICH=9 D  ;VD 10/4/17 DVBA*2.7*205
+ . I '$$PROD^XUPROD S Y="-1^JLV disabled for non-production systems." Q
+ . S Y=$$GET^XPAR("PKG","DVBAB CAPRI JLV URL",1,"Q")
  I WHICH=999 S Y="http://vhaannweb2.v11.domain.ext/VwDesktop/CapriPage.aspx"
  Q
  ;

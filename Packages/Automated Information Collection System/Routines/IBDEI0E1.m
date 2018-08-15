@@ -1,144 +1,124 @@
-IBDEI0E1 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0E1 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,6760,2)
- ;;=^338228
- ;;^UTILITY(U,$J,358.3,6761,0)
- ;;=729.90^^55^571^65
- ;;^UTILITY(U,$J,358.3,6761,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6761,1,4,0)
- ;;=4^729.90
- ;;^UTILITY(U,$J,358.3,6761,1,5,0)
- ;;=5^Soft Tissue Disorder
- ;;^UTILITY(U,$J,358.3,6761,2)
- ;;=^336762
- ;;^UTILITY(U,$J,358.3,6762,0)
- ;;=729.91^^55^571^57
- ;;^UTILITY(U,$J,358.3,6762,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6762,1,4,0)
- ;;=4^729.91
- ;;^UTILITY(U,$J,358.3,6762,1,5,0)
- ;;=5^Post-Traumatic Seroma
- ;;^UTILITY(U,$J,358.3,6762,2)
- ;;=^336654
- ;;^UTILITY(U,$J,358.3,6763,0)
- ;;=729.92^^55^571^38
- ;;^UTILITY(U,$J,358.3,6763,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6763,1,4,0)
- ;;=4^729.92
- ;;^UTILITY(U,$J,358.3,6763,1,5,0)
- ;;=5^Non-Traumatic Hematoma Soft Tissue
- ;;^UTILITY(U,$J,358.3,6763,2)
- ;;=^336655
- ;;^UTILITY(U,$J,358.3,6764,0)
- ;;=729.99^^55^571^66
- ;;^UTILITY(U,$J,358.3,6764,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6764,1,4,0)
- ;;=4^729.99
- ;;^UTILITY(U,$J,358.3,6764,1,5,0)
- ;;=5^Soft Tissue Disorder NEC
- ;;^UTILITY(U,$J,358.3,6764,2)
- ;;=^336656
- ;;^UTILITY(U,$J,358.3,6765,0)
- ;;=781.0^^55^572^75
- ;;^UTILITY(U,$J,358.3,6765,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6765,1,4,0)
- ;;=4^781.0
- ;;^UTILITY(U,$J,358.3,6765,1,5,0)
- ;;=5^Tremor
- ;;^UTILITY(U,$J,358.3,6765,2)
- ;;=^23827
- ;;^UTILITY(U,$J,358.3,6766,0)
- ;;=351.0^^55^572^1
- ;;^UTILITY(U,$J,358.3,6766,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6766,1,4,0)
- ;;=4^351.0
- ;;^UTILITY(U,$J,358.3,6766,1,5,0)
- ;;=5^Bell's Palsy
- ;;^UTILITY(U,$J,358.3,6766,2)
- ;;=Bell's Palsy^13238
- ;;^UTILITY(U,$J,358.3,6767,0)
- ;;=386.11^^55^572^78
- ;;^UTILITY(U,$J,358.3,6767,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6767,1,4,0)
- ;;=4^386.11
- ;;^UTILITY(U,$J,358.3,6767,1,5,0)
- ;;=5^Vertigo, Benign Positional
- ;;^UTILITY(U,$J,358.3,6767,2)
- ;;=^269480
- ;;^UTILITY(U,$J,358.3,6768,0)
- ;;=784.0^^55^572^18
- ;;^UTILITY(U,$J,358.3,6768,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6768,1,4,0)
- ;;=4^784.0
- ;;^UTILITY(U,$J,358.3,6768,1,5,0)
- ;;=5^Headache
- ;;^UTILITY(U,$J,358.3,6768,2)
- ;;=^54133
- ;;^UTILITY(U,$J,358.3,6769,0)
- ;;=346.20^^55^572^23
- ;;^UTILITY(U,$J,358.3,6769,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6769,1,4,0)
- ;;=4^346.20
- ;;^UTILITY(U,$J,358.3,6769,1,5,0)
- ;;=5^Headache,Cluster/Migraine Variant
- ;;^UTILITY(U,$J,358.3,6769,2)
- ;;=^294062
- ;;^UTILITY(U,$J,358.3,6770,0)
- ;;=346.21^^55^572^24
- ;;^UTILITY(U,$J,358.3,6770,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6770,1,4,0)
- ;;=4^346.21
- ;;^UTILITY(U,$J,358.3,6770,1,5,0)
- ;;=5^Headache,Cluster/Migraine Variant Med Resistant
- ;;^UTILITY(U,$J,358.3,6770,2)
- ;;=^293879
- ;;^UTILITY(U,$J,358.3,6771,0)
- ;;=346.90^^55^572^49
- ;;^UTILITY(U,$J,358.3,6771,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6771,1,4,0)
- ;;=4^346.90
- ;;^UTILITY(U,$J,358.3,6771,1,5,0)
- ;;=5^Migraine Headache
- ;;^UTILITY(U,$J,358.3,6771,2)
- ;;=^293880
- ;;^UTILITY(U,$J,358.3,6772,0)
- ;;=346.91^^55^572^55
- ;;^UTILITY(U,$J,358.3,6772,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6772,1,4,0)
- ;;=4^346.91
- ;;^UTILITY(U,$J,358.3,6772,1,5,0)
- ;;=5^Migraines Resistant to Meds
- ;;^UTILITY(U,$J,358.3,6772,2)
- ;;=^293881
- ;;^UTILITY(U,$J,358.3,6773,0)
- ;;=307.81^^55^572^38
- ;;^UTILITY(U,$J,358.3,6773,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6773,1,4,0)
- ;;=4^307.81
- ;;^UTILITY(U,$J,358.3,6773,1,5,0)
- ;;=5^Headache,Tension
- ;;^UTILITY(U,$J,358.3,6773,2)
- ;;=^100405
- ;;^UTILITY(U,$J,358.3,6774,0)
- ;;=333.1^^55^572^2
- ;;^UTILITY(U,$J,358.3,6774,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6774,1,4,0)
- ;;=4^333.1
- ;;^UTILITY(U,$J,358.3,6774,1,5,0)
- ;;=5^Benign Tremor
+ ;;^UTILITY(U,$J,358.3,6121,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6121,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Left Ankle,Unspec Severity
+ ;;^UTILITY(U,$J,358.3,6121,1,4,0)
+ ;;=4^L97.329
+ ;;^UTILITY(U,$J,358.3,6121,2)
+ ;;=^5009524
+ ;;^UTILITY(U,$J,358.3,6122,0)
+ ;;=L97.421^^40^383^102
+ ;;^UTILITY(U,$J,358.3,6122,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6122,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Left Heel/Midfoot,Breakdown of Skin
+ ;;^UTILITY(U,$J,358.3,6122,1,4,0)
+ ;;=4^L97.421
+ ;;^UTILITY(U,$J,358.3,6122,2)
+ ;;=^5009535
+ ;;^UTILITY(U,$J,358.3,6123,0)
+ ;;=L97.422^^40^383^103
+ ;;^UTILITY(U,$J,358.3,6123,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6123,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Left Heel/Midfoot,Fat Layer Exposed
+ ;;^UTILITY(U,$J,358.3,6123,1,4,0)
+ ;;=4^L97.422
+ ;;^UTILITY(U,$J,358.3,6123,2)
+ ;;=^5009536
+ ;;^UTILITY(U,$J,358.3,6124,0)
+ ;;=L97.423^^40^383^104
+ ;;^UTILITY(U,$J,358.3,6124,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6124,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Left Heel/Midfoot,Necrosis of Muscle
+ ;;^UTILITY(U,$J,358.3,6124,1,4,0)
+ ;;=4^L97.423
+ ;;^UTILITY(U,$J,358.3,6124,2)
+ ;;=^5009537
+ ;;^UTILITY(U,$J,358.3,6125,0)
+ ;;=L97.424^^40^383^105
+ ;;^UTILITY(U,$J,358.3,6125,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6125,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Left Heel/Midfoot,Necrosis of Bone
+ ;;^UTILITY(U,$J,358.3,6125,1,4,0)
+ ;;=4^L97.424
+ ;;^UTILITY(U,$J,358.3,6125,2)
+ ;;=^5009538
+ ;;^UTILITY(U,$J,358.3,6126,0)
+ ;;=L97.429^^40^383^106
+ ;;^UTILITY(U,$J,358.3,6126,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6126,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Left Heel/Midfoot,Unspec Severity
+ ;;^UTILITY(U,$J,358.3,6126,1,4,0)
+ ;;=4^L97.429
+ ;;^UTILITY(U,$J,358.3,6126,2)
+ ;;=^5009539
+ ;;^UTILITY(U,$J,358.3,6127,0)
+ ;;=L97.521^^40^383^97
+ ;;^UTILITY(U,$J,358.3,6127,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6127,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Left Foot NEC,Breakdown of Skin
+ ;;^UTILITY(U,$J,358.3,6127,1,4,0)
+ ;;=4^L97.521
+ ;;^UTILITY(U,$J,358.3,6127,2)
+ ;;=^5009550
+ ;;^UTILITY(U,$J,358.3,6128,0)
+ ;;=L97.522^^40^383^98
+ ;;^UTILITY(U,$J,358.3,6128,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6128,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Left Foot NEC,Fat Layer Exposed
+ ;;^UTILITY(U,$J,358.3,6128,1,4,0)
+ ;;=4^L97.522
+ ;;^UTILITY(U,$J,358.3,6128,2)
+ ;;=^5009551
+ ;;^UTILITY(U,$J,358.3,6129,0)
+ ;;=L97.523^^40^383^99
+ ;;^UTILITY(U,$J,358.3,6129,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6129,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Left Foot NEC,Necrosis of Muscle
+ ;;^UTILITY(U,$J,358.3,6129,1,4,0)
+ ;;=4^L97.523
+ ;;^UTILITY(U,$J,358.3,6129,2)
+ ;;=^5009552
+ ;;^UTILITY(U,$J,358.3,6130,0)
+ ;;=L97.524^^40^383^100
+ ;;^UTILITY(U,$J,358.3,6130,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6130,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Left Foot NEC,Necrosis of Bone
+ ;;^UTILITY(U,$J,358.3,6130,1,4,0)
+ ;;=4^L97.524
+ ;;^UTILITY(U,$J,358.3,6130,2)
+ ;;=^5009553
+ ;;^UTILITY(U,$J,358.3,6131,0)
+ ;;=L97.529^^40^383^101
+ ;;^UTILITY(U,$J,358.3,6131,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6131,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Left Foot NEC,Unspec Severity
+ ;;^UTILITY(U,$J,358.3,6131,1,4,0)
+ ;;=4^L97.529
+ ;;^UTILITY(U,$J,358.3,6131,2)
+ ;;=^5009554
+ ;;^UTILITY(U,$J,358.3,6132,0)
+ ;;=L97.821^^40^383^107
+ ;;^UTILITY(U,$J,358.3,6132,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6132,1,3,0)
+ ;;=3^Nonpressure Chr Ulcer of Left Lower Leg,Breakdown of Skin
+ ;;^UTILITY(U,$J,358.3,6132,1,4,0)
+ ;;=4^L97.821
+ ;;^UTILITY(U,$J,358.3,6132,2)
+ ;;=^5009565
+ ;;^UTILITY(U,$J,358.3,6133,0)
+ ;;=L97.822^^40^383^108

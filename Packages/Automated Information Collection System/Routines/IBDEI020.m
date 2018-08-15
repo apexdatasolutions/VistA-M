@@ -1,150 +1,132 @@
-IBDEI020 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI020 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,490,0)
- ;;=780.65^^5^45^63
- ;;^UTILITY(U,$J,358.3,490,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,490,1,4,0)
- ;;=4^780.65
- ;;^UTILITY(U,$J,358.3,490,1,5,0)
- ;;=5^Hypothrm w/o Low Env Temp
- ;;^UTILITY(U,$J,358.3,490,2)
- ;;=^336671
- ;;^UTILITY(U,$J,358.3,491,0)
- ;;=789.00^^5^45^1
- ;;^UTILITY(U,$J,358.3,491,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,491,1,4,0)
- ;;=4^789.00
- ;;^UTILITY(U,$J,358.3,491,1,5,0)
- ;;=5^Abdominal Pain
- ;;^UTILITY(U,$J,358.3,491,2)
- ;;=^303317
- ;;^UTILITY(U,$J,358.3,492,0)
- ;;=995.0^^5^45^4
- ;;^UTILITY(U,$J,358.3,492,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,492,1,4,0)
- ;;=4^995.0
- ;;^UTILITY(U,$J,358.3,492,1,5,0)
- ;;=5^Anaphylactic Reaction
- ;;^UTILITY(U,$J,358.3,492,2)
- ;;=^340653
- ;;^UTILITY(U,$J,358.3,493,0)
- ;;=995.1^^5^45^7
- ;;^UTILITY(U,$J,358.3,493,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,493,1,4,0)
- ;;=4^995.1
- ;;^UTILITY(U,$J,358.3,493,1,5,0)
- ;;=5^Angioedema
- ;;^UTILITY(U,$J,358.3,493,2)
- ;;=^7527
- ;;^UTILITY(U,$J,358.3,494,0)
- ;;=995.1^^5^45^8
- ;;^UTILITY(U,$J,358.3,494,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,494,1,4,0)
- ;;=4^995.1
- ;;^UTILITY(U,$J,358.3,494,1,5,0)
- ;;=5^Angioneurotic Edema
- ;;^UTILITY(U,$J,358.3,494,2)
- ;;=^7527
- ;;^UTILITY(U,$J,358.3,495,0)
- ;;=995.20^^5^45^39
- ;;^UTILITY(U,$J,358.3,495,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,495,1,4,0)
- ;;=4^995.20
- ;;^UTILITY(U,$J,358.3,495,1,5,0)
- ;;=5^Drug Reaction
- ;;^UTILITY(U,$J,358.3,495,2)
- ;;=^334208
- ;;^UTILITY(U,$J,358.3,496,0)
- ;;=995.27^^5^45^38
- ;;^UTILITY(U,$J,358.3,496,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,496,1,4,0)
- ;;=4^995.27
- ;;^UTILITY(U,$J,358.3,496,1,5,0)
- ;;=5^Drug Allergy NEC
- ;;^UTILITY(U,$J,358.3,496,2)
- ;;=^334180
- ;;^UTILITY(U,$J,358.3,497,0)
- ;;=995.60^^5^45^51
- ;;^UTILITY(U,$J,358.3,497,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,497,1,4,0)
- ;;=4^995.60
- ;;^UTILITY(U,$J,358.3,497,1,5,0)
- ;;=5^Food Reaction
- ;;^UTILITY(U,$J,358.3,497,2)
- ;;=^340654
- ;;^UTILITY(U,$J,358.3,498,0)
- ;;=V04.81^^5^45^78
- ;;^UTILITY(U,$J,358.3,498,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,498,1,4,0)
- ;;=4^V04.81
- ;;^UTILITY(U,$J,358.3,498,1,5,0)
- ;;=5^Vaccin for Influenza
- ;;^UTILITY(U,$J,358.3,498,2)
- ;;=^329964
- ;;^UTILITY(U,$J,358.3,499,0)
- ;;=V70.9^^5^45^54
- ;;^UTILITY(U,$J,358.3,499,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,499,1,4,0)
- ;;=4^V70.9
- ;;^UTILITY(U,$J,358.3,499,1,5,0)
- ;;=5^General Medical Exam NOS
- ;;^UTILITY(U,$J,358.3,499,2)
- ;;=^295602
- ;;^UTILITY(U,$J,358.3,500,0)
- ;;=339.00^^5^45^57
- ;;^UTILITY(U,$J,358.3,500,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,500,1,4,0)
- ;;=4^339.00
- ;;^UTILITY(U,$J,358.3,500,1,5,0)
- ;;=5^Headache,Allergic
- ;;^UTILITY(U,$J,358.3,500,2)
- ;;=^336741
- ;;^UTILITY(U,$J,358.3,501,0)
- ;;=V72.7^^5^46^4
- ;;^UTILITY(U,$J,358.3,501,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,501,1,4,0)
- ;;=4^V72.7
- ;;^UTILITY(U,$J,358.3,501,1,5,0)
- ;;=5^Skin/Sensitization Tests
- ;;^UTILITY(U,$J,358.3,501,2)
- ;;=^295616
- ;;^UTILITY(U,$J,358.3,502,0)
- ;;=V65.49^^5^46^1
- ;;^UTILITY(U,$J,358.3,502,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,502,1,4,0)
- ;;=4^V65.49
- ;;^UTILITY(U,$J,358.3,502,1,5,0)
- ;;=5^Health Counseling
- ;;^UTILITY(U,$J,358.3,502,2)
- ;;=^303471
- ;;^UTILITY(U,$J,358.3,503,0)
- ;;=V15.05^^5^46^3
- ;;^UTILITY(U,$J,358.3,503,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,503,1,4,0)
- ;;=4^V15.05
- ;;^UTILITY(U,$J,358.3,503,1,5,0)
- ;;=5^Hx of Oth Food Allergy
- ;;^UTILITY(U,$J,358.3,503,2)
- ;;=^322036
- ;;^UTILITY(U,$J,358.3,504,0)
- ;;=V15.06^^5^46^2
- ;;^UTILITY(U,$J,358.3,504,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,504,1,4,0)
- ;;=4^V15.06
+ ;;^UTILITY(U,$J,358.3,164,1,3,0)
+ ;;=3^Alcohol Withdrawal Delirium w/o Perceptual Disturbances
+ ;;^UTILITY(U,$J,358.3,164,1,4,0)
+ ;;=4^F10.231
+ ;;^UTILITY(U,$J,358.3,164,2)
+ ;;=^5003087
+ ;;^UTILITY(U,$J,358.3,165,0)
+ ;;=F10.121^^3^26^6
+ ;;^UTILITY(U,$J,358.3,165,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,165,1,3,0)
+ ;;=3^Mild Alcohol Use Disorder w/ Intoxication Delirium
+ ;;^UTILITY(U,$J,358.3,165,1,4,0)
+ ;;=4^F10.121
+ ;;^UTILITY(U,$J,358.3,165,2)
+ ;;=^5003070
+ ;;^UTILITY(U,$J,358.3,166,0)
+ ;;=F10.221^^3^26^7
+ ;;^UTILITY(U,$J,358.3,166,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,166,1,3,0)
+ ;;=3^Moderate/Severe Alcohol Use Disorder w/ Intoxication Delirium
+ ;;^UTILITY(U,$J,358.3,166,1,4,0)
+ ;;=4^F10.221
+ ;;^UTILITY(U,$J,358.3,166,2)
+ ;;=^5003084
+ ;;^UTILITY(U,$J,358.3,167,0)
+ ;;=F10.921^^3^26^1
+ ;;^UTILITY(U,$J,358.3,167,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,167,1,3,0)
+ ;;=3^Alcohol Intoxication Delirium w/o Use Disorder
+ ;;^UTILITY(U,$J,358.3,167,1,4,0)
+ ;;=4^F10.921
+ ;;^UTILITY(U,$J,358.3,167,2)
+ ;;=^5003102
+ ;;^UTILITY(U,$J,358.3,168,0)
+ ;;=F05.^^3^26^4
+ ;;^UTILITY(U,$J,358.3,168,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,168,1,3,0)
+ ;;=3^Delirium d/t Another Medical Condition
+ ;;^UTILITY(U,$J,358.3,168,1,4,0)
+ ;;=4^F05.
+ ;;^UTILITY(U,$J,358.3,168,2)
+ ;;=^5003052
+ ;;^UTILITY(U,$J,358.3,169,0)
+ ;;=F05.^^3^26^5
+ ;;^UTILITY(U,$J,358.3,169,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,169,1,3,0)
+ ;;=3^Delirium d/t Multiple Etiologies
+ ;;^UTILITY(U,$J,358.3,169,1,4,0)
+ ;;=4^F05.
+ ;;^UTILITY(U,$J,358.3,169,2)
+ ;;=^5003052
+ ;;^UTILITY(U,$J,358.3,170,0)
+ ;;=A81.00^^3^27^9
+ ;;^UTILITY(U,$J,358.3,170,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,170,1,3,0)
+ ;;=3^Creutzfeldt-Jakob Disease,Unspec
+ ;;^UTILITY(U,$J,358.3,170,1,4,0)
+ ;;=4^A81.00
+ ;;^UTILITY(U,$J,358.3,170,2)
+ ;;=^5000409
+ ;;^UTILITY(U,$J,358.3,171,0)
+ ;;=A81.01^^3^27^38
+ ;;^UTILITY(U,$J,358.3,171,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,171,1,3,0)
+ ;;=3^Variant Creutzfeldt-Jakob Disease
+ ;;^UTILITY(U,$J,358.3,171,1,4,0)
+ ;;=4^A81.01
+ ;;^UTILITY(U,$J,358.3,171,2)
+ ;;=^336701
+ ;;^UTILITY(U,$J,358.3,172,0)
+ ;;=A81.09^^3^27^8
+ ;;^UTILITY(U,$J,358.3,172,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,172,1,3,0)
+ ;;=3^Creutzfeldt-Jakob Disease,Other
+ ;;^UTILITY(U,$J,358.3,172,1,4,0)
+ ;;=4^A81.09
+ ;;^UTILITY(U,$J,358.3,172,2)
+ ;;=^5000410
+ ;;^UTILITY(U,$J,358.3,173,0)
+ ;;=A81.2^^3^27^33
+ ;;^UTILITY(U,$J,358.3,173,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,173,1,3,0)
+ ;;=3^Progressive Multifocal Leukoencephalopathy
+ ;;^UTILITY(U,$J,358.3,173,1,4,0)
+ ;;=4^A81.2
+ ;;^UTILITY(U,$J,358.3,173,2)
+ ;;=^5000411
+ ;;^UTILITY(U,$J,358.3,174,0)
+ ;;=F01.50^^3^27^31
+ ;;^UTILITY(U,$J,358.3,174,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,174,1,3,0)
+ ;;=3^Probable Major Vascular Neurocognitive Disorder w/o Behavioral Disturbance
+ ;;^UTILITY(U,$J,358.3,174,1,4,0)
+ ;;=4^F01.50
+ ;;^UTILITY(U,$J,358.3,174,2)
+ ;;=^5003046
+ ;;^UTILITY(U,$J,358.3,175,0)
+ ;;=F01.51^^3^27^32
+ ;;^UTILITY(U,$J,358.3,175,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,175,1,3,0)
+ ;;=3^Probable Major Vascular Neurocognitive Disorder w/ Behavioral Disturbance
+ ;;^UTILITY(U,$J,358.3,175,1,4,0)
+ ;;=4^F01.51
+ ;;^UTILITY(U,$J,358.3,175,2)
+ ;;=^5003047
+ ;;^UTILITY(U,$J,358.3,176,0)
+ ;;=F10.27^^3^27^1
+ ;;^UTILITY(U,$J,358.3,176,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,176,1,3,0)
+ ;;=3^Alcohol-Induced Major Neurocognitive Disorder,Nonamnestic Confabulatory Type
+ ;;^UTILITY(U,$J,358.3,176,1,4,0)
+ ;;=4^F10.27
+ ;;^UTILITY(U,$J,358.3,176,2)
+ ;;=^5003095
+ ;;^UTILITY(U,$J,358.3,177,0)
+ ;;=F19.97^^3^27^37

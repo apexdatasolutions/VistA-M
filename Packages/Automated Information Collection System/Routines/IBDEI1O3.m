@@ -1,0 +1,132 @@
+IBDEI1O3 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,27895,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27895,1,3,0)
+ ;;=3^Presence of Right Artificial Hip Jt
+ ;;^UTILITY(U,$J,358.3,27895,1,4,0)
+ ;;=4^Z96.641
+ ;;^UTILITY(U,$J,358.3,27895,2)
+ ;;=^5063701
+ ;;^UTILITY(U,$J,358.3,27896,0)
+ ;;=Z96.642^^132^1321^129
+ ;;^UTILITY(U,$J,358.3,27896,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27896,1,3,0)
+ ;;=3^Presence of Left Artificial Hip Jt
+ ;;^UTILITY(U,$J,358.3,27896,1,4,0)
+ ;;=4^Z96.642
+ ;;^UTILITY(U,$J,358.3,27896,2)
+ ;;=^5063702
+ ;;^UTILITY(U,$J,358.3,27897,0)
+ ;;=Z96.643^^132^1321^121
+ ;;^UTILITY(U,$J,358.3,27897,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27897,1,3,0)
+ ;;=3^Presence of Artificial Hip Jt,Bilateral
+ ;;^UTILITY(U,$J,358.3,27897,1,4,0)
+ ;;=4^Z96.643
+ ;;^UTILITY(U,$J,358.3,27897,2)
+ ;;=^5063703
+ ;;^UTILITY(U,$J,358.3,27898,0)
+ ;;=Z96.651^^132^1321^135
+ ;;^UTILITY(U,$J,358.3,27898,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27898,1,3,0)
+ ;;=3^Presence of Right Artificial Knee Jt
+ ;;^UTILITY(U,$J,358.3,27898,1,4,0)
+ ;;=4^Z96.651
+ ;;^UTILITY(U,$J,358.3,27898,2)
+ ;;=^5063705
+ ;;^UTILITY(U,$J,358.3,27899,0)
+ ;;=Z96.652^^132^1321^130
+ ;;^UTILITY(U,$J,358.3,27899,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27899,1,3,0)
+ ;;=3^Presence of Left Artificial Knee Jt
+ ;;^UTILITY(U,$J,358.3,27899,1,4,0)
+ ;;=4^Z96.652
+ ;;^UTILITY(U,$J,358.3,27899,2)
+ ;;=^5063706
+ ;;^UTILITY(U,$J,358.3,27900,0)
+ ;;=Z96.653^^132^1321^122
+ ;;^UTILITY(U,$J,358.3,27900,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27900,1,3,0)
+ ;;=3^Presence of Artificial Knee Jt,Bilateral
+ ;;^UTILITY(U,$J,358.3,27900,1,4,0)
+ ;;=4^Z96.653
+ ;;^UTILITY(U,$J,358.3,27900,2)
+ ;;=^5063707
+ ;;^UTILITY(U,$J,358.3,27901,0)
+ ;;=Z96.7^^132^1321^125
+ ;;^UTILITY(U,$J,358.3,27901,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27901,1,3,0)
+ ;;=3^Presence of Bone/Tendon Implants NEC
+ ;;^UTILITY(U,$J,358.3,27901,1,4,0)
+ ;;=4^Z96.7
+ ;;^UTILITY(U,$J,358.3,27901,2)
+ ;;=^5063716
+ ;;^UTILITY(U,$J,358.3,27902,0)
+ ;;=Z97.11^^132^1321^133
+ ;;^UTILITY(U,$J,358.3,27902,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27902,1,3,0)
+ ;;=3^Presence of Right Artificial Arm
+ ;;^UTILITY(U,$J,358.3,27902,1,4,0)
+ ;;=4^Z97.11
+ ;;^UTILITY(U,$J,358.3,27902,2)
+ ;;=^5063722
+ ;;^UTILITY(U,$J,358.3,27903,0)
+ ;;=Z97.12^^132^1321^128
+ ;;^UTILITY(U,$J,358.3,27903,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27903,1,3,0)
+ ;;=3^Presence of Left Artificial Arm
+ ;;^UTILITY(U,$J,358.3,27903,1,4,0)
+ ;;=4^Z97.12
+ ;;^UTILITY(U,$J,358.3,27903,2)
+ ;;=^5063723
+ ;;^UTILITY(U,$J,358.3,27904,0)
+ ;;=Z97.13^^132^1321^136
+ ;;^UTILITY(U,$J,358.3,27904,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27904,1,3,0)
+ ;;=3^Presence of Right Artificial Leg
+ ;;^UTILITY(U,$J,358.3,27904,1,4,0)
+ ;;=4^Z97.13
+ ;;^UTILITY(U,$J,358.3,27904,2)
+ ;;=^5063724
+ ;;^UTILITY(U,$J,358.3,27905,0)
+ ;;=Z97.14^^132^1321^131
+ ;;^UTILITY(U,$J,358.3,27905,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27905,1,3,0)
+ ;;=3^Presence of Left Artificial Leg
+ ;;^UTILITY(U,$J,358.3,27905,1,4,0)
+ ;;=4^Z97.14
+ ;;^UTILITY(U,$J,358.3,27905,2)
+ ;;=^5063725
+ ;;^UTILITY(U,$J,358.3,27906,0)
+ ;;=Z97.15^^132^1321^123
+ ;;^UTILITY(U,$J,358.3,27906,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27906,1,3,0)
+ ;;=3^Presence of Bilateral Artificial Arms
+ ;;^UTILITY(U,$J,358.3,27906,1,4,0)
+ ;;=4^Z97.15
+ ;;^UTILITY(U,$J,358.3,27906,2)
+ ;;=^5063726
+ ;;^UTILITY(U,$J,358.3,27907,0)
+ ;;=Z97.16^^132^1321^124
+ ;;^UTILITY(U,$J,358.3,27907,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27907,1,3,0)
+ ;;=3^Presence of Bilateral Artificial Legs
+ ;;^UTILITY(U,$J,358.3,27907,1,4,0)
+ ;;=4^Z97.16
+ ;;^UTILITY(U,$J,358.3,27907,2)
+ ;;=^5063727

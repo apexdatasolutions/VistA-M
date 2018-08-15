@@ -1,146 +1,126 @@
-IBDEI0JU ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0JU ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,9716,1,5,0)
- ;;=5^Spinal Stenosis
- ;;^UTILITY(U,$J,358.3,9716,2)
- ;;=^113279
- ;;^UTILITY(U,$J,358.3,9717,0)
- ;;=848.9^^67^666^70
- ;;^UTILITY(U,$J,358.3,9717,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9717,1,4,0)
- ;;=4^848.9
- ;;^UTILITY(U,$J,358.3,9717,1,5,0)
- ;;=5^Sprain Or Strain NOS
- ;;^UTILITY(U,$J,358.3,9717,2)
- ;;=^123990
- ;;^UTILITY(U,$J,358.3,9718,0)
- ;;=845.00^^67^666^71
- ;;^UTILITY(U,$J,358.3,9718,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9718,1,4,0)
- ;;=4^845.00
- ;;^UTILITY(U,$J,358.3,9718,1,5,0)
- ;;=5^Sprain, Ankle
- ;;^UTILITY(U,$J,358.3,9718,2)
- ;;=^274507
- ;;^UTILITY(U,$J,358.3,9719,0)
- ;;=842.00^^67^666^74
- ;;^UTILITY(U,$J,358.3,9719,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9719,1,4,0)
- ;;=4^842.00
- ;;^UTILITY(U,$J,358.3,9719,1,5,0)
- ;;=5^Sprain, Wrist
- ;;^UTILITY(U,$J,358.3,9719,2)
- ;;=^274483
- ;;^UTILITY(U,$J,358.3,9720,0)
- ;;=847.0^^67^666^72
- ;;^UTILITY(U,$J,358.3,9720,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9720,1,4,0)
- ;;=4^847.0
- ;;^UTILITY(U,$J,358.3,9720,1,5,0)
- ;;=5^Sprain, Cervical
- ;;^UTILITY(U,$J,358.3,9720,2)
- ;;=^81735
- ;;^UTILITY(U,$J,358.3,9721,0)
- ;;=847.2^^67^666^69
- ;;^UTILITY(U,$J,358.3,9721,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9721,1,4,0)
- ;;=4^847.2
- ;;^UTILITY(U,$J,358.3,9721,1,5,0)
- ;;=5^Sprain Lumbar
- ;;^UTILITY(U,$J,358.3,9721,2)
- ;;=^274527
- ;;^UTILITY(U,$J,358.3,9722,0)
- ;;=847.1^^67^666^73
- ;;^UTILITY(U,$J,358.3,9722,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9722,1,4,0)
- ;;=4^847.1
- ;;^UTILITY(U,$J,358.3,9722,1,5,0)
- ;;=5^Sprain, Thoracic
- ;;^UTILITY(U,$J,358.3,9722,2)
- ;;=^274526
- ;;^UTILITY(U,$J,358.3,9723,0)
- ;;=729.81^^67^666^75
- ;;^UTILITY(U,$J,358.3,9723,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9723,1,4,0)
- ;;=4^729.81
- ;;^UTILITY(U,$J,358.3,9723,1,5,0)
- ;;=5^Swelling Of Limb
- ;;^UTILITY(U,$J,358.3,9723,2)
- ;;=^272609
- ;;^UTILITY(U,$J,358.3,9724,0)
- ;;=710.0^^67^666^76
- ;;^UTILITY(U,$J,358.3,9724,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9724,1,4,0)
- ;;=4^710.0
- ;;^UTILITY(U,$J,358.3,9724,1,5,0)
- ;;=5^Syst Lupus Erythematosis
- ;;^UTILITY(U,$J,358.3,9724,2)
- ;;=^72159
- ;;^UTILITY(U,$J,358.3,9725,0)
- ;;=524.60^^67^666^77
- ;;^UTILITY(U,$J,358.3,9725,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9725,1,4,0)
- ;;=4^524.60
- ;;^UTILITY(U,$J,358.3,9725,1,5,0)
- ;;=5^TMJ Syndrome
- ;;^UTILITY(U,$J,358.3,9725,2)
- ;;=^117722
- ;;^UTILITY(U,$J,358.3,9726,0)
- ;;=726.90^^67^666^78
- ;;^UTILITY(U,$J,358.3,9726,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9726,1,4,0)
- ;;=4^726.90
- ;;^UTILITY(U,$J,358.3,9726,1,5,0)
- ;;=5^Tendonitis
- ;;^UTILITY(U,$J,358.3,9726,2)
- ;;=^41010
- ;;^UTILITY(U,$J,358.3,9727,0)
- ;;=354.2^^67^666^80
- ;;^UTILITY(U,$J,358.3,9727,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9727,1,4,0)
- ;;=4^354.2
- ;;^UTILITY(U,$J,358.3,9727,1,5,0)
- ;;=5^Ulnar Nerve Entrapment
- ;;^UTILITY(U,$J,358.3,9727,2)
- ;;=^268506
- ;;^UTILITY(U,$J,358.3,9728,0)
- ;;=715.97^^67^666^14
- ;;^UTILITY(U,$J,358.3,9728,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9728,1,4,0)
- ;;=4^715.97
- ;;^UTILITY(U,$J,358.3,9728,1,5,0)
- ;;=5^DJD of Ankle/Foot
- ;;^UTILITY(U,$J,358.3,9728,2)
- ;;=DJD Ankle/Foot^272168
- ;;^UTILITY(U,$J,358.3,9729,0)
- ;;=731.0^^67^666^45
- ;;^UTILITY(U,$J,358.3,9729,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9729,1,4,0)
- ;;=4^731.0
- ;;^UTILITY(U,$J,358.3,9729,1,5,0)
- ;;=5^Paget's Disease
- ;;^UTILITY(U,$J,358.3,9729,2)
- ;;=Paget's Disease^86892
- ;;^UTILITY(U,$J,358.3,9730,0)
- ;;=733.01^^67^666^44
- ;;^UTILITY(U,$J,358.3,9730,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9730,1,4,0)
- ;;=4^733.01
- ;;^UTILITY(U,$J,358.3,9730,1,5,0)
- ;;=5^Osteoporosis, Senile
+ ;;^UTILITY(U,$J,358.3,8943,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8943,1,3,0)
+ ;;=3^Diabetes due to underlying condition w diabetic nephropathy
+ ;;^UTILITY(U,$J,358.3,8943,1,4,0)
+ ;;=4^E08.21
+ ;;^UTILITY(U,$J,358.3,8943,2)
+ ;;=^5002507
+ ;;^UTILITY(U,$J,358.3,8944,0)
+ ;;=E09.21^^55^555^34
+ ;;^UTILITY(U,$J,358.3,8944,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8944,1,3,0)
+ ;;=3^Drug/chem diabetes w diabetic nephropathy
+ ;;^UTILITY(U,$J,358.3,8944,1,4,0)
+ ;;=4^E09.21
+ ;;^UTILITY(U,$J,358.3,8944,2)
+ ;;=^5002549
+ ;;^UTILITY(U,$J,358.3,8945,0)
+ ;;=E08.311^^55^555^7
+ ;;^UTILITY(U,$J,358.3,8945,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8945,1,3,0)
+ ;;=3^Diabetes due to underlying condition w unsp diabetic rtnop w macular edema
+ ;;^UTILITY(U,$J,358.3,8945,1,4,0)
+ ;;=4^E08.311
+ ;;^UTILITY(U,$J,358.3,8945,2)
+ ;;=^5002510
+ ;;^UTILITY(U,$J,358.3,8946,0)
+ ;;=E08.319^^55^555^8
+ ;;^UTILITY(U,$J,358.3,8946,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8946,1,3,0)
+ ;;=3^Diabetes due to underlying condition w unsp diab rtnop w/o macular edema
+ ;;^UTILITY(U,$J,358.3,8946,1,4,0)
+ ;;=4^E08.319
+ ;;^UTILITY(U,$J,358.3,8946,2)
+ ;;=^5002511
+ ;;^UTILITY(U,$J,358.3,8947,0)
+ ;;=E08.36^^55^555^9
+ ;;^UTILITY(U,$J,358.3,8947,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8947,1,3,0)
+ ;;=3^Diabetes due to underlying condition w diabetic cataract
+ ;;^UTILITY(U,$J,358.3,8947,1,4,0)
+ ;;=4^E08.36
+ ;;^UTILITY(U,$J,358.3,8947,2)
+ ;;=^5002520
+ ;;^UTILITY(U,$J,358.3,8948,0)
+ ;;=E08.39^^55^555^10
+ ;;^UTILITY(U,$J,358.3,8948,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8948,1,3,0)
+ ;;=3^Diabetes due to underlying condition w oth diabetic opth comp
+ ;;^UTILITY(U,$J,358.3,8948,1,4,0)
+ ;;=4^E08.39
+ ;;^UTILITY(U,$J,358.3,8948,2)
+ ;;=^5002521
+ ;;^UTILITY(U,$J,358.3,8949,0)
+ ;;=E09.311^^55^555^56
+ ;;^UTILITY(U,$J,358.3,8949,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8949,1,3,0)
+ ;;=3^Drug/chem diabetes w unsp diabetic rtnop w macular edema
+ ;;^UTILITY(U,$J,358.3,8949,1,4,0)
+ ;;=4^E09.311
+ ;;^UTILITY(U,$J,358.3,8949,2)
+ ;;=^5002552
+ ;;^UTILITY(U,$J,358.3,8950,0)
+ ;;=E09.319^^55^555^57
+ ;;^UTILITY(U,$J,358.3,8950,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8950,1,3,0)
+ ;;=3^Drug/chem diabetes w unsp diabetic rtnop w/o macular edema
+ ;;^UTILITY(U,$J,358.3,8950,1,4,0)
+ ;;=4^E09.319
+ ;;^UTILITY(U,$J,358.3,8950,2)
+ ;;=^5002553
+ ;;^UTILITY(U,$J,358.3,8951,0)
+ ;;=E09.36^^55^555^32
+ ;;^UTILITY(U,$J,358.3,8951,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8951,1,3,0)
+ ;;=3^Drug/chem diabetes w diabetic cataract
+ ;;^UTILITY(U,$J,358.3,8951,1,4,0)
+ ;;=4^E09.36
+ ;;^UTILITY(U,$J,358.3,8951,2)
+ ;;=^5002562
+ ;;^UTILITY(U,$J,358.3,8952,0)
+ ;;=E09.39^^55^555^51
+ ;;^UTILITY(U,$J,358.3,8952,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8952,1,3,0)
+ ;;=3^Drug/chem diabetes w oth diabetic ophthalmic complication
+ ;;^UTILITY(U,$J,358.3,8952,1,4,0)
+ ;;=4^E09.39
+ ;;^UTILITY(U,$J,358.3,8952,2)
+ ;;=^5002563
+ ;;^UTILITY(U,$J,358.3,8953,0)
+ ;;=E08.40^^55^555^11
+ ;;^UTILITY(U,$J,358.3,8953,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8953,1,3,0)
+ ;;=3^Diabetes due to underlying condition w diabetic neurop, unsp
+ ;;^UTILITY(U,$J,358.3,8953,1,4,0)
+ ;;=4^E08.40
+ ;;^UTILITY(U,$J,358.3,8953,2)
+ ;;=^5002522
+ ;;^UTILITY(U,$J,358.3,8954,0)
+ ;;=E08.41^^55^555^12
+ ;;^UTILITY(U,$J,358.3,8954,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8954,1,3,0)
+ ;;=3^Diabetes due to underlying condition w diabetic mononeuropathy
+ ;;^UTILITY(U,$J,358.3,8954,1,4,0)
+ ;;=4^E08.41
+ ;;^UTILITY(U,$J,358.3,8954,2)
+ ;;=^5002523
+ ;;^UTILITY(U,$J,358.3,8955,0)
+ ;;=E08.42^^55^555^13
+ ;;^UTILITY(U,$J,358.3,8955,1,0)
+ ;;=^358.31IA^4^2

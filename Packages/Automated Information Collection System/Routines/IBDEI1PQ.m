@@ -1,0 +1,132 @@
+IBDEI1PQ ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,28658,1,4,0)
+ ;;=4^F12.20
+ ;;^UTILITY(U,$J,358.3,28658,2)
+ ;;=^5003166
+ ;;^UTILITY(U,$J,358.3,28659,0)
+ ;;=F12.21^^132^1334^6
+ ;;^UTILITY(U,$J,358.3,28659,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28659,1,3,0)
+ ;;=3^Cannabis Dependence,In Remission
+ ;;^UTILITY(U,$J,358.3,28659,1,4,0)
+ ;;=4^F12.21
+ ;;^UTILITY(U,$J,358.3,28659,2)
+ ;;=^5003167
+ ;;^UTILITY(U,$J,358.3,28660,0)
+ ;;=F12.90^^132^1334^8
+ ;;^UTILITY(U,$J,358.3,28660,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28660,1,3,0)
+ ;;=3^Cannabis Use,Unspec,Uncomplicated
+ ;;^UTILITY(U,$J,358.3,28660,1,4,0)
+ ;;=4^F12.90
+ ;;^UTILITY(U,$J,358.3,28660,2)
+ ;;=^5003178
+ ;;^UTILITY(U,$J,358.3,28661,0)
+ ;;=I83.019^^132^1335^3
+ ;;^UTILITY(U,$J,358.3,28661,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28661,1,3,0)
+ ;;=3^Varicose Veins Right Lower Extrem w/ Ulcer,Unspec
+ ;;^UTILITY(U,$J,358.3,28661,1,4,0)
+ ;;=4^I83.019
+ ;;^UTILITY(U,$J,358.3,28661,2)
+ ;;=^5007979
+ ;;^UTILITY(U,$J,358.3,28662,0)
+ ;;=I83.219^^132^1335^4
+ ;;^UTILITY(U,$J,358.3,28662,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28662,1,3,0)
+ ;;=3^Varicose Veins Right Lower Extrem w/ Ulcer & Inflam,Unspec
+ ;;^UTILITY(U,$J,358.3,28662,1,4,0)
+ ;;=4^I83.219
+ ;;^UTILITY(U,$J,358.3,28662,2)
+ ;;=^5008003
+ ;;^UTILITY(U,$J,358.3,28663,0)
+ ;;=I83.029^^132^1335^1
+ ;;^UTILITY(U,$J,358.3,28663,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28663,1,3,0)
+ ;;=3^Varicose Veins Left Lower Extrem w/ Ulcer,Unspec
+ ;;^UTILITY(U,$J,358.3,28663,1,4,0)
+ ;;=4^I83.029
+ ;;^UTILITY(U,$J,358.3,28663,2)
+ ;;=^5007986
+ ;;^UTILITY(U,$J,358.3,28664,0)
+ ;;=I83.229^^132^1335^2
+ ;;^UTILITY(U,$J,358.3,28664,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28664,1,3,0)
+ ;;=3^Varicose Veins Left Lower Extrem w/ Ulcer & Inflam,Unspec
+ ;;^UTILITY(U,$J,358.3,28664,1,4,0)
+ ;;=4^I83.229
+ ;;^UTILITY(U,$J,358.3,28664,2)
+ ;;=^5008010
+ ;;^UTILITY(U,$J,358.3,28665,0)
+ ;;=B00.81^^132^1336^25
+ ;;^UTILITY(U,$J,358.3,28665,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28665,1,3,0)
+ ;;=3^Herpesviral Hepatitis
+ ;;^UTILITY(U,$J,358.3,28665,1,4,0)
+ ;;=4^B00.81
+ ;;^UTILITY(U,$J,358.3,28665,2)
+ ;;=^5000478
+ ;;^UTILITY(U,$J,358.3,28666,0)
+ ;;=D25.9^^132^1336^31
+ ;;^UTILITY(U,$J,358.3,28666,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28666,1,3,0)
+ ;;=3^Leiomyoma of Uterus,Unspec
+ ;;^UTILITY(U,$J,358.3,28666,1,4,0)
+ ;;=4^D25.9
+ ;;^UTILITY(U,$J,358.3,28666,2)
+ ;;=^5002081
+ ;;^UTILITY(U,$J,358.3,28667,0)
+ ;;=F52.9^^132^1336^55
+ ;;^UTILITY(U,$J,358.3,28667,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28667,1,3,0)
+ ;;=3^Sexual Dysfnct Not d/t a Sub/Known Physiol Cond,Unspec
+ ;;^UTILITY(U,$J,358.3,28667,1,4,0)
+ ;;=4^F52.9
+ ;;^UTILITY(U,$J,358.3,28667,2)
+ ;;=^5003625
+ ;;^UTILITY(U,$J,358.3,28668,0)
+ ;;=R37.^^132^1336^56
+ ;;^UTILITY(U,$J,358.3,28668,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28668,1,3,0)
+ ;;=3^Sexual Dysfunction,Unspec
+ ;;^UTILITY(U,$J,358.3,28668,1,4,0)
+ ;;=4^R37.
+ ;;^UTILITY(U,$J,358.3,28668,2)
+ ;;=^5019339
+ ;;^UTILITY(U,$J,358.3,28669,0)
+ ;;=N60.01^^132^1336^59
+ ;;^UTILITY(U,$J,358.3,28669,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28669,1,3,0)
+ ;;=3^Solitary Cyst of Right Breast
+ ;;^UTILITY(U,$J,358.3,28669,1,4,0)
+ ;;=4^N60.01
+ ;;^UTILITY(U,$J,358.3,28669,2)
+ ;;=^5015770
+ ;;^UTILITY(U,$J,358.3,28670,0)
+ ;;=N60.02^^132^1336^58
+ ;;^UTILITY(U,$J,358.3,28670,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28670,1,3,0)
+ ;;=3^Solitary Cyst of Left Breast
+ ;;^UTILITY(U,$J,358.3,28670,1,4,0)
+ ;;=4^N60.02
+ ;;^UTILITY(U,$J,358.3,28670,2)
+ ;;=^5015771
+ ;;^UTILITY(U,$J,358.3,28671,0)
+ ;;=N60.09^^132^1336^60
+ ;;^UTILITY(U,$J,358.3,28671,1,0)
+ ;;=^358.31IA^4^2

@@ -1,6 +1,6 @@
 RMPRE29 ;PHX/JLT,RVD-EDIT 2319 ;10/2/03  13:04
- ;;3.0;PROSTHETICS;**36,41,51,57,62,74,81,61,145,150**;Feb 09, 1996;Build 10
- ;
+ ;;3.0;PROSTHETICS;**36,41,51,57,62,74,81,61,145,150,180,189,192**;Feb 09, 1996;Build 1
+ ; Per VA Directive 6402, this routine should not be modified.
  ;RVD patch #62 - call PCE API to update patient care encounter.
  ;              - add a screen display if no changes to the HCPCS.
  ;RVD patch #74 - call $$STATCHK^ICPTAPIU to check if CPT Code is 
@@ -9,6 +9,9 @@ RMPRE29 ;PHX/JLT,RVD-EDIT 2319 ;10/2/03  13:04
  ;                to the STATUS field of file #661.1.
  ;RVD patch #61 - added screen not to process stock issue entries.
  ;uses DBIA # 1995 & 1997.
+ ;
+ ;RB  patch 180 - Add model # and Contract # to editing capability
+ ;
  W ! S DIC="^RMPR(660,",DIC(0)="AEMQZ",DIC("A")="Select PATIENT: "
  S DIC("W")="D EN^RMPRD1",RMEND=0
  S DIC("S")="I ($P(^(0),U,6)!($P(^(0),U,26)'="""")),($P(^(0),U,13)'=11)" W !
@@ -69,9 +72,11 @@ HCPC ;set type and ask item and HCPCS
  ..K DIR
  ..W:RMCPT=$P(R1(1),U,6) !!,"***Based on the information given above, CPT modifier string has not changed!!!",!
  ..W:RMCPT'=$P(R1(1),U,6) !,"NEW CPT MODIFIER: ",RMCPT
- S DR="9;21;16;28" D ^DIE
+ S DR="9.2;9;21;38.7;16;28" D ^DIE       ;RMPR*3.0*180
  I RMTOTCOS'=$P(^RMPR(660,DA,0),U,16) S DR="35////^S X=DUZ;36////^S X=DT" D ^DIE
  I $D(DTOUT)!('$G(Y))!($D(DUOUT)) D CHK
+ ; update 664 for Lot Number , Model, Serial Number and Contract # Changes
+ D UPD664
 QED2 ;
  Q:$D(RMPREDT)
  L -^RMPR(660,RMPRDA,0)
@@ -154,4 +159,23 @@ ADDRP ;logic for adding 'RP' modifier with transaction change.
 ADDNU ;logic for adding 'NU' modifier.
  S RMCPT=RMCPT_",NU" S $P(^RMPR(660,RMPRDA,1),U,6)=RMCPT
  Q
+UPD664 ; update file 664 for Lot Number, Model, Serial Number, and Contract # Changes
+ ; -- get the changes from 660
+ N RMFDA,RMFDA1,RMORD,RMSSFI,RMN,RMI,RMNS,RMFERR
+ F RMI=9,9.2,21,38.7 S RMFDA(RMI)=$$GET1^DIQ(660,DA,RMI)
+ ; -- find the 664 IEN from the order number
+ S RMORD=$$GET1^DIQ(660,DA,23)
+ I RMORD="" Q
+ S RMSSFI=$O(^RMPR(664,"G",RMORD,""))
+ I RMSSFI="" Q
+ ; -- scan 664.02 for DA in piece 13 - RMNS will be the subscript of interest
+ S RMNS=0
+ F  S RMNS=$O(^RMPR(664,RMSSFI,1,RMNS)) Q:+RMNS=0  Q:$P(^RMPR(664,RMSSFI,1,RMNS,0),U,13)=DA
+ ; --save the fields into 664
+ S RMN=""
+ F RMI=15,15.4,15.6,13 S RMN=$O(RMFDA(RMN)) Q:RMN=""  D
+ .S RMFDA1(664.02,RMNS_","_RMSSFI_",",RMI)=RMFDA(RMN)
+ D UPDATE^DIE(,"RMFDA1",,"RMFERR")
+ Q
+ ; 
  ;END

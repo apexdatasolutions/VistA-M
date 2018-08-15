@@ -1,142 +1,138 @@
-IBDEI0HF ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0HF ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,8466,1,3,0)
- ;;=3^Ocular Laceration w/ Prolapse
- ;;^UTILITY(U,$J,358.3,8466,1,4,0)
- ;;=4^871.1
- ;;^UTILITY(U,$J,358.3,8466,2)
- ;;=^274887
- ;;^UTILITY(U,$J,358.3,8467,0)
- ;;=871.2^^58^609^100
- ;;^UTILITY(U,$J,358.3,8467,1,0)
+ ;;^UTILITY(U,$J,358.3,7796,2)
+ ;;=^269679
+ ;;^UTILITY(U,$J,358.3,7797,0)
+ ;;=I25.9^^55^528^13
+ ;;^UTILITY(U,$J,358.3,7797,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8467,1,3,0)
- ;;=3^Rupture Eye,Trauma Enuc
- ;;^UTILITY(U,$J,358.3,8467,1,4,0)
- ;;=4^871.2
- ;;^UTILITY(U,$J,358.3,8467,2)
- ;;=^274888
- ;;^UTILITY(U,$J,358.3,8468,0)
- ;;=871.6^^58^609^59
- ;;^UTILITY(U,$J,358.3,8468,1,0)
+ ;;^UTILITY(U,$J,358.3,7797,1,3,0)
+ ;;=3^Chronic ischemic heart disease, unspecified
+ ;;^UTILITY(U,$J,358.3,7797,1,4,0)
+ ;;=4^I25.9
+ ;;^UTILITY(U,$J,358.3,7797,2)
+ ;;=^5007144
+ ;;^UTILITY(U,$J,358.3,7798,0)
+ ;;=I34.0^^55^528^19
+ ;;^UTILITY(U,$J,358.3,7798,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8468,1,3,0)
- ;;=3^Lens,Penetration w/ FB
- ;;^UTILITY(U,$J,358.3,8468,1,4,0)
- ;;=4^871.6
- ;;^UTILITY(U,$J,358.3,8468,2)
- ;;=^274891
- ;;^UTILITY(U,$J,358.3,8469,0)
- ;;=871.7^^58^609^72
- ;;^UTILITY(U,$J,358.3,8469,1,0)
+ ;;^UTILITY(U,$J,358.3,7798,1,3,0)
+ ;;=3^Nonrheumatic mitral (valve) insufficiency
+ ;;^UTILITY(U,$J,358.3,7798,1,4,0)
+ ;;=4^I34.0
+ ;;^UTILITY(U,$J,358.3,7798,2)
+ ;;=^5007169
+ ;;^UTILITY(U,$J,358.3,7799,0)
+ ;;=I35.0^^55^528^18
+ ;;^UTILITY(U,$J,358.3,7799,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8469,1,3,0)
- ;;=3^Ocular Penetration,Unspec
- ;;^UTILITY(U,$J,358.3,8469,1,4,0)
- ;;=4^871.7
- ;;^UTILITY(U,$J,358.3,8469,2)
- ;;=^274892
- ;;^UTILITY(U,$J,358.3,8470,0)
- ;;=871.9^^58^609^9
- ;;^UTILITY(U,$J,358.3,8470,1,0)
+ ;;^UTILITY(U,$J,358.3,7799,1,3,0)
+ ;;=3^Nonrheumatic aortic (valve) stenosis
+ ;;^UTILITY(U,$J,358.3,7799,1,4,0)
+ ;;=4^I35.0
+ ;;^UTILITY(U,$J,358.3,7799,2)
+ ;;=^5007174
+ ;;^UTILITY(U,$J,358.3,7800,0)
+ ;;=I38.^^55^528^14
+ ;;^UTILITY(U,$J,358.3,7800,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8470,1,3,0)
- ;;=3^Ciliary Body,Open Wound
- ;;^UTILITY(U,$J,358.3,8470,1,4,0)
- ;;=4^871.9
- ;;^UTILITY(U,$J,358.3,8470,2)
- ;;=^274893
- ;;^UTILITY(U,$J,358.3,8471,0)
- ;;=907.2^^58^609^56
- ;;^UTILITY(U,$J,358.3,8471,1,0)
+ ;;^UTILITY(U,$J,358.3,7800,1,3,0)
+ ;;=3^Endocarditis, valve unspecified
+ ;;^UTILITY(U,$J,358.3,7800,1,4,0)
+ ;;=4^I38.
+ ;;^UTILITY(U,$J,358.3,7800,2)
+ ;;=^40327
+ ;;^UTILITY(U,$J,358.3,7801,0)
+ ;;=I42.9^^55^528^10
+ ;;^UTILITY(U,$J,358.3,7801,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8471,1,3,0)
- ;;=3^Late Eff Spinal Cord Injury
- ;;^UTILITY(U,$J,358.3,8471,1,4,0)
- ;;=4^907.2
- ;;^UTILITY(U,$J,358.3,8471,2)
- ;;=^275240
- ;;^UTILITY(U,$J,358.3,8472,0)
- ;;=909.5^^58^609^57
- ;;^UTILITY(U,$J,358.3,8472,1,0)
+ ;;^UTILITY(U,$J,358.3,7801,1,3,0)
+ ;;=3^Cardiomyopathy, unspecified
+ ;;^UTILITY(U,$J,358.3,7801,1,4,0)
+ ;;=4^I42.9
+ ;;^UTILITY(U,$J,358.3,7801,2)
+ ;;=^5007200
+ ;;^UTILITY(U,$J,358.3,7802,0)
+ ;;=I45.10^^55^528^24
+ ;;^UTILITY(U,$J,358.3,7802,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8472,1,3,0)
- ;;=3^Late or Adverse Effect of Drug
- ;;^UTILITY(U,$J,358.3,8472,1,4,0)
- ;;=4^909.5
- ;;^UTILITY(U,$J,358.3,8472,2)
- ;;=^303353
- ;;^UTILITY(U,$J,358.3,8473,0)
- ;;=918.0^^58^609^105
- ;;^UTILITY(U,$J,358.3,8473,1,0)
+ ;;^UTILITY(U,$J,358.3,7802,1,3,0)
+ ;;=3^Right Bundle-Branch Block,Unspec
+ ;;^UTILITY(U,$J,358.3,7802,1,4,0)
+ ;;=4^I45.10
+ ;;^UTILITY(U,$J,358.3,7802,2)
+ ;;=^5007212
+ ;;^UTILITY(U,$J,358.3,7803,0)
+ ;;=I47.1^^55^528^26
+ ;;^UTILITY(U,$J,358.3,7803,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8473,1,3,0)
- ;;=3^Superfic Inj,Eyelids/Periocular
- ;;^UTILITY(U,$J,358.3,8473,1,4,0)
- ;;=4^918.0
- ;;^UTILITY(U,$J,358.3,8473,2)
- ;;=^275352
- ;;^UTILITY(U,$J,358.3,8474,0)
- ;;=918.2^^58^609^104
- ;;^UTILITY(U,$J,358.3,8474,1,0)
+ ;;^UTILITY(U,$J,358.3,7803,1,3,0)
+ ;;=3^Supraventricular tachycardia
+ ;;^UTILITY(U,$J,358.3,7803,1,4,0)
+ ;;=4^I47.1
+ ;;^UTILITY(U,$J,358.3,7803,2)
+ ;;=^5007223
+ ;;^UTILITY(U,$J,358.3,7804,0)
+ ;;=I47.2^^55^528^29
+ ;;^UTILITY(U,$J,358.3,7804,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8474,1,3,0)
- ;;=3^Superfic Inj,Conjunctiva
- ;;^UTILITY(U,$J,358.3,8474,1,4,0)
- ;;=4^918.2
- ;;^UTILITY(U,$J,358.3,8474,2)
- ;;=^275353
- ;;^UTILITY(U,$J,358.3,8475,0)
- ;;=921.3^^58^609^112
- ;;^UTILITY(U,$J,358.3,8475,1,0)
+ ;;^UTILITY(U,$J,358.3,7804,1,3,0)
+ ;;=3^Ventricular tachycardia
+ ;;^UTILITY(U,$J,358.3,7804,1,4,0)
+ ;;=4^I47.2
+ ;;^UTILITY(U,$J,358.3,7804,2)
+ ;;=^125976
+ ;;^UTILITY(U,$J,358.3,7805,0)
+ ;;=I48.91^^55^528^7
+ ;;^UTILITY(U,$J,358.3,7805,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8475,1,3,0)
- ;;=3^Traumatic Hyphemia
- ;;^UTILITY(U,$J,358.3,8475,1,4,0)
- ;;=4^921.3
- ;;^UTILITY(U,$J,358.3,8475,2)
- ;;=^275369
- ;;^UTILITY(U,$J,358.3,8476,0)
- ;;=930.1^^58^609^14
- ;;^UTILITY(U,$J,358.3,8476,1,0)
+ ;;^UTILITY(U,$J,358.3,7805,1,3,0)
+ ;;=3^Atrial Fibrillation,Unspec
+ ;;^UTILITY(U,$J,358.3,7805,1,4,0)
+ ;;=4^I48.91
+ ;;^UTILITY(U,$J,358.3,7805,2)
+ ;;=^5007229
+ ;;^UTILITY(U,$J,358.3,7806,0)
+ ;;=I49.3^^55^528^28
+ ;;^UTILITY(U,$J,358.3,7806,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8476,1,3,0)
- ;;=3^Conjunctival Sac,Foreign Body
- ;;^UTILITY(U,$J,358.3,8476,1,4,0)
- ;;=4^930.1
- ;;^UTILITY(U,$J,358.3,8476,2)
- ;;=^275486
- ;;^UTILITY(U,$J,358.3,8477,0)
- ;;=930.8^^58^609^33
- ;;^UTILITY(U,$J,358.3,8477,1,0)
+ ;;^UTILITY(U,$J,358.3,7806,1,3,0)
+ ;;=3^Ventricular premature depolarization
+ ;;^UTILITY(U,$J,358.3,7806,1,4,0)
+ ;;=4^I49.3
+ ;;^UTILITY(U,$J,358.3,7806,2)
+ ;;=^5007233
+ ;;^UTILITY(U,$J,358.3,7807,0)
+ ;;=I49.9^^55^528^8
+ ;;^UTILITY(U,$J,358.3,7807,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8477,1,3,0)
- ;;=3^Eye,Oth/Combined Sites,Foreign Body
- ;;^UTILITY(U,$J,358.3,8477,1,4,0)
- ;;=4^930.8
- ;;^UTILITY(U,$J,358.3,8477,2)
- ;;=^275488
- ;;^UTILITY(U,$J,358.3,8478,0)
- ;;=940.0^^58^609^8
- ;;^UTILITY(U,$J,358.3,8478,1,0)
+ ;;^UTILITY(U,$J,358.3,7807,1,3,0)
+ ;;=3^Cardiac arrhythmia, unspecified
+ ;;^UTILITY(U,$J,358.3,7807,1,4,0)
+ ;;=4^I49.9
+ ;;^UTILITY(U,$J,358.3,7807,2)
+ ;;=^5007237
+ ;;^UTILITY(U,$J,358.3,7808,0)
+ ;;=I50.9^^55^528^16
+ ;;^UTILITY(U,$J,358.3,7808,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8478,1,3,0)
- ;;=3^Chemical Burn,Periocular
- ;;^UTILITY(U,$J,358.3,8478,1,4,0)
- ;;=4^940.0
- ;;^UTILITY(U,$J,358.3,8478,2)
- ;;=^275512
- ;;^UTILITY(U,$J,358.3,8479,0)
- ;;=940.1^^58^609^35
- ;;^UTILITY(U,$J,358.3,8479,1,0)
+ ;;^UTILITY(U,$J,358.3,7808,1,3,0)
+ ;;=3^Heart failure, unspecified
+ ;;^UTILITY(U,$J,358.3,7808,1,4,0)
+ ;;=4^I50.9
+ ;;^UTILITY(U,$J,358.3,7808,2)
+ ;;=^5007251
+ ;;^UTILITY(U,$J,358.3,7809,0)
+ ;;=G45.9^^55^528^27
+ ;;^UTILITY(U,$J,358.3,7809,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8479,1,3,0)
- ;;=3^Eyelid,Burns
- ;;^UTILITY(U,$J,358.3,8479,1,4,0)
- ;;=4^940.1
- ;;^UTILITY(U,$J,358.3,8479,2)
- ;;=^275513
- ;;^UTILITY(U,$J,358.3,8480,0)
- ;;=940.2^^58^609^18
+ ;;^UTILITY(U,$J,358.3,7809,1,3,0)
+ ;;=3^Transient cerebral ischemic attack, unspecified
+ ;;^UTILITY(U,$J,358.3,7809,1,4,0)
+ ;;=4^G45.9
+ ;;^UTILITY(U,$J,358.3,7809,2)
+ ;;=^5003959
+ ;;^UTILITY(U,$J,358.3,7810,0)
+ ;;=I70.90^^55^528^5

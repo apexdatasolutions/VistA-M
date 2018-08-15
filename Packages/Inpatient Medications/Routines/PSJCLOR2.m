@@ -1,9 +1,12 @@
 PSJCLOR2 ;BIR/JCH - BUILD CLINIC ORDER LM HEADERS ; 2/28/12 9:11am
- ;;5.0;INPATIENT MEDICATIONS;**275,279**;16 DEC 97;Build 150
- ;
- ; Reference to ^PS(55 is supported by DBIA 2191.
- ; Reference to CWAD^ORQPT2 is supported by DBIA 2831.
- ; Reference to ^SC is supported by DBIA 10040.
+ ;;5.0;INPATIENT MEDICATIONS;**275,279,315,256**;16 DEC 97;Build 34
+ ;;Per VHA Directive 2004-038, this routine should not be modified.
+ ; Reference to ^PS(55 is supported by DBIA 2191
+ ; Reference to CWAD^ORQPT2 is supported by DBIA 2831
+ ; Reference to ^SC( is supported by DBIA 10040
+ ; Reference to BSA^PSSDSAPI supported by DBIA #5425
+ ; Reference to LS^PSSLOCK supported by DBIA #2789
+ ; Reference to UNL^PSSLOCK supported by DBIA #2789
  ;
 HDR(DFN) ; -- list screen header
  ;   input:       DFN := ifn of pat
@@ -16,6 +19,15 @@ HDR(DFN) ; -- list screen header
  S PSJ="    Dx: "_$G(PSJPDX)
  S:PSJPDD VALMHDR(5)=$$SETSTR^VALM1("Discharged: "_$E($P(PSJPDD,U,2),1,8),PSJ,48,26)
  S:'PSJPDD VALMHDR(5)=$$SETSTR^VALM1("Last transferred: "_$$ENDTC^PSGMI(PSJPTD),PSJ,42,26)
+ ;
+ ;  Display CrCl/BSA - show serum creatinine if CrCl can't be calculated
+ S PSJBSA=$$BSA^PSSDSAPI(DFN),PSJBSA=$P(PSJBSA,"^",3),PSJBSA=$S(PSJBSA'>0:"__________",1:$J(PSJBSA,4,2))
+ ; RSLT -- DATE^CRCL^Serum Creatinine -- Ex.  11/25/11^68.7^1.1
+ S RSLT=$$CRCL^PSJLMHED(DFN)
+ I ($P($G(RSLT),"^",2)["Not Found")&($P($G(RSLT),"^",3)<.01) S ZDSPL="  CrCL: "_$P(RSLT,"^",2)_" (CREAT: Not Found)"
+ I ($P($G(RSLT),"^",2)["Not Found")&($P($G(RSLT),"^",3)>.01) S ZDSPL="  CrCL: "_$P(RSLT,"^",2)_"  (CREAT: "_$P($G(RSLT),"^",3)_"mg/dL "_$P($G(RSLT),"^")_")"
+ I ($P($G(RSLT),"^",2)>0)&($P($G(RSLT),"^",3)>.01) S ZDSPL="  CrCL: "_$P(RSLT,"^",2)_"(est.)"_" (CREAT: "_$P($G(RSLT),"^",3)_"mg/dL "_$P($G(RSLT),"^")_")"
+ S PSJDB=$G(ZDSPL),VALMHDR(6)=$$SETSTR^VALM1("BSA (m2): "_$G(PSJBSA),PSJDB,50,23) K PSJBSA,ZDSPL,RSLT
  Q
  ;
 HDRO(DFN) ; Standardized part of profile header.
@@ -122,7 +134,7 @@ NEWORDER(PSGP,PSGORD,PSGNWSD,PSGOEAV) ;
  I PSGORD["P" S PSJCOM=+$P($G(^PS(53.1,+PSGORD,.2)),"^",8) I PSJCOM D NEW^PSJCOM1 Q
  ;
  I PSGORD["P"!(PSGORD["U") D
- .N PSGST,PSGSCH,PSGNESD,ND,ND2,PSJEDFLD,I
+ .N PSGST,PSGSCH,PSGNESD,ND,ND2,ND2P1,PSJEDFLD,I ;*315
  .F I=0,2 S ND(I)=$S($G(PSGORD)["P":$G(^PS(53.1,+PSGORD,I)),$G(PSGORD)["U":$G(^PS(55,+$G(PSGP),5,+PSGORD,I)),$G(PSJTMPON)["V":$G(^PS(55,+$G(PSGP),"IV",+PSGORD,I)),1:"")
  .S PSGNESD=PSGNWSD,PSGSCH=$S(PSGORD["P"!(PSGORD["U"):$P(ND(2),"^"),PSGORD["V":$P(ND(0),"^",9),1:"")
  .S PSGST=$S(PSGORD["P"!(PSGORD["U"):$P(ND(0),"^",7),1:""),(PSGFD,PSGOFD)=$S(PSGORD["V":$P(ND(0),"^",3),1:$P(ND(2),"^",4)),(PSGSD,PSGOSD)=$S(PSGORD["V":$P(ND(0),"^",2),1:$P(ND(2),"^",2))
@@ -131,7 +143,7 @@ NEWORDER(PSGP,PSGORD,PSGNWSD,PSGOEAV) ;
  .S PSJEDFLD=$S(PSGORD["P":25,1:34) S PSGOEEF(PSJEDFLD)=1
  ;
  I PSGORD["U" D  Q
- .N TMPNEFD S TMPNEFD=$G(PSGNEFD) S PSGOEEWF="^PS(55,"_PSGP_",5,"_+PSGORD_"," S (ND,ND0)=$G(@(PSGOEEWF_"0)")),ND2=$G(^(2))
+ .N TMPNEFD S TMPNEFD=$G(PSGNEFD) S PSGOEEWF="^PS(55,"_PSGP_",5,"_+PSGORD_"," S (ND,ND0)=$G(@(PSGOEEWF_"0)")),ND2=$G(^(2)),ND2P1=$G(^(2.1)) ;*315
  .D EN2^PSGOEEW
  .S PSGOORD=PSGORD S (PSGNESD,SD,PSGSD)=PSGNWSD I ($G(TMPNEFD)'="") S (PSGNEFD,PSGFD)=TMPNEFD,PSGFDN=$$ENDD^PSGMI(PSGNEFD)_U_$$ENDTC^PSGMI(PSGNEFD)
  .S PSGOFD=$P(^PS(55,PSGP,5,+PSGORD,2),"^",4),PSGOEENO=1,PSJOCL=+$G(^PS(55,PSGP,5,+PSGORD,8))

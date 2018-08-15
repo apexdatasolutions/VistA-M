@@ -1,126 +1,130 @@
-IBDEI122 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI122 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,18907,1,2,0)
- ;;=2^Adding Walker to Previous Cast
- ;;^UTILITY(U,$J,358.3,18907,1,3,0)
- ;;=3^29440
- ;;^UTILITY(U,$J,358.3,18908,0)
- ;;=29445^^122^1207^3^^^^1
- ;;^UTILITY(U,$J,358.3,18908,1,0)
+ ;;^UTILITY(U,$J,358.3,17576,1,3,0)
+ ;;=3^Esophagoscopy w/ Dilation over wire
+ ;;^UTILITY(U,$J,358.3,17577,0)
+ ;;=43220^^90^869^25^^^^1
+ ;;^UTILITY(U,$J,358.3,17577,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18908,1,2,0)
- ;;=2^Application Of Rigid Total Contact Leg Cast
- ;;^UTILITY(U,$J,358.3,18908,1,3,0)
- ;;=3^29445
- ;;^UTILITY(U,$J,358.3,18909,0)
- ;;=29515^^122^1207^6^^^^1
- ;;^UTILITY(U,$J,358.3,18909,1,0)
+ ;;^UTILITY(U,$J,358.3,17577,1,2,0)
+ ;;=2^43220
+ ;;^UTILITY(U,$J,358.3,17577,1,3,0)
+ ;;=3^Esophagoscopy w/ Ballon Dilation <30mm
+ ;;^UTILITY(U,$J,358.3,17578,0)
+ ;;=43235^^90^869^19^^^^1
+ ;;^UTILITY(U,$J,358.3,17578,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18909,1,2,0)
- ;;=2^Application Of Short Leg Splint (Calf To Foot)
- ;;^UTILITY(U,$J,358.3,18909,1,3,0)
- ;;=3^29515
- ;;^UTILITY(U,$J,358.3,18910,0)
- ;;=29540^^122^1207^10^^^^1
- ;;^UTILITY(U,$J,358.3,18910,1,0)
+ ;;^UTILITY(U,$J,358.3,17578,1,2,0)
+ ;;=2^43235
+ ;;^UTILITY(U,$J,358.3,17578,1,3,0)
+ ;;=3^EGD, Diagnostic
+ ;;^UTILITY(U,$J,358.3,17579,0)
+ ;;=43239^^90^869^3^^^^1
+ ;;^UTILITY(U,$J,358.3,17579,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18910,1,2,0)
- ;;=2^Strapping ; Ankle
- ;;^UTILITY(U,$J,358.3,18910,1,3,0)
- ;;=3^29540
- ;;^UTILITY(U,$J,358.3,18911,0)
- ;;=29530^^122^1207^11^^^^1
- ;;^UTILITY(U,$J,358.3,18911,1,0)
+ ;;^UTILITY(U,$J,358.3,17579,1,2,0)
+ ;;=2^43239
+ ;;^UTILITY(U,$J,358.3,17579,1,3,0)
+ ;;=3^EGD w/Biopsy
+ ;;^UTILITY(U,$J,358.3,17580,0)
+ ;;=43250^^90^869^18^^^^1
+ ;;^UTILITY(U,$J,358.3,17580,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18911,1,2,0)
- ;;=2^Strapping; Knee
- ;;^UTILITY(U,$J,358.3,18911,1,3,0)
- ;;=3^29530
- ;;^UTILITY(U,$J,358.3,18912,0)
- ;;=29550^^122^1207^12^^^^1
- ;;^UTILITY(U,$J,358.3,18912,1,0)
+ ;;^UTILITY(U,$J,358.3,17580,1,2,0)
+ ;;=2^43250
+ ;;^UTILITY(U,$J,358.3,17580,1,3,0)
+ ;;=3^EGD w/Tumor Removal by Hot Forceps
+ ;;^UTILITY(U,$J,358.3,17581,0)
+ ;;=43251^^90^869^17^^^^1
+ ;;^UTILITY(U,$J,358.3,17581,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18912,1,2,0)
- ;;=2^Strapping; Toes
- ;;^UTILITY(U,$J,358.3,18912,1,3,0)
- ;;=3^29550
- ;;^UTILITY(U,$J,358.3,18913,0)
- ;;=29580^^122^1207^13^^^^1
- ;;^UTILITY(U,$J,358.3,18913,1,0)
+ ;;^UTILITY(U,$J,358.3,17581,1,2,0)
+ ;;=2^43251
+ ;;^UTILITY(U,$J,358.3,17581,1,3,0)
+ ;;=3^EGD w/Tumor Removal By Snare
+ ;;^UTILITY(U,$J,358.3,17582,0)
+ ;;=43247^^90^869^11^^^^1
+ ;;^UTILITY(U,$J,358.3,17582,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18913,1,2,0)
- ;;=2^Strapping; Unna Boot
- ;;^UTILITY(U,$J,358.3,18913,1,3,0)
- ;;=3^29580
- ;;^UTILITY(U,$J,358.3,18914,0)
- ;;=29581^^122^1207^8^^^^1
- ;;^UTILITY(U,$J,358.3,18914,1,0)
+ ;;^UTILITY(U,$J,358.3,17582,1,2,0)
+ ;;=2^43247
+ ;;^UTILITY(U,$J,358.3,17582,1,3,0)
+ ;;=3^EGD w/FB Removal
+ ;;^UTILITY(U,$J,358.3,17583,0)
+ ;;=43255^^90^869^5^^^^1
+ ;;^UTILITY(U,$J,358.3,17583,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18914,1,2,0)
- ;;=2^Multilay Venous Wound Comp System
- ;;^UTILITY(U,$J,358.3,18914,1,3,0)
- ;;=3^29581
- ;;^UTILITY(U,$J,358.3,18915,0)
- ;;=29582^^122^1207^9^^^^1
- ;;^UTILITY(U,$J,358.3,18915,1,0)
+ ;;^UTILITY(U,$J,358.3,17583,1,2,0)
+ ;;=2^43255
+ ;;^UTILITY(U,$J,358.3,17583,1,3,0)
+ ;;=3^EGD w/Control of Hemorrhage
+ ;;^UTILITY(U,$J,358.3,17584,0)
+ ;;=43245^^90^869^6^^^^1
+ ;;^UTILITY(U,$J,358.3,17584,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18915,1,2,0)
- ;;=2^Multilay Wnd Comp Syst Thigh,Incl Ft
- ;;^UTILITY(U,$J,358.3,18915,1,3,0)
- ;;=3^29582
- ;;^UTILITY(U,$J,358.3,18916,0)
- ;;=29700^^122^1208^1^^^^1
- ;;^UTILITY(U,$J,358.3,18916,1,0)
+ ;;^UTILITY(U,$J,358.3,17584,1,2,0)
+ ;;=2^43245
+ ;;^UTILITY(U,$J,358.3,17584,1,3,0)
+ ;;=3^EGD w/Dilation of Gatric Outlet Obstr
+ ;;^UTILITY(U,$J,358.3,17585,0)
+ ;;=43248^^90^869^10^^^^1
+ ;;^UTILITY(U,$J,358.3,17585,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18916,1,2,0)
- ;;=2^Removal or bivalving; gauntlet, boot or body cast
- ;;^UTILITY(U,$J,358.3,18916,1,3,0)
- ;;=3^29700
- ;;^UTILITY(U,$J,358.3,18917,0)
- ;;=29730^^122^1208^2^^^^1
- ;;^UTILITY(U,$J,358.3,18917,1,0)
+ ;;^UTILITY(U,$J,358.3,17585,1,2,0)
+ ;;=2^43248
+ ;;^UTILITY(U,$J,358.3,17585,1,3,0)
+ ;;=3^EGD w/Esoph Dilation over wire
+ ;;^UTILITY(U,$J,358.3,17586,0)
+ ;;=43249^^90^869^8^^^^1
+ ;;^UTILITY(U,$J,358.3,17586,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18917,1,2,0)
- ;;=2^Windowing of cast
- ;;^UTILITY(U,$J,358.3,18917,1,3,0)
- ;;=3^29730
- ;;^UTILITY(U,$J,358.3,18918,0)
- ;;=L9900^^122^1209^3^^^^1
- ;;^UTILITY(U,$J,358.3,18918,1,0)
+ ;;^UTILITY(U,$J,358.3,17586,1,2,0)
+ ;;=2^43249
+ ;;^UTILITY(U,$J,358.3,17586,1,3,0)
+ ;;=3^EGD w/Esoph Dilation Balloon <30mm
+ ;;^UTILITY(U,$J,358.3,17587,0)
+ ;;=43244^^90^869^2^^^^1
+ ;;^UTILITY(U,$J,358.3,17587,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18918,1,2,0)
- ;;=2^Orthotic & prosthetic supply, accessory, &/or service component of another HCPCS L code
- ;;^UTILITY(U,$J,358.3,18918,1,3,0)
- ;;=3^L9900
- ;;^UTILITY(U,$J,358.3,18919,0)
- ;;=A9150^^122^1210^10^^^^1
- ;;^UTILITY(U,$J,358.3,18919,1,0)
+ ;;^UTILITY(U,$J,358.3,17587,1,2,0)
+ ;;=2^43244
+ ;;^UTILITY(U,$J,358.3,17587,1,3,0)
+ ;;=3^EGD w/Band Ligation
+ ;;^UTILITY(U,$J,358.3,17588,0)
+ ;;=43243^^90^869^13^^^^1
+ ;;^UTILITY(U,$J,358.3,17588,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18919,1,2,0)
- ;;=2^Nonprescription drug
- ;;^UTILITY(U,$J,358.3,18919,1,3,0)
- ;;=3^A9150
- ;;^UTILITY(U,$J,358.3,18920,0)
- ;;=L3332^^122^1210^9^^^^1
- ;;^UTILITY(U,$J,358.3,18920,1,0)
+ ;;^UTILITY(U,$J,358.3,17588,1,2,0)
+ ;;=2^43243
+ ;;^UTILITY(U,$J,358.3,17588,1,3,0)
+ ;;=3^EGD w/Sclerosis Injection
+ ;;^UTILITY(U,$J,358.3,17589,0)
+ ;;=43205^^90^869^33^^^^1
+ ;;^UTILITY(U,$J,358.3,17589,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18920,1,2,0)
- ;;=2^Lift,Elevation,Inside Shoe,Tapered up to 1/2 Inch
- ;;^UTILITY(U,$J,358.3,18920,1,3,0)
- ;;=3^L3332
- ;;^UTILITY(U,$J,358.3,18921,0)
- ;;=L3170^^122^1210^6^^^^1
- ;;^UTILITY(U,$J,358.3,18921,1,0)
+ ;;^UTILITY(U,$J,358.3,17589,1,2,0)
+ ;;=2^43205
+ ;;^UTILITY(U,$J,358.3,17589,1,3,0)
+ ;;=3^Esophagoscopy w/ Ligation of Varices
+ ;;^UTILITY(U,$J,358.3,17590,0)
+ ;;=43201^^90^869^39^^^^1
+ ;;^UTILITY(U,$J,358.3,17590,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18921,1,2,0)
- ;;=2^Foot Plastic Silicone Heel Stabilizer,Each
- ;;^UTILITY(U,$J,358.3,18921,1,3,0)
- ;;=3^L3170
- ;;^UTILITY(U,$J,358.3,18922,0)
- ;;=A4570^^122^1210^15^^^^1
- ;;^UTILITY(U,$J,358.3,18922,1,0)
+ ;;^UTILITY(U,$J,358.3,17590,1,2,0)
+ ;;=2^43201
+ ;;^UTILITY(U,$J,358.3,17590,1,3,0)
+ ;;=3^Esophagoscopy w/ Submucosal Inj
+ ;;^UTILITY(U,$J,358.3,17591,0)
+ ;;=43204^^90^869^38^^^^1
+ ;;^UTILITY(U,$J,358.3,17591,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18922,1,2,0)
- ;;=2^Splint                      
+ ;;^UTILITY(U,$J,358.3,17591,1,2,0)
+ ;;=2^43204
+ ;;^UTILITY(U,$J,358.3,17591,1,3,0)
+ ;;=3^Esophagoscopy w/ Sclerosis Inj
+ ;;^UTILITY(U,$J,358.3,17592,0)
+ ;;=43216^^90^869^36^^^^1
+ ;;^UTILITY(U,$J,358.3,17592,1,0)
+ ;;=^358.31IA^3^2

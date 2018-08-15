@@ -1,28 +1,13 @@
-PSOSIGTX ;BIR/RTR-Utility to calculate quantity ;6/04/00
- ;;7.0;OUTPATIENT PHARMACY;**46**;DEC 1997
+PSOSIGTX ;BIR/RTR-Utility to calculate quantity ;3/23/11 8:25am
+ ;;7.0;OUTPATIENT PHARMACY;**46,282,446**;DEC 1997;Build 20
  ;External reference to PS(51 supported by DBIA 2224
  ;External reference to PS(51.1 supported by DBIA 2225
  ;
 EN(PSOSIGX) ;
  N VARIABLE
  Q
-SCH ;SCH = schedule entered     SCHEX = expanded schedule
- N SQFLAG,SCLOOP,SCLP,SCLPS,SCLHOLD,SCIN,SODL,SST
- K SCHEX S SQFLAG=0
- I $G(SCH)="" S SCHEX="" Q
- I SCH[""""!($A(SCH)=45)!(SCH?.E1C.E)!($L(SCH," ")>3)!($L(SCH)>20)!($L(SCH)<1) K SCH Q
- F SCLOOP=0:0 S SCLOOP=$O(^PS(51.1,"B",SCH,SCLOOP)) Q:'SCLOOP!(SQFLAG)  I $P($G(^PS(51.1,SCLOOP,0)),"^",8)'="" S SCHEX=$P($G(^(0)),"^",8),SQFLAG=1
- Q:SQFLAG
- I $P($G(^PS(51,"A",SCH)),"^")'="" S SCHEX=$P(^(SCH),"^") Q
- S SCLOOP=0 F SCLP=1:1:$L(SCH) S SCLPS=$E(SCH,SCLP) I SCLPS=" " S SCLOOP=SCLOOP+1
- I SCLOOP=0 S SCHEX=SCH Q
- S SCLOOP=SCLOOP+1
- K SCLHOLD F SCIN=1:1:SCLOOP S (SODL,SCLHOLD(SCIN))=$P(SCH," ",SCIN) D
- .Q:$G(SODL)=""
- .S SQFLAG=0 F SST=0:0 S SST=$O(^PS(51.1,"B",SODL,SST)) Q:'SST!($G(SQFLAG))  I $P($G(^PS(51.1,SST,0)),"^",8)'="" S SCLHOLD(SCIN)=$P($G(^(0)),"^",8),SQFLAG=1
- .Q:$G(SQFLAG)
- .I $P($G(^PS(51,"A",SODL)),"^")'="" S SCLHOLD(SCIN)=$P(^(SODL),"^")
- S SCHEX="",SQFLAG=0 F SST=1:1:SCLOOP S SCHEX=SCHEX_$S($G(SQFLAG):" ",1:"")_$G(SCLHOLD(SST)),SQFLAG=1
+SCH ;*282 Centralized Call
+ D SCH^PSOSIG
  Q
 QTY(PSOQX) ;
  N QDOSE
@@ -80,6 +65,14 @@ COMP ;COMPLEX DOSE HERE - ANDS AND THENS
  .I PSQDOSE-PSOQZ=0 D TOP S PSOQZ=PSQDOSE+1 Q
  .D BOT
  .S PSOQZ=PSQDOSE+1
+ ;
+ ;If DAYS SUPPLY was edited by Pharmacy, don't re-calculate QTY automatically for Digitally Signed Pending Orders
+ I $G(PSODSEDT),$G(QTYHLD),$G(PSOFDR),$P($G(OR0),"^",24) D  Q
+ . W !!,"The Quantity (",QTYHLD,") has not been changed."
+ . W !,"Please review and update it if necessary.",!,$C(7)
+ . N DIR S DIR(0)="E",DIR("A")="Press Return to Continue" D ^DIR W !
+ . K PSOQX("QTY")
+ ;
  ;SET LAST CONJUNCTION, MAKE SURE IT'S NOT PASSED IN FROM cprs
  I $G(PSOTFLAG) K PSOQX("CONJUNCTION",PSQDOSEX)
  I PSOATQUT K PSOQX("QTY") Q
@@ -101,10 +94,6 @@ BOT ;
  I PSODUMIS,PSODSAME G QEND ; Missing Durations, other are different
  I 'PSODUMIS,PSODSAME,$G(PSODUTOT)>PSODSMIN G QEND ; Every sequence has a duration, some are different, and the total is greater than Days Supply
  I 'PSODSAME,PSODURT>PSODSMIN G QEND ; All have a duration, and it's the same, but it's greater than Days Supply, or Missing Durations with other duration the same but greater than Days Supply
- ;I $G(PSODSMIN),$G(PSODSMIN)<$G(PSODUTOT) G QEND
- ;I '$G(PSODUMIS),$G(PSODSMIN),$G(PSODUTOT)>$G(PSODSMIN) G QEND ; no missing durations, but total durations are greater than days supply
- ;I $G(PSODUMIS),$G(PSODSMIN),$G(PSODSMIN)'>$G(PSODUTOT) G QEND ; 1 missing duration, and total of other durations are not less than days supply
- ;I '$G(PSODSMIN),$G(PSODUMIS) G QEND ; no days supply, m;issing a duration
  I $G(PSODUMIS),PSODUMSS S PSODUDIF=$G(PSODSMIN)-$G(PSODUTOT)
  K PSQMINAR F PSQ=PSOQZ:1:PSQDOSE D  Q:$G(PSQQUIT)
  .I '$G(PSOQX("DOSE ORDERED",PSQ))!($G(PSOQX("SCHEDULE",PSQ))="") S PSQQUIT=1 Q
@@ -125,27 +114,8 @@ BOT ;
  I $G(PSQQUIT) G QEND
  I $G(PSOQRND) D ROUND
  G QEND
-QTS ;Find frequency
- ;QTSH = SHCEDULE
- ;either return PSOFRQ for frequency or PSSQUIT for no frequency
- N SQTFLAG,SQQT,ZZQT,ZZQ,ZZQQ,ZQHOLD,QGLFLAG,PZQT,ZDL,ZZQX
- K PSOFRQ
- S (QGLFLAG,ZZQX)=0
- I $G(QTSH)="" S PSQQUIT=1 Q
- S SQTFLAG=0 F SQQT=0:0 S SQQT=$O(^PS(51.1,"B",QTSH,SQQT)) Q:'SQQT!($G(SQTFLAG))  I $P($G(^PS(51.1,SQQT,0)),"^",3) S PSOFRQ=$P($G(^(0)),"^",3),SQTFLAG=1
- Q:SQTFLAG
- F SQQT=0:0 S SQQT=$O(^PS(51,"B",QTSH,SQQT)) Q:'SQQT!($G(SQTFLAG))  I $P($G(^PS(51,SQQT,0)),"^",8) S PSOFRQ=$P($G(^(0)),"^",8),SQTFLAG=1
- Q:SQTFLAG
- S ZZQT=0 F ZZQ=1:1:$L(QTSH) S ZZQQ=$E(QTSH,ZZQ) I ZZQQ=" " S ZZQT=ZZQT+1
- I 'ZZQT S PSQQUIT=1 Q
- S ZZQT=ZZQT+1
- K ZQHOLD S QGLFLAG=0 F PZQT=1:1:ZZQT S (ZDL,ZQHOLD)=$P(QTSH," ",PZQT) D
- .Q:$G(ZDL)=""
- .S ZZQX=0 F SQQT=0:0 S SQQT=$O(^PS(51.1,"B",ZDL,SQQT)) Q:'SQQT!($G(ZZQX))  I $P($G(^PS(51.1,SQQT,0)),"^",3) S PSOFRQ=$P($G(^(0)),"^",3),ZZQX=1,QGLFLAG=QGLFLAG+1
- .Q:ZZQX
- .S ZZQX=0 F SQQT=0:0 S SQQT=$O(^PS(51,"B",ZDL,SQQT)) Q:'SQQT!($G(ZZQX))  I $P($G(^PS(51,SQQT,0)),"^",8) S PSOFRQ=$P($G(^(0)),"^",8),ZZQX=1,QGLFLAG=QGLFLAG+1
- I $G(QGLFLAG)>1 K PSOFRQ
- I '$G(PSOFRQ) S PSQQUIT=1
+QTS ;*282 Centralized call
+ D QTS^PSOSIG
  Q
 QEND ;
  K PSOFRQ

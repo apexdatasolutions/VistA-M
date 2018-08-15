@@ -1,118 +1,132 @@
-IBDEI11W ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI11W ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,18827,1,3,0)
- ;;=3^93922
- ;;^UTILITY(U,$J,358.3,18828,0)
- ;;=29904^^122^1204^7^^^^1
- ;;^UTILITY(U,$J,358.3,18828,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18828,1,2,0)
- ;;=2^Arthroscopy,subtalar jt,w/rem of foreign body
- ;;^UTILITY(U,$J,358.3,18828,1,3,0)
- ;;=3^29904
- ;;^UTILITY(U,$J,358.3,18829,0)
- ;;=29905^^122^1204^8^^^^1
- ;;^UTILITY(U,$J,358.3,18829,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18829,1,2,0)
- ;;=2^Arthroscopy,subtalar jt,w/ Synovectomy
- ;;^UTILITY(U,$J,358.3,18829,1,3,0)
- ;;=3^29905
- ;;^UTILITY(U,$J,358.3,18830,0)
- ;;=29906^^122^1204^9^^^^1
- ;;^UTILITY(U,$J,358.3,18830,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18830,1,2,0)
- ;;=2^Arthroscopy, subtalar jt,w/ debridement
- ;;^UTILITY(U,$J,358.3,18830,1,3,0)
- ;;=3^29906
- ;;^UTILITY(U,$J,358.3,18831,0)
- ;;=29907^^122^1204^10^^^^1
- ;;^UTILITY(U,$J,358.3,18831,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18831,1,2,0)
- ;;=2^Arthroscopy,subtalar w/ fusion
- ;;^UTILITY(U,$J,358.3,18831,1,3,0)
- ;;=3^29907
- ;;^UTILITY(U,$J,358.3,18832,0)
- ;;=28400^^122^1205^1^^^^1
- ;;^UTILITY(U,$J,358.3,18832,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18832,1,2,0)
- ;;=2^Closed TX of calcaneal fracture; without manipulation
- ;;^UTILITY(U,$J,358.3,18832,1,3,0)
- ;;=3^28400
- ;;^UTILITY(U,$J,358.3,18833,0)
- ;;=28405^^122^1205^2^^^^1
- ;;^UTILITY(U,$J,358.3,18833,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18833,1,2,0)
- ;;=2^Closed TX of calcaneal fracture; with manipulation
- ;;^UTILITY(U,$J,358.3,18833,1,3,0)
- ;;=3^28405
- ;;^UTILITY(U,$J,358.3,18834,0)
- ;;=28406^^122^1205^3^^^^1
- ;;^UTILITY(U,$J,358.3,18834,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18834,1,2,0)
- ;;=2^Perc Fixation of Calcaneous Fx
- ;;^UTILITY(U,$J,358.3,18834,1,3,0)
- ;;=3^28406
- ;;^UTILITY(U,$J,358.3,18835,0)
- ;;=28415^^122^1205^4^^^^1
- ;;^UTILITY(U,$J,358.3,18835,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18835,1,2,0)
- ;;=2^Open TX of calcaneal fracture, with or without internal or external fixation;
- ;;^UTILITY(U,$J,358.3,18835,1,3,0)
- ;;=3^28415
- ;;^UTILITY(U,$J,358.3,18836,0)
- ;;=28420^^122^1205^5^^^^1
- ;;^UTILITY(U,$J,358.3,18836,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18836,1,2,0)
- ;;=2^Open TX of calcaneal fracture, with or without internal or external fixation; with primary iliac or other autogenous bone graft
- ;;^UTILITY(U,$J,358.3,18836,1,3,0)
- ;;=3^28420
- ;;^UTILITY(U,$J,358.3,18837,0)
- ;;=28430^^122^1205^6^^^^1
- ;;^UTILITY(U,$J,358.3,18837,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18837,1,2,0)
- ;;=2^Closed TX of talus fracture; without manipulation 
- ;;^UTILITY(U,$J,358.3,18837,1,3,0)
- ;;=3^28430
- ;;^UTILITY(U,$J,358.3,18838,0)
- ;;=28435^^122^1205^7^^^^1
- ;;^UTILITY(U,$J,358.3,18838,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18838,1,2,0)
- ;;=2^Closed TX of talus fracture; with manipulation 
- ;;^UTILITY(U,$J,358.3,18838,1,3,0)
- ;;=3^28435
- ;;^UTILITY(U,$J,358.3,18839,0)
- ;;=28436^^122^1205^8^^^^1
- ;;^UTILITY(U,$J,358.3,18839,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18839,1,2,0)
- ;;=2^Perc Fixation Talus Fx
- ;;^UTILITY(U,$J,358.3,18839,1,3,0)
- ;;=3^28436
- ;;^UTILITY(U,$J,358.3,18840,0)
- ;;=28445^^122^1205^9^^^^1
- ;;^UTILITY(U,$J,358.3,18840,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18840,1,2,0)
- ;;=2^Open/Closed TX of Talus FX,w/internal fixation
- ;;^UTILITY(U,$J,358.3,18840,1,3,0)
- ;;=3^28445
- ;;^UTILITY(U,$J,358.3,18841,0)
- ;;=28450^^122^1205^10^^^^1
- ;;^UTILITY(U,$J,358.3,18841,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18841,1,2,0)
- ;;=2^TX of tarsal bone fracture; without manipulation, each 
- ;;^UTILITY(U,$J,358.3,18841,1,3,0)
- ;;=3^28450
+ ;;^UTILITY(U,$J,358.3,17494,2)
+ ;;=^5019570
+ ;;^UTILITY(U,$J,358.3,17495,0)
+ ;;=W10.9XXS^^88^862^18
+ ;;^UTILITY(U,$J,358.3,17495,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17495,1,3,0)
+ ;;=3^Fall from Stairs/Steps,Sequela
+ ;;^UTILITY(U,$J,358.3,17495,1,4,0)
+ ;;=4^W10.9XXS
+ ;;^UTILITY(U,$J,358.3,17495,2)
+ ;;=^5059594
+ ;;^UTILITY(U,$J,358.3,17496,0)
+ ;;=W10.0XXS^^88^862^9
+ ;;^UTILITY(U,$J,358.3,17496,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17496,1,3,0)
+ ;;=3^Fall from Escalator,Sequela
+ ;;^UTILITY(U,$J,358.3,17496,1,4,0)
+ ;;=4^W10.0XXS
+ ;;^UTILITY(U,$J,358.3,17496,2)
+ ;;=^5059582
+ ;;^UTILITY(U,$J,358.3,17497,0)
+ ;;=W10.2XXS^^88^862^11
+ ;;^UTILITY(U,$J,358.3,17497,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17497,1,3,0)
+ ;;=3^Fall from Incline,Sequela
+ ;;^UTILITY(U,$J,358.3,17497,1,4,0)
+ ;;=4^W10.2XXS
+ ;;^UTILITY(U,$J,358.3,17497,2)
+ ;;=^5059588
+ ;;^UTILITY(U,$J,358.3,17498,0)
+ ;;=W10.1XXS^^88^862^17
+ ;;^UTILITY(U,$J,358.3,17498,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17498,1,3,0)
+ ;;=3^Fall from Sidewalk/Curb,Sequela
+ ;;^UTILITY(U,$J,358.3,17498,1,4,0)
+ ;;=4^W10.1XXS
+ ;;^UTILITY(U,$J,358.3,17498,2)
+ ;;=^5059585
+ ;;^UTILITY(U,$J,358.3,17499,0)
+ ;;=W06.XXXS^^88^862^7
+ ;;^UTILITY(U,$J,358.3,17499,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17499,1,3,0)
+ ;;=3^Fall from Bed,Sequela
+ ;;^UTILITY(U,$J,358.3,17499,1,4,0)
+ ;;=4^W06.XXXS
+ ;;^UTILITY(U,$J,358.3,17499,2)
+ ;;=^5059561
+ ;;^UTILITY(U,$J,358.3,17500,0)
+ ;;=W07.XXXS^^88^862^8
+ ;;^UTILITY(U,$J,358.3,17500,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17500,1,3,0)
+ ;;=3^Fall from Chair,Sequela
+ ;;^UTILITY(U,$J,358.3,17500,1,4,0)
+ ;;=4^W07.XXXS
+ ;;^UTILITY(U,$J,358.3,17500,2)
+ ;;=^5059564
+ ;;^UTILITY(U,$J,358.3,17501,0)
+ ;;=W05.2XXS^^88^862^13
+ ;;^UTILITY(U,$J,358.3,17501,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17501,1,3,0)
+ ;;=3^Fall from Non-Moving Motorized Scooter,Sequela
+ ;;^UTILITY(U,$J,358.3,17501,1,4,0)
+ ;;=4^W05.2XXS
+ ;;^UTILITY(U,$J,358.3,17501,2)
+ ;;=^5059558
+ ;;^UTILITY(U,$J,358.3,17502,0)
+ ;;=W05.1XXS^^88^862^14
+ ;;^UTILITY(U,$J,358.3,17502,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17502,1,3,0)
+ ;;=3^Fall from Non-Moving Nonmotorized Scooter,Sequela
+ ;;^UTILITY(U,$J,358.3,17502,1,4,0)
+ ;;=4^W05.1XXS
+ ;;^UTILITY(U,$J,358.3,17502,2)
+ ;;=^5059555
+ ;;^UTILITY(U,$J,358.3,17503,0)
+ ;;=W05.0XXS^^88^862^15
+ ;;^UTILITY(U,$J,358.3,17503,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17503,1,3,0)
+ ;;=3^Fall from Non-Moving Wheelchair,Sequela
+ ;;^UTILITY(U,$J,358.3,17503,1,4,0)
+ ;;=4^W05.0XXS
+ ;;^UTILITY(U,$J,358.3,17503,2)
+ ;;=^5059552
+ ;;^UTILITY(U,$J,358.3,17504,0)
+ ;;=W18.12XS^^88^862^19
+ ;;^UTILITY(U,$J,358.3,17504,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17504,1,3,0)
+ ;;=3^Fall from Toilet w/ Strike Against Object,Sequela
+ ;;^UTILITY(U,$J,358.3,17504,1,4,0)
+ ;;=4^W18.12XS
+ ;;^UTILITY(U,$J,358.3,17504,2)
+ ;;=^5059805
+ ;;^UTILITY(U,$J,358.3,17505,0)
+ ;;=W18.11XS^^88^862^20
+ ;;^UTILITY(U,$J,358.3,17505,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17505,1,3,0)
+ ;;=3^Fall from Toilet,Sequela
+ ;;^UTILITY(U,$J,358.3,17505,1,4,0)
+ ;;=4^W18.11XS
+ ;;^UTILITY(U,$J,358.3,17505,2)
+ ;;=^5059803
+ ;;^UTILITY(U,$J,358.3,17506,0)
+ ;;=W08.XXXS^^88^862^10
+ ;;^UTILITY(U,$J,358.3,17506,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17506,1,3,0)
+ ;;=3^Fall from Furniture,Sequela
+ ;;^UTILITY(U,$J,358.3,17506,1,4,0)
+ ;;=4^W08.XXXS
+ ;;^UTILITY(U,$J,358.3,17506,2)
+ ;;=^5059567
+ ;;^UTILITY(U,$J,358.3,17507,0)
+ ;;=W18.2XXS^^88^862^21
+ ;;^UTILITY(U,$J,358.3,17507,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17507,1,3,0)
+ ;;=3^Fall in Shower/Bathtub,Sequela

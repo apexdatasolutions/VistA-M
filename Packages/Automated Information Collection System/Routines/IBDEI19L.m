@@ -1,136 +1,128 @@
-IBDEI19L ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI19L ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,22642,2)
- ;;=Drug Induced Delirium^268022
- ;;^UTILITY(U,$J,358.3,22643,0)
- ;;=290.20^^141^1391^17
- ;;^UTILITY(U,$J,358.3,22643,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22643,1,4,0)
- ;;=4^290.20
- ;;^UTILITY(U,$J,358.3,22643,1,5,0)
- ;;=5^Dementia w/Delusion
- ;;^UTILITY(U,$J,358.3,22643,2)
- ;;=^303486
- ;;^UTILITY(U,$J,358.3,22644,0)
- ;;=290.40^^141^1391^20
- ;;^UTILITY(U,$J,358.3,22644,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22644,1,4,0)
- ;;=4^290.40
- ;;^UTILITY(U,$J,358.3,22644,1,5,0)
- ;;=5^Vascular Dementia
- ;;^UTILITY(U,$J,358.3,22644,2)
- ;;=^303487
- ;;^UTILITY(U,$J,358.3,22645,0)
- ;;=291.2^^141^1391^1
- ;;^UTILITY(U,$J,358.3,22645,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22645,1,4,0)
- ;;=4^291.2
- ;;^UTILITY(U,$J,358.3,22645,1,5,0)
- ;;=5^Alcoholic Dementia
- ;;^UTILITY(U,$J,358.3,22645,2)
- ;;=Alcoholic Dementia^268015
- ;;^UTILITY(U,$J,358.3,22646,0)
- ;;=290.0^^141^1391^19
- ;;^UTILITY(U,$J,358.3,22646,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22646,1,4,0)
- ;;=4^290.0
- ;;^UTILITY(U,$J,358.3,22646,1,5,0)
- ;;=5^Senile Dementia, Uncomplicated
- ;;^UTILITY(U,$J,358.3,22646,2)
- ;;=^31700
- ;;^UTILITY(U,$J,358.3,22647,0)
- ;;=290.3^^141^1391^16
- ;;^UTILITY(U,$J,358.3,22647,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22647,1,4,0)
- ;;=4^290.3
- ;;^UTILITY(U,$J,358.3,22647,1,5,0)
- ;;=5^Dementia w/Delirium
- ;;^UTILITY(U,$J,358.3,22647,2)
- ;;=^268009
- ;;^UTILITY(U,$J,358.3,22648,0)
- ;;=294.8^^141^1391^6
- ;;^UTILITY(U,$J,358.3,22648,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22648,1,4,0)
- ;;=4^294.8
- ;;^UTILITY(U,$J,358.3,22648,1,5,0)
- ;;=5^Dementia NOS
- ;;^UTILITY(U,$J,358.3,22648,2)
- ;;=^331843
- ;;^UTILITY(U,$J,358.3,22649,0)
- ;;=294.11^^141^1391^10
- ;;^UTILITY(U,$J,358.3,22649,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22649,1,4,0)
- ;;=4^294.11
- ;;^UTILITY(U,$J,358.3,22649,1,5,0)
- ;;=5^Dementia d/t HIV w/ Behav Disturb
- ;;^UTILITY(U,$J,358.3,22649,2)
- ;;=^321982^042.
- ;;^UTILITY(U,$J,358.3,22650,0)
- ;;=294.20^^141^1391^8
- ;;^UTILITY(U,$J,358.3,22650,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22650,1,4,0)
- ;;=4^294.20
- ;;^UTILITY(U,$J,358.3,22650,1,5,0)
- ;;=5^Dementia NOS w/o Behv Dstrb
- ;;^UTILITY(U,$J,358.3,22650,2)
- ;;=^340607
- ;;^UTILITY(U,$J,358.3,22651,0)
- ;;=294.21^^141^1391^7
- ;;^UTILITY(U,$J,358.3,22651,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22651,1,4,0)
- ;;=4^294.21
- ;;^UTILITY(U,$J,358.3,22651,1,5,0)
- ;;=5^Dementia NOS w/Behav Distrb
- ;;^UTILITY(U,$J,358.3,22651,2)
- ;;=^340505
- ;;^UTILITY(U,$J,358.3,22652,0)
- ;;=331.83^^141^1391^18
- ;;^UTILITY(U,$J,358.3,22652,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22652,1,4,0)
- ;;=4^331.83
- ;;^UTILITY(U,$J,358.3,22652,1,5,0)
- ;;=5^Mild Cognitive Impairment
- ;;^UTILITY(U,$J,358.3,22652,2)
- ;;=^334065
- ;;^UTILITY(U,$J,358.3,22653,0)
- ;;=294.8^^141^1391^9
- ;;^UTILITY(U,$J,358.3,22653,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22653,1,4,0)
- ;;=4^294.8
- ;;^UTILITY(U,$J,358.3,22653,1,5,0)
- ;;=5^Dementia d/t Brain Tumor
- ;;^UTILITY(U,$J,358.3,22653,2)
- ;;=^331843
- ;;^UTILITY(U,$J,358.3,22654,0)
- ;;=294.10^^141^1391^11
- ;;^UTILITY(U,$J,358.3,22654,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22654,1,4,0)
- ;;=4^294.10
- ;;^UTILITY(U,$J,358.3,22654,1,5,0)
- ;;=5^Dementia d/t HIV w/o Behav Disturb
- ;;^UTILITY(U,$J,358.3,22654,2)
- ;;=^321980^042.
- ;;^UTILITY(U,$J,358.3,22655,0)
- ;;=294.11^^141^1391^3
- ;;^UTILITY(U,$J,358.3,22655,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,22655,1,4,0)
- ;;=4^294.11
- ;;^UTILITY(U,$J,358.3,22655,1,5,0)
- ;;=5^Alzheimers Dementia w/ Behav Disturb
- ;;^UTILITY(U,$J,358.3,22655,2)
- ;;=^321982^331.0
+ ;;^UTILITY(U,$J,358.3,21147,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21147,1,3,0)
+ ;;=3^Aphasia
+ ;;^UTILITY(U,$J,358.3,21147,1,4,0)
+ ;;=4^R47.01
+ ;;^UTILITY(U,$J,358.3,21147,2)
+ ;;=^5019488
+ ;;^UTILITY(U,$J,358.3,21148,0)
+ ;;=I69.320^^101^1027^2
+ ;;^UTILITY(U,$J,358.3,21148,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21148,1,3,0)
+ ;;=3^Aphasia following cerebral infarction
+ ;;^UTILITY(U,$J,358.3,21148,1,4,0)
+ ;;=4^I69.320
+ ;;^UTILITY(U,$J,358.3,21148,2)
+ ;;=^5007491
+ ;;^UTILITY(U,$J,358.3,21149,0)
+ ;;=I69.120^^101^1027^3
+ ;;^UTILITY(U,$J,358.3,21149,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21149,1,3,0)
+ ;;=3^Aphasia following nontraumatic intracerebral hemorrhage
+ ;;^UTILITY(U,$J,358.3,21149,1,4,0)
+ ;;=4^I69.120
+ ;;^UTILITY(U,$J,358.3,21149,2)
+ ;;=^5007427
+ ;;^UTILITY(U,$J,358.3,21150,0)
+ ;;=I69.020^^101^1027^4
+ ;;^UTILITY(U,$J,358.3,21150,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21150,1,3,0)
+ ;;=3^Aphasia following nontraumatic subarachnoid hemorrhage
+ ;;^UTILITY(U,$J,358.3,21150,1,4,0)
+ ;;=4^I69.020
+ ;;^UTILITY(U,$J,358.3,21150,2)
+ ;;=^5007395
+ ;;^UTILITY(U,$J,358.3,21151,0)
+ ;;=I69.820^^101^1027^5
+ ;;^UTILITY(U,$J,358.3,21151,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21151,1,3,0)
+ ;;=3^Aphasia following other cerebrovascular disease
+ ;;^UTILITY(U,$J,358.3,21151,1,4,0)
+ ;;=4^I69.820
+ ;;^UTILITY(U,$J,358.3,21151,2)
+ ;;=^5007522
+ ;;^UTILITY(U,$J,358.3,21152,0)
+ ;;=I69.220^^101^1027^6
+ ;;^UTILITY(U,$J,358.3,21152,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21152,1,3,0)
+ ;;=3^Aphasia following other nontraumatic intracranial hemorrhage
+ ;;^UTILITY(U,$J,358.3,21152,1,4,0)
+ ;;=4^I69.220
+ ;;^UTILITY(U,$J,358.3,21152,2)
+ ;;=^5007459
+ ;;^UTILITY(U,$J,358.3,21153,0)
+ ;;=I69.290^^101^1027^11
+ ;;^UTILITY(U,$J,358.3,21153,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21153,1,3,0)
+ ;;=3^Apraxia following other nontraumatic intracranial hemorrhage
+ ;;^UTILITY(U,$J,358.3,21153,1,4,0)
+ ;;=4^I69.290
+ ;;^UTILITY(U,$J,358.3,21153,2)
+ ;;=^5007484
+ ;;^UTILITY(U,$J,358.3,21154,0)
+ ;;=I69.390^^101^1027^7
+ ;;^UTILITY(U,$J,358.3,21154,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21154,1,3,0)
+ ;;=3^Apraxia following cerebral infarction
+ ;;^UTILITY(U,$J,358.3,21154,1,4,0)
+ ;;=4^I69.390
+ ;;^UTILITY(U,$J,358.3,21154,2)
+ ;;=^5007515
+ ;;^UTILITY(U,$J,358.3,21155,0)
+ ;;=I69.190^^101^1027^8
+ ;;^UTILITY(U,$J,358.3,21155,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21155,1,3,0)
+ ;;=3^Apraxia following nontraumatic intracerebral hemorrhage
+ ;;^UTILITY(U,$J,358.3,21155,1,4,0)
+ ;;=4^I69.190
+ ;;^UTILITY(U,$J,358.3,21155,2)
+ ;;=^5007452
+ ;;^UTILITY(U,$J,358.3,21156,0)
+ ;;=I69.090^^101^1027^9
+ ;;^UTILITY(U,$J,358.3,21156,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21156,1,3,0)
+ ;;=3^Apraxia following nontraumatic subarachnoid hemorrhage
+ ;;^UTILITY(U,$J,358.3,21156,1,4,0)
+ ;;=4^I69.090
+ ;;^UTILITY(U,$J,358.3,21156,2)
+ ;;=^5007420
+ ;;^UTILITY(U,$J,358.3,21157,0)
+ ;;=I69.890^^101^1027^10
+ ;;^UTILITY(U,$J,358.3,21157,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21157,1,3,0)
+ ;;=3^Apraxia following other cerebrovascular disease
+ ;;^UTILITY(U,$J,358.3,21157,1,4,0)
+ ;;=4^I69.890
+ ;;^UTILITY(U,$J,358.3,21157,2)
+ ;;=^5007546
+ ;;^UTILITY(U,$J,358.3,21158,0)
+ ;;=I69.393^^101^1027^12
+ ;;^UTILITY(U,$J,358.3,21158,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21158,1,3,0)
+ ;;=3^Ataxia following cerebral infarction
+ ;;^UTILITY(U,$J,358.3,21158,1,4,0)
+ ;;=4^I69.393
+ ;;^UTILITY(U,$J,358.3,21158,2)
+ ;;=^5007518
+ ;;^UTILITY(U,$J,358.3,21159,0)
+ ;;=I69.193^^101^1027^13
+ ;;^UTILITY(U,$J,358.3,21159,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21159,1,3,0)
+ ;;=3^Ataxia following nontraumatic intracerebral hemorrhage

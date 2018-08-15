@@ -1,130 +1,136 @@
-IBDEI0DJ ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0DJ ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,6512,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6512,1,4,0)
- ;;=4^272.0
- ;;^UTILITY(U,$J,358.3,6512,1,5,0)
- ;;=5^Hypercholesterolemia, Pure
- ;;^UTILITY(U,$J,358.3,6512,2)
- ;;=^59973
- ;;^UTILITY(U,$J,358.3,6513,0)
- ;;=272.1^^55^567^58
- ;;^UTILITY(U,$J,358.3,6513,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6513,1,4,0)
- ;;=4^272.1
- ;;^UTILITY(U,$J,358.3,6513,1,5,0)
- ;;=5^Hypertriglyceridemia
- ;;^UTILITY(U,$J,358.3,6513,2)
- ;;=Hypertriglyceridemia^101303
- ;;^UTILITY(U,$J,358.3,6514,0)
- ;;=272.2^^55^567^63
- ;;^UTILITY(U,$J,358.3,6514,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6514,1,4,0)
- ;;=4^272.2
- ;;^UTILITY(U,$J,358.3,6514,1,5,0)
- ;;=5^Mixed Hyperlipidemia
- ;;^UTILITY(U,$J,358.3,6514,2)
- ;;=^78424
- ;;^UTILITY(U,$J,358.3,6515,0)
- ;;=396.0^^55^567^11
- ;;^UTILITY(U,$J,358.3,6515,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6515,1,4,0)
- ;;=4^396.0
- ;;^UTILITY(U,$J,358.3,6515,1,5,0)
- ;;=5^Aortic and Mitral Stenosis
- ;;^UTILITY(U,$J,358.3,6515,2)
- ;;=Aortic and Mitral Stenosis^269580
- ;;^UTILITY(U,$J,358.3,6516,0)
- ;;=414.02^^55^567^18
- ;;^UTILITY(U,$J,358.3,6516,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6516,1,4,0)
- ;;=4^414.02
- ;;^UTILITY(U,$J,358.3,6516,1,5,0)
- ;;=5^CAD, Occlusion of Venous Graft
- ;;^UTILITY(U,$J,358.3,6516,2)
- ;;=CAD, Occlusion of Venous Graft^303282
- ;;^UTILITY(U,$J,358.3,6517,0)
- ;;=459.10^^55^567^73
- ;;^UTILITY(U,$J,358.3,6517,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6517,1,4,0)
- ;;=4^459.10
- ;;^UTILITY(U,$J,358.3,6517,1,5,0)
- ;;=5^Post Phlebotic Syndrome
- ;;^UTILITY(U,$J,358.3,6517,2)
- ;;=Post Phlebotic Syndrome^328597
- ;;^UTILITY(U,$J,358.3,6518,0)
- ;;=428.20^^55^567^50
- ;;^UTILITY(U,$J,358.3,6518,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6518,1,4,0)
- ;;=4^428.20
- ;;^UTILITY(U,$J,358.3,6518,1,5,0)
- ;;=5^Heart Failure, Systolic, Unspec
- ;;^UTILITY(U,$J,358.3,6518,2)
- ;;=Heart Failure, Systolic^328594
- ;;^UTILITY(U,$J,358.3,6519,0)
- ;;=428.21^^55^567^42
- ;;^UTILITY(U,$J,358.3,6519,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6519,1,4,0)
- ;;=4^428.21
- ;;^UTILITY(U,$J,358.3,6519,1,5,0)
- ;;=5^Heart Failure, Acute Systolic
- ;;^UTILITY(U,$J,358.3,6519,2)
- ;;=Heart Failure, Acute Systolic^328494
- ;;^UTILITY(U,$J,358.3,6520,0)
- ;;=428.22^^55^567^44
- ;;^UTILITY(U,$J,358.3,6520,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6520,1,4,0)
- ;;=4^428.22
- ;;^UTILITY(U,$J,358.3,6520,1,5,0)
- ;;=5^Heart Failure, Chronic Systolic
- ;;^UTILITY(U,$J,358.3,6520,2)
- ;;=Heart Failure, Chronic Systolic^328495
- ;;^UTILITY(U,$J,358.3,6521,0)
- ;;=428.23^^55^567^49
- ;;^UTILITY(U,$J,358.3,6521,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6521,1,4,0)
- ;;=4^428.23
- ;;^UTILITY(U,$J,358.3,6521,1,5,0)
- ;;=5^Heart Failure, Systolic, Acute on Chronic
- ;;^UTILITY(U,$J,358.3,6521,2)
- ;;=Heart Failure, Systolic, Acute on Chronic^328496
- ;;^UTILITY(U,$J,358.3,6522,0)
- ;;=428.30^^55^567^45
- ;;^UTILITY(U,$J,358.3,6522,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6522,1,4,0)
- ;;=4^428.30
- ;;^UTILITY(U,$J,358.3,6522,1,5,0)
- ;;=5^Heart Failure, Diastolic
- ;;^UTILITY(U,$J,358.3,6522,2)
- ;;=Heart Failure, Diastolic^328595
- ;;^UTILITY(U,$J,358.3,6523,0)
- ;;=428.31^^55^567^41
- ;;^UTILITY(U,$J,358.3,6523,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6523,1,4,0)
- ;;=4^428.31
- ;;^UTILITY(U,$J,358.3,6523,1,5,0)
- ;;=5^Heart Failure, Acute Diastolic
- ;;^UTILITY(U,$J,358.3,6523,2)
- ;;=Heart Failure, Acute Diastolic^328497
- ;;^UTILITY(U,$J,358.3,6524,0)
- ;;=428.32^^55^567^43
- ;;^UTILITY(U,$J,358.3,6524,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,6524,1,4,0)
- ;;=4^428.32
- ;;^UTILITY(U,$J,358.3,6524,1,5,0)
- ;;=5^Heart Failure, Chronic Diastolic
+ ;;^UTILITY(U,$J,358.3,5894,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5894,1,3,0)
+ ;;=3^Cutaneous Abscess of Head
+ ;;^UTILITY(U,$J,358.3,5894,1,4,0)
+ ;;=4^L02.811
+ ;;^UTILITY(U,$J,358.3,5894,2)
+ ;;=^5009010
+ ;;^UTILITY(U,$J,358.3,5895,0)
+ ;;=L02.412^^40^379^64
+ ;;^UTILITY(U,$J,358.3,5895,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5895,1,3,0)
+ ;;=3^Cutaneous Abscess of Left Axilla
+ ;;^UTILITY(U,$J,358.3,5895,1,4,0)
+ ;;=4^L02.412
+ ;;^UTILITY(U,$J,358.3,5895,2)
+ ;;=^5008975
+ ;;^UTILITY(U,$J,358.3,5896,0)
+ ;;=L02.612^^40^379^65
+ ;;^UTILITY(U,$J,358.3,5896,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5896,1,3,0)
+ ;;=3^Cutaneous Abscess of Left Foot
+ ;;^UTILITY(U,$J,358.3,5896,1,4,0)
+ ;;=4^L02.612
+ ;;^UTILITY(U,$J,358.3,5896,2)
+ ;;=^5009002
+ ;;^UTILITY(U,$J,358.3,5897,0)
+ ;;=L02.512^^40^379^66
+ ;;^UTILITY(U,$J,358.3,5897,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5897,1,3,0)
+ ;;=3^Cutaneous Abscess of Left Hand
+ ;;^UTILITY(U,$J,358.3,5897,1,4,0)
+ ;;=4^L02.512
+ ;;^UTILITY(U,$J,358.3,5897,2)
+ ;;=^5008993
+ ;;^UTILITY(U,$J,358.3,5898,0)
+ ;;=L02.416^^40^379^67
+ ;;^UTILITY(U,$J,358.3,5898,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5898,1,3,0)
+ ;;=3^Cutaneous Abscess of Left Lower Limb
+ ;;^UTILITY(U,$J,358.3,5898,1,4,0)
+ ;;=4^L02.416
+ ;;^UTILITY(U,$J,358.3,5898,2)
+ ;;=^5133642
+ ;;^UTILITY(U,$J,358.3,5899,0)
+ ;;=L02.414^^40^379^68
+ ;;^UTILITY(U,$J,358.3,5899,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5899,1,3,0)
+ ;;=3^Cutaneous Abscess of Left Upper Limb
+ ;;^UTILITY(U,$J,358.3,5899,1,4,0)
+ ;;=4^L02.414
+ ;;^UTILITY(U,$J,358.3,5899,2)
+ ;;=^5008977
+ ;;^UTILITY(U,$J,358.3,5900,0)
+ ;;=L02.11^^40^379^69
+ ;;^UTILITY(U,$J,358.3,5900,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5900,1,3,0)
+ ;;=3^Cutaneous Abscess of Neck
+ ;;^UTILITY(U,$J,358.3,5900,1,4,0)
+ ;;=4^L02.11
+ ;;^UTILITY(U,$J,358.3,5900,2)
+ ;;=^5008947
+ ;;^UTILITY(U,$J,358.3,5901,0)
+ ;;=L02.818^^40^379^70
+ ;;^UTILITY(U,$J,358.3,5901,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5901,1,3,0)
+ ;;=3^Cutaneous Abscess of Other Sites
+ ;;^UTILITY(U,$J,358.3,5901,1,4,0)
+ ;;=4^L02.818
+ ;;^UTILITY(U,$J,358.3,5901,2)
+ ;;=^5009011
+ ;;^UTILITY(U,$J,358.3,5902,0)
+ ;;=L02.215^^40^379^71
+ ;;^UTILITY(U,$J,358.3,5902,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5902,1,3,0)
+ ;;=3^Cutaneous Abscess of Perineum
+ ;;^UTILITY(U,$J,358.3,5902,1,4,0)
+ ;;=4^L02.215
+ ;;^UTILITY(U,$J,358.3,5902,2)
+ ;;=^5008954
+ ;;^UTILITY(U,$J,358.3,5903,0)
+ ;;=L02.411^^40^379^72
+ ;;^UTILITY(U,$J,358.3,5903,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5903,1,3,0)
+ ;;=3^Cutaneous Abscess of Right Axilla
+ ;;^UTILITY(U,$J,358.3,5903,1,4,0)
+ ;;=4^L02.411
+ ;;^UTILITY(U,$J,358.3,5903,2)
+ ;;=^5008974
+ ;;^UTILITY(U,$J,358.3,5904,0)
+ ;;=L02.611^^40^379^73
+ ;;^UTILITY(U,$J,358.3,5904,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5904,1,3,0)
+ ;;=3^Cutaneous Abscess of Right Foot
+ ;;^UTILITY(U,$J,358.3,5904,1,4,0)
+ ;;=4^L02.611
+ ;;^UTILITY(U,$J,358.3,5904,2)
+ ;;=^5009001
+ ;;^UTILITY(U,$J,358.3,5905,0)
+ ;;=L02.511^^40^379^74
+ ;;^UTILITY(U,$J,358.3,5905,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5905,1,3,0)
+ ;;=3^Cutaneous Abscess of Right Hand
+ ;;^UTILITY(U,$J,358.3,5905,1,4,0)
+ ;;=4^L02.511
+ ;;^UTILITY(U,$J,358.3,5905,2)
+ ;;=^5008992
+ ;;^UTILITY(U,$J,358.3,5906,0)
+ ;;=L02.415^^40^379^75
+ ;;^UTILITY(U,$J,358.3,5906,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,5906,1,3,0)
+ ;;=3^Cutaneous Abscess of Right Lower Limb
+ ;;^UTILITY(U,$J,358.3,5906,1,4,0)
+ ;;=4^L02.415
+ ;;^UTILITY(U,$J,358.3,5906,2)
+ ;;=^5008978
+ ;;^UTILITY(U,$J,358.3,5907,0)
+ ;;=L02.413^^40^379^76
+ ;;^UTILITY(U,$J,358.3,5907,1,0)
+ ;;=^358.31IA^4^2

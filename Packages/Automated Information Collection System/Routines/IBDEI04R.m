@@ -1,142 +1,124 @@
-IBDEI04R ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI04R ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,1957,2)
- ;;=^295216
- ;;^UTILITY(U,$J,358.3,1958,0)
- ;;=V10.3^^21^187^4
- ;;^UTILITY(U,$J,358.3,1958,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1958,1,4,0)
- ;;=4^V10.3
- ;;^UTILITY(U,$J,358.3,1958,1,5,0)
- ;;=5^HX OF BREAST MALIGNANCY
- ;;^UTILITY(U,$J,358.3,1958,2)
- ;;=^295217
- ;;^UTILITY(U,$J,358.3,1959,0)
- ;;=V10.40^^21^187^27
- ;;^UTILITY(U,$J,358.3,1959,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1959,1,4,0)
- ;;=4^V10.40
- ;;^UTILITY(U,$J,358.3,1959,1,5,0)
- ;;=5^HX-FEMALE GENIT MALG NOS
- ;;^UTILITY(U,$J,358.3,1959,2)
- ;;=^295218
- ;;^UTILITY(U,$J,358.3,1960,0)
- ;;=V10.41^^21^187^23
- ;;^UTILITY(U,$J,358.3,1960,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1960,1,4,0)
- ;;=4^V10.41
- ;;^UTILITY(U,$J,358.3,1960,1,5,0)
- ;;=5^HX-CERVICAL MALIGNANCY
- ;;^UTILITY(U,$J,358.3,1960,2)
- ;;=^295219
- ;;^UTILITY(U,$J,358.3,1961,0)
- ;;=V10.42^^21^187^47
- ;;^UTILITY(U,$J,358.3,1961,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1961,1,4,0)
- ;;=4^V10.42
- ;;^UTILITY(U,$J,358.3,1961,1,5,0)
- ;;=5^HX-UTERUS MALIGNANCY NEC
- ;;^UTILITY(U,$J,358.3,1961,2)
- ;;=^295220
- ;;^UTILITY(U,$J,358.3,1962,0)
- ;;=V10.43^^21^187^19
- ;;^UTILITY(U,$J,358.3,1962,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1962,1,4,0)
- ;;=4^V10.43
- ;;^UTILITY(U,$J,358.3,1962,1,5,0)
- ;;=5^HX OF OVARIAN MALIGNANCY
- ;;^UTILITY(U,$J,358.3,1962,2)
- ;;=^295221
- ;;^UTILITY(U,$J,358.3,1963,0)
- ;;=V10.44^^21^187^26
- ;;^UTILITY(U,$J,358.3,1963,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1963,1,4,0)
- ;;=4^V10.44
- ;;^UTILITY(U,$J,358.3,1963,1,5,0)
- ;;=5^HX-FEMALE GENIT MALG NEC
- ;;^UTILITY(U,$J,358.3,1963,2)
- ;;=^295222
- ;;^UTILITY(U,$J,358.3,1964,0)
- ;;=V10.45^^21^187^34
- ;;^UTILITY(U,$J,358.3,1964,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1964,1,4,0)
- ;;=4^V10.45
- ;;^UTILITY(U,$J,358.3,1964,1,5,0)
- ;;=5^HX-MALE GENIT MALIG NOS
- ;;^UTILITY(U,$J,358.3,1964,2)
- ;;=^295223
- ;;^UTILITY(U,$J,358.3,1965,0)
- ;;=V10.46^^21^187^39
- ;;^UTILITY(U,$J,358.3,1965,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1965,1,4,0)
- ;;=4^V10.46
- ;;^UTILITY(U,$J,358.3,1965,1,5,0)
- ;;=5^HX-PROSTATIC MALIGNANCY
- ;;^UTILITY(U,$J,358.3,1965,2)
- ;;=^295224
- ;;^UTILITY(U,$J,358.3,1966,0)
- ;;=V10.47^^21^187^43
- ;;^UTILITY(U,$J,358.3,1966,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1966,1,4,0)
- ;;=4^V10.47
- ;;^UTILITY(U,$J,358.3,1966,1,5,0)
- ;;=5^HX-TESTICULAR MALIGNANCY
- ;;^UTILITY(U,$J,358.3,1966,2)
- ;;=^295225
- ;;^UTILITY(U,$J,358.3,1967,0)
- ;;=V10.48^^21^187^48
- ;;^UTILITY(U,$J,358.3,1967,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1967,1,4,0)
- ;;=4^V10.48
- ;;^UTILITY(U,$J,358.3,1967,1,5,0)
- ;;=5^PSNL HX MAL NEOPL-EPIDID
- ;;^UTILITY(U,$J,358.3,1967,2)
- ;;=^321226
- ;;^UTILITY(U,$J,358.3,1968,0)
- ;;=V10.49^^21^187^33
- ;;^UTILITY(U,$J,358.3,1968,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1968,1,4,0)
- ;;=4^V10.49
- ;;^UTILITY(U,$J,358.3,1968,1,5,0)
- ;;=5^HX-MALE GENIT MALIG NEC
- ;;^UTILITY(U,$J,358.3,1968,2)
- ;;=^295226
- ;;^UTILITY(U,$J,358.3,1969,0)
- ;;=V10.50^^21^187^46
- ;;^UTILITY(U,$J,358.3,1969,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1969,1,4,0)
- ;;=4^V10.50
- ;;^UTILITY(U,$J,358.3,1969,1,5,0)
- ;;=5^HX-URINARY MALIGNAN NOS
- ;;^UTILITY(U,$J,358.3,1969,2)
- ;;=^295227
- ;;^UTILITY(U,$J,358.3,1970,0)
- ;;=V10.51^^21^187^1
- ;;^UTILITY(U,$J,358.3,1970,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1970,1,4,0)
- ;;=4^V10.51
- ;;^UTILITY(U,$J,358.3,1970,1,5,0)
- ;;=5^HX OF BLADDER MALIGNANCY
- ;;^UTILITY(U,$J,358.3,1970,2)
- ;;=^295228
- ;;^UTILITY(U,$J,358.3,1971,0)
- ;;=V10.52^^21^187^10
- ;;^UTILITY(U,$J,358.3,1971,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1971,1,4,0)
- ;;=4^V10.52
+ ;;^UTILITY(U,$J,358.3,1538,2)
+ ;;=^5051919
+ ;;^UTILITY(U,$J,358.3,1539,0)
+ ;;=T49.6X4A^^14^156^61
+ ;;^UTILITY(U,$J,358.3,1539,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1539,1,3,0)
+ ;;=3^Poisoning by otorhino drugs and prep, undetermined, init
+ ;;^UTILITY(U,$J,358.3,1539,1,4,0)
+ ;;=4^T49.6X4A
+ ;;^UTILITY(U,$J,358.3,1539,2)
+ ;;=^5051923
+ ;;^UTILITY(U,$J,358.3,1540,0)
+ ;;=T49.6X4D^^14^156^62
+ ;;^UTILITY(U,$J,358.3,1540,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1540,1,3,0)
+ ;;=3^Poisoning by otorhino drugs and prep, undetermined, subs
+ ;;^UTILITY(U,$J,358.3,1540,1,4,0)
+ ;;=4^T49.6X4D
+ ;;^UTILITY(U,$J,358.3,1540,2)
+ ;;=^5051924
+ ;;^UTILITY(U,$J,358.3,1541,0)
+ ;;=T49.6X4S^^14^156^63
+ ;;^UTILITY(U,$J,358.3,1541,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1541,1,3,0)
+ ;;=3^Poisoning by otorhino drugs and prep, undetermined, sequela
+ ;;^UTILITY(U,$J,358.3,1541,1,4,0)
+ ;;=4^T49.6X4S
+ ;;^UTILITY(U,$J,358.3,1541,2)
+ ;;=^5051925
+ ;;^UTILITY(U,$J,358.3,1542,0)
+ ;;=T36.91XA^^14^156^65
+ ;;^UTILITY(U,$J,358.3,1542,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1542,1,3,0)
+ ;;=3^Poisoning by unsp systemic antibiotic, accidental, init
+ ;;^UTILITY(U,$J,358.3,1542,1,4,0)
+ ;;=4^T36.91XA
+ ;;^UTILITY(U,$J,358.3,1542,2)
+ ;;=^5049418
+ ;;^UTILITY(U,$J,358.3,1543,0)
+ ;;=T36.91XD^^14^156^66
+ ;;^UTILITY(U,$J,358.3,1543,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1543,1,3,0)
+ ;;=3^Poisoning by unsp systemic antibiotic, accidental, subs
+ ;;^UTILITY(U,$J,358.3,1543,1,4,0)
+ ;;=4^T36.91XD
+ ;;^UTILITY(U,$J,358.3,1543,2)
+ ;;=^5049419
+ ;;^UTILITY(U,$J,358.3,1544,0)
+ ;;=T36.91XS^^14^156^67
+ ;;^UTILITY(U,$J,358.3,1544,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1544,1,3,0)
+ ;;=3^Poisoning by unsp systemic antibiotic, accidental, sequela
+ ;;^UTILITY(U,$J,358.3,1544,1,4,0)
+ ;;=4^T36.91XS
+ ;;^UTILITY(U,$J,358.3,1544,2)
+ ;;=^5049420
+ ;;^UTILITY(U,$J,358.3,1545,0)
+ ;;=T36.93XA^^14^156^68
+ ;;^UTILITY(U,$J,358.3,1545,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1545,1,3,0)
+ ;;=3^Poisoning by unsp systemic antibiotic, assault, init encntr
+ ;;^UTILITY(U,$J,358.3,1545,1,4,0)
+ ;;=4^T36.93XA
+ ;;^UTILITY(U,$J,358.3,1545,2)
+ ;;=^5049424
+ ;;^UTILITY(U,$J,358.3,1546,0)
+ ;;=T36.93XD^^14^156^69
+ ;;^UTILITY(U,$J,358.3,1546,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1546,1,3,0)
+ ;;=3^Poisoning by unsp systemic antibiotic, assault, subs encntr
+ ;;^UTILITY(U,$J,358.3,1546,1,4,0)
+ ;;=4^T36.93XD
+ ;;^UTILITY(U,$J,358.3,1546,2)
+ ;;=^5049425
+ ;;^UTILITY(U,$J,358.3,1547,0)
+ ;;=T36.93XS^^14^156^70
+ ;;^UTILITY(U,$J,358.3,1547,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1547,1,3,0)
+ ;;=3^Poisoning by unsp systemic antibiotic, assault, sequela
+ ;;^UTILITY(U,$J,358.3,1547,1,4,0)
+ ;;=4^T36.93XS
+ ;;^UTILITY(U,$J,358.3,1547,2)
+ ;;=^5049426
+ ;;^UTILITY(U,$J,358.3,1548,0)
+ ;;=T36.92XA^^14^156^71
+ ;;^UTILITY(U,$J,358.3,1548,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1548,1,3,0)
+ ;;=3^Poisoning by unsp systemic antibiotic, self-harm, init
+ ;;^UTILITY(U,$J,358.3,1548,1,4,0)
+ ;;=4^T36.92XA
+ ;;^UTILITY(U,$J,358.3,1548,2)
+ ;;=^5049421
+ ;;^UTILITY(U,$J,358.3,1549,0)
+ ;;=T36.92XD^^14^156^72
+ ;;^UTILITY(U,$J,358.3,1549,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1549,1,3,0)
+ ;;=3^Poisoning by unsp systemic antibiotic, self-harm, subs
+ ;;^UTILITY(U,$J,358.3,1549,1,4,0)
+ ;;=4^T36.92XD
+ ;;^UTILITY(U,$J,358.3,1549,2)
+ ;;=^5049422
+ ;;^UTILITY(U,$J,358.3,1550,0)
+ ;;=T36.92XS^^14^156^73
+ ;;^UTILITY(U,$J,358.3,1550,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1550,1,3,0)
+ ;;=3^Poisoning by unsp systemic antibiotic, self-harm, sequela
+ ;;^UTILITY(U,$J,358.3,1550,1,4,0)
+ ;;=4^T36.92XS

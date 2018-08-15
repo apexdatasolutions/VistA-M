@@ -1,138 +1,126 @@
-IBDEI0TE ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0TE ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,14514,1,5,0)
- ;;=5^Family h/o Cancer of Prostate
- ;;^UTILITY(U,$J,358.3,14514,2)
- ;;=^317952
- ;;^UTILITY(U,$J,358.3,14515,0)
- ;;=V16.43^^90^861^11
- ;;^UTILITY(U,$J,358.3,14515,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14515,1,4,0)
- ;;=4^V16.43
- ;;^UTILITY(U,$J,358.3,14515,1,5,0)
- ;;=5^Family h/o Cancer of Testis
- ;;^UTILITY(U,$J,358.3,14515,2)
- ;;=^317953
- ;;^UTILITY(U,$J,358.3,14516,0)
- ;;=V19.5^^90^861^13
- ;;^UTILITY(U,$J,358.3,14516,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14516,1,4,0)
- ;;=4^V19.5
- ;;^UTILITY(U,$J,358.3,14516,1,5,0)
- ;;=5^Family h/o Congenital Anomalies
- ;;^UTILITY(U,$J,358.3,14516,2)
- ;;=^295325
- ;;^UTILITY(U,$J,358.3,14517,0)
- ;;=V19.2^^90^861^14
- ;;^UTILITY(U,$J,358.3,14517,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14517,1,4,0)
- ;;=4^V19.2
- ;;^UTILITY(U,$J,358.3,14517,1,5,0)
- ;;=5^Family h/o Deafness Or Hearing Loss
- ;;^UTILITY(U,$J,358.3,14517,2)
- ;;=^295322
- ;;^UTILITY(U,$J,358.3,14518,0)
- ;;=V17.3^^90^861^16
- ;;^UTILITY(U,$J,358.3,14518,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14518,1,4,0)
- ;;=4^V17.3
- ;;^UTILITY(U,$J,358.3,14518,1,5,0)
- ;;=5^Family h/o Ischemic Heart Dis
- ;;^UTILITY(U,$J,358.3,14518,2)
- ;;=^295305
- ;;^UTILITY(U,$J,358.3,14519,0)
- ;;=V16.6^^90^861^17
- ;;^UTILITY(U,$J,358.3,14519,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14519,1,4,0)
- ;;=4^V16.6
- ;;^UTILITY(U,$J,358.3,14519,1,5,0)
- ;;=5^Family h/o Leukemia
- ;;^UTILITY(U,$J,358.3,14519,2)
- ;;=^295298
- ;;^UTILITY(U,$J,358.3,14520,0)
- ;;=V18.61^^90^861^19
- ;;^UTILITY(U,$J,358.3,14520,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14520,1,4,0)
- ;;=4^V18.61
- ;;^UTILITY(U,$J,358.3,14520,1,5,0)
- ;;=5^Family h/o Polycystic Kidney
- ;;^UTILITY(U,$J,358.3,14520,2)
- ;;=^321531
- ;;^UTILITY(U,$J,358.3,14521,0)
- ;;=V17.0^^90^861^20
- ;;^UTILITY(U,$J,358.3,14521,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14521,1,4,0)
- ;;=4^V17.0
- ;;^UTILITY(U,$J,358.3,14521,1,5,0)
- ;;=5^Family h/o Psychiatric Condition
- ;;^UTILITY(U,$J,358.3,14521,2)
- ;;=^295302
- ;;^UTILITY(U,$J,358.3,14522,0)
- ;;=V19.4^^90^861^21
- ;;^UTILITY(U,$J,358.3,14522,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14522,1,4,0)
- ;;=4^V19.4
- ;;^UTILITY(U,$J,358.3,14522,1,5,0)
- ;;=5^Family h/o Skin Condition
- ;;^UTILITY(U,$J,358.3,14522,2)
- ;;=^295324
- ;;^UTILITY(U,$J,358.3,14523,0)
- ;;=V17.1^^90^861^22
- ;;^UTILITY(U,$J,358.3,14523,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14523,1,4,0)
- ;;=4^V17.1
- ;;^UTILITY(U,$J,358.3,14523,1,5,0)
- ;;=5^Family h/o Stroke (CVA)
- ;;^UTILITY(U,$J,358.3,14523,2)
- ;;=^295303
- ;;^UTILITY(U,$J,358.3,14524,0)
- ;;=V16.8^^90^861^12
- ;;^UTILITY(U,$J,358.3,14524,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14524,1,4,0)
- ;;=4^V16.8
- ;;^UTILITY(U,$J,358.3,14524,1,5,0)
- ;;=5^Family h/o Cancer,Other Specified
- ;;^UTILITY(U,$J,358.3,14524,2)
- ;;=^295300
- ;;^UTILITY(U,$J,358.3,14525,0)
- ;;=V11.1^^90^861^24
- ;;^UTILITY(U,$J,358.3,14525,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14525,1,4,0)
- ;;=4^V11.1
- ;;^UTILITY(U,$J,358.3,14525,1,5,0)
- ;;=5^Hx of Affective Disorder
- ;;^UTILITY(U,$J,358.3,14525,2)
- ;;=^295250
- ;;^UTILITY(U,$J,358.3,14526,0)
- ;;=V15.89^^90^861^46
- ;;^UTILITY(U,$J,358.3,14526,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14526,1,4,0)
- ;;=4^V15.89
- ;;^UTILITY(U,$J,358.3,14526,1,5,0)
- ;;=5^Hx of Persian Gulf Region Exposure
- ;;^UTILITY(U,$J,358.3,14526,2)
- ;;=^295291
- ;;^UTILITY(U,$J,358.3,14527,0)
- ;;=V11.3^^90^861^25
- ;;^UTILITY(U,$J,358.3,14527,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14527,1,4,0)
- ;;=4^V11.3
- ;;^UTILITY(U,$J,358.3,14527,1,5,0)
- ;;=5^Hx of Alcoholism
- ;;^UTILITY(U,$J,358.3,14527,2)
- ;;=^295252
+ ;;^UTILITY(U,$J,358.3,13520,1,3,0)
+ ;;=3^Malig Neop Skin Right Eyelid NEC
+ ;;^UTILITY(U,$J,358.3,13520,1,4,0)
+ ;;=4^C44.192
+ ;;^UTILITY(U,$J,358.3,13520,2)
+ ;;=^5001026
+ ;;^UTILITY(U,$J,358.3,13521,0)
+ ;;=S05.42XA^^80^761^79
+ ;;^UTILITY(U,$J,358.3,13521,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13521,1,3,0)
+ ;;=3^Penetrating Wound of Orbit,Left Eye,Init Encntr
+ ;;^UTILITY(U,$J,358.3,13521,1,4,0)
+ ;;=4^S05.42XA
+ ;;^UTILITY(U,$J,358.3,13521,2)
+ ;;=^5020618
+ ;;^UTILITY(U,$J,358.3,13522,0)
+ ;;=S05.41XA^^80^761^80
+ ;;^UTILITY(U,$J,358.3,13522,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13522,1,3,0)
+ ;;=3^Penetrating Wound of Orbit,Right Eye,Init Encntr
+ ;;^UTILITY(U,$J,358.3,13522,1,4,0)
+ ;;=4^S05.41XA
+ ;;^UTILITY(U,$J,358.3,13522,2)
+ ;;=^5020615
+ ;;^UTILITY(U,$J,358.3,13523,0)
+ ;;=S01.142A^^80^761^81
+ ;;^UTILITY(U,$J,358.3,13523,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13523,1,3,0)
+ ;;=3^Puncture Wound w/ FB,Left Eyelid/Periocular Area,Init Encntr
+ ;;^UTILITY(U,$J,358.3,13523,1,4,0)
+ ;;=4^S01.142A
+ ;;^UTILITY(U,$J,358.3,13523,2)
+ ;;=^5134196
+ ;;^UTILITY(U,$J,358.3,13524,0)
+ ;;=S01.141A^^80^761^82
+ ;;^UTILITY(U,$J,358.3,13524,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13524,1,3,0)
+ ;;=3^Puncture Wound w/ FB,Right Eyelid/Periocular Area,Init Encntr
+ ;;^UTILITY(U,$J,358.3,13524,1,4,0)
+ ;;=4^S01.141A
+ ;;^UTILITY(U,$J,358.3,13524,2)
+ ;;=^5020078
+ ;;^UTILITY(U,$J,358.3,13525,0)
+ ;;=S01.132A^^80^761^83
+ ;;^UTILITY(U,$J,358.3,13525,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13525,1,3,0)
+ ;;=3^Puncture Wound w/o FB,Left Eyelid/Periocular Area,Init Encntr
+ ;;^UTILITY(U,$J,358.3,13525,1,4,0)
+ ;;=4^S01.132A
+ ;;^UTILITY(U,$J,358.3,13525,2)
+ ;;=^5020072
+ ;;^UTILITY(U,$J,358.3,13526,0)
+ ;;=S01.131A^^80^761^84
+ ;;^UTILITY(U,$J,358.3,13526,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13526,1,3,0)
+ ;;=3^Puncture Wound w/o FB,Right Eyelid/Periocular Area,Init Encntr
+ ;;^UTILITY(U,$J,358.3,13526,1,4,0)
+ ;;=4^S01.131A
+ ;;^UTILITY(U,$J,358.3,13526,2)
+ ;;=^5020069
+ ;;^UTILITY(U,$J,358.3,13527,0)
+ ;;=H02.135^^80^761^87
+ ;;^UTILITY(U,$J,358.3,13527,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13527,1,3,0)
+ ;;=3^Senile Ectropion Left Lower Eyelid
+ ;;^UTILITY(U,$J,358.3,13527,1,4,0)
+ ;;=4^H02.135
+ ;;^UTILITY(U,$J,358.3,13527,2)
+ ;;=^5133414
+ ;;^UTILITY(U,$J,358.3,13528,0)
+ ;;=H02.134^^80^761^88
+ ;;^UTILITY(U,$J,358.3,13528,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13528,1,3,0)
+ ;;=3^Senile Ectropion Left Upper Eyelid
+ ;;^UTILITY(U,$J,358.3,13528,1,4,0)
+ ;;=4^H02.134
+ ;;^UTILITY(U,$J,358.3,13528,2)
+ ;;=^5004320
+ ;;^UTILITY(U,$J,358.3,13529,0)
+ ;;=H02.132^^80^761^89
+ ;;^UTILITY(U,$J,358.3,13529,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13529,1,3,0)
+ ;;=3^Senile Ectropion Right Lower Eyelid
+ ;;^UTILITY(U,$J,358.3,13529,1,4,0)
+ ;;=4^H02.132
+ ;;^UTILITY(U,$J,358.3,13529,2)
+ ;;=^5004318
+ ;;^UTILITY(U,$J,358.3,13530,0)
+ ;;=H02.131^^80^761^90
+ ;;^UTILITY(U,$J,358.3,13530,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13530,1,3,0)
+ ;;=3^Senile Ectropion Right Upper Eyelid
+ ;;^UTILITY(U,$J,358.3,13530,1,4,0)
+ ;;=4^H02.131
+ ;;^UTILITY(U,$J,358.3,13530,2)
+ ;;=^5004317
+ ;;^UTILITY(U,$J,358.3,13531,0)
+ ;;=H02.035^^80^761^91
+ ;;^UTILITY(U,$J,358.3,13531,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13531,1,3,0)
+ ;;=3^Senile Entropion Left Lower Eyelid
+ ;;^UTILITY(U,$J,358.3,13531,1,4,0)
+ ;;=4^H02.035
+ ;;^UTILITY(U,$J,358.3,13531,2)
+ ;;=^5133401
+ ;;^UTILITY(U,$J,358.3,13532,0)
+ ;;=H02.034^^80^761^92
+ ;;^UTILITY(U,$J,358.3,13532,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13532,1,3,0)
+ ;;=3^Senile Entropion Left Upper Eyelid

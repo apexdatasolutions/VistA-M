@@ -1,142 +1,122 @@
-IBDEI1C6 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1C6 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,23944,1,2,0)
- ;;=2^604.99
- ;;^UTILITY(U,$J,358.3,23944,1,5,0)
- ;;=5^Epididymitits, Acute
- ;;^UTILITY(U,$J,358.3,23944,2)
- ;;=^270432
- ;;^UTILITY(U,$J,358.3,23945,0)
- ;;=608.1^^153^1525^26
- ;;^UTILITY(U,$J,358.3,23945,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23945,1,2,0)
- ;;=2^608.1
- ;;^UTILITY(U,$J,358.3,23945,1,5,0)
- ;;=5^Spermatocele
- ;;^UTILITY(U,$J,358.3,23945,2)
- ;;=^112987
- ;;^UTILITY(U,$J,358.3,23946,0)
- ;;=603.9^^153^1525^9
- ;;^UTILITY(U,$J,358.3,23946,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23946,1,2,0)
- ;;=2^603.9
- ;;^UTILITY(U,$J,358.3,23946,1,5,0)
- ;;=5^Hydrocele
- ;;^UTILITY(U,$J,358.3,23946,2)
- ;;=^59548
- ;;^UTILITY(U,$J,358.3,23947,0)
- ;;=228.09^^153^1525^24
- ;;^UTILITY(U,$J,358.3,23947,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23947,1,2,0)
- ;;=2^228.09
- ;;^UTILITY(U,$J,358.3,23947,1,5,0)
- ;;=5^Scrotal Hemangioma
- ;;^UTILITY(U,$J,358.3,23947,2)
- ;;=^55270
- ;;^UTILITY(U,$J,358.3,23948,0)
- ;;=604.0^^153^1525^20
- ;;^UTILITY(U,$J,358.3,23948,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23948,1,2,0)
- ;;=2^604.0
- ;;^UTILITY(U,$J,358.3,23948,1,5,0)
- ;;=5^Orchitis with Abscess
- ;;^UTILITY(U,$J,358.3,23948,2)
- ;;=^270431
- ;;^UTILITY(U,$J,358.3,23949,0)
- ;;=228.09^^153^1525^25
- ;;^UTILITY(U,$J,358.3,23949,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23949,1,2,0)
- ;;=2^228.09
- ;;^UTILITY(U,$J,358.3,23949,1,5,0)
- ;;=5^Scrotal Hemangioma
- ;;^UTILITY(U,$J,358.3,23949,2)
- ;;=^55270
- ;;^UTILITY(U,$J,358.3,23950,0)
- ;;=257.2^^153^1525^10
- ;;^UTILITY(U,$J,358.3,23950,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23950,1,2,0)
- ;;=2^257.2
- ;;^UTILITY(U,$J,358.3,23950,1,5,0)
- ;;=5^Hypogonadism
- ;;^UTILITY(U,$J,358.3,23950,2)
- ;;=^88213
- ;;^UTILITY(U,$J,358.3,23951,0)
- ;;=456.4^^153^1525^27
- ;;^UTILITY(U,$J,358.3,23951,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23951,1,2,0)
- ;;=2^456.4
- ;;^UTILITY(U,$J,358.3,23951,1,5,0)
- ;;=5^Varicocele
- ;;^UTILITY(U,$J,358.3,23951,2)
- ;;=^108731
- ;;^UTILITY(U,$J,358.3,23952,0)
- ;;=302.72^^153^1525^12
- ;;^UTILITY(U,$J,358.3,23952,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23952,1,2,0)
- ;;=2^302.72
- ;;^UTILITY(U,$J,358.3,23952,1,5,0)
- ;;=5^Impotence,Pyschogenic Origin
- ;;^UTILITY(U,$J,358.3,23952,2)
- ;;=^100632
- ;;^UTILITY(U,$J,358.3,23953,0)
- ;;=186.9^^153^1525^19
- ;;^UTILITY(U,$J,358.3,23953,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23953,1,2,0)
- ;;=2^186.9
- ;;^UTILITY(U,$J,358.3,23953,1,5,0)
- ;;=5^Malig Neop Testis
- ;;^UTILITY(U,$J,358.3,23953,2)
- ;;=^267242
- ;;^UTILITY(U,$J,358.3,23954,0)
- ;;=187.1^^153^1525^16
- ;;^UTILITY(U,$J,358.3,23954,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23954,1,2,0)
- ;;=2^187.1
- ;;^UTILITY(U,$J,358.3,23954,1,5,0)
- ;;=5^Malig Neop Prepuce
- ;;^UTILITY(U,$J,358.3,23954,2)
- ;;=^267244
- ;;^UTILITY(U,$J,358.3,23955,0)
- ;;=187.2^^153^1525^15
- ;;^UTILITY(U,$J,358.3,23955,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23955,1,2,0)
- ;;=2^187.2
- ;;^UTILITY(U,$J,358.3,23955,1,5,0)
- ;;=5^Malig Neop Glans Penis
- ;;^UTILITY(U,$J,358.3,23955,2)
- ;;=^267245
- ;;^UTILITY(U,$J,358.3,23956,0)
- ;;=187.3^^153^1525^13
- ;;^UTILITY(U,$J,358.3,23956,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23956,1,2,0)
- ;;=2^187.3
- ;;^UTILITY(U,$J,358.3,23956,1,5,0)
- ;;=5^Malig Neop Body of Penis
- ;;^UTILITY(U,$J,358.3,23956,2)
- ;;=^267246
- ;;^UTILITY(U,$J,358.3,23957,0)
- ;;=187.5^^153^1525^14
- ;;^UTILITY(U,$J,358.3,23957,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23957,1,2,0)
- ;;=2^187.5
- ;;^UTILITY(U,$J,358.3,23957,1,5,0)
- ;;=5^Malig Neop Epidiymis
- ;;^UTILITY(U,$J,358.3,23957,2)
- ;;=^267248
- ;;^UTILITY(U,$J,358.3,23958,0)
- ;;=187.6^^153^1525^18
+ ;;^UTILITY(U,$J,358.3,22268,0)
+ ;;=S22.070S^^101^1039^74
+ ;;^UTILITY(U,$J,358.3,22268,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22268,1,3,0)
+ ;;=3^Wedge compression fracture of T9-T10 vertebra, sequela
+ ;;^UTILITY(U,$J,358.3,22268,1,4,0)
+ ;;=4^S22.070S
+ ;;^UTILITY(U,$J,358.3,22268,2)
+ ;;=^5023020
+ ;;^UTILITY(U,$J,358.3,22269,0)
+ ;;=S32.030S^^101^1039^82
+ ;;^UTILITY(U,$J,358.3,22269,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22269,1,3,0)
+ ;;=3^Wedge compression fracture of third lumbar vertebra, sequela
+ ;;^UTILITY(U,$J,358.3,22269,1,4,0)
+ ;;=4^S32.030S
+ ;;^UTILITY(U,$J,358.3,22269,2)
+ ;;=^5024436
+ ;;^UTILITY(U,$J,358.3,22270,0)
+ ;;=S22.030S^^101^1039^83
+ ;;^UTILITY(U,$J,358.3,22270,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22270,1,3,0)
+ ;;=3^Wedge compression fracture of third thor vertebra, sequela
+ ;;^UTILITY(U,$J,358.3,22270,1,4,0)
+ ;;=4^S22.030S
+ ;;^UTILITY(U,$J,358.3,22270,2)
+ ;;=^5022900
+ ;;^UTILITY(U,$J,358.3,22271,0)
+ ;;=M48.52XS^^101^1039^2
+ ;;^UTILITY(U,$J,358.3,22271,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22271,1,3,0)
+ ;;=3^Collapsed vertebra, NEC, cervical region, sqla
+ ;;^UTILITY(U,$J,358.3,22271,1,4,0)
+ ;;=4^M48.52XS
+ ;;^UTILITY(U,$J,358.3,22271,2)
+ ;;=^5012170
+ ;;^UTILITY(U,$J,358.3,22272,0)
+ ;;=M48.53XS^^101^1039^3
+ ;;^UTILITY(U,$J,358.3,22272,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22272,1,3,0)
+ ;;=3^Collapsed vertebra, NEC, cervicothoracic region, sqla
+ ;;^UTILITY(U,$J,358.3,22272,1,4,0)
+ ;;=4^M48.53XS
+ ;;^UTILITY(U,$J,358.3,22272,2)
+ ;;=^5012174
+ ;;^UTILITY(U,$J,358.3,22273,0)
+ ;;=M48.57XS^^101^1039^4
+ ;;^UTILITY(U,$J,358.3,22273,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22273,1,3,0)
+ ;;=3^Collapsed vertebra, NEC, lumbosacral region, sqla
+ ;;^UTILITY(U,$J,358.3,22273,1,4,0)
+ ;;=4^M48.57XS
+ ;;^UTILITY(U,$J,358.3,22273,2)
+ ;;=^5012190
+ ;;^UTILITY(U,$J,358.3,22274,0)
+ ;;=M48.51XS^^101^1039^5
+ ;;^UTILITY(U,$J,358.3,22274,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22274,1,3,0)
+ ;;=3^Collapsed vertebra, NEC, occipt-atlan-ax region, sqla
+ ;;^UTILITY(U,$J,358.3,22274,1,4,0)
+ ;;=4^M48.51XS
+ ;;^UTILITY(U,$J,358.3,22274,2)
+ ;;=^5012166
+ ;;^UTILITY(U,$J,358.3,22275,0)
+ ;;=M48.58XS^^101^1039^6
+ ;;^UTILITY(U,$J,358.3,22275,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22275,1,3,0)
+ ;;=3^Collapsed vertebra, NEC, sacr/sacrocygl region, sqla
+ ;;^UTILITY(U,$J,358.3,22275,1,4,0)
+ ;;=4^M48.58XS
+ ;;^UTILITY(U,$J,358.3,22275,2)
+ ;;=^5012194
+ ;;^UTILITY(U,$J,358.3,22276,0)
+ ;;=M48.54XS^^101^1039^7
+ ;;^UTILITY(U,$J,358.3,22276,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22276,1,3,0)
+ ;;=3^Collapsed vertebra, NEC, thoracic region, sqla
+ ;;^UTILITY(U,$J,358.3,22276,1,4,0)
+ ;;=4^M48.54XS
+ ;;^UTILITY(U,$J,358.3,22276,2)
+ ;;=^5012178
+ ;;^UTILITY(U,$J,358.3,22277,0)
+ ;;=M48.55XS^^101^1039^8
+ ;;^UTILITY(U,$J,358.3,22277,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22277,1,3,0)
+ ;;=3^Collapsed vertebra, NEC, thoracolumbar region, sqla
+ ;;^UTILITY(U,$J,358.3,22277,1,4,0)
+ ;;=4^M48.55XS
+ ;;^UTILITY(U,$J,358.3,22277,2)
+ ;;=^5012182
+ ;;^UTILITY(U,$J,358.3,22278,0)
+ ;;=S12.040S^^101^1039^9
+ ;;^UTILITY(U,$J,358.3,22278,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22278,1,3,0)
+ ;;=3^Displaced lateral mass fx first cervcal vertebra, sequela
+ ;;^UTILITY(U,$J,358.3,22278,1,4,0)
+ ;;=4^S12.040S
+ ;;^UTILITY(U,$J,358.3,22278,2)
+ ;;=^5021586
+ ;;^UTILITY(U,$J,358.3,22279,0)
+ ;;=S12.030S^^101^1039^10
+ ;;^UTILITY(U,$J,358.3,22279,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,22279,1,3,0)
+ ;;=3^Displaced posterior arch fx first cervcal vertebra, sequela
+ ;;^UTILITY(U,$J,358.3,22279,1,4,0)
+ ;;=4^S12.030S

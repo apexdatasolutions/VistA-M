@@ -1,0 +1,134 @@
+IBDEI1OB ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,27999,1,3,0)
+ ;;=3^Vaginitis,Subacute & Chronic
+ ;;^UTILITY(U,$J,358.3,27999,1,4,0)
+ ;;=4^N76.1
+ ;;^UTILITY(U,$J,358.3,27999,2)
+ ;;=^5015827
+ ;;^UTILITY(U,$J,358.3,28000,0)
+ ;;=N76.2^^132^1322^91
+ ;;^UTILITY(U,$J,358.3,28000,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28000,1,3,0)
+ ;;=3^Vulvitis,Acute
+ ;;^UTILITY(U,$J,358.3,28000,1,4,0)
+ ;;=4^N76.2
+ ;;^UTILITY(U,$J,358.3,28000,2)
+ ;;=^5015828
+ ;;^UTILITY(U,$J,358.3,28001,0)
+ ;;=N76.0^^132^1322^87
+ ;;^UTILITY(U,$J,358.3,28001,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28001,1,3,0)
+ ;;=3^Vaginitis,Acute
+ ;;^UTILITY(U,$J,358.3,28001,1,4,0)
+ ;;=4^N76.0
+ ;;^UTILITY(U,$J,358.3,28001,2)
+ ;;=^5015826
+ ;;^UTILITY(U,$J,358.3,28002,0)
+ ;;=M00.20^^132^1322^3
+ ;;^UTILITY(U,$J,358.3,28002,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28002,1,3,0)
+ ;;=3^Arthritis Streptococcal,Unspec Joint
+ ;;^UTILITY(U,$J,358.3,28002,1,4,0)
+ ;;=4^M00.20
+ ;;^UTILITY(U,$J,358.3,28002,2)
+ ;;=^5009645
+ ;;^UTILITY(U,$J,358.3,28003,0)
+ ;;=M00.80^^132^1322^4
+ ;;^UTILITY(U,$J,358.3,28003,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28003,1,3,0)
+ ;;=3^Arthritis d/t Bacteria,Unspec Joint
+ ;;^UTILITY(U,$J,358.3,28003,1,4,0)
+ ;;=4^M00.80
+ ;;^UTILITY(U,$J,358.3,28003,2)
+ ;;=^5009669
+ ;;^UTILITY(U,$J,358.3,28004,0)
+ ;;=M00.9^^132^1322^72
+ ;;^UTILITY(U,$J,358.3,28004,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28004,1,3,0)
+ ;;=3^Pyogenic Arthritis,Unspec
+ ;;^UTILITY(U,$J,358.3,28004,1,4,0)
+ ;;=4^M00.9
+ ;;^UTILITY(U,$J,358.3,28004,2)
+ ;;=^5009693
+ ;;^UTILITY(U,$J,358.3,28005,0)
+ ;;=M00.00^^132^1322^78
+ ;;^UTILITY(U,$J,358.3,28005,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28005,1,3,0)
+ ;;=3^Staphylococcal Arthritis,Unspec Joint
+ ;;^UTILITY(U,$J,358.3,28005,1,4,0)
+ ;;=4^M00.00
+ ;;^UTILITY(U,$J,358.3,28005,2)
+ ;;=^5009597
+ ;;^UTILITY(U,$J,358.3,28006,0)
+ ;;=M00.10^^132^1322^65
+ ;;^UTILITY(U,$J,358.3,28006,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28006,1,3,0)
+ ;;=3^Pneumococcal Arthritis,Unspec Joint
+ ;;^UTILITY(U,$J,358.3,28006,1,4,0)
+ ;;=4^M00.10
+ ;;^UTILITY(U,$J,358.3,28006,2)
+ ;;=^5009621
+ ;;^UTILITY(U,$J,358.3,28007,0)
+ ;;=M86.20^^132^1322^62
+ ;;^UTILITY(U,$J,358.3,28007,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28007,1,3,0)
+ ;;=3^Osteomyelitis,Subacute,Unspec Site
+ ;;^UTILITY(U,$J,358.3,28007,1,4,0)
+ ;;=4^M86.20
+ ;;^UTILITY(U,$J,358.3,28007,2)
+ ;;=^5014535
+ ;;^UTILITY(U,$J,358.3,28008,0)
+ ;;=M86.10^^132^1322^58
+ ;;^UTILITY(U,$J,358.3,28008,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28008,1,3,0)
+ ;;=3^Osteomyelitis,Acute,Unspec Site
+ ;;^UTILITY(U,$J,358.3,28008,1,4,0)
+ ;;=4^M86.10
+ ;;^UTILITY(U,$J,358.3,28008,2)
+ ;;=^5014521
+ ;;^UTILITY(U,$J,358.3,28009,0)
+ ;;=M86.00^^132^1322^57
+ ;;^UTILITY(U,$J,358.3,28009,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28009,1,3,0)
+ ;;=3^Osteomyelitis,Acute Hematogenous,Unspec Site
+ ;;^UTILITY(U,$J,358.3,28009,1,4,0)
+ ;;=4^M86.00
+ ;;^UTILITY(U,$J,358.3,28009,2)
+ ;;=^5014497
+ ;;^UTILITY(U,$J,358.3,28010,0)
+ ;;=M86.50^^132^1322^59
+ ;;^UTILITY(U,$J,358.3,28010,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28010,1,3,0)
+ ;;=3^Osteomyelitis,Chronic Hematogenous,Unspec Site
+ ;;^UTILITY(U,$J,358.3,28010,1,4,0)
+ ;;=4^M86.50
+ ;;^UTILITY(U,$J,358.3,28010,2)
+ ;;=^5014607
+ ;;^UTILITY(U,$J,358.3,28011,0)
+ ;;=M86.30^^132^1322^60
+ ;;^UTILITY(U,$J,358.3,28011,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28011,1,3,0)
+ ;;=3^Osteomyelitis,Chronic Multifocal,Unspec Site
+ ;;^UTILITY(U,$J,358.3,28011,1,4,0)
+ ;;=4^M86.30
+ ;;^UTILITY(U,$J,358.3,28011,2)
+ ;;=^5014559
+ ;;^UTILITY(U,$J,358.3,28012,0)
+ ;;=M86.8X9^^132^1322^63
+ ;;^UTILITY(U,$J,358.3,28012,1,0)
+ ;;=^358.31IA^4^2

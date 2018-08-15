@@ -1,13 +1,7 @@
-IBDEI006 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI006 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358,43,2,0)
- ;;=^358.02I^6^6
- ;;^UTILITY(U,$J,358,43,2,1,0)
- ;;=1^1
- ;;^UTILITY(U,$J,358,43,2,2,0)
- ;;=2^1
  ;;^UTILITY(U,$J,358,43,2,3,0)
  ;;=3^1
  ;;^UTILITY(U,$J,358,43,2,4,0)
@@ -17,9 +11,9 @@ Q Q
  ;;^UTILITY(U,$J,358,43,2,6,0)
  ;;=5^1
  ;;^UTILITY(U,$J,358,44,0)
- ;;=NATIONAL PRIMARY CARE FY14-Q4^1^National Primary Care Form June 2014^1^0^1^1^^133^80^10^1^^1^p^1^2.1
+ ;;=NATIONAL INPATIENT FY16-Q1^0^National Inpatient Form November 2015^1^0^1^1^^133^80^12^1^^1^p^1^2.1
  ;;^UTILITY(U,$J,358,44,2,0)
- ;;=^358.02I^6^6
+ ;;=^358.02I^7^7
  ;;^UTILITY(U,$J,358,44,2,1,0)
  ;;=1^1
  ;;^UTILITY(U,$J,358,44,2,2,0)
@@ -32,34 +26,22 @@ Q Q
  ;;=4^1
  ;;^UTILITY(U,$J,358,44,2,6,0)
  ;;=5^1
+ ;;^UTILITY(U,$J,358,44,2,7,0)
+ ;;=6^1
  ;;^UTILITY(U,$J,358,45,0)
- ;;=NATL PREVENTIVE HEALTH FY14-Q4^1^National Preventive Health June 2014^1^0^1^1^^133^80^9^1^^1^p^1^2.1
- ;;^UTILITY(U,$J,358,45,2,0)
- ;;=^358.02I^6^6
- ;;^UTILITY(U,$J,358,45,2,1,0)
- ;;=1^1
- ;;^UTILITY(U,$J,358,45,2,2,0)
- ;;=2^1
- ;;^UTILITY(U,$J,358,45,2,3,0)
- ;;=3^1
- ;;^UTILITY(U,$J,358,45,2,4,0)
- ;;=2^1
- ;;^UTILITY(U,$J,358,45,2,5,0)
- ;;=4^1
- ;;^UTILITY(U,$J,358,45,2,6,0)
- ;;=5^1
+ ;;=NATIONAL IR FY16-Q1^0^NATIONAL INTERVENTIONAL RADIOLOGY November 2015^1^0^1^1^^133^80^8^1^^1^p^1^2.1
  ;;^UTILITY(U,$J,358,46,0)
- ;;=NATL REHAB-PT/OT/KT FY14-Q4^2^National Rehab PT/OT/KT July 2014^1^0^1^1^^133^80^3^1^^1^p^1^3
+ ;;=NATL LOW VISION-OPTOM FY16-Q1^1^National Low Vision Optometry November 2015^1^0^1^1^^133^80^7^1^^1^p^1
  ;;^UTILITY(U,$J,358,46,2,0)
  ;;=^358.02I^3^3
  ;;^UTILITY(U,$J,358,46,2,1,0)
  ;;=1^1
  ;;^UTILITY(U,$J,358,46,2,2,0)
- ;;=2^1
- ;;^UTILITY(U,$J,358,46,2,3,0)
  ;;=3^1
+ ;;^UTILITY(U,$J,358,46,2,3,0)
+ ;;=2^1
  ;;^UTILITY(U,$J,358,47,0)
- ;;=NATIONAL SCI FY14-Q4^1^National Spinal Cord Injury June 2014^1^0^1^1^^133^80^2^1^^1^p^1^2.1
+ ;;=NATL MED FOSTER HOME FY16-Q1^1^National Medical Foster Home-October 2015^1^0^1^1^^133^80^29^1^^1^p^1^2.1
  ;;^UTILITY(U,$J,358,47,2,0)
  ;;=^358.02I^6^6
  ;;^UTILITY(U,$J,358,47,2,1,0)
@@ -75,7 +57,7 @@ Q Q
  ;;^UTILITY(U,$J,358,47,2,6,0)
  ;;=5^1
  ;;^UTILITY(U,$J,358,48,0)
- ;;=NATIONAL SWS ED FY14-Q4^1^National Social Work Service-Emergency Room August 2014^1^0^1^1^^133^80^3^1^^1^p^1^2.1
+ ;;=NATIONAL MEDICINE FY16-Q1^1^National Medicine Form October 2015^1^0^1^1^^133^80^29^1^^1^p^1^2.1
  ;;^UTILITY(U,$J,358,48,2,0)
  ;;=^358.02I^6^6
  ;;^UTILITY(U,$J,358,48,2,1,0)
@@ -91,25 +73,25 @@ Q Q
  ;;^UTILITY(U,$J,358,48,2,6,0)
  ;;=5^1
  ;;^UTILITY(U,$J,358,49,0)
- ;;=NATIONAL TBI FY14-Q4^1^National Traumatic Brain Injury June 2014^1^0^1^1^^133^80^3^1^^1^p^1^2.1
+ ;;=NATIONAL MH MHICM FY16-Q1^1^National MH Intensive Program October 2015^1^0^1^1^^133^80^8^1^^1^p^1^3
  ;;^UTILITY(U,$J,358,49,2,0)
- ;;=^358.02I^6^6
+ ;;=^358.02I^3^3
  ;;^UTILITY(U,$J,358,49,2,1,0)
  ;;=1^1
  ;;^UTILITY(U,$J,358,49,2,2,0)
  ;;=2^1
  ;;^UTILITY(U,$J,358,49,2,3,0)
  ;;=3^1
- ;;^UTILITY(U,$J,358,49,2,4,0)
- ;;=2^1
- ;;^UTILITY(U,$J,358,49,2,5,0)
- ;;=4^1
- ;;^UTILITY(U,$J,358,49,2,6,0)
- ;;=5^1
  ;;^UTILITY(U,$J,358,50,0)
- ;;=NATIONAL TELEDERM FY14-Q4^0^National Telederm August 2014^1^0^^1^^133^80^4^1^^1^p^1^3
+ ;;=NATIONAL MH NURSE FY16-Q1^0^National Mental Health Nurse October 2015^1^0^1^1^^133^80^7^1^^1^p^1^3
+ ;;^UTILITY(U,$J,358,50,2,0)
+ ;;=^358.02I^2^2
+ ;;^UTILITY(U,$J,358,50,2,1,0)
+ ;;=1^1
+ ;;^UTILITY(U,$J,358,50,2,2,0)
+ ;;=2^1
  ;;^UTILITY(U,$J,358,51,0)
- ;;=NATIONAL TELEPHONE FY14-Q4^2^NATIONAL TELEPHONE CLINICS-July 2014^1^0^1^1^^133^80^1^1^^1^p^1^2.1
+ ;;=NATIONAL MH PHARM FY16-Q1^2^NATIONAL MHS CLINICAL PHARMACISTS-REVIEWED/REVISED October 2015^1^0^1^1^^133^80^6^1^^1^p^1^2.1
  ;;^UTILITY(U,$J,358,51,2,0)
  ;;=^358.02I^2^2
  ;;^UTILITY(U,$J,358,51,2,1,0)
@@ -117,7 +99,7 @@ Q Q
  ;;^UTILITY(U,$J,358,51,2,2,0)
  ;;=2^1
  ;;^UTILITY(U,$J,358,52,0)
- ;;=NATIONAL UROLOGY FY14-Q4^0^National Urology Form August 2014^1^0^1^1^^133^80^3^1^^1^p^1^3
+ ;;=NATL MH PSYCHIATRIST FY16-Q1^0^National Mental Health Psychiatrist October 2015^1^0^1^1^^133^80^7^1^^1^p^1^3
  ;;^UTILITY(U,$J,358,52,2,0)
  ;;=^358.02I^2^2
  ;;^UTILITY(U,$J,358,52,2,1,0)
@@ -125,8 +107,20 @@ Q Q
  ;;^UTILITY(U,$J,358,52,2,2,0)
  ;;=2^1
  ;;^UTILITY(U,$J,358,53,0)
- ;;=NATIONAL VASCULAR SURG FY14-Q4^0^NATIONAL VASCULAR SURGERY July 2014^1^0^1^1^^133^80^2^1^^1^p^1^2.1
+ ;;=NATL MH PSYCHOLOGIST FY16-Q1^0^National Mental Health Psychologist October 2015^1^0^1^1^^133^80^7^1^^1^p^1^3
+ ;;^UTILITY(U,$J,358,53,2,0)
+ ;;=^358.02I^2^2
+ ;;^UTILITY(U,$J,358,53,2,1,0)
+ ;;=1^1
+ ;;^UTILITY(U,$J,358,53,2,2,0)
+ ;;=2^1
  ;;^UTILITY(U,$J,358,54,0)
- ;;=NATIONAL WOMENS HEALTH FY14-Q4^2^NATIONAL WOMENS HEALTH-June 2014^1^0^1^1^^133^80^3^1^^1^p^1^3
+ ;;=NATIONAL MOVE! FY16-Q1^2^NATIONAL MOVE!-November 2015^1^0^1^1^^133^80^2^1^^1^p^1^2.1
+ ;;^UTILITY(U,$J,358,54,2,0)
+ ;;=^358.02I^2^2
+ ;;^UTILITY(U,$J,358,54,2,1,0)
+ ;;=1^1
+ ;;^UTILITY(U,$J,358,54,2,2,0)
+ ;;=2^1
  ;;^UTILITY(U,$J,358,55,0)
- ;;=NATIONAL WOUND OSTOMY FY14-Q4^1^National Nursing Wound Ostomy-July 2014^1^0^1^1^^133^80^2^1^^1^p^1^2.1
+ ;;=NATIONAL NEPHROLOGY FY16-Q1^2^National Nephrology November 2015^1^0^1^1^^133^80^6^1^^1^p^1^3

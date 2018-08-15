@@ -1,5 +1,5 @@
 PSOORED4 ;BIR/SAB - Edit front door dosing ;07/13/00
- ;;7.0;OUTPATIENT PHARMACY;**46,91,78,99,111,117,133,159,148,251,391,372,416,313**;DEC 1997;Build 76
+ ;;7.0;OUTPATIENT PHARMACY;**46,91,78,99,111,117,133,159,148,251,391,372,416,313,437,282,402,515**;DEC 1997;Build 1
  ;External reference ^PS(51 supported by DBIA 2224
  ;External reference to PS(51.2 supported by DBIA 2226
  ;External reference to PS(51.1 supported by DBIA 2225
@@ -48,9 +48,10 @@ RTE K JUMP S ROU="PSOORED4" D RTE^PSOBKDED K ROU
  ;
 SCH D SCH^PSOBKDED I X[U,$L(X)>1 S FIELD="SCH" G JUMP
  G:$D(DTOUT)!($D(DUOUT)) EXQ
- S SCH=Y D SCH^PSOSIG I $G(SCH)']"" G SCH
- S PSORXED("SCHEDULE",ENT)=SCH W " ("_SCHEX_")" K SCH,SCHEX,X,Y,PSOSCH
- S:PSORXED("ENT")<ENT PSORXED("ENT")=ENT
+ S SCH=$$SCHASL^PSOORED5(Y) D SCH^PSOSIG I $G(SCH)']""!($D(DTOUT))!($D(DUOUT)) G SCH
+ S PSORXED("SCHEDULE",ENT)=SCH IF $G(SCHEX)'="" W " ("_SCHEX_")"
+ K SCH,SCHEX,X,Y,PSOSCH
+ S:$G(PSORXED("ENT"))<ENT PSORXED("ENT")=ENT
  ;
 DUR D KV K EXP S DIR(0)="52.0113,4",DIR("A")="LIMITED DURATION (IN DAYS, HOURS OR MINUTES)"
  S DIR("B")=$S($G(PSORXED("DURATION",ENT))]"":PSORXED("DURATION",ENT),1:"") K:DIR("B")="" DIR("B")
@@ -65,8 +66,9 @@ CON D CON^PSOOREDX I X[U,$L(X)>1 S FIELD="CON" G JUMP
  I X="@",$D(PSORXED("CONJUNCTION",ENT)) D CON1^PSOOREDX G:$D(DIRUT) EXQ G:'Y CON N CKX S CKX=1 D UPD^PSOOREDX G CON
  ;
  N PSODLBD4 S PSOSAVX=X,PSODLBD4=1
- I $G(PSORXED("CONJUNCTION",ENT))="T",$G(PSORXED("DURATION",ENT))="" D  G DUR
- . W $C(7),!!,"Duration is required for the dosage entered prior to the THEN conjunction.",!
+ ;*437
+ I '$$DUROK^PSOORED3(.PSORXED,ENT) D  G DUR
+ . W !!,"Duration is required for the dosage entered prior to the THEN conjunction.",$C(7),!
  I $G(PSORXED("CONJUNCTION",ENT))]"" S PSOCKCON=1 D DCHK1^PSODOSUT G:$G(PSONEW("DFLG")) EX S ENT=ENT+1 K DIR G ASK
  E  K PSOCKCON D DCHK1^PSODOSUT I $D(DTOUT)!($D(DUOUT)) S PSORX("DFLG")=1,PSONEW("DFLG")=1 G EX  ;don't need to print the full summary, just the last sequence. 
  I PSOSAVX="",$G(PSORXED) K PSOCKCON,PSOEDDOS
@@ -125,12 +127,13 @@ SCHLP ;
  S DIR("A")="Do you want to list from" D ^DIR I Y="F"!($G(DIRUT)) K X,Y G X
  S LBL=Y G @LBL
 A ;display 51.1 entries only
-B K X,Y,DIC S X="??",DIC="^PS(51.1,",DIC(0)="QES",DIC("W")="D DICW^PSOORED4",D="APPSJ" W ! D IX^DIC
+B K X,Y,DIC S X="??",DIC="^PS(51.1,",DIC(0)="QESMVZ",DIC("W")="D DICW^PSOORED4",D="APPSJ^D" W ! D MIX^DIC1
  K DIC,X I LBL="A"!($G(DTOUT)) K LBL G X
  I Y=-1!($G(DUOUT)) K DIR,DTOUT,DUOUT S DIR(0)="Y",DIR("B")="No",DIR("A")="Do you want to continue with the Medication Instruction File"
  D ^DIR I 'Y!($G(DTOUT)) K DIR,X,Y G X
 M K X,Y,DIC S DIC=51,X="??",DIC(0)="M" D ^DIC K DIC,X,Y,DTOUT,DUOUT,LBL
-X S DIR("?")="^D SCHLP^PSOORED4",DIR("A")="Schedule: ",DIR(0)="FA^1:20^I X[""""""""!(X?.E1C.E)!($A(X)=45)!($L(X,"" "")>3)!($L(X)>20)!($L(X)<1) K X"
+ ;*282 Allow multi-word schedules
+X S DIR("?")="^D SCHLP^PSOORED4",DIR("A")="Schedule: ",DIR(0)="FA^1:20^I X[""""""""!(X?.E1C.E)!($A(X)=45)!($L(X,"" "")>$S(X[""PRN"":4,1:3))!($L(X)>20)!($L(X)<1) K X"
  S DIR("B")=$S($D(PSOSCH)&('$D(PSORXED("SCHEDULE",ENT))):PSOSCH,$G(PSORXED("SCHEDULE",ENT))]"":PSORXED("SCHEDULE",ENT),1:"") K:DIR("B")="" DIR("B")
  Q
 DICW ;

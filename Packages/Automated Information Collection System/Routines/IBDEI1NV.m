@@ -1,0 +1,130 @@
+IBDEI1NV ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,27792,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27792,1,3,0)
+ ;;=3^Personal Hx of Malig Neop of Larynx
+ ;;^UTILITY(U,$J,358.3,27792,1,4,0)
+ ;;=4^Z85.21
+ ;;^UTILITY(U,$J,358.3,27792,2)
+ ;;=^5063411
+ ;;^UTILITY(U,$J,358.3,27793,0)
+ ;;=Z85.3^^132^1321^85
+ ;;^UTILITY(U,$J,358.3,27793,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27793,1,3,0)
+ ;;=3^Personal Hx of Malig Neop of Breast
+ ;;^UTILITY(U,$J,358.3,27793,1,4,0)
+ ;;=4^Z85.3
+ ;;^UTILITY(U,$J,358.3,27793,2)
+ ;;=^5063416
+ ;;^UTILITY(U,$J,358.3,27794,0)
+ ;;=Z85.41^^132^1321^87
+ ;;^UTILITY(U,$J,358.3,27794,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27794,1,3,0)
+ ;;=3^Personal Hx of Malig Neop of Cervix Uteri
+ ;;^UTILITY(U,$J,358.3,27794,1,4,0)
+ ;;=4^Z85.41
+ ;;^UTILITY(U,$J,358.3,27794,2)
+ ;;=^5063418
+ ;;^UTILITY(U,$J,358.3,27795,0)
+ ;;=Z85.43^^132^1321^95
+ ;;^UTILITY(U,$J,358.3,27795,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27795,1,3,0)
+ ;;=3^Personal Hx of Malig Neop of Ovary
+ ;;^UTILITY(U,$J,358.3,27795,1,4,0)
+ ;;=4^Z85.43
+ ;;^UTILITY(U,$J,358.3,27795,2)
+ ;;=^5063420
+ ;;^UTILITY(U,$J,358.3,27796,0)
+ ;;=Z85.46^^132^1321^96
+ ;;^UTILITY(U,$J,358.3,27796,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27796,1,3,0)
+ ;;=3^Personal Hx of Malig Neop of Prostate
+ ;;^UTILITY(U,$J,358.3,27796,1,4,0)
+ ;;=4^Z85.46
+ ;;^UTILITY(U,$J,358.3,27796,2)
+ ;;=^5063423
+ ;;^UTILITY(U,$J,358.3,27797,0)
+ ;;=Z85.47^^132^1321^100
+ ;;^UTILITY(U,$J,358.3,27797,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27797,1,3,0)
+ ;;=3^Personal Hx of Malig Neop of Testis
+ ;;^UTILITY(U,$J,358.3,27797,1,4,0)
+ ;;=4^Z85.47
+ ;;^UTILITY(U,$J,358.3,27797,2)
+ ;;=^5063424
+ ;;^UTILITY(U,$J,358.3,27798,0)
+ ;;=Z85.51^^132^1321^84
+ ;;^UTILITY(U,$J,358.3,27798,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27798,1,3,0)
+ ;;=3^Personal Hx of Malig Neop of Bladder
+ ;;^UTILITY(U,$J,358.3,27798,1,4,0)
+ ;;=4^Z85.51
+ ;;^UTILITY(U,$J,358.3,27798,2)
+ ;;=^5063428
+ ;;^UTILITY(U,$J,358.3,27799,0)
+ ;;=Z85.528^^132^1321^89
+ ;;^UTILITY(U,$J,358.3,27799,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27799,1,3,0)
+ ;;=3^Personal Hx of Malig Neop of Kidney
+ ;;^UTILITY(U,$J,358.3,27799,1,4,0)
+ ;;=4^Z85.528
+ ;;^UTILITY(U,$J,358.3,27799,2)
+ ;;=^5063430
+ ;;^UTILITY(U,$J,358.3,27800,0)
+ ;;=Z85.6^^132^1321^80
+ ;;^UTILITY(U,$J,358.3,27800,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27800,1,3,0)
+ ;;=3^Personal Hx of Leukemia
+ ;;^UTILITY(U,$J,358.3,27800,1,4,0)
+ ;;=4^Z85.6
+ ;;^UTILITY(U,$J,358.3,27800,2)
+ ;;=^5063434
+ ;;^UTILITY(U,$J,358.3,27801,0)
+ ;;=Z85.72^^132^1321^104
+ ;;^UTILITY(U,$J,358.3,27801,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27801,1,3,0)
+ ;;=3^Personal Hx of Non-Hodgkin Lymphomas
+ ;;^UTILITY(U,$J,358.3,27801,1,4,0)
+ ;;=4^Z85.72
+ ;;^UTILITY(U,$J,358.3,27801,2)
+ ;;=^5063436
+ ;;^UTILITY(U,$J,358.3,27802,0)
+ ;;=Z85.79^^132^1321^94
+ ;;^UTILITY(U,$J,358.3,27802,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27802,1,3,0)
+ ;;=3^Personal Hx of Malig Neop of Lymphoid,Hematpoetc & Rel Tissue
+ ;;^UTILITY(U,$J,358.3,27802,1,4,0)
+ ;;=4^Z85.79
+ ;;^UTILITY(U,$J,358.3,27802,2)
+ ;;=^5063437
+ ;;^UTILITY(U,$J,358.3,27803,0)
+ ;;=Z85.820^^132^1321^83
+ ;;^UTILITY(U,$J,358.3,27803,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27803,1,3,0)
+ ;;=3^Personal Hx of Malig Melanoma of Skin
+ ;;^UTILITY(U,$J,358.3,27803,1,4,0)
+ ;;=4^Z85.820
+ ;;^UTILITY(U,$J,358.3,27803,2)
+ ;;=^5063441
+ ;;^UTILITY(U,$J,358.3,27804,0)
+ ;;=Z85.828^^132^1321^98
+ ;;^UTILITY(U,$J,358.3,27804,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,27804,1,3,0)
+ ;;=3^Personal Hx of Malig Neop of Skin
+ ;;^UTILITY(U,$J,358.3,27804,1,4,0)
+ ;;=4^Z85.828

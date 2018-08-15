@@ -1,30 +1,18 @@
 PSOSIGDS ;BIR/RTR-Utility to calculate Days Supply ;6/04/00
- ;;7.0;OUTPATIENT PHARMACY;**46,222,391**;DEC 1997;Build 13
+ ;;7.0;OUTPATIENT PHARMACY;**46,222,391,282,444**;DEC 1997;Build 34
  ;External reference to PS(51 supported by DBIA 2224
  ;External reference to PS(51.1 supported by DBIA 2225
  ;External reference to PS(55 supported by DBIA 2228
  ;External reference to PSDRUG( supported by DBIA 221
  ;External reference to YSCL(603.01 supported by DBIA 2697
+ ;External reference to PSNDF(50.68 supported by DBIA 3735
+ ;External reference $$MXDAYSUP^PSSUTIL1 supported by DBIA 6229
  ;
 EN(PSOSIGX) ;
  N VARIABLE
  Q
-SCH ;SCH = schedule entered     SCHEX = expanded schedule
- N SQFLAG,SCLOOP,SCLP,SCLPS,SCLHOLD,SCIN,SODL,SST
- K SCHEX S SQFLAG=0
- I $G(SCH)="" S SCHEX="" Q
- F SCLOOP=0:0 S SCLOOP=$O(^PS(51.1,"B",SCH,SCLOOP)) Q:'SCLOOP!(SQFLAG)  I $P($G(^PS(51.1,SCLOOP,0)),"^",8)'="" S SCHEX=$P($G(^(0)),"^",8),SQFLAG=1
- Q:SQFLAG
- I $P($G(^PS(51,"A",SCH)),"^")'="" S SCHEX=$P(^(SCH),"^") Q
- S SCLOOP=0 F SCLP=1:1:$L(SCH) S SCLPS=$E(SCH,SCLP) I SCLPS=" " S SCLOOP=SCLOOP+1
- I SCLOOP=0 S SCHEX=SCH Q
- S SCLOOP=SCLOOP+1
- K SCLHOLD F SCIN=1:1:SCLOOP S (SODL,SCLHOLD(SCIN))=$P(SCH," ",SCIN) D
- .Q:$G(SODL)=""
- .S SQFLAG=0 F SST=0:0 S SST=$O(^PS(51.1,"B",SODL,SST)) Q:'SST!($G(SQFLAG))  I $P($G(^PS(51.1,SST,0)),"^",8)'="" S SCLHOLD(SCIN)=$P($G(^(0)),"^",8),SQFLAG=1
- .Q:$G(SQFLAG)
- .I $P($G(^PS(51,"A",SODL)),"^")'="" S SCLHOLD(SCIN)=$P(^(SODL),"^")
- S SCHEX="",SQFLAG=0 F SST=1:1:SCLOOP S SCHEX=SCHEX_$S($G(SQFLAG):" ",1:"")_$G(SCLHOLD(SST)),SQFLAG=1
+SCH ;*282 Centralized Call
+ D SCH^PSOSIG
  Q
 QTY(PSOQX) ;
  Q
@@ -39,18 +27,12 @@ QTYCP ;CPRS days supply call comes through here
  Q:'$G(QDOSE)
  G:QDOSE>1 COMP
  Q:'$G(PSOQX("DOSE ORDERED",1))
- ;Q:'$G(PSOQX("DAYS SUPPLY"))&('$G(PSOQX("DURATION",1)))
  S PSOLOWER=0
  I $G(PSOQX("DURATION",1)) D
  .S PSOLOWX=$L(PSOQX("DURATION",1))
  .S PSOLOWXL=$S($E(PSOQX("DURATION",1),PSOLOWX)="M":1,$E(PSOQX("DURATION",1),PSOLOWX)="H":60,$E(PSOQX("DURATION",1),PSOLOWX)="S":.01666,$E(PSOQX("DURATION",1),PSOLOWX)="W":10080,$E(PSOQX("DURATION",1),PSOLOWX)="L":43200,1:1440)
  .S PSOLOWER=PSOLOWXL*(+$G(PSOQX("DURATION",1)))
- ;S PSOLOWX=0 I +$G(PSOQX("DAYS SUPPLY")) S PSOLOWX=1440*+$G(PSOQX("DAYS SUPPLY"))
- ;Q:'$G(PSOLOWER)&('$G(PSOLOWX))
  S QTSH=$G(PSOQX("SCHEDULE",1)) D QTS Q:PSQQUIT!('$G(PSOFRQ))
- ;S PSOLOWST=$S('$G(PSOLOWER):$G(PSOLOWX),'$G(PSOLOWX):$G(PSOLOWER),$G(PSOLOWER)>$G(PSOLOWX):$G(PSOLOWX),$G(PSOLOWX)>$G(PSOLOWER):$G(PSOLOWER),$G(PSOLOWX)=$G(PSOLOWER):$G(PSOLOWER),1:0)
- ;Q:'$G(PSOLOWST)
- ;S PSQMIN=+$G(PSOLOWST)
  S PSQMIN=$S($G(PSOLOWER):$G(PSOLOWER),1:0) ; PSQMIN=Minutes based in duration, or 0 if no duration
  ;If Duration, determine using QTY how many days, regardless of duration, then use what is lower, that # of days or the duration, ROund that up, and check against Rx patient status
  ;if no duration, just figure out using QTY # of days, then compare that against Rx patient status
@@ -59,8 +41,6 @@ QTYCP ;CPRS days supply call comes through here
  S PSOZMIN=PSOZMIN*PSOFRQ
  I $G(PSOLOWER) S PSOZMIN=$S(PSOLOWER<PSOZMIN:PSOLOWER,1:PSOZMIN)
  S PSOZMIN=PSOZMIN/1440
- ;S PSQMINZ=PSQMIN/PSOFRQ
- ;S PSOQRND=PSQMINZ*+$G(PSOQX("DOSE ORDERED",1)) Q:'PSOQRND
  D ROUND G QEND
  Q
 COMP ;COMPLEX DOSE HERE
@@ -99,27 +79,8 @@ COMP ;COMPLEX DOSE HERE
  S PSODUPTT=PSOQUTOT-PSODUPTT S PSOLEFT=(PSODUPTT/+$G(PSOQX("DOSE ORDERED",PSODUREP)))*(+$G(PSOFRQZ))
  S PSODUTOT=PSODUTOT+PSOLEFT S PSOZMIN=PSODUTOT/1440 D ROUND
  G QEND
-QTS ;Find frequency
- ;QTSH = SHCEDULE
- ;either return PSOFRQ for frequency or PSSQUIT for no frequency
- N SQTFLAG,SQQT,ZZQT,ZZQ,ZZQQ,ZQHOLD,QGLFLAG,PZQT,ZDL,ZZQX
- K PSOFRQ
- S (QGLFLAG,ZZQX)=0
- I $G(QTSH)="" S PSQQUIT=1 Q
- S SQTFLAG=0 F SQQT=0:0 S SQQT=$O(^PS(51.1,"B",QTSH,SQQT)) Q:'SQQT!($G(SQTFLAG))  I $P($G(^PS(51.1,SQQT,0)),"^",3) S PSOFRQ=$P($G(^(0)),"^",3),SQTFLAG=1
- Q:SQTFLAG
- F SQQT=0:0 S SQQT=$O(^PS(51,"B",QTSH,SQQT)) Q:'SQQT!($G(SQTFLAG))  I $P($G(^PS(51,SQQT,0)),"^",8) S PSOFRQ=$P($G(^(0)),"^",8),SQTFLAG=1
- Q:SQTFLAG
- S ZZQT=0 F ZZQ=1:1:$L(QTSH) S ZZQQ=$E(QTSH,ZZQ) I ZZQQ=" " S ZZQT=ZZQT+1
- I 'ZZQT S PSQQUIT=1 Q
- S ZZQT=ZZQT+1
- K ZQHOLD S QGLFLAG=0 F PZQT=1:1:ZZQT S (ZDL,ZQHOLD)=$P(QTSH," ",PZQT) D
- .Q:$G(ZDL)=""
- .S ZZQX=0 F SQQT=0:0 S SQQT=$O(^PS(51.1,"B",ZDL,SQQT)) Q:'SQQT!($G(ZZQX))  I $P($G(^PS(51.1,SQQT,0)),"^",3) S PSOFRQ=$P($G(^(0)),"^",3),ZZQX=1,QGLFLAG=QGLFLAG+1
- .Q:ZZQX
- .S ZZQX=0 F SQQT=0:0 S SQQT=$O(^PS(51,"B",ZDL,SQQT)) Q:'SQQT!($G(ZZQX))  I $P($G(^PS(51,SQQT,0)),"^",8) S PSOFRQ=$P($G(^(0)),"^",8),ZZQX=1,QGLFLAG=QGLFLAG+1
- I $G(QGLFLAG)>1 K PSOFRQ
- I '$G(PSOFRQ) S PSQQUIT=1
+QTS ;*282 Centralized Call
+ D QTS^PSOSIG
  Q
 QEND ;
  K PSOFRQ
@@ -160,18 +121,21 @@ QTYX(PSOQX) ;
  .S PSOQX("DURATION",PSOQLP)=$G(PSOQAR("DURATION",PSOQLP))
  K PSOCPRQT
  Q
-DSUP(PSOQX) ;Max Days Supply for CPRS, without QTY (just patient and drug)
+DSUP(PSOQX) ;Default Days Supply for CPRS, without QTY (just patient and drug)
  ;Should we add to accept # of refills?
  ;If no Drug, should we base on Orderable Item
- N CS,DR,OI S CS=0,DR=$G(PSOQX("DRUG"))
- I DR S CS=$$CSDS(DR)
+ N CS,DR,OI,MXDS,DRMXDS S CS=0,MXDS=90,DR=$G(PSOQX("DRUG"))
+ I DR S CS=$$CSDS(DR),MXDS=$$MXDAYSUP^PSSUTIL1(DR)
  I 'DR S OI=$G(PSOQX("OI")) D:OI
- .N IDT,PAC S DR=0 F  S DR=$O(^PSDRUG("ASP",OI,DR)) Q:'DR!(CS)  D
+ .N IDT,PAC S DR=0 F  S DR=$O(^PSDRUG("ASP",OI,DR)) Q:'DR   D
+ ..S DRMXDS=$$MXDAYSUP^PSSUTIL1(DR) I DRMXDS>MXDS S MXDS=DRMXDS
+ ..I CS Q
  ..S IDT=$P($G(^PSDRUG(DR,"I")),"^"),PAC=$P($G(^(2)),"^",3)
  ..I IDT,IDT<DT Q
  ..I PAC'["O" Q
  ..S CS=$$CSDS(DR)
  S PSOQX("DAYS SUPPLY")=$S(CS:30,1:90)
+ I PSOQX("DAYS SUPPLY")>MXDS S PSOQX("DAYS SUPPLY")=MXDS
  Q:'$G(PSOQX("PATIENT"))
  N PSO55,PSO553
  S PSO55=$P($G(^PS(55,PSOQX("PATIENT"),"PS")),"^") I 'PSO55 G DSUPDG
@@ -196,4 +160,3 @@ CSDS(DR) ;
  E  S CS=$P($G(^PSDRUG(DR,0)),"^",3),CS=$S(CS[1:1,CS[2:2,CS[3:3,CS[4:4,CS[5:5,1:0)
  I CS=1!(CS=2)!(CS=3)!(CS=4)!(CS=5) Q 1
  Q 0
- ;

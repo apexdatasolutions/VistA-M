@@ -1,138 +1,126 @@
-IBDEI18V ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI18V ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,22273,1,0)
+ ;;^UTILITY(U,$J,358.3,20808,1,4,0)
+ ;;=4^F06.31
+ ;;^UTILITY(U,$J,358.3,20808,2)
+ ;;=^5003057
+ ;;^UTILITY(U,$J,358.3,20809,0)
+ ;;=F06.32^^99^986^4
+ ;;^UTILITY(U,$J,358.3,20809,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,22273,1,3,0)
- ;;=3^Aphasia
- ;;^UTILITY(U,$J,358.3,22273,1,4,0)
- ;;=4^784.3
- ;;^UTILITY(U,$J,358.3,22273,2)
- ;;=^9453
- ;;^UTILITY(U,$J,358.3,22274,0)
- ;;=334.3^^137^1346^2
- ;;^UTILITY(U,$J,358.3,22274,1,0)
+ ;;^UTILITY(U,$J,358.3,20809,1,3,0)
+ ;;=3^Depressive Disorder d/t Another Medical Condition w/ Major Depressive-Like Episode
+ ;;^UTILITY(U,$J,358.3,20809,1,4,0)
+ ;;=4^F06.32
+ ;;^UTILITY(U,$J,358.3,20809,2)
+ ;;=^5003058
+ ;;^UTILITY(U,$J,358.3,20810,0)
+ ;;=F32.9^^99^986^14
+ ;;^UTILITY(U,$J,358.3,20810,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,22274,1,3,0)
- ;;=3^Cerebellar Ataxia Nec
- ;;^UTILITY(U,$J,358.3,22274,1,4,0)
- ;;=4^334.3
- ;;^UTILITY(U,$J,358.3,22274,2)
- ;;=^87376
- ;;^UTILITY(U,$J,358.3,22275,0)
- ;;=438.11^^137^1346^4
- ;;^UTILITY(U,$J,358.3,22275,1,0)
+ ;;^UTILITY(U,$J,358.3,20810,1,3,0)
+ ;;=3^Major Depressive Disorder,Single Episode,Unspec
+ ;;^UTILITY(U,$J,358.3,20810,1,4,0)
+ ;;=4^F32.9
+ ;;^UTILITY(U,$J,358.3,20810,2)
+ ;;=^5003528
+ ;;^UTILITY(U,$J,358.3,20811,0)
+ ;;=F32.0^^99^986^15
+ ;;^UTILITY(U,$J,358.3,20811,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,22275,1,3,0)
- ;;=3^Late Eff Cereb/Vasc,Aphasia
- ;;^UTILITY(U,$J,358.3,22275,1,4,0)
- ;;=4^438.11
- ;;^UTILITY(U,$J,358.3,22275,2)
- ;;=^317907
- ;;^UTILITY(U,$J,358.3,22276,0)
- ;;=438.0^^137^1346^3
- ;;^UTILITY(U,$J,358.3,22276,1,0)
+ ;;^UTILITY(U,$J,358.3,20811,1,3,0)
+ ;;=3^Major Depressive Disorder,Single Episode,Mild
+ ;;^UTILITY(U,$J,358.3,20811,1,4,0)
+ ;;=4^F32.0
+ ;;^UTILITY(U,$J,358.3,20811,2)
+ ;;=^5003521
+ ;;^UTILITY(U,$J,358.3,20812,0)
+ ;;=F32.1^^99^986^16
+ ;;^UTILITY(U,$J,358.3,20812,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,22276,1,3,0)
- ;;=3^Late Eff Cereb/Vasc, Cog Def
- ;;^UTILITY(U,$J,358.3,22276,1,4,0)
- ;;=4^438.0
- ;;^UTILITY(U,$J,358.3,22276,2)
- ;;=^317905
- ;;^UTILITY(U,$J,358.3,22277,0)
- ;;=438.20^^137^1346^8
- ;;^UTILITY(U,$J,358.3,22277,1,0)
+ ;;^UTILITY(U,$J,358.3,20812,1,3,0)
+ ;;=3^Major Depressive Disorder,Single Episode,Moderate
+ ;;^UTILITY(U,$J,358.3,20812,1,4,0)
+ ;;=4^F32.1
+ ;;^UTILITY(U,$J,358.3,20812,2)
+ ;;=^5003522
+ ;;^UTILITY(U,$J,358.3,20813,0)
+ ;;=F32.2^^99^986^17
+ ;;^UTILITY(U,$J,358.3,20813,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,22277,1,3,0)
- ;;=3^Late Eff Cereb/Vasc,Hemipl,Uns
- ;;^UTILITY(U,$J,358.3,22277,1,4,0)
- ;;=4^438.20
- ;;^UTILITY(U,$J,358.3,22277,2)
- ;;=^317910
- ;;^UTILITY(U,$J,358.3,22278,0)
- ;;=438.40^^137^1346^12
- ;;^UTILITY(U,$J,358.3,22278,1,0)
+ ;;^UTILITY(U,$J,358.3,20813,1,3,0)
+ ;;=3^Major Depressive Disorder,Single Episode,Severe
+ ;;^UTILITY(U,$J,358.3,20813,1,4,0)
+ ;;=4^F32.2
+ ;;^UTILITY(U,$J,358.3,20813,2)
+ ;;=^5003523
+ ;;^UTILITY(U,$J,358.3,20814,0)
+ ;;=F32.3^^99^986^18
+ ;;^UTILITY(U,$J,358.3,20814,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,22278,1,3,0)
- ;;=3^Monoplegia of LL, Side NOS
- ;;^UTILITY(U,$J,358.3,22278,1,4,0)
- ;;=4^438.40
- ;;^UTILITY(U,$J,358.3,22278,2)
- ;;=^317916
- ;;^UTILITY(U,$J,358.3,22279,0)
- ;;=438.9^^137^1346^16
- ;;^UTILITY(U,$J,358.3,22279,1,0)
+ ;;^UTILITY(U,$J,358.3,20814,1,3,0)
+ ;;=3^Major Depressive Disorder,Single Episode w Psychotic Features
+ ;;^UTILITY(U,$J,358.3,20814,1,4,0)
+ ;;=4^F32.3
+ ;;^UTILITY(U,$J,358.3,20814,2)
+ ;;=^5003524
+ ;;^UTILITY(U,$J,358.3,20815,0)
+ ;;=F32.4^^99^986^19
+ ;;^UTILITY(U,$J,358.3,20815,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,22279,1,3,0)
- ;;=3^Unspec Late Eff Cerebro Diseas
- ;;^UTILITY(U,$J,358.3,22279,1,4,0)
- ;;=4^438.9
- ;;^UTILITY(U,$J,358.3,22279,2)
- ;;=^269757
- ;;^UTILITY(U,$J,358.3,22280,0)
- ;;=907.0^^137^1346^9
- ;;^UTILITY(U,$J,358.3,22280,1,0)
+ ;;^UTILITY(U,$J,358.3,20815,1,3,0)
+ ;;=3^Major Depressive Disorder,Single Episode,In Partial Remission
+ ;;^UTILITY(U,$J,358.3,20815,1,4,0)
+ ;;=4^F32.4
+ ;;^UTILITY(U,$J,358.3,20815,2)
+ ;;=^5003525
+ ;;^UTILITY(U,$J,358.3,20816,0)
+ ;;=F32.5^^99^986^20
+ ;;^UTILITY(U,$J,358.3,20816,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,22280,1,3,0)
- ;;=3^Lt Eff Intracranial Inj w/o skull frac
- ;;^UTILITY(U,$J,358.3,22280,1,4,0)
- ;;=4^907.0
- ;;^UTILITY(U,$J,358.3,22280,2)
- ;;=^68489
- ;;^UTILITY(U,$J,358.3,22281,0)
- ;;=340.^^137^1346^13
- ;;^UTILITY(U,$J,358.3,22281,1,0)
+ ;;^UTILITY(U,$J,358.3,20816,1,3,0)
+ ;;=3^Major Depressive Disorder,Single Episode,In Full Remission
+ ;;^UTILITY(U,$J,358.3,20816,1,4,0)
+ ;;=4^F32.5
+ ;;^UTILITY(U,$J,358.3,20816,2)
+ ;;=^5003526
+ ;;^UTILITY(U,$J,358.3,20817,0)
+ ;;=F33.9^^99^986^13
+ ;;^UTILITY(U,$J,358.3,20817,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,22281,1,3,0)
- ;;=3^Multiple Sclerosis
- ;;^UTILITY(U,$J,358.3,22281,1,4,0)
- ;;=4^340.
- ;;^UTILITY(U,$J,358.3,22281,2)
- ;;=^79761
- ;;^UTILITY(U,$J,358.3,22282,0)
- ;;=332.0^^137^1346^15
- ;;^UTILITY(U,$J,358.3,22282,1,0)
+ ;;^UTILITY(U,$J,358.3,20817,1,3,0)
+ ;;=3^Major Depressive Disorder,Recurrent,Unspec
+ ;;^UTILITY(U,$J,358.3,20817,1,4,0)
+ ;;=4^F33.9
+ ;;^UTILITY(U,$J,358.3,20817,2)
+ ;;=^5003537
+ ;;^UTILITY(U,$J,358.3,20818,0)
+ ;;=F33.0^^99^986^10
+ ;;^UTILITY(U,$J,358.3,20818,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,22282,1,3,0)
- ;;=3^Paralysis Agitans
- ;;^UTILITY(U,$J,358.3,22282,1,4,0)
- ;;=4^332.0
- ;;^UTILITY(U,$J,358.3,22282,2)
- ;;=^304847
- ;;^UTILITY(U,$J,358.3,22283,0)
- ;;=780.39^^137^1346^14
- ;;^UTILITY(U,$J,358.3,22283,1,0)
+ ;;^UTILITY(U,$J,358.3,20818,1,3,0)
+ ;;=3^Major Depressive Disorder,Recurrent,Mild
+ ;;^UTILITY(U,$J,358.3,20818,1,4,0)
+ ;;=4^F33.0
+ ;;^UTILITY(U,$J,358.3,20818,2)
+ ;;=^5003529
+ ;;^UTILITY(U,$J,358.3,20819,0)
+ ;;=F33.1^^99^986^11
+ ;;^UTILITY(U,$J,358.3,20819,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,22283,1,3,0)
- ;;=3^Other Convulsions
- ;;^UTILITY(U,$J,358.3,22283,1,4,0)
- ;;=4^780.39
- ;;^UTILITY(U,$J,358.3,22283,2)
- ;;=^28162
- ;;^UTILITY(U,$J,358.3,22284,0)
- ;;=438.12^^137^1346^5
- ;;^UTILITY(U,$J,358.3,22284,1,0)
+ ;;^UTILITY(U,$J,358.3,20819,1,3,0)
+ ;;=3^Major Depressive Disorder,Recurrent,Moderate
+ ;;^UTILITY(U,$J,358.3,20819,1,4,0)
+ ;;=4^F33.1
+ ;;^UTILITY(U,$J,358.3,20819,2)
+ ;;=^5003530
+ ;;^UTILITY(U,$J,358.3,20820,0)
+ ;;=F33.2^^99^986^12
+ ;;^UTILITY(U,$J,358.3,20820,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,22284,1,3,0)
- ;;=3^Late Eff Cereb/Vasc,Dysphasia
- ;;^UTILITY(U,$J,358.3,22284,1,4,0)
- ;;=4^438.12
- ;;^UTILITY(U,$J,358.3,22284,2)
- ;;=^317908
- ;;^UTILITY(U,$J,358.3,22285,0)
- ;;=438.21^^137^1346^6
- ;;^UTILITY(U,$J,358.3,22285,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,22285,1,3,0)
- ;;=3^Late Eff Cereb/Vasc,Hemipl,Dom
- ;;^UTILITY(U,$J,358.3,22285,1,4,0)
- ;;=4^438.21
- ;;^UTILITY(U,$J,358.3,22285,2)
- ;;=^317911
- ;;^UTILITY(U,$J,358.3,22286,0)
- ;;=438.22^^137^1346^7
- ;;^UTILITY(U,$J,358.3,22286,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,22286,1,3,0)
- ;;=3^Late Eff Cereb/Vasc,Hemipl,NonDom
+ ;;^UTILITY(U,$J,358.3,20820,1,3,0)
+ ;;=3^Major Depressive Disorder,Recurrent,Severe
+ ;;^UTILITY(U,$J,358.3,20820,1,4,0)
+ ;;=4^F33.2

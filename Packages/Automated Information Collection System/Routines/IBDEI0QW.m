@@ -1,140 +1,124 @@
-IBDEI0QW ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0QW ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,13269,2)
- ;;=Heartburn^54996
- ;;^UTILITY(U,$J,358.3,13270,0)
- ;;=786.59^^87^832^36
- ;;^UTILITY(U,$J,358.3,13270,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13270,1,4,0)
- ;;=4^786.59
- ;;^UTILITY(U,$J,358.3,13270,1,5,0)
- ;;=5^Chest Pain
- ;;^UTILITY(U,$J,358.3,13270,2)
- ;;=Chest Pain^87384
- ;;^UTILITY(U,$J,358.3,13271,0)
- ;;=787.02^^87^832^103
- ;;^UTILITY(U,$J,358.3,13271,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13271,1,4,0)
- ;;=4^787.02
- ;;^UTILITY(U,$J,358.3,13271,1,5,0)
- ;;=5^Nausea Alone
- ;;^UTILITY(U,$J,358.3,13271,2)
- ;;=Nausea Alone^81639
- ;;^UTILITY(U,$J,358.3,13272,0)
- ;;=787.03^^87^832^143
- ;;^UTILITY(U,$J,358.3,13272,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13272,1,4,0)
- ;;=4^787.03
- ;;^UTILITY(U,$J,358.3,13272,1,5,0)
- ;;=5^Vomiting Alone
- ;;^UTILITY(U,$J,358.3,13272,2)
- ;;=Vomiting Alone^127237
- ;;^UTILITY(U,$J,358.3,13273,0)
- ;;=784.8^^87^832^31
- ;;^UTILITY(U,$J,358.3,13273,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13273,1,4,0)
- ;;=4^784.8
- ;;^UTILITY(U,$J,358.3,13273,1,5,0)
- ;;=5^Bleeding from throat
- ;;^UTILITY(U,$J,358.3,13273,2)
- ;;=^273371
- ;;^UTILITY(U,$J,358.3,13274,0)
- ;;=784.7^^87^832^59
- ;;^UTILITY(U,$J,358.3,13274,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13274,1,4,0)
- ;;=4^784.7
- ;;^UTILITY(U,$J,358.3,13274,1,5,0)
- ;;=5^Epistaxis
- ;;^UTILITY(U,$J,358.3,13274,2)
- ;;=Epistaxis^41658
- ;;^UTILITY(U,$J,358.3,13275,0)
- ;;=784.0^^87^832^68
- ;;^UTILITY(U,$J,358.3,13275,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13275,1,4,0)
- ;;=4^784.0
- ;;^UTILITY(U,$J,358.3,13275,1,5,0)
- ;;=5^Headache
- ;;^UTILITY(U,$J,358.3,13275,2)
- ;;=Headache^54133
- ;;^UTILITY(U,$J,358.3,13276,0)
- ;;=784.2^^87^832^97
- ;;^UTILITY(U,$J,358.3,13276,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13276,1,4,0)
- ;;=4^784.2
- ;;^UTILITY(U,$J,358.3,13276,1,5,0)
- ;;=5^Mass or Lump in Head/Neck
- ;;^UTILITY(U,$J,358.3,13276,2)
- ;;=Mass or Lump in Head/Neck^273367
- ;;^UTILITY(U,$J,358.3,13277,0)
- ;;=784.1^^87^832^138
- ;;^UTILITY(U,$J,358.3,13277,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13277,1,4,0)
- ;;=4^784.1
- ;;^UTILITY(U,$J,358.3,13277,1,5,0)
- ;;=5^Throat Pain
- ;;^UTILITY(U,$J,358.3,13277,2)
- ;;=Throat Pain^276881
- ;;^UTILITY(U,$J,358.3,13278,0)
- ;;=781.0^^87^832^14
- ;;^UTILITY(U,$J,358.3,13278,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13278,1,4,0)
- ;;=4^781.0
- ;;^UTILITY(U,$J,358.3,13278,1,5,0)
- ;;=5^Abnormal Involuntary Movement
- ;;^UTILITY(U,$J,358.3,13278,2)
- ;;=Abnormal Involuntary MMovement^23827
- ;;^UTILITY(U,$J,358.3,13279,0)
- ;;=781.2^^87^832^22
- ;;^UTILITY(U,$J,358.3,13279,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13279,1,4,0)
- ;;=4^781.2
- ;;^UTILITY(U,$J,358.3,13279,1,5,0)
- ;;=5^Abnormality of Gait
- ;;^UTILITY(U,$J,358.3,13279,2)
- ;;=^48820
- ;;^UTILITY(U,$J,358.3,13280,0)
- ;;=784.3^^87^832^27
- ;;^UTILITY(U,$J,358.3,13280,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13280,1,4,0)
- ;;=4^784.3
- ;;^UTILITY(U,$J,358.3,13280,1,5,0)
- ;;=5^Aphasia
- ;;^UTILITY(U,$J,358.3,13280,2)
- ;;=Aphasia^9453
- ;;^UTILITY(U,$J,358.3,13281,0)
- ;;=781.3^^87^832^94
- ;;^UTILITY(U,$J,358.3,13281,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13281,1,4,0)
- ;;=4^781.3
- ;;^UTILITY(U,$J,358.3,13281,1,5,0)
- ;;=5^Lack of Coordination
- ;;^UTILITY(U,$J,358.3,13281,2)
- ;;=^11172
- ;;^UTILITY(U,$J,358.3,13282,0)
- ;;=781.1^^87^832^48
- ;;^UTILITY(U,$J,358.3,13282,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13282,1,4,0)
- ;;=4^781.1
- ;;^UTILITY(U,$J,358.3,13282,1,5,0)
- ;;=5^Disturbnce smell/taste
- ;;^UTILITY(U,$J,358.3,13282,2)
- ;;=^35773
- ;;^UTILITY(U,$J,358.3,13283,0)
- ;;=389.9^^87^832^69
- ;;^UTILITY(U,$J,358.3,13283,1,0)
- ;;=^358.31IA^5^2
+ ;;^UTILITY(U,$J,358.3,12316,1,4,0)
+ ;;=4^S83.422A
+ ;;^UTILITY(U,$J,358.3,12316,2)
+ ;;=^5043121
+ ;;^UTILITY(U,$J,358.3,12317,0)
+ ;;=S83.501A^^71^708^236
+ ;;^UTILITY(U,$J,358.3,12317,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12317,1,3,0)
+ ;;=3^Sprain of unsp cruciate ligament of right knee, init encntr
+ ;;^UTILITY(U,$J,358.3,12317,1,4,0)
+ ;;=4^S83.501A
+ ;;^UTILITY(U,$J,358.3,12317,2)
+ ;;=^5043127
+ ;;^UTILITY(U,$J,358.3,12318,0)
+ ;;=S83.502A^^71^708^235
+ ;;^UTILITY(U,$J,358.3,12318,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12318,1,3,0)
+ ;;=3^Sprain of unsp cruciate ligament of left knee, init encntr
+ ;;^UTILITY(U,$J,358.3,12318,1,4,0)
+ ;;=4^S83.502A
+ ;;^UTILITY(U,$J,358.3,12318,2)
+ ;;=^5043130
+ ;;^UTILITY(U,$J,358.3,12319,0)
+ ;;=S83.511A^^71^708^197
+ ;;^UTILITY(U,$J,358.3,12319,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12319,1,3,0)
+ ;;=3^Sprain of anterior cruciate ligament of right knee, init
+ ;;^UTILITY(U,$J,358.3,12319,1,4,0)
+ ;;=4^S83.511A
+ ;;^UTILITY(U,$J,358.3,12319,2)
+ ;;=^5043133
+ ;;^UTILITY(U,$J,358.3,12320,0)
+ ;;=S83.512A^^71^708^198
+ ;;^UTILITY(U,$J,358.3,12320,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12320,1,3,0)
+ ;;=3^Sprain of anterior cruciate ligament of left knee, init
+ ;;^UTILITY(U,$J,358.3,12320,1,4,0)
+ ;;=4^S83.512A
+ ;;^UTILITY(U,$J,358.3,12320,2)
+ ;;=^5043136
+ ;;^UTILITY(U,$J,358.3,12321,0)
+ ;;=S83.521A^^71^708^219
+ ;;^UTILITY(U,$J,358.3,12321,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12321,1,3,0)
+ ;;=3^Sprain of posterior cruciate ligament of right knee, init
+ ;;^UTILITY(U,$J,358.3,12321,1,4,0)
+ ;;=4^S83.521A
+ ;;^UTILITY(U,$J,358.3,12321,2)
+ ;;=^5043142
+ ;;^UTILITY(U,$J,358.3,12322,0)
+ ;;=S83.522A^^71^708^220
+ ;;^UTILITY(U,$J,358.3,12322,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12322,1,3,0)
+ ;;=3^Sprain of posterior cruciate ligament of left knee, init
+ ;;^UTILITY(U,$J,358.3,12322,1,4,0)
+ ;;=4^S83.522A
+ ;;^UTILITY(U,$J,358.3,12322,2)
+ ;;=^5043145
+ ;;^UTILITY(U,$J,358.3,12323,0)
+ ;;=S76.111A^^71^708^244
+ ;;^UTILITY(U,$J,358.3,12323,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12323,1,3,0)
+ ;;=3^Strain of right quadriceps muscle, fascia and tendon, init
+ ;;^UTILITY(U,$J,358.3,12323,1,4,0)
+ ;;=4^S76.111A
+ ;;^UTILITY(U,$J,358.3,12323,2)
+ ;;=^5039546
+ ;;^UTILITY(U,$J,358.3,12324,0)
+ ;;=S76.112A^^71^708^241
+ ;;^UTILITY(U,$J,358.3,12324,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12324,1,3,0)
+ ;;=3^Strain of left quadriceps muscle, fascia and tendon, init
+ ;;^UTILITY(U,$J,358.3,12324,1,4,0)
+ ;;=4^S76.112A
+ ;;^UTILITY(U,$J,358.3,12324,2)
+ ;;=^5039549
+ ;;^UTILITY(U,$J,358.3,12325,0)
+ ;;=S33.5XXA^^71^708^215
+ ;;^UTILITY(U,$J,358.3,12325,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12325,1,3,0)
+ ;;=3^Sprain of ligaments of lumbar spine, initial encounter
+ ;;^UTILITY(U,$J,358.3,12325,1,4,0)
+ ;;=4^S33.5XXA
+ ;;^UTILITY(U,$J,358.3,12325,2)
+ ;;=^5025172
+ ;;^UTILITY(U,$J,358.3,12326,0)
+ ;;=S13.9XXA^^71^708^199
+ ;;^UTILITY(U,$J,358.3,12326,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12326,1,3,0)
+ ;;=3^Sprain of joints and ligaments of unsp parts of neck, init
+ ;;^UTILITY(U,$J,358.3,12326,1,4,0)
+ ;;=4^S13.9XXA
+ ;;^UTILITY(U,$J,358.3,12326,2)
+ ;;=^5022037
+ ;;^UTILITY(U,$J,358.3,12327,0)
+ ;;=S43.401A^^71^708^230
+ ;;^UTILITY(U,$J,358.3,12327,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12327,1,3,0)
+ ;;=3^Sprain of right shoulder joint unspec, init encntr
+ ;;^UTILITY(U,$J,358.3,12327,1,4,0)
+ ;;=4^S43.401A
+ ;;^UTILITY(U,$J,358.3,12327,2)
+ ;;=^5027864
+ ;;^UTILITY(U,$J,358.3,12328,0)
+ ;;=S43.402A^^71^708^211
+ ;;^UTILITY(U,$J,358.3,12328,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12328,1,3,0)
+ ;;=3^Sprain of left shoulder joint unspec, initial enco

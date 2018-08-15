@@ -1,5 +1,5 @@
-PXKMAIN1 ;ISL/JVS,ISA/Zoltan - Main Routine for Data Capture ;5/6/1999
- ;;1.0;PCE PATIENT CARE ENCOUNTER;**22,73,124,178**;Aug 12, 1996
+PXKMAIN1 ;ISL/JVS,ISA/Zoltan - Main Routine for Data Capture ;03/15/2018
+ ;;1.0;PCE PATIENT CARE ENCOUNTER;**22,73,124,178,210,216,211**;Aug 12, 1996;Build 244
  ;+This routine is responsible for:
  ;+ - creating new entries in PCE files,
  ;+ - processing modifications to existing entries,
@@ -23,7 +23,7 @@ PXKMAIN1 ;ISL/JVS,ISA/Zoltan - Main Routine for Data Capture ;5/6/1999
  ;
  ;
  W !,"This is not an entry point" Q
-LOOP ;+Copy delimited strings into sub-arrays.
+LOOP ;+Copy delimited strings into sub-arrays. PXKSUB is the node.
  F PXKI=1:1:$L(PXKAFT(PXKSUB),"^") I $P(PXKAFT(PXKSUB),"^",PXKI)'="" S PXKAV(PXKSUB,PXKI)=$P(PXKAFT(PXKSUB),"^",PXKI)
  F PXKI=1:1:$L(PXKBEF(PXKSUB),"^") I $P(PXKBEF(PXKSUB),"^",PXKI)'="" S PXKBV(PXKSUB,PXKI)=$P(PXKBEF(PXKSUB),"^",PXKI)
  K PXKI,PXKJ ; Not sure if NEW would be OK.
@@ -36,20 +36,21 @@ ERROR ;+Check for missing required fields
  D EN1^@PXKRTN
  S PXKER=$P(PXKER," * ",1)
  I PXKER="" Q
+ N PXJ,PXJJ,PXKFD,PXKFLD
  F PXJ=1:1:$L(PXKER,",") D
  . S PXJJ=$P(PXKER,",",PXJ)
  . I '$D(PXKAV(PXKNOD,PXJJ)) D
- . . S PXKPCE=PXJJ
- . . D EN2^@PXKRTN
- . . S PXKFLD=$P(PXKFD,"/",1)
- . . S:PXKFLD["*" PXKFLD=$P(PXKFLD," * ",2)
- . . S PXKERROR(PXKCAT,PXKSEQ,0,PXKFLD)="Missing Required Fields"
- K PXK,PXJJ,PXKFLD,PXKFD ; Not sure about use of NEW here.
+ .. S PXKPCE=PXJJ
+ .. D EN2^@PXKRTN
+ .. S PXKFLD=$P(PXKFD,"/",1)
+ .. S:PXKFLD["*" PXKFLD=$P(PXKFLD," * ",2)
+ .. S PXKERROR(PXKCAT,PXKSEQ,0,PXKFLD)="Missing Required Fields"
  Q
  ;
 CLEAN ;--Clean out the PXKAV array
  S PXKJ=""
  F  S PXKJ=$O(PXKBV(PXKJ)) Q:PXKJ=""  D
+ . I PXKCAT="IMM",PXKJ?1(1"2",1"3",1"11") D CLEAN^PXKIMM(PXKJ) Q
  . S PXKI=""
  . F  S PXKI=$O(PXKBV(PXKJ,PXKI)) Q:PXKI=""  D
  . . I $G(PXKBV(PXKJ,PXKI))=$G(PXKAV(PXKJ,PXKI)) K PXKAV(PXKJ,PXKI)
@@ -67,6 +68,7 @@ FILE ;+Create a new entry in file and get IEN
  S (PXKPIEN,DA)=+Y
  S DR=""
  K DIC,Y,X
+ I PXKCAT="IMM",PXKPIEN S PXVNEWIM=PXKPIEN S:$D(PXVNEWDA) PXVNEWDA=PXKPIEN ; PX*1*210
  Q
  ;
 AUD12 ;--Set both audit fields
@@ -77,6 +79,7 @@ AUD12 ;--Set both audit fields
  S PXKNOD=801
  S DR=""
  F PXKPCE=1,2 D EN1^@PXKRTN S DR=DR_PXKER
+ I PXKCAT="IMM" D TMSTAMP
  S PXKFVDLM=""
  Q
  ;
@@ -90,13 +93,24 @@ AUD2 ;--Set second audit fields
  S PXKPCE=2
  D EN1^@PXKRTN
  S DR=DR_PXKER
+ I PXKCAT="IMM" D TMSTAMP
  S PXKFVDLM=""
+ Q
+ ;
+TMSTAMP ; set Timestamp
+ S PXKNOW=$$NOW^XLFDT
+ S PXKNOD=12
+ S PXKPCE=21
+ D EN1^@PXKRTN
+ S DR=DR_PXKER
  Q
  ;
 DRDIE ;--Set the DR string and DO DIE
  I PXKCAT="VST" D UPD^PXKFVST Q
+ ;
  S DIE=$P($T(GLOBAL^@PXKRTN),";;",2)_"(" K PXKPTR
  S PXKLR=$P($T(GLOBAL^@PXKRTN),";;",2)_"(DA)"
+ ;
  S PXKNOD=""
  F  S PXKNOD=$O(PXKAV(PXKNOD)) Q:PXKNOD=""  D
  . I PXKFGAD=1,PXKNOD=0 S PXKPCE=1 D
@@ -108,6 +122,9 @@ DRDIE ;--Set the DR string and DO DIE
  .. D DIE
  .. I $G(^TMP("PXK",$J,PXKCAT,PXKSEQ,"IEN"))]"" Q
  .. D UPD^PXKMOD
+ . ;
+ . I PXKCAT="IMM",PXKNOD?1(1"2",1"3",1"11") D DIE^PXKIMM Q
+ . ;
  . F  S PXKPCE=$O(PXKAV(PXKNOD,PXKPCE)) Q:PXKPCE=""  D
  ..D EN1^@PXKRTN
  ..I $G(PXKER)'="" D
@@ -122,22 +139,59 @@ DRDIE ;--Set the DR string and DO DIE
  ..I $G(PXKER)'="" S DR=DR_PXKER_"PXKAV("_PXKNOD_","_PXKPCE_"));"
  ..I $L(DR)>200 D DIE
  D DIE
+ I PXKCAT="IMM",$G(PXVNEWIM) D STOCK^PXVXR K PXVNEWIM ; PX*1*210
  K DIE,PXKLR,DIC(0)
  D ER
  Q
-DIE ;+Lock global and invoke FM ^DIE call.
- L +@PXKLR:10
+ ;
+DIE ;Invoke FM ^DIE call.
  D ^DIE
- L -@PXKLR
  K DR
  S DR=""
  Q
  ;
 DELETE ;+Use FM ^DIK call to delete entry identified by PXKPIEN.
+ ;
+ ; Make a copy of entry before deleting it
+ I $T(DELGBL^@PXKRTN)'="" D COPYDEL
+ ;
  S DA=PXKPIEN
  S DIK=$P($T(GLOBAL^@PXKRTN),";;",2)_"("
  D ^DIK
  K DIK
+ Q
+ ;
+COPYDEL ; Make a copy of entry
+ ;
+ N DA,DIC,DINUM,DIK,DO,PXDELGBL,PXGBL,PXKPDELIEN,PXTMP,X,Y
+ ;
+ S PXDELGBL=$P($T(DELGBL^@PXKRTN),";;",2)
+ I $E(PXDELGBL,1)'="^" Q
+ S PXGBL=$P($T(GLOBAL^@PXKRTN),";;",2)_"("
+ ;
+ ; add entry to deleted file
+ S PXTMP=$G(@(PXGBL_PXKPIEN_",0)"))
+ I $P(PXTMP,U,1)="" Q
+ S X=$P(PXTMP,U,1)
+ S DIC=PXDELGBL
+ S DIC(0)=""
+ L +@(PXDELGBL_PXKPIEN_")"):DILOCKTM
+ ; if possible, try to assign same IEN in deleted file
+ I '$D(@(PXDELGBL_PXKPIEN_")")) S DINUM=PXKPIEN
+ D FILE^DICN
+ L -@(PXDELGBL_PXKPIEN_")")
+ ;
+ ; Now copy the rest of the data.
+ S PXKPDELIEN=$P(Y,U,1)
+ I PXKPDELIEN'>0 Q
+ L +@(PXDELGBL_PXKPDELIEN_")"):DILOCKTM
+ M @(PXDELGBL_PXKPDELIEN_")")=@(PXGBL_PXKPIEN_")")
+ S @(PXDELGBL_PXKPDELIEN_",880)")=DUZ_U_$$NOW^XLFDT
+ S DIK=PXDELGBL
+ S DA=PXKPDELIEN
+ D IX1^DIK
+ L -@(PXDELGBL_PXKPDELIEN_")")
+ ;
  Q
  ;
 DUP ;+Code to check for duplicates
@@ -169,6 +223,7 @@ ER ;--PXKERROR MAKING IF NOT POPULATED CORRECTLY
  S PXKMOD=PXKSEQ#1 I $G(PXKMOD) Q
  S PXKN=""
  F  S PXKN=$O(PXKAV(PXKN)) Q:PXKN=""  D
+ . I PXKCAT="IMM",PXKN?1(1"2",1"3",1"11") D ER^PXKIMM Q
  . S PXKP=""
  . F  S PXKP=$O(PXKAV(PXKN,PXKP)) Q:PXKP=""  D
  .. S PXKRRT=$P($T(GLOBAL^@PXKRTN),";;",2)_"("_DA_","
@@ -187,3 +242,4 @@ ER ;--PXKERROR MAKING IF NOT POPULATED CORRECTLY
  .... S PXKSTR=PXKERROR(PXKCAT,PXKSEQ,DA,PXKFLD)_","_PXKAV(PXKN,PXKP)
  ... S PXKERROR(PXKCAT,PXKSEQ,DA,PXKFLD)=PXKSTR
  Q
+ ;

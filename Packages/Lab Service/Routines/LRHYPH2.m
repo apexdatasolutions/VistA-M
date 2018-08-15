@@ -1,5 +1,5 @@
 LRHYPH2 ;DALOI/HOAK - HOWDY ORDER NUMBER SELECTION ;12/10/10 6:00pm
- ;;5.2;LAB SERVICE;**405**;Sep 27, 1994;Build 93
+ ;;5.2;LAB SERVICE;**405,444,450,491**;Sep 27, 1994;Build 2
  ;
  ; Reference to ^ORCSAVE2 supported by DBIA #2747.
  ;
@@ -24,6 +24,7 @@ BUT ;
  .  S DIE="^LRO(69,"_LRODT_",1,",DA(1)=LRODT,DA=LRSN,DR="10////"_LRTIM D ^DIE
  .  S DIE="^LRO(69,"_LRODT_",1,",DA(1)=LRODT,DA=LRSN,DR="12////"_DUZ D ^DIE
  .  S DIE="^LRO(69,"_LRODT_",1,",DA(1)=LRODT,DA=LRSN,DR="13////"_LRSTATUS D ^DIE
+ .  S DIE="^LRO(69,"_LRODT_",1,",DA(1)=LRODT,DA=LRSN,DR="25////"_DUZ(2) D ^DIE
 PH G Q16:LRORD D ORDER^LROW2 G Q16A
 Q16 S J=0 D CHECK^LROW2 I J D BAD^LROW2
 Q16A I $D(LRLONG),$D(LRSND) S LRSN=LRSND,^TMP("LRHYDY",$J,"LROE",$J,"LRORD")=LRORD_U_LRODT_U_LRTIM_U_PNM_U_SSN
@@ -51,7 +52,7 @@ Q17 ;
  ; updating of lab files
  ;
  S LR33ORD=LRORD
- K LRORD
+ ;K LRORD
  D OLD^LRORDST
  S LRORD=LR33ORD
  I $G(LRUID)'="" D NOW^%DTC S ^TMP("LRHYHOW1",$J,LRUID)=%_U_DUZ
@@ -59,9 +60,18 @@ Q17 ;
  D D1^LRHYU
  ;
  S ^LRO(69,"AA",+$G(^LRO(69,LRODT,1,LRSN,.1)),LRODT_"|"_LRSN)=""
- S LRORIEN=$P($G(^LRO(69,LRODT,1,LRSN,0)),U,11)
- I $G(LRORIEN) D
- .  D STATUS^ORCSAVE2(LRORIEN,6)
+ ;
+ ; Lines below commented out by LR*5.2*491 because:
+ ;   (1) Orders have been marked active or discontinued in file
+ ;       100 before this code is called.
+ ;   (2) Discontinued orders are being marked active in CPRS if
+ ;       LRORIEN is the File 100 ien of the discontinued test order.
+ ;   (3) If the lines below are needed, LRORIEN would need to be
+ ;       be retrieved from the test level of file 69.
+ ;
+ ;S LRORIEN=$P($G(^LRO(69,LRODT,1,LRSN,0)),U,11)
+ ;I $G(LRORIEN) D
+ ;.  D STATUS^ORCSAVE2(LRORIEN,6)
  Q:$G(LRNOTEST)  D
  .  K DA,DR S DIE="^LRO(69,"_LRODT_",1,",DA(1)=LRODT,DA=LRSN,DR="12////"_DUZ D ^DIE
  .  K DA,DR S DIE="^LRO(69,"_LRODT_",1,",DA(1)=LRODT,DA=LRSN,DR="13////C" D ^DIE

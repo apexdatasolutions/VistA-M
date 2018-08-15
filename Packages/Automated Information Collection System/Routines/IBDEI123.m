@@ -1,128 +1,128 @@
-IBDEI123 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI123 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,18922,1,3,0)
- ;;=3^A4570
- ;;^UTILITY(U,$J,358.3,18923,0)
- ;;=L3260^^122^1210^1^^^^1
- ;;^UTILITY(U,$J,358.3,18923,1,0)
+ ;;^UTILITY(U,$J,358.3,17592,1,2,0)
+ ;;=2^43216
+ ;;^UTILITY(U,$J,358.3,17592,1,3,0)
+ ;;=3^Esophagoscopy w/ Remov Tumor/Polyp-Hot Bx
+ ;;^UTILITY(U,$J,358.3,17593,0)
+ ;;=43217^^90^869^37^^^^1
+ ;;^UTILITY(U,$J,358.3,17593,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18923,1,2,0)
- ;;=2^Abulatory Surgical Boot,Each
- ;;^UTILITY(U,$J,358.3,18923,1,3,0)
- ;;=3^L3260
- ;;^UTILITY(U,$J,358.3,18924,0)
- ;;=A4500^^122^1210^17^^^^1
- ;;^UTILITY(U,$J,358.3,18924,1,0)
+ ;;^UTILITY(U,$J,358.3,17593,1,2,0)
+ ;;=2^43217
+ ;;^UTILITY(U,$J,358.3,17593,1,3,0)
+ ;;=3^Esophagoscopy w/ Remov Tumor/Polyp-Snare
+ ;;^UTILITY(U,$J,358.3,17594,0)
+ ;;=43231^^90^869^30^^^^1
+ ;;^UTILITY(U,$J,358.3,17594,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18924,1,2,0)
- ;;=2^Surgical Stocking Below Knee Length,Each
- ;;^UTILITY(U,$J,358.3,18924,1,3,0)
- ;;=3^A4500
- ;;^UTILITY(U,$J,358.3,18925,0)
- ;;=A5501^^122^1210^3^^^^1
- ;;^UTILITY(U,$J,358.3,18925,1,0)
+ ;;^UTILITY(U,$J,358.3,17594,1,2,0)
+ ;;=2^43231
+ ;;^UTILITY(U,$J,358.3,17594,1,3,0)
+ ;;=3^Esophagoscopy w/ Endoscopic US
+ ;;^UTILITY(U,$J,358.3,17595,0)
+ ;;=43232^^90^869^40^^^^1
+ ;;^UTILITY(U,$J,358.3,17595,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18925,1,2,0)
- ;;=2^Diabetic Shoes,Custom Fit,per Shoe
- ;;^UTILITY(U,$J,358.3,18925,1,3,0)
- ;;=3^A5501
- ;;^UTILITY(U,$J,358.3,18926,0)
- ;;=A6530^^122^1210^7^^^^1
- ;;^UTILITY(U,$J,358.3,18926,1,0)
+ ;;^UTILITY(U,$J,358.3,17595,1,2,0)
+ ;;=2^43232
+ ;;^UTILITY(U,$J,358.3,17595,1,3,0)
+ ;;=3^Esophagoscopy w/ US Guided Intramural/FNA or Bx
+ ;;^UTILITY(U,$J,358.3,17596,0)
+ ;;=43236^^90^869^20^^^^1
+ ;;^UTILITY(U,$J,358.3,17596,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18926,1,2,0)
- ;;=2^Grad Compression Stocking BK 18-30
- ;;^UTILITY(U,$J,358.3,18926,1,3,0)
- ;;=3^A6530
- ;;^UTILITY(U,$J,358.3,18927,0)
- ;;=A6545^^122^1210^8^^^^1
- ;;^UTILITY(U,$J,358.3,18927,1,0)
+ ;;^UTILITY(U,$J,358.3,17596,1,2,0)
+ ;;=2^43236
+ ;;^UTILITY(U,$J,358.3,17596,1,3,0)
+ ;;=3^EGD, Diagnostic w/submucosal inj(s)
+ ;;^UTILITY(U,$J,358.3,17597,0)
+ ;;=43237^^90^869^22^^^^1
+ ;;^UTILITY(U,$J,358.3,17597,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18927,1,2,0)
- ;;=2^Grand Compression Wrap Non-Elastic BK
- ;;^UTILITY(U,$J,358.3,18927,1,3,0)
- ;;=3^A6545
- ;;^UTILITY(U,$J,358.3,18928,0)
- ;;=A6206^^122^1210^2^^^^1
- ;;^UTILITY(U,$J,358.3,18928,1,0)
+ ;;^UTILITY(U,$J,358.3,17597,1,2,0)
+ ;;=2^43237
+ ;;^UTILITY(U,$J,358.3,17597,1,3,0)
+ ;;=3^EGD,Diag US of esophagus
+ ;;^UTILITY(U,$J,358.3,17598,0)
+ ;;=43238^^90^869^21^^^^1
+ ;;^UTILITY(U,$J,358.3,17598,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18928,1,2,0)
- ;;=2^Contact Layer <= 16 Sq In
- ;;^UTILITY(U,$J,358.3,18928,1,3,0)
- ;;=3^A6206
- ;;^UTILITY(U,$J,358.3,18929,0)
- ;;=A6402^^122^1210^16^^^^1
- ;;^UTILITY(U,$J,358.3,18929,1,0)
+ ;;^UTILITY(U,$J,358.3,17598,1,2,0)
+ ;;=2^43238
+ ;;^UTILITY(U,$J,358.3,17598,1,3,0)
+ ;;=3^EGD, Dx w/transendoscope U/S FNA/bx
+ ;;^UTILITY(U,$J,358.3,17599,0)
+ ;;=43257^^90^869^14^^^^1
+ ;;^UTILITY(U,$J,358.3,17599,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18929,1,2,0)
- ;;=2^Sterile Gauze <= 16 Sq In
- ;;^UTILITY(U,$J,358.3,18929,1,3,0)
- ;;=3^A6402
- ;;^UTILITY(U,$J,358.3,18930,0)
- ;;=A6262^^122^1210^18^^^^1
- ;;^UTILITY(U,$J,358.3,18930,1,0)
+ ;;^UTILITY(U,$J,358.3,17599,1,2,0)
+ ;;=2^43257
+ ;;^UTILITY(U,$J,358.3,17599,1,3,0)
+ ;;=3^EGD w/Thermal Energy Delivery
+ ;;^UTILITY(U,$J,358.3,17600,0)
+ ;;=43235^^90^869^23^^^^1
+ ;;^UTILITY(U,$J,358.3,17600,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18930,1,2,0)
- ;;=2^Wound Filler Dry Form/Gram
- ;;^UTILITY(U,$J,358.3,18930,1,3,0)
- ;;=3^A6262
- ;;^UTILITY(U,$J,358.3,18931,0)
- ;;=A6261^^122^1210^19^^^^1
- ;;^UTILITY(U,$J,358.3,18931,1,0)
+ ;;^UTILITY(U,$J,358.3,17600,1,2,0)
+ ;;=2^43235
+ ;;^UTILITY(U,$J,358.3,17600,1,3,0)
+ ;;=3^EGD,Simple Primary Exam
+ ;;^UTILITY(U,$J,358.3,17601,0)
+ ;;=43240^^90^869^15^^^^1
+ ;;^UTILITY(U,$J,358.3,17601,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18931,1,2,0)
- ;;=2^Wound Filler Gel/Paste per Oz
- ;;^UTILITY(U,$J,358.3,18931,1,3,0)
- ;;=3^A6261
- ;;^UTILITY(U,$J,358.3,18932,0)
- ;;=Q4131^^122^1210^4^^^^1
- ;;^UTILITY(U,$J,358.3,18932,1,0)
+ ;;^UTILITY(U,$J,358.3,17601,1,2,0)
+ ;;=2^43240
+ ;;^UTILITY(U,$J,358.3,17601,1,3,0)
+ ;;=3^EGD w/Transmural Drain Cyst
+ ;;^UTILITY(U,$J,358.3,17602,0)
+ ;;=43241^^90^869^16^^^^1
+ ;;^UTILITY(U,$J,358.3,17602,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18932,1,2,0)
- ;;=2^Epifix
- ;;^UTILITY(U,$J,358.3,18932,1,3,0)
- ;;=3^Q4131
- ;;^UTILITY(U,$J,358.3,18933,0)
- ;;=L3040^^122^1210^5^^^^1
- ;;^UTILITY(U,$J,358.3,18933,1,0)
+ ;;^UTILITY(U,$J,358.3,17602,1,2,0)
+ ;;=2^43241
+ ;;^UTILITY(U,$J,358.3,17602,1,3,0)
+ ;;=3^EGD w/Tube or Cath
+ ;;^UTILITY(U,$J,358.3,17603,0)
+ ;;=43242^^90^869^4^^^^1
+ ;;^UTILITY(U,$J,358.3,17603,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18933,1,2,0)
- ;;=2^Foot Arch Support Premold Longit
- ;;^UTILITY(U,$J,358.3,18933,1,3,0)
- ;;=3^L3040
- ;;^UTILITY(U,$J,358.3,18934,0)
- ;;=L3219^^122^1210^13^^^^1
- ;;^UTILITY(U,$J,358.3,18934,1,0)
+ ;;^UTILITY(U,$J,358.3,17603,1,2,0)
+ ;;=2^43242
+ ;;^UTILITY(U,$J,358.3,17603,1,3,0)
+ ;;=3^EGD w/Cath Placement
+ ;;^UTILITY(U,$J,358.3,17604,0)
+ ;;=43252^^90^869^12^^^^1
+ ;;^UTILITY(U,$J,358.3,17604,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18934,1,2,0)
- ;;=2^Orthopedic Mens Shoes Oxford,Each
- ;;^UTILITY(U,$J,358.3,18934,1,3,0)
- ;;=3^L3219
- ;;^UTILITY(U,$J,358.3,18935,0)
- ;;=L3221^^122^1210^12^^^^1
- ;;^UTILITY(U,$J,358.3,18935,1,0)
+ ;;^UTILITY(U,$J,358.3,17604,1,2,0)
+ ;;=2^43252
+ ;;^UTILITY(U,$J,358.3,17604,1,3,0)
+ ;;=3^EGD w/Optical Endomicroscopy
+ ;;^UTILITY(U,$J,358.3,17605,0)
+ ;;=43259^^90^869^7^^^^1
+ ;;^UTILITY(U,$J,358.3,17605,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18935,1,2,0)
- ;;=2^Orthopedic Mens Shoes Dpth Inlay,Each
- ;;^UTILITY(U,$J,358.3,18935,1,3,0)
- ;;=3^L3221
- ;;^UTILITY(U,$J,358.3,18936,0)
- ;;=Q4102^^122^1210^11^^^^1
- ;;^UTILITY(U,$J,358.3,18936,1,0)
+ ;;^UTILITY(U,$J,358.3,17605,1,2,0)
+ ;;=2^43259
+ ;;^UTILITY(U,$J,358.3,17605,1,3,0)
+ ;;=3^EGD w/Endoscopic Ultrasound Exam
+ ;;^UTILITY(U,$J,358.3,17606,0)
+ ;;=43233^^90^869^9^^^^1
+ ;;^UTILITY(U,$J,358.3,17606,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18936,1,2,0)
- ;;=2^Oasis Wound Matrix
- ;;^UTILITY(U,$J,358.3,18936,1,3,0)
- ;;=3^Q4102
- ;;^UTILITY(U,$J,358.3,18937,0)
- ;;=L4360^^122^1210^14^^^^1
- ;;^UTILITY(U,$J,358.3,18937,1,0)
+ ;;^UTILITY(U,$J,358.3,17606,1,2,0)
+ ;;=2^43233
+ ;;^UTILITY(U,$J,358.3,17606,1,3,0)
+ ;;=3^EGD w/Esoph Dilation by Balloon >30mm
+ ;;^UTILITY(U,$J,358.3,17607,0)
+ ;;=43214^^90^869^26^^^^1
+ ;;^UTILITY(U,$J,358.3,17607,1,0)
  ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18937,1,2,0)
- ;;=2^Pneumatic Walking Splint
- ;;^UTILITY(U,$J,358.3,18937,1,3,0)
- ;;=3^L4360
- ;;^UTILITY(U,$J,358.3,18938,0)
- ;;=28190^^122^1211^8^^^^1
+ ;;^UTILITY(U,$J,358.3,17607,1,2,0)
+ ;;=2^43214
+ ;;^UTILITY(U,$J,358.3,17607,1,3,0)
+ ;;=3^Esophagoscopy w/ Balloon Dilation >+30mm

@@ -1,132 +1,138 @@
-IBDEI12J ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI12J ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,19135,1,3,0)
- ;;=3^757.39
- ;;^UTILITY(U,$J,358.3,19135,1,5,0)
- ;;=5^Keratolysis, congenital or unknown
- ;;^UTILITY(U,$J,358.3,19135,2)
- ;;=^87938
- ;;^UTILITY(U,$J,358.3,19136,0)
- ;;=891.0^^125^1228^1
- ;;^UTILITY(U,$J,358.3,19136,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19136,1,3,0)
- ;;=3^891.0
- ;;^UTILITY(U,$J,358.3,19136,1,5,0)
- ;;=5^Laceration of knee, leg, & ankle w/o mention of complication
- ;;^UTILITY(U,$J,358.3,19136,2)
- ;;=^275087
- ;;^UTILITY(U,$J,358.3,19137,0)
- ;;=892.0^^125^1228^2
- ;;^UTILITY(U,$J,358.3,19137,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19137,1,3,0)
- ;;=3^892.0
- ;;^UTILITY(U,$J,358.3,19137,1,5,0)
- ;;=5^Laceration of foot except toe(s) alone w/o mention of complication
- ;;^UTILITY(U,$J,358.3,19137,2)
- ;;=^275091
- ;;^UTILITY(U,$J,358.3,19138,0)
- ;;=893.0^^125^1228^3
- ;;^UTILITY(U,$J,358.3,19138,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19138,1,3,0)
- ;;=3^893.0
- ;;^UTILITY(U,$J,358.3,19138,1,5,0)
- ;;=5^Laceration of toe(s) w/o mention of complication
- ;;^UTILITY(U,$J,358.3,19138,2)
- ;;=^275095
- ;;^UTILITY(U,$J,358.3,19139,0)
- ;;=755.30^^125^1228^4
- ;;^UTILITY(U,$J,358.3,19139,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19139,1,3,0)
- ;;=3^755.30
- ;;^UTILITY(U,$J,358.3,19139,1,5,0)
- ;;=5^Leg length discrepancy, congenital
- ;;^UTILITY(U,$J,358.3,19139,2)
- ;;=^273038
- ;;^UTILITY(U,$J,358.3,19140,0)
- ;;=736.81^^125^1228^5
- ;;^UTILITY(U,$J,358.3,19140,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19140,1,3,0)
- ;;=3^736.81
- ;;^UTILITY(U,$J,358.3,19140,1,5,0)
- ;;=5^Leg Length discrepancy, acquired
- ;;^UTILITY(U,$J,358.3,19140,2)
- ;;=^68758
- ;;^UTILITY(U,$J,358.3,19141,0)
- ;;=216.7^^125^1228^6
- ;;^UTILITY(U,$J,358.3,19141,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19141,1,3,0)
- ;;=3^216.7
- ;;^UTILITY(U,$J,358.3,19141,1,5,0)
- ;;=5^Lesion, skin of lower limb, including hip; Benign
- ;;^UTILITY(U,$J,358.3,19141,2)
- ;;=^267636
- ;;^UTILITY(U,$J,358.3,19142,0)
- ;;=709.9^^125^1228^8
- ;;^UTILITY(U,$J,358.3,19142,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19142,1,3,0)
- ;;=3^709.9
- ;;^UTILITY(U,$J,358.3,19142,1,5,0)
- ;;=5^Lesion, skin of lower limb, including hip; Unspecified or unknown
- ;;^UTILITY(U,$J,358.3,19142,2)
- ;;=^111083
- ;;^UTILITY(U,$J,358.3,19143,0)
- ;;=173.70^^125^1228^7
- ;;^UTILITY(U,$J,358.3,19143,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19143,1,3,0)
- ;;=3^173.70
- ;;^UTILITY(U,$J,358.3,19143,1,5,0)
- ;;=5^Lesion, Skin Lower Limb-malignant
- ;;^UTILITY(U,$J,358.3,19143,2)
- ;;=^340603
- ;;^UTILITY(U,$J,358.3,19144,0)
- ;;=735.8^^125^1229^1
- ;;^UTILITY(U,$J,358.3,19144,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19144,1,3,0)
- ;;=3^735.8
- ;;^UTILITY(U,$J,358.3,19144,1,5,0)
- ;;=5^Mallet Toe; Acquired
- ;;^UTILITY(U,$J,358.3,19144,2)
- ;;=^272714
- ;;^UTILITY(U,$J,358.3,19145,0)
- ;;=755.66^^125^1229^2
- ;;^UTILITY(U,$J,358.3,19145,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19145,1,3,0)
- ;;=3^755.66
- ;;^UTILITY(U,$J,358.3,19145,1,5,0)
- ;;=5^Mallet toe; Congenital
- ;;^UTILITY(U,$J,358.3,19145,2)
- ;;=^273059
- ;;^UTILITY(U,$J,358.3,19146,0)
- ;;=736.70^^125^1229^3
- ;;^UTILITY(U,$J,358.3,19146,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19146,1,3,0)
- ;;=3^736.70
- ;;^UTILITY(U,$J,358.3,19146,1,5,0)
- ;;=5^Metatarsal deformity; Acquired
- ;;^UTILITY(U,$J,358.3,19146,2)
- ;;=^123805
- ;;^UTILITY(U,$J,358.3,19147,0)
- ;;=754.70^^125^1229^4
- ;;^UTILITY(U,$J,358.3,19147,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19147,1,3,0)
- ;;=3^754.70
- ;;^UTILITY(U,$J,358.3,19147,1,5,0)
- ;;=5^Metatarsal deformity; Congenital
- ;;^UTILITY(U,$J,358.3,19147,2)
- ;;=^25440
- ;;^UTILITY(U,$J,358.3,19148,0)
- ;;=726.70^^125^1229^5
+ ;;^UTILITY(U,$J,358.3,17823,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17823,1,3,0)
+ ;;=3^Hemorrhoids,Unspec
+ ;;^UTILITY(U,$J,358.3,17823,1,4,0)
+ ;;=4^K64.9
+ ;;^UTILITY(U,$J,358.3,17823,2)
+ ;;=^5008775
+ ;;^UTILITY(U,$J,358.3,17824,0)
+ ;;=B18.1^^91^883^10
+ ;;^UTILITY(U,$J,358.3,17824,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17824,1,3,0)
+ ;;=3^Chronic viral hepatitis B without delta-agent
+ ;;^UTILITY(U,$J,358.3,17824,1,4,0)
+ ;;=4^B18.1
+ ;;^UTILITY(U,$J,358.3,17824,2)
+ ;;=^5000547
+ ;;^UTILITY(U,$J,358.3,17825,0)
+ ;;=B18.2^^91^883^11
+ ;;^UTILITY(U,$J,358.3,17825,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17825,1,3,0)
+ ;;=3^Chronic viral hepatitis C
+ ;;^UTILITY(U,$J,358.3,17825,1,4,0)
+ ;;=4^B18.2
+ ;;^UTILITY(U,$J,358.3,17825,2)
+ ;;=^5000548
+ ;;^UTILITY(U,$J,358.3,17826,0)
+ ;;=K73.9^^91^883^9
+ ;;^UTILITY(U,$J,358.3,17826,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17826,1,3,0)
+ ;;=3^Chronic hepatitis, unspecified
+ ;;^UTILITY(U,$J,358.3,17826,1,4,0)
+ ;;=4^K73.9
+ ;;^UTILITY(U,$J,358.3,17826,2)
+ ;;=^5008815
+ ;;^UTILITY(U,$J,358.3,17827,0)
+ ;;=K76.0^^91^883^14
+ ;;^UTILITY(U,$J,358.3,17827,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17827,1,3,0)
+ ;;=3^Fatty (change of) liver, not elsewhere classified
+ ;;^UTILITY(U,$J,358.3,17827,1,4,0)
+ ;;=4^K76.0
+ ;;^UTILITY(U,$J,358.3,17827,2)
+ ;;=^5008831
+ ;;^UTILITY(U,$J,358.3,17828,0)
+ ;;=K75.81^^91^883^19
+ ;;^UTILITY(U,$J,358.3,17828,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17828,1,3,0)
+ ;;=3^Nonalcoholic steatohepatitis (NASH)
+ ;;^UTILITY(U,$J,358.3,17828,1,4,0)
+ ;;=4^K75.81
+ ;;^UTILITY(U,$J,358.3,17828,2)
+ ;;=^5008828
+ ;;^UTILITY(U,$J,358.3,17829,0)
+ ;;=K74.0^^91^883^15
+ ;;^UTILITY(U,$J,358.3,17829,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17829,1,3,0)
+ ;;=3^Hepatic fibrosis
+ ;;^UTILITY(U,$J,358.3,17829,1,4,0)
+ ;;=4^K74.0
+ ;;^UTILITY(U,$J,358.3,17829,2)
+ ;;=^5008816
+ ;;^UTILITY(U,$J,358.3,17830,0)
+ ;;=K74.60^^91^883^12
+ ;;^UTILITY(U,$J,358.3,17830,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17830,1,3,0)
+ ;;=3^Cirrhosis of Liver,Unspec
+ ;;^UTILITY(U,$J,358.3,17830,1,4,0)
+ ;;=4^K74.60
+ ;;^UTILITY(U,$J,358.3,17830,2)
+ ;;=^5008822
+ ;;^UTILITY(U,$J,358.3,17831,0)
+ ;;=K74.69^^91^883^13
+ ;;^UTILITY(U,$J,358.3,17831,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17831,1,3,0)
+ ;;=3^Cirrhosis of liver NEC
+ ;;^UTILITY(U,$J,358.3,17831,1,4,0)
+ ;;=4^K74.69
+ ;;^UTILITY(U,$J,358.3,17831,2)
+ ;;=^5008823
+ ;;^UTILITY(U,$J,358.3,17832,0)
+ ;;=K75.0^^91^883^1
+ ;;^UTILITY(U,$J,358.3,17832,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17832,1,3,0)
+ ;;=3^Abscess of liver
+ ;;^UTILITY(U,$J,358.3,17832,1,4,0)
+ ;;=4^K75.0
+ ;;^UTILITY(U,$J,358.3,17832,2)
+ ;;=^5008824
+ ;;^UTILITY(U,$J,358.3,17833,0)
+ ;;=K70.0^^91^883^4
+ ;;^UTILITY(U,$J,358.3,17833,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17833,1,3,0)
+ ;;=3^Alcoholic fatty liver
+ ;;^UTILITY(U,$J,358.3,17833,1,4,0)
+ ;;=4^K70.0
+ ;;^UTILITY(U,$J,358.3,17833,2)
+ ;;=^5008784
+ ;;^UTILITY(U,$J,358.3,17834,0)
+ ;;=K70.10^^91^883^6
+ ;;^UTILITY(U,$J,358.3,17834,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17834,1,3,0)
+ ;;=3^Alcoholic hepatitis without ascites
+ ;;^UTILITY(U,$J,358.3,17834,1,4,0)
+ ;;=4^K70.10
+ ;;^UTILITY(U,$J,358.3,17834,2)
+ ;;=^5008785
+ ;;^UTILITY(U,$J,358.3,17835,0)
+ ;;=K70.11^^91^883^5
+ ;;^UTILITY(U,$J,358.3,17835,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17835,1,3,0)
+ ;;=3^Alcoholic hepatitis with ascites
+ ;;^UTILITY(U,$J,358.3,17835,1,4,0)
+ ;;=4^K70.11
+ ;;^UTILITY(U,$J,358.3,17835,2)
+ ;;=^5008786
+ ;;^UTILITY(U,$J,358.3,17836,0)
+ ;;=K70.30^^91^883^3
+ ;;^UTILITY(U,$J,358.3,17836,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17836,1,3,0)
+ ;;=3^Alcoholic cirrhosis of liver without ascites

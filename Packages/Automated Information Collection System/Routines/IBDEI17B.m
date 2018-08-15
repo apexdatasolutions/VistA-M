@@ -1,138 +1,130 @@
-IBDEI17B ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI17B ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,21498,1,5,0)
- ;;=5^Vaginitis, Unsp Cause
- ;;^UTILITY(U,$J,358.3,21498,2)
- ;;=^125233
- ;;^UTILITY(U,$J,358.3,21499,0)
- ;;=112.1^^133^1316^70
- ;;^UTILITY(U,$J,358.3,21499,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21499,1,4,0)
- ;;=4^112.1
- ;;^UTILITY(U,$J,358.3,21499,1,5,0)
- ;;=5^Vulvovaginal Candidiasis
- ;;^UTILITY(U,$J,358.3,21499,2)
- ;;=^18615
- ;;^UTILITY(U,$J,358.3,21500,0)
- ;;=131.01^^133^1316^64
- ;;^UTILITY(U,$J,358.3,21500,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21500,1,4,0)
- ;;=4^131.01
- ;;^UTILITY(U,$J,358.3,21500,1,5,0)
- ;;=5^Vaginitis, Trichomonas
- ;;^UTILITY(U,$J,358.3,21500,2)
- ;;=^121763
- ;;^UTILITY(U,$J,358.3,21501,0)
- ;;=698.1^^133^1316^66
- ;;^UTILITY(U,$J,358.3,21501,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21501,1,4,0)
- ;;=4^698.1
- ;;^UTILITY(U,$J,358.3,21501,1,5,0)
- ;;=5^Vulvar Pruritis
- ;;^UTILITY(U,$J,358.3,21501,2)
- ;;=Vulvar Pruritis^100071
- ;;^UTILITY(U,$J,358.3,21502,0)
- ;;=793.80^^133^1316^3
- ;;^UTILITY(U,$J,358.3,21502,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21502,1,4,0)
- ;;=4^793.80
- ;;^UTILITY(U,$J,358.3,21502,1,5,0)
- ;;=5^Abnormal Mammogram
- ;;^UTILITY(U,$J,358.3,21502,2)
- ;;=Abnormal Mammogram^323613
- ;;^UTILITY(U,$J,358.3,21503,0)
- ;;=795.00^^133^1316^4
- ;;^UTILITY(U,$J,358.3,21503,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21503,1,4,0)
- ;;=4^795.00
- ;;^UTILITY(U,$J,358.3,21503,1,5,0)
- ;;=5^Abnormal Pap Smear
- ;;^UTILITY(U,$J,358.3,21503,2)
- ;;=Abnormal Pap Smear^328609
- ;;^UTILITY(U,$J,358.3,21504,0)
- ;;=625.9^^133^1316^45
- ;;^UTILITY(U,$J,358.3,21504,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21504,1,4,0)
- ;;=4^625.9
- ;;^UTILITY(U,$J,358.3,21504,1,5,0)
- ;;=5^Pelvic Pain
- ;;^UTILITY(U,$J,358.3,21504,2)
- ;;=Pelvic Pain^123993
- ;;^UTILITY(U,$J,358.3,21505,0)
- ;;=624.09^^133^1316^20
- ;;^UTILITY(U,$J,358.3,21505,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21505,1,4,0)
- ;;=4^624.09
- ;;^UTILITY(U,$J,358.3,21505,1,5,0)
- ;;=5^Dystrophy Of Vulva NEC
- ;;^UTILITY(U,$J,358.3,21505,2)
- ;;=^335272
- ;;^UTILITY(U,$J,358.3,21506,0)
- ;;=796.70^^133^1316^1
- ;;^UTILITY(U,$J,358.3,21506,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21506,1,4,0)
- ;;=4^796.70
- ;;^UTILITY(U,$J,358.3,21506,1,5,0)
- ;;=5^Abn Pap Smear of Anus, NOS
- ;;^UTILITY(U,$J,358.3,21506,2)
- ;;=^336766
- ;;^UTILITY(U,$J,358.3,21507,0)
- ;;=795.10^^133^1316^2
- ;;^UTILITY(U,$J,358.3,21507,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21507,1,4,0)
- ;;=4^795.10
- ;;^UTILITY(U,$J,358.3,21507,1,5,0)
- ;;=5^Abn Pap Smear of Vagina, NOS
- ;;^UTILITY(U,$J,358.3,21507,2)
- ;;=^336765
- ;;^UTILITY(U,$J,358.3,21508,0)
- ;;=795.07^^133^1316^11
- ;;^UTILITY(U,$J,358.3,21508,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21508,1,4,0)
- ;;=4^795.07
- ;;^UTILITY(U,$J,358.3,21508,1,5,0)
- ;;=5^Cerv Smear w/o Transformation Zone
- ;;^UTILITY(U,$J,358.3,21508,2)
- ;;=^336674
- ;;^UTILITY(U,$J,358.3,21509,0)
- ;;=611.82^^133^1316^30
- ;;^UTILITY(U,$J,358.3,21509,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21509,1,4,0)
- ;;=4^611.82
- ;;^UTILITY(U,$J,358.3,21509,1,5,0)
- ;;=5^Hypoplasia of Breast
- ;;^UTILITY(U,$J,358.3,21509,2)
- ;;=^336614
- ;;^UTILITY(U,$J,358.3,21510,0)
- ;;=611.81^^133^1316^53
- ;;^UTILITY(U,$J,358.3,21510,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21510,1,4,0)
- ;;=4^611.81
- ;;^UTILITY(U,$J,358.3,21510,1,5,0)
- ;;=5^Ptosis of Breast
- ;;^UTILITY(U,$J,358.3,21510,2)
- ;;=^336613
- ;;^UTILITY(U,$J,358.3,21511,0)
- ;;=796.78^^133^1316^56
- ;;^UTILITY(U,$J,358.3,21511,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,21511,1,4,0)
- ;;=4^796.78
- ;;^UTILITY(U,$J,358.3,21511,1,5,0)
- ;;=5^Unsatis Anus Cytology Smear
- ;;^UTILITY(U,$J,358.3,21511,2)
- ;;=^336690
+ ;;^UTILITY(U,$J,358.3,20069,1,4,0)
+ ;;=4^W17.3XXA
+ ;;^UTILITY(U,$J,358.3,20069,2)
+ ;;=^5059775
+ ;;^UTILITY(U,$J,358.3,20070,0)
+ ;;=W17.3XXD^^94^935^76
+ ;;^UTILITY(U,$J,358.3,20070,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20070,1,3,0)
+ ;;=3^Fall into Empty Swimming Pool,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,20070,1,4,0)
+ ;;=4^W17.3XXD
+ ;;^UTILITY(U,$J,358.3,20070,2)
+ ;;=^5059776
+ ;;^UTILITY(U,$J,358.3,20071,0)
+ ;;=W17.4XXA^^94^935^39
+ ;;^UTILITY(U,$J,358.3,20071,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20071,1,3,0)
+ ;;=3^Fall from Dock,Init Encntr
+ ;;^UTILITY(U,$J,358.3,20071,1,4,0)
+ ;;=4^W17.4XXA
+ ;;^UTILITY(U,$J,358.3,20071,2)
+ ;;=^5059778
+ ;;^UTILITY(U,$J,358.3,20072,0)
+ ;;=W17.4XXD^^94^935^40
+ ;;^UTILITY(U,$J,358.3,20072,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20072,1,3,0)
+ ;;=3^Fall from Dock,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,20072,1,4,0)
+ ;;=4^W17.4XXD
+ ;;^UTILITY(U,$J,358.3,20072,2)
+ ;;=^5059779
+ ;;^UTILITY(U,$J,358.3,20073,0)
+ ;;=W17.81XA^^94^935^27
+ ;;^UTILITY(U,$J,358.3,20073,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20073,1,3,0)
+ ;;=3^Fall down Embankment,Init Encntr
+ ;;^UTILITY(U,$J,358.3,20073,1,4,0)
+ ;;=4^W17.81XA
+ ;;^UTILITY(U,$J,358.3,20073,2)
+ ;;=^5059781
+ ;;^UTILITY(U,$J,358.3,20074,0)
+ ;;=W17.81XD^^94^935^28
+ ;;^UTILITY(U,$J,358.3,20074,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20074,1,3,0)
+ ;;=3^Fall down Embankment,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,20074,1,4,0)
+ ;;=4^W17.81XD
+ ;;^UTILITY(U,$J,358.3,20074,2)
+ ;;=^5059782
+ ;;^UTILITY(U,$J,358.3,20075,0)
+ ;;=W17.89XA^^94^935^55
+ ;;^UTILITY(U,$J,358.3,20075,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20075,1,3,0)
+ ;;=3^Fall from One level to Another,Init Encntr
+ ;;^UTILITY(U,$J,358.3,20075,1,4,0)
+ ;;=4^W17.89XA
+ ;;^UTILITY(U,$J,358.3,20075,2)
+ ;;=^5059787
+ ;;^UTILITY(U,$J,358.3,20076,0)
+ ;;=W17.89XD^^94^935^56
+ ;;^UTILITY(U,$J,358.3,20076,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20076,1,3,0)
+ ;;=3^Fall from One level to Another,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,20076,1,4,0)
+ ;;=4^W17.89XD
+ ;;^UTILITY(U,$J,358.3,20076,2)
+ ;;=^5059788
+ ;;^UTILITY(U,$J,358.3,20077,0)
+ ;;=W18.11XA^^94^935^63
+ ;;^UTILITY(U,$J,358.3,20077,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20077,1,3,0)
+ ;;=3^Fall from Toilet w/o Strike Against Obj,Init Encntr
+ ;;^UTILITY(U,$J,358.3,20077,1,4,0)
+ ;;=4^W18.11XA
+ ;;^UTILITY(U,$J,358.3,20077,2)
+ ;;=^5059801
+ ;;^UTILITY(U,$J,358.3,20078,0)
+ ;;=W18.11XD^^94^935^64
+ ;;^UTILITY(U,$J,358.3,20078,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20078,1,3,0)
+ ;;=3^Fall from Toilet w/o Strike Against Obj,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,20078,1,4,0)
+ ;;=4^W18.11XD
+ ;;^UTILITY(U,$J,358.3,20078,2)
+ ;;=^5059802
+ ;;^UTILITY(U,$J,358.3,20079,0)
+ ;;=W18.12XA^^94^935^61
+ ;;^UTILITY(U,$J,358.3,20079,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20079,1,3,0)
+ ;;=3^Fall from Toilet w/ Strike Against Obj,Init Encntr
+ ;;^UTILITY(U,$J,358.3,20079,1,4,0)
+ ;;=4^W18.12XA
+ ;;^UTILITY(U,$J,358.3,20079,2)
+ ;;=^5059804
+ ;;^UTILITY(U,$J,358.3,20080,0)
+ ;;=W18.12XD^^94^935^62
+ ;;^UTILITY(U,$J,358.3,20080,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20080,1,3,0)
+ ;;=3^Fall from Toilet w/ Strike Against Obj,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,20080,1,4,0)
+ ;;=4^W18.12XD
+ ;;^UTILITY(U,$J,358.3,20080,2)
+ ;;=^5137984
+ ;;^UTILITY(U,$J,358.3,20081,0)
+ ;;=W18.2XXA^^94^935^73
+ ;;^UTILITY(U,$J,358.3,20081,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,20081,1,3,0)
+ ;;=3^Fall in Empty Shower/Bathtub,Init Encntr
+ ;;^UTILITY(U,$J,358.3,20081,1,4,0)
+ ;;=4^W18.2XXA
+ ;;^UTILITY(U,$J,358.3,20081,2)
+ ;;=^5059806
+ ;;^UTILITY(U,$J,358.3,20082,0)
+ ;;=W18.2XXD^^94^935^74

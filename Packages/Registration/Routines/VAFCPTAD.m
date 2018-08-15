@@ -1,5 +1,5 @@
-VAFCPTAD ; ISA/RJS,Zoltan;BIR/PTD - ADD NEW PATIENT ENTRY ;APR 6, 1999
- ;;5.3;Registration;**149,800**;Aug 13, 1993;Build 4
+VAFCPTAD ; ISA/RJS,Zoltan;BIR/PTD,CKN - ADD NEW PATIENT ENTRY ; 8/14/14 6:07pm
+ ;;5.3;Registration;**149,800,876,944,950**;Aug 13, 1993;Build 4
  ;
 ADD(RETURN,PARAM) ;Add an entry to the PATIENT (#2) file for VOA
  ;
@@ -22,6 +22,7 @@ ADD(RETURN,PARAM) ;Add an entry to the PATIENT (#2) file for VOA
  ;  PARAM("POBCTY")=PLACE OF BIRTH [CITY]
  ;  PARAM("POBST")=PLACE OF BIRTH [STATE]
  ;  PARAM("MMN")=MOTHER'S MAIDEN NAME
+ ;  PARAM("MBI")=MULTIPLE BIRTH INDICATOR
  ;  PARAM("ALIAS",#)=ALIAS NAME(last^first^middle^suffix)^ALIAS SSN
  ;
  ;Output:
@@ -29,9 +30,10 @@ ADD(RETURN,PARAM) ;Add an entry to the PATIENT (#2) file for VOA
  ;  On Success:   1^DFN of new PATIENT (#2) record
  ;
 EN1 ;Check value of all required fields
+ D NOW^%DTC
  N ALSERR,DIERR,DPTIDS,DPTX,ERROR,FLG,FDA,FN,LN,MN,RESULT,RGRSICN,SFX,VAL,VAFCA08,X,Y
  N VAFCDFN,VAFCDOB,VAFCICN,VAFCMMN,VAFCNAM,VAFCPF,VAFCPOBC,VAFCPOBS
- N VAFCRSN,VAFCSRV,VAFCSSN,VAFCSUM,VAFCSX,VAFCTYP,VAFCVET
+ N VAFCRSN,VAFCSRV,VAFCSSN,VAFCSUM,VAFCSX,VAFCTYP,VAFCVET,VAFCMBI
  K RETURN
  S (RGRSICN,VAFCA08)=1 S FLG=0 ;allow update to ICN; prevent triggering of messages
  ;
@@ -123,22 +125,38 @@ EN1 ;Check value of all required fields
  I $D(PARAM("MMN")) S VAL=$G(PARAM("MMN")) D CHK^DIE(2,.2403,,VAL,.RESULT) I RESULT="^" S RETURN(1)="-1^"_^TMP("DIERR",$J,1,"TEXT",1) Q
  I $D(PARAM("MMN")) S VAFCMMN=VAL,FLG=1
  ;
+ ;**876 - MVI_2788 (ckn) - Add MBI
+ ;Optional - MULTIPLE BIRTH INDICATOR
+ I $D(PARAM("MBI")) S VAL=$G(PARAM("MBI")) D CHK^DIE(2,994,,VAL,.RESULT) I RESULT="^" S RETURN(1)="-1^"_^TMP("DIERR",$J,1,"TEXT",1) Q
+ I $G(PARAM("MBI"))'="" S VAFCMBI=VAL,FLG=1
+ ;
  I FLG=0 S RETURN(1)="-1^Required information is missing; please check input and try again." Q
  ;Else ok to file entry
 FILE ;Call FILE^DICN to add new entry to PATIENT (#2) file
- N DA,DIC,DR K DD,DO
+ N DA,DIC,DR,FULLICN K DD,DO
  S DIC="^DPT(",DIC(0)="FLZ",DLAYGO=2,X=VAFCNAM
- S DIC("DR")=".09///"_VAFCSSN_";.03///"_VAFCDOB_";.02///"_VAFCSX_";391///"_VAFCTYP_";1901////"_VAFCVET_";.301///"_VAFCSRV_";991.01///"_VAFCICN_";991.02///"_VAFCSUM_";27.02///"_VAFCPF
+ ;**876 MVI_2788 (ckn) - Remove four slash use for field 1901
+ ;**944 Story #557843 (cml) add code to update FULL ICN (#991.1), WHO ENTERED PATIENT (#.096), and DATE ENTERED INTO FILE (#.097) fields
+ S FULLICN=VAFCICN_"V"_VAFCSUM
+ S DIC("DR")=".09///"_VAFCSSN_";.03///"_VAFCDOB_";.02///"_VAFCSX_";391///"_VAFCTYP_";1901///"_VAFCVET_";.301///"_VAFCSRV_";991.01///"_VAFCICN_";991.02///"_VAFCSUM_";991.1///"_FULLICN
  I VAFCSSN="P" S DIC("DR")=DIC("DR")_";.0906///"_VAFCRSN
  I $G(VAFCPOBC)'="" S DIC("DR")=DIC("DR")_";.092///"_VAFCPOBC
  I $G(VAFCPOBS)'="" S DIC("DR")=DIC("DR")_";.093///"_VAFCPOBS
  I $G(VAFCMMN)'="" S DIC("DR")=DIC("DR")_";.2403///"_VAFCMMN
+ ;**876 - MVI_2788 (ckn)
+ I $G(VAFCMBI)'="" S DIC("DR")=DIC("DR")_";994///"_VAFCMBI
  L +^DPT(0):10
  D FILE^DICN K DA,DIC,DD,DLAYGO,DO,DR
  L -^DPT(0)
  ;If record creation/update fails, return a -1^error text
  I $P(Y,U,3)'=1 S RETURN(1)="-1^"_"Attempt to add patient "_VAFCNAM_" to the PATIENT (#2) file at station number "_$P($$SITE^VASITE,"^",3)_" failed." Q
  S VAFCDFN=+Y
+ ; file Who and When if not already done
+ N DGZ
+ S DGZ=$G(^DPT(VAFCDFN,0))
+ S:'$P(DGZ,"^",15) FDA(2,VAFCDFN_",",.096)=DUZ
+ S:'$P(DGZ,"^",16) FDA(2,VAFCDFN_",",.097)=DT
+ D:$D(FDA) FILE^DIE("","FDA")
  ;
  ;File ALIAS multiple
  I $D(PARAM("ALIAS")) D ALIAS  ;If ALIAS data is passed, call ALIAS module

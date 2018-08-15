@@ -1,6 +1,6 @@
-PSBVDLPB ;BIRMINGHAM/EFC-BCMA IV VIRTUAL DUE ;1/32/13 1:23pm
- ;;3.0;BAR CODE MED ADMIN;**11,13,38,32,58,68,70**;Mar 2004;Build 101
- ;Per VHA Directive 2004-038 (or future revisions regarding same), this routine should not be modified.
+PSBVDLPB ;BIRMINGHAM/EFC-BCMA IV VIRTUAL DUE ;03/06/16 3:06pm
+ ;;3.0;BAR CODE MED ADMIN;**11,13,38,32,58,68,70,83,98**;Mar 2004;Build 2
+ ;Per VA Directive 6402, this routine should not be modified.
  ;
  ; Reference/IA
  ; $$GET^XPAR/2263
@@ -14,6 +14,8 @@ PSBVDLPB ;BIRMINGHAM/EFC-BCMA IV VIRTUAL DUE ;1/32/13 1:23pm
  ;      order is rotation type injectable.
  ;*70 - add 32nd piece to Results for Clinic Order name
  ;    - add 33rd piece to Results for Clinic ien ptr to file #44
+ ;*83 - Clinic Orders should show up on VDL's when start order date
+ ;      is Today now ignores the time portion of that field.
  ;
 EN(DFN,PSBDT) ; Default Order List Return for Today
  ;
@@ -43,7 +45,8 @@ EN(DFN,PSBDT) ; Default Order List Return for Today
  .Q:PSBONX["P"              ;No Pending Orders
  .Q:'$$IVPTAB^PSBVDLU3(PSBOTYP,PSBIVT,PSBISYR,PSBCHEMT,PSBIVPSH)  ;Is Piggyback
  .Q:PSBOST>PSBWADM          ;Order Start Date/Time > admin window
- .Q:($G(PSBCLORD)]"")&(PSBOST>PSBRTNOW)   ;CO Order start date is in future
+ .;CO Order future start check now based on the date only Not time *83
+ .Q:($G(PSBCLORD)]"")&($P(PSBOST,".")>$P(PSBRTNOW,"."))
  .Q:PSBOSP<PSBWBEG          ;For all Order Stop Date/Time < vdl window
  .Q:PSBOSTS["D"             ;Is it DC'd
  .Q:PSBNGF                  ;Is it marked DO NOT GIVE!
@@ -73,7 +76,7 @@ EN(DFN,PSBDT) ; Default Order List Return for Today
  .I PSBSCHT="OC" D  Q:PSBGVN&('$$GET^XPAR("DIV","PSB ADMIN MULTIPLE ONCALL"))
  ..S (PSBGVN,X,Y)=""
  ..F  S X=$O(^PSB(53.79,"AOIP",DFN,PSBOIT,X),-1) Q:'X  D
- ...F  S Y=$O(^PSB(53.79,"AOIP",DFN,PSBOIT,X,Y),-1) Q:'Y  S:($P(^PSB(53.79,Y,.1),U)=PSBON)&($P(^PSB(53.79,Y,0),U,9)="G") PSBGVN=1,(X,Y)=0
+ ...F  S Y=$O(^PSB(53.79,"AOIP",DFN,PSBOIT,X,Y),-1) Q:'Y  S:($P(^PSB(53.79,Y,.1),U)=PSBONX)&($P(^PSB(53.79,Y,0),U,9)="G") PSBGVN=1,(X,Y)=0 ;correct PSBON to PSBONX, PSB*3*98
  .;
  .S PSBSTRT=PSBOST ; Order Start Date/Time
  .S PSBSTOP=PSBOSP ; Order Stop Date/Time

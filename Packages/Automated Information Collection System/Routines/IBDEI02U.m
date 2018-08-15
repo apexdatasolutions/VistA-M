@@ -1,132 +1,134 @@
-IBDEI02U ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI02U ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,944,0)
- ;;=V5014^^12^104^11^^^^1
- ;;^UTILITY(U,$J,358.3,944,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,944,1,2,0)
- ;;=2^V5014
- ;;^UTILITY(U,$J,358.3,944,1,3,0)
- ;;=3^HA Repair/Modification
- ;;^UTILITY(U,$J,358.3,945,0)
- ;;=V5020^^12^104^12^^^^1
- ;;^UTILITY(U,$J,358.3,945,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,945,1,2,0)
- ;;=2^V5020
- ;;^UTILITY(U,$J,358.3,945,1,3,0)
- ;;=3^Real-Ear(Probe Tube) Measurement
- ;;^UTILITY(U,$J,358.3,946,0)
- ;;=L7510^^12^104^13^^^^1
- ;;^UTILITY(U,$J,358.3,946,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,946,1,2,0)
- ;;=2^L7510
- ;;^UTILITY(U,$J,358.3,946,1,3,0)
- ;;=3^Repair/Modify Prosthetic Device
- ;;^UTILITY(U,$J,358.3,947,0)
- ;;=L8499^^12^104^14^^^^1
- ;;^UTILITY(U,$J,358.3,947,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,947,1,2,0)
- ;;=2^L8499
- ;;^UTILITY(U,$J,358.3,947,1,3,0)
- ;;=3^Unlisted Misc Prosthetic Ser
- ;;^UTILITY(U,$J,358.3,948,0)
- ;;=S0618^^12^104^1^^^^1
- ;;^UTILITY(U,$J,358.3,948,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,948,1,2,0)
- ;;=2^S0618
- ;;^UTILITY(U,$J,358.3,948,1,3,0)
- ;;=3^Audiometry For Hearing Aid
- ;;^UTILITY(U,$J,358.3,949,0)
- ;;=97762^^12^104^2^^^^1
- ;;^UTILITY(U,$J,358.3,949,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,949,1,2,0)
- ;;=2^97762
- ;;^UTILITY(U,$J,358.3,949,1,3,0)
- ;;=3^C/O for Orthotic/Prosth Use
- ;;^UTILITY(U,$J,358.3,950,0)
- ;;=V5110^^12^104^10^^^^1
- ;;^UTILITY(U,$J,358.3,950,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,950,1,2,0)
- ;;=2^V5110
- ;;^UTILITY(U,$J,358.3,950,1,3,0)
- ;;=3^HA Dispensing,Bilateral
- ;;^UTILITY(U,$J,358.3,951,0)
- ;;=69200^^12^105^1^^^^1
- ;;^UTILITY(U,$J,358.3,951,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,951,1,2,0)
- ;;=2^69200
- ;;^UTILITY(U,$J,358.3,951,1,3,0)
- ;;=3^Remove Foreign Body, External Canal
- ;;^UTILITY(U,$J,358.3,952,0)
- ;;=69210^^12^105^2^^^^1
- ;;^UTILITY(U,$J,358.3,952,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,952,1,2,0)
- ;;=2^69210
- ;;^UTILITY(U,$J,358.3,952,1,3,0)
- ;;=3^Remove Impacted Ear Wax 1 or 2 ears
- ;;^UTILITY(U,$J,358.3,953,0)
- ;;=92543^^12^106^2^^^^1
- ;;^UTILITY(U,$J,358.3,953,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,953,1,2,0)
- ;;=2^92543
- ;;^UTILITY(U,$J,358.3,953,1,3,0)
- ;;=3^Caloric Vestibular Test, W/Recording, Each
- ;;^UTILITY(U,$J,358.3,954,0)
- ;;=92548^^12^106^3^^^^1
- ;;^UTILITY(U,$J,358.3,954,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,954,1,2,0)
- ;;=2^92548
- ;;^UTILITY(U,$J,358.3,954,1,3,0)
- ;;=3^Computerized Dynamic Posturography
- ;;^UTILITY(U,$J,358.3,955,0)
- ;;=92544^^12^106^4^^^^1
- ;;^UTILITY(U,$J,358.3,955,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,955,1,2,0)
- ;;=2^92544
- ;;^UTILITY(U,$J,358.3,955,1,3,0)
- ;;=3^Optokinetic Nystagmus Test Bidirec,w/Recording
- ;;^UTILITY(U,$J,358.3,956,0)
- ;;=92545^^12^106^5^^^^1
- ;;^UTILITY(U,$J,358.3,956,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,956,1,2,0)
- ;;=2^92545
- ;;^UTILITY(U,$J,358.3,956,1,3,0)
- ;;=3^Oscillating Tracking Test W/Recording
- ;;^UTILITY(U,$J,358.3,957,0)
- ;;=92542^^12^106^6^^^^1
- ;;^UTILITY(U,$J,358.3,957,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,957,1,2,0)
- ;;=2^92542
- ;;^UTILITY(U,$J,358.3,957,1,3,0)
- ;;=3^Positional Nystagmus Test min 4 pos w/Recording
- ;;^UTILITY(U,$J,358.3,958,0)
- ;;=92546^^12^106^7^^^^1
- ;;^UTILITY(U,$J,358.3,958,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,958,1,2,0)
- ;;=2^92546
- ;;^UTILITY(U,$J,358.3,958,1,3,0)
- ;;=3^Sinusiodal Vertical Axis Rotation
- ;;^UTILITY(U,$J,358.3,959,0)
- ;;=92547^^12^106^9^^^^1
- ;;^UTILITY(U,$J,358.3,959,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,959,1,2,0)
- ;;=2^92547
- ;;^UTILITY(U,$J,358.3,959,1,3,0)
- ;;=3^Vertical Channel (Add On To Each Eng Code)
+ ;;^UTILITY(U,$J,358.3,566,1,4,0)
+ ;;=4^E11.36
+ ;;^UTILITY(U,$J,358.3,566,2)
+ ;;=^5002642
+ ;;^UTILITY(U,$J,358.3,567,0)
+ ;;=E11.39^^6^69^49
+ ;;^UTILITY(U,$J,358.3,567,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,567,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Diabetic Ophthalmic Complication
+ ;;^UTILITY(U,$J,358.3,567,1,4,0)
+ ;;=4^E11.39
+ ;;^UTILITY(U,$J,358.3,567,2)
+ ;;=^5002643
+ ;;^UTILITY(U,$J,358.3,568,0)
+ ;;=E11.40^^6^69^48
+ ;;^UTILITY(U,$J,358.3,568,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,568,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Diabetic Neuropathy
+ ;;^UTILITY(U,$J,358.3,568,1,4,0)
+ ;;=4^E11.40
+ ;;^UTILITY(U,$J,358.3,568,2)
+ ;;=^5002644
+ ;;^UTILITY(U,$J,358.3,569,0)
+ ;;=E11.49^^6^69^46
+ ;;^UTILITY(U,$J,358.3,569,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,569,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Diabetic Neurological Complication
+ ;;^UTILITY(U,$J,358.3,569,1,4,0)
+ ;;=4^E11.49
+ ;;^UTILITY(U,$J,358.3,569,2)
+ ;;=^5002649
+ ;;^UTILITY(U,$J,358.3,570,0)
+ ;;=E11.41^^6^69^44
+ ;;^UTILITY(U,$J,358.3,570,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,570,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Diabetic Mononeuropathy
+ ;;^UTILITY(U,$J,358.3,570,1,4,0)
+ ;;=4^E11.41
+ ;;^UTILITY(U,$J,358.3,570,2)
+ ;;=^5002645
+ ;;^UTILITY(U,$J,358.3,571,0)
+ ;;=E11.42^^6^69^51
+ ;;^UTILITY(U,$J,358.3,571,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,571,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Diabetic Polyneuropathy
+ ;;^UTILITY(U,$J,358.3,571,1,4,0)
+ ;;=4^E11.42
+ ;;^UTILITY(U,$J,358.3,571,2)
+ ;;=^5002646
+ ;;^UTILITY(U,$J,358.3,572,0)
+ ;;=E11.43^^6^69^39
+ ;;^UTILITY(U,$J,358.3,572,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,572,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Diabetic Autonomic Polyneuropathy
+ ;;^UTILITY(U,$J,358.3,572,1,4,0)
+ ;;=4^E11.43
+ ;;^UTILITY(U,$J,358.3,572,2)
+ ;;=^5002647
+ ;;^UTILITY(U,$J,358.3,573,0)
+ ;;=E11.44^^6^69^37
+ ;;^UTILITY(U,$J,358.3,573,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,573,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Diabetic Amyotrophy
+ ;;^UTILITY(U,$J,358.3,573,1,4,0)
+ ;;=4^E11.44
+ ;;^UTILITY(U,$J,358.3,573,2)
+ ;;=^5002648
+ ;;^UTILITY(U,$J,358.3,574,0)
+ ;;=E11.51^^6^69^50
+ ;;^UTILITY(U,$J,358.3,574,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,574,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Diabetic Peripheral Angiopathy w/o Gangrene
+ ;;^UTILITY(U,$J,358.3,574,1,4,0)
+ ;;=4^E11.51
+ ;;^UTILITY(U,$J,358.3,574,2)
+ ;;=^5002650
+ ;;^UTILITY(U,$J,358.3,575,0)
+ ;;=E11.59^^6^69^36
+ ;;^UTILITY(U,$J,358.3,575,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,575,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Circulatory Complications
+ ;;^UTILITY(U,$J,358.3,575,1,4,0)
+ ;;=4^E11.59
+ ;;^UTILITY(U,$J,358.3,575,2)
+ ;;=^5002652
+ ;;^UTILITY(U,$J,358.3,576,0)
+ ;;=E11.610^^6^69^47
+ ;;^UTILITY(U,$J,358.3,576,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,576,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Diabetic Neuropathic Arthropathy
+ ;;^UTILITY(U,$J,358.3,576,1,4,0)
+ ;;=4^E11.610
+ ;;^UTILITY(U,$J,358.3,576,2)
+ ;;=^5002653
+ ;;^UTILITY(U,$J,358.3,577,0)
+ ;;=E11.618^^6^69^38
+ ;;^UTILITY(U,$J,358.3,577,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,577,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Diabetic Arthropathy
+ ;;^UTILITY(U,$J,358.3,577,1,4,0)
+ ;;=4^E11.618
+ ;;^UTILITY(U,$J,358.3,577,2)
+ ;;=^5002654
+ ;;^UTILITY(U,$J,358.3,578,0)
+ ;;=E11.620^^6^69^42
+ ;;^UTILITY(U,$J,358.3,578,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,578,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Diabetic Dermatitis
+ ;;^UTILITY(U,$J,358.3,578,1,4,0)
+ ;;=4^E11.620
+ ;;^UTILITY(U,$J,358.3,578,2)
+ ;;=^5002655
+ ;;^UTILITY(U,$J,358.3,579,0)
+ ;;=E11.621^^6^69^54
+ ;;^UTILITY(U,$J,358.3,579,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,579,1,3,0)
+ ;;=3^Diabetes Type 2 w/ Foot Ulcer

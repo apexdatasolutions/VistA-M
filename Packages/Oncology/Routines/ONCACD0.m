@@ -1,13 +1,24 @@
 ONCACD0 ;Hines OIFO/GWB - NAACCR extract driver ;09/22/11
- ;;2.2;ONCOLOGY;**1**;Jul 31, 2013;Build 8
- ;
+ ;;2.2;ONCOLOGY;**1,4,5,8,6**;Jul 31, 2013;Build 10
+ ;P6 V16
 EN1(DEVICE,STEXT) ;Entry point
 EN2 N ACO,BDT,DATE,DIAGYR,EDT,EXTRACT,NCDB,ONCSPIEN,QUEUE,SDT,STAT,STAT1,STAT2,YESNO,DATE1,ONCDATE,ONCDT,ONCLDT
- N ACCN,ONCDT11,ONCDATE1,SCREEN,CYR,ONC91AS,PTR,CLASSOFCASE
+ N ACCN,ONCDT11,ONCDATE1,SCREEN,CYR,ONC91AS,PTR,CLASSOFCASE,ONCPHI,ONCCLCA,ONCR12,ONCRCL
  K ^TMP($J),RQRS
  S DEVICE=$G(DEVICE,0),STEXT=$G(STEXT,0),EXT=""
  S (EDT,EXTRACT,DATE,OUT,QUEUE,SDT,STAT,ONCDT)=0
- I (STEXT=0)!(STEXT=2)!(STEXT=3) S EXTRACT=$O(^ONCO(160.16,"B","NCDB EXTRACT V14.0",0))
+ ;P2.2*4
+ W !
+ S DIR("A")=" Exclude PHI COMORBIDITY codes: "
+ S DIR("B")="YES",DIR(0)="Y"
+ S DIR("?")=" "
+ S DIR("?",1)=" Answer 'YES' if you want to exclude PHI COMORBIDITY codes."
+ S DIR("?",2)=" Answer 'NO' if you want to include PHI COMORBIDITY codes."
+ D ^DIR
+ I $D(DIRUT) S OUT=1 K DIRUT Q
+ S ONCPHI=Y
+ ;
+ I (STEXT=0)!(STEXT=2)!(STEXT=3) S EXTRACT=$O(^ONCO(160.16,"B","NCDB EXTRACT V16.0",0))
  I STEXT=1 D GETREC(.EXTRACT,.OUT)
  I 'OUT S STAT=$$GETHOSP
  I 'STAT S OUT=1
@@ -24,18 +35,20 @@ EN2 N ACO,BDT,DATE,DIAGYR,EDT,EXTRACT,NCDB,ONCSPIEN,QUEUE,SDT,STAT,STAT1,STAT2,Y
  ;
 GETREC(EXTRACT,OUT) ;Select VACCR or STATE record layout
  W !!," Available record layouts:",!
- W !,"  1) VACCR Record Layout v14.0 (VA Registry)"
- W !,"  2) NAACCR State Record Layout v14.0"
+ W !,"  1) VACCR Record Layout v16.0 (VA Registry)"
+ W !,"  2) NAACCR State Record Layout v16.0"
+ W !,"  3) SEER State Record Layout v16.0"
  W !
  N DIR,X,Y
- S DIR(0)="SAO^1:VACCR Record Layout v14.0;2:NAACCR State Record Layout v14.0"
+ S DIR(0)="SAO^1:VACCR Record Layout v16.0;2:NAACCR State Record Layout v16.0;3:SEER State Record Layout v16.0"
  S DIR("A")=" Select record layout: "
  S DIR("?")="Select the record layout to use"
  D ^DIR
  I $D(DIRUT) S OUT=1 K DIRUT Q
  I +Y<1 S OUT=1 Q
- I Y=1 S EXT="VACCR",EXTRACT=$O(^ONCO(160.16,"B","VACCR EXTRACT V14.0",0))
- I Y=2 S EXT="STATE",EXTRACT=$O(^ONCO(160.16,"B","STATE EXTRACT V14.0",0))
+ I Y=1 S EXT="VACCR",EXTRACT=$O(^ONCO(160.16,"B","VACCR EXTRACT V16.0",0))
+ I (Y=2)!(Y=3) S EXT="STATE",EXTRACT=$O(^ONCO(160.16,"B","STATE EXTRACT V16.0",0))
+ S ONCRCL=Y
  Q
  ;
 GETHOSP() ;Facility Identification Number (FIN)
@@ -62,6 +75,19 @@ GETDXH(DXH) ;INSTITUTION ID NUMBER (160.1,27)
  Q OKHERE
  ;
 RQRS(SDT,EDT,DATE,OUT) ;Process RQRS data
+ ;
+ W !
+ S ONCR12=0
+ K DIR
+ S DIR(0)="SAO^1:COLON, RECTUM and BREAST only;2:All Analytic Cases only"
+ S DIR("A")=" Select cases for inclusion: "
+ S DIR("?")="Select cases or primaries for RQRS download"
+ D ^DIR
+ I $D(DIRUT) S OUT=1 K DIRUT Q
+ I Y<1 S OUT=1 Q
+ S ONCR12=Y
+ W !
+ ;
  K DIR
  S DIR(0)="SAO^1:Date DX;2:Date Case Last Changed;3:Accession Number"
  S DIR("A")=" Select date field to be used for Start/End range: "
@@ -71,10 +97,10 @@ RQRS(SDT,EDT,DATE,OUT) ;Process RQRS data
  I Y<1 S OUT=1 Q
  S (NCDB,ONCLDT)=Y
  K DIR
- S ONCDT11=3000101
+ S ONCDT11=3080101
  I $G(ONCLDT)=3 D ACCN Q
  ;S CYR=1700+($E(DT,1,3)),SCREEN="K:X>CYR X"
- S DIR(0)="DO^3000101:"_DT_":EP"
+ S DIR(0)="DO^3080101:"_DT_":EP"
  ;S DIR("B")=$E(ONCDT11,4,5)_"/"_$E(ONCDT11,6,7)_"/"_$E(ONCDT11,2,3)
  I $G(ONCLDT)=1 D
  .S DIR("A")=" Start, Date DX: "
@@ -149,7 +175,7 @@ DCLC K DIR
  .S DIR("?",2)="   LAST abstract you would like to report."
  ;S:$G(ONCED89) DIR("B")=$E(ONCED89,4,5)_"/"_$E(ONCED89,6,7)_"/"_$E(ONCED89,2,3)
  D ^DIR I $D(DIRUT) S OUT=1 K DIRUT Q
- S EDT=Y
+ S EDT=Y I $P(EDT,".",2)="" S EDT=EDT_.2500
 ACJ I EXT="" Q
  I $G(NCDB)=2 Q
  I EXT="VACCR" Q
@@ -270,7 +296,7 @@ VERIFY(STAT,DATE,SDT,EDT,STEXT,YESNO,OUT) ;Verify settings
  I EXT="STATE" D
  .W !," Analytic cases only.................: ",$S(ACO=1:"YES",1:"NO")
  I STEXT=3 D
- .W !," Primary Sites.......................: BREAST, COLON and RECTUM"
+ .W !," Primary Sites.......................: ",$S(ONCR12=1:"BREAST, COLON and RECTUM",ONCR12=2:"All Analytic Cases",1:"")
  W !
  S DIR("A")=" Are these settings correct"
  S DIR("B")="YES"
@@ -344,10 +370,12 @@ GETDATE(ONCDT,DATE1,OUT) ;Select Diagnosis Year
  I NCDB=3 W ! D ACCN
  Q
 ACCN ;Accession Number
+ ;P8 modify Accession range logic.
  N ONCACST,ONCACEN
  S ONCACST=$O(^ONCO(165.5,"AA",0)),ONCACEN=$O(^ONCO(165.5,"AA",""),-1)
- S:$D(ONCDATE) ONCACST=ONCDATE_"00000" S:$D(ONCDATE1) ONCACEN=ONCDATE1_"99999"
- S ONCACST=$O(^ONCO(165.5,"AA",ONCACST)),ONCACEN=$O(^ONCO(165.5,"AA",ONCACEN),-1)
+ ;S:$D(ONCDATE) ONCACST=ONCDATE_"00000" S:$D(ONCDATE1) ONCACEN=ONCDATE1_"99999"
+ S:$D(ONCDATE) ONCACST=$O(^ONCO(165.5,"AA",ONCDATE_"00000"))
+ S:$D(ONCDATE1) ONCACEN=$O(^ONCO(165.5,"AA",ONCDATE1_"99999"),-1)
  K DIR
  S DIR("B")=ONCACST
  S DIR(0)="NO^"_ONCACST_":"_ONCACEN

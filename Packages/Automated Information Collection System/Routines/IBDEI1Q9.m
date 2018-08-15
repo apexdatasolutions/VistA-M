@@ -1,0 +1,124 @@
+IBDEI1Q9 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,28897,1,4,0)
+ ;;=4^Y04.2XXD
+ ;;^UTILITY(U,$J,358.3,28897,2)
+ ;;=^5061172
+ ;;^UTILITY(U,$J,358.3,28898,0)
+ ;;=Y04.8XXD^^132^1339^4
+ ;;^UTILITY(U,$J,358.3,28898,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28898,1,3,0)
+ ;;=3^Assault by Oth Bodily Force,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,28898,1,4,0)
+ ;;=4^Y04.8XXD
+ ;;^UTILITY(U,$J,358.3,28898,2)
+ ;;=^5061175
+ ;;^UTILITY(U,$J,358.3,28899,0)
+ ;;=Y36.200A^^132^1339^124
+ ;;^UTILITY(U,$J,358.3,28899,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28899,1,3,0)
+ ;;=3^War Op Inv Unspec Explosion/Fragments,Milt,Init Encntr
+ ;;^UTILITY(U,$J,358.3,28899,1,4,0)
+ ;;=4^Y36.200A
+ ;;^UTILITY(U,$J,358.3,28899,2)
+ ;;=^5061607
+ ;;^UTILITY(U,$J,358.3,28900,0)
+ ;;=Y36.200D^^132^1339^125
+ ;;^UTILITY(U,$J,358.3,28900,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28900,1,3,0)
+ ;;=3^War Op Inv Unspec Explosion/Fragments,Milt,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,28900,1,4,0)
+ ;;=4^Y36.200D
+ ;;^UTILITY(U,$J,358.3,28900,2)
+ ;;=^5061608
+ ;;^UTILITY(U,$J,358.3,28901,0)
+ ;;=Y36.300A^^132^1339^126
+ ;;^UTILITY(U,$J,358.3,28901,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28901,1,3,0)
+ ;;=3^War Op Inv Unspec Fire/Conflagr/Hot Subst,Milt,Init Encntr
+ ;;^UTILITY(U,$J,358.3,28901,1,4,0)
+ ;;=4^Y36.300A
+ ;;^UTILITY(U,$J,358.3,28901,2)
+ ;;=^5061661
+ ;;^UTILITY(U,$J,358.3,28902,0)
+ ;;=Y36.300D^^132^1339^127
+ ;;^UTILITY(U,$J,358.3,28902,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28902,1,3,0)
+ ;;=3^War Op Inv Unspec Fire/Conflagr/Hot Subst,Milt,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,28902,1,4,0)
+ ;;=4^Y36.300D
+ ;;^UTILITY(U,$J,358.3,28902,2)
+ ;;=^5061662
+ ;;^UTILITY(U,$J,358.3,28903,0)
+ ;;=Y36.410A^^132^1339^121
+ ;;^UTILITY(U,$J,358.3,28903,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28903,1,3,0)
+ ;;=3^War Op Inv Rubber Bullets,Milt,Init Encntr
+ ;;^UTILITY(U,$J,358.3,28903,1,4,0)
+ ;;=4^Y36.410A
+ ;;^UTILITY(U,$J,358.3,28903,2)
+ ;;=^5061691
+ ;;^UTILITY(U,$J,358.3,28904,0)
+ ;;=Y36.410D^^132^1339^123
+ ;;^UTILITY(U,$J,358.3,28904,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28904,1,3,0)
+ ;;=3^War Op Inv Rubber Bullets,Milt,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,28904,1,4,0)
+ ;;=4^Y36.410D
+ ;;^UTILITY(U,$J,358.3,28904,2)
+ ;;=^5061692
+ ;;^UTILITY(U,$J,358.3,28905,0)
+ ;;=Y36.6X0A^^132^1339^113
+ ;;^UTILITY(U,$J,358.3,28905,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28905,1,3,0)
+ ;;=3^War Op Inv Biological Weapons,Milt,Init Encntr
+ ;;^UTILITY(U,$J,358.3,28905,1,4,0)
+ ;;=4^Y36.6X0A
+ ;;^UTILITY(U,$J,358.3,28905,2)
+ ;;=^5061775
+ ;;^UTILITY(U,$J,358.3,28906,0)
+ ;;=Y36.6X0D^^132^1339^115
+ ;;^UTILITY(U,$J,358.3,28906,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28906,1,3,0)
+ ;;=3^War Op Inv Biological Weapons,Milt,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,28906,1,4,0)
+ ;;=4^Y36.6X0D
+ ;;^UTILITY(U,$J,358.3,28906,2)
+ ;;=^5061776
+ ;;^UTILITY(U,$J,358.3,28907,0)
+ ;;=Y36.7X0A^^132^1339^128
+ ;;^UTILITY(U,$J,358.3,28907,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28907,1,3,0)
+ ;;=3^War Op w/ Chem Weapons/Unconvtl Warfare,Milt,Init Encntr
+ ;;^UTILITY(U,$J,358.3,28907,1,4,0)
+ ;;=4^Y36.7X0A
+ ;;^UTILITY(U,$J,358.3,28907,2)
+ ;;=^5061781
+ ;;^UTILITY(U,$J,358.3,28908,0)
+ ;;=Y36.7X0D^^132^1339^129
+ ;;^UTILITY(U,$J,358.3,28908,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28908,1,3,0)
+ ;;=3^War Op w/ Chem Weapons/Unconvtl Warfare,Milt,Subs Encntr
+ ;;^UTILITY(U,$J,358.3,28908,1,4,0)
+ ;;=4^Y36.7X0D
+ ;;^UTILITY(U,$J,358.3,28908,2)
+ ;;=^5061782
+ ;;^UTILITY(U,$J,358.3,28909,0)
+ ;;=Y36.810A^^132^1339^22
+ ;;^UTILITY(U,$J,358.3,28909,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,28909,1,3,0)
+ ;;=3^Explosn of Mine Placed During War Op but Expld Aft,Milt,Init Encntr

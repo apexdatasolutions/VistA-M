@@ -1,140 +1,124 @@
-IBDEI0KS ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0KS ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,10186,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10186,1,4,0)
- ;;=4^204.02
- ;;^UTILITY(U,$J,358.3,10186,1,5,0)
- ;;=5^ALL,In Relapse
- ;;^UTILITY(U,$J,358.3,10186,2)
- ;;=^336465
- ;;^UTILITY(U,$J,358.3,10187,0)
- ;;=204.12^^67^672^17
- ;;^UTILITY(U,$J,358.3,10187,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10187,1,4,0)
- ;;=4^204.12
- ;;^UTILITY(U,$J,358.3,10187,1,5,0)
- ;;=5^CLL,In Relapse
- ;;^UTILITY(U,$J,358.3,10187,2)
- ;;=^336466
- ;;^UTILITY(U,$J,358.3,10188,0)
- ;;=204.20^^67^672^114
- ;;^UTILITY(U,$J,358.3,10188,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10188,1,4,0)
- ;;=4^204.20
- ;;^UTILITY(U,$J,358.3,10188,1,5,0)
- ;;=5^Subacute LL w/o Remission
- ;;^UTILITY(U,$J,358.3,10188,2)
- ;;=^336852
- ;;^UTILITY(U,$J,358.3,10189,0)
- ;;=204.21^^67^672^116
- ;;^UTILITY(U,$J,358.3,10189,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10189,1,4,0)
- ;;=4^204.21
- ;;^UTILITY(U,$J,358.3,10189,1,5,0)
- ;;=5^Subacute LL,In Remission
- ;;^UTILITY(U,$J,358.3,10189,2)
- ;;=^267526
- ;;^UTILITY(U,$J,358.3,10190,0)
- ;;=204.22^^67^672^115
- ;;^UTILITY(U,$J,358.3,10190,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10190,1,4,0)
- ;;=4^204.22
- ;;^UTILITY(U,$J,358.3,10190,1,5,0)
- ;;=5^Subacute LL,In Relapse
- ;;^UTILITY(U,$J,358.3,10190,2)
- ;;=^336467
- ;;^UTILITY(U,$J,358.3,10191,0)
- ;;=205.02^^67^672^5
- ;;^UTILITY(U,$J,358.3,10191,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10191,1,4,0)
- ;;=4^205.02
- ;;^UTILITY(U,$J,358.3,10191,1,5,0)
- ;;=5^AML,In Relapse
- ;;^UTILITY(U,$J,358.3,10191,2)
- ;;=^336470
- ;;^UTILITY(U,$J,358.3,10192,0)
- ;;=205.12^^67^672^20
- ;;^UTILITY(U,$J,358.3,10192,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10192,1,4,0)
- ;;=4^205.12
- ;;^UTILITY(U,$J,358.3,10192,1,5,0)
- ;;=5^CML,In Relapse
- ;;^UTILITY(U,$J,358.3,10192,2)
- ;;=^336471
- ;;^UTILITY(U,$J,358.3,10193,0)
- ;;=284.81^^67^672^14
- ;;^UTILITY(U,$J,358.3,10193,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10193,1,4,0)
- ;;=4^284.81
- ;;^UTILITY(U,$J,358.3,10193,1,5,0)
- ;;=5^Aplastic Anemia d/t Drugs
- ;;^UTILITY(U,$J,358.3,10193,2)
- ;;=^335245
- ;;^UTILITY(U,$J,358.3,10194,0)
- ;;=284.89^^67^672^13
- ;;^UTILITY(U,$J,358.3,10194,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10194,1,4,0)
- ;;=4^284.89
- ;;^UTILITY(U,$J,358.3,10194,1,5,0)
- ;;=5^Aplastic Anemia d/t Chronic Disease
- ;;^UTILITY(U,$J,358.3,10194,2)
- ;;=^87880
- ;;^UTILITY(U,$J,358.3,10195,0)
- ;;=289.84^^67^672^119
- ;;^UTILITY(U,$J,358.3,10195,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10195,1,4,0)
- ;;=4^289.84
- ;;^UTILITY(U,$J,358.3,10195,1,5,0)
- ;;=5^Thrombocytopenia,Heparin Induced
- ;;^UTILITY(U,$J,358.3,10195,2)
- ;;=^336542
- ;;^UTILITY(U,$J,358.3,10196,0)
- ;;=V10.91^^67^672^67
- ;;^UTILITY(U,$J,358.3,10196,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10196,1,4,0)
- ;;=4^V10.91
- ;;^UTILITY(U,$J,358.3,10196,1,5,0)
- ;;=5^H/O Neuroendocrine CA Tumor
- ;;^UTILITY(U,$J,358.3,10196,2)
- ;;=^338494
- ;;^UTILITY(U,$J,358.3,10197,0)
- ;;=V10.91^^67^672^66
- ;;^UTILITY(U,$J,358.3,10197,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10197,1,4,0)
- ;;=4^V10.91
- ;;^UTILITY(U,$J,358.3,10197,1,5,0)
- ;;=5^H/O Malignant Neoplasm,Unspec
- ;;^UTILITY(U,$J,358.3,10197,2)
- ;;=^338494
- ;;^UTILITY(U,$J,358.3,10198,0)
- ;;=465.9^^67^673^70
- ;;^UTILITY(U,$J,358.3,10198,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10198,1,4,0)
- ;;=4^465.9
- ;;^UTILITY(U,$J,358.3,10198,1,5,0)
- ;;=5^URI
- ;;^UTILITY(U,$J,358.3,10198,2)
- ;;=URI^269878
- ;;^UTILITY(U,$J,358.3,10199,0)
- ;;=462.^^67^673^61
- ;;^UTILITY(U,$J,358.3,10199,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,10199,1,4,0)
- ;;=4^462.
- ;;^UTILITY(U,$J,358.3,10199,1,5,0)
- ;;=5^Sore Throat
+ ;;^UTILITY(U,$J,358.3,9407,1,4,0)
+ ;;=4^G40.A11
+ ;;^UTILITY(U,$J,358.3,9407,2)
+ ;;=^5003870
+ ;;^UTILITY(U,$J,358.3,9408,0)
+ ;;=G40.A19^^63^604^2
+ ;;^UTILITY(U,$J,358.3,9408,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9408,1,3,0)
+ ;;=3^Absence Seizures Intractable w/o Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9408,1,4,0)
+ ;;=4^G40.A19
+ ;;^UTILITY(U,$J,358.3,9408,2)
+ ;;=^5003871
+ ;;^UTILITY(U,$J,358.3,9409,0)
+ ;;=G40.309^^63^604^16
+ ;;^UTILITY(U,$J,358.3,9409,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9409,1,3,0)
+ ;;=3^Generalized Seizures Not Intractable w/o Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9409,1,4,0)
+ ;;=4^G40.309
+ ;;^UTILITY(U,$J,358.3,9409,2)
+ ;;=^5003842
+ ;;^UTILITY(U,$J,358.3,9410,0)
+ ;;=G40.311^^63^604^14
+ ;;^UTILITY(U,$J,358.3,9410,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9410,1,3,0)
+ ;;=3^Generalized Seizures Intractable w/ Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9410,1,4,0)
+ ;;=4^G40.311
+ ;;^UTILITY(U,$J,358.3,9410,2)
+ ;;=^5003843
+ ;;^UTILITY(U,$J,358.3,9411,0)
+ ;;=G40.319^^63^604^15
+ ;;^UTILITY(U,$J,358.3,9411,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9411,1,3,0)
+ ;;=3^Generalized Seizures Intractable w/o Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9411,1,4,0)
+ ;;=4^G40.319
+ ;;^UTILITY(U,$J,358.3,9411,2)
+ ;;=^5003844
+ ;;^UTILITY(U,$J,358.3,9412,0)
+ ;;=G40.409^^63^604^19
+ ;;^UTILITY(U,$J,358.3,9412,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9412,1,3,0)
+ ;;=3^Generalized Seizures,Other, Not Intractable w/o Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9412,1,4,0)
+ ;;=4^G40.409
+ ;;^UTILITY(U,$J,358.3,9412,2)
+ ;;=^5003846
+ ;;^UTILITY(U,$J,358.3,9413,0)
+ ;;=G40.411^^63^604^17
+ ;;^UTILITY(U,$J,358.3,9413,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9413,1,3,0)
+ ;;=3^Generalized Seizures,Other, Intractable w/ Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9413,1,4,0)
+ ;;=4^G40.411
+ ;;^UTILITY(U,$J,358.3,9413,2)
+ ;;=^5003847
+ ;;^UTILITY(U,$J,358.3,9414,0)
+ ;;=G40.419^^63^604^18
+ ;;^UTILITY(U,$J,358.3,9414,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9414,1,3,0)
+ ;;=3^Generalized Seizures,Other, Intractable w/o Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9414,1,4,0)
+ ;;=4^G40.419
+ ;;^UTILITY(U,$J,358.3,9414,2)
+ ;;=^5003848
+ ;;^UTILITY(U,$J,358.3,9415,0)
+ ;;=G40.209^^63^604^7
+ ;;^UTILITY(U,$J,358.3,9415,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9415,1,3,0)
+ ;;=3^Complex Partial Seizures Not Intractable w/o Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9415,1,4,0)
+ ;;=4^G40.209
+ ;;^UTILITY(U,$J,358.3,9415,2)
+ ;;=^5003838
+ ;;^UTILITY(U,$J,358.3,9416,0)
+ ;;=G40.211^^63^604^5
+ ;;^UTILITY(U,$J,358.3,9416,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9416,1,3,0)
+ ;;=3^Complex Partial Seizures Intractable w/ Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9416,1,4,0)
+ ;;=4^G40.211
+ ;;^UTILITY(U,$J,358.3,9416,2)
+ ;;=^5003839
+ ;;^UTILITY(U,$J,358.3,9417,0)
+ ;;=G40.219^^63^604^6
+ ;;^UTILITY(U,$J,358.3,9417,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9417,1,3,0)
+ ;;=3^Complex Partial Seizures Intractable w/o Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9417,1,4,0)
+ ;;=4^G40.219
+ ;;^UTILITY(U,$J,358.3,9417,2)
+ ;;=^5003840
+ ;;^UTILITY(U,$J,358.3,9418,0)
+ ;;=G40.109^^63^604^27
+ ;;^UTILITY(U,$J,358.3,9418,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9418,1,3,0)
+ ;;=3^Simple Partial Seizures Not Intractable w/o Status Epilepticus
+ ;;^UTILITY(U,$J,358.3,9418,1,4,0)
+ ;;=4^G40.109
+ ;;^UTILITY(U,$J,358.3,9418,2)
+ ;;=^5003834
+ ;;^UTILITY(U,$J,358.3,9419,0)
+ ;;=G40.111^^63^604^25
+ ;;^UTILITY(U,$J,358.3,9419,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,9419,1,3,0)
+ ;;=3^Simple Partial Seizures Intractable w/ Status Epilepticus

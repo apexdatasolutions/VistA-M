@@ -1,138 +1,126 @@
-IBDEI0TP ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0TP ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,14663,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14663,1,4,0)
- ;;=4^787.02
- ;;^UTILITY(U,$J,358.3,14663,1,5,0)
- ;;=5^Nausea Alone
- ;;^UTILITY(U,$J,358.3,14663,2)
- ;;=Nausea Alone^81639
- ;;^UTILITY(U,$J,358.3,14664,0)
- ;;=787.01^^90^864^113
- ;;^UTILITY(U,$J,358.3,14664,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14664,1,4,0)
- ;;=4^787.01
- ;;^UTILITY(U,$J,358.3,14664,1,5,0)
- ;;=5^Nausea & vomiting
- ;;^UTILITY(U,$J,358.3,14664,2)
- ;;=nausea and vomiting^81644
- ;;^UTILITY(U,$J,358.3,14665,0)
- ;;=787.03^^90^864^155
- ;;^UTILITY(U,$J,358.3,14665,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14665,1,4,0)
- ;;=4^787.03
- ;;^UTILITY(U,$J,358.3,14665,1,5,0)
- ;;=5^Vomiting Alone
- ;;^UTILITY(U,$J,358.3,14665,2)
- ;;=Vomiting Alone^127237
- ;;^UTILITY(U,$J,358.3,14666,0)
- ;;=784.8^^90^864^29
- ;;^UTILITY(U,$J,358.3,14666,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14666,1,4,0)
- ;;=4^784.8
- ;;^UTILITY(U,$J,358.3,14666,1,5,0)
- ;;=5^Bleeding from throat
- ;;^UTILITY(U,$J,358.3,14666,2)
- ;;=^273371
- ;;^UTILITY(U,$J,358.3,14667,0)
- ;;=525.9^^90^864^47
- ;;^UTILITY(U,$J,358.3,14667,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14667,1,4,0)
- ;;=4^525.9
- ;;^UTILITY(U,$J,358.3,14667,1,5,0)
- ;;=5^Dental Pain
- ;;^UTILITY(U,$J,358.3,14667,2)
- ;;=Dental Pain^123871
- ;;^UTILITY(U,$J,358.3,14668,0)
- ;;=784.7^^90^864^69
- ;;^UTILITY(U,$J,358.3,14668,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14668,1,4,0)
- ;;=4^784.7
- ;;^UTILITY(U,$J,358.3,14668,1,5,0)
- ;;=5^Epistaxis
- ;;^UTILITY(U,$J,358.3,14668,2)
- ;;=Epistaxis^41658
- ;;^UTILITY(U,$J,358.3,14669,0)
- ;;=784.0^^90^864^79
- ;;^UTILITY(U,$J,358.3,14669,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14669,1,4,0)
- ;;=4^784.0
- ;;^UTILITY(U,$J,358.3,14669,1,5,0)
- ;;=5^Headache
- ;;^UTILITY(U,$J,358.3,14669,2)
- ;;=Headache^54133
- ;;^UTILITY(U,$J,358.3,14670,0)
- ;;=784.2^^90^864^108
- ;;^UTILITY(U,$J,358.3,14670,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14670,1,4,0)
- ;;=4^784.2
- ;;^UTILITY(U,$J,358.3,14670,1,5,0)
- ;;=5^Mass or Lump in Head/Neck
- ;;^UTILITY(U,$J,358.3,14670,2)
- ;;=Mass or Lump in Head/Neck^273367
- ;;^UTILITY(U,$J,358.3,14671,0)
- ;;=784.1^^90^864^149
- ;;^UTILITY(U,$J,358.3,14671,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14671,1,4,0)
- ;;=4^784.1
- ;;^UTILITY(U,$J,358.3,14671,1,5,0)
- ;;=5^Throat Pain
- ;;^UTILITY(U,$J,358.3,14671,2)
- ;;=Throat Pain^276881
- ;;^UTILITY(U,$J,358.3,14672,0)
- ;;=781.0^^90^864^12
- ;;^UTILITY(U,$J,358.3,14672,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14672,1,4,0)
- ;;=4^781.0
- ;;^UTILITY(U,$J,358.3,14672,1,5,0)
- ;;=5^Abnormal Involuntary Movement
- ;;^UTILITY(U,$J,358.3,14672,2)
- ;;=Abnormal Involuntary MMovement^23827
- ;;^UTILITY(U,$J,358.3,14673,0)
- ;;=781.2^^90^864^16
- ;;^UTILITY(U,$J,358.3,14673,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14673,1,4,0)
- ;;=4^781.2
- ;;^UTILITY(U,$J,358.3,14673,1,5,0)
- ;;=5^Abnormality of Gait
- ;;^UTILITY(U,$J,358.3,14673,2)
- ;;=^48820
- ;;^UTILITY(U,$J,358.3,14674,0)
- ;;=305.00^^90^864^19
- ;;^UTILITY(U,$J,358.3,14674,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14674,1,4,0)
- ;;=4^305.00
- ;;^UTILITY(U,$J,358.3,14674,1,5,0)
- ;;=5^Alcohol Abuse, unsp
- ;;^UTILITY(U,$J,358.3,14674,2)
- ;;=^268227
- ;;^UTILITY(U,$J,358.3,14675,0)
- ;;=784.3^^90^864^25
- ;;^UTILITY(U,$J,358.3,14675,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14675,1,4,0)
- ;;=4^784.3
- ;;^UTILITY(U,$J,358.3,14675,1,5,0)
- ;;=5^Aphasia
- ;;^UTILITY(U,$J,358.3,14675,2)
- ;;=Aphasia^9453
- ;;^UTILITY(U,$J,358.3,14676,0)
- ;;=781.3^^90^864^102
- ;;^UTILITY(U,$J,358.3,14676,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,14676,1,4,0)
- ;;=4^781.3
+ ;;^UTILITY(U,$J,358.3,13662,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13662,1,3,0)
+ ;;=3^Tributary Retinal Vein Occlusion,Left Eye
+ ;;^UTILITY(U,$J,358.3,13662,1,4,0)
+ ;;=4^H34.832
+ ;;^UTILITY(U,$J,358.3,13662,2)
+ ;;=^5005577
+ ;;^UTILITY(U,$J,358.3,13663,0)
+ ;;=H34.833^^80^763^110
+ ;;^UTILITY(U,$J,358.3,13663,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13663,1,3,0)
+ ;;=3^Tributary Retinal Vein Occlusion,Bilateral
+ ;;^UTILITY(U,$J,358.3,13663,1,4,0)
+ ;;=4^H34.833
+ ;;^UTILITY(U,$J,358.3,13663,2)
+ ;;=^5005578
+ ;;^UTILITY(U,$J,358.3,13664,0)
+ ;;=H35.711^^80^763^14
+ ;;^UTILITY(U,$J,358.3,13664,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13664,1,3,0)
+ ;;=3^Central Serouos Chorioretinopathy,Right Eye
+ ;;^UTILITY(U,$J,358.3,13664,1,4,0)
+ ;;=4^H35.711
+ ;;^UTILITY(U,$J,358.3,13664,2)
+ ;;=^5005703
+ ;;^UTILITY(U,$J,358.3,13665,0)
+ ;;=H35.712^^80^763^13
+ ;;^UTILITY(U,$J,358.3,13665,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13665,1,3,0)
+ ;;=3^Central Serouos Chorioretinopathy,Left Eye
+ ;;^UTILITY(U,$J,358.3,13665,1,4,0)
+ ;;=4^H35.712
+ ;;^UTILITY(U,$J,358.3,13665,2)
+ ;;=^5005704
+ ;;^UTILITY(U,$J,358.3,13666,0)
+ ;;=H35.713^^80^763^12
+ ;;^UTILITY(U,$J,358.3,13666,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13666,1,3,0)
+ ;;=3^Central Serouos Chorioretinopathy,Bilateral
+ ;;^UTILITY(U,$J,358.3,13666,1,4,0)
+ ;;=4^H35.713
+ ;;^UTILITY(U,$J,358.3,13666,2)
+ ;;=^5005705
+ ;;^UTILITY(U,$J,358.3,13667,0)
+ ;;=H35.721^^80^763^102
+ ;;^UTILITY(U,$J,358.3,13667,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13667,1,3,0)
+ ;;=3^Serous Detachment of Retinal Pigment Epithelium,Right Eye
+ ;;^UTILITY(U,$J,358.3,13667,1,4,0)
+ ;;=4^H35.721
+ ;;^UTILITY(U,$J,358.3,13667,2)
+ ;;=^5005707
+ ;;^UTILITY(U,$J,358.3,13668,0)
+ ;;=H35.722^^80^763^103
+ ;;^UTILITY(U,$J,358.3,13668,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13668,1,3,0)
+ ;;=3^Serous Detachment of Retinal Pigment Epithelium,Left Eye
+ ;;^UTILITY(U,$J,358.3,13668,1,4,0)
+ ;;=4^H35.722
+ ;;^UTILITY(U,$J,358.3,13668,2)
+ ;;=^5005708
+ ;;^UTILITY(U,$J,358.3,13669,0)
+ ;;=H35.723^^80^763^104
+ ;;^UTILITY(U,$J,358.3,13669,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13669,1,3,0)
+ ;;=3^Serous Detachment of Retinal Pigment Epithelium,Bilateral
+ ;;^UTILITY(U,$J,358.3,13669,1,4,0)
+ ;;=4^H35.723
+ ;;^UTILITY(U,$J,358.3,13669,2)
+ ;;=^5005709
+ ;;^UTILITY(U,$J,358.3,13670,0)
+ ;;=H35.731^^80^763^46
+ ;;^UTILITY(U,$J,358.3,13670,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13670,1,3,0)
+ ;;=3^Hemorrhagic Detachment of Retinal Pigment Epithelium,Right Eye
+ ;;^UTILITY(U,$J,358.3,13670,1,4,0)
+ ;;=4^H35.731
+ ;;^UTILITY(U,$J,358.3,13670,2)
+ ;;=^5005711
+ ;;^UTILITY(U,$J,358.3,13671,0)
+ ;;=H35.732^^80^763^47
+ ;;^UTILITY(U,$J,358.3,13671,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13671,1,3,0)
+ ;;=3^Hemorrhagic Detachment of Retinal Pigment Epithelium,Left Eye
+ ;;^UTILITY(U,$J,358.3,13671,1,4,0)
+ ;;=4^H35.732
+ ;;^UTILITY(U,$J,358.3,13671,2)
+ ;;=^5005712
+ ;;^UTILITY(U,$J,358.3,13672,0)
+ ;;=H35.341^^80^763^60
+ ;;^UTILITY(U,$J,358.3,13672,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13672,1,3,0)
+ ;;=3^Macular Cyst/Hole/Pseudohole,Right Eye
+ ;;^UTILITY(U,$J,358.3,13672,1,4,0)
+ ;;=4^H35.341
+ ;;^UTILITY(U,$J,358.3,13672,2)
+ ;;=^5005650
+ ;;^UTILITY(U,$J,358.3,13673,0)
+ ;;=H35.342^^80^763^59
+ ;;^UTILITY(U,$J,358.3,13673,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,13673,1,3,0)
+ ;;=3^Macular Cyst/Hole/Pseudohole,Left Eye
+ ;;^UTILITY(U,$J,358.3,13673,1,4,0)
+ ;;=4^H35.342
+ ;;^UTILITY(U,$J,358.3,13673,2)
+ ;;=^5005651
+ ;;^UTILITY(U,$J,358.3,13674,0)
+ ;;=H35.343^^80^763^58
+ ;;^UTILITY(U,$J,358.3,13674,1,0)
+ ;;=^358.31IA^4^2

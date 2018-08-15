@@ -1,0 +1,136 @@
+IBDEI1Y0 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,32525,1,3,0)
+ ;;=3^Female Orgasmic Disorder
+ ;;^UTILITY(U,$J,358.3,32525,1,4,0)
+ ;;=4^F52.31
+ ;;^UTILITY(U,$J,358.3,32525,2)
+ ;;=^331926
+ ;;^UTILITY(U,$J,358.3,32526,0)
+ ;;=F52.22^^143^1541^4
+ ;;^UTILITY(U,$J,358.3,32526,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32526,1,3,0)
+ ;;=3^Female Sexual Interest/Arousal Disorder
+ ;;^UTILITY(U,$J,358.3,32526,1,4,0)
+ ;;=4^F52.22
+ ;;^UTILITY(U,$J,358.3,32526,2)
+ ;;=^5003621
+ ;;^UTILITY(U,$J,358.3,32527,0)
+ ;;=F52.6^^143^1541^5
+ ;;^UTILITY(U,$J,358.3,32527,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32527,1,3,0)
+ ;;=3^Genito-Pelvic Pain/Penetration Disorder
+ ;;^UTILITY(U,$J,358.3,32527,1,4,0)
+ ;;=4^F52.6
+ ;;^UTILITY(U,$J,358.3,32527,2)
+ ;;=^5003623
+ ;;^UTILITY(U,$J,358.3,32528,0)
+ ;;=F52.0^^143^1541^6
+ ;;^UTILITY(U,$J,358.3,32528,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32528,1,3,0)
+ ;;=3^Male Hypoactive Sexual Desire Disorder
+ ;;^UTILITY(U,$J,358.3,32528,1,4,0)
+ ;;=4^F52.0
+ ;;^UTILITY(U,$J,358.3,32528,2)
+ ;;=^5003618
+ ;;^UTILITY(U,$J,358.3,32529,0)
+ ;;=F52.4^^143^1541^7
+ ;;^UTILITY(U,$J,358.3,32529,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32529,1,3,0)
+ ;;=3^Premature (Early) Ejaculation
+ ;;^UTILITY(U,$J,358.3,32529,1,4,0)
+ ;;=4^F52.4
+ ;;^UTILITY(U,$J,358.3,32529,2)
+ ;;=^331928
+ ;;^UTILITY(U,$J,358.3,32530,0)
+ ;;=F52.8^^143^1541^9
+ ;;^UTILITY(U,$J,358.3,32530,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32530,1,3,0)
+ ;;=3^Sexual Dysfuntion NEC
+ ;;^UTILITY(U,$J,358.3,32530,1,4,0)
+ ;;=4^F52.8
+ ;;^UTILITY(U,$J,358.3,32530,2)
+ ;;=^5003624
+ ;;^UTILITY(U,$J,358.3,32531,0)
+ ;;=F52.9^^143^1541^8
+ ;;^UTILITY(U,$J,358.3,32531,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32531,1,3,0)
+ ;;=3^Sexual Dysfunction,Unspec
+ ;;^UTILITY(U,$J,358.3,32531,1,4,0)
+ ;;=4^F52.9
+ ;;^UTILITY(U,$J,358.3,32531,2)
+ ;;=^5003625
+ ;;^UTILITY(U,$J,358.3,32532,0)
+ ;;=G47.09^^143^1542^11
+ ;;^UTILITY(U,$J,358.3,32532,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32532,1,3,0)
+ ;;=3^Insomnia Disorder NEC
+ ;;^UTILITY(U,$J,358.3,32532,1,4,0)
+ ;;=4^G47.09
+ ;;^UTILITY(U,$J,358.3,32532,2)
+ ;;=^5003970
+ ;;^UTILITY(U,$J,358.3,32533,0)
+ ;;=G47.00^^143^1542^10
+ ;;^UTILITY(U,$J,358.3,32533,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32533,1,3,0)
+ ;;=3^Insomnia Disorder
+ ;;^UTILITY(U,$J,358.3,32533,1,4,0)
+ ;;=4^G47.00
+ ;;^UTILITY(U,$J,358.3,32533,2)
+ ;;=^332924
+ ;;^UTILITY(U,$J,358.3,32534,0)
+ ;;=G47.10^^143^1542^9
+ ;;^UTILITY(U,$J,358.3,32534,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32534,1,3,0)
+ ;;=3^Hypersomnolence Disorder/Unspec Hypersomnolence Disorder
+ ;;^UTILITY(U,$J,358.3,32534,1,4,0)
+ ;;=4^G47.10
+ ;;^UTILITY(U,$J,358.3,32534,2)
+ ;;=^332926
+ ;;^UTILITY(U,$J,358.3,32535,0)
+ ;;=G47.419^^143^1542^12
+ ;;^UTILITY(U,$J,358.3,32535,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32535,1,3,0)
+ ;;=3^Narcolepsy
+ ;;^UTILITY(U,$J,358.3,32535,1,4,0)
+ ;;=4^G47.419
+ ;;^UTILITY(U,$J,358.3,32535,2)
+ ;;=^5003982
+ ;;^UTILITY(U,$J,358.3,32536,0)
+ ;;=G47.33^^143^1542^16
+ ;;^UTILITY(U,$J,358.3,32536,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32536,1,3,0)
+ ;;=3^Obstructive Sleep Apnea Hypopnea
+ ;;^UTILITY(U,$J,358.3,32536,1,4,0)
+ ;;=4^G47.33
+ ;;^UTILITY(U,$J,358.3,32536,2)
+ ;;=^332763
+ ;;^UTILITY(U,$J,358.3,32537,0)
+ ;;=G47.31^^143^1542^1
+ ;;^UTILITY(U,$J,358.3,32537,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32537,1,3,0)
+ ;;=3^Central Sleep Apnea
+ ;;^UTILITY(U,$J,358.3,32537,1,4,0)
+ ;;=4^G47.31
+ ;;^UTILITY(U,$J,358.3,32537,2)
+ ;;=^332761
+ ;;^UTILITY(U,$J,358.3,32538,0)
+ ;;=G47.21^^143^1542^3
+ ;;^UTILITY(U,$J,358.3,32538,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32538,1,3,0)
+ ;;=3^Circadian Rhythm Sleep-Wake Disorder;Delayed Sleep Phase Type

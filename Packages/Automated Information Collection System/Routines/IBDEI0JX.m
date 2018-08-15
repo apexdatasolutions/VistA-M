@@ -1,144 +1,130 @@
-IBDEI0JX ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0JX ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,9758,1,4,0)
- ;;=4^780.4
- ;;^UTILITY(U,$J,358.3,9758,1,5,0)
- ;;=5^Vertigo
- ;;^UTILITY(U,$J,358.3,9758,2)
- ;;=^35946
- ;;^UTILITY(U,$J,358.3,9759,0)
- ;;=345.90^^67^667^16
- ;;^UTILITY(U,$J,358.3,9759,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9759,1,4,0)
- ;;=4^345.90
- ;;^UTILITY(U,$J,358.3,9759,1,5,0)
- ;;=5^Epilepsy
- ;;^UTILITY(U,$J,358.3,9759,2)
- ;;=^268477
- ;;^UTILITY(U,$J,358.3,9760,0)
- ;;=355.1^^67^667^48
- ;;^UTILITY(U,$J,358.3,9760,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9760,1,4,0)
- ;;=4^355.1
- ;;^UTILITY(U,$J,358.3,9760,1,5,0)
- ;;=5^Meralgia Paresthetica
- ;;^UTILITY(U,$J,358.3,9760,2)
- ;;=^265141
- ;;^UTILITY(U,$J,358.3,9761,0)
- ;;=340.^^67^667^56
- ;;^UTILITY(U,$J,358.3,9761,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9761,1,4,0)
- ;;=4^340.
- ;;^UTILITY(U,$J,358.3,9761,1,5,0)
- ;;=5^Multiple Sclerosis
- ;;^UTILITY(U,$J,358.3,9761,2)
- ;;=^79761
- ;;^UTILITY(U,$J,358.3,9762,0)
- ;;=729.2^^67^667^57
- ;;^UTILITY(U,$J,358.3,9762,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9762,1,4,0)
- ;;=4^729.2
- ;;^UTILITY(U,$J,358.3,9762,1,5,0)
- ;;=5^Neuropathic Pain
- ;;^UTILITY(U,$J,358.3,9762,2)
- ;;=Neuropathic Pain^82605
- ;;^UTILITY(U,$J,358.3,9763,0)
- ;;=053.19^^67^667^65
- ;;^UTILITY(U,$J,358.3,9763,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9763,1,4,0)
- ;;=4^053.19
- ;;^UTILITY(U,$J,358.3,9763,1,5,0)
- ;;=5^Post-Herpetic Neuralgia
- ;;^UTILITY(U,$J,358.3,9763,2)
- ;;=^266544
- ;;^UTILITY(U,$J,358.3,9764,0)
- ;;=310.9^^67^667^58
- ;;^UTILITY(U,$J,358.3,9764,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9764,1,4,0)
- ;;=4^310.9
- ;;^UTILITY(U,$J,358.3,9764,1,5,0)
- ;;=5^Organic Brain Syndrome
- ;;^UTILITY(U,$J,358.3,9764,2)
- ;;=^123952
- ;;^UTILITY(U,$J,358.3,9765,0)
- ;;=332.0^^67^667^61
- ;;^UTILITY(U,$J,358.3,9765,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9765,1,4,0)
- ;;=4^332.0
- ;;^UTILITY(U,$J,358.3,9765,1,5,0)
- ;;=5^Parkinson's Disease
- ;;^UTILITY(U,$J,358.3,9765,2)
- ;;=Parkinson's Disease^304847
- ;;^UTILITY(U,$J,358.3,9766,0)
- ;;=250.60^^67^667^62
- ;;^UTILITY(U,$J,358.3,9766,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9766,1,4,0)
- ;;=4^250.60
- ;;^UTILITY(U,$J,358.3,9766,1,5,0)
- ;;=5^Peripheral Neuropathy, Diabetic
- ;;^UTILITY(U,$J,358.3,9766,2)
- ;;=^267841^357.2
- ;;^UTILITY(U,$J,358.3,9767,0)
- ;;=356.9^^67^667^64
- ;;^UTILITY(U,$J,358.3,9767,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9767,1,4,0)
- ;;=4^356.9
- ;;^UTILITY(U,$J,358.3,9767,1,5,0)
- ;;=5^Peripheral Neuropathy, Unsp
- ;;^UTILITY(U,$J,358.3,9767,2)
- ;;=^123931
- ;;^UTILITY(U,$J,358.3,9768,0)
- ;;=780.2^^67^667^73
- ;;^UTILITY(U,$J,358.3,9768,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9768,1,4,0)
- ;;=4^780.2
- ;;^UTILITY(U,$J,358.3,9768,1,5,0)
- ;;=5^Syncope Or Presyncope
- ;;^UTILITY(U,$J,358.3,9768,2)
- ;;=^116707
- ;;^UTILITY(U,$J,358.3,9769,0)
- ;;=724.3^^67^667^70
- ;;^UTILITY(U,$J,358.3,9769,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9769,1,4,0)
- ;;=4^724.3
- ;;^UTILITY(U,$J,358.3,9769,1,5,0)
- ;;=5^Sciatica
- ;;^UTILITY(U,$J,358.3,9769,2)
- ;;=^108484
- ;;^UTILITY(U,$J,358.3,9770,0)
- ;;=780.39^^67^667^72
- ;;^UTILITY(U,$J,358.3,9770,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9770,1,4,0)
- ;;=4^780.39
- ;;^UTILITY(U,$J,358.3,9770,1,5,0)
- ;;=5^Seizure Disorder NOS
- ;;^UTILITY(U,$J,358.3,9770,2)
- ;;=^28162
- ;;^UTILITY(U,$J,358.3,9771,0)
- ;;=782.0^^67^667^60
- ;;^UTILITY(U,$J,358.3,9771,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9771,1,4,0)
- ;;=4^782.0
- ;;^UTILITY(U,$J,358.3,9771,1,5,0)
- ;;=5^Parasthesia
- ;;^UTILITY(U,$J,358.3,9771,2)
- ;;=Parasthesia^35757
- ;;^UTILITY(U,$J,358.3,9772,0)
- ;;=435.9^^67^667^74
- ;;^UTILITY(U,$J,358.3,9772,1,0)
- ;;=^358.31IA^5^2
+ ;;^UTILITY(U,$J,358.3,8979,1,4,0)
+ ;;=4^E08.65
+ ;;^UTILITY(U,$J,358.3,8979,2)
+ ;;=^5002541
+ ;;^UTILITY(U,$J,358.3,8980,0)
+ ;;=E08.69^^55^555^29
+ ;;^UTILITY(U,$J,358.3,8980,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8980,1,3,0)
+ ;;=3^Diabetes due to underlying condition w oth complication
+ ;;^UTILITY(U,$J,358.3,8980,1,4,0)
+ ;;=4^E08.69
+ ;;^UTILITY(U,$J,358.3,8980,2)
+ ;;=^5002542
+ ;;^UTILITY(U,$J,358.3,8981,0)
+ ;;=E09.618^^55^555^50
+ ;;^UTILITY(U,$J,358.3,8981,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8981,1,3,0)
+ ;;=3^Drug/chem diabetes w oth diabetic arthropathy
+ ;;^UTILITY(U,$J,358.3,8981,1,4,0)
+ ;;=4^E09.618
+ ;;^UTILITY(U,$J,358.3,8981,2)
+ ;;=^5002574
+ ;;^UTILITY(U,$J,358.3,8982,0)
+ ;;=E09.620^^55^555^33
+ ;;^UTILITY(U,$J,358.3,8982,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8982,1,3,0)
+ ;;=3^Drug/chem diabetes w diabetic dermatitis
+ ;;^UTILITY(U,$J,358.3,8982,1,4,0)
+ ;;=4^E09.620
+ ;;^UTILITY(U,$J,358.3,8982,2)
+ ;;=^5002575
+ ;;^UTILITY(U,$J,358.3,8983,0)
+ ;;=E09.622^^55^555^60
+ ;;^UTILITY(U,$J,358.3,8983,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8983,1,3,0)
+ ;;=3^Drug/chem induced diabetes mellitus w oth skin ulcer
+ ;;^UTILITY(U,$J,358.3,8983,1,4,0)
+ ;;=4^E09.622
+ ;;^UTILITY(U,$J,358.3,8983,2)
+ ;;=^5002577
+ ;;^UTILITY(U,$J,358.3,8984,0)
+ ;;=E09.621^^55^555^62
+ ;;^UTILITY(U,$J,358.3,8984,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8984,1,3,0)
+ ;;=3^Drug/chem induced diabetes mellitus with foot ulcer
+ ;;^UTILITY(U,$J,358.3,8984,1,4,0)
+ ;;=4^E09.621
+ ;;^UTILITY(U,$J,358.3,8984,2)
+ ;;=^5002576
+ ;;^UTILITY(U,$J,358.3,8985,0)
+ ;;=E09.628^^55^555^53
+ ;;^UTILITY(U,$J,358.3,8985,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8985,1,3,0)
+ ;;=3^Drug/chem diabetes w oth skin complications
+ ;;^UTILITY(U,$J,358.3,8985,1,4,0)
+ ;;=4^E09.628
+ ;;^UTILITY(U,$J,358.3,8985,2)
+ ;;=^5002578
+ ;;^UTILITY(U,$J,358.3,8986,0)
+ ;;=E09.630^^55^555^54
+ ;;^UTILITY(U,$J,358.3,8986,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8986,1,3,0)
+ ;;=3^Drug/chem diabetes w periodontal disease
+ ;;^UTILITY(U,$J,358.3,8986,1,4,0)
+ ;;=4^E09.630
+ ;;^UTILITY(U,$J,358.3,8986,2)
+ ;;=^5002579
+ ;;^UTILITY(U,$J,358.3,8987,0)
+ ;;=E09.638^^55^555^52
+ ;;^UTILITY(U,$J,358.3,8987,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8987,1,3,0)
+ ;;=3^Drug/chem diabetes w oth oral complications
+ ;;^UTILITY(U,$J,358.3,8987,1,4,0)
+ ;;=4^E09.638
+ ;;^UTILITY(U,$J,358.3,8987,2)
+ ;;=^5002580
+ ;;^UTILITY(U,$J,358.3,8988,0)
+ ;;=E09.65^^55^555^59
+ ;;^UTILITY(U,$J,358.3,8988,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8988,1,3,0)
+ ;;=3^Drug/chem induced diabetes mellitus w hyperglycemia
+ ;;^UTILITY(U,$J,358.3,8988,1,4,0)
+ ;;=4^E09.65
+ ;;^UTILITY(U,$J,358.3,8988,2)
+ ;;=^5002583
+ ;;^UTILITY(U,$J,358.3,8989,0)
+ ;;=E09.69^^55^555^49
+ ;;^UTILITY(U,$J,358.3,8989,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8989,1,3,0)
+ ;;=3^Drug/chem diabetes w oth complication
+ ;;^UTILITY(U,$J,358.3,8989,1,4,0)
+ ;;=4^E09.69
+ ;;^UTILITY(U,$J,358.3,8989,2)
+ ;;=^5002584
+ ;;^UTILITY(U,$J,358.3,8990,0)
+ ;;=E09.649^^55^555^39
+ ;;^UTILITY(U,$J,358.3,8990,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8990,1,3,0)
+ ;;=3^Drug/chem diabetes w hypoglycemia w/o coma
+ ;;^UTILITY(U,$J,358.3,8990,1,4,0)
+ ;;=4^E09.649
+ ;;^UTILITY(U,$J,358.3,8990,2)
+ ;;=^5002582
+ ;;^UTILITY(U,$J,358.3,8991,0)
+ ;;=E08.8^^55^555^30
+ ;;^UTILITY(U,$J,358.3,8991,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8991,1,3,0)
+ ;;=3^Diabetes due to underlying condition w unsp complications
+ ;;^UTILITY(U,$J,358.3,8991,1,4,0)
+ ;;=4^E08.8
+ ;;^UTILITY(U,$J,358.3,8991,2)
+ ;;=^5002543
+ ;;^UTILITY(U,$J,358.3,8992,0)
+ ;;=E09.8^^55^555^55

@@ -1,142 +1,136 @@
-IBDEI0JK ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0JK ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,9576,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9576,1,4,0)
- ;;=4^277.6
- ;;^UTILITY(U,$J,358.3,9576,1,5,0)
- ;;=5^Alpha-1 antitrypsin deficiency
- ;;^UTILITY(U,$J,358.3,9576,2)
- ;;=^87463
- ;;^UTILITY(U,$J,358.3,9577,0)
- ;;=493.92^^67^664^6
- ;;^UTILITY(U,$J,358.3,9577,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9577,1,4,0)
- ;;=4^493.92
- ;;^UTILITY(U,$J,358.3,9577,1,5,0)
- ;;=5^Asthma, Acute Exacerbation
- ;;^UTILITY(U,$J,358.3,9577,2)
- ;;=^322001
- ;;^UTILITY(U,$J,358.3,9578,0)
- ;;=493.20^^67^664^11
- ;;^UTILITY(U,$J,358.3,9578,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9578,1,4,0)
- ;;=4^493.20
- ;;^UTILITY(U,$J,358.3,9578,1,5,0)
- ;;=5^COPD with Asthma
- ;;^UTILITY(U,$J,358.3,9578,2)
- ;;=COPD with Asthma^269964
- ;;^UTILITY(U,$J,358.3,9579,0)
- ;;=493.91^^67^664^7
- ;;^UTILITY(U,$J,358.3,9579,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9579,1,4,0)
- ;;=4^493.91
- ;;^UTILITY(U,$J,358.3,9579,1,5,0)
- ;;=5^Asthma, with Status Asthmat
- ;;^UTILITY(U,$J,358.3,9579,2)
- ;;=^269967
- ;;^UTILITY(U,$J,358.3,9580,0)
- ;;=491.21^^67^664^10
- ;;^UTILITY(U,$J,358.3,9580,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9580,1,4,0)
- ;;=4^491.21
- ;;^UTILITY(U,$J,358.3,9580,1,5,0)
- ;;=5^COPD Exacerbation
- ;;^UTILITY(U,$J,358.3,9580,2)
- ;;=COPD Exacerbation^269954
- ;;^UTILITY(U,$J,358.3,9581,0)
- ;;=494.0^^67^664^9
- ;;^UTILITY(U,$J,358.3,9581,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9581,1,4,0)
- ;;=4^494.0
- ;;^UTILITY(U,$J,358.3,9581,1,5,0)
- ;;=5^Bronchiectasis, chronic
- ;;^UTILITY(U,$J,358.3,9581,2)
- ;;=^321990
- ;;^UTILITY(U,$J,358.3,9582,0)
- ;;=494.1^^67^664^8
- ;;^UTILITY(U,$J,358.3,9582,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9582,1,4,0)
- ;;=4^494.1
- ;;^UTILITY(U,$J,358.3,9582,1,5,0)
- ;;=5^Bronchiectasis with exacerb
- ;;^UTILITY(U,$J,358.3,9582,2)
- ;;=^321991
- ;;^UTILITY(U,$J,358.3,9583,0)
- ;;=496.^^67^664^12
- ;;^UTILITY(U,$J,358.3,9583,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9583,1,4,0)
- ;;=4^496.
- ;;^UTILITY(U,$J,358.3,9583,1,5,0)
- ;;=5^COPD, General
- ;;^UTILITY(U,$J,358.3,9583,2)
- ;;=COPD, General^24355
- ;;^UTILITY(U,$J,358.3,9584,0)
- ;;=491.20^^67^664^13
- ;;^UTILITY(U,$J,358.3,9584,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9584,1,4,0)
- ;;=4^491.20
- ;;^UTILITY(U,$J,358.3,9584,1,5,0)
- ;;=5^Chronic Asthmatic Bronchitis
- ;;^UTILITY(U,$J,358.3,9584,2)
- ;;=Chronic Asthmatic Bronchitis^269953
- ;;^UTILITY(U,$J,358.3,9585,0)
- ;;=491.9^^67^664^14
- ;;^UTILITY(U,$J,358.3,9585,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9585,1,4,0)
- ;;=4^491.9
- ;;^UTILITY(U,$J,358.3,9585,1,5,0)
- ;;=5^Chronic Bronchitis
- ;;^UTILITY(U,$J,358.3,9585,2)
- ;;=^24359
- ;;^UTILITY(U,$J,358.3,9586,0)
- ;;=786.2^^67^664^15
- ;;^UTILITY(U,$J,358.3,9586,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9586,1,4,0)
- ;;=4^786.2
- ;;^UTILITY(U,$J,358.3,9586,1,5,0)
- ;;=5^Cough
- ;;^UTILITY(U,$J,358.3,9586,2)
- ;;=Cough^28905
- ;;^UTILITY(U,$J,358.3,9587,0)
- ;;=786.09^^67^664^16
- ;;^UTILITY(U,$J,358.3,9587,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9587,1,4,0)
- ;;=4^786.09
- ;;^UTILITY(U,$J,358.3,9587,1,5,0)
- ;;=5^Dyspnea
- ;;^UTILITY(U,$J,358.3,9587,2)
- ;;=Dyspnea^87547
- ;;^UTILITY(U,$J,358.3,9588,0)
- ;;=492.8^^67^664^17
- ;;^UTILITY(U,$J,358.3,9588,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9588,1,4,0)
- ;;=4^492.8
- ;;^UTILITY(U,$J,358.3,9588,1,5,0)
- ;;=5^Emphysema
- ;;^UTILITY(U,$J,358.3,9588,2)
- ;;=Emphysema^87569
- ;;^UTILITY(U,$J,358.3,9589,0)
- ;;=487.1^^67^664^24
- ;;^UTILITY(U,$J,358.3,9589,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,9589,1,4,0)
- ;;=4^487.1
- ;;^UTILITY(U,$J,358.3,9589,1,5,0)
- ;;=5^Influenza with other Resp Manifest
- ;;^UTILITY(U,$J,358.3,9589,2)
- ;;=^63125
+ ;;^UTILITY(U,$J,358.3,8811,1,4,0)
+ ;;=4^J21.8
+ ;;^UTILITY(U,$J,358.3,8811,2)
+ ;;=^5008198
+ ;;^UTILITY(U,$J,358.3,8812,0)
+ ;;=J44.9^^55^546^11
+ ;;^UTILITY(U,$J,358.3,8812,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8812,1,3,0)
+ ;;=3^Chronic obstructive pulmonary disease, unspecified
+ ;;^UTILITY(U,$J,358.3,8812,1,4,0)
+ ;;=4^J44.9
+ ;;^UTILITY(U,$J,358.3,8812,2)
+ ;;=^5008241
+ ;;^UTILITY(U,$J,358.3,8813,0)
+ ;;=J44.1^^55^546^10
+ ;;^UTILITY(U,$J,358.3,8813,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8813,1,3,0)
+ ;;=3^Chronic obstructive pulmonary disease w (acute) exacerbation
+ ;;^UTILITY(U,$J,358.3,8813,1,4,0)
+ ;;=4^J44.1
+ ;;^UTILITY(U,$J,358.3,8813,2)
+ ;;=^5008240
+ ;;^UTILITY(U,$J,358.3,8814,0)
+ ;;=J42.^^55^546^8
+ ;;^UTILITY(U,$J,358.3,8814,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8814,1,3,0)
+ ;;=3^Chronic Bronchitis,Unspec
+ ;;^UTILITY(U,$J,358.3,8814,1,4,0)
+ ;;=4^J42.
+ ;;^UTILITY(U,$J,358.3,8814,2)
+ ;;=^5008234
+ ;;^UTILITY(U,$J,358.3,8815,0)
+ ;;=J43.9^^55^546^13
+ ;;^UTILITY(U,$J,358.3,8815,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8815,1,3,0)
+ ;;=3^Emphysema, unspecified
+ ;;^UTILITY(U,$J,358.3,8815,1,4,0)
+ ;;=4^J43.9
+ ;;^UTILITY(U,$J,358.3,8815,2)
+ ;;=^5008238
+ ;;^UTILITY(U,$J,358.3,8816,0)
+ ;;=J44.0^^55^546^9
+ ;;^UTILITY(U,$J,358.3,8816,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8816,1,3,0)
+ ;;=3^Chronic obstructive pulmon disease w acute lower resp infct
+ ;;^UTILITY(U,$J,358.3,8816,1,4,0)
+ ;;=4^J44.0
+ ;;^UTILITY(U,$J,358.3,8816,2)
+ ;;=^5008239
+ ;;^UTILITY(U,$J,358.3,8817,0)
+ ;;=J45.990^^55^546^14
+ ;;^UTILITY(U,$J,358.3,8817,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8817,1,3,0)
+ ;;=3^Exercise induced bronchospasm
+ ;;^UTILITY(U,$J,358.3,8817,1,4,0)
+ ;;=4^J45.990
+ ;;^UTILITY(U,$J,358.3,8817,2)
+ ;;=^329926
+ ;;^UTILITY(U,$J,358.3,8818,0)
+ ;;=J45.991^^55^546^12
+ ;;^UTILITY(U,$J,358.3,8818,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8818,1,3,0)
+ ;;=3^Cough variant asthma
+ ;;^UTILITY(U,$J,358.3,8818,1,4,0)
+ ;;=4^J45.991
+ ;;^UTILITY(U,$J,358.3,8818,2)
+ ;;=^329927
+ ;;^UTILITY(U,$J,358.3,8819,0)
+ ;;=J45.909^^55^546^5
+ ;;^UTILITY(U,$J,358.3,8819,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8819,1,3,0)
+ ;;=3^Asthma,Uncomplicated
+ ;;^UTILITY(U,$J,358.3,8819,1,4,0)
+ ;;=4^J45.909
+ ;;^UTILITY(U,$J,358.3,8819,2)
+ ;;=^5008256
+ ;;^UTILITY(U,$J,358.3,8820,0)
+ ;;=J45.902^^55^546^4
+ ;;^UTILITY(U,$J,358.3,8820,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8820,1,3,0)
+ ;;=3^Asthma w/ Status Asthmaticus,Unspec
+ ;;^UTILITY(U,$J,358.3,8820,1,4,0)
+ ;;=4^J45.902
+ ;;^UTILITY(U,$J,358.3,8820,2)
+ ;;=^5008255
+ ;;^UTILITY(U,$J,358.3,8821,0)
+ ;;=J45.901^^55^546^3
+ ;;^UTILITY(U,$J,358.3,8821,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8821,1,3,0)
+ ;;=3^Asthma w/ Acute Exacerbation,Unspec
+ ;;^UTILITY(U,$J,358.3,8821,1,4,0)
+ ;;=4^J45.901
+ ;;^UTILITY(U,$J,358.3,8821,2)
+ ;;=^5008254
+ ;;^UTILITY(U,$J,358.3,8822,0)
+ ;;=J47.9^^55^546^7
+ ;;^UTILITY(U,$J,358.3,8822,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8822,1,3,0)
+ ;;=3^Bronchiectasis, uncomplicated
+ ;;^UTILITY(U,$J,358.3,8822,1,4,0)
+ ;;=4^J47.9
+ ;;^UTILITY(U,$J,358.3,8822,2)
+ ;;=^5008260
+ ;;^UTILITY(U,$J,358.3,8823,0)
+ ;;=J47.1^^55^546^6
+ ;;^UTILITY(U,$J,358.3,8823,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8823,1,3,0)
+ ;;=3^Bronchiectasis with (acute) exacerbation
+ ;;^UTILITY(U,$J,358.3,8823,1,4,0)
+ ;;=4^J47.1
+ ;;^UTILITY(U,$J,358.3,8823,2)
+ ;;=^5008259
+ ;;^UTILITY(U,$J,358.3,8824,0)
+ ;;=K11.20^^55^547^6
+ ;;^UTILITY(U,$J,358.3,8824,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,8824,1,3,0)
+ ;;=3^Sialoadenitis, unspecified
+ ;;^UTILITY(U,$J,358.3,8824,1,4,0)
+ ;;=4^K11.20

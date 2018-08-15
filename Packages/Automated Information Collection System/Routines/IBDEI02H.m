@@ -1,146 +1,132 @@
-IBDEI02H ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI02H ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,750,1,4,0)
- ;;=4^Objective Tinnitus
- ;;^UTILITY(U,$J,358.3,750,2)
- ;;=^269529
- ;;^UTILITY(U,$J,358.3,751,0)
- ;;=384.81^^11^93^19
- ;;^UTILITY(U,$J,358.3,751,1,0)
+ ;;^UTILITY(U,$J,358.3,393,2)
+ ;;=^5003086
+ ;;^UTILITY(U,$J,358.3,394,0)
+ ;;=F10.231^^3^49^5
+ ;;^UTILITY(U,$J,358.3,394,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,751,1,3,0)
- ;;=3^384.81
- ;;^UTILITY(U,$J,358.3,751,1,4,0)
- ;;=4^Atrophic Flaccid Tympan
- ;;^UTILITY(U,$J,358.3,751,2)
- ;;=^269436
- ;;^UTILITY(U,$J,358.3,752,0)
- ;;=384.82^^11^93^20
- ;;^UTILITY(U,$J,358.3,752,1,0)
+ ;;^UTILITY(U,$J,358.3,394,1,3,0)
+ ;;=3^Alcohol Use Disorder,Moderate-Severe w/ Withdrawal Delirium
+ ;;^UTILITY(U,$J,358.3,394,1,4,0)
+ ;;=4^F10.231
+ ;;^UTILITY(U,$J,358.3,394,2)
+ ;;=^5003087
+ ;;^UTILITY(U,$J,358.3,395,0)
+ ;;=F10.232^^3^49^6
+ ;;^UTILITY(U,$J,358.3,395,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,752,1,3,0)
- ;;=3^384.82
- ;;^UTILITY(U,$J,358.3,752,1,4,0)
- ;;=4^Atrophic Nonflaccid Tymp
- ;;^UTILITY(U,$J,358.3,752,2)
- ;;=^269437
- ;;^UTILITY(U,$J,358.3,753,0)
- ;;=384.21^^11^93^24
- ;;^UTILITY(U,$J,358.3,753,1,0)
+ ;;^UTILITY(U,$J,358.3,395,1,3,0)
+ ;;=3^Alcohol Use Disorder,Moderate-Severe w/ Withdrawal Perceptual Disturbances
+ ;;^UTILITY(U,$J,358.3,395,1,4,0)
+ ;;=4^F10.232
+ ;;^UTILITY(U,$J,358.3,395,2)
+ ;;=^5003088
+ ;;^UTILITY(U,$J,358.3,396,0)
+ ;;=F10.239^^3^49^7
+ ;;^UTILITY(U,$J,358.3,396,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,753,1,3,0)
- ;;=3^384.21
- ;;^UTILITY(U,$J,358.3,753,1,4,0)
- ;;=4^Cent Perf Tympanic Memb
- ;;^UTILITY(U,$J,358.3,753,2)
- ;;=^269430
- ;;^UTILITY(U,$J,358.3,754,0)
- ;;=384.22^^11^93^21
- ;;^UTILITY(U,$J,358.3,754,1,0)
+ ;;^UTILITY(U,$J,358.3,396,1,3,0)
+ ;;=3^Alcohol Withdrawal w/o Perceptual Disturbances
+ ;;^UTILITY(U,$J,358.3,396,1,4,0)
+ ;;=4^F10.239
+ ;;^UTILITY(U,$J,358.3,396,2)
+ ;;=^5003089
+ ;;^UTILITY(U,$J,358.3,397,0)
+ ;;=F10.24^^3^49^9
+ ;;^UTILITY(U,$J,358.3,397,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,754,1,3,0)
- ;;=3^384.22
- ;;^UTILITY(U,$J,358.3,754,1,4,0)
- ;;=4^Attic Perf Tympanic Memb
- ;;^UTILITY(U,$J,358.3,754,2)
- ;;=^269431
- ;;^UTILITY(U,$J,358.3,755,0)
- ;;=384.23^^11^93^57
- ;;^UTILITY(U,$J,358.3,755,1,0)
+ ;;^UTILITY(U,$J,358.3,397,1,3,0)
+ ;;=3^Alcohol-Induced Depressive & Related Disorder w/ Moderate-Severe Use Disorder
+ ;;^UTILITY(U,$J,358.3,397,1,4,0)
+ ;;=4^F10.24
+ ;;^UTILITY(U,$J,358.3,397,2)
+ ;;=^5003090
+ ;;^UTILITY(U,$J,358.3,398,0)
+ ;;=F10.29^^3^49^11
+ ;;^UTILITY(U,$J,358.3,398,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,755,1,3,0)
- ;;=3^384.23
- ;;^UTILITY(U,$J,358.3,755,1,4,0)
- ;;=4^Marginal Perf Tymp Nec
- ;;^UTILITY(U,$J,358.3,755,2)
- ;;=^269432
- ;;^UTILITY(U,$J,358.3,756,0)
- ;;=384.24^^11^93^59
- ;;^UTILITY(U,$J,358.3,756,1,0)
+ ;;^UTILITY(U,$J,358.3,398,1,3,0)
+ ;;=3^Alcohol-Related Disorder,Unspec
+ ;;^UTILITY(U,$J,358.3,398,1,4,0)
+ ;;=4^F10.29
+ ;;^UTILITY(U,$J,358.3,398,2)
+ ;;=^5003100
+ ;;^UTILITY(U,$J,358.3,399,0)
+ ;;=F15.10^^3^50^4
+ ;;^UTILITY(U,$J,358.3,399,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,756,1,3,0)
- ;;=3^384.24
- ;;^UTILITY(U,$J,358.3,756,1,4,0)
- ;;=4^Mult Perf Tympanic Memb
- ;;^UTILITY(U,$J,358.3,756,2)
- ;;=^269433
- ;;^UTILITY(U,$J,358.3,757,0)
- ;;=384.25^^11^93^88
- ;;^UTILITY(U,$J,358.3,757,1,0)
+ ;;^UTILITY(U,$J,358.3,399,1,3,0)
+ ;;=3^Amphetamine-Type Disorder,Mild
+ ;;^UTILITY(U,$J,358.3,399,1,4,0)
+ ;;=4^F15.10
+ ;;^UTILITY(U,$J,358.3,399,2)
+ ;;=^5003282
+ ;;^UTILITY(U,$J,358.3,400,0)
+ ;;=F15.14^^3^50^2
+ ;;^UTILITY(U,$J,358.3,400,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,757,1,3,0)
- ;;=3^384.25
- ;;^UTILITY(U,$J,358.3,757,1,4,0)
- ;;=4^Total Perf Tympanic Memb
- ;;^UTILITY(U,$J,358.3,757,2)
- ;;=^269434
- ;;^UTILITY(U,$J,358.3,758,0)
- ;;=385.00^^11^93^91
- ;;^UTILITY(U,$J,358.3,758,1,0)
+ ;;^UTILITY(U,$J,358.3,400,1,3,0)
+ ;;=3^Amphetamine-Induced Depressive,Bipolar & Related Disorder w/ Mild Use Disorder
+ ;;^UTILITY(U,$J,358.3,400,1,4,0)
+ ;;=4^F15.14
+ ;;^UTILITY(U,$J,358.3,400,2)
+ ;;=^5003287
+ ;;^UTILITY(U,$J,358.3,401,0)
+ ;;=F15.182^^3^50^3
+ ;;^UTILITY(U,$J,358.3,401,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,758,1,3,0)
- ;;=3^385.00
- ;;^UTILITY(U,$J,358.3,758,1,4,0)
- ;;=4^Tympanosclerosis Nos
- ;;^UTILITY(U,$J,358.3,758,2)
- ;;=^269439
- ;;^UTILITY(U,$J,358.3,759,0)
- ;;=385.01^^11^93^89
- ;;^UTILITY(U,$J,358.3,759,1,0)
+ ;;^UTILITY(U,$J,358.3,401,1,3,0)
+ ;;=3^Amphetamine-Induced Sleep Disorder w/ Mild Use Disorder
+ ;;^UTILITY(U,$J,358.3,401,1,4,0)
+ ;;=4^F15.182
+ ;;^UTILITY(U,$J,358.3,401,2)
+ ;;=^5003293
+ ;;^UTILITY(U,$J,358.3,402,0)
+ ;;=F15.20^^3^50^5
+ ;;^UTILITY(U,$J,358.3,402,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,759,1,3,0)
- ;;=3^385.01
- ;;^UTILITY(U,$J,358.3,759,1,4,0)
- ;;=4^Tympanoscl-Tympanic Memb
- ;;^UTILITY(U,$J,358.3,759,2)
- ;;=^269440
- ;;^UTILITY(U,$J,358.3,760,0)
- ;;=385.02^^11^93^92
- ;;^UTILITY(U,$J,358.3,760,1,0)
+ ;;^UTILITY(U,$J,358.3,402,1,3,0)
+ ;;=3^Amphetamine-Type Disorder,Moderate-Severe
+ ;;^UTILITY(U,$J,358.3,402,1,4,0)
+ ;;=4^F15.20
+ ;;^UTILITY(U,$J,358.3,402,2)
+ ;;=^5003295
+ ;;^UTILITY(U,$J,358.3,403,0)
+ ;;=F15.21^^3^50^6
+ ;;^UTILITY(U,$J,358.3,403,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,760,1,3,0)
- ;;=3^385.02
- ;;^UTILITY(U,$J,358.3,760,1,4,0)
- ;;=4^Tympnoscler-Tymp/Ossicle
- ;;^UTILITY(U,$J,358.3,760,2)
- ;;=^269441
- ;;^UTILITY(U,$J,358.3,761,0)
- ;;=385.03^^11^93^90
- ;;^UTILITY(U,$J,358.3,761,1,0)
+ ;;^UTILITY(U,$J,358.3,403,1,3,0)
+ ;;=3^Amphetamine-Type Disorder,Moderate-Severe In Remission
+ ;;^UTILITY(U,$J,358.3,403,1,4,0)
+ ;;=4^F15.21
+ ;;^UTILITY(U,$J,358.3,403,2)
+ ;;=^5003296
+ ;;^UTILITY(U,$J,358.3,404,0)
+ ;;=F15.23^^3^50^1
+ ;;^UTILITY(U,$J,358.3,404,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,761,1,3,0)
- ;;=3^385.03
- ;;^UTILITY(U,$J,358.3,761,1,4,0)
- ;;=4^Tympanoscler-All Parts
- ;;^UTILITY(U,$J,358.3,761,2)
- ;;=^269442
- ;;^UTILITY(U,$J,358.3,762,0)
- ;;=385.09^^11^93^93
- ;;^UTILITY(U,$J,358.3,762,1,0)
+ ;;^UTILITY(U,$J,358.3,404,1,3,0)
+ ;;=3^Amphetamine or Other Stimulant Withdrawal
+ ;;^UTILITY(U,$J,358.3,404,1,4,0)
+ ;;=4^F15.23
+ ;;^UTILITY(U,$J,358.3,404,2)
+ ;;=^5003301
+ ;;^UTILITY(U,$J,358.3,405,0)
+ ;;=F12.10^^3^51^1
+ ;;^UTILITY(U,$J,358.3,405,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,762,1,3,0)
- ;;=3^385.09
- ;;^UTILITY(U,$J,358.3,762,1,4,0)
- ;;=4^Tympnsclr-Oth Site Comb
- ;;^UTILITY(U,$J,358.3,762,2)
- ;;=^269443
- ;;^UTILITY(U,$J,358.3,763,0)
- ;;=388.9^^11^93^43
- ;;^UTILITY(U,$J,358.3,763,1,0)
+ ;;^UTILITY(U,$J,358.3,405,1,3,0)
+ ;;=3^Cannabis Use Disorder,Mild
+ ;;^UTILITY(U,$J,358.3,405,1,4,0)
+ ;;=4^F12.10
+ ;;^UTILITY(U,$J,358.3,405,2)
+ ;;=^5003155
+ ;;^UTILITY(U,$J,358.3,406,0)
+ ;;=F12.180^^3^51^2
+ ;;^UTILITY(U,$J,358.3,406,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,763,1,3,0)
- ;;=3^388.9
- ;;^UTILITY(U,$J,358.3,763,1,4,0)
- ;;=4^Disorder Of Ear Nos
- ;;^UTILITY(U,$J,358.3,763,2)
- ;;=^123831
- ;;^UTILITY(U,$J,358.3,764,0)
- ;;=386.19^^11^93^96
- ;;^UTILITY(U,$J,358.3,764,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,764,1,3,0)
- ;;=3^386.19
- ;;^UTILITY(U,$J,358.3,764,1,4,0)
- ;;=4^Vertigo, Otogenic
+ ;;^UTILITY(U,$J,358.3,406,1,3,0)
+ ;;=3^Cannabis-Induced Anxiety Disorder w/ Mild Use Disorders

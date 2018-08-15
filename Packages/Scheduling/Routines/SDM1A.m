@@ -1,5 +1,6 @@
-SDM1A ;SF/GFT,ALB/TMP - MAKE APPOINTMENT ; 8/18/05 12:57pm  ; 6/22/09 6:16pm
- ;;5.3;Scheduling;**26,94,155,206,168,223,241,263,327,478,446,544**;Aug 13, 1993;Build 11
+SDM1A ;SF/GFT,ALB/TMP - MAKE APPOINTMENT ;JUN 21, 2017
+ ;;5.3;Scheduling;**26,94,155,206,168,223,241,263,327,478,446,544,621,622,627,658,665,650**;Aug 13, 1993;Build 3
+ ;
 OK I $D(SDMLT) D ^SDM4 Q:X="^"!(SDMADE=2)
  S ^SC(SC,"ST",$P(SD,"."),1)=S,^DPT(DFN,"S",SD,0)=SC,^SC(SC,"S",SD,0)=SD S:'$D(^DPT(DFN,"S",0)) ^(0)="^2.98P^^" S:'$D(^SC(SC,"S",0)) ^(0)="^44.001DA^^" L
 S1 L +^SC(SC,"S",SD,1):$G(DILOCKTM,5) W:'$T "Another user is editing this record.  Trying again.",! G:'$T S1 F SDY=1:1 I '$D(^SC(SC,"S",SD,1,SDY)) S:'$D(^(0)) ^(0)="^44.003PA^^" S ^(SDY,0)=DFN_U_(+SL)_"^^^^"_$G(DUZ)_U_DT L -^SC(SC,"S",SD,1) Q
@@ -30,14 +31,28 @@ EWLCHK ;check if patient has any open EWL entries (SD/372)
  K ^TMP($J,"SDAMA301"),^TMP($J,"APPT")
  D APPT^SDWLEVAL(DFN,SD,SC)
  Q:'$D(^TMP($J,"APPT"))
+ N SDWL,SDWLF,SDWLIST S SDWL="" S SDWLF=0   ;alb/sat 627
  N SDEV D EN^SDWLEVAL(DFN,.SDEV) I SDEV,$L(SDEV(1))>0 D
  .K ^TMP("SDWLPL",$J),^TMP($J,"SDWLPL")
  .D INIT^SDWLPL(DFN,"M")
  .Q:'$D(^TMP($J,"SDWLPL"))
  .D LIST^SDWLPL("M",DFN)
- .F  Q:'$D(^TMP($J,"SDWLPL"))  N SDR D ANSW^SDWLEVAL(1,.SDR) I 'SDR D LIST^SDWLPL("M",DFN) D
- ..F  N SDR D ANSW^SDWLEVAL(0,.SDR) Q:'$D(^TMP($J,"SDWLPL"))  I 'SDR W !,"MUST ENTER A REASON NOT TO DISPOSITION MATCHED EWL ENTRY",!
- ;CREATE 120 FLAG IF APPLICABLE; appt created 
+ .D SDGET(.SDWLIST)   ;alb/sat 627
+ .F  Q:'$D(^TMP($J,"SDWLPL"))  N SDR D ANSW^SDWLEVAL(1,.SDR) S:SDR SDWLF=1 I 'SDR D LIST^SDWLPL("M",DFN) D
+ ..F  N SDR D ANSW^SDWLEVAL(0,.SDR) Q:'$D(^TMP($J,"SDWLPL"))  I 'SDR W !,"MUST ENTER A REASON NOT TO DISPOSITION MATCHED EWL ENTRY",!  ;alb/sat665 remove S SDWLF=1
+ .S:+SDWLF SDWL=$$SDWL(.SDWLIST)   ;alb/sat 627
+ ;update SDEC APPOINTMENT file 409.84  ;alb/sat 627
+ N SDECAR,SDREC,SDRES
+ S SDREC=""
+ I $G(CNSLTLNK)="",SDWL="" S SDREC=$$RECALL^SDECUTL(DFN,SD,SDSC)  ;check if recall appt
+ I SDWL="",$G(CNSLTLNK)="",SDREC="" S SDECAR=$$SDWLA(DFN,SD,SDSC,SDDATE,$G(SDAPTYP),$G(SDECANS))  ;alb/sat 665 add SDECANS
+ K SDECANS
+ S SDRES=$$GETRES^SDECUTL(SC)
+ S SDAPTYP=$G(SDAPTYP) S:SDAPTYP="" SDAPTYP=$$GET1^DIQ(44,SC_",",2507,"I")
+ ;alb/sat 658 - moved below OTHER INFO prompt to store in NOTE field of 409.84
+ ;D SDECADD^SDEC07(SD,$$FMADD^XLFDT(SD,,,+SL),DFN,SDRES,0,SDDATE,"",$S(+SDWL:"E|"_SDWL,+$G(CNSLTLNK):"C|"_CNSLTLNK,+SDREC:"R|"_SDREC,+SDECAR:"A|"_SDECAR,1:""),,SC,,,,SDAPTYP) ;ADD SDEC APPOINTMENT ENTRY
+ ;end addition/modification  ;alb/sat 627
+ ;CREATE 120 FLAG IF APPLICABLE; appt created
 FLG N SDST S SDST=$G(^TMP($J,"APPT",1)) I +SDST>0 D
  .Q  ; sd/446
  .N SDT,SDDES,SDPAR,SDDES1,SDT1 S SDPAR=0 S SDT=+SDST,SDDES=$P(SDST,U,17) I SDDES="" S SDDES=DT ; today's date if no desired date
@@ -59,7 +74,7 @@ FLG N SDST S SDST=$G(^TMP($J,"APPT",1)) I +SDST>0 D
  ...S DR=DR_";2////^S X=DUZ"
  ...D ^DIE S SDPAR=1
  ..N DA S DIC(0)="LX",(X,SDWLDFN)=+$P(SDST,U,4),X=SDWLDFN,DIC="^SDWL(409.3," D FILE^DICN
- ..F  L +^SDWL(409.3,DA):5 Q:$T  D
+ ..F  L +^SDWL(409.3,DA):$G(DILOCKTM,5) Q:$T  D
  ...I '$T W !,"Unable to acquire a lock on the Wait List file" Q
  ..; Update EWL variables.
  ..S SDWLDA=DA D EN^SDWLE11 ; get enrollee both SDWLDA and SDWLDFN have to be
@@ -91,7 +106,9 @@ OTHER R !,"  OTHER INFO: ",D:DTIME I D["^" W !,*7,"'^' not allowed - hit return 
  I D]"",D?."?"!(D'?.ANP) W "  ENTER LAB, SCAN, ETC." G OTHER
  I $L($G(^SC(SC,"S",SD,1,SDY,0)))+$L(D)+$L(DT)+$S($D(DUZ):$L(DUZ),1:0)>250 D MSG^SDMM G OTHER  ; sd/446
  ;S $P(^(0),"^",4)=D,$P(^(0),U,6,7)=$S($D(DUZ):DUZ,1:"")_U_DT ;NAKED REFERENCE - ^SC(IFN,"S",Date,1,SDY,0)
- S $P(^(0),"^",4)=D ;NAKED REFERENCE - ^SC(IFN,"S",Date,1,SDY,0) 544 moved DUZ&DT to tag S1.  
+ S $P(^(0),"^",4)=D ;NAKED REFERENCE - ^SC(IFN,"S",Date,1,SDY,0) 544 moved DUZ&DT to tag S1.
+ S:$G(SL)="" SL=$G(^SC(+SC,"SL"))   ;alb/sat 658 - SL gets killed in SDM3 if 'WANT PATIENT NOTIFIED OF LAB,X-RAY, OR EKG STOPS' is answered with Y
+ D SDECADD^SDEC07(SD,$$FMADD^XLFDT(SD,,,+SL),DFN,SDRES,0,SDDATE,"",$S(+SDWL:"E|"_SDWL,+$G(CNSLTLNK):"C|"_CNSLTLNK,+SDREC:"R|"_SDREC,+SDECAR:"A|"_SDECAR,1:""),,SC,$G(D),,,SDAPTYP) ;ADD SDEC APPOINTMENT ENTRY  ;alb/sat 658 moved from above
  D:$D(TMP) LINK^SDCNSLT(SC,SDY,SD,CNSLTLNK) ;SD/478
  D:$D(TMP) EDITCS^SDCNSLT(SD,TMPD,TMPYCLNC,CNSLTLNK) ;SD/478
  K TMP  ;SD/478
@@ -99,7 +116,48 @@ XR I $S('$D(^SC(SC,"RAD")):1,^("RAD")="Y":0,^("RAD")=1:0,1:1) S %=2 W !,"WANT PR
 SDMM S SDEMP=0 I COLLAT=7 S:SDEC'=SDCOL SDEMP=SDCOL G OV
  D ELIG^VADPT I $O(VAEL(1,0))>0 D ELIG^SDM4:"369"[SDAPTYP S SDEMP=$S(SDDECOD:SDDECOD,1:SDEMP)
 OV Q:$D(SDZM)  K SDQ1,SDEC,SDCOL I +SDEMP S $P(^SC(SC,"S",SD,1,SDY,0),"^",10)=+SDEMP
- S SDMADE=1 D EVT Q
+ S SDMADE=1 D EVT
+LET ; SD*5.3*622 - help user print the PRE-APPT letter for a patient
+ ; check for a PRE-APPT letter defined and if none, don't issue a device prompt
+ N SDFN ; new SDFN to see the patient prompt next time
+ S %=2 W !!,"WANT TO PRINT THE PRE-APPOINTMENT LETTER" D YN^DICN I %=0 W !,"RESPOND YES (Y) OR NO (N)" G:'% LET
+ I (%=2)!(%=-1) Q
+ I $P($G(^SC(SC,"LTR")),U,2)="" D  Q
+ . W $C(7),!!,"PATIENT "_$P(^DPT(DFN,0),U,1)," ",$P(^(0),U,9)," HAS FUTURE APPTS., but"
+ . W !,$P(^SC(SC,0),U,1)_" is not assigned a PRE-APPOINTMENT LETTER",!
+ . S DIR(0)="E" D ^DIR K DIR
+ ;
+ ; pre-define letter type (P), the division, date for appt, etc.
+ S (SDBD,SDED)=SDTTM,L0="P",SD9=0,VAUTNALL=1,VAUTNI=2,S1="P",SDLT=1,SDV1=1,SDFORM=""
+ S L2=$S(L0="P":"^SDL1",1:"^SDL1"),J=SDBD
+ S (A,SDFN,S)=DFN,L="^SDL1",SDCL=+$P(^SC(SC,0),U,1),SDC=SC,SDX=SDTTM
+ S SDLET=$P(^SC(SC,"LTR"),U,2) ; letter IEN
+ S SDLET1=SDLET
+ I SDY["DPT(" S SDAMTYP="P",SDFN=+SDY
+ I SDY["SC(" S SDAMTYP="C",SDCLN=+SDY
+ ; prepare to queue the letter if the user so desires
+ N %ZIS,POP,ZTDESC,ZTRTN,ZTSAVE
+ S %ZIS("B")="",POP=0,%ZIS="MQ" D ^%ZIS Q:POP
+ I $D(IO("Q")) S ZTRTN="QUE^SDM1A",ZTDESC="PRINT PRE-APPT LETTER",ZTSAVE("*")="" D ^%ZTLOAD,HOME^%ZIS K IO("Q") Q
+ D QUE ; print right away without getting into the queue
+ D HOME^%ZIS
+ Q
+ ;
+QUE ; execute whether by queue or immediate print request
+ U IO
+ N SDFIRST S SDFIRST=1   ; Flag to determine first page SD*650
+ D PRT^SDLT,WRAPP^SDLT
+ ; if there are x-ray, lab, or ekg appts, print them too
+ S SDATA=$G(^DPT(DFN,"S",SDX,0))
+ I $D(SDATA) F B=3,4,5 D
+ . S SDCL=$S(B=3:"LAB",B=4:"XRAY",1:"EKG")
+ . S SDX=$P($G(SDATA),U,B)
+ . S SC=SDCL Q:$G(SDX)=""  D FORM^SDLT
+ ;
+ D REST^SDLT
+ D ^%ZISC
+ Q  ; SD*5.3*622 - end of changes
+ ;
 HXR W !,"  Enter YES to have previous XRAY results sent to the clinic" G XR
  Q
 CS S SDCS=+$P(^SC(+SC,0),"^",7) I $S('$D(^DIC(40.7,SDCS,0)):1,'$P(^(0),"^",3):0,1:$P(^(0),"^",3)'>DT) W !!,*7,"** WARNING - CLINIC HAS AN INVALID OR INACTIVE STOP CODE!!!",!!
@@ -180,14 +238,73 @@ CANT(DFN,SDT,SDOE) ;Determine if clinic appt. has been marked "NT"
  N SDAPP S SDAPP=$G(^DPT(DFN,"S",SDT,0))
  Q:$P(SDAPP,U,20)'=SDOE 0
  Q $P(SDAPP,U,2)="NT"
+SDGET(SDWLIST)  ;build array of wait list entries that are in ^TMP($J,"SDWLPL")
+ N SDI
+ K SDWLIST
+ S SDI="" F  S SDI=$O(^TMP($J,"SDWLPL",SDI)) Q:SDI=""  D
+ .S SDWLIST(+$G(^TMP($J,"SDWLPL",SDI)))=""
+ Q
  ; -- Variable doc for above tags
  ;     SDCL := file 44 ien
  ;      SDT := appt date/time
  ;      DFN := file 2 ien
  ;     SDDA := ^SC(SDCL,"S",SDT,1,SDDA,0)
- ;    SDACT := current x-ref action 'set' or 'kill' 
+ ;    SDACT := current x-ref action 'set' or 'kill'
  ;  SDCOCMP := check out completed date
  ;   SDCODT := check out date/time
  ;     SDOE := Outpatient Encounter ien
- ;    SDINP := inpatient status ('I' or null)    
- ;    SDINP := inpatient status ('I' or null)    
+ ;    SDINP := inpatient status ('I' or null)
+ ;    SDINP := inpatient status ('I' or null)
+ ;
+SDWL(SDWLIST)  ;determine EWL that was closed for this appointment   ;alb/sat  SD/627
+ N SDI
+ S SDI="" F  S SDI=$O(^TMP($J,"SDWLPL",SDI)) Q:SDI=""  D
+ .I $D(SDWLIST(+$G(^TMP($J,"SDWLPL",SDI)))) K SDWLIST(+$G(^TMP($J,"SDWLPL",SDI)))
+ Q $O(SDWLIST(0))
+SDWLA(DFN,SD,SDSC,SDDATE,SDAPTYP,SDECANS)  ;add SDEC APPT REQUEST entry  ;alb/sat  SD/627  ;alb/sat 665 add SDECANS
+ ;INPUT:
+ ; DFN
+ ; SD     = appointment date/time in fm format
+ ; SDSC   = clinic code pointer to HOSPITAL LOCATION file
+ ; SDDATE = desired date of appointment
+ ; SDAPTYP = pointer to APPOINTMENT TYPE file 409.1
+ ; SDECANS = service connected condition  Y=yes N=no from SDM4  ;alb/sat 665
+ N SDECINP,SDWLSTAT,SDARIEN,SDWLRET,X
+ S SDAPTYP=$G(SDAPTYP)
+ S SDECANS=$G(SDECANS)  ;alb/sat 665
+ ;get clinic location name
+ K ^TMP("SDEC50",$J,"PCSTGET")
+ D PCSTGET^SDEC(.SDWLRET,DFN,SDSC)
+ S SDWLSTAT=$P($P($G(^TMP("SDEC50",$J,"PCSTGET",1)),$C(30),1),U,2)
+ K ^TMP("SDEC50",$J,"PCSTGET")
+ ;set appt request entry
+ S SDECINP(1)=""
+ S SDECINP(2)=DFN                 ;patient
+ S SDECINP(3)=$E($$NOW^XLFDT,1,12)  ;originating date/time
+ S SDECINP(4)=DUZ(2)              ;institution
+ S SDECINP(5)="APPOINTMENT"   ;wait list type - specific clinic
+ S SDECINP(6)=SDSC               ;clinic
+ S SDECINP(7)=DUZ                ;originating user
+ S SDECINP(8)="ASAP"             ;priority
+ S SDECINP(9)="PATIENT"          ;requested by
+ S SDECINP(11)=SDDATE             ;desired date of appointment
+ ;S SDECINP(16)=$S(SDWLSTAT="YES":"ESTABLISHED",1:"NEW")
+ S SDECINP(14)="NO"               ;multiple appointment RTC
+ S SDECINP(15)=0
+ S SDECINP(16)=0
+ S:SDECANS'="" SDECINP(18)=$S(SDECANS="Y":"YES",1:0)  ;alb/sat 665
+ S:+SDAPTYP SDECINP(22)=+SDAPTYP  ;appointment type
+ K SDWLRET
+ S SDWLRET=""
+ D ARSET1^SDEC(.SDWLRET,.SDECINP)
+ S SDARIEN=$P($P(SDWLRET,$C(30),2),U,1)
+ S SDWLRET=""
+ Q:'$D(^SDEC(409.85,+SDARIEN,0)) ""
+ ;close appt request entry
+ K INP
+ S INP(1)=SDARIEN
+ S INP(2)="REMOVED/SCHEDULED-ASSIGNED"
+ S INP(3)=DUZ
+ S INP(4)=$P(SD,".",1)
+ D ARCLOSE1^SDEC(.SDWLRET,.INP)
+ Q SDARIEN

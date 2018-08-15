@@ -1,142 +1,130 @@
-IBDEI0EO ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0EO ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,7081,1,5,0)
- ;;=5^Abnormal Pap Smear
- ;;^UTILITY(U,$J,358.3,7081,2)
- ;;=Abnormal Pap Smear^328609
- ;;^UTILITY(U,$J,358.3,7082,0)
- ;;=625.9^^55^576^41
- ;;^UTILITY(U,$J,358.3,7082,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7082,1,4,0)
- ;;=4^625.9
- ;;^UTILITY(U,$J,358.3,7082,1,5,0)
- ;;=5^Pelvic Pain
- ;;^UTILITY(U,$J,358.3,7082,2)
- ;;=Pelvic Pain^123993
- ;;^UTILITY(U,$J,358.3,7083,0)
- ;;=624.09^^55^576^63
- ;;^UTILITY(U,$J,358.3,7083,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7083,1,4,0)
- ;;=4^624.09
- ;;^UTILITY(U,$J,358.3,7083,1,5,0)
- ;;=5^Vulvar Dystrophy
- ;;^UTILITY(U,$J,358.3,7083,2)
- ;;=^335272
- ;;^UTILITY(U,$J,358.3,7084,0)
- ;;=611.81^^55^576^50
- ;;^UTILITY(U,$J,358.3,7084,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7084,1,4,0)
- ;;=4^611.81
- ;;^UTILITY(U,$J,358.3,7084,1,5,0)
- ;;=5^Ptosis of Breast
- ;;^UTILITY(U,$J,358.3,7084,2)
- ;;=^336613
- ;;^UTILITY(U,$J,358.3,7085,0)
- ;;=611.82^^55^576^27
- ;;^UTILITY(U,$J,358.3,7085,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7085,1,4,0)
- ;;=4^611.82
- ;;^UTILITY(U,$J,358.3,7085,1,5,0)
- ;;=5^Hypoplasia of Breast
- ;;^UTILITY(U,$J,358.3,7085,2)
- ;;=^336614
- ;;^UTILITY(U,$J,358.3,7086,0)
- ;;=625.70^^55^576^62
- ;;^UTILITY(U,$J,358.3,7086,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7086,1,4,0)
- ;;=4^625.70
- ;;^UTILITY(U,$J,358.3,7086,1,5,0)
- ;;=5^Volvodynia NOS
- ;;^UTILITY(U,$J,358.3,7086,2)
- ;;=^336753
- ;;^UTILITY(U,$J,358.3,7087,0)
- ;;=625.71^^55^576^65
- ;;^UTILITY(U,$J,358.3,7087,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7087,1,4,0)
- ;;=4^625.71
- ;;^UTILITY(U,$J,358.3,7087,1,5,0)
- ;;=5^Vulvar Vestibulitis
- ;;^UTILITY(U,$J,358.3,7087,2)
- ;;=^336618
- ;;^UTILITY(U,$J,358.3,7088,0)
- ;;=625.79^^55^576^66
- ;;^UTILITY(U,$J,358.3,7088,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7088,1,4,0)
- ;;=4^625.79
- ;;^UTILITY(U,$J,358.3,7088,1,5,0)
- ;;=5^Vulvodynia NEC
- ;;^UTILITY(U,$J,358.3,7088,2)
- ;;=^336619
- ;;^UTILITY(U,$J,358.3,7089,0)
- ;;=795.07^^55^576^11
- ;;^UTILITY(U,$J,358.3,7089,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7089,1,4,0)
- ;;=4^795.07
- ;;^UTILITY(U,$J,358.3,7089,1,5,0)
- ;;=5^Cervical Smear w/o Transformation Zone
- ;;^UTILITY(U,$J,358.3,7089,2)
- ;;=^336674
- ;;^UTILITY(U,$J,358.3,7090,0)
- ;;=795.08^^55^576^53
- ;;^UTILITY(U,$J,358.3,7090,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7090,1,4,0)
- ;;=4^795.08
- ;;^UTILITY(U,$J,358.3,7090,1,5,0)
- ;;=5^Unsatis Cerv Cytology Smear
- ;;^UTILITY(U,$J,358.3,7090,2)
- ;;=^336842
- ;;^UTILITY(U,$J,358.3,7091,0)
- ;;=796.70^^55^576^3
- ;;^UTILITY(U,$J,358.3,7091,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7091,1,4,0)
- ;;=4^796.70
- ;;^UTILITY(U,$J,358.3,7091,1,5,0)
- ;;=5^Abnormal Pap Smear of Anus NOS
- ;;^UTILITY(U,$J,358.3,7091,2)
- ;;=^336766
- ;;^UTILITY(U,$J,358.3,7092,0)
- ;;=795.10^^55^576^4
- ;;^UTILITY(U,$J,358.3,7092,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7092,1,4,0)
- ;;=4^795.10
- ;;^UTILITY(U,$J,358.3,7092,1,5,0)
- ;;=5^Abnormal Pap Smear of Vagina NOS
- ;;^UTILITY(U,$J,358.3,7092,2)
- ;;=^336765
- ;;^UTILITY(U,$J,358.3,7093,0)
- ;;=795.18^^55^576^54
- ;;^UTILITY(U,$J,358.3,7093,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7093,1,4,0)
- ;;=4^795.18
- ;;^UTILITY(U,$J,358.3,7093,1,5,0)
- ;;=5^Unsatis Vaginal Cytology Smear
- ;;^UTILITY(U,$J,358.3,7093,2)
- ;;=^336681
- ;;^UTILITY(U,$J,358.3,7094,0)
- ;;=796.78^^55^576^52
- ;;^UTILITY(U,$J,358.3,7094,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,7094,1,4,0)
- ;;=4^796.78
- ;;^UTILITY(U,$J,358.3,7094,1,5,0)
- ;;=5^Unsatis Anus Cytology Smear
- ;;^UTILITY(U,$J,358.3,7094,2)
- ;;=^336690
- ;;^UTILITY(U,$J,358.3,7095,0)
- ;;=233.7^^55^577^33
- ;;^UTILITY(U,$J,358.3,7095,1,0)
- ;;=^358.31IA^5^2
+ ;;^UTILITY(U,$J,358.3,6412,1,4,0)
+ ;;=4^F14.151
+ ;;^UTILITY(U,$J,358.3,6412,2)
+ ;;=^5003246
+ ;;^UTILITY(U,$J,358.3,6413,0)
+ ;;=F19.24^^43^397^20
+ ;;^UTILITY(U,$J,358.3,6413,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6413,1,3,0)
+ ;;=3^Psychoactive Subs Dependence w/ Mood Disorder
+ ;;^UTILITY(U,$J,358.3,6413,1,4,0)
+ ;;=4^F19.24
+ ;;^UTILITY(U,$J,358.3,6413,2)
+ ;;=^5003441
+ ;;^UTILITY(U,$J,358.3,6414,0)
+ ;;=F11.24^^43^397^13
+ ;;^UTILITY(U,$J,358.3,6414,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6414,1,3,0)
+ ;;=3^Opioid Dependence w/ Mood Disorder
+ ;;^UTILITY(U,$J,358.3,6414,1,4,0)
+ ;;=4^F11.24
+ ;;^UTILITY(U,$J,358.3,6414,2)
+ ;;=^5003134
+ ;;^UTILITY(U,$J,358.3,6415,0)
+ ;;=F19.96^^43^397^26
+ ;;^UTILITY(U,$J,358.3,6415,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6415,1,3,0)
+ ;;=3^Psychoactive Subs Use w/ Persisting Amnestic Disorder
+ ;;^UTILITY(U,$J,358.3,6415,1,4,0)
+ ;;=4^F19.96
+ ;;^UTILITY(U,$J,358.3,6415,2)
+ ;;=^5003464
+ ;;^UTILITY(U,$J,358.3,6416,0)
+ ;;=F13.26^^43^397^34
+ ;;^UTILITY(U,$J,358.3,6416,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6416,1,3,0)
+ ;;=3^Sedatv/Hyp/Anxiolytc Dependence w/ Persisting Amnestic Disorder
+ ;;^UTILITY(U,$J,358.3,6416,1,4,0)
+ ;;=4^F13.26
+ ;;^UTILITY(U,$J,358.3,6416,2)
+ ;;=^5003214
+ ;;^UTILITY(U,$J,358.3,6417,0)
+ ;;=F19.16^^43^397^16
+ ;;^UTILITY(U,$J,358.3,6417,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6417,1,3,0)
+ ;;=3^Psychoactive Subs Abuse w/ Persisting Amnestic Disorder
+ ;;^UTILITY(U,$J,358.3,6417,1,4,0)
+ ;;=4^F19.16
+ ;;^UTILITY(U,$J,358.3,6417,2)
+ ;;=^5003425
+ ;;^UTILITY(U,$J,358.3,6418,0)
+ ;;=F19.97^^43^397^27
+ ;;^UTILITY(U,$J,358.3,6418,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6418,1,3,0)
+ ;;=3^Psychoactive Subs Use w/ Persisting Dementia
+ ;;^UTILITY(U,$J,358.3,6418,1,4,0)
+ ;;=4^F19.97
+ ;;^UTILITY(U,$J,358.3,6418,2)
+ ;;=^5003465
+ ;;^UTILITY(U,$J,358.3,6419,0)
+ ;;=F19.17^^43^397^17
+ ;;^UTILITY(U,$J,358.3,6419,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6419,1,3,0)
+ ;;=3^Psychoactive Subs Abuse w/ Persisting Dementia
+ ;;^UTILITY(U,$J,358.3,6419,1,4,0)
+ ;;=4^F19.17
+ ;;^UTILITY(U,$J,358.3,6419,2)
+ ;;=^5003426
+ ;;^UTILITY(U,$J,358.3,6420,0)
+ ;;=F19.27^^43^397^21
+ ;;^UTILITY(U,$J,358.3,6420,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6420,1,3,0)
+ ;;=3^Psychoactive Subs Dependence w/ Persisting Dementia
+ ;;^UTILITY(U,$J,358.3,6420,1,4,0)
+ ;;=4^F19.27
+ ;;^UTILITY(U,$J,358.3,6420,2)
+ ;;=^5003446
+ ;;^UTILITY(U,$J,358.3,6421,0)
+ ;;=F19.950^^43^397^28
+ ;;^UTILITY(U,$J,358.3,6421,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6421,1,3,0)
+ ;;=3^Psychoactive Subs Use w/ Psych Disorder w/ Delusions
+ ;;^UTILITY(U,$J,358.3,6421,1,4,0)
+ ;;=4^F19.950
+ ;;^UTILITY(U,$J,358.3,6421,2)
+ ;;=^5003461
+ ;;^UTILITY(U,$J,358.3,6422,0)
+ ;;=F15.250^^43^397^44
+ ;;^UTILITY(U,$J,358.3,6422,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6422,1,3,0)
+ ;;=3^Stimulant Dependence w/ Psych Disorder w/ Delusions
+ ;;^UTILITY(U,$J,358.3,6422,1,4,0)
+ ;;=4^F15.250
+ ;;^UTILITY(U,$J,358.3,6422,2)
+ ;;=^5003303
+ ;;^UTILITY(U,$J,358.3,6423,0)
+ ;;=F15.150^^43^397^40
+ ;;^UTILITY(U,$J,358.3,6423,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6423,1,3,0)
+ ;;=3^Stimulant Abuse w/ Psych Disorder w/ Delusions
+ ;;^UTILITY(U,$J,358.3,6423,1,4,0)
+ ;;=4^F15.150
+ ;;^UTILITY(U,$J,358.3,6423,2)
+ ;;=^5003288
+ ;;^UTILITY(U,$J,358.3,6424,0)
+ ;;=F13.250^^43^397^36
+ ;;^UTILITY(U,$J,358.3,6424,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,6424,1,3,0)
+ ;;=3^Sedatv/Hyp/Anxiolytc Dependence w/ Psych Disorder w/ Delusions
+ ;;^UTILITY(U,$J,358.3,6424,1,4,0)
+ ;;=4^F13.250
+ ;;^UTILITY(U,$J,358.3,6424,2)
+ ;;=^5003211
+ ;;^UTILITY(U,$J,358.3,6425,0)
+ ;;=F13.150^^43^397^30

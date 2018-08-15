@@ -1,146 +1,130 @@
-IBDEI0A9 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0A9 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,4770,2)
- ;;=^271931
- ;;^UTILITY(U,$J,358.3,4771,0)
- ;;=691.8^^39^364^5
- ;;^UTILITY(U,$J,358.3,4771,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4771,1,2,0)
- ;;=2^691.8
- ;;^UTILITY(U,$J,358.3,4771,1,5,0)
- ;;=5^Intrinsic Eczema
- ;;^UTILITY(U,$J,358.3,4771,2)
- ;;=^87342
- ;;^UTILITY(U,$J,358.3,4772,0)
- ;;=692.9^^39^364^8
- ;;^UTILITY(U,$J,358.3,4772,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4772,1,2,0)
- ;;=2^692.9
- ;;^UTILITY(U,$J,358.3,4772,1,5,0)
- ;;=5^Xerotic Eczema
- ;;^UTILITY(U,$J,358.3,4772,2)
- ;;=^27800
- ;;^UTILITY(U,$J,358.3,4773,0)
- ;;=686.8^^39^364^6
- ;;^UTILITY(U,$J,358.3,4773,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4773,1,2,0)
- ;;=2^686.8
- ;;^UTILITY(U,$J,358.3,4773,1,5,0)
- ;;=5^Pustular Eczema
- ;;^UTILITY(U,$J,358.3,4773,2)
- ;;=^88097
- ;;^UTILITY(U,$J,358.3,4774,0)
- ;;=690.18^^39^364^7
- ;;^UTILITY(U,$J,358.3,4774,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4774,1,2,0)
- ;;=2^690.18
- ;;^UTILITY(U,$J,358.3,4774,1,5,0)
- ;;=5^Seborrheic Eczema
- ;;^UTILITY(U,$J,358.3,4774,2)
- ;;=^303310
- ;;^UTILITY(U,$J,358.3,4775,0)
- ;;=705.81^^39^364^3
- ;;^UTILITY(U,$J,358.3,4775,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4775,1,2,0)
- ;;=2^705.81
- ;;^UTILITY(U,$J,358.3,4775,1,5,0)
- ;;=5^Dyshidrotic Eczema/Pompholyx
- ;;^UTILITY(U,$J,358.3,4775,2)
- ;;=Dyshidrotic Eczema/Pompholyx^96545
- ;;^UTILITY(U,$J,358.3,4776,0)
- ;;=692.9^^39^364^2
- ;;^UTILITY(U,$J,358.3,4776,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4776,1,2,0)
- ;;=2^692.9
- ;;^UTILITY(U,$J,358.3,4776,1,5,0)
- ;;=5^Atopic Eczema
- ;;^UTILITY(U,$J,358.3,4776,2)
- ;;=^27800
- ;;^UTILITY(U,$J,358.3,4777,0)
- ;;=274.89^^39^364^4
- ;;^UTILITY(U,$J,358.3,4777,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4777,1,2,0)
- ;;=2^274.89
- ;;^UTILITY(U,$J,358.3,4777,1,5,0)
- ;;=5^Gouty Eczema
- ;;^UTILITY(U,$J,358.3,4777,2)
- ;;=^267936
- ;;^UTILITY(U,$J,358.3,4778,0)
- ;;=782.3^^39^365^3
- ;;^UTILITY(U,$J,358.3,4778,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4778,1,2,0)
- ;;=2^782.3
- ;;^UTILITY(U,$J,358.3,4778,1,5,0)
- ;;=5^Pitting Edema
- ;;^UTILITY(U,$J,358.3,4778,2)
- ;;=^38340
- ;;^UTILITY(U,$J,358.3,4779,0)
- ;;=459.2^^39^365^2
- ;;^UTILITY(U,$J,358.3,4779,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4779,1,2,0)
- ;;=2^459.2
- ;;^UTILITY(U,$J,358.3,4779,1,5,0)
- ;;=5^Edema d/t Venous Obstruction
- ;;^UTILITY(U,$J,358.3,4779,2)
- ;;=^269850
- ;;^UTILITY(U,$J,358.3,4780,0)
- ;;=457.1^^39^365^1
- ;;^UTILITY(U,$J,358.3,4780,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4780,1,2,0)
- ;;=2^457.1
- ;;^UTILITY(U,$J,358.3,4780,1,5,0)
- ;;=5^Edema d/t Lymphatic Obstruction
- ;;^UTILITY(U,$J,358.3,4780,2)
- ;;=^87693
- ;;^UTILITY(U,$J,358.3,4781,0)
- ;;=695.2^^39^366^2
- ;;^UTILITY(U,$J,358.3,4781,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4781,1,2,0)
- ;;=2^695.2
- ;;^UTILITY(U,$J,358.3,4781,1,5,0)
- ;;=5^Erythema Nodosum
- ;;^UTILITY(U,$J,358.3,4781,2)
- ;;=^42065
- ;;^UTILITY(U,$J,358.3,4782,0)
- ;;=692.71^^39^366^3
- ;;^UTILITY(U,$J,358.3,4782,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4782,1,2,0)
- ;;=2^692.71
- ;;^UTILITY(U,$J,358.3,4782,1,5,0)
- ;;=5^Erythema Solara
- ;;^UTILITY(U,$J,358.3,4782,2)
- ;;=^115798
- ;;^UTILITY(U,$J,358.3,4783,0)
- ;;=695.0^^39^366^4
- ;;^UTILITY(U,$J,358.3,4783,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4783,1,2,0)
- ;;=2^695.0
- ;;^UTILITY(U,$J,358.3,4783,1,5,0)
- ;;=5^Erythema Toxic
- ;;^UTILITY(U,$J,358.3,4783,2)
- ;;=^265514
- ;;^UTILITY(U,$J,358.3,4784,0)
- ;;=695.10^^39^366^1
- ;;^UTILITY(U,$J,358.3,4784,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4784,1,2,0)
- ;;=2^695.10
- ;;^UTILITY(U,$J,358.3,4784,1,5,0)
- ;;=5^Erythema Multiforme NOS
- ;;^UTILITY(U,$J,358.3,4784,2)
- ;;=^336759
+ ;;^UTILITY(U,$J,358.3,4271,1,3,0)
+ ;;=3^Problems Related to Need for Continuous Supervision
+ ;;^UTILITY(U,$J,358.3,4271,1,4,0)
+ ;;=4^Z74.3
+ ;;^UTILITY(U,$J,358.3,4271,2)
+ ;;=^5063286
+ ;;^UTILITY(U,$J,358.3,4272,0)
+ ;;=Z75.1^^28^263^126
+ ;;^UTILITY(U,$J,358.3,4272,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4272,1,3,0)
+ ;;=3^Problems Related to Awaiting Facility Admission
+ ;;^UTILITY(U,$J,358.3,4272,1,4,0)
+ ;;=4^Z75.1
+ ;;^UTILITY(U,$J,358.3,4272,2)
+ ;;=^5063290
+ ;;^UTILITY(U,$J,358.3,4273,0)
+ ;;=Z63.9^^28^263^152
+ ;;^UTILITY(U,$J,358.3,4273,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4273,1,3,0)
+ ;;=3^Problems Related to Primary Support Group
+ ;;^UTILITY(U,$J,358.3,4273,1,4,0)
+ ;;=4^Z63.9
+ ;;^UTILITY(U,$J,358.3,4273,2)
+ ;;=^5063175
+ ;;^UTILITY(U,$J,358.3,4274,0)
+ ;;=Z74.09^^28^263^154
+ ;;^UTILITY(U,$J,358.3,4274,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4274,1,3,0)
+ ;;=3^Problems Related to Reduced Mobility
+ ;;^UTILITY(U,$J,358.3,4274,1,4,0)
+ ;;=4^Z74.09
+ ;;^UTILITY(U,$J,358.3,4274,2)
+ ;;=^5063283
+ ;;^UTILITY(U,$J,358.3,4275,0)
+ ;;=Z60.9^^28^263^156
+ ;;^UTILITY(U,$J,358.3,4275,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4275,1,3,0)
+ ;;=3^Problems Related to Social Environment
+ ;;^UTILITY(U,$J,358.3,4275,1,4,0)
+ ;;=4^Z60.9
+ ;;^UTILITY(U,$J,358.3,4275,2)
+ ;;=^5063145
+ ;;^UTILITY(U,$J,358.3,4276,0)
+ ;;=Z60.4^^28^263^157
+ ;;^UTILITY(U,$J,358.3,4276,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4276,1,3,0)
+ ;;=3^Problems Related to Social Exclusion/Rejection
+ ;;^UTILITY(U,$J,358.3,4276,1,4,0)
+ ;;=4^Z60.4
+ ;;^UTILITY(U,$J,358.3,4276,2)
+ ;;=^5063142
+ ;;^UTILITY(U,$J,358.3,4277,0)
+ ;;=Z60.5^^28^263^125
+ ;;^UTILITY(U,$J,358.3,4277,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4277,1,3,0)
+ ;;=3^Problems Related to Adverse Discrimination/Persecution
+ ;;^UTILITY(U,$J,358.3,4277,1,4,0)
+ ;;=4^Z60.5
+ ;;^UTILITY(U,$J,358.3,4277,2)
+ ;;=^5063143
+ ;;^UTILITY(U,$J,358.3,4278,0)
+ ;;=Z75.3^^28^263^158
+ ;;^UTILITY(U,$J,358.3,4278,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4278,1,3,0)
+ ;;=3^Problems Related to Unavailability/Inaccessibility of Health-Care Facilities
+ ;;^UTILITY(U,$J,358.3,4278,1,4,0)
+ ;;=4^Z75.3
+ ;;^UTILITY(U,$J,358.3,4278,2)
+ ;;=^5063292
+ ;;^UTILITY(U,$J,358.3,4279,0)
+ ;;=Z75.4^^28^263^159
+ ;;^UTILITY(U,$J,358.3,4279,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4279,1,3,0)
+ ;;=3^Problems Related to Unavailability/Inaccessibility of Helping Agencies
+ ;;^UTILITY(U,$J,358.3,4279,1,4,0)
+ ;;=4^Z75.4
+ ;;^UTILITY(U,$J,358.3,4279,2)
+ ;;=^5063293
+ ;;^UTILITY(U,$J,358.3,4280,0)
+ ;;=Z65.9^^28^263^153
+ ;;^UTILITY(U,$J,358.3,4280,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4280,1,3,0)
+ ;;=3^Problems Related to Psychosocial Circumstances
+ ;;^UTILITY(U,$J,358.3,4280,1,4,0)
+ ;;=4^Z65.9
+ ;;^UTILITY(U,$J,358.3,4280,2)
+ ;;=^5063186
+ ;;^UTILITY(U,$J,358.3,4281,0)
+ ;;=Z75.2^^28^263^160
+ ;;^UTILITY(U,$J,358.3,4281,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4281,1,3,0)
+ ;;=3^Problems Related to Waiting Period for Investigation/Treatment
+ ;;^UTILITY(U,$J,358.3,4281,1,4,0)
+ ;;=4^Z75.2
+ ;;^UTILITY(U,$J,358.3,4281,2)
+ ;;=^5063291
+ ;;^UTILITY(U,$J,358.3,4282,0)
+ ;;=Z75.5^^28^263^161
+ ;;^UTILITY(U,$J,358.3,4282,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4282,1,3,0)
+ ;;=3^Respite/Holiday Relief Care
+ ;;^UTILITY(U,$J,358.3,4282,1,4,0)
+ ;;=4^Z75.5
+ ;;^UTILITY(U,$J,358.3,4282,2)
+ ;;=^5063294
+ ;;^UTILITY(U,$J,358.3,4283,0)
+ ;;=R68.89^^28^263^165
+ ;;^UTILITY(U,$J,358.3,4283,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4283,1,3,0)
+ ;;=3^Symptoms/Signs,General,Other
+ ;;^UTILITY(U,$J,358.3,4283,1,4,0)
+ ;;=4^R68.89
+ ;;^UTILITY(U,$J,358.3,4283,2)
+ ;;=^5019557

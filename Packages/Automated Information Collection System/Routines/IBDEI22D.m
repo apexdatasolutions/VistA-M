@@ -1,0 +1,128 @@
+IBDEI22D ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,34609,1,4,0)
+ ;;=4^I97.820
+ ;;^UTILITY(U,$J,358.3,34609,2)
+ ;;=^5008109
+ ;;^UTILITY(U,$J,358.3,34610,0)
+ ;;=I97.821^^160^1761^35
+ ;;^UTILITY(U,$J,358.3,34610,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34610,1,3,0)
+ ;;=3^Postprocedural cerebrovascular infarction during oth surgery
+ ;;^UTILITY(U,$J,358.3,34610,1,4,0)
+ ;;=4^I97.821
+ ;;^UTILITY(U,$J,358.3,34610,2)
+ ;;=^5008110
+ ;;^UTILITY(U,$J,358.3,34611,0)
+ ;;=G97.2^^160^1761^15
+ ;;^UTILITY(U,$J,358.3,34611,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34611,1,3,0)
+ ;;=3^Intracranial hypotension following ventricular shunting
+ ;;^UTILITY(U,$J,358.3,34611,1,4,0)
+ ;;=4^G97.2
+ ;;^UTILITY(U,$J,358.3,34611,2)
+ ;;=^5004203
+ ;;^UTILITY(U,$J,358.3,34612,0)
+ ;;=G93.82^^160^1761^3
+ ;;^UTILITY(U,$J,358.3,34612,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34612,1,3,0)
+ ;;=3^Brain death
+ ;;^UTILITY(U,$J,358.3,34612,1,4,0)
+ ;;=4^G93.82
+ ;;^UTILITY(U,$J,358.3,34612,2)
+ ;;=^5004184
+ ;;^UTILITY(U,$J,358.3,34613,0)
+ ;;=S06.1X0A^^160^1761^65
+ ;;^UTILITY(U,$J,358.3,34613,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34613,1,3,0)
+ ;;=3^Traum cereb edema w/o LOC, init
+ ;;^UTILITY(U,$J,358.3,34613,1,4,0)
+ ;;=4^S06.1X0A
+ ;;^UTILITY(U,$J,358.3,34613,2)
+ ;;=^5020696
+ ;;^UTILITY(U,$J,358.3,34614,0)
+ ;;=S06.1X0D^^160^1761^67
+ ;;^UTILITY(U,$J,358.3,34614,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34614,1,3,0)
+ ;;=3^Traum cereb edema w/o LOC, subs
+ ;;^UTILITY(U,$J,358.3,34614,1,4,0)
+ ;;=4^S06.1X0D
+ ;;^UTILITY(U,$J,358.3,34614,2)
+ ;;=^5020697
+ ;;^UTILITY(U,$J,358.3,34615,0)
+ ;;=S06.1X0S^^160^1761^66
+ ;;^UTILITY(U,$J,358.3,34615,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34615,1,3,0)
+ ;;=3^Traum cereb edema w/o LOC, sequela
+ ;;^UTILITY(U,$J,358.3,34615,1,4,0)
+ ;;=4^S06.1X0S
+ ;;^UTILITY(U,$J,358.3,34615,2)
+ ;;=^5020698
+ ;;^UTILITY(U,$J,358.3,34616,0)
+ ;;=S06.1X1A^^160^1761^47
+ ;;^UTILITY(U,$J,358.3,34616,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34616,1,3,0)
+ ;;=3^Traum cereb edema w LOC of 30 minutes or less, init
+ ;;^UTILITY(U,$J,358.3,34616,1,4,0)
+ ;;=4^S06.1X1A
+ ;;^UTILITY(U,$J,358.3,34616,2)
+ ;;=^5020699
+ ;;^UTILITY(U,$J,358.3,34617,0)
+ ;;=S06.1X1D^^160^1761^48
+ ;;^UTILITY(U,$J,358.3,34617,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34617,1,3,0)
+ ;;=3^Traum cereb edema w LOC of 30 minutes or less, subs
+ ;;^UTILITY(U,$J,358.3,34617,1,4,0)
+ ;;=4^S06.1X1D
+ ;;^UTILITY(U,$J,358.3,34617,2)
+ ;;=^5020700
+ ;;^UTILITY(U,$J,358.3,34618,0)
+ ;;=S06.1X1S^^160^1761^49
+ ;;^UTILITY(U,$J,358.3,34618,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34618,1,3,0)
+ ;;=3^Traum cereb edema w LOC of 30 minutes or less, sequela
+ ;;^UTILITY(U,$J,358.3,34618,1,4,0)
+ ;;=4^S06.1X1S
+ ;;^UTILITY(U,$J,358.3,34618,2)
+ ;;=^5020701
+ ;;^UTILITY(U,$J,358.3,34619,0)
+ ;;=S06.1X2A^^160^1761^50
+ ;;^UTILITY(U,$J,358.3,34619,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34619,1,3,0)
+ ;;=3^Traum cereb edema w LOC of 31-59 min, init
+ ;;^UTILITY(U,$J,358.3,34619,1,4,0)
+ ;;=4^S06.1X2A
+ ;;^UTILITY(U,$J,358.3,34619,2)
+ ;;=^5020702
+ ;;^UTILITY(U,$J,358.3,34620,0)
+ ;;=S06.1X2D^^160^1761^51
+ ;;^UTILITY(U,$J,358.3,34620,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34620,1,3,0)
+ ;;=3^Traum cereb edema w LOC of 31-59 min, subs
+ ;;^UTILITY(U,$J,358.3,34620,1,4,0)
+ ;;=4^S06.1X2D
+ ;;^UTILITY(U,$J,358.3,34620,2)
+ ;;=^5020703
+ ;;^UTILITY(U,$J,358.3,34621,0)
+ ;;=S06.1X2S^^160^1761^52
+ ;;^UTILITY(U,$J,358.3,34621,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34621,1,3,0)
+ ;;=3^Traum cereb edema w LOC of 31-59 min, sequela
+ ;;^UTILITY(U,$J,358.3,34621,1,4,0)
+ ;;=4^S06.1X2S
+ ;;^UTILITY(U,$J,358.3,34621,2)
+ ;;=^5020704

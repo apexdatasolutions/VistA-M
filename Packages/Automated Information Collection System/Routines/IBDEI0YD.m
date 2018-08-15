@@ -1,132 +1,126 @@
-IBDEI0YD ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0YD ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,17074,1,1,0)
- ;;=1^J1442
- ;;^UTILITY(U,$J,358.3,17074,1,3,0)
- ;;=3^Filgrastim (g-csf) 1mcg
- ;;^UTILITY(U,$J,358.3,17075,0)
- ;;=J1446^^109^1068^46^^^^1
- ;;^UTILITY(U,$J,358.3,17075,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,17075,1,1,0)
- ;;=1^J1446
- ;;^UTILITY(U,$J,358.3,17075,1,3,0)
- ;;=3^Tho-Filgastrim 5mcg
- ;;^UTILITY(U,$J,358.3,17076,0)
- ;;=J7050^^109^1068^36^^^^1
- ;;^UTILITY(U,$J,358.3,17076,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,17076,1,1,0)
- ;;=1^J7050
- ;;^UTILITY(U,$J,358.3,17076,1,3,0)
- ;;=3^Normal Saline, 250ml
- ;;^UTILITY(U,$J,358.3,17077,0)
- ;;=J7030^^109^1068^35^^^^1
- ;;^UTILITY(U,$J,358.3,17077,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,17077,1,1,0)
- ;;=1^J7030
- ;;^UTILITY(U,$J,358.3,17077,1,3,0)
- ;;=3^Normal Saline, 1000ml
- ;;^UTILITY(U,$J,358.3,17078,0)
- ;;=J2405^^109^1068^40^^^^1
- ;;^UTILITY(U,$J,358.3,17078,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,17078,1,1,0)
- ;;=1^J2405
- ;;^UTILITY(U,$J,358.3,17078,1,3,0)
- ;;=3^Ondansetron HCL 1mg
- ;;^UTILITY(U,$J,358.3,17079,0)
- ;;=J3489^^109^1068^48^^^^1
- ;;^UTILITY(U,$J,358.3,17079,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,17079,1,1,0)
- ;;=1^J3489
- ;;^UTILITY(U,$J,358.3,17079,1,3,0)
- ;;=3^Zoledronic Acid 1mg
- ;;^UTILITY(U,$J,358.3,17080,0)
- ;;=J1815^^109^1068^23^^^^1
- ;;^UTILITY(U,$J,358.3,17080,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,17080,1,1,0)
- ;;=1^J1815
- ;;^UTILITY(U,$J,358.3,17080,1,3,0)
- ;;=3^Insulin per 5 units
- ;;^UTILITY(U,$J,358.3,17081,0)
- ;;=J2353^^109^1068^38^^^^1
- ;;^UTILITY(U,$J,358.3,17081,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,17081,1,1,0)
- ;;=1^J2353
- ;;^UTILITY(U,$J,358.3,17081,1,3,0)
- ;;=3^Octreotide IM 1mg
- ;;^UTILITY(U,$J,358.3,17082,0)
- ;;=J2354^^109^1068^39^^^^1
- ;;^UTILITY(U,$J,358.3,17082,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,17082,1,1,0)
- ;;=1^J2354
- ;;^UTILITY(U,$J,358.3,17082,1,3,0)
- ;;=3^Octreotide SQ/IV 1mg
- ;;^UTILITY(U,$J,358.3,17083,0)
- ;;=J8540^^109^1068^9^^^^1
- ;;^UTILITY(U,$J,358.3,17083,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,17083,1,1,0)
- ;;=1^J8540
- ;;^UTILITY(U,$J,358.3,17083,1,3,0)
- ;;=3^Dexamethasone,Oral,25mg
- ;;^UTILITY(U,$J,358.3,17084,0)
- ;;=90471^^109^1069^1^^^^1
- ;;^UTILITY(U,$J,358.3,17084,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,17084,1,1,0)
- ;;=1^90471
- ;;^UTILITY(U,$J,358.3,17084,1,3,0)
- ;;=3^Immunization Admin,1 Vaccine
- ;;^UTILITY(U,$J,358.3,17085,0)
- ;;=90472^^109^1069^2^^^^1
- ;;^UTILITY(U,$J,358.3,17085,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,17085,1,1,0)
- ;;=1^90472
- ;;^UTILITY(U,$J,358.3,17085,1,3,0)
- ;;=3^Immunization Admin,Ea Addl Vaccine
- ;;^UTILITY(U,$J,358.3,17086,0)
- ;;=90658^^109^1070^1^^^^1
- ;;^UTILITY(U,$J,358.3,17086,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,17086,1,1,0)
- ;;=1^90658
- ;;^UTILITY(U,$J,358.3,17086,1,3,0)
- ;;=3^Flu Vaccine
- ;;^UTILITY(U,$J,358.3,17087,0)
- ;;=90632^^109^1070^2^^^^1
- ;;^UTILITY(U,$J,358.3,17087,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,17087,1,1,0)
- ;;=1^90632
- ;;^UTILITY(U,$J,358.3,17087,1,3,0)
- ;;=3^Hepatitis A Vaccine
- ;;^UTILITY(U,$J,358.3,17088,0)
- ;;=90636^^109^1070^3^^^^1
- ;;^UTILITY(U,$J,358.3,17088,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,17088,1,1,0)
- ;;=1^90636
- ;;^UTILITY(U,$J,358.3,17088,1,3,0)
- ;;=3^Hepatitis A & B Vaccine
- ;;^UTILITY(U,$J,358.3,17089,0)
- ;;=90746^^109^1070^4^^^^1
- ;;^UTILITY(U,$J,358.3,17089,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,17089,1,1,0)
- ;;=1^90746
- ;;^UTILITY(U,$J,358.3,17089,1,3,0)
- ;;=3^Hepatitis B Vaccine
- ;;^UTILITY(U,$J,358.3,17090,0)
- ;;=90732^^109^1070^5^^^^1
- ;;^UTILITY(U,$J,358.3,17090,1,0)
- ;;=^358.31IA^3^2
+ ;;^UTILITY(U,$J,358.3,15834,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15834,1,3,0)
+ ;;=3^Varicose Veins of Right Lower Extrem w/ Foot Ulcer
+ ;;^UTILITY(U,$J,358.3,15834,1,4,0)
+ ;;=4^I83.015
+ ;;^UTILITY(U,$J,358.3,15834,2)
+ ;;=^5007977
+ ;;^UTILITY(U,$J,358.3,15835,0)
+ ;;=I83.019^^85^827^19
+ ;;^UTILITY(U,$J,358.3,15835,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15835,1,3,0)
+ ;;=3^Varicose Veins of Right Lower Extrem w/ Ulcer,Unspec Site
+ ;;^UTILITY(U,$J,358.3,15835,1,4,0)
+ ;;=4^I83.019
+ ;;^UTILITY(U,$J,358.3,15835,2)
+ ;;=^5007979
+ ;;^UTILITY(U,$J,358.3,15836,0)
+ ;;=I83.11^^85^827^20
+ ;;^UTILITY(U,$J,358.3,15836,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15836,1,3,0)
+ ;;=3^Varicose Veins of Right Lower Extrem w/ Inflammation
+ ;;^UTILITY(U,$J,358.3,15836,1,4,0)
+ ;;=4^I83.11
+ ;;^UTILITY(U,$J,358.3,15836,2)
+ ;;=^5007988
+ ;;^UTILITY(U,$J,358.3,15837,0)
+ ;;=I83.91^^85^827^3
+ ;;^UTILITY(U,$J,358.3,15837,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15837,1,3,0)
+ ;;=3^Asymptomatic Varicose Veins of Right Lower Extrem 
+ ;;^UTILITY(U,$J,358.3,15837,1,4,0)
+ ;;=4^I83.91
+ ;;^UTILITY(U,$J,358.3,15837,2)
+ ;;=^5008020
+ ;;^UTILITY(U,$J,358.3,15838,0)
+ ;;=I83.029^^85^827^4
+ ;;^UTILITY(U,$J,358.3,15838,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15838,1,3,0)
+ ;;=3^Varicose Veins of Left Lower Extrem w/ Ulcer,Unspec Site
+ ;;^UTILITY(U,$J,358.3,15838,1,4,0)
+ ;;=4^I83.029
+ ;;^UTILITY(U,$J,358.3,15838,2)
+ ;;=^5007986
+ ;;^UTILITY(U,$J,358.3,15839,0)
+ ;;=I83.025^^85^827^5
+ ;;^UTILITY(U,$J,358.3,15839,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15839,1,3,0)
+ ;;=3^Varicose Veins of Left Lower Extrem w/ Foot Ulcer
+ ;;^UTILITY(U,$J,358.3,15839,1,4,0)
+ ;;=4^I83.025
+ ;;^UTILITY(U,$J,358.3,15839,2)
+ ;;=^5007984
+ ;;^UTILITY(U,$J,358.3,15840,0)
+ ;;=I83.024^^85^827^6
+ ;;^UTILITY(U,$J,358.3,15840,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15840,1,3,0)
+ ;;=3^Varicose Veins of Left Lower Extrem w/ Heel/Midfoot Ulcer
+ ;;^UTILITY(U,$J,358.3,15840,1,4,0)
+ ;;=4^I83.024
+ ;;^UTILITY(U,$J,358.3,15840,2)
+ ;;=^5007983
+ ;;^UTILITY(U,$J,358.3,15841,0)
+ ;;=I83.028^^85^827^7
+ ;;^UTILITY(U,$J,358.3,15841,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15841,1,3,0)
+ ;;=3^Varicose Veins of Left Lower Extrem w/ Lower Leg Ulcer
+ ;;^UTILITY(U,$J,358.3,15841,1,4,0)
+ ;;=4^I83.028
+ ;;^UTILITY(U,$J,358.3,15841,2)
+ ;;=^5007985
+ ;;^UTILITY(U,$J,358.3,15842,0)
+ ;;=I83.023^^85^827^8
+ ;;^UTILITY(U,$J,358.3,15842,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15842,1,3,0)
+ ;;=3^Varicose Veins of Left Lower Extrem w/ Ankle Ulcer
+ ;;^UTILITY(U,$J,358.3,15842,1,4,0)
+ ;;=4^I83.023
+ ;;^UTILITY(U,$J,358.3,15842,2)
+ ;;=^5007982
+ ;;^UTILITY(U,$J,358.3,15843,0)
+ ;;=I83.022^^85^827^9
+ ;;^UTILITY(U,$J,358.3,15843,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15843,1,3,0)
+ ;;=3^Varicose Veins of Left Lower Extrem w/ Calf Ulcer
+ ;;^UTILITY(U,$J,358.3,15843,1,4,0)
+ ;;=4^I83.022
+ ;;^UTILITY(U,$J,358.3,15843,2)
+ ;;=^5007981
+ ;;^UTILITY(U,$J,358.3,15844,0)
+ ;;=I83.021^^85^827^10
+ ;;^UTILITY(U,$J,358.3,15844,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15844,1,3,0)
+ ;;=3^Varicose Veins of Left Lower Extrem w/ Thigh Ulcer
+ ;;^UTILITY(U,$J,358.3,15844,1,4,0)
+ ;;=4^I83.021
+ ;;^UTILITY(U,$J,358.3,15844,2)
+ ;;=^5007980
+ ;;^UTILITY(U,$J,358.3,15845,0)
+ ;;=I83.12^^85^827^11
+ ;;^UTILITY(U,$J,358.3,15845,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,15845,1,3,0)
+ ;;=3^Varicose Veins of Left Lower Extrem w/ Inflammation
+ ;;^UTILITY(U,$J,358.3,15845,1,4,0)
+ ;;=4^I83.12
+ ;;^UTILITY(U,$J,358.3,15845,2)
+ ;;=^5007989
+ ;;^UTILITY(U,$J,358.3,15846,0)
+ ;;=I83.93^^85^827^1
+ ;;^UTILITY(U,$J,358.3,15846,1,0)
+ ;;=^358.31IA^4^2

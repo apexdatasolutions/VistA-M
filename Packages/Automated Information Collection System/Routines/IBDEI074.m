@@ -1,144 +1,132 @@
-IBDEI074 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI074 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,3158,1,4,0)
- ;;=4^786.07
- ;;^UTILITY(U,$J,358.3,3158,1,5,0)
- ;;=5^Wheezing
- ;;^UTILITY(U,$J,358.3,3158,2)
- ;;=Wheezing^127848
- ;;^UTILITY(U,$J,358.3,3159,0)
- ;;=519.11^^33^273^4
- ;;^UTILITY(U,$J,358.3,3159,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3159,1,4,0)
- ;;=4^519.11
- ;;^UTILITY(U,$J,358.3,3159,1,5,0)
- ;;=5^Acute Bronchospasm
- ;;^UTILITY(U,$J,358.3,3159,2)
- ;;=^334092
- ;;^UTILITY(U,$J,358.3,3160,0)
- ;;=488.01^^33^273^20
- ;;^UTILITY(U,$J,358.3,3160,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3160,1,4,0)
- ;;=4^488.01
- ;;^UTILITY(U,$J,358.3,3160,1,5,0)
- ;;=5^Flu DT Iden AVIAN w Pneu
- ;;^UTILITY(U,$J,358.3,3160,2)
- ;;=^339615
- ;;^UTILITY(U,$J,358.3,3161,0)
- ;;=488.02^^33^273^19
- ;;^UTILITY(U,$J,358.3,3161,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3161,1,4,0)
- ;;=4^488.02
- ;;^UTILITY(U,$J,358.3,3161,1,5,0)
- ;;=5^Flu DT AVIAN w oth Resp
- ;;^UTILITY(U,$J,358.3,3161,2)
- ;;=^339616
- ;;^UTILITY(U,$J,358.3,3162,0)
- ;;=488.09^^33^273^18
- ;;^UTILITY(U,$J,358.3,3162,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3162,1,4,0)
- ;;=4^488.09
- ;;^UTILITY(U,$J,358.3,3162,1,5,0)
- ;;=5^Flu DT AVIAN Manfest
- ;;^UTILITY(U,$J,358.3,3162,2)
- ;;=^339617
- ;;^UTILITY(U,$J,358.3,3163,0)
- ;;=786.30^^33^273^21
- ;;^UTILITY(U,$J,358.3,3163,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3163,1,4,0)
- ;;=4^786.30
- ;;^UTILITY(U,$J,358.3,3163,1,5,0)
- ;;=5^Hemoptysis
- ;;^UTILITY(U,$J,358.3,3163,2)
- ;;=^339669
- ;;^UTILITY(U,$J,358.3,3164,0)
- ;;=793.11^^33^273^1
- ;;^UTILITY(U,$J,358.3,3164,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3164,1,4,0)
- ;;=4^793.11
- ;;^UTILITY(U,$J,358.3,3164,1,5,0)
- ;;=5^Abn Chest Xray, Lung, Solitary Nodule
- ;;^UTILITY(U,$J,358.3,3164,2)
- ;;=^340570
- ;;^UTILITY(U,$J,358.3,3165,0)
- ;;=793.19^^33^273^2
- ;;^UTILITY(U,$J,358.3,3165,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3165,1,4,0)
- ;;=4^793.19
- ;;^UTILITY(U,$J,358.3,3165,1,5,0)
- ;;=5^Abn Chest Xray,Oth Finding, Lung
- ;;^UTILITY(U,$J,358.3,3165,2)
- ;;=^340571
- ;;^UTILITY(U,$J,358.3,3166,0)
- ;;=795.51^^33^273^31
- ;;^UTILITY(U,$J,358.3,3166,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3166,1,4,0)
- ;;=4^795.51
- ;;^UTILITY(U,$J,358.3,3166,1,5,0)
- ;;=5^Pos PPD w/o Active TB
- ;;^UTILITY(U,$J,358.3,3166,2)
- ;;=^340572
- ;;^UTILITY(U,$J,358.3,3167,0)
- ;;=795.52^^33^273^30
- ;;^UTILITY(U,$J,358.3,3167,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3167,1,4,0)
- ;;=4^795.52
- ;;^UTILITY(U,$J,358.3,3167,1,5,0)
- ;;=5^Pos GMA Interferon w/o Active TB
- ;;^UTILITY(U,$J,358.3,3167,2)
- ;;=^340573
- ;;^UTILITY(U,$J,358.3,3168,0)
- ;;=273.4^^33^273^5
- ;;^UTILITY(U,$J,358.3,3168,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3168,1,4,0)
- ;;=4^273.4
- ;;^UTILITY(U,$J,358.3,3168,1,5,0)
- ;;=5^Alpha-1 Antitrypsin Deficiency
- ;;^UTILITY(U,$J,358.3,3168,2)
- ;;=^331442
- ;;^UTILITY(U,$J,358.3,3169,0)
- ;;=376.01^^33^274^27
- ;;^UTILITY(U,$J,358.3,3169,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3169,1,4,0)
- ;;=4^376.01
- ;;^UTILITY(U,$J,358.3,3169,1,5,0)
- ;;=5^Orbital Cellulitis
- ;;^UTILITY(U,$J,358.3,3169,2)
- ;;=^259068
- ;;^UTILITY(U,$J,358.3,3170,0)
- ;;=388.70^^33^274^28
- ;;^UTILITY(U,$J,358.3,3170,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3170,1,4,0)
- ;;=4^388.70
- ;;^UTILITY(U,$J,358.3,3170,1,5,0)
- ;;=5^Otalgia, Unsp
- ;;^UTILITY(U,$J,358.3,3170,2)
- ;;=^37811
- ;;^UTILITY(U,$J,358.3,3171,0)
- ;;=380.10^^33^274^29
- ;;^UTILITY(U,$J,358.3,3171,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,3171,1,4,0)
- ;;=4^380.10
- ;;^UTILITY(U,$J,358.3,3171,1,5,0)
- ;;=5^Otitis Externa,Infect
- ;;^UTILITY(U,$J,358.3,3171,2)
- ;;=^62807
- ;;^UTILITY(U,$J,358.3,3172,0)
- ;;=381.01^^33^274^34
- ;;^UTILITY(U,$J,358.3,3172,1,0)
- ;;=^358.31IA^5^2
+ ;;^UTILITY(U,$J,358.3,2750,2)
+ ;;=^5012304
+ ;;^UTILITY(U,$J,358.3,2751,0)
+ ;;=M53.0^^25^227^8
+ ;;^UTILITY(U,$J,358.3,2751,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2751,1,3,0)
+ ;;=3^Cervicocranial syndrome
+ ;;^UTILITY(U,$J,358.3,2751,1,4,0)
+ ;;=4^M53.0
+ ;;^UTILITY(U,$J,358.3,2751,2)
+ ;;=^21952
+ ;;^UTILITY(U,$J,358.3,2752,0)
+ ;;=M50.90^^25^227^5
+ ;;^UTILITY(U,$J,358.3,2752,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2752,1,3,0)
+ ;;=3^Cervical disc disorder, unsp, unspecified cervical region
+ ;;^UTILITY(U,$J,358.3,2752,1,4,0)
+ ;;=4^M50.90
+ ;;^UTILITY(U,$J,358.3,2752,2)
+ ;;=^5012235
+ ;;^UTILITY(U,$J,358.3,2753,0)
+ ;;=M50.00^^25^227^4
+ ;;^UTILITY(U,$J,358.3,2753,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2753,1,3,0)
+ ;;=3^Cervical disc disorder with myelopathy, unsp cervical region
+ ;;^UTILITY(U,$J,358.3,2753,1,4,0)
+ ;;=4^M50.00
+ ;;^UTILITY(U,$J,358.3,2753,2)
+ ;;=^5012215
+ ;;^UTILITY(U,$J,358.3,2754,0)
+ ;;=M54.12^^25^227^9
+ ;;^UTILITY(U,$J,358.3,2754,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2754,1,3,0)
+ ;;=3^Radiculopathy, cervical region
+ ;;^UTILITY(U,$J,358.3,2754,1,4,0)
+ ;;=4^M54.12
+ ;;^UTILITY(U,$J,358.3,2754,2)
+ ;;=^5012297
+ ;;^UTILITY(U,$J,358.3,2755,0)
+ ;;=M99.01^^25^227^10
+ ;;^UTILITY(U,$J,358.3,2755,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2755,1,3,0)
+ ;;=3^Segmental and somatic dysfunction of cervical region
+ ;;^UTILITY(U,$J,358.3,2755,1,4,0)
+ ;;=4^M99.01
+ ;;^UTILITY(U,$J,358.3,2755,2)
+ ;;=^5015401
+ ;;^UTILITY(U,$J,358.3,2756,0)
+ ;;=M48.02^^25^227^11
+ ;;^UTILITY(U,$J,358.3,2756,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2756,1,3,0)
+ ;;=3^Spinal stenosis, cervical region
+ ;;^UTILITY(U,$J,358.3,2756,1,4,0)
+ ;;=4^M48.02
+ ;;^UTILITY(U,$J,358.3,2756,2)
+ ;;=^5012089
+ ;;^UTILITY(U,$J,358.3,2757,0)
+ ;;=M47.812^^25^227^12
+ ;;^UTILITY(U,$J,358.3,2757,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2757,1,3,0)
+ ;;=3^Spondylosis w/o myelopathy or radiculopathy, cervical region
+ ;;^UTILITY(U,$J,358.3,2757,1,4,0)
+ ;;=4^M47.812
+ ;;^UTILITY(U,$J,358.3,2757,2)
+ ;;=^5012069
+ ;;^UTILITY(U,$J,358.3,2758,0)
+ ;;=S13.9XXA^^25^227^13
+ ;;^UTILITY(U,$J,358.3,2758,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2758,1,3,0)
+ ;;=3^Sprain of joints/ligaments of unsp parts of neck, init
+ ;;^UTILITY(U,$J,358.3,2758,1,4,0)
+ ;;=4^S13.9XXA
+ ;;^UTILITY(U,$J,358.3,2758,2)
+ ;;=^5022037
+ ;;^UTILITY(U,$J,358.3,2759,0)
+ ;;=M99.88^^25^228^1
+ ;;^UTILITY(U,$J,358.3,2759,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2759,1,3,0)
+ ;;=3^Biomechanical lesions of rib cage
+ ;;^UTILITY(U,$J,358.3,2759,1,4,0)
+ ;;=4^M99.88
+ ;;^UTILITY(U,$J,358.3,2759,2)
+ ;;=^5015488
+ ;;^UTILITY(U,$J,358.3,2760,0)
+ ;;=M99.82^^25^228^2
+ ;;^UTILITY(U,$J,358.3,2760,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2760,1,3,0)
+ ;;=3^Biomechanical lesions of thoracic region
+ ;;^UTILITY(U,$J,358.3,2760,1,4,0)
+ ;;=4^M99.82
+ ;;^UTILITY(U,$J,358.3,2760,2)
+ ;;=^5015482
+ ;;^UTILITY(U,$J,358.3,2761,0)
+ ;;=M51.24^^25^228^5
+ ;;^UTILITY(U,$J,358.3,2761,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2761,1,3,0)
+ ;;=3^Intervertebral disc displacement, thoracic region
+ ;;^UTILITY(U,$J,358.3,2761,1,4,0)
+ ;;=4^M51.24
+ ;;^UTILITY(U,$J,358.3,2761,2)
+ ;;=^5012247
+ ;;^UTILITY(U,$J,358.3,2762,0)
+ ;;=M51.34^^25^228^3
+ ;;^UTILITY(U,$J,358.3,2762,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2762,1,3,0)
+ ;;=3^Intervertebral disc degeneration, thoracic region
+ ;;^UTILITY(U,$J,358.3,2762,1,4,0)
+ ;;=4^M51.34
+ ;;^UTILITY(U,$J,358.3,2762,2)
+ ;;=^5012251
+ ;;^UTILITY(U,$J,358.3,2763,0)
+ ;;=M51.35^^25^228^4
+ ;;^UTILITY(U,$J,358.3,2763,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2763,1,3,0)
+ ;;=3^Intervertebral disc degeneration, thoracolumbar region

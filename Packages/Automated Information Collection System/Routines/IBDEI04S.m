@@ -1,144 +1,126 @@
-IBDEI04S ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI04S ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,1971,1,5,0)
- ;;=5^HX OF KIDNEY MALIGNANCY
- ;;^UTILITY(U,$J,358.3,1971,2)
- ;;=^295229
- ;;^UTILITY(U,$J,358.3,1972,0)
- ;;=V10.53^^21^187^15
- ;;^UTILITY(U,$J,358.3,1972,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1972,1,4,0)
- ;;=4^V10.53
- ;;^UTILITY(U,$J,358.3,1972,1,5,0)
- ;;=5^HX OF MAL NEOPLASM,RENAL PELVIS
- ;;^UTILITY(U,$J,358.3,1972,2)
- ;;=^323624
- ;;^UTILITY(U,$J,358.3,1973,0)
- ;;=V10.59^^21^187^45
- ;;^UTILITY(U,$J,358.3,1973,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1973,1,4,0)
- ;;=4^V10.59
- ;;^UTILITY(U,$J,358.3,1973,1,5,0)
- ;;=5^HX-URINARY MALIGNAN NEC
- ;;^UTILITY(U,$J,358.3,1973,2)
- ;;=^295230
- ;;^UTILITY(U,$J,358.3,1974,0)
- ;;=V10.60^^21^187^12
- ;;^UTILITY(U,$J,358.3,1974,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1974,1,4,0)
- ;;=4^V10.60
- ;;^UTILITY(U,$J,358.3,1974,1,5,0)
- ;;=5^HX OF LEUKEMIA NOS
- ;;^UTILITY(U,$J,358.3,1974,2)
- ;;=^295231
- ;;^UTILITY(U,$J,358.3,1975,0)
- ;;=V10.61^^21^187^14
- ;;^UTILITY(U,$J,358.3,1975,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1975,1,4,0)
- ;;=4^V10.61
- ;;^UTILITY(U,$J,358.3,1975,1,5,0)
- ;;=5^HX OF LYMPHOID LEUKEMIA
- ;;^UTILITY(U,$J,358.3,1975,2)
- ;;=^295232
- ;;^UTILITY(U,$J,358.3,1976,0)
- ;;=V10.62^^21^187^18
- ;;^UTILITY(U,$J,358.3,1976,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1976,1,4,0)
- ;;=4^V10.62
- ;;^UTILITY(U,$J,358.3,1976,1,5,0)
- ;;=5^HX OF MYELOID LEUKEMIA
- ;;^UTILITY(U,$J,358.3,1976,2)
- ;;=^295233
- ;;^UTILITY(U,$J,358.3,1977,0)
- ;;=V10.63^^21^187^17
- ;;^UTILITY(U,$J,358.3,1977,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1977,1,4,0)
- ;;=4^V10.63
- ;;^UTILITY(U,$J,358.3,1977,1,5,0)
- ;;=5^HX OF MONOCYTIC LEUKEMIA
- ;;^UTILITY(U,$J,358.3,1977,2)
- ;;=^295234
- ;;^UTILITY(U,$J,358.3,1978,0)
- ;;=V10.69^^21^187^11
- ;;^UTILITY(U,$J,358.3,1978,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1978,1,4,0)
- ;;=4^V10.69
- ;;^UTILITY(U,$J,358.3,1978,1,5,0)
- ;;=5^HX OF LEUKEMIA NEC
- ;;^UTILITY(U,$J,358.3,1978,2)
- ;;=^295235
- ;;^UTILITY(U,$J,358.3,1979,0)
- ;;=V10.71^^21^187^32
- ;;^UTILITY(U,$J,358.3,1979,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1979,1,4,0)
- ;;=4^V10.71
- ;;^UTILITY(U,$J,358.3,1979,1,5,0)
- ;;=5^HX-LYMPHOSARCOMA
- ;;^UTILITY(U,$J,358.3,1979,2)
- ;;=^295236
- ;;^UTILITY(U,$J,358.3,1980,0)
- ;;=V10.72^^21^187^28
- ;;^UTILITY(U,$J,358.3,1980,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1980,1,4,0)
- ;;=4^V10.72
- ;;^UTILITY(U,$J,358.3,1980,1,5,0)
- ;;=5^HX-HODGKIN'S DISEASE
- ;;^UTILITY(U,$J,358.3,1980,2)
- ;;=^295237
- ;;^UTILITY(U,$J,358.3,1981,0)
- ;;=V10.79^^21^187^31
- ;;^UTILITY(U,$J,358.3,1981,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1981,1,4,0)
- ;;=4^V10.79
- ;;^UTILITY(U,$J,358.3,1981,1,5,0)
- ;;=5^HX-LYMPHATIC MALIGN NEC
- ;;^UTILITY(U,$J,358.3,1981,2)
- ;;=^295238
- ;;^UTILITY(U,$J,358.3,1982,0)
- ;;=V10.81^^21^187^2
- ;;^UTILITY(U,$J,358.3,1982,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1982,1,4,0)
- ;;=4^V10.81
- ;;^UTILITY(U,$J,358.3,1982,1,5,0)
- ;;=5^HX OF BONE MALIGNANCY
- ;;^UTILITY(U,$J,358.3,1982,2)
- ;;=^295239
- ;;^UTILITY(U,$J,358.3,1983,0)
- ;;=V10.82^^21^187^35
- ;;^UTILITY(U,$J,358.3,1983,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1983,1,4,0)
- ;;=4^V10.82
- ;;^UTILITY(U,$J,358.3,1983,1,5,0)
- ;;=5^HX-MALIG SKIN MELANOMA
- ;;^UTILITY(U,$J,358.3,1983,2)
- ;;=^295240
- ;;^UTILITY(U,$J,358.3,1984,0)
- ;;=V10.83^^21^187^42
- ;;^UTILITY(U,$J,358.3,1984,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1984,1,4,0)
- ;;=4^V10.83
- ;;^UTILITY(U,$J,358.3,1984,1,5,0)
- ;;=5^HX-SKIN MALIGNANCY NEC
- ;;^UTILITY(U,$J,358.3,1984,2)
- ;;=^295241
- ;;^UTILITY(U,$J,358.3,1985,0)
- ;;=V10.84^^21^187^6
- ;;^UTILITY(U,$J,358.3,1985,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,1985,1,4,0)
- ;;=4^V10.84
+ ;;^UTILITY(U,$J,358.3,1550,2)
+ ;;=^5049423
+ ;;^UTILITY(U,$J,358.3,1551,0)
+ ;;=T36.94XA^^14^156^74
+ ;;^UTILITY(U,$J,358.3,1551,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1551,1,3,0)
+ ;;=3^Poisoning by unsp systemic antibiotic, undetermined, init
+ ;;^UTILITY(U,$J,358.3,1551,1,4,0)
+ ;;=4^T36.94XA
+ ;;^UTILITY(U,$J,358.3,1551,2)
+ ;;=^5049427
+ ;;^UTILITY(U,$J,358.3,1552,0)
+ ;;=T36.94XD^^14^156^75
+ ;;^UTILITY(U,$J,358.3,1552,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1552,1,3,0)
+ ;;=3^Poisoning by unsp systemic antibiotic, undetermined, subs
+ ;;^UTILITY(U,$J,358.3,1552,1,4,0)
+ ;;=4^T36.94XD
+ ;;^UTILITY(U,$J,358.3,1552,2)
+ ;;=^5049428
+ ;;^UTILITY(U,$J,358.3,1553,0)
+ ;;=T36.94XS^^14^156^76
+ ;;^UTILITY(U,$J,358.3,1553,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1553,1,3,0)
+ ;;=3^Poisoning by unsp systemic antibiotic, undetermined, sequela
+ ;;^UTILITY(U,$J,358.3,1553,1,4,0)
+ ;;=4^T36.94XS
+ ;;^UTILITY(U,$J,358.3,1553,2)
+ ;;=^5049429
+ ;;^UTILITY(U,$J,358.3,1554,0)
+ ;;=T36.5X6A^^14^156^77
+ ;;^UTILITY(U,$J,358.3,1554,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1554,1,3,0)
+ ;;=3^Underdosing of aminoglycosides, initial encounter
+ ;;^UTILITY(U,$J,358.3,1554,1,4,0)
+ ;;=4^T36.5X6A
+ ;;^UTILITY(U,$J,358.3,1554,2)
+ ;;=^5049361
+ ;;^UTILITY(U,$J,358.3,1555,0)
+ ;;=T36.5X6D^^14^156^79
+ ;;^UTILITY(U,$J,358.3,1555,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1555,1,3,0)
+ ;;=3^Underdosing of aminoglycosides, subsequent encounter
+ ;;^UTILITY(U,$J,358.3,1555,1,4,0)
+ ;;=4^T36.5X6D
+ ;;^UTILITY(U,$J,358.3,1555,2)
+ ;;=^5049362
+ ;;^UTILITY(U,$J,358.3,1556,0)
+ ;;=T36.5X6S^^14^156^78
+ ;;^UTILITY(U,$J,358.3,1556,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1556,1,3,0)
+ ;;=3^Underdosing of aminoglycosides, sequela
+ ;;^UTILITY(U,$J,358.3,1556,1,4,0)
+ ;;=4^T36.5X6S
+ ;;^UTILITY(U,$J,358.3,1556,2)
+ ;;=^5049363
+ ;;^UTILITY(U,$J,358.3,1557,0)
+ ;;=T45.1X6A^^14^156^80
+ ;;^UTILITY(U,$J,358.3,1557,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1557,1,3,0)
+ ;;=3^Underdosing of antineoplastic and immunosup drugs, init
+ ;;^UTILITY(U,$J,358.3,1557,1,4,0)
+ ;;=4^T45.1X6A
+ ;;^UTILITY(U,$J,358.3,1557,2)
+ ;;=^5051029
+ ;;^UTILITY(U,$J,358.3,1558,0)
+ ;;=T45.1X6D^^14^156^81
+ ;;^UTILITY(U,$J,358.3,1558,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1558,1,3,0)
+ ;;=3^Underdosing of antineoplastic and immunosup drugs, subs
+ ;;^UTILITY(U,$J,358.3,1558,1,4,0)
+ ;;=4^T45.1X6D
+ ;;^UTILITY(U,$J,358.3,1558,2)
+ ;;=^5051030
+ ;;^UTILITY(U,$J,358.3,1559,0)
+ ;;=T45.1X6S^^14^156^82
+ ;;^UTILITY(U,$J,358.3,1559,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1559,1,3,0)
+ ;;=3^Underdosing of antineoplastic and immunosup drugs, sequela
+ ;;^UTILITY(U,$J,358.3,1559,1,4,0)
+ ;;=4^T45.1X6S
+ ;;^UTILITY(U,$J,358.3,1559,2)
+ ;;=^5051031
+ ;;^UTILITY(U,$J,358.3,1560,0)
+ ;;=T36.8X6A^^14^156^83
+ ;;^UTILITY(U,$J,358.3,1560,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1560,1,3,0)
+ ;;=3^Underdosing of other systemic antibiotics, initial encounter
+ ;;^UTILITY(U,$J,358.3,1560,1,4,0)
+ ;;=4^T36.8X6A
+ ;;^UTILITY(U,$J,358.3,1560,2)
+ ;;=^5049415
+ ;;^UTILITY(U,$J,358.3,1561,0)
+ ;;=T36.8X6D^^14^156^84
+ ;;^UTILITY(U,$J,358.3,1561,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1561,1,3,0)
+ ;;=3^Underdosing of other systemic antibiotics, subs encntr
+ ;;^UTILITY(U,$J,358.3,1561,1,4,0)
+ ;;=4^T36.8X6D
+ ;;^UTILITY(U,$J,358.3,1561,2)
+ ;;=^5049416
+ ;;^UTILITY(U,$J,358.3,1562,0)
+ ;;=T36.8X6S^^14^156^85
+ ;;^UTILITY(U,$J,358.3,1562,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,1562,1,3,0)
+ ;;=3^Underdosing of other systemic antibiotics, sequela
+ ;;^UTILITY(U,$J,358.3,1562,1,4,0)
+ ;;=4^T36.8X6S
+ ;;^UTILITY(U,$J,358.3,1562,2)
+ ;;=^5049417

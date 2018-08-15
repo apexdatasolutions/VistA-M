@@ -1,144 +1,130 @@
-IBDEI05Y ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI05Y ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,2568,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2568,1,4,0)
- ;;=4^577.1
- ;;^UTILITY(U,$J,358.3,2568,1,5,0)
- ;;=5^Pancreatitis, Chronic
- ;;^UTILITY(U,$J,358.3,2568,2)
- ;;=^259100
- ;;^UTILITY(U,$J,358.3,2569,0)
- ;;=789.2^^27^238^28
- ;;^UTILITY(U,$J,358.3,2569,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2569,1,4,0)
- ;;=4^789.2
- ;;^UTILITY(U,$J,358.3,2569,1,5,0)
- ;;=5^Splenomegaly
- ;;^UTILITY(U,$J,358.3,2569,2)
- ;;=^113452
- ;;^UTILITY(U,$J,358.3,2570,0)
- ;;=789.59^^27^238^6
- ;;^UTILITY(U,$J,358.3,2570,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2570,1,4,0)
- ;;=4^789.59
- ;;^UTILITY(U,$J,358.3,2570,1,5,0)
- ;;=5^Ascites
- ;;^UTILITY(U,$J,358.3,2570,2)
- ;;=^335282
- ;;^UTILITY(U,$J,358.3,2571,0)
- ;;=790.6^^27^238^5
- ;;^UTILITY(U,$J,358.3,2571,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2571,1,4,0)
- ;;=4^790.6
- ;;^UTILITY(U,$J,358.3,2571,1,5,0)
- ;;=5^Abnormal LFT's
- ;;^UTILITY(U,$J,358.3,2571,2)
- ;;=Abnormal LFT's^87228
- ;;^UTILITY(U,$J,358.3,2572,0)
- ;;=789.00^^27^238^2
- ;;^UTILITY(U,$J,358.3,2572,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2572,1,4,0)
- ;;=4^789.00
- ;;^UTILITY(U,$J,358.3,2572,1,5,0)
- ;;=5^Abdominal Pain
- ;;^UTILITY(U,$J,358.3,2572,2)
- ;;=^303317
- ;;^UTILITY(U,$J,358.3,2573,0)
- ;;=789.60^^27^238^3
- ;;^UTILITY(U,$J,358.3,2573,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2573,1,4,0)
- ;;=4^789.60
- ;;^UTILITY(U,$J,358.3,2573,1,5,0)
- ;;=5^Abdominal Tenderness
- ;;^UTILITY(U,$J,358.3,2573,2)
- ;;=^303342
- ;;^UTILITY(U,$J,358.3,2574,0)
- ;;=562.13^^27^238^10
- ;;^UTILITY(U,$J,358.3,2574,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2574,1,4,0)
- ;;=4^562.13
- ;;^UTILITY(U,$J,358.3,2574,1,5,0)
- ;;=5^Diverticulitis w/ Hemorrhage
- ;;^UTILITY(U,$J,358.3,2574,2)
- ;;=^270276
- ;;^UTILITY(U,$J,358.3,2575,0)
- ;;=562.12^^27^238^11
- ;;^UTILITY(U,$J,358.3,2575,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2575,1,4,0)
- ;;=4^562.12
- ;;^UTILITY(U,$J,358.3,2575,1,5,0)
- ;;=5^Diverticulosis w/ Hemorrhage
- ;;^UTILITY(U,$J,358.3,2575,2)
- ;;=^270275
- ;;^UTILITY(U,$J,358.3,2576,0)
- ;;=531.90^^27^238^17
- ;;^UTILITY(U,$J,358.3,2576,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2576,1,4,0)
- ;;=4^531.90
- ;;^UTILITY(U,$J,358.3,2576,1,5,0)
- ;;=5^Gastric Ulcer,Unspec
- ;;^UTILITY(U,$J,358.3,2576,2)
- ;;=^51128
- ;;^UTILITY(U,$J,358.3,2577,0)
- ;;=531.91^^27^238^16
- ;;^UTILITY(U,$J,358.3,2577,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2577,1,4,0)
- ;;=4^531.91
- ;;^UTILITY(U,$J,358.3,2577,1,5,0)
- ;;=5^Gastric Ulcer w/ Obstruction
- ;;^UTILITY(U,$J,358.3,2577,2)
- ;;=^270088
- ;;^UTILITY(U,$J,358.3,2578,0)
- ;;=789.51^^27^238^23
- ;;^UTILITY(U,$J,358.3,2578,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2578,1,4,0)
- ;;=4^789.51
- ;;^UTILITY(U,$J,358.3,2578,1,5,0)
- ;;=5^Malignant Ascites
- ;;^UTILITY(U,$J,358.3,2578,2)
- ;;=^335281
- ;;^UTILITY(U,$J,358.3,2579,0)
- ;;=533.90^^27^238^27
- ;;^UTILITY(U,$J,358.3,2579,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2579,1,4,0)
- ;;=4^533.90
- ;;^UTILITY(U,$J,358.3,2579,1,5,0)
- ;;=5^Peptic Ulcer w/o Obstruc
- ;;^UTILITY(U,$J,358.3,2579,2)
- ;;=^93051
- ;;^UTILITY(U,$J,358.3,2580,0)
- ;;=533.91^^27^238^26
- ;;^UTILITY(U,$J,358.3,2580,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2580,1,4,0)
- ;;=4^533.91
- ;;^UTILITY(U,$J,358.3,2580,1,5,0)
- ;;=5^Peptic Ulcer w/ Obstruction
- ;;^UTILITY(U,$J,358.3,2580,2)
- ;;=^270138
- ;;^UTILITY(U,$J,358.3,2581,0)
- ;;=583.9^^27^239^7
- ;;^UTILITY(U,$J,358.3,2581,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,2581,1,4,0)
- ;;=4^583.9
- ;;^UTILITY(U,$J,358.3,2581,1,5,0)
- ;;=5^Glomerulonephritis
- ;;^UTILITY(U,$J,358.3,2581,2)
- ;;=^83446
- ;;^UTILITY(U,$J,358.3,2582,0)
- ;;=581.9^^27^239^9
+ ;;^UTILITY(U,$J,358.3,2186,1,4,0)
+ ;;=4^T82.120A
+ ;;^UTILITY(U,$J,358.3,2186,2)
+ ;;=^5054692
+ ;;^UTILITY(U,$J,358.3,2187,0)
+ ;;=T82.121A^^19^190^18
+ ;;^UTILITY(U,$J,358.3,2187,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2187,1,3,0)
+ ;;=3^Displacement of Cardiac Pulse Generator,Init Encntr
+ ;;^UTILITY(U,$J,358.3,2187,1,4,0)
+ ;;=4^T82.121A
+ ;;^UTILITY(U,$J,358.3,2187,2)
+ ;;=^5054695
+ ;;^UTILITY(U,$J,358.3,2188,0)
+ ;;=T82.190A^^19^190^26
+ ;;^UTILITY(U,$J,358.3,2188,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2188,1,3,0)
+ ;;=3^Mech Compl of Cardiac Electrode,Init Encntr
+ ;;^UTILITY(U,$J,358.3,2188,1,4,0)
+ ;;=4^T82.190A
+ ;;^UTILITY(U,$J,358.3,2188,2)
+ ;;=^5054704
+ ;;^UTILITY(U,$J,358.3,2189,0)
+ ;;=T82.191A^^19^190^27
+ ;;^UTILITY(U,$J,358.3,2189,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2189,1,3,0)
+ ;;=3^Mech Compl of Cardiac Pulse Generator,Init Encntr
+ ;;^UTILITY(U,$J,358.3,2189,1,4,0)
+ ;;=4^T82.191A
+ ;;^UTILITY(U,$J,358.3,2189,2)
+ ;;=^5054707
+ ;;^UTILITY(U,$J,358.3,2190,0)
+ ;;=Z95.0^^19^190^35
+ ;;^UTILITY(U,$J,358.3,2190,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2190,1,3,0)
+ ;;=3^Presence of Cardiac Pacemaker
+ ;;^UTILITY(U,$J,358.3,2190,1,4,0)
+ ;;=4^Z95.0
+ ;;^UTILITY(U,$J,358.3,2190,2)
+ ;;=^5063668
+ ;;^UTILITY(U,$J,358.3,2191,0)
+ ;;=Z95.810^^19^190^34
+ ;;^UTILITY(U,$J,358.3,2191,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2191,1,3,0)
+ ;;=3^Presence of Automatic Cardiac Defibrillator
+ ;;^UTILITY(U,$J,358.3,2191,1,4,0)
+ ;;=4^Z95.810
+ ;;^UTILITY(U,$J,358.3,2191,2)
+ ;;=^5063674
+ ;;^UTILITY(U,$J,358.3,2192,0)
+ ;;=Z45.010^^19^190^15
+ ;;^UTILITY(U,$J,358.3,2192,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2192,1,3,0)
+ ;;=3^Check/Test Cardiac Pacemaker Pulse Generator
+ ;;^UTILITY(U,$J,358.3,2192,1,4,0)
+ ;;=4^Z45.010
+ ;;^UTILITY(U,$J,358.3,2192,2)
+ ;;=^5062994
+ ;;^UTILITY(U,$J,358.3,2193,0)
+ ;;=Z45.018^^19^190^6
+ ;;^UTILITY(U,$J,358.3,2193,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2193,1,3,0)
+ ;;=3^Adjust/Manage Cardiac Pacemaker Parts
+ ;;^UTILITY(U,$J,358.3,2193,1,4,0)
+ ;;=4^Z45.018
+ ;;^UTILITY(U,$J,358.3,2193,2)
+ ;;=^5062995
+ ;;^UTILITY(U,$J,358.3,2194,0)
+ ;;=Z45.02^^19^190^5
+ ;;^UTILITY(U,$J,358.3,2194,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2194,1,3,0)
+ ;;=3^Adjust/Manage Automatic Implantable Cardiac Defibrillator
+ ;;^UTILITY(U,$J,358.3,2194,1,4,0)
+ ;;=4^Z45.02
+ ;;^UTILITY(U,$J,358.3,2194,2)
+ ;;=^5062996
+ ;;^UTILITY(U,$J,358.3,2195,0)
+ ;;=I25.110^^19^191^15
+ ;;^UTILITY(U,$J,358.3,2195,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2195,1,3,0)
+ ;;=3^Athscl Hrt Disease of Native Cor Art w/ Unstable Ang Pctrs
+ ;;^UTILITY(U,$J,358.3,2195,1,4,0)
+ ;;=4^I25.110
+ ;;^UTILITY(U,$J,358.3,2195,2)
+ ;;=^5007108
+ ;;^UTILITY(U,$J,358.3,2196,0)
+ ;;=I25.700^^19^191^34
+ ;;^UTILITY(U,$J,358.3,2196,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2196,1,3,0)
+ ;;=3^Athscl of CABG w/ Unstable Ang Pctrs
+ ;;^UTILITY(U,$J,358.3,2196,1,4,0)
+ ;;=4^I25.700
+ ;;^UTILITY(U,$J,358.3,2196,2)
+ ;;=^5007117
+ ;;^UTILITY(U,$J,358.3,2197,0)
+ ;;=I25.710^^19^191^10
+ ;;^UTILITY(U,$J,358.3,2197,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2197,1,3,0)
+ ;;=3^Athscl Autologous Vein CABG w/ Unstable Ang Pctrs
+ ;;^UTILITY(U,$J,358.3,2197,1,4,0)
+ ;;=4^I25.710
+ ;;^UTILITY(U,$J,358.3,2197,2)
+ ;;=^5007121
+ ;;^UTILITY(U,$J,358.3,2198,0)
+ ;;=I25.720^^19^191^6
+ ;;^UTILITY(U,$J,358.3,2198,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,2198,1,3,0)
+ ;;=3^Athscl Autologous Artery CABG w/ Unstable Ang Pctrs
+ ;;^UTILITY(U,$J,358.3,2198,1,4,0)
+ ;;=4^I25.720
+ ;;^UTILITY(U,$J,358.3,2198,2)
+ ;;=^5007125
+ ;;^UTILITY(U,$J,358.3,2199,0)
+ ;;=I25.730^^19^191^24

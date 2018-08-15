@@ -1,0 +1,132 @@
+IBDEI21U ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,34354,1,3,0)
+ ;;=3^Huntington's Disease
+ ;;^UTILITY(U,$J,358.3,34354,1,4,0)
+ ;;=4^G10.
+ ;;^UTILITY(U,$J,358.3,34354,2)
+ ;;=^5003751
+ ;;^UTILITY(U,$J,358.3,34355,0)
+ ;;=G11.3^^157^1746^9
+ ;;^UTILITY(U,$J,358.3,34355,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34355,1,3,0)
+ ;;=3^Cerebellar Ataxia w/ Defective DNA Repair
+ ;;^UTILITY(U,$J,358.3,34355,1,4,0)
+ ;;=4^G11.3
+ ;;^UTILITY(U,$J,358.3,34355,2)
+ ;;=^5003755
+ ;;^UTILITY(U,$J,358.3,34356,0)
+ ;;=G11.8^^157^1746^22
+ ;;^UTILITY(U,$J,358.3,34356,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34356,1,3,0)
+ ;;=3^Hereditary Ataxias,Other
+ ;;^UTILITY(U,$J,358.3,34356,1,4,0)
+ ;;=4^G11.8
+ ;;^UTILITY(U,$J,358.3,34356,2)
+ ;;=^5003757
+ ;;^UTILITY(U,$J,358.3,34357,0)
+ ;;=G12.9^^157^1746^36
+ ;;^UTILITY(U,$J,358.3,34357,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34357,1,3,0)
+ ;;=3^Spinal Muscular Atrophy,Unspec
+ ;;^UTILITY(U,$J,358.3,34357,1,4,0)
+ ;;=4^G12.9
+ ;;^UTILITY(U,$J,358.3,34357,2)
+ ;;=^5003764
+ ;;^UTILITY(U,$J,358.3,34358,0)
+ ;;=G12.21^^157^1746^6
+ ;;^UTILITY(U,$J,358.3,34358,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34358,1,3,0)
+ ;;=3^Amyotrophic Lateral Sclerosis
+ ;;^UTILITY(U,$J,358.3,34358,1,4,0)
+ ;;=4^G12.21
+ ;;^UTILITY(U,$J,358.3,34358,2)
+ ;;=^6639
+ ;;^UTILITY(U,$J,358.3,34359,0)
+ ;;=A81.9^^157^1746^8
+ ;;^UTILITY(U,$J,358.3,34359,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34359,1,3,0)
+ ;;=3^Atypical Virus Infection of CNS,Unspec
+ ;;^UTILITY(U,$J,358.3,34359,1,4,0)
+ ;;=4^A81.9
+ ;;^UTILITY(U,$J,358.3,34359,2)
+ ;;=^5000414
+ ;;^UTILITY(U,$J,358.3,34360,0)
+ ;;=A81.09^^157^1746^11
+ ;;^UTILITY(U,$J,358.3,34360,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34360,1,3,0)
+ ;;=3^Creutzfeldt-Jakob Disease NEC
+ ;;^UTILITY(U,$J,358.3,34360,1,4,0)
+ ;;=4^A81.09
+ ;;^UTILITY(U,$J,358.3,34360,2)
+ ;;=^5000410
+ ;;^UTILITY(U,$J,358.3,34361,0)
+ ;;=A81.00^^157^1746^12
+ ;;^UTILITY(U,$J,358.3,34361,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34361,1,3,0)
+ ;;=3^Creutzfeldt-Jakob Disease,Unspec
+ ;;^UTILITY(U,$J,358.3,34361,1,4,0)
+ ;;=4^A81.00
+ ;;^UTILITY(U,$J,358.3,34361,2)
+ ;;=^5000409
+ ;;^UTILITY(U,$J,358.3,34362,0)
+ ;;=A81.01^^157^1746^13
+ ;;^UTILITY(U,$J,358.3,34362,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34362,1,3,0)
+ ;;=3^Creutzfeldt-Jakob Disease,Variant
+ ;;^UTILITY(U,$J,358.3,34362,1,4,0)
+ ;;=4^A81.01
+ ;;^UTILITY(U,$J,358.3,34362,2)
+ ;;=^336701
+ ;;^UTILITY(U,$J,358.3,34363,0)
+ ;;=A81.89^^157^1746^7
+ ;;^UTILITY(U,$J,358.3,34363,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34363,1,3,0)
+ ;;=3^Atypical Virus Infection of CNS NEC
+ ;;^UTILITY(U,$J,358.3,34363,1,4,0)
+ ;;=4^A81.89
+ ;;^UTILITY(U,$J,358.3,34363,2)
+ ;;=^5000413
+ ;;^UTILITY(U,$J,358.3,34364,0)
+ ;;=A81.2^^157^1746^33
+ ;;^UTILITY(U,$J,358.3,34364,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34364,1,3,0)
+ ;;=3^Progressive Multifocal Leukoencephalopathy
+ ;;^UTILITY(U,$J,358.3,34364,1,4,0)
+ ;;=4^A81.2
+ ;;^UTILITY(U,$J,358.3,34364,2)
+ ;;=^5000411
+ ;;^UTILITY(U,$J,358.3,34365,0)
+ ;;=B20.^^157^1746^20
+ ;;^UTILITY(U,$J,358.3,34365,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34365,1,3,0)
+ ;;=3^HIV Disease w/ Dementia w/ Behavioral Disturbances
+ ;;^UTILITY(U,$J,358.3,34365,1,4,0)
+ ;;=4^B20.
+ ;;^UTILITY(U,$J,358.3,34365,2)
+ ;;=^5000555^F02.81
+ ;;^UTILITY(U,$J,358.3,34366,0)
+ ;;=B20.^^157^1746^21
+ ;;^UTILITY(U,$J,358.3,34366,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,34366,1,3,0)
+ ;;=3^HIV Disease w/ Dementia w/o Behavioral Disturbances
+ ;;^UTILITY(U,$J,358.3,34366,1,4,0)
+ ;;=4^B20.
+ ;;^UTILITY(U,$J,358.3,34366,2)
+ ;;=^5000555^F02.80
+ ;;^UTILITY(U,$J,358.3,34367,0)
+ ;;=F10.27^^157^1746^1

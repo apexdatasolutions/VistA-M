@@ -1,134 +1,142 @@
-IBDEI09S ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI09S ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,4530,1,5,0)
- ;;=5^151.4
- ;;^UTILITY(U,$J,358.3,4530,2)
- ;;=CA of Stomach Body^267067
- ;;^UTILITY(U,$J,358.3,4531,0)
- ;;=151.0^^37^345^31
- ;;^UTILITY(U,$J,358.3,4531,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4531,1,4,0)
- ;;=4^CA of Stomach Cardia
- ;;^UTILITY(U,$J,358.3,4531,1,5,0)
- ;;=5^151.0
- ;;^UTILITY(U,$J,358.3,4531,2)
- ;;=CA of Stomach Cardia^267063
- ;;^UTILITY(U,$J,358.3,4532,0)
- ;;=151.3^^37^345^32
- ;;^UTILITY(U,$J,358.3,4532,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4532,1,4,0)
- ;;=4^CA of Stomach Fundus
- ;;^UTILITY(U,$J,358.3,4532,1,5,0)
- ;;=5^151.3
- ;;^UTILITY(U,$J,358.3,4532,2)
- ;;=CA of Fundus of Stomach^267066
- ;;^UTILITY(U,$J,358.3,4533,0)
- ;;=151.6^^37^345^33
- ;;^UTILITY(U,$J,358.3,4533,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4533,1,4,0)
- ;;=4^CA of Stomach Great Curve
- ;;^UTILITY(U,$J,358.3,4533,1,5,0)
- ;;=5^151.6
- ;;^UTILITY(U,$J,358.3,4533,2)
- ;;=^267069
- ;;^UTILITY(U,$J,358.3,4534,0)
- ;;=151.5^^37^345^34
- ;;^UTILITY(U,$J,358.3,4534,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4534,1,4,0)
- ;;=4^CA of Stomach Less Curv
- ;;^UTILITY(U,$J,358.3,4534,1,5,0)
- ;;=5^151.5
- ;;^UTILITY(U,$J,358.3,4534,2)
- ;;=CA of Lesser Curve of Stomach^267068
- ;;^UTILITY(U,$J,358.3,4535,0)
- ;;=151.1^^37^345^26
- ;;^UTILITY(U,$J,358.3,4535,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4535,1,4,0)
- ;;=4^CA of Pylorus
- ;;^UTILITY(U,$J,358.3,4535,1,5,0)
- ;;=5^151.1
- ;;^UTILITY(U,$J,358.3,4535,2)
- ;;=Cancer of Pylorus^267064
- ;;^UTILITY(U,$J,358.3,4536,0)
- ;;=151.8^^37^345^35
- ;;^UTILITY(U,$J,358.3,4536,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4536,1,4,0)
- ;;=4^CA of Stomach,Other
- ;;^UTILITY(U,$J,358.3,4536,1,5,0)
- ;;=5^151.8
- ;;^UTILITY(U,$J,358.3,4536,2)
- ;;=CA, Stomach, Other^267070
- ;;^UTILITY(U,$J,358.3,4537,0)
- ;;=150.9^^37^345^14
- ;;^UTILITY(U,$J,358.3,4537,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4537,1,4,0)
- ;;=4^CA of Esophagus
- ;;^UTILITY(U,$J,358.3,4537,1,5,0)
- ;;=5^150.9
- ;;^UTILITY(U,$J,358.3,4537,2)
- ;;=CA of Esophagus^267055
- ;;^UTILITY(U,$J,358.3,4538,0)
- ;;=150.2^^37^345^3
- ;;^UTILITY(U,$J,358.3,4538,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4538,1,4,0)
- ;;=4^CA of Abdominal Esophagus
- ;;^UTILITY(U,$J,358.3,4538,1,5,0)
- ;;=5^150.2
- ;;^UTILITY(U,$J,358.3,4538,2)
- ;;=CA of Abdominal Esophagus^267058
- ;;^UTILITY(U,$J,358.3,4539,0)
- ;;=150.0^^37^345^7
- ;;^UTILITY(U,$J,358.3,4539,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4539,1,4,0)
- ;;=4^CA of Cervical Esophagus
- ;;^UTILITY(U,$J,358.3,4539,1,5,0)
- ;;=5^150.0
- ;;^UTILITY(U,$J,358.3,4539,2)
- ;;=CA of Cervical Esophagus^267056
- ;;^UTILITY(U,$J,358.3,4540,0)
- ;;=150.5^^37^345^15
- ;;^UTILITY(U,$J,358.3,4540,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4540,1,4,0)
- ;;=4^CA of Esophagus,Lower
- ;;^UTILITY(U,$J,358.3,4540,1,5,0)
- ;;=5^150.5
- ;;^UTILITY(U,$J,358.3,4540,2)
- ;;=CA of Lower Esophagus^267061
- ;;^UTILITY(U,$J,358.3,4541,0)
- ;;=150.4^^37^345^16
- ;;^UTILITY(U,$J,358.3,4541,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4541,1,4,0)
- ;;=4^CA of Esophagus,Middle
- ;;^UTILITY(U,$J,358.3,4541,1,5,0)
- ;;=5^150.4
- ;;^UTILITY(U,$J,358.3,4541,2)
- ;;=CA of Middle Esoph^267060
- ;;^UTILITY(U,$J,358.3,4542,0)
- ;;=150.3^^37^345^17
- ;;^UTILITY(U,$J,358.3,4542,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4542,1,4,0)
- ;;=4^CA of Esophagus,Upper
- ;;^UTILITY(U,$J,358.3,4542,1,5,0)
- ;;=5^150.3
- ;;^UTILITY(U,$J,358.3,4542,2)
- ;;=CA, Upper Esophagus^267059
- ;;^UTILITY(U,$J,358.3,4543,0)
- ;;=150.1^^37^345^36
- ;;^UTILITY(U,$J,358.3,4543,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4543,1,4,0)
- ;;=4^CA of Thoracic Esophagus
+ ;;^UTILITY(U,$J,358.3,4043,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4043,1,3,0)
+ ;;=3^Influenza w/ Other Manifestation
+ ;;^UTILITY(U,$J,358.3,4043,1,4,0)
+ ;;=4^J11.89
+ ;;^UTILITY(U,$J,358.3,4043,2)
+ ;;=^5008163
+ ;;^UTILITY(U,$J,358.3,4044,0)
+ ;;=J11.00^^28^261^30
+ ;;^UTILITY(U,$J,358.3,4044,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4044,1,3,0)
+ ;;=3^Influenza w/ Pneumonia
+ ;;^UTILITY(U,$J,358.3,4044,1,4,0)
+ ;;=4^J11.00
+ ;;^UTILITY(U,$J,358.3,4044,2)
+ ;;=^5008156
+ ;;^UTILITY(U,$J,358.3,4045,0)
+ ;;=J04.0^^28^261^31
+ ;;^UTILITY(U,$J,358.3,4045,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4045,1,3,0)
+ ;;=3^Laryngitis,Acute
+ ;;^UTILITY(U,$J,358.3,4045,1,4,0)
+ ;;=4^J04.0
+ ;;^UTILITY(U,$J,358.3,4045,2)
+ ;;=^5008137
+ ;;^UTILITY(U,$J,358.3,4046,0)
+ ;;=J37.0^^28^261^32
+ ;;^UTILITY(U,$J,358.3,4046,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4046,1,3,0)
+ ;;=3^Laryngitis,Chronic
+ ;;^UTILITY(U,$J,358.3,4046,1,4,0)
+ ;;=4^J37.0
+ ;;^UTILITY(U,$J,358.3,4046,2)
+ ;;=^269902
+ ;;^UTILITY(U,$J,358.3,4047,0)
+ ;;=R09.81^^28^261^33
+ ;;^UTILITY(U,$J,358.3,4047,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4047,1,3,0)
+ ;;=3^Nasal Congestion
+ ;;^UTILITY(U,$J,358.3,4047,1,4,0)
+ ;;=4^R09.81
+ ;;^UTILITY(U,$J,358.3,4047,2)
+ ;;=^5019203
+ ;;^UTILITY(U,$J,358.3,4048,0)
+ ;;=J34.2^^28^261^34
+ ;;^UTILITY(U,$J,358.3,4048,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4048,1,3,0)
+ ;;=3^Nasal Septum,Deviated
+ ;;^UTILITY(U,$J,358.3,4048,1,4,0)
+ ;;=4^J34.2
+ ;;^UTILITY(U,$J,358.3,4048,2)
+ ;;=^259087
+ ;;^UTILITY(U,$J,358.3,4049,0)
+ ;;=J34.3^^28^261^35
+ ;;^UTILITY(U,$J,358.3,4049,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4049,1,3,0)
+ ;;=3^Nasal Turbinates,Hypertrophy
+ ;;^UTILITY(U,$J,358.3,4049,1,4,0)
+ ;;=4^J34.3
+ ;;^UTILITY(U,$J,358.3,4049,2)
+ ;;=^269909
+ ;;^UTILITY(U,$J,358.3,4050,0)
+ ;;=J00.^^28^261^36
+ ;;^UTILITY(U,$J,358.3,4050,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4050,1,3,0)
+ ;;=3^Nasopharyngitis,Acute
+ ;;^UTILITY(U,$J,358.3,4050,1,4,0)
+ ;;=4^J00.
+ ;;^UTILITY(U,$J,358.3,4050,2)
+ ;;=^5008115
+ ;;^UTILITY(U,$J,358.3,4051,0)
+ ;;=J31.1^^28^261^37
+ ;;^UTILITY(U,$J,358.3,4051,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4051,1,3,0)
+ ;;=3^Nasopharyngitis,Chronic
+ ;;^UTILITY(U,$J,358.3,4051,1,4,0)
+ ;;=4^J31.1
+ ;;^UTILITY(U,$J,358.3,4051,2)
+ ;;=^269888
+ ;;^UTILITY(U,$J,358.3,4052,0)
+ ;;=J34.9^^28^261^38
+ ;;^UTILITY(U,$J,358.3,4052,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4052,1,3,0)
+ ;;=3^Nose & Nasal Sinuse Disorder,Unspec
+ ;;^UTILITY(U,$J,358.3,4052,1,4,0)
+ ;;=4^J34.9
+ ;;^UTILITY(U,$J,358.3,4052,2)
+ ;;=^5008212
+ ;;^UTILITY(U,$J,358.3,4053,0)
+ ;;=Z99.81^^28^261^39
+ ;;^UTILITY(U,$J,358.3,4053,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4053,1,3,0)
+ ;;=3^Oxygen,Supplemental,Dependence
+ ;;^UTILITY(U,$J,358.3,4053,1,4,0)
+ ;;=4^Z99.81
+ ;;^UTILITY(U,$J,358.3,4053,2)
+ ;;=^5063760
+ ;;^UTILITY(U,$J,358.3,4054,0)
+ ;;=J02.9^^28^261^41
+ ;;^UTILITY(U,$J,358.3,4054,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4054,1,3,0)
+ ;;=3^Pharyngitis,Acute,Unspec
+ ;;^UTILITY(U,$J,358.3,4054,1,4,0)
+ ;;=4^J02.9
+ ;;^UTILITY(U,$J,358.3,4054,2)
+ ;;=^5008130
+ ;;^UTILITY(U,$J,358.3,4055,0)
+ ;;=J31.2^^28^261^42
+ ;;^UTILITY(U,$J,358.3,4055,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4055,1,3,0)
+ ;;=3^Pharyngitis,Chronic
+ ;;^UTILITY(U,$J,358.3,4055,1,4,0)
+ ;;=4^J31.2
+ ;;^UTILITY(U,$J,358.3,4055,2)
+ ;;=^269886
+ ;;^UTILITY(U,$J,358.3,4056,0)
+ ;;=J94.9^^28^261^43
+ ;;^UTILITY(U,$J,358.3,4056,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4056,1,3,0)
+ ;;=3^Pleural Condition,Unspec
+ ;;^UTILITY(U,$J,358.3,4056,1,4,0)
+ ;;=4^J94.9
+ ;;^UTILITY(U,$J,358.3,4056,2)
+ ;;=^5008320

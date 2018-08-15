@@ -1,12 +1,13 @@
 PSJCOM ;BIR/CML3-FINISH COMPLEX UNIT DOSE ORDERS ENTERED THROUGH OE/RR ;02 Feb 2001  12:20 PM
- ;;5.0;INPATIENT MEDICATIONS;**110,186,267**;16 DEC 97;Build 158
- ;
+ ;;5.0;INPATIENT MEDICATIONS;**110,186,267,281,315,338**;16 DEC 97;Build 8
+ ;;Per VHA Directive 2004-038, this routine should not be modified.
  ; Reference to ^VALM1 is supported by DBIA 10116.
  ; Reference to ^PS(55 is supported by DBIA 2191.
  ; Reference to ^%DTC is supported by DBIA 10000.
  ; Reference to ^%RCR is supported by DBIA 10022.
  ; Reference to ^DIR is supported by DBIA 10026.
  ; Reference to ^TIUEDIT is supported by DBIA 2410.
+ ; Reference to ^TMP("PSODAOC",$J supported by DBIA 6071.
  ;
 UPD ;
  Q:'PSJCOM
@@ -18,12 +19,15 @@ UPD ;
  S:$D(PSGSCH) $P(^TMP("PSJCOM",$J,+PSGORD,2),"^")=PSGSCH
  I PSGSM,PSGOHSM'=PSGHSM S $P(^TMP("PSJCOM",$J,+PSGORD,0),"^",5)=PSGSM,$P(^TMP("PSJCOM",$J,+PSGORD,0),"^",6)=PSGHSM
  W "."
+ F Q=1,3 K @(PSGOEEWF_Q_")") S %X="^PS(53.45,"_PSJSYSP_","_$S(Q=1:2,1:1)_",",%Y=PSGOEEWF_Q_"," K @(PSGOEEWF_Q_")") D %XY^%RCR W "."
+ ; Above code added to update file 53.1.
  S PSGOEEWF="^TMP(""PSJCOM"",$J,+PSGORD,"
  F Q=1,3 K @(PSGOEEWF_Q_")") S %X="^PS(53.45,"_PSJSYSP_","_$S(Q=1:2,1:1)_",",%Y=PSGOEEWF_Q_"," K @(PSGOEEWF_Q_")") D %XY^%RCR W "."  ;MOU-0100-30945
  S PSGND=$G(^TMP("PSJCOM",$J,+PSGORD,0)),X=$P(PSGND,U,24)
  S PSJOWALL=+$G(^PS(55,PSGP,5.1))
  I $S(X="R":1,+$G(^PS(55,PSGP,5.1))>PSGDT:0,1:X'="E") S X=$G(^TMP("PSJCOM",$J,+PSGORD,2)) D ENWALL^PSGNE3(+$P(X,U,2),+$P(X,U,4),PSGP)
  S $P(^TMP("PSJCOM",$J,+PSGORD,.2),U,2)=PSGDO,$P(^TMP("PSJCOM",$J,+PSGORD,2),U,5)=PSGAT S:$G(PSGS0XT) $P(^(2),U,6)=PSGS0XT
+ S:PSGRF]"" ^TMP("PSJCOM",$J,+PSGORD,2.1)=$G(PSGDUR)_U_$G(PSGRMVT)_U_$G(PSGRMV)_U_$G(PSGRF) K PSGDUR,PSGRMVT,PSGRMV,PSGRF ;315
  I 'PSGOEAV D NEWNVAL(PSGORD,$S(+PSJSYSU=3:22005,1:22000))
  I $D(^PS(53.45,DUZ,5,1,0)) D FILESI^PSJBCMA5(PSGP,PSGORD) N SIARRAY S SIARRAY="" D NEWNVAL^PSGAL5(PSGORD,6000,"SPECIAL INSTRUCTIONS",,.SIARRAY)
  I PSGOEAV,+PSJSYSU=3 D VFY Q
@@ -31,6 +35,8 @@ UPD ;
  Q
 VFY ; change status, move to 55, and change label record
  Q:'PSJCOM
+ S ^TMP("PSODAOC",$J,"IP IEN")=PSGORD
+ D SETOC^PSJNEWOC(PSGORD)
  I '$D(^TMP("PSJCOM",$J,+PSGORD)) M ^TMP("PSJCOM",$J,+PSGORD)=^PS(53.1,+PSGORD)
  NEW PSJDOSE,PSJDSFLG
  D DOSECHK^PSJDOSE
@@ -73,7 +79,7 @@ DONE ;
  .N DIR W ! S DIR(0)="S^Y:Yes;N:No",DIR("A")="Do you want to enter a Progress Note",DIR("B")="No" D ^DIR
  .Q:Y="N"
  .D MAIN^TIUEDIT(3,.TIUDA,PSGP,"","","","",1)
- S VALMBCK="Q" K CHK,DA,DIE,F,DP,DR,ND,PSGAL,PSGODA,PSJDOSE,PSJVAR,VND4,X Q
+ S VALMBCK="Q" K CHK,DA,DIE,F,DP,DR,ND,PSGAL,PSGODA,PSJDOSE,PSJVAR,VND4,X,%X,%Y,Q,QQ Q
  ;
 DDCHK ; dispense drug check
  S DRGF=$S('$D(^TMP("PSJCOM2",$J,+PSGORD)):"^TMP(""PSJCOM"","_$J_","_+PSGORD_",",1:"^TMP(""PSJCOM2"","_$J_","_+PSGORD_","),CHK=$S('$O(@(DRGF_"1,0)")):7,1:0)

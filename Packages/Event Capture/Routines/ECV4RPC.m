@@ -1,7 +1,7 @@
-ECV4RPC ;ALB/ACS;Event Capture Spreadsheet Data Validation ;Oct 13, 2000
- ;;2.0; EVENT CAPTURE ;**25,33,49**;8 May 96
+ECV4RPC ;ALB/ACS;Event Capture Spreadsheet Data Validation ;11/7/16  15:43
+ ;;2.0;EVENT CAPTURE;**25,33,49,131,134**;8 May 96;Build 12
  ;
- ;-----------------------------------------------------------------------
+ ;----------------------------------------------------------------------
  ;  Validates the following Event Capture Spreadsheet Upload fields:
  ;    1. VOLUME
  ;    2. ENCOUNTER DATE/TIME
@@ -9,7 +9,7 @@ ECV4RPC ;ALB/ACS;Event Capture Spreadsheet Data Validation ;Oct 13, 2000
  ;
  ;  Determines the following:
  ;    1. PATIENT STATUS
- ;-----------------------------------------------------------------------
+ ;----------------------------------------------------------------------
  ;
  ;--Volume must be 1 thru 99--
  N ECVOLVN,ECPDT
@@ -45,135 +45,119 @@ ECV4RPC ;ALB/ACS;Event Capture Spreadsheet Data Validation ;Oct 13, 2000
  ;
  ;--Provider Name or IEN must be on the New Person file--
  ;--and provider must have active person class  --
- N ECPROV1
- S ECERRFLG=0,ECPRVIEN=0
- ; Remove punctuation if necessary
- I ECPROVV?.E1P S ECPROVV=$E(ECPROVV,1,$L(ECPROVV)-1)
- ; If provider ien passed in, find on file
- S ECPROV1=ECPROVV
- I +ECPROVV>0 D
- . I '$D(^VA(200,ECPROVV)) D
- . . ; Provider ien not found on New Person file
- . . S ECERRMSG=$P($T(PROV4^ECV4RPC),";;",2)
- . . S ECCOLERR=ECPRVLPC
- . . D ERROR
- . E  S ECPRVIEN=ECPROVV
- ;
- ; If provider name passed in, find on B x-ref and
- ; make sure there isn't more than 1 with same name
- N ECPRVNXT,ECPRVMOR,ECPRVMNT
- S (ECPRVMOR,ECPRVMNT)=0,ECCOLERR=ECPRVLPC
- I +ECPROVV'>0,$D(^VA(200,"B",ECPROVV)) D
- . S ECPRVIE2=$O(^VA(200,"B",ECPROVV,""))
- . S ECPRVNXT=$O(^VA(200,"B",ECPROVV,ECPRVIE2))
- . I ECPRVNXT'="" D
- . . S ECERRMSG=$P($T(PROV5^ECV4RPC),";;",2)
- . . S ECCOLERR=ECPRVLPC
- . . D ERROR
- . . S ECPRVMOR=1
- . E  S ECPRVIEN=ECPRVIE2
- ;
- I +ECPROVV'>0,'$D(^VA(200,"B",ECPROVV)) D
- . ; Exact match not found on New Person file
- . ; Generate standard error message
- . S ECERRMSG=$P($T(PROV1^ECV4RPC),";;",2)
- . S ECCOLERR=ECPRVLPC
- . D ERROR
- . S ECPRVMNT=1
- ; If exact match not found, get provider info
- I ECPRVMNT D
- . ; look at next provider on file for 'close' match
- . N ECINFO,ECLENPRV,NOMATCH,ECSPEC,ECSUBSP
- . N ECCOUNT,ECFIRST,ECLAST,ECPRVNXT,ECPRVIE2,ECPRVIE3
- . S ECLENPRV=$L(ECPROVV),(ECPRVIE2,ECPRVIE3)="",(ECCOUNT,NOMATCH)=0
- . S ECPRVNXT=ECPROVV
- . F  S ECPRVNXT=$O(^VA(200,"B",ECPRVNXT)) Q:NOMATCH=1  D
- . . F  S ECPRVIE3=$O(^VA(200,"B",ECPRVNXT,ECPRVIE3)) Q:ECPRVIE3=""  D
- . . . I ECPROVV'=$E(ECPRVNXT,1,ECLENPRV) S NOMATCH=1
- . . . E  D
- . . . . ;get provider info and add to end of error string
- . . . . S ECINFO=$$GET^XUA4A72(ECPRVIE3,ECENCV)
- . . . . I +ECINFO'>0 D
- . . . . . S ECERRMSG=ECPRVNXT_"-"_ECPRVIE3_"-Inactive Provider for this encounter date"
- . . . . . D ERROR
- . . . . . ;S ECCOUNT=ECCOUNT+1
- . . . . I +ECINFO>0 D
- . . . . . S ECCOUNT=ECCOUNT+1
- . . . . . S ECSPEC=$P(ECINFO,U,3)
- . . . . . I ECSPEC=" " S ECSPEC=""
- . . . . . S ECSUBSP=$P(ECINFO,U,4)
- . . . . . I ECSUBSP=" " S ECSUBSP=""
- . . . . . S ECPCLASS=$P(^VA(200,ECPRVIE3,"USC1",0),U,3)
- . . . . . I ECPCLASS="" S ECPCLASS="PERSON CLASS NOT FOUND"
- . . . . . S ECERRMSG=ECPRVNXT_"-"_ECPRVIE3_"-"_ECSPEC_"-"_ECSUBSP_"-"_ECPCLASS
- . . . . . D ERROR
- ; If more than one provider with that name, get info
- I ECPRVMOR D
- . N ECINFO,ECSPEC,ECSUBSP,ECPCLASS,ECCOUNT,ECFIRST,ECLAST,ECPRVIE2
- . S ECCOUNT=0,ECPRVIE2=0
- . ;look at each provider for exact match
- . F  S ECPRVIE2=$O(^VA(200,"B",ECPROVV,ECPRVIE2)) Q:ECPRVIE2=""  D
- . . S ECINFO=$$GET^XUA4A72(ECPRVIE2,ECENCV)
- . . I +ECINFO'>0 D
- . . . S ECERRMSG=ECPROVV_"-"_ECPRVIE2_"-Inactive Provider for this encounter date"
+ N ECPROV1,ECPROVV,NUM,PRVARR,DSSUPCE ;131,134
+ S DSSUPCE=$S($P($G(^ECD(+$G(ECDSSIEN),0)),U,14)="N":"N",1:"A") ;134 DSS unit's send to PCE setting, either (N)o records or (A)ll records
+ ;131 Entire section modified to add checking for up to 7 providers
+ F NUM=1:1:7 S ECPROVV=@("ECPRV"_NUM_"V") I ECPROVV'="" D  I '$G(ECERRFLG) S @("ECPRV"_NUM_"V")=$G(ECPRVIEN)  ;If no error, set provider value to IEN
+ .S ECERRFLG=0,ECPRVIEN=0
+ .; Remove punctuation if necessary
+ .I ECPROVV?.E1P S ECPROVV=$E(ECPROVV,1,$L(ECPROVV)-1)
+ .; If provider ien passed in, find on file
+ .S ECPROV1=ECPROVV
+ .I +ECPROVV>0 D
+ . . I '$D(^VA(200,ECPROVV)) D
+ . . . ; Provider ien not found on New Person file
+ . . . S ECERRMSG=$P($T(PROV4^ECV4RPC),";;",2)
+ . . . S ECCOLERR=@("ECPRV"_NUM_"PC")
  . . . D ERROR
- . . I +ECINFO>0 D
- . . . S ECCOUNT=ECCOUNT+1
- . . . S ECSPEC=$P(ECINFO,U,3)
- . . . I ECSPEC=" " S ECSPEC=""
- . . . S ECSUBSP=$P(ECINFO,U,4)
- . . . I ECSUBSP=" " S ECSUBSP=""
- . . . S ECPCLASS=$P(^VA(200,ECPRVIE2,"USC1",0),U,3)
- . . . I ECPCLASS="" S ECPCLASS="PERSON CLASS NOT FOUND"
- . . . S ECERRMSG=ECPROVV_"-"_ECPRVIE2_"-"_ECSPEC_"-"_ECSUBSP_"-"_ECPCLASS
+ . . E  S ECPRVIEN=ECPROVV
+ .;
+ .; If provider name passed in, find on B x-ref and
+ .; make sure there isn't more than 1 with same name
+ .N ECPRVNXT,ECPRVMOR,ECPRVMNT
+ .S (ECPRVMOR,ECPRVMNT)=0,ECCOLERR=@("ECPRV"_NUM_"PC")
+ .I +ECPROVV'>0,$D(^VA(200,"B",ECPROVV)) D
+ . . S ECPRVIE2=$O(^VA(200,"B",ECPROVV,""))
+ . . S ECPRVNXT=$O(^VA(200,"B",ECPROVV,ECPRVIE2))
+ . . I ECPRVNXT'="" D
+ . . . S ECERRMSG=$P($T(PROV5^ECV4RPC),";;",2)
+ . . . S ECCOLERR=@("ECPRV"_NUM_"PC")
  . . . D ERROR
- ;
- ; Check person class of valid provider
- S ECPROVV=ECPROV1
- S %DT="XST",X=ECENCV D ^%DT S ECPDT=$S(+Y>0:+Y,1:DT)
- I 'ECERRFLG D
- . I ECPRVIEN=0 S ECPRVIEN=$O(^VA(200,"B",ECPROVV,0))
- . I '$D(^VA(200,ECPRVIEN,"USC1",0)) D 
- . . ; Person class xref doesn't exist
- . . S ECERRMSG=$P($T(PROV2^ECV4RPC),";;",2)
- . . S ECCOLERR=ECPRVLPC
+ . . . S ECPRVMOR=1
+ . . E  S ECPRVIEN=ECPRVIE2
+ .;
+ .I +ECPROVV'>0,'$D(^VA(200,"B",ECPROVV)) D
+ . . ; Exact match not found on New Person file
+ . . ; Generate standard error message
+ . . S ECERRMSG=$P($T(PROV1^ECV4RPC),";;",2)
+ . . S ECCOLERR=@("ECPRV"_NUM_"PC")
  . . D ERROR
+ . . S ECPRVMNT=1
+ .; If exact match not found, get provider info
+ .I ECPRVMNT D
+ . . ; look at next provider on file for 'close' match
+ . . N ECINFO,ECLENPRV,NOMATCH,ECSPEC,ECSUBSP
+ . . N ECCOUNT,ECFIRST,ECLAST,ECPRVNXT,ECPRVIE2,ECPRVIE3
+ . . S ECLENPRV=$L(ECPROVV),(ECPRVIE2,ECPRVIE3)="",(ECCOUNT,NOMATCH)=0
+ . . S ECPRVNXT=ECPROVV
+ . . F  S ECPRVNXT=$O(^VA(200,"B",ECPRVNXT)) Q:NOMATCH=1!(ECPRVNXT="")  D  ;131 Added check for null
+ . . . F  S ECPRVIE3=$O(^VA(200,"B",ECPRVNXT,ECPRVIE3)) Q:ECPRVIE3=""  D
+ . . . . I ECPROVV'=$E(ECPRVNXT,1,ECLENPRV) S NOMATCH=1
+ . . . . E  D
+ . . . . . ;get provider info and add to end of error string
+ . . . . . S ECINFO=$$GET^XUA4A72(ECPRVIE3,ECENCV)
+ . . . . . I +ECINFO'>0 D
+ . . . . . . S ECERRMSG=ECPRVNXT_"-"_ECPRVIE3_"-"_$S(DSSUPCE="N"&($D(^EC(722,"B",ECPRVIE3))):"Non Licensed Provider",+ECINFO=-1:"Not a provider",1:"Inactive Provider for this encounter date") ;134
+ . . . . . . D ERROR
+ . . . . . . ;S ECCOUNT=ECCOUNT+1
+ . . . . . I +ECINFO>0 D
+ . . . . . . S ECCOUNT=ECCOUNT+1
+ . . . . . . S ECSPEC=$P(ECINFO,U,3)
+ . . . . . . I ECSPEC=" " S ECSPEC=""
+ . . . . . . S ECSUBSP=$P(ECINFO,U,4)
+ . . . . . . I ECSUBSP=" " S ECSUBSP=""
+ . . . . . . S ECPCLASS=$P(^VA(200,ECPRVIE3,"USC1",0),U,3)
+ . . . . . . I ECPCLASS="" S ECPCLASS="PERSON CLASS NOT FOUND"
+ . . . . . . S ECERRMSG=ECPRVNXT_"-"_ECPRVIE3_"-"_ECSPEC_"-"_ECSUBSP_"-"_ECPCLASS
+ . . . . . . D ERROR
+ .; If more than one provider with that name, get info
+ .I ECPRVMOR D
+ . . N ECINFO,ECSPEC,ECSUBSP,ECPCLASS,ECCOUNT,ECFIRST,ECLAST,ECPRVIE2
+ . . S ECCOUNT=0,ECPRVIE2=0
+ . . ;look at each provider for exact match
+ . . F  S ECPRVIE2=$O(^VA(200,"B",ECPROVV,ECPRVIE2)) Q:ECPRVIE2=""  D
+ . . . S ECINFO=$$GET^XUA4A72(ECPRVIE2,ECENCV)
+ . . . I +ECINFO'>0 D
+ . . . . S ECERRMSG=ECPROVV_"-"_ECPRVIE2_"-"_$S(DSSUPCE="N"&($D(^EC(722,"B",ECPRVIE2))):"Non Licensed Provider",+ECINFO=-1:"Not a provider",1:"Inactive Provider for this encounter date") ;134
+ . . . . D ERROR
+ . . . I +ECINFO>0 D
+ . . . . S ECCOUNT=ECCOUNT+1
+ . . . . S ECSPEC=$P(ECINFO,U,3)
+ . . . . I ECSPEC=" " S ECSPEC=""
+ . . . . S ECSUBSP=$P(ECINFO,U,4)
+ . . . . I ECSUBSP=" " S ECSUBSP=""
+ . . . . S ECPCLASS=$P(^VA(200,ECPRVIE2,"USC1",0),U,3)
+ . . . . I ECPCLASS="" S ECPCLASS="PERSON CLASS NOT FOUND"
+ . . . . S ECERRMSG=ECPROVV_"-"_ECPRVIE2_"-"_ECSPEC_"-"_ECSUBSP_"-"_ECPCLASS
+ . . . . D ERROR
+ .;
+ .; Check for valid provider
+ .S ECPROVV=ECPROV1
+ .S %DT="XST",X=ECENCV D ^%DT S ECPDT=$S(+Y>0:+Y,1:DT)
+ .I 'ECERRFLG D  ;134
+ . .I DSSUPCE="A"!(DSSUPCE="N"&('$D(^EC(722,"B",ECPRVIEN)))) D  ;134 Checking "traditional" providers if DSS unit sends all records or sends no records and person is not in file 722
+ . . . ;134 section updated
+ . . . I ECPRVIEN=0 S ECPRVIEN=$O(^VA(200,"B",ECPROVV,0))
+ . . . S ECINFO=$$GET^XUA4A72(ECPRVIEN,ECPDT) I +ECINFO<0 D  ;134
+ . . . . S ECERRMSG=$S(+ECINFO=-1:$P($T(PROV8^ECV4RPC),";;",2),1:$P($T(PROV3^ECV4RPC),";;",2)) ;134
+ . . . . S ECCOLERR=@("ECPRV"_NUM_"PC")
+ . . . . D ERROR
+ . . . . Q
+ . . . Q
+ . .;134 Added section to check for non licensed providers
+ . .I DSSUPCE="N",'$D(^EC(722,"B",ECPRVIEN)),$$GET^XUA4A72(ECPRVIEN,ECPDT)<0 D
+ . . . S ECERRMSG=$P($T(PROV7^ECV4RPC),";;",2)
+ . . . S ECCOLERR=@("ECPRV"_NUM_"PC")
+ . . . D ERROR
+ . . . Q
  . . Q
- . Q
- ;
- I 'ECERRFLG D
- . S ECPCLASS=$P(^VA(200,ECPRVIEN,"USC1",0),U,3)
- . I ECPCLASS="" D
- . . ; Person class field empty
- . . S ECERRMSG=$P($T(PROV2^ECV4RPC),";;",2)
- . . S ECCOLERR=ECPRVLPC
- . . D ERROR
- . . Q
- . Q
- ;
- I 'ECERRFLG,'$D(^VA(200,ECPRVIEN,"USC1",ECPCLASS,0)) D
- . ; Person class information missing
- . S ECERRMSG=$P($T(PROV2^ECV4RPC),";;",2)
- . S ECCOLERR=ECPRVLPC
- . D ERROR
- . Q
- ;
- ; Check for person class expiration date
- I 'ECERRFLG,$$GET^XUA4A72(ECPRVIEN,ECPDT)<1 D
- . ; Person class contains an expiration date
- . S ECERRMSG=$P($T(PROV3^ECV4RPC),";;",2)
- . S ECCOLERR=ECPRVLPC
- . D ERROR
- . Q
- ;
- I 'ECERRFLG D
- . S ECPRVTYP=$P(^VA(200,ECPRVIEN,"USC1",ECPCLASS,0),U,1)
- . I $P(^USC(8932.1,ECPRVTYP,0),U,4)'="a" D
- . . ; Person class is not active
- . . S ECERRMSG=$P($T(PROV3^ECV4RPC),";;",2)
- . . S ECCOLERR=ECPRVLPC
- . . D ERROR
- . . Q
+ .I 'ECERRFLG D  ;131 Section added to check for duplicate providers
+ ..I $D(PRVARR(ECPRVIEN)) D
+ ...S ECERRMSG=$P($T(PROV6^ECV4RPC),";;",2)
+ ...S ECCOLERR=@("ECPRV"_NUM_"PC")
+ ...D ERROR
+ ..S PRVARR(ECPRVIEN)=""
+ ..Q
  . Q
  ;
  ;--Determine Patient Status--
@@ -234,7 +218,10 @@ PROV1 ;;Provider has no B x-ref on New Person file(#200)
 PROV2 ;;Unable to determine person class
 PROV3 ;;Provider does not have an active person class
 PROV4 ;;Provider IEN not found on New Person file(#200)
-PROV5 ;;More than one provider  with this name - use IEN
+PROV5 ;;More than one provider with this name - use IEN
+PROV6 ;;Duplicate provider identified - providers must be unique
+PROV7 ;;Provider not identified as a non licensed provider
+PROV8 ;;The provider has never been assigned a provider class
 ENC1 ;;Invalid encounter date/time.  Date cannot be in the future.
 STAT1 ;;Unable to determine patient status
 STAT2 ;;The patient status is Inpatient

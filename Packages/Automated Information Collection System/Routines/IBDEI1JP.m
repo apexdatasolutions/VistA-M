@@ -1,0 +1,128 @@
+IBDEI1JP ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,25838,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25838,1,3,0)
+ ;;=3^Embolism/Thrombosis of Upper Extremity Arteries
+ ;;^UTILITY(U,$J,358.3,25838,1,4,0)
+ ;;=4^I74.2
+ ;;^UTILITY(U,$J,358.3,25838,2)
+ ;;=^5007801
+ ;;^UTILITY(U,$J,358.3,25839,0)
+ ;;=N28.0^^127^1266^109
+ ;;^UTILITY(U,$J,358.3,25839,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25839,1,3,0)
+ ;;=3^Ischemia/Infarction of Kidney
+ ;;^UTILITY(U,$J,358.3,25839,1,4,0)
+ ;;=4^N28.0
+ ;;^UTILITY(U,$J,358.3,25839,2)
+ ;;=^5015626
+ ;;^UTILITY(U,$J,358.3,25840,0)
+ ;;=S91.322A^^127^1266^110
+ ;;^UTILITY(U,$J,358.3,25840,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25840,1,3,0)
+ ;;=3^Laceration w/ FB Left Foot,Init Encntr
+ ;;^UTILITY(U,$J,358.3,25840,1,4,0)
+ ;;=4^S91.322A
+ ;;^UTILITY(U,$J,358.3,25840,2)
+ ;;=^5137527
+ ;;^UTILITY(U,$J,358.3,25841,0)
+ ;;=S71.022A^^127^1266^111
+ ;;^UTILITY(U,$J,358.3,25841,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25841,1,3,0)
+ ;;=3^Laceration w/ FB Left Hip,Init Encntr
+ ;;^UTILITY(U,$J,358.3,25841,1,4,0)
+ ;;=4^S71.022A
+ ;;^UTILITY(U,$J,358.3,25841,2)
+ ;;=^5136178
+ ;;^UTILITY(U,$J,358.3,25842,0)
+ ;;=S71.122A^^127^1266^112
+ ;;^UTILITY(U,$J,358.3,25842,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25842,1,3,0)
+ ;;=3^Laceration w/ FB Left Thigh,Init Encntr
+ ;;^UTILITY(U,$J,358.3,25842,1,4,0)
+ ;;=4^S71.122A
+ ;;^UTILITY(U,$J,358.3,25842,2)
+ ;;=^5136193
+ ;;^UTILITY(U,$J,358.3,25843,0)
+ ;;=S91.321A^^127^1266^113
+ ;;^UTILITY(U,$J,358.3,25843,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25843,1,3,0)
+ ;;=3^Laceration w/ FB Right Foot,Init Encntr
+ ;;^UTILITY(U,$J,358.3,25843,1,4,0)
+ ;;=4^S91.321A
+ ;;^UTILITY(U,$J,358.3,25843,2)
+ ;;=^5044329
+ ;;^UTILITY(U,$J,358.3,25844,0)
+ ;;=S71.021A^^127^1266^114
+ ;;^UTILITY(U,$J,358.3,25844,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25844,1,3,0)
+ ;;=3^Laceration w/ FB Right Hip,Init Encntr
+ ;;^UTILITY(U,$J,358.3,25844,1,4,0)
+ ;;=4^S71.021A
+ ;;^UTILITY(U,$J,358.3,25844,2)
+ ;;=^5036984
+ ;;^UTILITY(U,$J,358.3,25845,0)
+ ;;=S71.121A^^127^1266^115
+ ;;^UTILITY(U,$J,358.3,25845,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25845,1,3,0)
+ ;;=3^Laceration w/ FB Right Thigh,Init Encntr
+ ;;^UTILITY(U,$J,358.3,25845,1,4,0)
+ ;;=4^S71.121A
+ ;;^UTILITY(U,$J,358.3,25845,2)
+ ;;=^5037023
+ ;;^UTILITY(U,$J,358.3,25846,0)
+ ;;=I89.0^^127^1266^116
+ ;;^UTILITY(U,$J,358.3,25846,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25846,1,3,0)
+ ;;=3^Lymphedema NEC
+ ;;^UTILITY(U,$J,358.3,25846,1,4,0)
+ ;;=4^I89.0
+ ;;^UTILITY(U,$J,358.3,25846,2)
+ ;;=^5008073
+ ;;^UTILITY(U,$J,358.3,25847,0)
+ ;;=L98.429^^127^1266^117
+ ;;^UTILITY(U,$J,358.3,25847,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25847,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Back w/ Unspec Severity
+ ;;^UTILITY(U,$J,358.3,25847,1,4,0)
+ ;;=4^L98.429
+ ;;^UTILITY(U,$J,358.3,25847,2)
+ ;;=^5009586
+ ;;^UTILITY(U,$J,358.3,25848,0)
+ ;;=L98.419^^127^1266^118
+ ;;^UTILITY(U,$J,358.3,25848,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25848,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Buttock w/ Unspec Severity
+ ;;^UTILITY(U,$J,358.3,25848,1,4,0)
+ ;;=4^L98.419
+ ;;^UTILITY(U,$J,358.3,25848,2)
+ ;;=^5009581
+ ;;^UTILITY(U,$J,358.3,25849,0)
+ ;;=L97.229^^127^1266^119
+ ;;^UTILITY(U,$J,358.3,25849,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25849,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Left Calf w/ Unspec Severity
+ ;;^UTILITY(U,$J,358.3,25849,1,4,0)
+ ;;=4^L97.229
+ ;;^UTILITY(U,$J,358.3,25849,2)
+ ;;=^5009509
+ ;;^UTILITY(U,$J,358.3,25850,0)
+ ;;=L97.429^^127^1266^121
+ ;;^UTILITY(U,$J,358.3,25850,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25850,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Left Heel/Midfoot w/ Unspec Severity

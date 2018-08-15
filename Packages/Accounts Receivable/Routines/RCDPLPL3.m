@@ -1,10 +1,12 @@
-RCDPLPL3 ;WISC/RFJ-link payments listmanager options (link payment) ;1 Jun 00
- ;;4.5;Accounts Receivable;**153**;Mar 20, 1995
- ;;Per VHA Directive 10-93-142, this routine should not be modified.
+RCDPLPL3 ;WISC/RFJ - link payments listmanager options (link payment) ;1 Jun 00
+ ;;4.5;Accounts Receivable;**153,304,301**;Mar 20, 1995;Build 144
+ ;;Per VA Directive 6402, this routine should not be modified.
  Q
  ;
  ;
 LINKPAY ;  link a payment to an account
+ N DA,DIR,DIRUT,DIROUT,DTOUT,DUOUT,X,Y
+ ;
  D FULL^VALM1
  S VALMBCK="R"
  ;
@@ -12,12 +14,13 @@ LINKPAY ;  link a payment to an account
  W !,"payment transaction selected from the above list.  If the selected"
  W !,"receipt has been previously processed, the selected account in the"
  W !,"accounts receivable package will be updated with the payment.",!
- N INDEX,RCDPFLAG,RCERROR,RCGECSCR,RCPAY,RCRECTDA,RCSTATUS,RCTRANDA
+ N INDEX,RCDPFLAG,RCERROR,RCGECSCR,RCPAY,RCRECTDA,RCSTATUS,RCTRANDA,RCDCHKSW,HRCDCKSW,RCDPTYPE
  S INDEX=$$SELPAY^RCDPLPL1 I 'INDEX Q
  S RCPAY=$G(^TMP("RCDPLPLM",$J,"IDX",INDEX,INDEX))
  S RCRECTDA=+$P(RCPAY,"^"),RCTRANDA=+$P(RCPAY,"^",2)
  ;
  I '$$LOCKREC^RCDPRPLU(RCRECTDA) Q
+ S RCDPTYPE=$P(^RCY(344,RCRECTDA,1,RCTRANDA,0),"^",19)
  ;
  ;  check to see if the cr document has been sent for the receipt
  S RCGECSCR=$P($G(^RCY(344,RCRECTDA,2)),"^")
@@ -66,10 +69,20 @@ LINKPAY ;  link a payment to an account
  .   D WRITE^RCDPRPLU(VALMSG)
  .   D QUIT
  ;
+ ;PRCA*4.5*304
+ ; Will this link payment link to multiple bills
+ ; Note:  some of the code and logic below is also in tag PROCESS^RCDPLPL4.  
+ ;        If changes in logic are made below, please review this tag as well.
+ ;    
+ S DIR(0)="YO",DIR("B")="NO"
+ S DIR("A")="  Will this transaction be linked to multiple claims (Y/N)"
+ D ^DIR
+ I $G(DTOUT)!($G(DUOUT)) D QUIT Q
+ I +Y D MULTIPLE^RCDPLPL4(RCRECTDA,RCTRANDA,RCGECSCR,$G(RCSTATUS)) D QUIT Q
+ ;end PRCA*4.5*304
  ;
  W !!,"Editing Payment: ",RCTRANDA
- D EDITACCT^RCDPURET(RCRECTDA,RCTRANDA)
- ;
+DBTRBIL S RCDCHKSW=1,HRCDCKSW=0 D EDITACCT^RCDPURET(RCRECTDA,RCTRANDA) I RCDCHKSW=0 G DBTRBIL   ;prca*4.5*301
  W !
  ;  account not entered
  I '$P(^RCY(344,RCRECTDA,1,RCTRANDA,0),"^",3) D  Q
@@ -82,7 +95,7 @@ LINKPAY ;  link a payment to an account
  W !,"-----------------------------"
  D SHOWPAY(RCRECTDA,RCTRANDA)
  ;
- I $$ASKACCT'=1 D  Q
+ I $$ASKACCT()'=1 D  Q
  .   D DELEACCT^RCDPURET(RCRECTDA,RCTRANDA)
  .   S VALMSG="Account was deleted and not linked."
  .   D WRITE^RCDPRPLU(VALMSG)
@@ -114,6 +127,17 @@ LINKPAY ;  link a payment to an account
  .   ;  payment processed correctly
  .   W "  done."
  .   W !
+ .   ;
+ .   ;PRCA*4.5*304
+ .   D REMCMT^RCDPLPL4(RCRECTDA,RCTRANDA)   ; Remove the supense comment.  No longer needed. 
+ .   ;
+ .   ;File entry in Audit Log
+ .   D AUDIT^RCBEPAY(RCRECTDA,RCTRANDA,"P")
+ .   ;
+ .   ; Update Suspense Status
+ .   D SUSPDIS^RCBEPAY(RCRECTDA,RCTRANDA,"PD")
+ .   ;end PRCA*4.5*304
+ .   ;
  .   I $E(RCSTATUS)="A" D
  .   .   W !,"Since the FMS cash receipt document is Accepted in FMS, you need to go"
  .   .   W !,"online in FMS and transfer the amount paid out of the station's suspense"
@@ -150,7 +174,7 @@ SHOWPAY(RCRECTDA,RCTRANDA) ;  show the payment transaction
  Q
  ;
  ;
-ASKACCT() ;  ask if its the correct account
+ASKACCT() ; ask if its the correct account
  ;  1 is yes, otherwise no
  N DIR,DIQ2,DTOUT,DUOUT,X,Y
  S DIR(0)="YO",DIR("B")="NO"

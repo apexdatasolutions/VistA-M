@@ -1,5 +1,5 @@
 VPRDTIU ;SLC/MKB -- TIU extract ;8/2/11  15:29
- ;;1.0;VIRTUAL PATIENT RECORD;**1,2**;Sep 01, 2011;Build 317
+ ;;1.0;VIRTUAL PATIENT RECORD;**1,2,4,5**;Sep 01, 2011;Build 21
  ;;Per VHA Directive 2004-038, this routine should not be modified.
  ;
  ; External References          DBIA#
@@ -44,10 +44,9 @@ EN(DFN,BEG,END,MAX,ID) ; -- find patient's documents
  I CLASS="LR" D RPTS^VPRDLRA(DFN,BEG,END,MAX) Q
  F VPRC=1:1:$L(CLASS,U) S CLS=$P(CLASS,U,VPRC) D  Q:VPRCNT'<MAX
  . F VPRS=1:1:$L(STATUS,U) S CTXT=$P(STATUS,U,VPRS) D  Q:VPRCNT'<MAX
- .. D CONTEXT^TIUSRVLO(.VPRY,CLS,CTXT,DFN,BEG,END,,MAX,,1)
+ .. D CONTEXT^TIUSRVLO(.VPRY,CLS,CTXT,DFN,BEG,END,,,,1)
  .. S VPRN=0 F  S VPRN=$O(@VPRY@(VPRN)) Q:VPRN<1  D  Q:VPRCNT'<MAX
  ... S VPRX=$G(@VPRY@(VPRN)) Q:'$$MATCH(VPRX)
- ... Q:$D(^TMP("VPRD",$J,+VPRX))  ;already included
  ... K VPRITM D EN1(VPRX,.VPRITM) Q:'$D(VPRITM)
  ... D XML(.VPRITM) S VPRCNT=VPRCNT+1
  .. K @VPRY
@@ -90,13 +89,14 @@ EN1(VPRX,DOC) ; -- return a document in DOC("attribute")=value
  S DOC("encounter")=$G(VPRTIU(IEN,.03,"I"))
  S:$G(VPRTEXT) DOC("content")=$$TEXT(IEN)
  ; providers &/or signatures
- S X=$P(VPRX,U,5),I=0 S:X I=I+1,DOC("clinician",I)=+X_U_$P(X,";",3)_"^A" ;author
- M ES=VPRTIU(IEN) I ES(1501,"I") D
- . S I=I+1
- . S DOC("clinician",I)=ES(1502,"I")_U_ES(1502,"E")_"^S^"_ES(1501,"I")_U_$$SIG(ES(1502,"I"))
- I ES(1507,"I") D  ; cosigner
- . S I=I+1
- . S DOC("clinician",I)=ES(1508,"I")_U_ES(1508,"E")_"^C^"_ES(1507,"I")_U_$$SIG(ES(1508,"I"))
+ S X=$P(VPRX,U,5),I=0               ;author
+ S:X I=I+1,DOC("clinician",I)=+X_U_$P(X,";",3)_"^A^^^"_$$PROVSPC^VPRD(+X)
+ M ES=VPRTIU(IEN) I ES(1501,"I") D  ;signed
+ . S I=I+1,X=ES(1502,"I")
+ . S DOC("clinician",I)=X_U_ES(1502,"E")_"^S^"_ES(1501,"I")_U_$$SIG(X)_U_$$PROVSPC^VPRD(X)
+ I ES(1507,"I") D                   ;cosigned
+ . S I=I+1,X=ES(1508,"I")
+ . S DOC("clinician",I)=X_U_ES(1508,"E")_"^C^"_ES(1507,"I")_U_$$SIG(X)_U_$$PROVSPC^VPRD(X)
  Q
  ;
 CATG(DA) ; -- Return a code for document type #8925.1 DA
@@ -129,11 +129,26 @@ RPT(VPRY,IFN) ; -- Return text of document in @VPRY@(n)
  D TGET^TIUSRVR1(.VPRY,IFN)
  Q
  ;
-TEXT(IFN) ; -- Get document IFN text, return temp array name
- N VPRY,Y,I,J ;protect I&J for calling loops
- S IFN=+$G(IFN) D TGET^TIUSRVR1(.VPRY,IFN)
- M ^TMP("VPRTEXT",$J,IFN)=@VPRY K @VPRY
- S Y=$NA(^TMP("VPRTEXT",$J,IFN))
+TEXT(VPRIFN) ; -- Get document IFN text, return temp array name
+ N VPRY,Y
+ N IEN,IFN,CLASS,STATUS,CNT,X0,X,I,J ;protect for calling loops
+ S VPRIFN=+$G(VPRIFN) D TGET^TIUSRVR1(.VPRY,VPRIFN)
+ M ^TMP("VPRTEXT",$J,VPRIFN)=@VPRY K @VPRY
+ S Y=$NA(^TMP("VPRTEXT",$J,VPRIFN))
+ Q Y
+ ;
+INFO(IFN) ; -- Returns ien^localTitle^natlTitle^VUID
+ ; or -1^STATUS if not viewable
+ N X,Y,VPRTIU,LT,NT,VUID,I,J S IFN=+$G(IFN)
+ I '$D(^TIU(8925,IFN,0)) Q "-1^DELETED"
+ D EXTRACT^TIULQ(IFN,"VPRTIU",,".01;.05")
+ I VPRTIU(IFN,.05,"I")<7!(VPRTIU(IFN,.05,"I")>13) Q "-1^"_VPRTIU(IFN,.05,"E")
+ S LT=$G(VPRTIU(IFN,.01,"E")),VUID=""
+ I $P(LT," ")="Addendum" Q "-1^ADDENDUM"
+ S NT=$P($G(^TIU(8925.1,+$G(VPRTIU(IFN,.01,"I")),15)),U) I NT D
+ . S VUID=$$VUID^VPRD(+NT,8926.1)
+ . S NT=$$GET1^DIQ(8926.1,+NT_",",.01)
+ S Y=IFN_U_LT_U_NT_U_VUID
  Q Y
  ;
  ; ------------ Return data to middle tier ------------
@@ -146,7 +161,7 @@ XML(DOC) ; -- Return patient documents as XML
  .. D ADD("<"_ATT_"s>")
  .. S I=0 F  S I=$O(DOC(ATT,I)) Q:I<1  D
  ... S X=$G(DOC(ATT,I)),NAMES=""
- ... I ATT="clinician" S NAMES="code^name^role^dateTime^signature^Z"
+ ... I ATT="clinician" S NAMES="code^name^role^dateTime^signature^"_$$PROVTAGS^VPRD_"^Z"
  ... S Y="<"_ATT_" "_$$LOOP_"/>" D ADD(Y)
  .. D ADD("</"_ATT_"s>")
  . S X=$G(DOC(ATT)),Y="" Q:'$L(X)
@@ -238,6 +253,7 @@ SETUP ; -- convert FILTER("attribute") = value to TIU criteria
 MATCH(DOC) ; -- Return 1 or 0, if document DA matches search criteria
  N Y,DA,LOCAL,NATL,X0,OK S Y=0
  S DA=+$G(DOC) G:DA<1 MQ
+ ; both parent + addenda returned by TIU if any match search criteria
  ; include addenda if pulling only unsigned items:
  I $P(DOC,U,2)?1"Addendum ".E,STATUS'=2 G MQ
  ; remove completed parent notes from TIU unsigned list:

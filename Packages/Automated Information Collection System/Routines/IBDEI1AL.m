@@ -1,136 +1,126 @@
-IBDEI1AL ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1AL ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,23134,1,4,0)
- ;;=4^799.21
- ;;^UTILITY(U,$J,358.3,23134,1,5,0)
- ;;=5^Nervousness
- ;;^UTILITY(U,$J,358.3,23134,2)
- ;;=^338291
- ;;^UTILITY(U,$J,358.3,23135,0)
- ;;=786.30^^144^1419^74
- ;;^UTILITY(U,$J,358.3,23135,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23135,1,4,0)
- ;;=4^786.30
- ;;^UTILITY(U,$J,358.3,23135,1,5,0)
- ;;=5^Hemoptysis
- ;;^UTILITY(U,$J,358.3,23135,2)
- ;;=^339669
- ;;^UTILITY(U,$J,358.3,23136,0)
- ;;=787.60^^144^1419^83
- ;;^UTILITY(U,$J,358.3,23136,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23136,1,4,0)
- ;;=4^787.60
- ;;^UTILITY(U,$J,358.3,23136,1,5,0)
- ;;=5^Incontinence of Feces
- ;;^UTILITY(U,$J,358.3,23136,2)
- ;;=^339670
- ;;^UTILITY(U,$J,358.3,23137,0)
- ;;=V68.1^^144^1420^4
- ;;^UTILITY(U,$J,358.3,23137,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23137,1,4,0)
- ;;=4^V68.1
- ;;^UTILITY(U,$J,358.3,23137,1,5,0)
- ;;=5^Rx Refill (Also mark Condition)
- ;;^UTILITY(U,$J,358.3,23137,2)
- ;;=RX Refill (also mark Condition)^295585
- ;;^UTILITY(U,$J,358.3,23138,0)
- ;;=V68.81^^144^1420^5
- ;;^UTILITY(U,$J,358.3,23138,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23138,1,4,0)
- ;;=4^V68.81
- ;;^UTILITY(U,$J,358.3,23138,1,5,0)
- ;;=5^Transfer of Care-Also mark DX
- ;;^UTILITY(U,$J,358.3,23138,2)
- ;;=Transfer of Care ^295587
- ;;^UTILITY(U,$J,358.3,23139,0)
- ;;=V58.83^^144^1420^2
- ;;^UTILITY(U,$J,358.3,23139,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23139,1,4,0)
- ;;=4^V58.83
- ;;^UTILITY(U,$J,358.3,23139,1,5,0)
- ;;=5^Encounter for Therapeutic Drug Monitoring
- ;;^UTILITY(U,$J,358.3,23139,2)
- ;;=Encounter for Therapeutic Drug Monitoring^322076
- ;;^UTILITY(U,$J,358.3,23140,0)
- ;;=V68.09^^144^1420^3
- ;;^UTILITY(U,$J,358.3,23140,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23140,1,4,0)
- ;;=4^V68.09
- ;;^UTILITY(U,$J,358.3,23140,1,5,0)
- ;;=5^Issue of Medical Cert NEC
- ;;^UTILITY(U,$J,358.3,23140,2)
- ;;=^335321
- ;;^UTILITY(U,$J,358.3,23141,0)
- ;;=V68.01^^144^1420^1
- ;;^UTILITY(U,$J,358.3,23141,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23141,1,4,0)
- ;;=4^V68.01
- ;;^UTILITY(U,$J,358.3,23141,1,5,0)
- ;;=5^Disability Examination
- ;;^UTILITY(U,$J,358.3,23141,2)
- ;;=^335320
- ;;^UTILITY(U,$J,358.3,23142,0)
- ;;=V82.89^^144^1421^4
- ;;^UTILITY(U,$J,358.3,23142,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23142,1,4,0)
- ;;=4^V82.89
- ;;^UTILITY(U,$J,358.3,23142,1,5,0)
- ;;=5^Screening for TBI/Not Found
- ;;^UTILITY(U,$J,358.3,23142,2)
- ;;=^322099
- ;;^UTILITY(U,$J,358.3,23143,0)
- ;;=V15.51^^144^1421^5
- ;;^UTILITY(U,$J,358.3,23143,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23143,1,4,0)
- ;;=4^V15.51
- ;;^UTILITY(U,$J,358.3,23143,1,5,0)
- ;;=5^TBI w/ HX Skull FX
- ;;^UTILITY(U,$J,358.3,23143,2)
- ;;=^336786
- ;;^UTILITY(U,$J,358.3,23144,0)
- ;;=V15.59^^144^1421^6
- ;;^UTILITY(U,$J,358.3,23144,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23144,1,4,0)
- ;;=4^V15.59
- ;;^UTILITY(U,$J,358.3,23144,1,5,0)
- ;;=5^TBI w/o HX Skull FX
- ;;^UTILITY(U,$J,358.3,23144,2)
- ;;=^336787
- ;;^UTILITY(U,$J,358.3,23145,0)
- ;;=905.0^^144^1421^3
- ;;^UTILITY(U,$J,358.3,23145,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23145,1,4,0)
- ;;=4^905.0
- ;;^UTILITY(U,$J,358.3,23145,1,5,0)
- ;;=5^Late Effect Skull/Face FX
- ;;^UTILITY(U,$J,358.3,23145,2)
- ;;=^275214
- ;;^UTILITY(U,$J,358.3,23146,0)
- ;;=907.0^^144^1421^2
- ;;^UTILITY(U,$J,358.3,23146,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23146,1,4,0)
- ;;=4^907.0
- ;;^UTILITY(U,$J,358.3,23146,1,5,0)
- ;;=5^LT Eff Intracranial Inj
- ;;^UTILITY(U,$J,358.3,23146,2)
- ;;=^68489
- ;;^UTILITY(U,$J,358.3,23147,0)
- ;;=V15.52^^144^1421^1
- ;;^UTILITY(U,$J,358.3,23147,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23147,1,4,0)
- ;;=4^V15.52
+ ;;^UTILITY(U,$J,358.3,21587,2)
+ ;;=^5021073
+ ;;^UTILITY(U,$J,358.3,21588,0)
+ ;;=S06.5X6S^^101^1032^99
+ ;;^UTILITY(U,$J,358.3,21588,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21588,1,3,0)
+ ;;=3^Traum subdr hem w LOC >24 hr w/o ret consc w surv, sequela
+ ;;^UTILITY(U,$J,358.3,21588,1,4,0)
+ ;;=4^S06.5X6S
+ ;;^UTILITY(U,$J,358.3,21588,2)
+ ;;=^5021076
+ ;;^UTILITY(U,$J,358.3,21589,0)
+ ;;=S06.5X3S^^101^1032^100
+ ;;^UTILITY(U,$J,358.3,21589,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21589,1,3,0)
+ ;;=3^Traum subdr hem w LOC of 1-5 hrs 59 min, sequela
+ ;;^UTILITY(U,$J,358.3,21589,1,4,0)
+ ;;=4^S06.5X3S
+ ;;^UTILITY(U,$J,358.3,21589,2)
+ ;;=^5021067
+ ;;^UTILITY(U,$J,358.3,21590,0)
+ ;;=S06.5X1S^^101^1032^101
+ ;;^UTILITY(U,$J,358.3,21590,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21590,1,3,0)
+ ;;=3^Traum subdr hem w LOC of 30 minutes or less, sequela
+ ;;^UTILITY(U,$J,358.3,21590,1,4,0)
+ ;;=4^S06.5X1S
+ ;;^UTILITY(U,$J,358.3,21590,2)
+ ;;=^5021061
+ ;;^UTILITY(U,$J,358.3,21591,0)
+ ;;=S06.5X2S^^101^1032^102
+ ;;^UTILITY(U,$J,358.3,21591,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21591,1,3,0)
+ ;;=3^Traum subdr hem w LOC of 31-59 min, sequela
+ ;;^UTILITY(U,$J,358.3,21591,1,4,0)
+ ;;=4^S06.5X2S
+ ;;^UTILITY(U,$J,358.3,21591,2)
+ ;;=^5021064
+ ;;^UTILITY(U,$J,358.3,21592,0)
+ ;;=S06.5X4S^^101^1032^103
+ ;;^UTILITY(U,$J,358.3,21592,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21592,1,3,0)
+ ;;=3^Traum subdr hem w LOC of 6 hours to 24 hours, sequela
+ ;;^UTILITY(U,$J,358.3,21592,1,4,0)
+ ;;=4^S06.5X4S
+ ;;^UTILITY(U,$J,358.3,21592,2)
+ ;;=^5021070
+ ;;^UTILITY(U,$J,358.3,21593,0)
+ ;;=S06.5X9S^^101^1032^104
+ ;;^UTILITY(U,$J,358.3,21593,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21593,1,3,0)
+ ;;=3^Traum subdr hem w LOC of unsp duration, sequela
+ ;;^UTILITY(U,$J,358.3,21593,1,4,0)
+ ;;=4^S06.5X9S
+ ;;^UTILITY(U,$J,358.3,21593,2)
+ ;;=^5021085
+ ;;^UTILITY(U,$J,358.3,21594,0)
+ ;;=S06.5X0S^^101^1032^105
+ ;;^UTILITY(U,$J,358.3,21594,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21594,1,3,0)
+ ;;=3^Traum subdr hem w/o LOC, sequela
+ ;;^UTILITY(U,$J,358.3,21594,1,4,0)
+ ;;=4^S06.5X0S
+ ;;^UTILITY(U,$J,358.3,21594,2)
+ ;;=^5021058
+ ;;^UTILITY(U,$J,358.3,21595,0)
+ ;;=M84.351S^^101^1033^107
+ ;;^UTILITY(U,$J,358.3,21595,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21595,1,3,0)
+ ;;=3^Stress fracture, right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21595,1,4,0)
+ ;;=4^M84.351S
+ ;;^UTILITY(U,$J,358.3,21595,2)
+ ;;=^5013685
+ ;;^UTILITY(U,$J,358.3,21596,0)
+ ;;=M84.352S^^101^1033^106
+ ;;^UTILITY(U,$J,358.3,21596,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21596,1,3,0)
+ ;;=3^Stress fracture, left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21596,1,4,0)
+ ;;=4^M84.352S
+ ;;^UTILITY(U,$J,358.3,21596,2)
+ ;;=^5013691
+ ;;^UTILITY(U,$J,358.3,21597,0)
+ ;;=M84.451S^^101^1033^95
+ ;;^UTILITY(U,$J,358.3,21597,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21597,1,3,0)
+ ;;=3^Pathological fracture, right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21597,1,4,0)
+ ;;=4^M84.451S
+ ;;^UTILITY(U,$J,358.3,21597,2)
+ ;;=^5013907
+ ;;^UTILITY(U,$J,358.3,21598,0)
+ ;;=M84.452S^^101^1033^94
+ ;;^UTILITY(U,$J,358.3,21598,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21598,1,3,0)
+ ;;=3^Pathological fracture, left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21598,1,4,0)
+ ;;=4^M84.452S
+ ;;^UTILITY(U,$J,358.3,21598,2)
+ ;;=^5013913
+ ;;^UTILITY(U,$J,358.3,21599,0)
+ ;;=S72.021S^^101^1033^12
+ ;;^UTILITY(U,$J,358.3,21599,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21599,1,3,0)
+ ;;=3^Displaced epiphy fx of right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21599,1,4,0)
+ ;;=4^S72.021S
+ ;;^UTILITY(U,$J,358.3,21599,2)
+ ;;=^5037136

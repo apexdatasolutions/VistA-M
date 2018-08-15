@@ -1,138 +1,134 @@
-IBDEI0OE ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0OE ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,12025,1,4,0)
- ;;=4^424.1
- ;;^UTILITY(U,$J,358.3,12025,1,5,0)
- ;;=5^Aortic Stenosis
- ;;^UTILITY(U,$J,358.3,12025,2)
- ;;=Aortic Stenosis^9330
- ;;^UTILITY(U,$J,358.3,12026,0)
- ;;=424.0^^84^797^15
- ;;^UTILITY(U,$J,358.3,12026,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12026,1,4,0)
- ;;=4^424.0
- ;;^UTILITY(U,$J,358.3,12026,1,5,0)
- ;;=5^Mitral Valve Prolapse
- ;;^UTILITY(U,$J,358.3,12026,2)
- ;;=^78367
- ;;^UTILITY(U,$J,358.3,12027,0)
- ;;=394.0^^84^797^14
- ;;^UTILITY(U,$J,358.3,12027,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12027,1,4,0)
- ;;=4^394.0
- ;;^UTILITY(U,$J,358.3,12027,1,5,0)
- ;;=5^Mitral Stenosis
- ;;^UTILITY(U,$J,358.3,12027,2)
- ;;=Mitral Stenosis^78404
- ;;^UTILITY(U,$J,358.3,12028,0)
- ;;=V43.3^^84^797^20
- ;;^UTILITY(U,$J,358.3,12028,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12028,1,4,0)
- ;;=4^V43.3
- ;;^UTILITY(U,$J,358.3,12028,1,5,0)
- ;;=5^S/P Heart Valve Replacement
- ;;^UTILITY(U,$J,358.3,12028,2)
- ;;=^295440
- ;;^UTILITY(U,$J,358.3,12029,0)
- ;;=454.0^^84^797^23
- ;;^UTILITY(U,$J,358.3,12029,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12029,1,4,0)
- ;;=4^454.0
- ;;^UTILITY(U,$J,358.3,12029,1,5,0)
- ;;=5^Varicose Veins
- ;;^UTILITY(U,$J,358.3,12029,2)
- ;;=Varicose Veins^125410
- ;;^UTILITY(U,$J,358.3,12030,0)
- ;;=396.0^^84^797^5
- ;;^UTILITY(U,$J,358.3,12030,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12030,1,4,0)
- ;;=4^396.0
- ;;^UTILITY(U,$J,358.3,12030,1,5,0)
- ;;=5^Aortic and Mitral Stenosis
- ;;^UTILITY(U,$J,358.3,12030,2)
- ;;=Aortic and Mitral Stenosis^269580
- ;;^UTILITY(U,$J,358.3,12031,0)
- ;;=396.3^^84^797^4
- ;;^UTILITY(U,$J,358.3,12031,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12031,1,4,0)
- ;;=4^396.3
- ;;^UTILITY(U,$J,358.3,12031,1,5,0)
- ;;=5^Aortic and Mitral Insufficiency
- ;;^UTILITY(U,$J,358.3,12031,2)
- ;;=Aortic and Mitral Insufficiency^269583
- ;;^UTILITY(U,$J,358.3,12032,0)
- ;;=786.50^^84^797^12
- ;;^UTILITY(U,$J,358.3,12032,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12032,1,4,0)
- ;;=4^786.50
- ;;^UTILITY(U,$J,358.3,12032,1,5,0)
- ;;=5^Chest Pain
- ;;^UTILITY(U,$J,358.3,12032,2)
- ;;=^22485
- ;;^UTILITY(U,$J,358.3,12033,0)
- ;;=414.00^^84^797^7
- ;;^UTILITY(U,$J,358.3,12033,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12033,1,4,0)
- ;;=4^414.00
- ;;^UTILITY(U,$J,358.3,12033,1,5,0)
- ;;=5^CAD, S/P CABG
- ;;^UTILITY(U,$J,358.3,12033,2)
- ;;=Coronary Artery Disease^28512
- ;;^UTILITY(U,$J,358.3,12034,0)
- ;;=425.4^^84^797^10
- ;;^UTILITY(U,$J,358.3,12034,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12034,1,4,0)
- ;;=4^425.4
- ;;^UTILITY(U,$J,358.3,12034,1,5,0)
- ;;=5^Cardiomyopathy
- ;;^UTILITY(U,$J,358.3,12034,2)
- ;;=Cardiomyopathy^87808
- ;;^UTILITY(U,$J,358.3,12035,0)
- ;;=443.9^^84^797^17
- ;;^UTILITY(U,$J,358.3,12035,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12035,1,4,0)
- ;;=4^443.9
- ;;^UTILITY(U,$J,358.3,12035,1,5,0)
- ;;=5^Peripheral Vascular Disease
- ;;^UTILITY(U,$J,358.3,12035,2)
- ;;=^184182
- ;;^UTILITY(U,$J,358.3,12036,0)
- ;;=423.9^^84^797^16
- ;;^UTILITY(U,$J,358.3,12036,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12036,1,4,0)
- ;;=4^423.9
- ;;^UTILITY(U,$J,358.3,12036,1,5,0)
- ;;=5^Pericarditis
- ;;^UTILITY(U,$J,358.3,12036,2)
- ;;=^123813
- ;;^UTILITY(U,$J,358.3,12037,0)
- ;;=414.01^^84^797^6
- ;;^UTILITY(U,$J,358.3,12037,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12037,1,4,0)
- ;;=4^414.01
- ;;^UTILITY(U,$J,358.3,12037,1,5,0)
- ;;=5^CAD Native Artery
- ;;^UTILITY(U,$J,358.3,12037,2)
- ;;=^303281
- ;;^UTILITY(U,$J,358.3,12038,0)
- ;;=453.9^^84^797^25
- ;;^UTILITY(U,$J,358.3,12038,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12038,1,4,0)
- ;;=4^453.9
- ;;^UTILITY(U,$J,358.3,12038,1,5,0)
- ;;=5^Venous Thrombosis NOS
+ ;;^UTILITY(U,$J,358.3,11159,1,4,0)
+ ;;=4^F20.9
+ ;;^UTILITY(U,$J,358.3,11159,2)
+ ;;=^5003476
+ ;;^UTILITY(U,$J,358.3,11160,0)
+ ;;=F31.9^^68^679^6
+ ;;^UTILITY(U,$J,358.3,11160,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11160,1,3,0)
+ ;;=3^Bipolar Disorder,Unspec
+ ;;^UTILITY(U,$J,358.3,11160,1,4,0)
+ ;;=4^F31.9
+ ;;^UTILITY(U,$J,358.3,11160,2)
+ ;;=^331892
+ ;;^UTILITY(U,$J,358.3,11161,0)
+ ;;=F31.72^^68^679^7
+ ;;^UTILITY(U,$J,358.3,11161,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11161,1,3,0)
+ ;;=3^Bipolr Disorder,Full Remis,Most Recent Episode Hypomanic
+ ;;^UTILITY(U,$J,358.3,11161,1,4,0)
+ ;;=4^F31.72
+ ;;^UTILITY(U,$J,358.3,11161,2)
+ ;;=^5003512
+ ;;^UTILITY(U,$J,358.3,11162,0)
+ ;;=F31.71^^68^679^5
+ ;;^UTILITY(U,$J,358.3,11162,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11162,1,3,0)
+ ;;=3^Bipolar Disorder,Part Remis,Most Recent Episode Hypomanic
+ ;;^UTILITY(U,$J,358.3,11162,1,4,0)
+ ;;=4^F31.71
+ ;;^UTILITY(U,$J,358.3,11162,2)
+ ;;=^5003511
+ ;;^UTILITY(U,$J,358.3,11163,0)
+ ;;=F31.70^^68^679^4
+ ;;^UTILITY(U,$J,358.3,11163,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11163,1,3,0)
+ ;;=3^Bipolar Disorder,In Remis,Most Recent Episode Unspec
+ ;;^UTILITY(U,$J,358.3,11163,1,4,0)
+ ;;=4^F31.70
+ ;;^UTILITY(U,$J,358.3,11163,2)
+ ;;=^5003510
+ ;;^UTILITY(U,$J,358.3,11164,0)
+ ;;=F29.^^68^679^19
+ ;;^UTILITY(U,$J,358.3,11164,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11164,1,3,0)
+ ;;=3^Psychosis not d/t Substance/Known Physiol Cond,Unspec
+ ;;^UTILITY(U,$J,358.3,11164,1,4,0)
+ ;;=4^F29.
+ ;;^UTILITY(U,$J,358.3,11164,2)
+ ;;=^5003484
+ ;;^UTILITY(U,$J,358.3,11165,0)
+ ;;=F28.^^68^679^20
+ ;;^UTILITY(U,$J,358.3,11165,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11165,1,3,0)
+ ;;=3^Psychosis not d/t Substance/Known Physiol Cond NEC
+ ;;^UTILITY(U,$J,358.3,11165,1,4,0)
+ ;;=4^F28.
+ ;;^UTILITY(U,$J,358.3,11165,2)
+ ;;=^5003483
+ ;;^UTILITY(U,$J,358.3,11166,0)
+ ;;=F41.9^^68^679^3
+ ;;^UTILITY(U,$J,358.3,11166,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11166,1,3,0)
+ ;;=3^Anxiety Disorder,Unspec
+ ;;^UTILITY(U,$J,358.3,11166,1,4,0)
+ ;;=4^F41.9
+ ;;^UTILITY(U,$J,358.3,11166,2)
+ ;;=^5003567
+ ;;^UTILITY(U,$J,358.3,11167,0)
+ ;;=F42.^^68^679^13
+ ;;^UTILITY(U,$J,358.3,11167,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11167,1,3,0)
+ ;;=3^Obsessive-Compulsive Disorder
+ ;;^UTILITY(U,$J,358.3,11167,1,4,0)
+ ;;=4^F42.
+ ;;^UTILITY(U,$J,358.3,11167,2)
+ ;;=^5003568
+ ;;^UTILITY(U,$J,358.3,11168,0)
+ ;;=F45.0^^68^679^23
+ ;;^UTILITY(U,$J,358.3,11168,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11168,1,3,0)
+ ;;=3^Somatization Disorder
+ ;;^UTILITY(U,$J,358.3,11168,1,4,0)
+ ;;=4^F45.0
+ ;;^UTILITY(U,$J,358.3,11168,2)
+ ;;=^112280
+ ;;^UTILITY(U,$J,358.3,11169,0)
+ ;;=F69.^^68^679^2
+ ;;^UTILITY(U,$J,358.3,11169,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11169,1,3,0)
+ ;;=3^Adult Personality and Behavior Disorder,Unspec
+ ;;^UTILITY(U,$J,358.3,11169,1,4,0)
+ ;;=4^F69.
+ ;;^UTILITY(U,$J,358.3,11169,2)
+ ;;=^5003667
+ ;;^UTILITY(U,$J,358.3,11170,0)
+ ;;=F60.9^^68^679^17
+ ;;^UTILITY(U,$J,358.3,11170,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11170,1,3,0)
+ ;;=3^Personality Disorder,Unspec
+ ;;^UTILITY(U,$J,358.3,11170,1,4,0)
+ ;;=4^F60.9
+ ;;^UTILITY(U,$J,358.3,11170,2)
+ ;;=^5003639
+ ;;^UTILITY(U,$J,358.3,11171,0)
+ ;;=F32.9^^68^679^12
+ ;;^UTILITY(U,$J,358.3,11171,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11171,1,3,0)
+ ;;=3^MDD,Single Episode,Unspec
+ ;;^UTILITY(U,$J,358.3,11171,1,4,0)
+ ;;=4^F32.9
+ ;;^UTILITY(U,$J,358.3,11171,2)
+ ;;=^5003528
+ ;;^UTILITY(U,$J,358.3,11172,0)
+ ;;=F40.231^^68^679^9
+ ;;^UTILITY(U,$J,358.3,11172,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11172,1,3,0)
+ ;;=3^Fear of Injections/Transfusions

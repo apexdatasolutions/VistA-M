@@ -1,148 +1,138 @@
-IBDEI02F ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI02F ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,721,1,4,0)
- ;;=4^Biliary Tract NOS
- ;;^UTILITY(U,$J,358.3,721,1,5,0)
- ;;=5^576.9
- ;;^UTILITY(U,$J,358.3,721,2)
- ;;=^14271
- ;;^UTILITY(U,$J,358.3,722,0)
- ;;=577.1^^9^90^4
- ;;^UTILITY(U,$J,358.3,722,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,722,1,4,0)
- ;;=4^Chr Pancreatitis
- ;;^UTILITY(U,$J,358.3,722,1,5,0)
- ;;=5^577.1
- ;;^UTILITY(U,$J,358.3,722,2)
- ;;=^259100
- ;;^UTILITY(U,$J,358.3,723,0)
- ;;=577.2^^9^90^7
- ;;^UTILITY(U,$J,358.3,723,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,723,1,4,0)
- ;;=4^Pancreatic Pseudocyst
- ;;^UTILITY(U,$J,358.3,723,1,5,0)
- ;;=5^577.2
- ;;^UTILITY(U,$J,358.3,723,2)
- ;;=^30078
- ;;^UTILITY(U,$J,358.3,724,0)
- ;;=573.9^^9^90^6
- ;;^UTILITY(U,$J,358.3,724,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,724,1,4,0)
- ;;=4^Liver Disorder NOS
- ;;^UTILITY(U,$J,358.3,724,1,5,0)
- ;;=5^573.9
- ;;^UTILITY(U,$J,358.3,724,2)
- ;;=^123854
- ;;^UTILITY(U,$J,358.3,725,0)
- ;;=569.9^^9^90^5
- ;;^UTILITY(U,$J,358.3,725,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,725,1,4,0)
- ;;=4^Intestinal Disorder NOS
- ;;^UTILITY(U,$J,358.3,725,1,5,0)
- ;;=5^569.9
- ;;^UTILITY(U,$J,358.3,725,2)
- ;;=^123842
- ;;^UTILITY(U,$J,358.3,726,0)
- ;;=053.13^^9^91^1
- ;;^UTILITY(U,$J,358.3,726,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,726,1,4,0)
- ;;=4^Postherpetic Polyneuro
- ;;^UTILITY(U,$J,358.3,726,1,5,0)
- ;;=5^053.13
- ;;^UTILITY(U,$J,358.3,726,2)
- ;;=^266550
- ;;^UTILITY(U,$J,358.3,727,0)
- ;;=053.12^^9^91^2
- ;;^UTILITY(U,$J,358.3,727,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,727,1,4,0)
- ;;=4^Postherpetic Trigem Neural
- ;;^UTILITY(U,$J,358.3,727,1,5,0)
- ;;=5^053.12
- ;;^UTILITY(U,$J,358.3,727,2)
- ;;=^266546
- ;;^UTILITY(U,$J,358.3,728,0)
- ;;=99211^^10^92^1
- ;;^UTILITY(U,$J,358.3,728,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,728,1,1,0)
- ;;=1^Walk In
- ;;^UTILITY(U,$J,358.3,728,1,2,0)
- ;;=2^99211
- ;;^UTILITY(U,$J,358.3,729,0)
- ;;=388.43^^11^93^51
- ;;^UTILITY(U,$J,358.3,729,1,0)
+ ;;^UTILITY(U,$J,358.3,367,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,729,1,3,0)
- ;;=3^388.43
- ;;^UTILITY(U,$J,358.3,729,1,4,0)
- ;;=4^Impairm Auditory Discrim
- ;;^UTILITY(U,$J,358.3,729,2)
- ;;=^269533
- ;;^UTILITY(U,$J,358.3,730,0)
- ;;=780.4^^11^93^44
- ;;^UTILITY(U,$J,358.3,730,1,0)
+ ;;^UTILITY(U,$J,358.3,367,1,3,0)
+ ;;=3^Sexual Dysfuntion NEC
+ ;;^UTILITY(U,$J,358.3,367,1,4,0)
+ ;;=4^F52.8
+ ;;^UTILITY(U,$J,358.3,367,2)
+ ;;=^5003624
+ ;;^UTILITY(U,$J,358.3,368,0)
+ ;;=F52.9^^3^47^8
+ ;;^UTILITY(U,$J,358.3,368,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,730,1,3,0)
- ;;=3^780.4
- ;;^UTILITY(U,$J,358.3,730,1,4,0)
- ;;=4^Dizziness And Giddiness
- ;;^UTILITY(U,$J,358.3,730,2)
- ;;=^35946
- ;;^UTILITY(U,$J,358.3,731,0)
- ;;=381.9^^11^93^47
- ;;^UTILITY(U,$J,358.3,731,1,0)
+ ;;^UTILITY(U,$J,358.3,368,1,3,0)
+ ;;=3^Sexual Dysfunction,Unspec
+ ;;^UTILITY(U,$J,358.3,368,1,4,0)
+ ;;=4^F52.9
+ ;;^UTILITY(U,$J,358.3,368,2)
+ ;;=^5003625
+ ;;^UTILITY(U,$J,358.3,369,0)
+ ;;=G47.09^^3^48^11
+ ;;^UTILITY(U,$J,358.3,369,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,731,1,3,0)
- ;;=3^381.9
- ;;^UTILITY(U,$J,358.3,731,1,4,0)
- ;;=4^Eustachian Tube Dis Nos
- ;;^UTILITY(U,$J,358.3,731,2)
- ;;=^269394
- ;;^UTILITY(U,$J,358.3,732,0)
- ;;=381.81^^11^93^45
- ;;^UTILITY(U,$J,358.3,732,1,0)
+ ;;^UTILITY(U,$J,358.3,369,1,3,0)
+ ;;=3^Insomnia Disorder NEC
+ ;;^UTILITY(U,$J,358.3,369,1,4,0)
+ ;;=4^G47.09
+ ;;^UTILITY(U,$J,358.3,369,2)
+ ;;=^5003970
+ ;;^UTILITY(U,$J,358.3,370,0)
+ ;;=G47.00^^3^48^10
+ ;;^UTILITY(U,$J,358.3,370,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,732,1,3,0)
- ;;=3^381.81
- ;;^UTILITY(U,$J,358.3,732,1,4,0)
- ;;=4^Dysfunct Eustachian Tube
- ;;^UTILITY(U,$J,358.3,732,2)
- ;;=^259074
- ;;^UTILITY(U,$J,358.3,733,0)
- ;;=381.60^^11^93^62
- ;;^UTILITY(U,$J,358.3,733,1,0)
+ ;;^UTILITY(U,$J,358.3,370,1,3,0)
+ ;;=3^Insomnia Disorder
+ ;;^UTILITY(U,$J,358.3,370,1,4,0)
+ ;;=4^G47.00
+ ;;^UTILITY(U,$J,358.3,370,2)
+ ;;=^332924
+ ;;^UTILITY(U,$J,358.3,371,0)
+ ;;=G47.10^^3^48^9
+ ;;^UTILITY(U,$J,358.3,371,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,733,1,3,0)
- ;;=3^381.60
- ;;^UTILITY(U,$J,358.3,733,1,4,0)
- ;;=4^Obstr Eustach Tube Nos
- ;;^UTILITY(U,$J,358.3,733,2)
- ;;=^259070
- ;;^UTILITY(U,$J,358.3,734,0)
- ;;=381.7^^11^93^75
- ;;^UTILITY(U,$J,358.3,734,1,0)
+ ;;^UTILITY(U,$J,358.3,371,1,3,0)
+ ;;=3^Hypersomnolence Disorder/Unspec Hypersomnolence Disorder
+ ;;^UTILITY(U,$J,358.3,371,1,4,0)
+ ;;=4^G47.10
+ ;;^UTILITY(U,$J,358.3,371,2)
+ ;;=^332926
+ ;;^UTILITY(U,$J,358.3,372,0)
+ ;;=G47.419^^3^48^12
+ ;;^UTILITY(U,$J,358.3,372,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,734,1,3,0)
- ;;=3^381.7
- ;;^UTILITY(U,$J,358.3,734,1,4,0)
- ;;=4^Patulous Eustachian Tube
- ;;^UTILITY(U,$J,358.3,734,2)
- ;;=^269391
- ;;^UTILITY(U,$J,358.3,735,0)
- ;;=386.40^^11^93^54
- ;;^UTILITY(U,$J,358.3,735,1,0)
+ ;;^UTILITY(U,$J,358.3,372,1,3,0)
+ ;;=3^Narcolepsy
+ ;;^UTILITY(U,$J,358.3,372,1,4,0)
+ ;;=4^G47.419
+ ;;^UTILITY(U,$J,358.3,372,2)
+ ;;=^5003982
+ ;;^UTILITY(U,$J,358.3,373,0)
+ ;;=G47.33^^3^48^16
+ ;;^UTILITY(U,$J,358.3,373,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,735,1,3,0)
- ;;=3^386.40
- ;;^UTILITY(U,$J,358.3,735,1,4,0)
- ;;=4^Labyrinthine Fistula Nos
- ;;^UTILITY(U,$J,358.3,735,2)
- ;;=^269496
+ ;;^UTILITY(U,$J,358.3,373,1,3,0)
+ ;;=3^Obstructive Sleep Apnea Hypopnea
+ ;;^UTILITY(U,$J,358.3,373,1,4,0)
+ ;;=4^G47.33
+ ;;^UTILITY(U,$J,358.3,373,2)
+ ;;=^332763
+ ;;^UTILITY(U,$J,358.3,374,0)
+ ;;=G47.31^^3^48^1
+ ;;^UTILITY(U,$J,358.3,374,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,374,1,3,0)
+ ;;=3^Central Sleep Apnea
+ ;;^UTILITY(U,$J,358.3,374,1,4,0)
+ ;;=4^G47.31
+ ;;^UTILITY(U,$J,358.3,374,2)
+ ;;=^332761
+ ;;^UTILITY(U,$J,358.3,375,0)
+ ;;=G47.21^^3^48^3
+ ;;^UTILITY(U,$J,358.3,375,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,375,1,3,0)
+ ;;=3^Circadian Rhythm Sleep-Wake Disorder;Delayed Sleep Phase Type
+ ;;^UTILITY(U,$J,358.3,375,1,4,0)
+ ;;=4^G47.21
+ ;;^UTILITY(U,$J,358.3,375,2)
+ ;;=^332769
+ ;;^UTILITY(U,$J,358.3,376,0)
+ ;;=G47.22^^3^48^2
+ ;;^UTILITY(U,$J,358.3,376,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,376,1,3,0)
+ ;;=3^Circadian Rhythm Sleep-Wake Disorder;Advanced Sleep Phase Type
+ ;;^UTILITY(U,$J,358.3,376,1,4,0)
+ ;;=4^G47.22
+ ;;^UTILITY(U,$J,358.3,376,2)
+ ;;=^332770
+ ;;^UTILITY(U,$J,358.3,377,0)
+ ;;=G47.23^^3^48^4
+ ;;^UTILITY(U,$J,358.3,377,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,377,1,3,0)
+ ;;=3^Circadian Rhythm Sleep-Wake Disorder;Irregular Sleep Wake Type
+ ;;^UTILITY(U,$J,358.3,377,1,4,0)
+ ;;=4^G47.23
+ ;;^UTILITY(U,$J,358.3,377,2)
+ ;;=^5003975
+ ;;^UTILITY(U,$J,358.3,378,0)
+ ;;=G47.24^^3^48^5
+ ;;^UTILITY(U,$J,358.3,378,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,378,1,3,0)
+ ;;=3^Circadian Rhythm Sleep-Wake Disorder;Non-24 Hr Sleep Wake Type
+ ;;^UTILITY(U,$J,358.3,378,1,4,0)
+ ;;=4^G47.24
+ ;;^UTILITY(U,$J,358.3,378,2)
+ ;;=^5003976
+ ;;^UTILITY(U,$J,358.3,379,0)
+ ;;=G47.26^^3^48^6
+ ;;^UTILITY(U,$J,358.3,379,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,379,1,3,0)
+ ;;=3^Circadian Rhythm Sleep-Wake Disorder;Shift Work Type
+ ;;^UTILITY(U,$J,358.3,379,1,4,0)
+ ;;=4^G47.26
+ ;;^UTILITY(U,$J,358.3,379,2)
+ ;;=^332774
+ ;;^UTILITY(U,$J,358.3,380,0)
+ ;;=G47.20^^3^48^7
+ ;;^UTILITY(U,$J,358.3,380,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,380,1,3,0)
+ ;;=3^Circadian Rhythm Sleep-Wake Disorder;Unspec Type

@@ -1,146 +1,132 @@
-IBDEI0AB ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0AB ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,4799,0)
- ;;=680.6^^39^369^6
- ;;^UTILITY(U,$J,358.3,4799,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4799,1,2,0)
- ;;=2^680.6
- ;;^UTILITY(U,$J,358.3,4799,1,5,0)
- ;;=5^Furuncle Of Leg
- ;;^UTILITY(U,$J,358.3,4799,2)
- ;;=^271879
- ;;^UTILITY(U,$J,358.3,4800,0)
- ;;=680.1^^39^369^7
- ;;^UTILITY(U,$J,358.3,4800,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4800,1,2,0)
- ;;=2^680.1
- ;;^UTILITY(U,$J,358.3,4800,1,5,0)
- ;;=5^Furuncle Of Neck
- ;;^UTILITY(U,$J,358.3,4800,2)
- ;;=^271874
- ;;^UTILITY(U,$J,358.3,4801,0)
- ;;=680.2^^39^369^8
- ;;^UTILITY(U,$J,358.3,4801,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4801,1,2,0)
- ;;=2^680.2
- ;;^UTILITY(U,$J,358.3,4801,1,5,0)
- ;;=5^Furuncle Of Trunk
- ;;^UTILITY(U,$J,358.3,4801,2)
- ;;=^271875
- ;;^UTILITY(U,$J,358.3,4802,0)
- ;;=680.9^^39^369^9
- ;;^UTILITY(U,$J,358.3,4802,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4802,1,2,0)
- ;;=2^680.9
- ;;^UTILITY(U,$J,358.3,4802,1,5,0)
- ;;=5^Furuncle other Specified Site
- ;;^UTILITY(U,$J,358.3,4802,2)
- ;;=^19191
- ;;^UTILITY(U,$J,358.3,4803,0)
- ;;=695.89^^39^370^1
- ;;^UTILITY(U,$J,358.3,4803,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4803,1,2,0)
- ;;=2^695.89
- ;;^UTILITY(U,$J,358.3,4803,1,5,0)
- ;;=5^Annulare
- ;;^UTILITY(U,$J,358.3,4803,2)
- ;;=^88044
- ;;^UTILITY(U,$J,358.3,4804,0)
- ;;=998.89^^39^370^4
- ;;^UTILITY(U,$J,358.3,4804,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4804,1,2,0)
- ;;=2^998.89
- ;;^UTILITY(U,$J,358.3,4804,1,5,0)
- ;;=5^Postoperative Stitch
- ;;^UTILITY(U,$J,358.3,4804,2)
- ;;=^276343
- ;;^UTILITY(U,$J,358.3,4805,0)
- ;;=686.1^^39^370^5
- ;;^UTILITY(U,$J,358.3,4805,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4805,1,2,0)
- ;;=2^686.1
- ;;^UTILITY(U,$J,358.3,4805,1,5,0)
- ;;=5^Pyogenic Granuloma
- ;;^UTILITY(U,$J,358.3,4805,2)
- ;;=^101548
- ;;^UTILITY(U,$J,358.3,4806,0)
- ;;=709.4^^39^370^2
- ;;^UTILITY(U,$J,358.3,4806,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4806,1,2,0)
- ;;=2^709.4
- ;;^UTILITY(U,$J,358.3,4806,1,5,0)
- ;;=5^Granuloma of Foreign Body
- ;;^UTILITY(U,$J,358.3,4806,2)
- ;;=^271943
- ;;^UTILITY(U,$J,358.3,4807,0)
- ;;=701.8^^39^370^3
- ;;^UTILITY(U,$J,358.3,4807,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4807,1,2,0)
- ;;=2^701.8
- ;;^UTILITY(U,$J,358.3,4807,1,5,0)
- ;;=5^Granuloma, faciale
- ;;^UTILITY(U,$J,358.3,4807,2)
- ;;=^88076
- ;;^UTILITY(U,$J,358.3,4808,0)
- ;;=054.10^^39^371^1
- ;;^UTILITY(U,$J,358.3,4808,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4808,1,2,0)
- ;;=2^054.10
- ;;^UTILITY(U,$J,358.3,4808,1,5,0)
- ;;=5^Herpes Genital
- ;;^UTILITY(U,$J,358.3,4808,2)
- ;;=^56853
- ;;^UTILITY(U,$J,358.3,4809,0)
- ;;=054.9^^39^371^2
- ;;^UTILITY(U,$J,358.3,4809,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4809,1,2,0)
- ;;=2^054.9
- ;;^UTILITY(U,$J,358.3,4809,1,5,0)
- ;;=5^Herpes Simplex
- ;;^UTILITY(U,$J,358.3,4809,2)
- ;;=^56902
- ;;^UTILITY(U,$J,358.3,4810,0)
- ;;=053.9^^39^371^3
- ;;^UTILITY(U,$J,358.3,4810,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4810,1,2,0)
- ;;=2^053.9
- ;;^UTILITY(U,$J,358.3,4810,1,5,0)
- ;;=5^Herpes Zoster NOS
- ;;^UTILITY(U,$J,358.3,4810,2)
- ;;=^56946
- ;;^UTILITY(U,$J,358.3,4811,0)
- ;;=053.71^^39^371^4
- ;;^UTILITY(U,$J,358.3,4811,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4811,1,2,0)
- ;;=2^053.71
- ;;^UTILITY(U,$J,358.3,4811,1,5,0)
- ;;=5^Herpes Zoster, Otitis Externa
- ;;^UTILITY(U,$J,358.3,4811,2)
- ;;=^266557
- ;;^UTILITY(U,$J,358.3,4812,0)
- ;;=V16.8^^39^372^5
- ;;^UTILITY(U,$J,358.3,4812,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4812,1,2,0)
- ;;=2^V16.8
- ;;^UTILITY(U,$J,358.3,4812,1,5,0)
- ;;=5^Family History of SCC/BCC
- ;;^UTILITY(U,$J,358.3,4812,2)
- ;;=Family Hx of Skin Cancer^295300
- ;;^UTILITY(U,$J,358.3,4813,0)
- ;;=V10.82^^39^372^10
+ ;;^UTILITY(U,$J,358.3,4297,0)
+ ;;=W18.11XS^^28^264^20
+ ;;^UTILITY(U,$J,358.3,4297,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4297,1,3,0)
+ ;;=3^Fall from Toilet,Sequela
+ ;;^UTILITY(U,$J,358.3,4297,1,4,0)
+ ;;=4^W18.11XS
+ ;;^UTILITY(U,$J,358.3,4297,2)
+ ;;=^5059803
+ ;;^UTILITY(U,$J,358.3,4298,0)
+ ;;=W08.XXXS^^28^264^10
+ ;;^UTILITY(U,$J,358.3,4298,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4298,1,3,0)
+ ;;=3^Fall from Furniture,Sequela
+ ;;^UTILITY(U,$J,358.3,4298,1,4,0)
+ ;;=4^W08.XXXS
+ ;;^UTILITY(U,$J,358.3,4298,2)
+ ;;=^5059567
+ ;;^UTILITY(U,$J,358.3,4299,0)
+ ;;=W18.2XXS^^28^264^21
+ ;;^UTILITY(U,$J,358.3,4299,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4299,1,3,0)
+ ;;=3^Fall in Shower/Bathtub,Sequela
+ ;;^UTILITY(U,$J,358.3,4299,1,4,0)
+ ;;=4^W18.2XXS
+ ;;^UTILITY(U,$J,358.3,4299,2)
+ ;;=^5059808
+ ;;^UTILITY(U,$J,358.3,4300,0)
+ ;;=W11.XXXS^^28^264^12
+ ;;^UTILITY(U,$J,358.3,4300,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4300,1,3,0)
+ ;;=3^Fall from Ladder,Sequela
+ ;;^UTILITY(U,$J,358.3,4300,1,4,0)
+ ;;=4^W11.XXXS
+ ;;^UTILITY(U,$J,358.3,4300,2)
+ ;;=^5059597
+ ;;^UTILITY(U,$J,358.3,4301,0)
+ ;;=W01.10XS^^28^264^2
+ ;;^UTILITY(U,$J,358.3,4301,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4301,1,3,0)
+ ;;=3^Fall Same Level w/ Strike Against Object,Sequela
+ ;;^UTILITY(U,$J,358.3,4301,1,4,0)
+ ;;=4^W01.10XS
+ ;;^UTILITY(U,$J,358.3,4301,2)
+ ;;=^5059527
+ ;;^UTILITY(U,$J,358.3,4302,0)
+ ;;=W01.0XXS^^28^264^3
+ ;;^UTILITY(U,$J,358.3,4302,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4302,1,3,0)
+ ;;=3^Fall Same Level w/o Strike Against Object,Sequela
+ ;;^UTILITY(U,$J,358.3,4302,1,4,0)
+ ;;=4^W01.0XXS
+ ;;^UTILITY(U,$J,358.3,4302,2)
+ ;;=^5059524
+ ;;^UTILITY(U,$J,358.3,4303,0)
+ ;;=W18.30XS^^28^264^22
+ ;;^UTILITY(U,$J,358.3,4303,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4303,1,3,0)
+ ;;=3^Fall on Same Level,Unspec,Sequela
+ ;;^UTILITY(U,$J,358.3,4303,1,4,0)
+ ;;=4^W18.30XS
+ ;;^UTILITY(U,$J,358.3,4303,2)
+ ;;=^5059811
+ ;;^UTILITY(U,$J,358.3,4304,0)
+ ;;=W04.XXXS^^28^264^4
+ ;;^UTILITY(U,$J,358.3,4304,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4304,1,3,0)
+ ;;=3^Fall While Being Carried by Oth Persons,Sequela
+ ;;^UTILITY(U,$J,358.3,4304,1,4,0)
+ ;;=4^W04.XXXS
+ ;;^UTILITY(U,$J,358.3,4304,2)
+ ;;=^5059549
+ ;;^UTILITY(U,$J,358.3,4305,0)
+ ;;=W17.89XS^^28^264^16
+ ;;^UTILITY(U,$J,358.3,4305,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4305,1,3,0)
+ ;;=3^Fall from One Level to Another,Sequela
+ ;;^UTILITY(U,$J,358.3,4305,1,4,0)
+ ;;=4^W17.89XS
+ ;;^UTILITY(U,$J,358.3,4305,2)
+ ;;=^5059789
+ ;;^UTILITY(U,$J,358.3,4306,0)
+ ;;=W03.XXXS^^28^264^1
+ ;;^UTILITY(U,$J,358.3,4306,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4306,1,3,0)
+ ;;=3^Fall Same Level d/t Collision w/ Another Person,Sequela
+ ;;^UTILITY(U,$J,358.3,4306,1,4,0)
+ ;;=4^W03.XXXS
+ ;;^UTILITY(U,$J,358.3,4306,2)
+ ;;=^5059546
+ ;;^UTILITY(U,$J,358.3,4307,0)
+ ;;=W18.00XS^^28^264^6
+ ;;^UTILITY(U,$J,358.3,4307,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4307,1,3,0)
+ ;;=3^Fall d/t Striking Unspec Object,Sequela
+ ;;^UTILITY(U,$J,358.3,4307,1,4,0)
+ ;;=4^W18.00XS
+ ;;^UTILITY(U,$J,358.3,4307,2)
+ ;;=^5059792
+ ;;^UTILITY(U,$J,358.3,4308,0)
+ ;;=W00.9XXS^^28^264^5
+ ;;^UTILITY(U,$J,358.3,4308,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4308,1,3,0)
+ ;;=3^Fall d/t Snow/Ice,Sequela
+ ;;^UTILITY(U,$J,358.3,4308,1,4,0)
+ ;;=4^W00.9XXS
+ ;;^UTILITY(U,$J,358.3,4308,2)
+ ;;=^5059521
+ ;;^UTILITY(U,$J,358.3,4309,0)
+ ;;=W18.40XS^^28^264^23
+ ;;^UTILITY(U,$J,358.3,4309,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4309,1,3,0)
+ ;;=3^Slip/Trip/Stumble w/o Falling,Sequela
+ ;;^UTILITY(U,$J,358.3,4309,1,4,0)
+ ;;=4^W18.40XS

@@ -1,138 +1,128 @@
-IBDEI13N ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI13N ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,19704,1,4,0)
- ;;=4^493.20
- ;;^UTILITY(U,$J,358.3,19704,1,5,0)
- ;;=5^COPD with Asthma
- ;;^UTILITY(U,$J,358.3,19704,2)
- ;;=COPD with Asthma^269964
- ;;^UTILITY(U,$J,358.3,19705,0)
- ;;=493.91^^131^1278^7
- ;;^UTILITY(U,$J,358.3,19705,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19705,1,4,0)
- ;;=4^493.91
- ;;^UTILITY(U,$J,358.3,19705,1,5,0)
- ;;=5^Asthma, with Status Asthmat
- ;;^UTILITY(U,$J,358.3,19705,2)
- ;;=^269967
- ;;^UTILITY(U,$J,358.3,19706,0)
- ;;=491.21^^131^1278^10
- ;;^UTILITY(U,$J,358.3,19706,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19706,1,4,0)
- ;;=4^491.21
- ;;^UTILITY(U,$J,358.3,19706,1,5,0)
- ;;=5^COPD Exacerbation
- ;;^UTILITY(U,$J,358.3,19706,2)
- ;;=COPD Exacerbation^269954
- ;;^UTILITY(U,$J,358.3,19707,0)
- ;;=494.0^^131^1278^9
- ;;^UTILITY(U,$J,358.3,19707,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19707,1,4,0)
- ;;=4^494.0
- ;;^UTILITY(U,$J,358.3,19707,1,5,0)
- ;;=5^Bronchiectasis, chronic
- ;;^UTILITY(U,$J,358.3,19707,2)
- ;;=^321990
- ;;^UTILITY(U,$J,358.3,19708,0)
- ;;=494.1^^131^1278^8
- ;;^UTILITY(U,$J,358.3,19708,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19708,1,4,0)
- ;;=4^494.1
- ;;^UTILITY(U,$J,358.3,19708,1,5,0)
- ;;=5^Bronchiectasis with exacerb
- ;;^UTILITY(U,$J,358.3,19708,2)
- ;;=^321991
- ;;^UTILITY(U,$J,358.3,19709,0)
- ;;=496.^^131^1278^12
- ;;^UTILITY(U,$J,358.3,19709,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19709,1,4,0)
- ;;=4^496.
- ;;^UTILITY(U,$J,358.3,19709,1,5,0)
- ;;=5^COPD, General
- ;;^UTILITY(U,$J,358.3,19709,2)
- ;;=COPD, General^24355
- ;;^UTILITY(U,$J,358.3,19710,0)
- ;;=491.20^^131^1278^13
- ;;^UTILITY(U,$J,358.3,19710,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19710,1,4,0)
- ;;=4^491.20
- ;;^UTILITY(U,$J,358.3,19710,1,5,0)
- ;;=5^Chronic Asthmatic Bronchitis
- ;;^UTILITY(U,$J,358.3,19710,2)
- ;;=Chronic Asthmatic Bronchitis^269953
- ;;^UTILITY(U,$J,358.3,19711,0)
- ;;=491.9^^131^1278^14
- ;;^UTILITY(U,$J,358.3,19711,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19711,1,4,0)
- ;;=4^491.9
- ;;^UTILITY(U,$J,358.3,19711,1,5,0)
- ;;=5^Chronic Bronchitis
- ;;^UTILITY(U,$J,358.3,19711,2)
- ;;=^24359
- ;;^UTILITY(U,$J,358.3,19712,0)
- ;;=786.2^^131^1278^15
- ;;^UTILITY(U,$J,358.3,19712,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19712,1,4,0)
- ;;=4^786.2
- ;;^UTILITY(U,$J,358.3,19712,1,5,0)
- ;;=5^Cough
- ;;^UTILITY(U,$J,358.3,19712,2)
- ;;=Cough^28905
- ;;^UTILITY(U,$J,358.3,19713,0)
- ;;=786.09^^131^1278^16
- ;;^UTILITY(U,$J,358.3,19713,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19713,1,4,0)
- ;;=4^786.09
- ;;^UTILITY(U,$J,358.3,19713,1,5,0)
- ;;=5^Dyspnea
- ;;^UTILITY(U,$J,358.3,19713,2)
- ;;=Dyspnea^87547
- ;;^UTILITY(U,$J,358.3,19714,0)
- ;;=492.8^^131^1278^17
- ;;^UTILITY(U,$J,358.3,19714,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19714,1,4,0)
- ;;=4^492.8
- ;;^UTILITY(U,$J,358.3,19714,1,5,0)
- ;;=5^Emphysema
- ;;^UTILITY(U,$J,358.3,19714,2)
- ;;=Emphysema^87569
- ;;^UTILITY(U,$J,358.3,19715,0)
- ;;=487.1^^131^1278^24
- ;;^UTILITY(U,$J,358.3,19715,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19715,1,4,0)
- ;;=4^487.1
- ;;^UTILITY(U,$J,358.3,19715,1,5,0)
- ;;=5^Influenza with other Resp Manifest
- ;;^UTILITY(U,$J,358.3,19715,2)
- ;;=^63125
- ;;^UTILITY(U,$J,358.3,19716,0)
- ;;=487.0^^131^1278^23
- ;;^UTILITY(U,$J,358.3,19716,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19716,1,4,0)
- ;;=4^487.0
- ;;^UTILITY(U,$J,358.3,19716,1,5,0)
- ;;=5^Influenza w Pneumonia
- ;;^UTILITY(U,$J,358.3,19716,2)
- ;;=^269942
- ;;^UTILITY(U,$J,358.3,19717,0)
- ;;=515.^^131^1278^25
- ;;^UTILITY(U,$J,358.3,19717,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,19717,1,4,0)
- ;;=4^515.
- ;;^UTILITY(U,$J,358.3,19717,1,5,0)
- ;;=5^Interstitial Lung disease
+ ;;^UTILITY(U,$J,358.3,18360,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18360,1,3,0)
+ ;;=3^Pressure Ulcer of Unspec Site,Stage 3
+ ;;^UTILITY(U,$J,358.3,18360,1,4,0)
+ ;;=4^L89.93
+ ;;^UTILITY(U,$J,358.3,18360,2)
+ ;;=^5133668
+ ;;^UTILITY(U,$J,358.3,18361,0)
+ ;;=L89.94^^94^905^246
+ ;;^UTILITY(U,$J,358.3,18361,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18361,1,3,0)
+ ;;=3^Pressure Ulcer of Unspec Site,Stage 4
+ ;;^UTILITY(U,$J,358.3,18361,1,4,0)
+ ;;=4^L89.94
+ ;;^UTILITY(U,$J,358.3,18361,2)
+ ;;=^5133669
+ ;;^UTILITY(U,$J,358.3,18362,0)
+ ;;=L89.95^^94^905^248
+ ;;^UTILITY(U,$J,358.3,18362,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18362,1,3,0)
+ ;;=3^Pressure Ulcer of Unspec Site,Unstageable
+ ;;^UTILITY(U,$J,358.3,18362,1,4,0)
+ ;;=4^L89.95
+ ;;^UTILITY(U,$J,358.3,18362,2)
+ ;;=^5133660
+ ;;^UTILITY(U,$J,358.3,18363,0)
+ ;;=L92.0^^94^905^156
+ ;;^UTILITY(U,$J,358.3,18363,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18363,1,3,0)
+ ;;=3^Granuloma Annulare
+ ;;^UTILITY(U,$J,358.3,18363,1,4,0)
+ ;;=4^L92.0
+ ;;^UTILITY(U,$J,358.3,18363,2)
+ ;;=^184052
+ ;;^UTILITY(U,$J,358.3,18364,0)
+ ;;=L95.1^^94^905^143
+ ;;^UTILITY(U,$J,358.3,18364,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18364,1,3,0)
+ ;;=3^Erythema Elevatum Diutinum
+ ;;^UTILITY(U,$J,358.3,18364,1,4,0)
+ ;;=4^L95.1
+ ;;^UTILITY(U,$J,358.3,18364,2)
+ ;;=^5009477
+ ;;^UTILITY(U,$J,358.3,18365,0)
+ ;;=L97.111^^94^905^226
+ ;;^UTILITY(U,$J,358.3,18365,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18365,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Right Thigh w/ Breakdown of Skin
+ ;;^UTILITY(U,$J,358.3,18365,1,4,0)
+ ;;=4^L97.111
+ ;;^UTILITY(U,$J,358.3,18365,2)
+ ;;=^5009485
+ ;;^UTILITY(U,$J,358.3,18366,0)
+ ;;=L97.112^^94^905^227
+ ;;^UTILITY(U,$J,358.3,18366,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18366,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Right Thigh w/ Fat Layer Exposed
+ ;;^UTILITY(U,$J,358.3,18366,1,4,0)
+ ;;=4^L97.112
+ ;;^UTILITY(U,$J,358.3,18366,2)
+ ;;=^5009486
+ ;;^UTILITY(U,$J,358.3,18367,0)
+ ;;=L97.113^^94^905^228
+ ;;^UTILITY(U,$J,358.3,18367,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18367,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Right Thigh w/ Necrosis of Muscle
+ ;;^UTILITY(U,$J,358.3,18367,1,4,0)
+ ;;=4^L97.113
+ ;;^UTILITY(U,$J,358.3,18367,2)
+ ;;=^5009487
+ ;;^UTILITY(U,$J,358.3,18368,0)
+ ;;=L97.114^^94^905^229
+ ;;^UTILITY(U,$J,358.3,18368,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18368,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Right Thigh w/ Necrosis of Bone
+ ;;^UTILITY(U,$J,358.3,18368,1,4,0)
+ ;;=4^L97.114
+ ;;^UTILITY(U,$J,358.3,18368,2)
+ ;;=^5009488
+ ;;^UTILITY(U,$J,358.3,18369,0)
+ ;;=L97.119^^94^905^230
+ ;;^UTILITY(U,$J,358.3,18369,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18369,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Right Thigh w/ Unspec Severity
+ ;;^UTILITY(U,$J,358.3,18369,1,4,0)
+ ;;=4^L97.119
+ ;;^UTILITY(U,$J,358.3,18369,2)
+ ;;=^5009489
+ ;;^UTILITY(U,$J,358.3,18370,0)
+ ;;=L97.121^^94^905^196
+ ;;^UTILITY(U,$J,358.3,18370,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18370,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Left Thigh w/ Breakdown of Skin
+ ;;^UTILITY(U,$J,358.3,18370,1,4,0)
+ ;;=4^L97.121
+ ;;^UTILITY(U,$J,358.3,18370,2)
+ ;;=^5009490
+ ;;^UTILITY(U,$J,358.3,18371,0)
+ ;;=L97.122^^94^905^197
+ ;;^UTILITY(U,$J,358.3,18371,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18371,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Left Thigh w/ Fat Layer Exposed
+ ;;^UTILITY(U,$J,358.3,18371,1,4,0)
+ ;;=4^L97.122
+ ;;^UTILITY(U,$J,358.3,18371,2)
+ ;;=^5009491
+ ;;^UTILITY(U,$J,358.3,18372,0)
+ ;;=L97.123^^94^905^198
+ ;;^UTILITY(U,$J,358.3,18372,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,18372,1,3,0)
+ ;;=3^Non-Pressure Chr Ulcer of Left Thigh w/ Necrosis of Muscle

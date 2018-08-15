@@ -1,6 +1,6 @@
 BPSNCPD3 ;BHAM ISC/LJE - Continuation of BPSNCPDP - DUR HANDLING ;06/16/2004
- ;;1.0;E CLAIMS MGMT ENGINE;**1,5,6,7,8,10,11,15**;JUN 2004;Build 13
- ;;Per VHA Directive 2004-038, this routine should not be modified.
+ ;;1.0;E CLAIMS MGMT ENGINE;**1,5,6,7,8,10,11,15,19,20,22**;JUN 2004;Build 28
+ ;;Per VA Directive 6402, this routine should not be modified.
  ;
  ; Due to space considerations, these comments were moved from BPSNPCPD
  ;   to this routine.
@@ -22,8 +22,12 @@ BPSNCPD3 ;BHAM ISC/LJE - Continuation of BPSNCPDP - DUR HANDLING ;06/16/2004
  ;    DE   = Delete
  ;    ED   = Edit (includes RX release with NDC edit)
  ;    ERES = Resubmit from ECME user screen
+ ;    ERWV = Resubmit Without Reversal from ECME user screen (BPS*1*20)
+ ;    ERNB = Resubmit of a TRI/CVA non-billable entry from the ECME user screen (BPS*1*20)
  ;    EREV = Reversal from ECME user screen
  ;    HLD  = Put prescription on Hold
+ ;    OREV = Reversal from Outpatient Pharmacy edit screen (BPS*1*20)
+ ;    RSNB = Resubmit Non-Billable TRICARE & CHAMPVA from PSO Reject Info Screen (BPS*1*20)
  ;    OF   = Original Fill
  ;    P2   = Original submission from PRO Option, no reversal
  ;    P2S  = Resubmit from PRO Option
@@ -122,6 +126,7 @@ DUR1(BRXIEN,BFILL,DUR,ERROR,BPRXCOB) ;
  ;
  S DUR(BPRXCOB,"ELIGBLT")=$P($G(^BPST(IEN59,9)),U,4)
  ; Get Insurance Info and set into DUR array
+ S DUR(BPRXCOB,"INSURANCE POINTER")=$$GET1^DIQ(9002313.59902,"1,"_IEN59_",",902.33,"I") ; Insurance Company IEN
  D GETS^DIQ(9002313.59902,"1,"_IEN59_",","902.05;902.06;902.24;902.25;902.26","E","DUR1","ERROR")
  S DUR(BPRXCOB,"INSURANCE NAME")=$G(DUR1(9002313.59902,"1,"_IEN59_",",902.24,"E"))  ; Insurance Company Name
  S DUR(BPRXCOB,"GROUP NUMBER")=$G(DUR1(9002313.59902,"1,"_IEN59_",",902.05,"E"))    ; Insurance Group Number
@@ -147,6 +152,7 @@ DURRESP(DURIEN,DUR,BPRXCOB) ;
  ;
  ; DUR(INSN,"RESPONSE IEN") - Pointer to the RESPONSE file (#9002313.03) for
  ;   the claim submission
+ ; DUR(INSN,"PCN") - Processor Control Number
  ; DUR(INSN,"MESSAGE") - The Transmission level specific data, Message field 504
  ; DUR(INSN,"PAYER MESSAGE") - Message returned from the payer in the Transaction
  ;   level
@@ -201,6 +207,9 @@ DURRESP(DURIEN,DUR,BPRXCOB) ;
  ;Get BIN from claim
  S CLMIEN=$$GET1^DIQ(9002313.03,DURIEN,.01,"I")
  S DUR(BPRXCOB,"BIN")=$$GET1^DIQ(9002313.02,CLMIEN_",",101) ; BIN Number
+ ;
+ ;Get PCN from claim
+ S DUR(BPRXCOB,"PCN")=$$GET1^DIQ(9002313.02,CLMIEN_",",104) ; PCN Number
  ;
  ; Get the Transmission specific data (Message)
  S DUR(BPRXCOB,"MESSAGE")=$$GET1^DIQ(9002313.03,DURIEN_",",504,"E")

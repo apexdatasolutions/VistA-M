@@ -1,140 +1,128 @@
-IBDEI0PJ ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0PJ ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,12598,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12598,1,4,0)
- ;;=4^493.20
- ;;^UTILITY(U,$J,358.3,12598,1,5,0)
- ;;=5^COPD with Asthma
- ;;^UTILITY(U,$J,358.3,12598,2)
- ;;=COPD with Asthma^269964
- ;;^UTILITY(U,$J,358.3,12599,0)
- ;;=493.91^^87^821^5
- ;;^UTILITY(U,$J,358.3,12599,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12599,1,4,0)
- ;;=4^493.91
- ;;^UTILITY(U,$J,358.3,12599,1,5,0)
- ;;=5^Asthma, with Status Asthmat
- ;;^UTILITY(U,$J,358.3,12599,2)
- ;;=^269967
- ;;^UTILITY(U,$J,358.3,12600,0)
- ;;=491.21^^87^821^13
- ;;^UTILITY(U,$J,358.3,12600,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12600,1,4,0)
- ;;=4^491.21
- ;;^UTILITY(U,$J,358.3,12600,1,5,0)
- ;;=5^COPD Exacerbation
- ;;^UTILITY(U,$J,358.3,12600,2)
- ;;=COPD Exacerbation^269954
- ;;^UTILITY(U,$J,358.3,12601,0)
- ;;=494.0^^87^821^8
- ;;^UTILITY(U,$J,358.3,12601,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12601,1,4,0)
- ;;=4^494.0
- ;;^UTILITY(U,$J,358.3,12601,1,5,0)
- ;;=5^Bronchiectasis, chronic
- ;;^UTILITY(U,$J,358.3,12601,2)
- ;;=^321990
- ;;^UTILITY(U,$J,358.3,12602,0)
- ;;=494.1^^87^821^7
- ;;^UTILITY(U,$J,358.3,12602,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12602,1,4,0)
- ;;=4^494.1
- ;;^UTILITY(U,$J,358.3,12602,1,5,0)
- ;;=5^Bronchiectasis with exacerb
- ;;^UTILITY(U,$J,358.3,12602,2)
- ;;=^321991
- ;;^UTILITY(U,$J,358.3,12603,0)
- ;;=496.^^87^821^12
- ;;^UTILITY(U,$J,358.3,12603,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12603,1,4,0)
- ;;=4^496.
- ;;^UTILITY(U,$J,358.3,12603,1,5,0)
- ;;=5^COPD
- ;;^UTILITY(U,$J,358.3,12603,2)
- ;;=COPD, General^24355
- ;;^UTILITY(U,$J,358.3,12604,0)
- ;;=491.20^^87^821^15
- ;;^UTILITY(U,$J,358.3,12604,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12604,1,4,0)
- ;;=4^491.20
- ;;^UTILITY(U,$J,358.3,12604,1,5,0)
- ;;=5^Chr Obstruct Bronchitis w/o Exac
- ;;^UTILITY(U,$J,358.3,12604,2)
- ;;=Chronic Asthmatic Bronchitis^269953
- ;;^UTILITY(U,$J,358.3,12605,0)
- ;;=491.9^^87^821^11
- ;;^UTILITY(U,$J,358.3,12605,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12605,1,4,0)
- ;;=4^491.9
- ;;^UTILITY(U,$J,358.3,12605,1,5,0)
- ;;=5^Bronchitis,Chronic
- ;;^UTILITY(U,$J,358.3,12605,2)
- ;;=^24359
- ;;^UTILITY(U,$J,358.3,12606,0)
- ;;=492.8^^87^821^16
- ;;^UTILITY(U,$J,358.3,12606,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12606,1,4,0)
- ;;=4^492.8
- ;;^UTILITY(U,$J,358.3,12606,1,5,0)
- ;;=5^Emphysema
- ;;^UTILITY(U,$J,358.3,12606,2)
- ;;=Emphysema^87569
- ;;^UTILITY(U,$J,358.3,12607,0)
- ;;=487.0^^87^821^21
- ;;^UTILITY(U,$J,358.3,12607,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12607,1,4,0)
- ;;=4^487.0
- ;;^UTILITY(U,$J,358.3,12607,1,5,0)
- ;;=5^Influenza w Pneumonia
- ;;^UTILITY(U,$J,358.3,12607,2)
- ;;=^269942
- ;;^UTILITY(U,$J,358.3,12608,0)
- ;;=515.^^87^821^22
- ;;^UTILITY(U,$J,358.3,12608,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12608,1,4,0)
- ;;=4^515.
- ;;^UTILITY(U,$J,358.3,12608,1,5,0)
- ;;=5^Interstitial Lung disease
- ;;^UTILITY(U,$J,358.3,12608,2)
- ;;=^101072
- ;;^UTILITY(U,$J,358.3,12609,0)
- ;;=511.9^^87^821^27
- ;;^UTILITY(U,$J,358.3,12609,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12609,1,4,0)
- ;;=4^511.9
- ;;^UTILITY(U,$J,358.3,12609,1,5,0)
- ;;=5^Pleural Effusion, Unsp type
- ;;^UTILITY(U,$J,358.3,12609,2)
- ;;=^123973
- ;;^UTILITY(U,$J,358.3,12610,0)
- ;;=511.0^^87^821^28
- ;;^UTILITY(U,$J,358.3,12610,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12610,1,4,0)
- ;;=4^511.0
- ;;^UTILITY(U,$J,358.3,12610,1,5,0)
- ;;=5^Pleurisy
- ;;^UTILITY(U,$J,358.3,12610,2)
- ;;=Pleurisy^95432
- ;;^UTILITY(U,$J,358.3,12611,0)
- ;;=486.^^87^821^29
- ;;^UTILITY(U,$J,358.3,12611,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,12611,1,4,0)
- ;;=4^486.
- ;;^UTILITY(U,$J,358.3,12611,1,5,0)
- ;;=5^Pneumonia, Unsp Organism
+ ;;^UTILITY(U,$J,358.3,11696,1,3,0)
+ ;;=3^Strain of Left Lower Leg Peroneal Muscle/Tendon
+ ;;^UTILITY(U,$J,358.3,11696,1,4,0)
+ ;;=4^S86.312A
+ ;;^UTILITY(U,$J,358.3,11696,2)
+ ;;=^5043514
+ ;;^UTILITY(U,$J,358.3,11697,0)
+ ;;=S86.811A^^68^688^48
+ ;;^UTILITY(U,$J,358.3,11697,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11697,1,3,0)
+ ;;=3^Strain of Right Lower Leg Muscle/Tendon NEC
+ ;;^UTILITY(U,$J,358.3,11697,1,4,0)
+ ;;=4^S86.811A
+ ;;^UTILITY(U,$J,358.3,11697,2)
+ ;;=^5043538
+ ;;^UTILITY(U,$J,358.3,11698,0)
+ ;;=S86.812A^^68^688^28
+ ;;^UTILITY(U,$J,358.3,11698,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11698,1,3,0)
+ ;;=3^Strain of Left Lower Leg Muscle/Tendon NEC
+ ;;^UTILITY(U,$J,358.3,11698,1,4,0)
+ ;;=4^S86.812A
+ ;;^UTILITY(U,$J,358.3,11698,2)
+ ;;=^5043541
+ ;;^UTILITY(U,$J,358.3,11699,0)
+ ;;=S86.111A^^68^688^50
+ ;;^UTILITY(U,$J,358.3,11699,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11699,1,3,0)
+ ;;=3^Strain of Right Lower Leg Posterior Muscle/Tendon
+ ;;^UTILITY(U,$J,358.3,11699,1,4,0)
+ ;;=4^S86.111A
+ ;;^UTILITY(U,$J,358.3,11699,2)
+ ;;=^5043460
+ ;;^UTILITY(U,$J,358.3,11700,0)
+ ;;=S86.112A^^68^688^30
+ ;;^UTILITY(U,$J,358.3,11700,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11700,1,3,0)
+ ;;=3^Strain of Left Lower Leg Posterior Muscle/Tendon
+ ;;^UTILITY(U,$J,358.3,11700,1,4,0)
+ ;;=4^S86.112A
+ ;;^UTILITY(U,$J,358.3,11700,2)
+ ;;=^5043463
+ ;;^UTILITY(U,$J,358.3,11701,0)
+ ;;=S83.401A^^68^688^15
+ ;;^UTILITY(U,$J,358.3,11701,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11701,1,3,0)
+ ;;=3^Sprain of Right Knee Collateral Ligament
+ ;;^UTILITY(U,$J,358.3,11701,1,4,0)
+ ;;=4^S83.401A
+ ;;^UTILITY(U,$J,358.3,11701,2)
+ ;;=^5043103
+ ;;^UTILITY(U,$J,358.3,11702,0)
+ ;;=S83.402A^^68^688^4
+ ;;^UTILITY(U,$J,358.3,11702,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11702,1,3,0)
+ ;;=3^Sprain of Left Knee Collateral Ligament
+ ;;^UTILITY(U,$J,358.3,11702,1,4,0)
+ ;;=4^S83.402A
+ ;;^UTILITY(U,$J,358.3,11702,2)
+ ;;=^5043106
+ ;;^UTILITY(U,$J,358.3,11703,0)
+ ;;=S93.402A^^68^688^2
+ ;;^UTILITY(U,$J,358.3,11703,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11703,1,3,0)
+ ;;=3^Sprain of Left Ankle Ligament
+ ;;^UTILITY(U,$J,358.3,11703,1,4,0)
+ ;;=4^S93.402A
+ ;;^UTILITY(U,$J,358.3,11703,2)
+ ;;=^5045777
+ ;;^UTILITY(U,$J,358.3,11704,0)
+ ;;=S93.401A^^68^688^13
+ ;;^UTILITY(U,$J,358.3,11704,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11704,1,3,0)
+ ;;=3^Sprain of Right Ankle Ligament
+ ;;^UTILITY(U,$J,358.3,11704,1,4,0)
+ ;;=4^S93.401A
+ ;;^UTILITY(U,$J,358.3,11704,2)
+ ;;=^5045774
+ ;;^UTILITY(U,$J,358.3,11705,0)
+ ;;=S56.511A^^68^688^39
+ ;;^UTILITY(U,$J,358.3,11705,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11705,1,3,0)
+ ;;=3^Strain of Right Forearm Extn Musc/Fasc/Tend
+ ;;^UTILITY(U,$J,358.3,11705,1,4,0)
+ ;;=4^S56.511A
+ ;;^UTILITY(U,$J,358.3,11705,2)
+ ;;=^5031838
+ ;;^UTILITY(U,$J,358.3,11706,0)
+ ;;=S56.512A^^68^688^19
+ ;;^UTILITY(U,$J,358.3,11706,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11706,1,3,0)
+ ;;=3^Strain of Left Forearm Extn Musc/Fasc/Tend
+ ;;^UTILITY(U,$J,358.3,11706,1,4,0)
+ ;;=4^S56.512A
+ ;;^UTILITY(U,$J,358.3,11706,2)
+ ;;=^5031841
+ ;;^UTILITY(U,$J,358.3,11707,0)
+ ;;=S13.8XXA^^68^688^10
+ ;;^UTILITY(U,$J,358.3,11707,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11707,1,3,0)
+ ;;=3^Sprain of Neck Joints/Ligaments,Init Encntr
+ ;;^UTILITY(U,$J,358.3,11707,1,4,0)
+ ;;=4^S13.8XXA
+ ;;^UTILITY(U,$J,358.3,11707,2)
+ ;;=^5022034
+ ;;^UTILITY(U,$J,358.3,11708,0)
+ ;;=S16.1XXA^^68^688^37
+ ;;^UTILITY(U,$J,358.3,11708,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,11708,1,3,0)
+ ;;=3^Strain of Neck Muscle/Fasc/Tendon,Init Encntr
+ ;;^UTILITY(U,$J,358.3,11708,1,4,0)
+ ;;=4^S16.1XXA

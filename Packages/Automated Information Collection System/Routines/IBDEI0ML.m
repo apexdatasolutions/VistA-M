@@ -1,138 +1,126 @@
-IBDEI0ML ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0ML ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,11089,2)
- ;;=Screening Colonoscopy with Fam Hx of Colon CA^322089^V16.0
- ;;^UTILITY(U,$J,358.3,11090,0)
- ;;=579.1^^71^724^40
- ;;^UTILITY(U,$J,358.3,11090,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11090,1,2,0)
- ;;=2^579.1
- ;;^UTILITY(U,$J,358.3,11090,1,5,0)
- ;;=5^Sprue
- ;;^UTILITY(U,$J,358.3,11090,2)
- ;;=^113612
- ;;^UTILITY(U,$J,358.3,11091,0)
- ;;=556.9^^71^724^41
- ;;^UTILITY(U,$J,358.3,11091,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11091,1,2,0)
- ;;=2^556.9
- ;;^UTILITY(U,$J,358.3,11091,1,5,0)
- ;;=5^Ulcerative Colitis, Unspec.
- ;;^UTILITY(U,$J,358.3,11091,2)
- ;;=^26044
- ;;^UTILITY(U,$J,358.3,11092,0)
- ;;=562.11^^71^724^13
- ;;^UTILITY(U,$J,358.3,11092,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11092,1,2,0)
- ;;=2^562.11
- ;;^UTILITY(U,$J,358.3,11092,1,5,0)
- ;;=5^Diverticulitis
- ;;^UTILITY(U,$J,358.3,11092,2)
- ;;=Diverticulitis^270274
- ;;^UTILITY(U,$J,358.3,11093,0)
- ;;=285.9^^71^724^3
- ;;^UTILITY(U,$J,358.3,11093,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11093,1,2,0)
- ;;=2^285.9
- ;;^UTILITY(U,$J,358.3,11093,1,5,0)
- ;;=5^Anemia
- ;;^UTILITY(U,$J,358.3,11093,2)
- ;;=Anemia^7007
- ;;^UTILITY(U,$J,358.3,11094,0)
- ;;=V67.09^^71^724^15
- ;;^UTILITY(U,$J,358.3,11094,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11094,1,2,0)
- ;;=2^V67.09
- ;;^UTILITY(U,$J,358.3,11094,1,5,0)
- ;;=5^F/U Colonoscopy For GI Cancer
- ;;^UTILITY(U,$J,358.3,11094,2)
- ;;=F/U Colonoscopy for GI Cancer^322080^V10.05
- ;;^UTILITY(U,$J,358.3,11095,0)
- ;;=275.01^^71^724^23
- ;;^UTILITY(U,$J,358.3,11095,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11095,1,2,0)
- ;;=2^275.01
- ;;^UTILITY(U,$J,358.3,11095,1,5,0)
- ;;=5^Hereditary Hemochromatosis
- ;;^UTILITY(U,$J,358.3,11095,2)
- ;;=^339602
- ;;^UTILITY(U,$J,358.3,11096,0)
- ;;=275.02^^71^724^21
- ;;^UTILITY(U,$J,358.3,11096,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11096,1,2,0)
- ;;=2^275.02
- ;;^UTILITY(U,$J,358.3,11096,1,5,0)
- ;;=5^Hemochromatosis d/t RBC Transfusions
- ;;^UTILITY(U,$J,358.3,11096,2)
- ;;=^339603
- ;;^UTILITY(U,$J,358.3,11097,0)
- ;;=275.03^^71^724^20
- ;;^UTILITY(U,$J,358.3,11097,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11097,1,2,0)
- ;;=2^275.03
- ;;^UTILITY(U,$J,358.3,11097,1,5,0)
- ;;=5^Hemochromatosis
- ;;^UTILITY(U,$J,358.3,11097,2)
- ;;=^339604
- ;;^UTILITY(U,$J,358.3,11098,0)
- ;;=275.09^^71^724^25
- ;;^UTILITY(U,$J,358.3,11098,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11098,1,2,0)
- ;;=2^275.09
- ;;^UTILITY(U,$J,358.3,11098,1,5,0)
- ;;=5^Iron Metabolism Disorder
- ;;^UTILITY(U,$J,358.3,11098,2)
- ;;=^339605
- ;;^UTILITY(U,$J,358.3,11099,0)
- ;;=997.49^^71^724^12
- ;;^UTILITY(U,$J,358.3,11099,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11099,1,2,0)
- ;;=2^997.49
- ;;^UTILITY(U,$J,358.3,11099,1,5,0)
- ;;=5^Digestv System Comp
- ;;^UTILITY(U,$J,358.3,11099,2)
- ;;=^340579
- ;;^UTILITY(U,$J,358.3,11100,0)
- ;;=560.1^^71^724^35
- ;;^UTILITY(U,$J,358.3,11100,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11100,1,2,0)
- ;;=2^560.1
- ;;^UTILITY(U,$J,358.3,11100,1,5,0)
- ;;=5^Paralytic Ileus
- ;;^UTILITY(U,$J,358.3,11100,2)
- ;;=^89879
- ;;^UTILITY(U,$J,358.3,11101,0)
- ;;=154.2^^71^724^27
- ;;^UTILITY(U,$J,358.3,11101,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11101,1,2,0)
- ;;=2^154.2
- ;;^UTILITY(U,$J,358.3,11101,1,5,0)
- ;;=5^Mal Neo Anal Canal
- ;;^UTILITY(U,$J,358.3,11101,2)
- ;;=^267091
- ;;^UTILITY(U,$J,358.3,11102,0)
- ;;=153.4^^71^724^29
- ;;^UTILITY(U,$J,358.3,11102,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,11102,1,2,0)
- ;;=2^153.4
- ;;^UTILITY(U,$J,358.3,11102,1,5,0)
- ;;=5^Mal Neo Cecum
- ;;^UTILITY(U,$J,358.3,11102,2)
- ;;=^267083
- ;;^UTILITY(U,$J,358.3,11103,0)
- ;;=153.6^^71^724^28
+ ;;^UTILITY(U,$J,358.3,10312,0)
+ ;;=I70.733^^68^664^82
+ ;;^UTILITY(U,$J,358.3,10312,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10312,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Right Leg w/ Ankle Ulcer
+ ;;^UTILITY(U,$J,358.3,10312,1,4,0)
+ ;;=4^I70.733
+ ;;^UTILITY(U,$J,358.3,10312,2)
+ ;;=^5007771
+ ;;^UTILITY(U,$J,358.3,10313,0)
+ ;;=I70.734^^68^664^83
+ ;;^UTILITY(U,$J,358.3,10313,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10313,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Right Leg w/ Heel/Midfoot Ulcer
+ ;;^UTILITY(U,$J,358.3,10313,1,4,0)
+ ;;=4^I70.734
+ ;;^UTILITY(U,$J,358.3,10313,2)
+ ;;=^5007772
+ ;;^UTILITY(U,$J,358.3,10314,0)
+ ;;=I70.735^^68^664^84
+ ;;^UTILITY(U,$J,358.3,10314,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10314,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Right Leg w/ Oth Part Foot Ulcer
+ ;;^UTILITY(U,$J,358.3,10314,1,4,0)
+ ;;=4^I70.735
+ ;;^UTILITY(U,$J,358.3,10314,2)
+ ;;=^5007773
+ ;;^UTILITY(U,$J,358.3,10315,0)
+ ;;=I70.741^^68^664^79
+ ;;^UTILITY(U,$J,358.3,10315,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10315,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Left Leg w/ Thigh Ulcer
+ ;;^UTILITY(U,$J,358.3,10315,1,4,0)
+ ;;=4^I70.741
+ ;;^UTILITY(U,$J,358.3,10315,2)
+ ;;=^5133601
+ ;;^UTILITY(U,$J,358.3,10316,0)
+ ;;=I70.742^^68^664^76
+ ;;^UTILITY(U,$J,358.3,10316,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10316,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Left Leg w/ Calf Ulcer
+ ;;^UTILITY(U,$J,358.3,10316,1,4,0)
+ ;;=4^I70.742
+ ;;^UTILITY(U,$J,358.3,10316,2)
+ ;;=^5133602
+ ;;^UTILITY(U,$J,358.3,10317,0)
+ ;;=I70.743^^68^664^75
+ ;;^UTILITY(U,$J,358.3,10317,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10317,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Left Leg w/ Ankle Ulcer
+ ;;^UTILITY(U,$J,358.3,10317,1,4,0)
+ ;;=4^I70.743
+ ;;^UTILITY(U,$J,358.3,10317,2)
+ ;;=^5133603
+ ;;^UTILITY(U,$J,358.3,10318,0)
+ ;;=I70.744^^68^664^77
+ ;;^UTILITY(U,$J,358.3,10318,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10318,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Left Leg w/ Heel/Midfoot Ulcer
+ ;;^UTILITY(U,$J,358.3,10318,1,4,0)
+ ;;=4^I70.744
+ ;;^UTILITY(U,$J,358.3,10318,2)
+ ;;=^5133604
+ ;;^UTILITY(U,$J,358.3,10319,0)
+ ;;=I70.745^^68^664^78
+ ;;^UTILITY(U,$J,358.3,10319,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10319,1,3,0)
+ ;;=3^Athscl of Bypass Graft of Left Leg w/ Oth Part Foot Ulcer
+ ;;^UTILITY(U,$J,358.3,10319,1,4,0)
+ ;;=4^I70.745
+ ;;^UTILITY(U,$J,358.3,10319,2)
+ ;;=^5133605
+ ;;^UTILITY(U,$J,358.3,10320,0)
+ ;;=I83.009^^68^664^287
+ ;;^UTILITY(U,$J,358.3,10320,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10320,1,3,0)
+ ;;=3^Varicose Veins of Lower Extremity w/ Ulcer
+ ;;^UTILITY(U,$J,358.3,10320,1,4,0)
+ ;;=4^I83.009
+ ;;^UTILITY(U,$J,358.3,10320,2)
+ ;;=^5007972
+ ;;^UTILITY(U,$J,358.3,10321,0)
+ ;;=H65.03^^68^665^3
+ ;;^UTILITY(U,$J,358.3,10321,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10321,1,3,0)
+ ;;=3^Acute Serous Otitis Media,Bilateral
+ ;;^UTILITY(U,$J,358.3,10321,1,4,0)
+ ;;=4^H65.03
+ ;;^UTILITY(U,$J,358.3,10321,2)
+ ;;=^5006572
+ ;;^UTILITY(U,$J,358.3,10322,0)
+ ;;=H65.01^^68^665^5
+ ;;^UTILITY(U,$J,358.3,10322,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10322,1,3,0)
+ ;;=3^Acute Serous Otitis Media,Right Ear
+ ;;^UTILITY(U,$J,358.3,10322,1,4,0)
+ ;;=4^H65.01
+ ;;^UTILITY(U,$J,358.3,10322,2)
+ ;;=^5006570
+ ;;^UTILITY(U,$J,358.3,10323,0)
+ ;;=H65.23^^68^665^15
+ ;;^UTILITY(U,$J,358.3,10323,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,10323,1,3,0)
+ ;;=3^Chronic Serous Otitis Media,Bilateral
+ ;;^UTILITY(U,$J,358.3,10323,1,4,0)
+ ;;=4^H65.23
+ ;;^UTILITY(U,$J,358.3,10323,2)
+ ;;=^5006596
+ ;;^UTILITY(U,$J,358.3,10324,0)
+ ;;=H65.22^^68^665^16

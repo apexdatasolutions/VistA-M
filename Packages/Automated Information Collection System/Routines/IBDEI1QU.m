@@ -1,0 +1,128 @@
+IBDEI1QU ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,29197,1,4,0)
+ ;;=4^I20.1
+ ;;^UTILITY(U,$J,358.3,29197,2)
+ ;;=^5007077
+ ;;^UTILITY(U,$J,358.3,29198,0)
+ ;;=I25.119^^135^1358^5
+ ;;^UTILITY(U,$J,358.3,29198,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,29198,1,3,0)
+ ;;=3^Athscl HRT Dis of Native Cor Art w/ Ang Pctrs,Unspec
+ ;;^UTILITY(U,$J,358.3,29198,1,4,0)
+ ;;=4^I25.119
+ ;;^UTILITY(U,$J,358.3,29198,2)
+ ;;=^5007111
+ ;;^UTILITY(U,$J,358.3,29199,0)
+ ;;=I25.701^^135^1358^9
+ ;;^UTILITY(U,$J,358.3,29199,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,29199,1,3,0)
+ ;;=3^Athscl of CABG,Unspec w/ Angina Pectoris w/ Documented Spasm
+ ;;^UTILITY(U,$J,358.3,29199,1,4,0)
+ ;;=4^I25.701
+ ;;^UTILITY(U,$J,358.3,29199,2)
+ ;;=^5007118
+ ;;^UTILITY(U,$J,358.3,29200,0)
+ ;;=I25.708^^135^1358^10
+ ;;^UTILITY(U,$J,358.3,29200,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,29200,1,3,0)
+ ;;=3^Athscl of CABG,Unspec w/ Oth Angina Pectoris
+ ;;^UTILITY(U,$J,358.3,29200,1,4,0)
+ ;;=4^I25.708
+ ;;^UTILITY(U,$J,358.3,29200,2)
+ ;;=^5007119
+ ;;^UTILITY(U,$J,358.3,29201,0)
+ ;;=I20.9^^135^1358^3
+ ;;^UTILITY(U,$J,358.3,29201,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,29201,1,3,0)
+ ;;=3^Angina Pectoris,Unspec
+ ;;^UTILITY(U,$J,358.3,29201,1,4,0)
+ ;;=4^I20.9
+ ;;^UTILITY(U,$J,358.3,29201,2)
+ ;;=^5007079
+ ;;^UTILITY(U,$J,358.3,29202,0)
+ ;;=I25.729^^135^1358^4
+ ;;^UTILITY(U,$J,358.3,29202,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,29202,1,3,0)
+ ;;=3^Athscl Autologous Artery CABG w/ Unspec Angina Pectoris
+ ;;^UTILITY(U,$J,358.3,29202,1,4,0)
+ ;;=4^I25.729
+ ;;^UTILITY(U,$J,358.3,29202,2)
+ ;;=^5133561
+ ;;^UTILITY(U,$J,358.3,29203,0)
+ ;;=I25.709^^135^1358^11
+ ;;^UTILITY(U,$J,358.3,29203,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,29203,1,3,0)
+ ;;=3^Athscl of CABG,Unspec w/ Unspec Angina Pectoris
+ ;;^UTILITY(U,$J,358.3,29203,1,4,0)
+ ;;=4^I25.709
+ ;;^UTILITY(U,$J,358.3,29203,2)
+ ;;=^5007120
+ ;;^UTILITY(U,$J,358.3,29204,0)
+ ;;=I25.10^^135^1358^6
+ ;;^UTILITY(U,$J,358.3,29204,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,29204,1,3,0)
+ ;;=3^Athscl HRT Dis of Native Cor Art w/o Ang Pctrs
+ ;;^UTILITY(U,$J,358.3,29204,1,4,0)
+ ;;=4^I25.10
+ ;;^UTILITY(U,$J,358.3,29204,2)
+ ;;=^5007107
+ ;;^UTILITY(U,$J,358.3,29205,0)
+ ;;=I25.810^^135^1358^8
+ ;;^UTILITY(U,$J,358.3,29205,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,29205,1,3,0)
+ ;;=3^Athscl of CABG w/o Angina Pectoris
+ ;;^UTILITY(U,$J,358.3,29205,1,4,0)
+ ;;=4^I25.810
+ ;;^UTILITY(U,$J,358.3,29205,2)
+ ;;=^5007141
+ ;;^UTILITY(U,$J,358.3,29206,0)
+ ;;=I65.29^^135^1359^18
+ ;;^UTILITY(U,$J,358.3,29206,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,29206,1,3,0)
+ ;;=3^Occlusion & Stenosis Unspec Carotid Artery
+ ;;^UTILITY(U,$J,358.3,29206,1,4,0)
+ ;;=4^I65.29
+ ;;^UTILITY(U,$J,358.3,29206,2)
+ ;;=^5007363
+ ;;^UTILITY(U,$J,358.3,29207,0)
+ ;;=I65.22^^135^1359^16
+ ;;^UTILITY(U,$J,358.3,29207,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,29207,1,3,0)
+ ;;=3^Occlusion & Stenosis Left Carotid Artery
+ ;;^UTILITY(U,$J,358.3,29207,1,4,0)
+ ;;=4^I65.22
+ ;;^UTILITY(U,$J,358.3,29207,2)
+ ;;=^5007361
+ ;;^UTILITY(U,$J,358.3,29208,0)
+ ;;=I65.23^^135^1359^15
+ ;;^UTILITY(U,$J,358.3,29208,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,29208,1,3,0)
+ ;;=3^Occlusion & Stenosis Bilateral Carotid Arteries
+ ;;^UTILITY(U,$J,358.3,29208,1,4,0)
+ ;;=4^I65.23
+ ;;^UTILITY(U,$J,358.3,29208,2)
+ ;;=^5007362
+ ;;^UTILITY(U,$J,358.3,29209,0)
+ ;;=I65.21^^135^1359^17
+ ;;^UTILITY(U,$J,358.3,29209,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,29209,1,3,0)
+ ;;=3^Occlusion & Stenosis Right Carotid Artery
+ ;;^UTILITY(U,$J,358.3,29209,1,4,0)
+ ;;=4^I65.21
+ ;;^UTILITY(U,$J,358.3,29209,2)
+ ;;=^5007360

@@ -1,5 +1,6 @@
-PSOORNE2 ;BIR/SAB-display finished orders from backdoor ;9/11/06 10:24am
- ;;7.0;OUTPATIENT PHARMACY;**11,21,23,27,32,37,46,84,103,117,131,146,156,210,148,222,238,264,281,289,251,379,391,313**;DEC 1997;Build 76
+PSOORNE2 ;BIR/SAB - Display finished orders from backdoor ;7/15/16 2:30pm
+ ;;7.0;OUTPATIENT PHARMACY;**11,21,23,27,32,37,46,84,103,117,131,146,156,210,148,222,238,264,281,289,251,379,391,313,282,427,454,446,467**;DEC 1997;Build 153
+ ;
  ;^PSDRUG( -  221
  ;^YSCL(603.01 - 2697
  ;^PS(50.606 - 2174
@@ -7,20 +8,27 @@ PSOORNE2 ;BIR/SAB-display finished orders from backdoor ;9/11/06 10:24am
  ;PSO*210 add call to WORDWRAP api
  ;$$DAWEXT^PSSDAWUT - 4708
  ;
-SEL N ORN,ORD I '$G(PSOCNT) S VALMSG="This patient has no Prescriptions!" S VALMBCK="" Q
- D K1^PSOORNE6 S DIR("A")="Select Orders by number",DIR(0)="LO^1:"_PSOCNT D ^DIR I $D(DIRUT) D KV^PSOVER1 S VALMBCK="" Q
+SEL N ORN,ORD,PSORRBLD I '$G(PSOCNT),'$G(PSORCNT) S VALMSG="This patient has no Prescriptions!" S VALMBCK="" Q
+ D K1^PSOORNE6 S DIR("A")="Select Orders by number",DIR(0)="LO^1:"_$S($G(PSORCNT):PSORCNT,1:PSOCNT) D ^DIR I $D(DIRUT) D KV^PSOVER1 S VALMBCK="" Q
 NEWSEL N ORN,ORD D K2^PSOORNE6
- ;
- I +Y S PSOOELSE=1,PSLST=Y K PSOREEDT F ORD=1:1:$L(PSLST,",") Q:$P(PSLST,",",ORD)']""  D  D UL1 K ^TMP("PSORXPO",$J) I $G(PSOQUIT) K PSOQUIT Q
- .S ORN=+$P(PSLST,",",ORD) D @$S(+PSOLST(ORN)=52:"ACT",1:"PEN^PSOORNE5")
+ ;*282 Correct Patient Instructions Copy
+ I +Y S PSOOELSE=1,PSLST=Y K PSOREEDT F ORD=1:1:$L(PSLST,",") Q:$P(PSLST,",",ORD)']""  D  D UL1 K ^TMP("PSORXPO",$J),PSORXED,PSONEW,PSOPINS I $G(PSOQUIT) K PSOQUIT Q
+ .; bwf 1/21/2014 - replaced line below with the one that follows for remote rx data handling.
+ .;S ORN=+$P(PSLST,",",ORD) D @$S(+PSOLST(ORN)=52:"ACT",1:"PEN^PSOORNE5")
+ .S ORN=+$P(PSLST,",",ORD) D @$S(+PSOLST(ORN)=52:"ACT",$P(PSOLST(ORN),"^")="R52":"RACT",1:"PEN^PSOORNE5")
  .K PSOREEDT,PSOSIGFL,PSONACT,SIGOK,PSOFDR,DRET,SIG,INS1
  K PRC,PHI,RTE I '$G(PSOOELSE) S VALMBCK=""
- K PSONACT,PSOOELSE,CLOZPAT D ^PSOBUILD,BLD^PSOORUT1,K3^PSOORNE6
+ K PSONACT,PSOOELSE,CLOZPAT
+ ;
+ ; Only rebuild remote if something changed
+ I $G(PSORRBLD) W !!,"Updating prescription order list...",!! D REMOTERX^PSORRX1(PSODFN,PSOSITE) K PSORRBLD
+ ;
+ D ^PSOBUILD,BLD^PSOORUT1,K3^PSOORNE6
  Q
  ;
 ACT N REF,RPHKEY,PKIND K ^TMP("PSOAO",$J),PCOMX,PDA,PHI,PRC,ACOM,ANS,PSOFDR,CLOZPAT,ANQREM,DUR,DRET
  S RXN=$P(PSOLST(ORN),"^",2),RX0=^PSRX(RXN,0),RX2=$G(^(2)),RX3=$G(^(3)),ST=+$G(^("STA")),RXOR=$G(^("OR1")),POE=$G(^("POE")),EXDT=$S($P($G(^(2)),"^",6)>DT:1,1:0)
- I 'RX3 S RX3=$P(RX2,"^",2),$P(^PSRX(RXN,3),"^")=$P(RX2,"^",2)
+ I 'RX3 S $P(RX3,"^",1)=$P(RX2,"^",2),$P(^PSRX(RXN,3),"^")=$P(RX2,"^",2)
  S PSODRG=+$P(RX0,"^",6),PSODRUG0=^PSDRUG(PSODRG,0),INDT=$G(^("I"))
  ;PSO*7*238;SET PSODRUG ARRAY ; PSOY KILLED AT END OF SET^PSODRG
  K PSODRUG
@@ -47,14 +55,18 @@ ACT N REF,RPHKEY,PKIND K ^TMP("PSOAO",$J),PCOMX,PDA,PHI,PRC,ACOM,ANS,PSOFDR,CLOZ
  ;K PSOLKFL D PSOL^PSSLOCK(RXN) I '$G(PSOMSG) K PSOMSG S PSOLKFL=1 S PSOACT="",VALMSG="This Order is being edited by another user."
  K PSOMSG S IEN=0,$P(RN," ",12)=" "
  D DIN^PSONFI(+RXOR,$P(RX0,"^",6))
+ ; pso*7*467 - add display of erx information if the rx came from eRx
+ N ERXIEN
+ I $P(RXOR,U,2)]"" D
+ .S ERXIEN=$$CHKERX^PSOERXU1($P(RXOR,U,2)) I ERXIEN D DERX1^PSOERXU1($NA(^TMP("PSOAO",$J)),ERXIEN,"",.IEN)
+ ; pso*7*467 - end eRx enhancement
  S IEN=IEN+1,^TMP("PSOAO",$J,IEN,0)=$S($P($G(^PSRX(RXN,"TPB")),"^"):"            TPB Rx #: ",1:"                Rx #: ")
  S ^TMP("PSOAO",$J,IEN,0)=^TMP("PSOAO",$J,IEN,0)_$P(RX0,"^")_$S($G(^PSRX(RXN,"IB")):"$",1:"")_$$ECME^PSOBPSUT(RXN)_$$TITRX^PSOUTL(RXN)_$E(RN,$L($P(RX0,"^")_$S($G(^PSRX(RXN,"IB")):"$",1:"")_$$ECME^PSOBPSUT(RXN)_$$TITRX^PSOUTL(RXN))+1,12)
  S IEN=IEN+1,^TMP("PSOAO",$J,IEN,0)=" ("_$S($P(PSOPAR,"^",3):1,1:"#")_")"_" *Orderable Item: "_$S($D(^PS(50.7,$P(+RXOR,"^"),0)):$P(^PS(50.7,$P(+RXOR,"^"),0),"^")_" "_$P(^PS(50.606,$P(^(0),"^",2),0),"^"),1:"")_NFIO
  S:NFIO["<DIN>" NFIO=IEN_","_($L(^TMP("PSOAO",$J,IEN,0))-4)
  S IEN=IEN+1,^TMP("PSOAO",$J,IEN,0)=" ("_$S($P(PSOPAR,"^",3):2,1:"#")_")"_$S($D(^PSDRUG("AQ",$P(RX0,"^",6))):"       CMOP ",1:"            ")_"Drug: "_$P(^PSDRUG($P(RX0,"^",6),0),"^")_NFID
  S:NFID["<DIN>" NFID=IEN_","_($L(^TMP("PSOAO",$J,IEN,0))-4)
- I $$STATUS^PSOBPSUT(RXN,0)'="",$$RXRLDT^PSOBPSUT(RXN,0) D
- . S IEN=IEN+1,^TMP("PSOAO",$J,IEN,0)=" "_$S('$P(PSOPAR,"^",3):"(2)",1:"   ")_"             NDC: "_$$GETNDC^PSONDCUT(RXN,0)
+ S IEN=IEN+1,^TMP("PSOAO",$J,IEN,0)=" "_$S('$P(PSOPAR,"^",3):"(2)",1:"   ")_"             NDC: "_$$GETNDC^PSONDCUT(RXN,0)
  S:$G(^PSRX(RXN,"TN"))]"" IEN=IEN+1,^TMP("PSOAO",$J,IEN,0)="          Trade Name: "_$G(^PSRX(RXN,"TN"))
  D DOSE^PSOORNE5
  S IEN=IEN+1,^TMP("PSOAO",$J,IEN,0)=" (4)Pat Instructions:" D INS^PSOORNE5
@@ -77,12 +89,13 @@ PTST S $P(RN," ",25)=" ",PTST=$S($G(^PS(53,+$P(RX0,"^",3),0))]"":$P($G(^PS(53,+$
  S IEN=IEN+1,^TMP("PSOAO",$J,IEN,0)="      Last Fill Date: "_$E($P(RX3,"^"),4,5)_"/"_$E($P(RX3,"^"),6,7)_"/"_$E($P(RX3,"^"),2,3)
  D CMOP^PSOORNE3
  S ^TMP("PSOAO",$J,IEN,0)=^TMP("PSOAO",$J,IEN,0)_" ("_ROU_$S($G(PSOCMOP)]"":", "_PSOCMOP,1:"")_")" K ROU,PSOCMOP
- S IEN=IEN+1 I $P(RX2,"^",15) S ^TMP("PSOAO",$J,IEN,0)="   Returned to Stock: "_$E($P(RX2,"^",15),4,5)_"/"_$E($P(RX2,"^",15),6,7)_"/"_$E($P(RX2,"^",15),2,3)_$S($P(RX2,"^",14):" (Reprinted)",1:"")
- E  S ^TMP("PSOAO",$J,IEN,0)="   Last Release Date: " D
+ ;*282 Correct return to stock/release display
+ S IEN=IEN+1 D
  .S RLD=$S($P(RX2,"^",13):$E($P(RX2,"^",13),4,5)_"/"_$E($P(RX2,"^",13),6,7)_"/"_$E($P(RX2,"^",13),2,3),1:"")
  .I $O(^PSRX(RXN,1,0)) F I=0:0 S I=$O(^PSRX(RXN,1,I)) Q:'I  D
  ..I $P(^PSRX(RXN,1,I,0),"^",18) S RLD=$E($P(^(0),"^",18),4,5)_"/"_$E($P(^(0),"^",18),6,7)_"/"_$E($P(^(0),"^",18),2,3)
- .S ^TMP("PSOAO",$J,IEN,0)=^TMP("PSOAO",$J,IEN,0)_$S($G(RLD)]"":RLD,1:"        ")
+ .I $P(RX2,"^",15)&'$G(RLD) S ^TMP("PSOAO",$J,IEN,0)="   Returned to Stock: "_$E($P(RX2,"^",15),4,5)_"/"_$E($P(RX2,"^",15),6,7)_"/"_$E($P(RX2,"^",15),2,3)_$S($P(RX2,"^",14):" (Reprinted)",1:"")
+ .E  S ^TMP("PSOAO",$J,IEN,0)="   Last Release Date: "_$S($G(RLD)]"":RLD,1:"        ")
  S ^TMP("PSOAO",$J,IEN,0)=^TMP("PSOAO",$J,IEN,0)_"               (8)      Lot #: "_$P($G(RX2),"^",4)
  S IEN=IEN+1,^TMP("PSOAO",$J,IEN,0)="             Expires: "_$E($P(RX2,"^",6),4,5)_"/"_$E($P(RX2,"^",6),6,7)_"/"_$E($P(RX2,"^",6),2,3)
  S ^TMP("PSOAO",$J,IEN,0)=^TMP("PSOAO",$J,IEN,0)_"                          MFG: "_$P($G(RX2),"^",8)
@@ -117,3 +130,63 @@ RENERR S PSORERR=0 D ^PSOLMLST
  Q
 UL1 ;
  Q
+ ; bwf 1/21/2014 - adding display of remote active orders.
+RACT ; display remote active order
+ N REMSITE,CNT,REMDATA,RSITENM,RRXNUM,RDETSTR,RSIGSTR,RDET,RSIG,REMSIEN,RXSTAT,SIGLOOP,DETLOOP,DONE,SRXSTAT,SDNAME,DNAME
+ K ^TMP("PSOAO",$J)
+ S (RSIG,RDET)=""
+ S REMSITE=$P(PSOLST(ORN),U,4) Q:'REMSITE
+ S REMSIEN=$O(^DIC(4,"D",REMSITE,""))
+ S REMSIEN=$$FIND1^DIC(4,,"X",REMSITE,"D","I $P(^(0),U,11)=""N"",'$P($G(^(99)),U,4)") Q:'REMSIEN
+ S RSITENM=$$GET1^DIQ(4,REMSIEN,.01,"E")
+ ; do not continue if we are missing the remote order number for some reason
+ S RRXNUM=$P(PSOLST(ORN),U,2) Q:'RRXNUM
+ S DONE=0
+ S RXSTAT="" F  S RXSTAT=$O(^XTMP("PSORRX1",$J,PSODFN,REMSITE,RXSTAT)) Q:RXSTAT=""!DONE  D
+ .S SRXSTAT=RXSTAT
+ .S DNAME="" F  S DNAME=$O(^XTMP("PSORRX1",$J,PSODFN,REMSITE,RXSTAT,DNAME)) Q:DNAME=""!DONE  D
+ ..S SDNAME=DNAME
+ ..I $P(^XTMP("PSORRX1",$J,PSODFN,REMSITE,RXSTAT,DNAME,0),U,1)=RRXNUM S DONE=1 Q
+ Q:$G(SRXSTAT)=""
+ S REMDATA=$G(^XTMP("PSORRX1",$J,PSODFN,REMSITE,SRXSTAT,SDNAME,0))
+ S RDETSTR=$G(^XTMP("PSORRX1",$J,PSODFN,REMSITE,SRXSTAT,SDNAME,"DETAIL"))
+ S RSIGSTR=$G(^XTMP("PSORRX1",$J,PSODFN,REMSITE,SRXSTAT,SDNAME,"SIG"))
+ S CNT=1
+ S ^TMP("PSOAO",$J,CNT,0)="         Site #: "_REMSITE_"("_RSITENM_")",CNT=CNT+1
+ S ^TMP("PSOAO",$J,CNT,0)="           Rx #: "_RRXNUM,CNT=CNT+1
+ S ^TMP("PSOAO",$J,CNT,0)="      Drug Name: "_$P(REMDATA,U,11),CNT=CNT+1
+ S ^TMP("PSOAO",$J,CNT,0)="    Days Supply: "_$S($E($P(REMDATA,U,4),1)?1A:$E($P(REMDATA,U,4),2,99),1:$P(REMDATA,U,4)),CNT=CNT+1
+ S ^TMP("PSOAO",$J,CNT,0)="       Quantity: "_$P(REMDATA,U,2),CNT=CNT+1
+ S ^TMP("PSOAO",$J,CNT,0)="        Refills: "_$P(REMDATA,U,3),CNT=CNT+1
+ S ^TMP("PSOAO",$J,CNT,0)="Expiration Date: "_$$RDT($P($P(REMDATA,U,5),".")),CNT=CNT+1
+ S ^TMP("PSOAO",$J,CNT,0)="     Issue Date: "_$$RDT($P($P(REMDATA,U,6),".")),CNT=CNT+1
+ S ^TMP("PSOAO",$J,CNT,0)="      Stop Date: "_$$RDT($P($P(REMDATA,U,7),".")),CNT=CNT+1
+ S ^TMP("PSOAO",$J,CNT,0)=" Last Fill Date: "_$$RDT($P($P(REMDATA,U,8),".")),CNT=CNT+1
+ ;D RCHUNK(.RDET,RDETSTR),RCHUNK(.RSIG,RSIGSTR)
+ ;S ^TMP("PSOAO",$J,CNT,0)="         Detail: "_$G(RDET(1)),CNT=CNT+1
+ ;S DETLOOP=1 F  S DETLOOP=$O(RDET(DETLOOP)) Q:'DETLOOP  D
+ ;.S ^TMP("PSOAO",$J,CNT,0)="               "_RDET(DETLOOP),CNT=CNT+1
+ D RCHUNK(.RSIG,RSIGSTR)
+ S ^TMP("PSOAO",$J,CNT,0)="            Sig: "_$G(RSIG(1))
+ S SIGLOOP=1 F  S SIGLOOP=$O(RSIG(SIGLOOP)) Q:'SIGLOOP  D
+ .S CNT=CNT+1,^TMP("PSOAO",$J,CNT,0)="               "_RSIG(SIGLOOP)
+ ; ^PSOLMLST is the local order template
+ D EN^PSOROS
+ Q
+RCHUNK(ARR,STR) ;
+ N START,END,I,C,ROOM
+ S ROOM=60
+ ; if there is enough room for 1 line, no wrapping needed
+ I $L(STR)'>ROOM S ARR(1)=STR Q
+ ; add a space to the end of the string to avoid dropping last character
+ S START=1,END=ROOM,STR=STR_" "
+ F C=1:1 D  Q:$L(STR)<START  ; stop if we have made it to the end of the data string
+ .; start at the end and work backwards until you find a blank space, cut the line there and move on to the next line 
+ .F I=END:-1:START I $E(STR,I)=" " S ARR(C)=$E(STR,START,I),START=I+1,END=ROOM+START Q
+ .; make sure there wasn't a really long string without spaces
+ .I I=START S ARR(C)=$E(STR,START,END),START=END+1,END=ROOM+START
+ Q
+RDT(DATE) ;
+ N Y,M,D
+ S Y=$E(DATE,3,4),M=$E(DATE,5,6),D=$E(DATE,7,8)
+ Q M_"/"_D_"/"_Y

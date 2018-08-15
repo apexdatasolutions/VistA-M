@@ -1,142 +1,128 @@
-IBDEI0H5 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0H5 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,8328,0)
- ;;=377.00^^58^608^99
- ;;^UTILITY(U,$J,358.3,8328,1,0)
+ ;;^UTILITY(U,$J,358.3,7667,2)
+ ;;=^5015492
+ ;;^UTILITY(U,$J,358.3,7668,0)
+ ;;=N00.2^^52^518^4
+ ;;^UTILITY(U,$J,358.3,7668,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8328,1,3,0)
- ;;=3^Papilledema,Unspec
- ;;^UTILITY(U,$J,358.3,8328,1,4,0)
- ;;=4^377.00
- ;;^UTILITY(U,$J,358.3,8328,2)
- ;;=^89575
- ;;^UTILITY(U,$J,358.3,8329,0)
- ;;=377.02^^58^608^98
- ;;^UTILITY(U,$J,358.3,8329,1,0)
+ ;;^UTILITY(U,$J,358.3,7668,1,3,0)
+ ;;=3^Acute nephritic syndrome w/ diffuse membranous glomrlneph
+ ;;^UTILITY(U,$J,358.3,7668,1,4,0)
+ ;;=4^N00.2
+ ;;^UTILITY(U,$J,358.3,7668,2)
+ ;;=^5015493
+ ;;^UTILITY(U,$J,358.3,7669,0)
+ ;;=N00.3^^52^518^5
+ ;;^UTILITY(U,$J,358.3,7669,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8329,1,3,0)
- ;;=3^Papilledema,Decreased Ocul Pressure
- ;;^UTILITY(U,$J,358.3,8329,1,4,0)
- ;;=4^377.02
- ;;^UTILITY(U,$J,358.3,8329,2)
- ;;=^269213
- ;;^UTILITY(U,$J,358.3,8330,0)
- ;;=377.03^^58^608^97
- ;;^UTILITY(U,$J,358.3,8330,1,0)
+ ;;^UTILITY(U,$J,358.3,7669,1,3,0)
+ ;;=3^Acute nephritic syndrome w/ diffuse mesangial prolif glomrlneph
+ ;;^UTILITY(U,$J,358.3,7669,1,4,0)
+ ;;=4^N00.3
+ ;;^UTILITY(U,$J,358.3,7669,2)
+ ;;=^5015494
+ ;;^UTILITY(U,$J,358.3,7670,0)
+ ;;=N00.4^^52^518^3
+ ;;^UTILITY(U,$J,358.3,7670,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8330,1,3,0)
- ;;=3^Papilledema w/ Retina D/O
- ;;^UTILITY(U,$J,358.3,8330,1,4,0)
- ;;=4^377.03
- ;;^UTILITY(U,$J,358.3,8330,2)
- ;;=^269214
- ;;^UTILITY(U,$J,358.3,8331,0)
- ;;=377.04^^58^608^40
- ;;^UTILITY(U,$J,358.3,8331,1,0)
+ ;;^UTILITY(U,$J,358.3,7670,1,3,0)
+ ;;=3^Acute nephritic syndrome w/ diffuse endocaplry prolif glomrlneph
+ ;;^UTILITY(U,$J,358.3,7670,1,4,0)
+ ;;=4^N00.4
+ ;;^UTILITY(U,$J,358.3,7670,2)
+ ;;=^5015495
+ ;;^UTILITY(U,$J,358.3,7671,0)
+ ;;=N00.5^^52^518^6
+ ;;^UTILITY(U,$J,358.3,7671,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8331,1,3,0)
- ;;=3^Foster-Kennedy Syndrome
- ;;^UTILITY(U,$J,358.3,8331,1,4,0)
- ;;=4^377.04
- ;;^UTILITY(U,$J,358.3,8331,2)
- ;;=^265146
- ;;^UTILITY(U,$J,358.3,8332,0)
- ;;=377.11^^58^608^83
- ;;^UTILITY(U,$J,358.3,8332,1,0)
+ ;;^UTILITY(U,$J,358.3,7671,1,3,0)
+ ;;=3^Acute nephritic syndrome w/ diffuse mesangiocap glomrlneph
+ ;;^UTILITY(U,$J,358.3,7671,1,4,0)
+ ;;=4^N00.5
+ ;;^UTILITY(U,$J,358.3,7671,2)
+ ;;=^5015496
+ ;;^UTILITY(U,$J,358.3,7672,0)
+ ;;=N00.6^^52^518^1
+ ;;^UTILITY(U,$J,358.3,7672,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8332,1,3,0)
- ;;=3^Optic Atrophy,Primary
- ;;^UTILITY(U,$J,358.3,8332,1,4,0)
- ;;=4^377.11
- ;;^UTILITY(U,$J,358.3,8332,2)
- ;;=^269215
- ;;^UTILITY(U,$J,358.3,8333,0)
- ;;=377.12^^58^608^82
- ;;^UTILITY(U,$J,358.3,8333,1,0)
+ ;;^UTILITY(U,$J,358.3,7672,1,3,0)
+ ;;=3^Acute nephritic syndrome w/ dense deposit disease
+ ;;^UTILITY(U,$J,358.3,7672,1,4,0)
+ ;;=4^N00.6
+ ;;^UTILITY(U,$J,358.3,7672,2)
+ ;;=^5015497
+ ;;^UTILITY(U,$J,358.3,7673,0)
+ ;;=N00.7^^52^518^2
+ ;;^UTILITY(U,$J,358.3,7673,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8333,1,3,0)
- ;;=3^Optic Atrophy,Postinflammatory
- ;;^UTILITY(U,$J,358.3,8333,1,4,0)
- ;;=4^377.12
- ;;^UTILITY(U,$J,358.3,8333,2)
- ;;=^269216
- ;;^UTILITY(U,$J,358.3,8334,0)
- ;;=377.15^^58^608^81
- ;;^UTILITY(U,$J,358.3,8334,1,0)
+ ;;^UTILITY(U,$J,358.3,7673,1,3,0)
+ ;;=3^Acute nephritic syndrome w/ diffuse crescentic glomrlneph
+ ;;^UTILITY(U,$J,358.3,7673,1,4,0)
+ ;;=4^N00.7
+ ;;^UTILITY(U,$J,358.3,7673,2)
+ ;;=^5015498
+ ;;^UTILITY(U,$J,358.3,7674,0)
+ ;;=N00.8^^52^518^9
+ ;;^UTILITY(U,$J,358.3,7674,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8334,1,3,0)
- ;;=3^Optic Atrophy,Partial
- ;;^UTILITY(U,$J,358.3,8334,1,4,0)
- ;;=4^377.15
- ;;^UTILITY(U,$J,358.3,8334,2)
- ;;=^269219
- ;;^UTILITY(U,$J,358.3,8335,0)
- ;;=377.16^^58^608^80
- ;;^UTILITY(U,$J,358.3,8335,1,0)
+ ;;^UTILITY(U,$J,358.3,7674,1,3,0)
+ ;;=3^Acute nephritic syndrome w/ other morphologic changes
+ ;;^UTILITY(U,$J,358.3,7674,1,4,0)
+ ;;=4^N00.8
+ ;;^UTILITY(U,$J,358.3,7674,2)
+ ;;=^5015499
+ ;;^UTILITY(U,$J,358.3,7675,0)
+ ;;=N00.9^^52^518^10
+ ;;^UTILITY(U,$J,358.3,7675,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8335,1,3,0)
- ;;=3^Optic Atrophy,Leber's
- ;;^UTILITY(U,$J,358.3,8335,1,4,0)
- ;;=4^377.16
- ;;^UTILITY(U,$J,358.3,8335,2)
- ;;=^85931
- ;;^UTILITY(U,$J,358.3,8336,0)
- ;;=377.31^^58^608^94
- ;;^UTILITY(U,$J,358.3,8336,1,0)
+ ;;^UTILITY(U,$J,358.3,7675,1,3,0)
+ ;;=3^Acute nephritic syndrome w/ unsp morphologic changes
+ ;;^UTILITY(U,$J,358.3,7675,1,4,0)
+ ;;=4^N00.9
+ ;;^UTILITY(U,$J,358.3,7675,2)
+ ;;=^5015500
+ ;;^UTILITY(U,$J,358.3,7676,0)
+ ;;=N01.0^^52^518^70
+ ;;^UTILITY(U,$J,358.3,7676,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8336,1,3,0)
- ;;=3^Optic Papillitis
- ;;^UTILITY(U,$J,358.3,8336,1,4,0)
- ;;=4^377.31
- ;;^UTILITY(U,$J,358.3,8336,2)
- ;;=^276874
- ;;^UTILITY(U,$J,358.3,8337,0)
- ;;=377.32^^58^608^89
- ;;^UTILITY(U,$J,358.3,8337,1,0)
+ ;;^UTILITY(U,$J,358.3,7676,1,3,0)
+ ;;=3^Rapidly progr neph synd w/ minor glomerular abnlt
+ ;;^UTILITY(U,$J,358.3,7676,1,4,0)
+ ;;=4^N01.0
+ ;;^UTILITY(U,$J,358.3,7676,2)
+ ;;=^5015501
+ ;;^UTILITY(U,$J,358.3,7677,0)
+ ;;=N01.1^^52^518^69
+ ;;^UTILITY(U,$J,358.3,7677,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8337,1,3,0)
- ;;=3^Optic Neuritis,Retrobulbar,Acute
- ;;^UTILITY(U,$J,358.3,8337,1,4,0)
- ;;=4^377.32
- ;;^UTILITY(U,$J,358.3,8337,2)
- ;;=^269225
- ;;^UTILITY(U,$J,358.3,8338,0)
- ;;=377.33^^58^608^92
- ;;^UTILITY(U,$J,358.3,8338,1,0)
+ ;;^UTILITY(U,$J,358.3,7677,1,3,0)
+ ;;=3^Rapidly progr neph synd w/ focal & seg glomerular lesions
+ ;;^UTILITY(U,$J,358.3,7677,1,4,0)
+ ;;=4^N01.1
+ ;;^UTILITY(U,$J,358.3,7677,2)
+ ;;=^5015502
+ ;;^UTILITY(U,$J,358.3,7678,0)
+ ;;=N01.2^^52^518^67
+ ;;^UTILITY(U,$J,358.3,7678,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8338,1,3,0)
- ;;=3^Optic Neuropathy,Nutritional
- ;;^UTILITY(U,$J,358.3,8338,1,4,0)
- ;;=4^377.33
- ;;^UTILITY(U,$J,358.3,8338,2)
- ;;=^269226
- ;;^UTILITY(U,$J,358.3,8339,0)
- ;;=377.39^^58^608^93
- ;;^UTILITY(U,$J,358.3,8339,1,0)
+ ;;^UTILITY(U,$J,358.3,7678,1,3,0)
+ ;;=3^Rapidly progr neph synd w/ diffuse membranous glomrlneph
+ ;;^UTILITY(U,$J,358.3,7678,1,4,0)
+ ;;=4^N01.2
+ ;;^UTILITY(U,$J,358.3,7678,2)
+ ;;=^5015503
+ ;;^UTILITY(U,$J,358.3,7679,0)
+ ;;=N01.3^^52^518^65
+ ;;^UTILITY(U,$J,358.3,7679,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8339,1,3,0)
- ;;=3^Optic Neuropathy,Other
- ;;^UTILITY(U,$J,358.3,8339,1,4,0)
- ;;=4^377.39
- ;;^UTILITY(U,$J,358.3,8339,2)
- ;;=^87748
- ;;^UTILITY(U,$J,358.3,8340,0)
- ;;=377.42^^58^608^87
- ;;^UTILITY(U,$J,358.3,8340,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8340,1,3,0)
- ;;=3^Optic Nerve Sheaths Hemorrhage
- ;;^UTILITY(U,$J,358.3,8340,1,4,0)
- ;;=4^377.42
- ;;^UTILITY(U,$J,358.3,8340,2)
- ;;=^269233
- ;;^UTILITY(U,$J,358.3,8341,0)
- ;;=377.49^^58^608^86
- ;;^UTILITY(U,$J,358.3,8341,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8341,1,3,0)
- ;;=3^Optic Nerve Compression
- ;;^UTILITY(U,$J,358.3,8341,1,4,0)
- ;;=4^377.49
+ ;;^UTILITY(U,$J,358.3,7679,1,3,0)
+ ;;=3^Rapidly progr neph synd w/ diffus mesangial prolif glomrlneph
+ ;;^UTILITY(U,$J,358.3,7679,1,4,0)
+ ;;=4^N01.3
+ ;;^UTILITY(U,$J,358.3,7679,2)
+ ;;=^5015504
+ ;;^UTILITY(U,$J,358.3,7680,0)
+ ;;=N01.4^^52^518^64

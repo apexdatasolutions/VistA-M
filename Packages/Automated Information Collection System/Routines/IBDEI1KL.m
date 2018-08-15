@@ -1,0 +1,134 @@
+IBDEI1KL ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,26249,1,4,0)
+ ;;=4^T81.31XA
+ ;;^UTILITY(U,$J,358.3,26249,2)
+ ;;=^5054470
+ ;;^UTILITY(U,$J,358.3,26250,0)
+ ;;=T81.4XXA^^127^1274^3
+ ;;^UTILITY(U,$J,358.3,26250,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26250,1,3,0)
+ ;;=3^Infection Following a Procedure,Init Encntr
+ ;;^UTILITY(U,$J,358.3,26250,1,4,0)
+ ;;=4^T81.4XXA
+ ;;^UTILITY(U,$J,358.3,26250,2)
+ ;;=^5054479
+ ;;^UTILITY(U,$J,358.3,26251,0)
+ ;;=T81.83XA^^127^1274^4
+ ;;^UTILITY(U,$J,358.3,26251,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26251,1,3,0)
+ ;;=3^Persistent Postprocedural Fistula,Init Encntr
+ ;;^UTILITY(U,$J,358.3,26251,1,4,0)
+ ;;=4^T81.83XA
+ ;;^UTILITY(U,$J,358.3,26251,2)
+ ;;=^5054659
+ ;;^UTILITY(U,$J,358.3,26252,0)
+ ;;=T81.89XA^^127^1274^1
+ ;;^UTILITY(U,$J,358.3,26252,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26252,1,3,0)
+ ;;=3^Complications of Procedures NEC,Init Encntr
+ ;;^UTILITY(U,$J,358.3,26252,1,4,0)
+ ;;=4^T81.89XA
+ ;;^UTILITY(U,$J,358.3,26252,2)
+ ;;=^5054662
+ ;;^UTILITY(U,$J,358.3,26253,0)
+ ;;=C34.91^^127^1275^10
+ ;;^UTILITY(U,$J,358.3,26253,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26253,1,3,0)
+ ;;=3^Malig Neop Right Bronchus/Lung,Unspec Part
+ ;;^UTILITY(U,$J,358.3,26253,1,4,0)
+ ;;=4^C34.91
+ ;;^UTILITY(U,$J,358.3,26253,2)
+ ;;=^5000967
+ ;;^UTILITY(U,$J,358.3,26254,0)
+ ;;=C34.92^^127^1275^9
+ ;;^UTILITY(U,$J,358.3,26254,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26254,1,3,0)
+ ;;=3^Malig Neop Left Bronchus/Lung,Unspec Part
+ ;;^UTILITY(U,$J,358.3,26254,1,4,0)
+ ;;=4^C34.92
+ ;;^UTILITY(U,$J,358.3,26254,2)
+ ;;=^5000968
+ ;;^UTILITY(U,$J,358.3,26255,0)
+ ;;=J20.9^^127^1275^1
+ ;;^UTILITY(U,$J,358.3,26255,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26255,1,3,0)
+ ;;=3^Acute Bronchitis,Unspec
+ ;;^UTILITY(U,$J,358.3,26255,1,4,0)
+ ;;=4^J20.9
+ ;;^UTILITY(U,$J,358.3,26255,2)
+ ;;=^5008195
+ ;;^UTILITY(U,$J,358.3,26256,0)
+ ;;=J42.^^127^1275^5
+ ;;^UTILITY(U,$J,358.3,26256,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26256,1,3,0)
+ ;;=3^Chronic Bronchitis,Unspec
+ ;;^UTILITY(U,$J,358.3,26256,1,4,0)
+ ;;=4^J42.
+ ;;^UTILITY(U,$J,358.3,26256,2)
+ ;;=^5008234
+ ;;^UTILITY(U,$J,358.3,26257,0)
+ ;;=J45.909^^127^1275^3
+ ;;^UTILITY(U,$J,358.3,26257,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26257,1,3,0)
+ ;;=3^Asthma,Uncomplicated
+ ;;^UTILITY(U,$J,358.3,26257,1,4,0)
+ ;;=4^J45.909
+ ;;^UTILITY(U,$J,358.3,26257,2)
+ ;;=^5008256
+ ;;^UTILITY(U,$J,358.3,26258,0)
+ ;;=J45.902^^127^1275^2
+ ;;^UTILITY(U,$J,358.3,26258,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26258,1,3,0)
+ ;;=3^Asthma w/ Status Asthmaticus,Unspec
+ ;;^UTILITY(U,$J,358.3,26258,1,4,0)
+ ;;=4^J45.902
+ ;;^UTILITY(U,$J,358.3,26258,2)
+ ;;=^5008255
+ ;;^UTILITY(U,$J,358.3,26259,0)
+ ;;=J44.9^^127^1275^4
+ ;;^UTILITY(U,$J,358.3,26259,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26259,1,3,0)
+ ;;=3^COPD,Unspec
+ ;;^UTILITY(U,$J,358.3,26259,1,4,0)
+ ;;=4^J44.9
+ ;;^UTILITY(U,$J,358.3,26259,2)
+ ;;=^5008241
+ ;;^UTILITY(U,$J,358.3,26260,0)
+ ;;=J61.^^127^1275^14
+ ;;^UTILITY(U,$J,358.3,26260,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26260,1,3,0)
+ ;;=3^Pneumoconiosis d/t Asbestos/Oth Mineral Fibers
+ ;;^UTILITY(U,$J,358.3,26260,1,4,0)
+ ;;=4^J61.
+ ;;^UTILITY(U,$J,358.3,26260,2)
+ ;;=^5008262
+ ;;^UTILITY(U,$J,358.3,26261,0)
+ ;;=R09.1^^127^1275^13
+ ;;^UTILITY(U,$J,358.3,26261,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26261,1,3,0)
+ ;;=3^Pleurisy
+ ;;^UTILITY(U,$J,358.3,26261,1,4,0)
+ ;;=4^R09.1
+ ;;^UTILITY(U,$J,358.3,26261,2)
+ ;;=^95428
+ ;;^UTILITY(U,$J,358.3,26262,0)
+ ;;=J84.10^^127^1275^15
+ ;;^UTILITY(U,$J,358.3,26262,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26262,1,3,0)
+ ;;=3^Pulmonary Fibrosis,Unspec

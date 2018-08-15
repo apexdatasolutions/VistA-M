@@ -1,126 +1,138 @@
-IBDEI0ZA ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0ZA ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,17529,1,2,0)
- ;;=2^Chemodenervation 1 Ext,1-4 Muscles
- ;;^UTILITY(U,$J,358.3,17529,1,4,0)
- ;;=4^64642
- ;;^UTILITY(U,$J,358.3,17530,0)
- ;;=64643^^113^1093^6^^^^1
- ;;^UTILITY(U,$J,358.3,17530,1,0)
+ ;;^UTILITY(U,$J,358.3,16254,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,17530,1,2,0)
- ;;=2^Chemodenervation Ea Addl Ext,1-4 Muscles
- ;;^UTILITY(U,$J,358.3,17530,1,4,0)
- ;;=4^64643
- ;;^UTILITY(U,$J,358.3,17531,0)
- ;;=64644^^113^1093^7^^^^1
- ;;^UTILITY(U,$J,358.3,17531,1,0)
+ ;;^UTILITY(U,$J,358.3,16254,1,3,0)
+ ;;=3^White Blood Cell Count,Elevated,Unspec
+ ;;^UTILITY(U,$J,358.3,16254,1,4,0)
+ ;;=4^D72.829
+ ;;^UTILITY(U,$J,358.3,16254,2)
+ ;;=^5002379
+ ;;^UTILITY(U,$J,358.3,16255,0)
+ ;;=D72.9^^88^844^37
+ ;;^UTILITY(U,$J,358.3,16255,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,17531,1,2,0)
- ;;=2^Chemodenervation 1 Ext,5 or > Muscles
- ;;^UTILITY(U,$J,358.3,17531,1,4,0)
- ;;=4^64644
- ;;^UTILITY(U,$J,358.3,17532,0)
- ;;=64645^^113^1093^8^^^^1
- ;;^UTILITY(U,$J,358.3,17532,1,0)
+ ;;^UTILITY(U,$J,358.3,16255,1,3,0)
+ ;;=3^White Blood Cells Disorder,Unspec
+ ;;^UTILITY(U,$J,358.3,16255,1,4,0)
+ ;;=4^D72.9
+ ;;^UTILITY(U,$J,358.3,16255,2)
+ ;;=^5002381
+ ;;^UTILITY(U,$J,358.3,16256,0)
+ ;;=L02.91^^88^845^1
+ ;;^UTILITY(U,$J,358.3,16256,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,17532,1,2,0)
- ;;=2^Chemodenerv Ea Addl Ext,5 or > Muscles
- ;;^UTILITY(U,$J,358.3,17532,1,4,0)
- ;;=4^64645
- ;;^UTILITY(U,$J,358.3,17533,0)
- ;;=64646^^113^1093^11^^^^1
- ;;^UTILITY(U,$J,358.3,17533,1,0)
+ ;;^UTILITY(U,$J,358.3,16256,1,3,0)
+ ;;=3^Abcess,Cutaneous,Unspec
+ ;;^UTILITY(U,$J,358.3,16256,1,4,0)
+ ;;=4^L02.91
+ ;;^UTILITY(U,$J,358.3,16256,2)
+ ;;=^5009016
+ ;;^UTILITY(U,$J,358.3,16257,0)
+ ;;=L11.9^^88^845^2
+ ;;^UTILITY(U,$J,358.3,16257,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,17533,1,2,0)
- ;;=2^Chemodenervation Trunk Muscles,1-5
- ;;^UTILITY(U,$J,358.3,17533,1,4,0)
- ;;=4^64646
- ;;^UTILITY(U,$J,358.3,17534,0)
- ;;=64647^^113^1093^12^^^^1
- ;;^UTILITY(U,$J,358.3,17534,1,0)
+ ;;^UTILITY(U,$J,358.3,16257,1,3,0)
+ ;;=3^Acantholytic Disorder,Unspec
+ ;;^UTILITY(U,$J,358.3,16257,1,4,0)
+ ;;=4^L11.9
+ ;;^UTILITY(U,$J,358.3,16257,2)
+ ;;=^5009094
+ ;;^UTILITY(U,$J,358.3,16258,0)
+ ;;=L83.^^88^845^3
+ ;;^UTILITY(U,$J,358.3,16258,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,17534,1,2,0)
- ;;=2^Chemodenervation Trunk Muscles 6 or >
- ;;^UTILITY(U,$J,358.3,17534,1,4,0)
- ;;=4^64647
- ;;^UTILITY(U,$J,358.3,17535,0)
- ;;=64550^^113^1094^6^^^^1
- ;;^UTILITY(U,$J,358.3,17535,1,0)
+ ;;^UTILITY(U,$J,358.3,16258,1,3,0)
+ ;;=3^Acanthosis Nigricans
+ ;;^UTILITY(U,$J,358.3,16258,1,4,0)
+ ;;=4^L83.
+ ;;^UTILITY(U,$J,358.3,16258,2)
+ ;;=^1451
+ ;;^UTILITY(U,$J,358.3,16259,0)
+ ;;=L70.9^^88^845^4
+ ;;^UTILITY(U,$J,358.3,16259,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,17535,1,2,0)
- ;;=2^TENS Device Training & Issue
- ;;^UTILITY(U,$J,358.3,17535,1,4,0)
- ;;=4^64550
- ;;^UTILITY(U,$J,358.3,17536,0)
- ;;=64553^^113^1094^2^^^^1
- ;;^UTILITY(U,$J,358.3,17536,1,0)
+ ;;^UTILITY(U,$J,358.3,16259,1,3,0)
+ ;;=3^Acne,Unspec
+ ;;^UTILITY(U,$J,358.3,16259,1,4,0)
+ ;;=4^L70.9
+ ;;^UTILITY(U,$J,358.3,16259,2)
+ ;;=^5009273
+ ;;^UTILITY(U,$J,358.3,16260,0)
+ ;;=L57.0^^88^845^5
+ ;;^UTILITY(U,$J,358.3,16260,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,17536,1,2,0)
- ;;=2^Percut Neuroelectrodes,Cranial Nerve
- ;;^UTILITY(U,$J,358.3,17536,1,4,0)
- ;;=4^64553
- ;;^UTILITY(U,$J,358.3,17537,0)
- ;;=64555^^113^1094^3^^^^1
- ;;^UTILITY(U,$J,358.3,17537,1,0)
+ ;;^UTILITY(U,$J,358.3,16260,1,3,0)
+ ;;=3^Actinic Keratosis
+ ;;^UTILITY(U,$J,358.3,16260,1,4,0)
+ ;;=4^L57.0
+ ;;^UTILITY(U,$J,358.3,16260,2)
+ ;;=^66900
+ ;;^UTILITY(U,$J,358.3,16261,0)
+ ;;=N65.0^^88^845^16
+ ;;^UTILITY(U,$J,358.3,16261,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,17537,1,2,0)
- ;;=2^Percut Neuroelectrodes,Peripheral Nerve
- ;;^UTILITY(U,$J,358.3,17537,1,4,0)
- ;;=4^64555
- ;;^UTILITY(U,$J,358.3,17538,0)
- ;;=64561^^113^1094^4^^^^1
- ;;^UTILITY(U,$J,358.3,17538,1,0)
+ ;;^UTILITY(U,$J,358.3,16261,1,3,0)
+ ;;=3^Breast,Reconstructed Deformity
+ ;;^UTILITY(U,$J,358.3,16261,1,4,0)
+ ;;=4^N65.0
+ ;;^UTILITY(U,$J,358.3,16261,2)
+ ;;=^5015800
+ ;;^UTILITY(U,$J,358.3,16262,0)
+ ;;=N64.9^^88^845^9
+ ;;^UTILITY(U,$J,358.3,16262,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,17538,1,2,0)
- ;;=2^Percut Neuroelectrodes,Sacral Nerve
- ;;^UTILITY(U,$J,358.3,17538,1,4,0)
- ;;=4^64561
- ;;^UTILITY(U,$J,358.3,17539,0)
- ;;=64575^^113^1094^1^^^^1
- ;;^UTILITY(U,$J,358.3,17539,1,0)
+ ;;^UTILITY(U,$J,358.3,16262,1,3,0)
+ ;;=3^Breast Disorder,Unspec
+ ;;^UTILITY(U,$J,358.3,16262,1,4,0)
+ ;;=4^N64.9
+ ;;^UTILITY(U,$J,358.3,16262,2)
+ ;;=^5015799
+ ;;^UTILITY(U,$J,358.3,16263,0)
+ ;;=N65.1^^88^845^15
+ ;;^UTILITY(U,$J,358.3,16263,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,17539,1,2,0)
- ;;=2^Implant Neuroelectrodes
- ;;^UTILITY(U,$J,358.3,17539,1,4,0)
- ;;=4^64575
- ;;^UTILITY(U,$J,358.3,17540,0)
- ;;=64585^^113^1094^5^^^^1
- ;;^UTILITY(U,$J,358.3,17540,1,0)
+ ;;^UTILITY(U,$J,358.3,16263,1,3,0)
+ ;;=3^Breast Reconstructed Disproportion
+ ;;^UTILITY(U,$J,358.3,16263,1,4,0)
+ ;;=4^N65.1
+ ;;^UTILITY(U,$J,358.3,16263,2)
+ ;;=^5015801
+ ;;^UTILITY(U,$J,358.3,16264,0)
+ ;;=N60.92^^88^845^10
+ ;;^UTILITY(U,$J,358.3,16264,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,17540,1,2,0)
- ;;=2^Revise/Remove Neuroelectrode
- ;;^UTILITY(U,$J,358.3,17540,1,4,0)
- ;;=4^64585
- ;;^UTILITY(U,$J,358.3,17541,0)
- ;;=20552^^113^1095^8^^^^1
- ;;^UTILITY(U,$J,358.3,17541,1,0)
+ ;;^UTILITY(U,$J,358.3,16264,1,3,0)
+ ;;=3^Breast Dysplasia,Benign Mammary,Left
+ ;;^UTILITY(U,$J,358.3,16264,1,4,0)
+ ;;=4^N60.92
+ ;;^UTILITY(U,$J,358.3,16264,2)
+ ;;=^5134091
+ ;;^UTILITY(U,$J,358.3,16265,0)
+ ;;=N60.91^^88^845^11
+ ;;^UTILITY(U,$J,358.3,16265,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,17541,1,2,0)
- ;;=2^Trigger Point,1-2 Muscles
- ;;^UTILITY(U,$J,358.3,17541,1,4,0)
- ;;=4^20552
- ;;^UTILITY(U,$J,358.3,17542,0)
- ;;=20553^^113^1095^9^^^^1
- ;;^UTILITY(U,$J,358.3,17542,1,0)
+ ;;^UTILITY(U,$J,358.3,16265,1,3,0)
+ ;;=3^Breast Dysplasia,Benign Mammary,Right
+ ;;^UTILITY(U,$J,358.3,16265,1,4,0)
+ ;;=4^N60.91
+ ;;^UTILITY(U,$J,358.3,16265,2)
+ ;;=^5015788
+ ;;^UTILITY(U,$J,358.3,16266,0)
+ ;;=N62.^^88^845^12
+ ;;^UTILITY(U,$J,358.3,16266,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,17542,1,2,0)
- ;;=2^Trigger Point,3 or more Muscles
- ;;^UTILITY(U,$J,358.3,17542,1,4,0)
- ;;=4^20553
- ;;^UTILITY(U,$J,358.3,17543,0)
- ;;=20612^^113^1095^1^^^^1
- ;;^UTILITY(U,$J,358.3,17543,1,0)
+ ;;^UTILITY(U,$J,358.3,16266,1,3,0)
+ ;;=3^Breast Hypertrophy
+ ;;^UTILITY(U,$J,358.3,16266,1,4,0)
+ ;;=4^N62.
+ ;;^UTILITY(U,$J,358.3,16266,2)
+ ;;=^5015790
+ ;;^UTILITY(U,$J,358.3,16267,0)
+ ;;=N61.^^88^845^13
+ ;;^UTILITY(U,$J,358.3,16267,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,17543,1,2,0)
- ;;=2^Ganglion Cyst Aspirate/Inj
- ;;^UTILITY(U,$J,358.3,17543,1,4,0)
- ;;=4^20612
- ;;^UTILITY(U,$J,358.3,17544,0)
- ;;=27096^^113^1095^2^^^^1
- ;;^UTILITY(U,$J,358.3,17544,1,0)
- ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,17544,1,2,0)
- ;;=2^Inj Sacroiliac Joint
+ ;;^UTILITY(U,$J,358.3,16267,1,3,0)
+ ;;=3^Breast Inflammatory Disorders

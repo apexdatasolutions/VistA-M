@@ -1,136 +1,124 @@
-IBDEI1AQ ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1AQ ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,23210,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23210,1,2,0)
- ;;=2^64405
- ;;^UTILITY(U,$J,358.3,23210,1,3,0)
- ;;=3^Nerve Block,Occipital
- ;;^UTILITY(U,$J,358.3,23211,0)
- ;;=64615^^145^1429^3^^^^1
- ;;^UTILITY(U,$J,358.3,23211,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23211,1,2,0)
- ;;=2^64615
- ;;^UTILITY(U,$J,358.3,23211,1,3,0)
- ;;=3^Chemodenervation Muscle for Migraine
- ;;^UTILITY(U,$J,358.3,23212,0)
- ;;=J0585^^145^1429^1^^^^1
- ;;^UTILITY(U,$J,358.3,23212,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23212,1,2,0)
- ;;=2^J0585
- ;;^UTILITY(U,$J,358.3,23212,1,3,0)
- ;;=3^Botulinum Toxin A,per unit
- ;;^UTILITY(U,$J,358.3,23213,0)
- ;;=J0587^^145^1429^2^^^^1
- ;;^UTILITY(U,$J,358.3,23213,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,23213,1,2,0)
- ;;=2^J0587
- ;;^UTILITY(U,$J,358.3,23213,1,3,0)
- ;;=3^Botulinum Toxin B,100 units
- ;;^UTILITY(U,$J,358.3,23214,0)
- ;;=99201^^146^1430^1
- ;;^UTILITY(U,$J,358.3,23214,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,23214,1,1,0)
- ;;=1^Problem Focus
- ;;^UTILITY(U,$J,358.3,23214,1,2,0)
- ;;=2^99201
- ;;^UTILITY(U,$J,358.3,23215,0)
- ;;=99202^^146^1430^2
- ;;^UTILITY(U,$J,358.3,23215,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,23215,1,1,0)
- ;;=1^Expanded Problem Focus
- ;;^UTILITY(U,$J,358.3,23215,1,2,0)
- ;;=2^99202
- ;;^UTILITY(U,$J,358.3,23216,0)
- ;;=99203^^146^1430^3
- ;;^UTILITY(U,$J,358.3,23216,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,23216,1,1,0)
- ;;=1^Detailed
- ;;^UTILITY(U,$J,358.3,23216,1,2,0)
- ;;=2^99203
- ;;^UTILITY(U,$J,358.3,23217,0)
- ;;=99204^^146^1430^4
- ;;^UTILITY(U,$J,358.3,23217,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,23217,1,1,0)
- ;;=1^Comprehensive, Moderate
- ;;^UTILITY(U,$J,358.3,23217,1,2,0)
- ;;=2^99204
- ;;^UTILITY(U,$J,358.3,23218,0)
- ;;=99205^^146^1430^5
- ;;^UTILITY(U,$J,358.3,23218,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,23218,1,1,0)
- ;;=1^Comprehensive, High
- ;;^UTILITY(U,$J,358.3,23218,1,2,0)
- ;;=2^99205
- ;;^UTILITY(U,$J,358.3,23219,0)
- ;;=99211^^146^1431^1
- ;;^UTILITY(U,$J,358.3,23219,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,23219,1,1,0)
- ;;=1^Brief (no MD seen)
- ;;^UTILITY(U,$J,358.3,23219,1,2,0)
- ;;=2^99211
- ;;^UTILITY(U,$J,358.3,23220,0)
- ;;=99212^^146^1431^2
- ;;^UTILITY(U,$J,358.3,23220,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,23220,1,1,0)
- ;;=1^Problem Focused
- ;;^UTILITY(U,$J,358.3,23220,1,2,0)
- ;;=2^99212
- ;;^UTILITY(U,$J,358.3,23221,0)
- ;;=99213^^146^1431^3
- ;;^UTILITY(U,$J,358.3,23221,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,23221,1,1,0)
- ;;=1^Expanded Problem Focus
- ;;^UTILITY(U,$J,358.3,23221,1,2,0)
- ;;=2^99213
- ;;^UTILITY(U,$J,358.3,23222,0)
- ;;=99214^^146^1431^4
- ;;^UTILITY(U,$J,358.3,23222,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,23222,1,1,0)
- ;;=1^Detailed
- ;;^UTILITY(U,$J,358.3,23222,1,2,0)
- ;;=2^99214
- ;;^UTILITY(U,$J,358.3,23223,0)
- ;;=99215^^146^1431^5
- ;;^UTILITY(U,$J,358.3,23223,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,23223,1,1,0)
- ;;=1^Comprehensive
- ;;^UTILITY(U,$J,358.3,23223,1,2,0)
- ;;=2^99215
- ;;^UTILITY(U,$J,358.3,23224,0)
- ;;=99241^^146^1432^1
- ;;^UTILITY(U,$J,358.3,23224,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,23224,1,1,0)
- ;;=1^Problem Focused
- ;;^UTILITY(U,$J,358.3,23224,1,2,0)
- ;;=2^99241
- ;;^UTILITY(U,$J,358.3,23225,0)
- ;;=99242^^146^1432^2
- ;;^UTILITY(U,$J,358.3,23225,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,23225,1,1,0)
- ;;=1^Expanded Problem Focus
- ;;^UTILITY(U,$J,358.3,23225,1,2,0)
- ;;=2^99242
- ;;^UTILITY(U,$J,358.3,23226,0)
- ;;=99243^^146^1432^3
- ;;^UTILITY(U,$J,358.3,23226,1,0)
- ;;=^358.31IA^2^2
- ;;^UTILITY(U,$J,358.3,23226,1,1,0)
- ;;=1^Detailed
+ ;;^UTILITY(U,$J,358.3,21648,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21648,1,3,0)
+ ;;=3^Nondisp comminuted fx of shaft of right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21648,1,4,0)
+ ;;=4^S72.354S
+ ;;^UTILITY(U,$J,358.3,21648,2)
+ ;;=^5038495
+ ;;^UTILITY(U,$J,358.3,21649,0)
+ ;;=S72.355S^^101^1033^55
+ ;;^UTILITY(U,$J,358.3,21649,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21649,1,3,0)
+ ;;=3^Nondisp comminuted fx of shaft of left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21649,1,4,0)
+ ;;=4^S72.355S
+ ;;^UTILITY(U,$J,358.3,21649,2)
+ ;;=^5038511
+ ;;^UTILITY(U,$J,358.3,21650,0)
+ ;;=S72.361S^^101^1033^34
+ ;;^UTILITY(U,$J,358.3,21650,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21650,1,3,0)
+ ;;=3^Displaced segmental fx shaft of right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21650,1,4,0)
+ ;;=4^S72.361S
+ ;;^UTILITY(U,$J,358.3,21650,2)
+ ;;=^5038543
+ ;;^UTILITY(U,$J,358.3,21651,0)
+ ;;=S72.362S^^101^1033^33
+ ;;^UTILITY(U,$J,358.3,21651,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21651,1,3,0)
+ ;;=3^Displaced segmental fx shaft of left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21651,1,4,0)
+ ;;=4^S72.362S
+ ;;^UTILITY(U,$J,358.3,21651,2)
+ ;;=^5038559
+ ;;^UTILITY(U,$J,358.3,21652,0)
+ ;;=S72.364S^^101^1033^80
+ ;;^UTILITY(U,$J,358.3,21652,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21652,1,3,0)
+ ;;=3^Nondisp segmental fx shaft of right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21652,1,4,0)
+ ;;=4^S72.364S
+ ;;^UTILITY(U,$J,358.3,21652,2)
+ ;;=^5038591
+ ;;^UTILITY(U,$J,358.3,21653,0)
+ ;;=S72.365S^^101^1033^79
+ ;;^UTILITY(U,$J,358.3,21653,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21653,1,3,0)
+ ;;=3^Nondisp segmental fx shaft of left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21653,1,4,0)
+ ;;=4^S72.365S
+ ;;^UTILITY(U,$J,358.3,21653,2)
+ ;;=^5038607
+ ;;^UTILITY(U,$J,358.3,21654,0)
+ ;;=S72.421S^^101^1033^18
+ ;;^UTILITY(U,$J,358.3,21654,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21654,1,3,0)
+ ;;=3^Displaced lateral condyle fx of right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21654,1,4,0)
+ ;;=4^S72.421S
+ ;;^UTILITY(U,$J,358.3,21654,2)
+ ;;=^5038771
+ ;;^UTILITY(U,$J,358.3,21655,0)
+ ;;=S72.422S^^101^1033^17
+ ;;^UTILITY(U,$J,358.3,21655,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21655,1,3,0)
+ ;;=3^Displaced lateral condyle fx of left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21655,1,4,0)
+ ;;=4^S72.422S
+ ;;^UTILITY(U,$J,358.3,21655,2)
+ ;;=^5038787
+ ;;^UTILITY(U,$J,358.3,21656,0)
+ ;;=S72.424S^^101^1033^64
+ ;;^UTILITY(U,$J,358.3,21656,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21656,1,3,0)
+ ;;=3^Nondisp lateral condyle fx of right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21656,1,4,0)
+ ;;=4^S72.424S
+ ;;^UTILITY(U,$J,358.3,21656,2)
+ ;;=^5038819
+ ;;^UTILITY(U,$J,358.3,21657,0)
+ ;;=S72.425S^^101^1033^63
+ ;;^UTILITY(U,$J,358.3,21657,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21657,1,3,0)
+ ;;=3^Nondisp lateral condyle fx of left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21657,1,4,0)
+ ;;=4^S72.425S
+ ;;^UTILITY(U,$J,358.3,21657,2)
+ ;;=^5038835
+ ;;^UTILITY(U,$J,358.3,21658,0)
+ ;;=S72.431S^^101^1033^26
+ ;;^UTILITY(U,$J,358.3,21658,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21658,1,3,0)
+ ;;=3^Displaced medial condyle fx of right femur, sequela
+ ;;^UTILITY(U,$J,358.3,21658,1,4,0)
+ ;;=4^S72.431S
+ ;;^UTILITY(U,$J,358.3,21658,2)
+ ;;=^5038867
+ ;;^UTILITY(U,$J,358.3,21659,0)
+ ;;=S72.432S^^101^1033^25
+ ;;^UTILITY(U,$J,358.3,21659,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21659,1,3,0)
+ ;;=3^Displaced medial condyle fx of left femur, sequela
+ ;;^UTILITY(U,$J,358.3,21659,1,4,0)
+ ;;=4^S72.432S
+ ;;^UTILITY(U,$J,358.3,21659,2)
+ ;;=^5038883
+ ;;^UTILITY(U,$J,358.3,21660,0)
+ ;;=S72.434S^^101^1033^72

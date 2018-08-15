@@ -1,0 +1,128 @@
+IBDEI1LD ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,26623,1,4,0)
+ ;;=4^H34.11
+ ;;^UTILITY(U,$J,358.3,26623,2)
+ ;;=^5005557
+ ;;^UTILITY(U,$J,358.3,26624,0)
+ ;;=H34.211^^130^1295^29
+ ;;^UTILITY(U,$J,358.3,26624,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26624,1,3,0)
+ ;;=3^Partial Retinal Artery Occlusion,Right Eye
+ ;;^UTILITY(U,$J,358.3,26624,1,4,0)
+ ;;=4^H34.211
+ ;;^UTILITY(U,$J,358.3,26624,2)
+ ;;=^5005560
+ ;;^UTILITY(U,$J,358.3,26625,0)
+ ;;=H34.212^^130^1295^28
+ ;;^UTILITY(U,$J,358.3,26625,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26625,1,3,0)
+ ;;=3^Partial Retinal Artery Occlusion,Left Eye
+ ;;^UTILITY(U,$J,358.3,26625,1,4,0)
+ ;;=4^H34.212
+ ;;^UTILITY(U,$J,358.3,26625,2)
+ ;;=^5005561
+ ;;^UTILITY(U,$J,358.3,26626,0)
+ ;;=H34.213^^130^1295^27
+ ;;^UTILITY(U,$J,358.3,26626,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26626,1,3,0)
+ ;;=3^Partial Retinal Artery Occlusion,Bilateral
+ ;;^UTILITY(U,$J,358.3,26626,1,4,0)
+ ;;=4^H34.213
+ ;;^UTILITY(U,$J,358.3,26626,2)
+ ;;=^5005562
+ ;;^UTILITY(U,$J,358.3,26627,0)
+ ;;=H34.232^^130^1295^36
+ ;;^UTILITY(U,$J,358.3,26627,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26627,1,3,0)
+ ;;=3^Retinal Artery Branch Occlusion,Left Eye
+ ;;^UTILITY(U,$J,358.3,26627,1,4,0)
+ ;;=4^H34.232
+ ;;^UTILITY(U,$J,358.3,26627,2)
+ ;;=^5005565
+ ;;^UTILITY(U,$J,358.3,26628,0)
+ ;;=H34.231^^130^1295^37
+ ;;^UTILITY(U,$J,358.3,26628,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26628,1,3,0)
+ ;;=3^Retinal Artery Branch Occlusion,Right Eye
+ ;;^UTILITY(U,$J,358.3,26628,1,4,0)
+ ;;=4^H34.231
+ ;;^UTILITY(U,$J,358.3,26628,2)
+ ;;=^5005564
+ ;;^UTILITY(U,$J,358.3,26629,0)
+ ;;=H34.233^^130^1295^35
+ ;;^UTILITY(U,$J,358.3,26629,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26629,1,3,0)
+ ;;=3^Retinal Artery Branch Occlusion,Bilateral
+ ;;^UTILITY(U,$J,358.3,26629,1,4,0)
+ ;;=4^H34.233
+ ;;^UTILITY(U,$J,358.3,26629,2)
+ ;;=^5005566
+ ;;^UTILITY(U,$J,358.3,26630,0)
+ ;;=H34.811^^130^1295^9
+ ;;^UTILITY(U,$J,358.3,26630,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26630,1,3,0)
+ ;;=3^Central Retinal Vein Occlusion,Right Eye
+ ;;^UTILITY(U,$J,358.3,26630,1,4,0)
+ ;;=4^H34.811
+ ;;^UTILITY(U,$J,358.3,26630,2)
+ ;;=^5005568
+ ;;^UTILITY(U,$J,358.3,26631,0)
+ ;;=H34.812^^130^1295^8
+ ;;^UTILITY(U,$J,358.3,26631,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26631,1,3,0)
+ ;;=3^Central Retinal Vein Occlusion,Left Eye
+ ;;^UTILITY(U,$J,358.3,26631,1,4,0)
+ ;;=4^H34.812
+ ;;^UTILITY(U,$J,358.3,26631,2)
+ ;;=^5005569
+ ;;^UTILITY(U,$J,358.3,26632,0)
+ ;;=H34.813^^130^1295^7
+ ;;^UTILITY(U,$J,358.3,26632,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26632,1,3,0)
+ ;;=3^Central Retinal Vein Occlusion,Bilateral
+ ;;^UTILITY(U,$J,358.3,26632,1,4,0)
+ ;;=4^H34.813
+ ;;^UTILITY(U,$J,358.3,26632,2)
+ ;;=^5005570
+ ;;^UTILITY(U,$J,358.3,26633,0)
+ ;;=H35.731^^130^1295^17
+ ;;^UTILITY(U,$J,358.3,26633,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26633,1,3,0)
+ ;;=3^Hemorrhagic Detach Retinal Pigment Epithelium,Right Eye
+ ;;^UTILITY(U,$J,358.3,26633,1,4,0)
+ ;;=4^H35.731
+ ;;^UTILITY(U,$J,358.3,26633,2)
+ ;;=^5005711
+ ;;^UTILITY(U,$J,358.3,26634,0)
+ ;;=H35.732^^130^1295^18
+ ;;^UTILITY(U,$J,358.3,26634,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26634,1,3,0)
+ ;;=3^Hemorrhagic Detach Retinal Pigment Epithelium,Left Eye
+ ;;^UTILITY(U,$J,358.3,26634,1,4,0)
+ ;;=4^H35.732
+ ;;^UTILITY(U,$J,358.3,26634,2)
+ ;;=^5005712
+ ;;^UTILITY(U,$J,358.3,26635,0)
+ ;;=H35.733^^130^1295^19
+ ;;^UTILITY(U,$J,358.3,26635,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,26635,1,3,0)
+ ;;=3^Hemorrhagic Detach Retinal Pigment Epithelium,Bilateral
+ ;;^UTILITY(U,$J,358.3,26635,1,4,0)
+ ;;=4^H35.733
+ ;;^UTILITY(U,$J,358.3,26635,2)
+ ;;=^5005713

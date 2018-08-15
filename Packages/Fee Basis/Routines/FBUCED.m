@@ -1,6 +1,6 @@
-FBUCED ;ALBISC/TET - EDIT UNAUTHORIZED CLAIM FILES ;10/16/2001
- ;;3.5;FEE BASIS;**32,38**;JAN 30, 1995
- ;;Per VHA Directive 10-93-142, this routine should not be modified.
+FBUCED ;ALBISC/TET - EDIT UNAUTHORIZED CLAIM FILES ;10/07/2014
+ ;;3.5;FEE BASIS;**32,38,154,174**;JAN 30, 1995;Build 1
+ ;;Per VA Directive 6402, this routine should not be modified.
 EDT ;edit unauthorized claim with order less than 40 (not dispositioned
  ;or order = 40 if action is reopen (called by REO tag)
  S:'$D(FBACT) FBACT="EDT" S FBO=$S(FBACT="EDT":"5^10^20^30^",1:"40^")
@@ -108,7 +108,7 @@ DISENT ;enter/edit disapproval reasons file 162.94
 DSPENT ;edit disposition file 162.91
  S DIC(0)="AEMQZ",DIC="^FB(162.91," D ^DIC I +Y>0 S DIE=DIC,DA=+Y,FBDA=DA,DR="1:3" D LOCK^FBUCUTL(DIE,FBDA,0) I FBLOCK D ^DIE L -^FB(162.91,FBDA) K DIE,DE,DA,DQ,DR,FBDA,FBLOCK W ! G DSPENT
 END ;kill and quit
- K DA,DE,DIC,DIE,DQ,DR,DTOUT,DUOUT,FBACT,FBAR,FBARY,FBDR,FBIEN,FBIX,FBLOCK,FBO,FBOUT,FBUCPDX,X,Y
+ K DA,DE,DIC,DIE,DQ,DR,DTOUT,DUOUT,FBACT,FBAR,FBARY,FBDR,FBIEN,FBIX,FBLOCK,FBO,FBOUT,FBUCPDX,X,Y,FBPROG ;add FBPROG - FB*3*174
  K ^TMP("FBAR",$J),^TMP("FBARY",$J),^TMP("FBPARY",$J) Q
 EDIT8 ;edit file 162.8, call before/after & update
  N FBDA,FBI,FBNODE,FBP,FBPL,FBUCA,FBUCAA,FBUCP,FBUCPA,FBW D PARSE^FBUCUTL4(FBARY) S %X="^TMP(""FBARY"",$J,",%Y="^TMP(""FBPARY"",$J," D %XY^%RCR K %X,%Y
@@ -116,7 +116,7 @@ EDIT8 ;edit file 162.8, call before/after & update
  .I +$G(FBPARY)>1 W !! F FBP=1:1:FBPL W ?($P(FBW,U,FBP)),$P(FBNODE,U,FBP)
  .D PRIOR^FBUCEVT(FBDA,FBACT)
  .N FBARY D REQ^FBUCPEND:FBACT="REQ",REC^FBUCPEND:FBACT="REC" Q:FBOUT  D FREQ^FBUCPEND:FBACT="REQ",FREC^FBUCPEND:FBACT="REC"
- .D AFTER^FBUCEVT(FBDA,FBACT),^FBUCUPD(FBUCP,FBUCPA,FBUCA,FBUCAA,FBDA,FBACT)
+ .D AFTER^FBUCEVT(FBDA,FBACT),UPDATE^FBUCUPD(FBUCP,FBUCPA,FBUCA,FBUCAA,FBDA,FBACT)
  Q
 EDITL(FBDA,FBEXP,FBLET,FBLETDT,FBTAMT) ;edit letter sent info,
  ;may be called to just update expiration, or update print flag, date letter sent &/or expiration, or amount approved

@@ -1,0 +1,130 @@
+IBDEI1JO ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,25825,1,4,0)
+ ;;=4^L03.112
+ ;;^UTILITY(U,$J,358.3,25825,2)
+ ;;=^5009032
+ ;;^UTILITY(U,$J,358.3,25826,0)
+ ;;=L03.116^^127^1266^36
+ ;;^UTILITY(U,$J,358.3,25826,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25826,1,3,0)
+ ;;=3^Cellulitis of Left Lower Limb
+ ;;^UTILITY(U,$J,358.3,25826,1,4,0)
+ ;;=4^L03.116
+ ;;^UTILITY(U,$J,358.3,25826,2)
+ ;;=^5133645
+ ;;^UTILITY(U,$J,358.3,25827,0)
+ ;;=L03.114^^127^1266^37
+ ;;^UTILITY(U,$J,358.3,25827,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25827,1,3,0)
+ ;;=3^Cellulitis of Left Upper Limb
+ ;;^UTILITY(U,$J,358.3,25827,1,4,0)
+ ;;=4^L03.114
+ ;;^UTILITY(U,$J,358.3,25827,2)
+ ;;=^5009034
+ ;;^UTILITY(U,$J,358.3,25828,0)
+ ;;=L03.111^^127^1266^38
+ ;;^UTILITY(U,$J,358.3,25828,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25828,1,3,0)
+ ;;=3^Cellulitis of Right Axilla
+ ;;^UTILITY(U,$J,358.3,25828,1,4,0)
+ ;;=4^L03.111
+ ;;^UTILITY(U,$J,358.3,25828,2)
+ ;;=^5009031
+ ;;^UTILITY(U,$J,358.3,25829,0)
+ ;;=L03.115^^127^1266^39
+ ;;^UTILITY(U,$J,358.3,25829,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25829,1,3,0)
+ ;;=3^Cellulitis of Right Lower Limb
+ ;;^UTILITY(U,$J,358.3,25829,1,4,0)
+ ;;=4^L03.115
+ ;;^UTILITY(U,$J,358.3,25829,2)
+ ;;=^5009035
+ ;;^UTILITY(U,$J,358.3,25830,0)
+ ;;=L03.113^^127^1266^40
+ ;;^UTILITY(U,$J,358.3,25830,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25830,1,3,0)
+ ;;=3^Cellulitis of Right Upper Limb
+ ;;^UTILITY(U,$J,358.3,25830,1,4,0)
+ ;;=4^L03.113
+ ;;^UTILITY(U,$J,358.3,25830,2)
+ ;;=^5009033
+ ;;^UTILITY(U,$J,358.3,25831,0)
+ ;;=I63.131^^127^1266^43
+ ;;^UTILITY(U,$J,358.3,25831,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25831,1,3,0)
+ ;;=3^Cerebral Infarction d/t Right Carotid Artery Embolism
+ ;;^UTILITY(U,$J,358.3,25831,1,4,0)
+ ;;=4^I63.131
+ ;;^UTILITY(U,$J,358.3,25831,2)
+ ;;=^5007308
+ ;;^UTILITY(U,$J,358.3,25832,0)
+ ;;=I63.132^^127^1266^41
+ ;;^UTILITY(U,$J,358.3,25832,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25832,1,3,0)
+ ;;=3^Cerebral Infarction d/t Left Carotid Artery Embolism
+ ;;^UTILITY(U,$J,358.3,25832,1,4,0)
+ ;;=4^I63.132
+ ;;^UTILITY(U,$J,358.3,25832,2)
+ ;;=^5007309
+ ;;^UTILITY(U,$J,358.3,25833,0)
+ ;;=I63.231^^127^1266^44
+ ;;^UTILITY(U,$J,358.3,25833,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25833,1,3,0)
+ ;;=3^Cerebral Infarction d/t Right Carotid Artery Occlusion/Stenosis
+ ;;^UTILITY(U,$J,358.3,25833,1,4,0)
+ ;;=4^I63.231
+ ;;^UTILITY(U,$J,358.3,25833,2)
+ ;;=^5007316
+ ;;^UTILITY(U,$J,358.3,25834,0)
+ ;;=I63.232^^127^1266^42
+ ;;^UTILITY(U,$J,358.3,25834,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25834,1,3,0)
+ ;;=3^Cerebral Infarction d/t Left Carotid Artery Occlusion/Stenosis
+ ;;^UTILITY(U,$J,358.3,25834,1,4,0)
+ ;;=4^I63.232
+ ;;^UTILITY(U,$J,358.3,25834,2)
+ ;;=^5007317
+ ;;^UTILITY(U,$J,358.3,25835,0)
+ ;;=N18.9^^127^1266^46
+ ;;^UTILITY(U,$J,358.3,25835,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25835,1,3,0)
+ ;;=3^Chronic Kidney Disease,Unspec
+ ;;^UTILITY(U,$J,358.3,25835,1,4,0)
+ ;;=4^N18.9
+ ;;^UTILITY(U,$J,358.3,25835,2)
+ ;;=^332812
+ ;;^UTILITY(U,$J,358.3,25836,0)
+ ;;=K55.1^^127^1266^49
+ ;;^UTILITY(U,$J,358.3,25836,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25836,1,3,0)
+ ;;=3^Chronic Vascular Intestinal Disorders
+ ;;^UTILITY(U,$J,358.3,25836,1,4,0)
+ ;;=4^K55.1
+ ;;^UTILITY(U,$J,358.3,25836,2)
+ ;;=^5008706
+ ;;^UTILITY(U,$J,358.3,25837,0)
+ ;;=I74.3^^127^1266^96
+ ;;^UTILITY(U,$J,358.3,25837,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,25837,1,3,0)
+ ;;=3^Embolism/Thrombosis of Lower Extremity Arteries
+ ;;^UTILITY(U,$J,358.3,25837,1,4,0)
+ ;;=4^I74.3
+ ;;^UTILITY(U,$J,358.3,25837,2)
+ ;;=^5007802
+ ;;^UTILITY(U,$J,358.3,25838,0)
+ ;;=I74.2^^127^1266^108

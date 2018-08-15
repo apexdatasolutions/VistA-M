@@ -1,8 +1,130 @@
-IBDEI1GK ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
- Q:'DIFQR(358.6)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+IBDEI1GK ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.6,12,3)
- ;;=UTILITY BLANKS LABELS
- ;;^UTILITY(U,$J,358.6,12,15,0)
- ;;=^357.615I^0^0
+ ;;^UTILITY(U,$J,358.3,24359,0)
+ ;;=Z89.422^^118^1212^7
+ ;;^UTILITY(U,$J,358.3,24359,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24359,1,3,0)
+ ;;=3^Acquired Absence of Left Toe(s)
+ ;;^UTILITY(U,$J,358.3,24359,1,4,0)
+ ;;=4^Z89.422
+ ;;^UTILITY(U,$J,358.3,24359,2)
+ ;;=^5063558
+ ;;^UTILITY(U,$J,358.3,24360,0)
+ ;;=Z89.431^^118^1212^9
+ ;;^UTILITY(U,$J,358.3,24360,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24360,1,3,0)
+ ;;=3^Acquired Absence of Right Foot
+ ;;^UTILITY(U,$J,358.3,24360,1,4,0)
+ ;;=4^Z89.431
+ ;;^UTILITY(U,$J,358.3,24360,2)
+ ;;=^5063560
+ ;;^UTILITY(U,$J,358.3,24361,0)
+ ;;=Z89.432^^118^1212^2
+ ;;^UTILITY(U,$J,358.3,24361,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24361,1,3,0)
+ ;;=3^Acquired Absence of Left Foot
+ ;;^UTILITY(U,$J,358.3,24361,1,4,0)
+ ;;=4^Z89.432
+ ;;^UTILITY(U,$J,358.3,24361,2)
+ ;;=^5063561
+ ;;^UTILITY(U,$J,358.3,24362,0)
+ ;;=Z89.441^^118^1212^8
+ ;;^UTILITY(U,$J,358.3,24362,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24362,1,3,0)
+ ;;=3^Acquired Absence of Right Ankle
+ ;;^UTILITY(U,$J,358.3,24362,1,4,0)
+ ;;=4^Z89.441
+ ;;^UTILITY(U,$J,358.3,24362,2)
+ ;;=^5063563
+ ;;^UTILITY(U,$J,358.3,24363,0)
+ ;;=Z89.442^^118^1212^1
+ ;;^UTILITY(U,$J,358.3,24363,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24363,1,3,0)
+ ;;=3^Acquired Absence of Left Ankle
+ ;;^UTILITY(U,$J,358.3,24363,1,4,0)
+ ;;=4^Z89.442
+ ;;^UTILITY(U,$J,358.3,24363,2)
+ ;;=^5063564
+ ;;^UTILITY(U,$J,358.3,24364,0)
+ ;;=Z89.511^^118^1212^13
+ ;;^UTILITY(U,$J,358.3,24364,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24364,1,3,0)
+ ;;=3^Acquired Absence of Right Leg Below Knee
+ ;;^UTILITY(U,$J,358.3,24364,1,4,0)
+ ;;=4^Z89.511
+ ;;^UTILITY(U,$J,358.3,24364,2)
+ ;;=^5063566
+ ;;^UTILITY(U,$J,358.3,24365,0)
+ ;;=Z89.512^^118^1212^6
+ ;;^UTILITY(U,$J,358.3,24365,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24365,1,3,0)
+ ;;=3^Acquired Absence of Left Leg Below Knee
+ ;;^UTILITY(U,$J,358.3,24365,1,4,0)
+ ;;=4^Z89.512
+ ;;^UTILITY(U,$J,358.3,24365,2)
+ ;;=^5063567
+ ;;^UTILITY(U,$J,358.3,24366,0)
+ ;;=Z89.611^^118^1212^12
+ ;;^UTILITY(U,$J,358.3,24366,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24366,1,3,0)
+ ;;=3^Acquired Absence of Right Leg Above Knee
+ ;;^UTILITY(U,$J,358.3,24366,1,4,0)
+ ;;=4^Z89.611
+ ;;^UTILITY(U,$J,358.3,24366,2)
+ ;;=^5063572
+ ;;^UTILITY(U,$J,358.3,24367,0)
+ ;;=Z89.612^^118^1212^5
+ ;;^UTILITY(U,$J,358.3,24367,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24367,1,3,0)
+ ;;=3^Acquired Absence of Left Leg Above Knee
+ ;;^UTILITY(U,$J,358.3,24367,1,4,0)
+ ;;=4^Z89.612
+ ;;^UTILITY(U,$J,358.3,24367,2)
+ ;;=^5063573
+ ;;^UTILITY(U,$J,358.3,24368,0)
+ ;;=Z89.621^^118^1212^11
+ ;;^UTILITY(U,$J,358.3,24368,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24368,1,3,0)
+ ;;=3^Acquired Absence of Right Hip Joint
+ ;;^UTILITY(U,$J,358.3,24368,1,4,0)
+ ;;=4^Z89.621
+ ;;^UTILITY(U,$J,358.3,24368,2)
+ ;;=^5063575
+ ;;^UTILITY(U,$J,358.3,24369,0)
+ ;;=Z89.622^^118^1212^4
+ ;;^UTILITY(U,$J,358.3,24369,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24369,1,3,0)
+ ;;=3^Acquired Absence of Left Hip Joint
+ ;;^UTILITY(U,$J,358.3,24369,1,4,0)
+ ;;=4^Z89.622
+ ;;^UTILITY(U,$J,358.3,24369,2)
+ ;;=^5063576
+ ;;^UTILITY(U,$J,358.3,24370,0)
+ ;;=Z75.3^^118^1213^5
+ ;;^UTILITY(U,$J,358.3,24370,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24370,1,3,0)
+ ;;=3^Unavailability/Inaccessibility of Health-Care Facilities
+ ;;^UTILITY(U,$J,358.3,24370,1,4,0)
+ ;;=4^Z75.3
+ ;;^UTILITY(U,$J,358.3,24370,2)
+ ;;=^5063292
+ ;;^UTILITY(U,$J,358.3,24371,0)
+ ;;=Z75.0^^118^1213^3
+ ;;^UTILITY(U,$J,358.3,24371,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,24371,1,3,0)
+ ;;=3^Medical Services Not Available in Home

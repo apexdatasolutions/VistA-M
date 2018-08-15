@@ -1,130 +1,136 @@
-IBDEI0R3 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0R3 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,13365,1,5,0)
- ;;=5^Fall from Wheelchair
- ;;^UTILITY(U,$J,358.3,13365,2)
- ;;=Fall From Wheelchair^303368
- ;;^UTILITY(U,$J,358.3,13366,0)
- ;;=E884.4^^87^833^3
- ;;^UTILITY(U,$J,358.3,13366,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13366,1,4,0)
- ;;=4^E884.4
- ;;^UTILITY(U,$J,358.3,13366,1,5,0)
- ;;=5^Fall from Bed
- ;;^UTILITY(U,$J,358.3,13366,2)
- ;;=Fall From Bed^303369
- ;;^UTILITY(U,$J,358.3,13367,0)
- ;;=E884.6^^87^833^6
- ;;^UTILITY(U,$J,358.3,13367,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13367,1,4,0)
- ;;=4^E884.6
- ;;^UTILITY(U,$J,358.3,13367,1,5,0)
- ;;=5^Fall from Commode
- ;;^UTILITY(U,$J,358.3,13367,2)
- ;;=Fall from Commode^303371
- ;;^UTILITY(U,$J,358.3,13368,0)
- ;;=E884.9^^87^833^18
- ;;^UTILITY(U,$J,358.3,13368,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13368,1,4,0)
- ;;=4^E884.9
- ;;^UTILITY(U,$J,358.3,13368,1,5,0)
- ;;=5^Other Fall, one level to another
- ;;^UTILITY(U,$J,358.3,13368,2)
- ;;=Other Fall^294654
- ;;^UTILITY(U,$J,358.3,13369,0)
- ;;=E885.1^^87^833^8
- ;;^UTILITY(U,$J,358.3,13369,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13369,1,4,0)
- ;;=4^E885.1
- ;;^UTILITY(U,$J,358.3,13369,1,5,0)
- ;;=5^Fall from Roller Skates
- ;;^UTILITY(U,$J,358.3,13369,2)
- ;;=Fall from Roller Skates^322100
- ;;^UTILITY(U,$J,358.3,13370,0)
- ;;=E885.2^^87^833^9
- ;;^UTILITY(U,$J,358.3,13370,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13370,1,4,0)
- ;;=4^E885.2
- ;;^UTILITY(U,$J,358.3,13370,1,5,0)
- ;;=5^Fall from Skateboard
- ;;^UTILITY(U,$J,358.3,13370,2)
- ;;=Fall from Skateboard^322102
- ;;^UTILITY(U,$J,358.3,13371,0)
- ;;=E885.3^^87^833^10
- ;;^UTILITY(U,$J,358.3,13371,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13371,1,4,0)
- ;;=4^E885.3
- ;;^UTILITY(U,$J,358.3,13371,1,5,0)
- ;;=5^Fall from Skis
- ;;^UTILITY(U,$J,358.3,13371,2)
- ;;=Fall from Skis^322103
- ;;^UTILITY(U,$J,358.3,13372,0)
- ;;=E885.4^^87^833^11
- ;;^UTILITY(U,$J,358.3,13372,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13372,1,4,0)
- ;;=4^E885.4
- ;;^UTILITY(U,$J,358.3,13372,1,5,0)
- ;;=5^Fall from Snowboard
- ;;^UTILITY(U,$J,358.3,13372,2)
- ;;=Fall from Snowboard^322104
- ;;^UTILITY(U,$J,358.3,13373,0)
- ;;=E885.9^^87^833^1
- ;;^UTILITY(U,$J,358.3,13373,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13373,1,4,0)
- ;;=4^E885.9
- ;;^UTILITY(U,$J,358.3,13373,1,5,0)
- ;;=5^Fall After Tripping or Slipping
- ;;^UTILITY(U,$J,358.3,13373,2)
- ;;=Fall after tripping or slipping^322105
- ;;^UTILITY(U,$J,358.3,13374,0)
- ;;=E886.0^^87^833^13
- ;;^UTILITY(U,$J,358.3,13374,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13374,1,4,0)
- ;;=4^E886.0
- ;;^UTILITY(U,$J,358.3,13374,1,5,0)
- ;;=5^Fall in Sports
- ;;^UTILITY(U,$J,358.3,13374,2)
- ;;=Fall in Sports^294656
- ;;^UTILITY(U,$J,358.3,13375,0)
- ;;=E886.9^^87^833^15
- ;;^UTILITY(U,$J,358.3,13375,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13375,1,4,0)
- ;;=4^E886.9
- ;;^UTILITY(U,$J,358.3,13375,1,5,0)
- ;;=5^Fall, Collision with another person
- ;;^UTILITY(U,$J,358.3,13375,2)
- ;;=Fall, Collision with another person^294657
- ;;^UTILITY(U,$J,358.3,13376,0)
- ;;=E888.9^^87^833^16
- ;;^UTILITY(U,$J,358.3,13376,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13376,1,4,0)
- ;;=4^E888.9
- ;;^UTILITY(U,$J,358.3,13376,1,5,0)
- ;;=5^Fall, Not Specified
- ;;^UTILITY(U,$J,358.3,13376,2)
- ;;=Fall, Not Specified^323639
- ;;^UTILITY(U,$J,358.3,13377,0)
- ;;=E819.0^^87^833^19
- ;;^UTILITY(U,$J,358.3,13377,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,13377,1,4,0)
- ;;=4^E819.0
- ;;^UTILITY(U,$J,358.3,13377,1,5,0)
- ;;=5^Traffic Accident, Driver
- ;;^UTILITY(U,$J,358.3,13377,2)
- ;;=Traffic Accident, Driver^294215
- ;;^UTILITY(U,$J,358.3,13378,0)
- ;;=E819.1^^87^833^20
+ ;;^UTILITY(U,$J,358.3,12404,1,3,0)
+ ;;=3^Pain in Joint,Unspec
+ ;;^UTILITY(U,$J,358.3,12404,1,4,0)
+ ;;=4^M25.50
+ ;;^UTILITY(U,$J,358.3,12404,2)
+ ;;=^5011601
+ ;;^UTILITY(U,$J,358.3,12405,0)
+ ;;=Z02.71^^71^710^3
+ ;;^UTILITY(U,$J,358.3,12405,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12405,1,3,0)
+ ;;=3^Disability determination
+ ;;^UTILITY(U,$J,358.3,12405,1,4,0)
+ ;;=4^Z02.71
+ ;;^UTILITY(U,$J,358.3,12405,2)
+ ;;=^5062640
+ ;;^UTILITY(U,$J,358.3,12406,0)
+ ;;=Z02.79^^71^710^7
+ ;;^UTILITY(U,$J,358.3,12406,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12406,1,3,0)
+ ;;=3^Medical Certificate Issues NEC
+ ;;^UTILITY(U,$J,358.3,12406,1,4,0)
+ ;;=4^Z02.79
+ ;;^UTILITY(U,$J,358.3,12406,2)
+ ;;=^5062641
+ ;;^UTILITY(U,$J,358.3,12407,0)
+ ;;=Z00.00^^71^710^6
+ ;;^UTILITY(U,$J,358.3,12407,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12407,1,3,0)
+ ;;=3^General Adult Med Exam w/o Abnormal Findings
+ ;;^UTILITY(U,$J,358.3,12407,1,4,0)
+ ;;=4^Z00.00
+ ;;^UTILITY(U,$J,358.3,12407,2)
+ ;;=^5062599
+ ;;^UTILITY(U,$J,358.3,12408,0)
+ ;;=Z02.83^^71^710^2
+ ;;^UTILITY(U,$J,358.3,12408,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12408,1,3,0)
+ ;;=3^Blood-alcohol and blood-drug test
+ ;;^UTILITY(U,$J,358.3,12408,1,4,0)
+ ;;=4^Z02.83
+ ;;^UTILITY(U,$J,358.3,12408,2)
+ ;;=^5062644
+ ;;^UTILITY(U,$J,358.3,12409,0)
+ ;;=Z02.81^^71^710^8
+ ;;^UTILITY(U,$J,358.3,12409,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12409,1,3,0)
+ ;;=3^Paternity Testing
+ ;;^UTILITY(U,$J,358.3,12409,1,4,0)
+ ;;=4^Z02.81
+ ;;^UTILITY(U,$J,358.3,12409,2)
+ ;;=^5062642
+ ;;^UTILITY(U,$J,358.3,12410,0)
+ ;;=Z02.3^^71^710^10
+ ;;^UTILITY(U,$J,358.3,12410,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12410,1,3,0)
+ ;;=3^Recruitment to Armed Forces Exam
+ ;;^UTILITY(U,$J,358.3,12410,1,4,0)
+ ;;=4^Z02.3
+ ;;^UTILITY(U,$J,358.3,12410,2)
+ ;;=^5062636
+ ;;^UTILITY(U,$J,358.3,12411,0)
+ ;;=Z02.1^^71^710^9
+ ;;^UTILITY(U,$J,358.3,12411,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12411,1,3,0)
+ ;;=3^Pre-Employment Exam
+ ;;^UTILITY(U,$J,358.3,12411,1,4,0)
+ ;;=4^Z02.1
+ ;;^UTILITY(U,$J,358.3,12411,2)
+ ;;=^5062634
+ ;;^UTILITY(U,$J,358.3,12412,0)
+ ;;=Z02.89^^71^710^1
+ ;;^UTILITY(U,$J,358.3,12412,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12412,1,3,0)
+ ;;=3^Administrative Exam NEC
+ ;;^UTILITY(U,$J,358.3,12412,1,4,0)
+ ;;=4^Z02.89
+ ;;^UTILITY(U,$J,358.3,12412,2)
+ ;;=^5062645
+ ;;^UTILITY(U,$J,358.3,12413,0)
+ ;;=Z01.00^^71^710^5
+ ;;^UTILITY(U,$J,358.3,12413,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12413,1,3,0)
+ ;;=3^Eyes/Vision Exam w/o Abnormal Findings
+ ;;^UTILITY(U,$J,358.3,12413,1,4,0)
+ ;;=4^Z01.00
+ ;;^UTILITY(U,$J,358.3,12413,2)
+ ;;=^5062612
+ ;;^UTILITY(U,$J,358.3,12414,0)
+ ;;=Z01.01^^71^710^4
+ ;;^UTILITY(U,$J,358.3,12414,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12414,1,3,0)
+ ;;=3^Eyes/Vision Exam w/ Abnormal Findings
+ ;;^UTILITY(U,$J,358.3,12414,1,4,0)
+ ;;=4^Z01.01
+ ;;^UTILITY(U,$J,358.3,12414,2)
+ ;;=^5062613
+ ;;^UTILITY(U,$J,358.3,12415,0)
+ ;;=Z11.1^^71^710^11
+ ;;^UTILITY(U,$J,358.3,12415,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12415,1,3,0)
+ ;;=3^Respiratory Tuberculosis Screen
+ ;;^UTILITY(U,$J,358.3,12415,1,4,0)
+ ;;=4^Z11.1
+ ;;^UTILITY(U,$J,358.3,12415,2)
+ ;;=^5062670
+ ;;^UTILITY(U,$J,358.3,12416,0)
+ ;;=Z09.^^71^711^1
+ ;;^UTILITY(U,$J,358.3,12416,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12416,1,3,0)
+ ;;=3^F/U Exam after Trtmt for Conditions Oth Than Malig Neop
+ ;;^UTILITY(U,$J,358.3,12416,1,4,0)
+ ;;=4^Z09.
+ ;;^UTILITY(U,$J,358.3,12416,2)
+ ;;=^5062668
+ ;;^UTILITY(U,$J,358.3,12417,0)
+ ;;=Z08.^^71^711^2
+ ;;^UTILITY(U,$J,358.3,12417,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,12417,1,3,0)
+ ;;=3^F/U Exam after Trtmt for Malig Neop

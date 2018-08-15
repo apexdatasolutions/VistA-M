@@ -1,132 +1,136 @@
-IBDEI09G ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI09G ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,4367,1,5,0)
- ;;=5^216.1
- ;;^UTILITY(U,$J,358.3,4367,2)
- ;;=Benign Neoplasm of Skin of Eyelid^267630
- ;;^UTILITY(U,$J,358.3,4368,0)
- ;;=216.2^^37^336^1
- ;;^UTILITY(U,$J,358.3,4368,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4368,1,4,0)
- ;;=4^Benign Lesion, Ear
- ;;^UTILITY(U,$J,358.3,4368,1,5,0)
- ;;=5^216.2
- ;;^UTILITY(U,$J,358.3,4368,2)
- ;;=Benign Neoplasm of Skin of Ear^267631
- ;;^UTILITY(U,$J,358.3,4369,0)
- ;;=216.4^^37^336^6
- ;;^UTILITY(U,$J,358.3,4369,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4369,1,4,0)
- ;;=4^Benign Lesion, Neck
- ;;^UTILITY(U,$J,358.3,4369,1,5,0)
- ;;=5^216.4
- ;;^UTILITY(U,$J,358.3,4369,2)
- ;;=Benign Neoplasm of Skin of Neck^267633
- ;;^UTILITY(U,$J,358.3,4370,0)
- ;;=216.5^^37^336^8
- ;;^UTILITY(U,$J,358.3,4370,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4370,1,4,0)
- ;;=4^Benign Lesion, Trunk
- ;;^UTILITY(U,$J,358.3,4370,1,5,0)
- ;;=5^216.5
- ;;^UTILITY(U,$J,358.3,4370,2)
- ;;=Benign Neoplasm of Skin of Trunk^267634
- ;;^UTILITY(U,$J,358.3,4371,0)
- ;;=216.6^^37^336^9
- ;;^UTILITY(U,$J,358.3,4371,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4371,1,4,0)
- ;;=4^Benign Lesion, Upper Limb
- ;;^UTILITY(U,$J,358.3,4371,1,5,0)
- ;;=5^216.6
- ;;^UTILITY(U,$J,358.3,4371,2)
- ;;=Benign Neoplasm of Skin of Arm^267635
- ;;^UTILITY(U,$J,358.3,4372,0)
- ;;=216.7^^37^336^5
- ;;^UTILITY(U,$J,358.3,4372,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4372,1,4,0)
- ;;=4^Benign Lesion, Lower Limb
- ;;^UTILITY(U,$J,358.3,4372,1,5,0)
- ;;=5^216.7
- ;;^UTILITY(U,$J,358.3,4372,2)
- ;;=Benign Neoplasm of of skin of leg^267636
- ;;^UTILITY(U,$J,358.3,4373,0)
- ;;=216.8^^37^336^7
- ;;^UTILITY(U,$J,358.3,4373,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4373,1,4,0)
- ;;=4^Benign Lesion, Skin Other
- ;;^UTILITY(U,$J,358.3,4373,1,5,0)
- ;;=5^216.8
- ;;^UTILITY(U,$J,358.3,4373,2)
- ;;=Ben Neoplasm, Skin, Unspec^267637
- ;;^UTILITY(U,$J,358.3,4374,0)
- ;;=216.3^^37^336^3
- ;;^UTILITY(U,$J,358.3,4374,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4374,1,4,0)
- ;;=4^Benign Lesion, Face
- ;;^UTILITY(U,$J,358.3,4374,1,5,0)
- ;;=5^216.3
- ;;^UTILITY(U,$J,358.3,4374,2)
- ;;=^267632
- ;;^UTILITY(U,$J,358.3,4375,0)
- ;;=173.00^^37^337^15
- ;;^UTILITY(U,$J,358.3,4375,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4375,1,4,0)
- ;;=4^CA Skin Lip, Unspec
- ;;^UTILITY(U,$J,358.3,4375,1,5,0)
- ;;=5^173.00
- ;;^UTILITY(U,$J,358.3,4375,2)
- ;;=MALIG NEOPL SKIN LIP NOS^340596
- ;;^UTILITY(U,$J,358.3,4376,0)
- ;;=173.10^^37^337^12
- ;;^UTILITY(U,$J,358.3,4376,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4376,1,4,0)
- ;;=4^CA Skin Eyelid, Unspec
- ;;^UTILITY(U,$J,358.3,4376,1,5,0)
- ;;=5^173.10
- ;;^UTILITY(U,$J,358.3,4376,2)
- ;;=MAL NEO EYELID/CANTH NOS^340597
- ;;^UTILITY(U,$J,358.3,4377,0)
- ;;=173.20^^37^337^11
- ;;^UTILITY(U,$J,358.3,4377,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4377,1,4,0)
- ;;=4^CA Skin Ear, Unspec
- ;;^UTILITY(U,$J,358.3,4377,1,5,0)
- ;;=5^173.20
- ;;^UTILITY(U,$J,358.3,4377,2)
- ;;=MALIG NEO SKIN EAR NOS^340598
- ;;^UTILITY(U,$J,358.3,4378,0)
- ;;=173.30^^37^337^13
- ;;^UTILITY(U,$J,358.3,4378,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4378,1,4,0)
- ;;=4^CA Skin Face, Unspec
- ;;^UTILITY(U,$J,358.3,4378,1,5,0)
- ;;=5^173.30
- ;;^UTILITY(U,$J,358.3,4378,2)
- ;;=MAL NEO SKN FACE NEC/NOS^340599
- ;;^UTILITY(U,$J,358.3,4379,0)
- ;;=173.40^^37^337^16
- ;;^UTILITY(U,$J,358.3,4379,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4379,1,4,0)
- ;;=4^CA Skin Scalp/Neck, Unspec
- ;;^UTILITY(U,$J,358.3,4379,1,5,0)
- ;;=5^173.40
- ;;^UTILITY(U,$J,358.3,4379,2)
- ;;=MAL NEO SCLP/SKN NCK NOS^340600
- ;;^UTILITY(U,$J,358.3,4380,0)
- ;;=173.50^^37^337^17
- ;;^UTILITY(U,$J,358.3,4380,1,0)
- ;;=^358.31IA^5^2
+ ;;^UTILITY(U,$J,358.3,3880,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3880,1,3,0)
+ ;;=3^Involuntary Movements,Abnormal,Unspec
+ ;;^UTILITY(U,$J,358.3,3880,1,4,0)
+ ;;=4^R25.9
+ ;;^UTILITY(U,$J,358.3,3880,2)
+ ;;=^5019303
+ ;;^UTILITY(U,$J,358.3,3881,0)
+ ;;=G43.911^^28^259^75
+ ;;^UTILITY(U,$J,358.3,3881,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3881,1,3,0)
+ ;;=3^Migraine,Intractable w/ Status Migrainosus,Unspec
+ ;;^UTILITY(U,$J,358.3,3881,1,4,0)
+ ;;=4^G43.911
+ ;;^UTILITY(U,$J,358.3,3881,2)
+ ;;=^5003910
+ ;;^UTILITY(U,$J,358.3,3882,0)
+ ;;=G43.919^^28^259^76
+ ;;^UTILITY(U,$J,358.3,3882,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3882,1,3,0)
+ ;;=3^Migraine,Intractable w/o Status Migrainosus,Unspec
+ ;;^UTILITY(U,$J,358.3,3882,1,4,0)
+ ;;=4^G43.919
+ ;;^UTILITY(U,$J,358.3,3882,2)
+ ;;=^5003911
+ ;;^UTILITY(U,$J,358.3,3883,0)
+ ;;=G43.901^^28^259^77
+ ;;^UTILITY(U,$J,358.3,3883,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3883,1,3,0)
+ ;;=3^Migraine,Not Intractable w/ Status Migrainosis,Unspec
+ ;;^UTILITY(U,$J,358.3,3883,1,4,0)
+ ;;=4^G43.901
+ ;;^UTILITY(U,$J,358.3,3883,2)
+ ;;=^5003908
+ ;;^UTILITY(U,$J,358.3,3884,0)
+ ;;=G43.909^^28^259^78
+ ;;^UTILITY(U,$J,358.3,3884,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3884,1,3,0)
+ ;;=3^Migraine,Not Intractable w/o Status Migrainosis,Unspec
+ ;;^UTILITY(U,$J,358.3,3884,1,4,0)
+ ;;=4^G43.909
+ ;;^UTILITY(U,$J,358.3,3884,2)
+ ;;=^5003909
+ ;;^UTILITY(U,$J,358.3,3885,0)
+ ;;=G12.20^^28^259^79
+ ;;^UTILITY(U,$J,358.3,3885,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3885,1,3,0)
+ ;;=3^Motor Neuron Disease,Unspec
+ ;;^UTILITY(U,$J,358.3,3885,1,4,0)
+ ;;=4^G12.20
+ ;;^UTILITY(U,$J,358.3,3885,2)
+ ;;=^5003761
+ ;;^UTILITY(U,$J,358.3,3886,0)
+ ;;=G25.70^^28^259^80
+ ;;^UTILITY(U,$J,358.3,3886,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3886,1,3,0)
+ ;;=3^Movement Disorder,Drug-Induced,Unspec
+ ;;^UTILITY(U,$J,358.3,3886,1,4,0)
+ ;;=4^G25.70
+ ;;^UTILITY(U,$J,358.3,3886,2)
+ ;;=^5003798
+ ;;^UTILITY(U,$J,358.3,3887,0)
+ ;;=G35.^^28^259^81
+ ;;^UTILITY(U,$J,358.3,3887,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3887,1,3,0)
+ ;;=3^Multiple Sclerosis
+ ;;^UTILITY(U,$J,358.3,3887,1,4,0)
+ ;;=4^G35.
+ ;;^UTILITY(U,$J,358.3,3887,2)
+ ;;=^79761
+ ;;^UTILITY(U,$J,358.3,3888,0)
+ ;;=G25.3^^28^259^82
+ ;;^UTILITY(U,$J,358.3,3888,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3888,1,3,0)
+ ;;=3^Myoclonus
+ ;;^UTILITY(U,$J,358.3,3888,1,4,0)
+ ;;=4^G25.3
+ ;;^UTILITY(U,$J,358.3,3888,2)
+ ;;=^80620
+ ;;^UTILITY(U,$J,358.3,3889,0)
+ ;;=G70.9^^28^259^83
+ ;;^UTILITY(U,$J,358.3,3889,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3889,1,3,0)
+ ;;=3^Myoneural Disorder,Unspec
+ ;;^UTILITY(U,$J,358.3,3889,1,4,0)
+ ;;=4^G70.9
+ ;;^UTILITY(U,$J,358.3,3889,2)
+ ;;=^5004087
+ ;;^UTILITY(U,$J,358.3,3890,0)
+ ;;=G31.9^^28^259^84
+ ;;^UTILITY(U,$J,358.3,3890,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3890,1,3,0)
+ ;;=3^Nervous System Degenerative Disease,Unspec
+ ;;^UTILITY(U,$J,358.3,3890,1,4,0)
+ ;;=4^G31.9
+ ;;^UTILITY(U,$J,358.3,3890,2)
+ ;;=^5003815
+ ;;^UTILITY(U,$J,358.3,3891,0)
+ ;;=G50.0^^28^259^86
+ ;;^UTILITY(U,$J,358.3,3891,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3891,1,3,0)
+ ;;=3^Neuralgia,Trigeminal
+ ;;^UTILITY(U,$J,358.3,3891,1,4,0)
+ ;;=4^G50.0
+ ;;^UTILITY(U,$J,358.3,3891,2)
+ ;;=^121978
+ ;;^UTILITY(U,$J,358.3,3892,0)
+ ;;=G62.81^^28^259^92
+ ;;^UTILITY(U,$J,358.3,3892,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,3892,1,3,0)
+ ;;=3^Neuropathy,Critical Illness Polyneuropathy
+ ;;^UTILITY(U,$J,358.3,3892,1,4,0)
+ ;;=4^G62.81
+ ;;^UTILITY(U,$J,358.3,3892,2)
+ ;;=^328481
+ ;;^UTILITY(U,$J,358.3,3893,0)
+ ;;=G62.1^^28^259^87
+ ;;^UTILITY(U,$J,358.3,3893,1,0)
+ ;;=^358.31IA^4^2

@@ -1,0 +1,134 @@
+IBDEI1XE ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
+ Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
+Q Q
+ ;;^UTILITY(U,$J,358.3,32244,1,4,0)
+ ;;=4^F18.24
+ ;;^UTILITY(U,$J,358.3,32244,2)
+ ;;=^5003397
+ ;;^UTILITY(U,$J,358.3,32245,0)
+ ;;=F70.^^141^1511^1
+ ;;^UTILITY(U,$J,358.3,32245,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32245,1,3,0)
+ ;;=3^Intellectual Disabilities,Mild
+ ;;^UTILITY(U,$J,358.3,32245,1,4,0)
+ ;;=4^F70.
+ ;;^UTILITY(U,$J,358.3,32245,2)
+ ;;=^5003668
+ ;;^UTILITY(U,$J,358.3,32246,0)
+ ;;=F71.^^141^1511^2
+ ;;^UTILITY(U,$J,358.3,32246,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32246,1,3,0)
+ ;;=3^Intellectual Disabilities,Moderate
+ ;;^UTILITY(U,$J,358.3,32246,1,4,0)
+ ;;=4^F71.
+ ;;^UTILITY(U,$J,358.3,32246,2)
+ ;;=^5003669
+ ;;^UTILITY(U,$J,358.3,32247,0)
+ ;;=F72.^^141^1511^3
+ ;;^UTILITY(U,$J,358.3,32247,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32247,1,3,0)
+ ;;=3^Intellectual Disabilities,Severe
+ ;;^UTILITY(U,$J,358.3,32247,1,4,0)
+ ;;=4^F72.
+ ;;^UTILITY(U,$J,358.3,32247,2)
+ ;;=^5003670
+ ;;^UTILITY(U,$J,358.3,32248,0)
+ ;;=F73.^^141^1511^4
+ ;;^UTILITY(U,$J,358.3,32248,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32248,1,3,0)
+ ;;=3^Intellectual Disabilities,Profound
+ ;;^UTILITY(U,$J,358.3,32248,1,4,0)
+ ;;=4^F73.
+ ;;^UTILITY(U,$J,358.3,32248,2)
+ ;;=^5003671
+ ;;^UTILITY(U,$J,358.3,32249,0)
+ ;;=F78.^^141^1511^5
+ ;;^UTILITY(U,$J,358.3,32249,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32249,1,3,0)
+ ;;=3^Intellectual Disabilities,Oth Specified
+ ;;^UTILITY(U,$J,358.3,32249,1,4,0)
+ ;;=4^F78.
+ ;;^UTILITY(U,$J,358.3,32249,2)
+ ;;=^5003672
+ ;;^UTILITY(U,$J,358.3,32250,0)
+ ;;=F79.^^141^1511^6
+ ;;^UTILITY(U,$J,358.3,32250,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32250,1,3,0)
+ ;;=3^Intellectual Disabilities,Unspec
+ ;;^UTILITY(U,$J,358.3,32250,1,4,0)
+ ;;=4^F79.
+ ;;^UTILITY(U,$J,358.3,32250,2)
+ ;;=^5003673
+ ;;^UTILITY(U,$J,358.3,32251,0)
+ ;;=Z00.6^^141^1512^1
+ ;;^UTILITY(U,$J,358.3,32251,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32251,1,3,0)
+ ;;=3^Exam of Participant of Control in Clinical Research Program
+ ;;^UTILITY(U,$J,358.3,32251,1,4,0)
+ ;;=4^Z00.6
+ ;;^UTILITY(U,$J,358.3,32251,2)
+ ;;=^5062608
+ ;;^UTILITY(U,$J,358.3,32252,0)
+ ;;=F45.22^^141^1513^1
+ ;;^UTILITY(U,$J,358.3,32252,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32252,1,3,0)
+ ;;=3^Body Dysmorphic Disorder
+ ;;^UTILITY(U,$J,358.3,32252,1,4,0)
+ ;;=4^F45.22
+ ;;^UTILITY(U,$J,358.3,32252,2)
+ ;;=^5003588
+ ;;^UTILITY(U,$J,358.3,32253,0)
+ ;;=F45.20^^141^1513^2
+ ;;^UTILITY(U,$J,358.3,32253,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32253,1,3,0)
+ ;;=3^Hypochondiacal Disorder,Unspec
+ ;;^UTILITY(U,$J,358.3,32253,1,4,0)
+ ;;=4^F45.20
+ ;;^UTILITY(U,$J,358.3,32253,2)
+ ;;=^5003586
+ ;;^UTILITY(U,$J,358.3,32254,0)
+ ;;=F45.21^^141^1513^4
+ ;;^UTILITY(U,$J,358.3,32254,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32254,1,3,0)
+ ;;=3^Hypochondriasis
+ ;;^UTILITY(U,$J,358.3,32254,1,4,0)
+ ;;=4^F45.21
+ ;;^UTILITY(U,$J,358.3,32254,2)
+ ;;=^5003587
+ ;;^UTILITY(U,$J,358.3,32255,0)
+ ;;=F45.29^^141^1513^3
+ ;;^UTILITY(U,$J,358.3,32255,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32255,1,3,0)
+ ;;=3^Hypochondriacal Disorders NEC
+ ;;^UTILITY(U,$J,358.3,32255,1,4,0)
+ ;;=4^F45.29
+ ;;^UTILITY(U,$J,358.3,32255,2)
+ ;;=^5003589
+ ;;^UTILITY(U,$J,358.3,32256,0)
+ ;;=F45.8^^141^1513^9
+ ;;^UTILITY(U,$J,358.3,32256,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32256,1,3,0)
+ ;;=3^Somatoform Disorders NEC
+ ;;^UTILITY(U,$J,358.3,32256,1,4,0)
+ ;;=4^F45.8
+ ;;^UTILITY(U,$J,358.3,32256,2)
+ ;;=^331915
+ ;;^UTILITY(U,$J,358.3,32257,0)
+ ;;=F45.41^^141^1513^5
+ ;;^UTILITY(U,$J,358.3,32257,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,32257,1,3,0)
+ ;;=3^Pain Disorder Exclusively Related to Psychological Factors

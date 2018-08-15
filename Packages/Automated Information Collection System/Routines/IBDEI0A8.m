@@ -1,140 +1,132 @@
-IBDEI0A8 ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0A8 ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,4757,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4757,1,2,0)
- ;;=2^693.1
- ;;^UTILITY(U,$J,358.3,4757,1,5,0)
- ;;=5^Food Dermatitis
- ;;^UTILITY(U,$J,358.3,4757,2)
- ;;=^33044
- ;;^UTILITY(U,$J,358.3,4758,0)
- ;;=692.0^^39^362^7
- ;;^UTILITY(U,$J,358.3,4758,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4758,1,2,0)
- ;;=2^692.0
- ;;^UTILITY(U,$J,358.3,4758,1,5,0)
- ;;=5^Detergent Dermatitis
- ;;^UTILITY(U,$J,358.3,4758,2)
- ;;=^271902
- ;;^UTILITY(U,$J,358.3,4759,0)
- ;;=692.74^^39^362^18
- ;;^UTILITY(U,$J,358.3,4759,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4759,1,2,0)
- ;;=2^692.74
- ;;^UTILITY(U,$J,358.3,4759,1,5,0)
- ;;=5^Sun Dermatitis, Chronic
- ;;^UTILITY(U,$J,358.3,4759,2)
- ;;=^293927
- ;;^UTILITY(U,$J,358.3,4760,0)
- ;;=694.9^^39^362^5
- ;;^UTILITY(U,$J,358.3,4760,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4760,1,2,0)
- ;;=2^694.9
- ;;^UTILITY(U,$J,358.3,4760,1,5,0)
- ;;=5^Bullous dermatoses, NOS
- ;;^UTILITY(U,$J,358.3,4760,2)
- ;;=^187900
- ;;^UTILITY(U,$J,358.3,4761,0)
- ;;=692.73^^39^362^2
- ;;^UTILITY(U,$J,358.3,4761,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4761,1,2,0)
- ;;=2^692.73
- ;;^UTILITY(U,$J,358.3,4761,1,5,0)
- ;;=5^Actinic Granuloma/Reticuloid
- ;;^UTILITY(U,$J,358.3,4761,2)
- ;;=Actinic Granuloma/Reticuloid^293926
- ;;^UTILITY(U,$J,358.3,4762,0)
- ;;=692.72^^39^362^14
- ;;^UTILITY(U,$J,358.3,4762,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4762,1,2,0)
- ;;=2^692.72
- ;;^UTILITY(U,$J,358.3,4762,1,5,0)
- ;;=5^Polymorphic Light Eruption
- ;;^UTILITY(U,$J,358.3,4762,2)
- ;;=Polymorphic Light Eruptio^93951
- ;;^UTILITY(U,$J,358.3,4763,0)
- ;;=110.0^^39^363^5
- ;;^UTILITY(U,$J,358.3,4763,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4763,1,2,0)
- ;;=2^110.0
- ;;^UTILITY(U,$J,358.3,4763,1,5,0)
- ;;=5^Dermatophytosis Scalp
- ;;^UTILITY(U,$J,358.3,4763,2)
- ;;=^33176
- ;;^UTILITY(U,$J,358.3,4764,0)
- ;;=110.5^^39^363^1
- ;;^UTILITY(U,$J,358.3,4764,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4764,1,2,0)
- ;;=2^110.5
- ;;^UTILITY(U,$J,358.3,4764,1,5,0)
- ;;=5^Dermatophytosis Body(Tinea Imbricata)
- ;;^UTILITY(U,$J,358.3,4764,2)
- ;;=^33179
- ;;^UTILITY(U,$J,358.3,4765,0)
- ;;=110.1^^39^363^6
- ;;^UTILITY(U,$J,358.3,4765,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4765,1,2,0)
- ;;=2^110.1
- ;;^UTILITY(U,$J,358.3,4765,1,5,0)
- ;;=5^Onychomycosis
- ;;^UTILITY(U,$J,358.3,4765,2)
- ;;=Onychomycosis^33173
- ;;^UTILITY(U,$J,358.3,4766,0)
- ;;=110.4^^39^363^2
- ;;^UTILITY(U,$J,358.3,4766,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4766,1,2,0)
- ;;=2^110.4
- ;;^UTILITY(U,$J,358.3,4766,1,5,0)
- ;;=5^Dermatophytosis Foot(Tinea Pedis)
- ;;^UTILITY(U,$J,358.3,4766,2)
- ;;=^33168
- ;;^UTILITY(U,$J,358.3,4767,0)
- ;;=110.3^^39^363^3
- ;;^UTILITY(U,$J,358.3,4767,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4767,1,2,0)
- ;;=2^110.3
- ;;^UTILITY(U,$J,358.3,4767,1,5,0)
- ;;=5^Dermatophytosis Groin(Tinea Cruris)
- ;;^UTILITY(U,$J,358.3,4767,2)
- ;;=^33171
- ;;^UTILITY(U,$J,358.3,4768,0)
- ;;=110.2^^39^363^4
- ;;^UTILITY(U,$J,358.3,4768,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4768,1,2,0)
- ;;=2^110.2
- ;;^UTILITY(U,$J,358.3,4768,1,5,0)
- ;;=5^Dermatophytosis Hand(Tinea Manuum)
- ;;^UTILITY(U,$J,358.3,4768,2)
- ;;=^266859
- ;;^UTILITY(U,$J,358.3,4769,0)
- ;;=111.0^^39^363^7
- ;;^UTILITY(U,$J,358.3,4769,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4769,1,2,0)
- ;;=2^111.0
- ;;^UTILITY(U,$J,358.3,4769,1,5,0)
- ;;=5^Tinea Versicolor
- ;;^UTILITY(U,$J,358.3,4769,2)
- ;;=^119758
- ;;^UTILITY(U,$J,358.3,4770,0)
- ;;=706.8^^39^364^1
- ;;^UTILITY(U,$J,358.3,4770,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,4770,1,2,0)
- ;;=2^706.8
- ;;^UTILITY(U,$J,358.3,4770,1,5,0)
- ;;=5^Asteatotic Eczema
+ ;;^UTILITY(U,$J,358.3,4258,1,4,0)
+ ;;=4^Z59.1
+ ;;^UTILITY(U,$J,358.3,4258,2)
+ ;;=^5063130
+ ;;^UTILITY(U,$J,358.3,4259,0)
+ ;;=Z59.7^^28^263^139
+ ;;^UTILITY(U,$J,358.3,4259,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4259,1,3,0)
+ ;;=3^Problems Related to Insufficient Social Insurance/Welfare Support
+ ;;^UTILITY(U,$J,358.3,4259,1,4,0)
+ ;;=4^Z59.7
+ ;;^UTILITY(U,$J,358.3,4259,2)
+ ;;=^5063136
+ ;;^UTILITY(U,$J,358.3,4260,0)
+ ;;=Z59.4^^28^263^140
+ ;;^UTILITY(U,$J,358.3,4260,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4260,1,3,0)
+ ;;=3^Problems Related to Lack of Food/Drinking Water
+ ;;^UTILITY(U,$J,358.3,4260,1,4,0)
+ ;;=4^Z59.4
+ ;;^UTILITY(U,$J,358.3,4260,2)
+ ;;=^5063133
+ ;;^UTILITY(U,$J,358.3,4261,0)
+ ;;=Z73.9^^28^263^141
+ ;;^UTILITY(U,$J,358.3,4261,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4261,1,3,0)
+ ;;=3^Problems Related to Life Management Difficulty
+ ;;^UTILITY(U,$J,358.3,4261,1,4,0)
+ ;;=4^Z73.9
+ ;;^UTILITY(U,$J,358.3,4261,2)
+ ;;=^5063281
+ ;;^UTILITY(U,$J,358.3,4262,0)
+ ;;=Z72.9^^28^263^142
+ ;;^UTILITY(U,$J,358.3,4262,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4262,1,3,0)
+ ;;=3^Problems Related to Lifestyle
+ ;;^UTILITY(U,$J,358.3,4262,1,4,0)
+ ;;=4^Z72.9
+ ;;^UTILITY(U,$J,358.3,4262,2)
+ ;;=^5063267
+ ;;^UTILITY(U,$J,358.3,4263,0)
+ ;;=Z73.6^^28^263^124
+ ;;^UTILITY(U,$J,358.3,4263,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4263,1,3,0)
+ ;;=3^Problems Related to Activity Limitations d/t Disability
+ ;;^UTILITY(U,$J,358.3,4263,1,4,0)
+ ;;=4^Z73.6
+ ;;^UTILITY(U,$J,358.3,4263,2)
+ ;;=^5063274
+ ;;^UTILITY(U,$J,358.3,4264,0)
+ ;;=Z60.2^^28^263^143
+ ;;^UTILITY(U,$J,358.3,4264,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4264,1,3,0)
+ ;;=3^Problems Related to Living Alone
+ ;;^UTILITY(U,$J,358.3,4264,1,4,0)
+ ;;=4^Z60.2
+ ;;^UTILITY(U,$J,358.3,4264,2)
+ ;;=^5063140
+ ;;^UTILITY(U,$J,358.3,4265,0)
+ ;;=Z59.3^^28^263^144
+ ;;^UTILITY(U,$J,358.3,4265,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4265,1,3,0)
+ ;;=3^Problems Related to Living in Residential Institution
+ ;;^UTILITY(U,$J,358.3,4265,1,4,0)
+ ;;=4^Z59.3
+ ;;^UTILITY(U,$J,358.3,4265,2)
+ ;;=^5063132
+ ;;^UTILITY(U,$J,358.3,4266,0)
+ ;;=Z59.6^^28^263^145
+ ;;^UTILITY(U,$J,358.3,4266,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4266,1,3,0)
+ ;;=3^Problems Related to Low Income
+ ;;^UTILITY(U,$J,358.3,4266,1,4,0)
+ ;;=4^Z59.6
+ ;;^UTILITY(U,$J,358.3,4266,2)
+ ;;=^5063135
+ ;;^UTILITY(U,$J,358.3,4267,0)
+ ;;=Z75.9^^28^263^146
+ ;;^UTILITY(U,$J,358.3,4267,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4267,1,3,0)
+ ;;=3^Problems Related to Med Facilities/Health Care
+ ;;^UTILITY(U,$J,358.3,4267,1,4,0)
+ ;;=4^Z75.9
+ ;;^UTILITY(U,$J,358.3,4267,2)
+ ;;=^5063296
+ ;;^UTILITY(U,$J,358.3,4268,0)
+ ;;=Z75.0^^28^263^147
+ ;;^UTILITY(U,$J,358.3,4268,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4268,1,3,0)
+ ;;=3^Problems Related to Med Services not Available in Home
+ ;;^UTILITY(U,$J,358.3,4268,1,4,0)
+ ;;=4^Z75.0
+ ;;^UTILITY(U,$J,358.3,4268,2)
+ ;;=^5063289
+ ;;^UTILITY(U,$J,358.3,4269,0)
+ ;;=Z74.2^^28^263^149
+ ;;^UTILITY(U,$J,358.3,4269,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4269,1,3,0)
+ ;;=3^Problems Related to Need for Assistance at Home
+ ;;^UTILITY(U,$J,358.3,4269,1,4,0)
+ ;;=4^Z74.2
+ ;;^UTILITY(U,$J,358.3,4269,2)
+ ;;=^5063285
+ ;;^UTILITY(U,$J,358.3,4270,0)
+ ;;=Z74.1^^28^263^150
+ ;;^UTILITY(U,$J,358.3,4270,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,4270,1,3,0)
+ ;;=3^Problems Related to Need for Assistance w/ Personal Care
+ ;;^UTILITY(U,$J,358.3,4270,1,4,0)
+ ;;=4^Z74.1
+ ;;^UTILITY(U,$J,358.3,4270,2)
+ ;;=^5063284
+ ;;^UTILITY(U,$J,358.3,4271,0)
+ ;;=Z74.3^^28^263^151
+ ;;^UTILITY(U,$J,358.3,4271,1,0)
+ ;;=^358.31IA^4^2

@@ -1,140 +1,132 @@
-IBDEI0HN ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI0HN ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,8575,1,4,0)
- ;;=4^054.42
- ;;^UTILITY(U,$J,358.3,8575,2)
- ;;=Dendritic Keratitis^66763
- ;;^UTILITY(U,$J,358.3,8576,0)
- ;;=370.01^^58^612^65
- ;;^UTILITY(U,$J,358.3,8576,1,0)
+ ;;^UTILITY(U,$J,358.3,7905,1,4,0)
+ ;;=4^L30.1
+ ;;^UTILITY(U,$J,358.3,7905,2)
+ ;;=^5009154
+ ;;^UTILITY(U,$J,358.3,7906,0)
+ ;;=L73.2^^55^531^49
+ ;;^UTILITY(U,$J,358.3,7906,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8576,1,3,0)
- ;;=3^Marginal Corneal Ulcer
- ;;^UTILITY(U,$J,358.3,8576,1,4,0)
- ;;=4^370.01
- ;;^UTILITY(U,$J,358.3,8576,2)
- ;;=Marginal Corneal Ulcer^268908
- ;;^UTILITY(U,$J,358.3,8577,0)
- ;;=375.30^^58^612^47
- ;;^UTILITY(U,$J,358.3,8577,1,0)
+ ;;^UTILITY(U,$J,358.3,7906,1,3,0)
+ ;;=3^Hidradenitis suppurativa
+ ;;^UTILITY(U,$J,358.3,7906,1,4,0)
+ ;;=4^L73.2
+ ;;^UTILITY(U,$J,358.3,7906,2)
+ ;;=^278979
+ ;;^UTILITY(U,$J,358.3,7907,0)
+ ;;=L70.0^^55^531^1
+ ;;^UTILITY(U,$J,358.3,7907,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8577,1,3,0)
- ;;=3^Dacrocystitis
- ;;^UTILITY(U,$J,358.3,8577,1,4,0)
- ;;=4^375.30
- ;;^UTILITY(U,$J,358.3,8577,2)
- ;;=Dacrocystitis^30880
- ;;^UTILITY(U,$J,358.3,8578,0)
- ;;=376.01^^58^612^69
- ;;^UTILITY(U,$J,358.3,8578,1,0)
+ ;;^UTILITY(U,$J,358.3,7907,1,3,0)
+ ;;=3^Acne vulgaris
+ ;;^UTILITY(U,$J,358.3,7907,1,4,0)
+ ;;=4^L70.0
+ ;;^UTILITY(U,$J,358.3,7907,2)
+ ;;=^5009268
+ ;;^UTILITY(U,$J,358.3,7908,0)
+ ;;=L72.3^^55^531^137
+ ;;^UTILITY(U,$J,358.3,7908,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8578,1,3,0)
- ;;=3^Orbital Cellulitis
- ;;^UTILITY(U,$J,358.3,8578,1,4,0)
- ;;=4^376.01
- ;;^UTILITY(U,$J,358.3,8578,2)
- ;;=Orbital Cellulitis^259068
- ;;^UTILITY(U,$J,358.3,8579,0)
- ;;=682.0^^58^612^6
- ;;^UTILITY(U,$J,358.3,8579,1,0)
+ ;;^UTILITY(U,$J,358.3,7908,1,3,0)
+ ;;=3^Sebaceous cyst
+ ;;^UTILITY(U,$J,358.3,7908,1,4,0)
+ ;;=4^L72.3
+ ;;^UTILITY(U,$J,358.3,7908,2)
+ ;;=^5009281
+ ;;^UTILITY(U,$J,358.3,7909,0)
+ ;;=L97.929^^55^531^57
+ ;;^UTILITY(U,$J,358.3,7909,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8579,1,3,0)
- ;;=3^Cellulitis of Face
- ;;^UTILITY(U,$J,358.3,8579,1,4,0)
- ;;=4^682.0
- ;;^UTILITY(U,$J,358.3,8579,2)
- ;;=Cellulitis of Face^271888
- ;;^UTILITY(U,$J,358.3,8580,0)
- ;;=473.9^^58^612^84
- ;;^UTILITY(U,$J,358.3,8580,1,0)
+ ;;^UTILITY(U,$J,358.3,7909,1,3,0)
+ ;;=3^Non-prs chr ulc unsp prt of l low leg w unsp severity
+ ;;^UTILITY(U,$J,358.3,7909,1,4,0)
+ ;;=4^L97.929
+ ;;^UTILITY(U,$J,358.3,7909,2)
+ ;;=^5133689
+ ;;^UTILITY(U,$J,358.3,7910,0)
+ ;;=L97.922^^55^531^58
+ ;;^UTILITY(U,$J,358.3,7910,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8580,1,3,0)
- ;;=3^Sinusitis,Unspec
- ;;^UTILITY(U,$J,358.3,8580,1,4,0)
- ;;=4^473.9
- ;;^UTILITY(U,$J,358.3,8580,2)
- ;;=Sinusitis^123985
- ;;^UTILITY(U,$J,358.3,8581,0)
- ;;=017.30^^58^612^90
- ;;^UTILITY(U,$J,358.3,8581,1,0)
+ ;;^UTILITY(U,$J,358.3,7910,1,3,0)
+ ;;=3^Non-prs chr ulc unsp prt of l low leg w fat layer exposed
+ ;;^UTILITY(U,$J,358.3,7910,1,4,0)
+ ;;=4^L97.922
+ ;;^UTILITY(U,$J,358.3,7910,2)
+ ;;=^5133682
+ ;;^UTILITY(U,$J,358.3,7911,0)
+ ;;=L97.923^^55^531^59
+ ;;^UTILITY(U,$J,358.3,7911,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8581,1,3,0)
- ;;=3^Tuberculosis,Eye
- ;;^UTILITY(U,$J,358.3,8581,1,4,0)
- ;;=4^017.30
- ;;^UTILITY(U,$J,358.3,8581,2)
- ;;=^122722
- ;;^UTILITY(U,$J,358.3,8582,0)
- ;;=076.9^^58^612^88
- ;;^UTILITY(U,$J,358.3,8582,1,0)
+ ;;^UTILITY(U,$J,358.3,7911,1,3,0)
+ ;;=3^Non-prs chr ulc unsp prt of l low leg w necros muscle
+ ;;^UTILITY(U,$J,358.3,7911,1,4,0)
+ ;;=4^L97.923
+ ;;^UTILITY(U,$J,358.3,7911,2)
+ ;;=^5133684
+ ;;^UTILITY(U,$J,358.3,7912,0)
+ ;;=L97.924^^55^531^60
+ ;;^UTILITY(U,$J,358.3,7912,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8582,1,3,0)
- ;;=3^Trachoma,Unspec
- ;;^UTILITY(U,$J,358.3,8582,1,4,0)
- ;;=4^076.9
- ;;^UTILITY(U,$J,358.3,8582,2)
- ;;=^120805
- ;;^UTILITY(U,$J,358.3,8583,0)
- ;;=077.0^^58^612^31
- ;;^UTILITY(U,$J,358.3,8583,1,0)
+ ;;^UTILITY(U,$J,358.3,7912,1,3,0)
+ ;;=3^Non-prs chr ulc unsp prt of l low leg w necrosis of bone
+ ;;^UTILITY(U,$J,358.3,7912,1,4,0)
+ ;;=4^L97.924
+ ;;^UTILITY(U,$J,358.3,7912,2)
+ ;;=^5133686
+ ;;^UTILITY(U,$J,358.3,7913,0)
+ ;;=L97.921^^55^531^56
+ ;;^UTILITY(U,$J,358.3,7913,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8583,1,3,0)
- ;;=3^Conjunctivitis,Inclusion
- ;;^UTILITY(U,$J,358.3,8583,1,4,0)
- ;;=4^077.0
- ;;^UTILITY(U,$J,358.3,8583,2)
- ;;=^27600
- ;;^UTILITY(U,$J,358.3,8584,0)
- ;;=077.1^^58^612^61
- ;;^UTILITY(U,$J,358.3,8584,1,0)
+ ;;^UTILITY(U,$J,358.3,7913,1,3,0)
+ ;;=3^Non-prs chr ulc unsp prt of l low leg limited to brkdwn skin
+ ;;^UTILITY(U,$J,358.3,7913,1,4,0)
+ ;;=4^L97.921
+ ;;^UTILITY(U,$J,358.3,7913,2)
+ ;;=^5133680
+ ;;^UTILITY(U,$J,358.3,7914,0)
+ ;;=L97.919^^55^531^62
+ ;;^UTILITY(U,$J,358.3,7914,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8584,1,3,0)
- ;;=3^Keratoconjunctivitis,Epidemic EKC
- ;;^UTILITY(U,$J,358.3,8584,1,4,0)
- ;;=4^077.1
- ;;^UTILITY(U,$J,358.3,8584,2)
- ;;=^41251
- ;;^UTILITY(U,$J,358.3,8585,0)
- ;;=077.8^^58^612^37
- ;;^UTILITY(U,$J,358.3,8585,1,0)
+ ;;^UTILITY(U,$J,358.3,7914,1,3,0)
+ ;;=3^Non-prs chr ulc unsp prt of r low leg w unsp severity
+ ;;^UTILITY(U,$J,358.3,7914,1,4,0)
+ ;;=4^L97.919
+ ;;^UTILITY(U,$J,358.3,7914,2)
+ ;;=^5133688
+ ;;^UTILITY(U,$J,358.3,7915,0)
+ ;;=L97.913^^55^531^63
+ ;;^UTILITY(U,$J,358.3,7915,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8585,1,3,0)
- ;;=3^Conjunctivitis,Viral,Oth
- ;;^UTILITY(U,$J,358.3,8585,1,4,0)
- ;;=4^077.8
- ;;^UTILITY(U,$J,358.3,8585,2)
- ;;=^88239
- ;;^UTILITY(U,$J,358.3,8586,0)
- ;;=078.5^^58^612^46
- ;;^UTILITY(U,$J,358.3,8586,1,0)
+ ;;^UTILITY(U,$J,358.3,7915,1,3,0)
+ ;;=3^Non-prs chr ulc unsp prt of r low leg w necros muscle
+ ;;^UTILITY(U,$J,358.3,7915,1,4,0)
+ ;;=4^L97.913
+ ;;^UTILITY(U,$J,358.3,7915,2)
+ ;;=^5133683
+ ;;^UTILITY(U,$J,358.3,7916,0)
+ ;;=L97.914^^55^531^64
+ ;;^UTILITY(U,$J,358.3,7916,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8586,1,3,0)
- ;;=3^Cytomegaloviral Disease
- ;;^UTILITY(U,$J,358.3,8586,1,4,0)
- ;;=4^078.5
- ;;^UTILITY(U,$J,358.3,8586,2)
- ;;=^30676
- ;;^UTILITY(U,$J,358.3,8587,0)
- ;;=090.3^^58^612^59
- ;;^UTILITY(U,$J,358.3,8587,1,0)
+ ;;^UTILITY(U,$J,358.3,7916,1,3,0)
+ ;;=3^Non-prs chr ulc unsp prt of r low leg w necrosis of bone
+ ;;^UTILITY(U,$J,358.3,7916,1,4,0)
+ ;;=4^L97.914
+ ;;^UTILITY(U,$J,358.3,7916,2)
+ ;;=^5133685
+ ;;^UTILITY(U,$J,358.3,7917,0)
+ ;;=L97.912^^55^531^65
+ ;;^UTILITY(U,$J,358.3,7917,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8587,1,3,0)
- ;;=3^Keratitis,Interstitial,Syphilitic
- ;;^UTILITY(U,$J,358.3,8587,1,4,0)
- ;;=4^090.3
- ;;^UTILITY(U,$J,358.3,8587,2)
- ;;=^266697
- ;;^UTILITY(U,$J,358.3,8588,0)
- ;;=091.50^^58^612^93
- ;;^UTILITY(U,$J,358.3,8588,1,0)
+ ;;^UTILITY(U,$J,358.3,7917,1,3,0)
+ ;;=3^Non-prs chr ulc unsp prt of r low leg w fat layer exposed
+ ;;^UTILITY(U,$J,358.3,7917,1,4,0)
+ ;;=4^L97.912
+ ;;^UTILITY(U,$J,358.3,7917,2)
+ ;;=^5133681
+ ;;^UTILITY(U,$J,358.3,7918,0)
+ ;;=L97.911^^55^531^61
+ ;;^UTILITY(U,$J,358.3,7918,1,0)
  ;;=^358.31IA^4^2
- ;;^UTILITY(U,$J,358.3,8588,1,3,0)
- ;;=3^Uveitis Syphilitica,Unspec
- ;;^UTILITY(U,$J,358.3,8588,1,4,0)
- ;;=4^091.50
- ;;^UTILITY(U,$J,358.3,8588,2)
- ;;=^266715
- ;;^UTILITY(U,$J,358.3,8589,0)
- ;;=094.83^^58^612^83

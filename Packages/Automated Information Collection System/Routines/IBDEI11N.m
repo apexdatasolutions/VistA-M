@@ -1,110 +1,136 @@
-IBDEI11N ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI11N ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,18704,0)
- ;;=12002^^122^1196^2^^^^1
- ;;^UTILITY(U,$J,358.3,18704,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18704,1,2,0)
- ;;=2^Simple Repair of Superficial Wounds of scalp, neck, exillae, external genitalia, trunk, extremities; 2.6cm to 7.5cm 
- ;;^UTILITY(U,$J,358.3,18704,1,3,0)
- ;;=3^12002
- ;;^UTILITY(U,$J,358.3,18705,0)
- ;;=12041^^122^1196^3^^^^1
- ;;^UTILITY(U,$J,358.3,18705,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18705,1,2,0)
- ;;=2^Layer Closure of Wounds of neck, hands, feet, external genitalia; 2.5cm or less
- ;;^UTILITY(U,$J,358.3,18705,1,3,0)
- ;;=3^12041
- ;;^UTILITY(U,$J,358.3,18706,0)
- ;;=12042^^122^1196^4^^^^1
- ;;^UTILITY(U,$J,358.3,18706,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18706,1,2,0)
- ;;=2^Layer Closure of Wounds of neck, hands, feet, external genitalia; 2.6cm to 7.5cm
- ;;^UTILITY(U,$J,358.3,18706,1,3,0)
- ;;=3^12042
- ;;^UTILITY(U,$J,358.3,18707,0)
- ;;=12031^^122^1196^5^^^^1
- ;;^UTILITY(U,$J,358.3,18707,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18707,1,2,0)
- ;;=2^Layer Closure of Wounds of scalp, axillae, trunk, extremities; 2.5cm or less Wounds of
- ;;^UTILITY(U,$J,358.3,18707,1,3,0)
- ;;=3^12031
- ;;^UTILITY(U,$J,358.3,18708,0)
- ;;=12032^^122^1196^6^^^^1
- ;;^UTILITY(U,$J,358.3,18708,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18708,1,2,0)
- ;;=2^Layer Closure of Wounds of scalp, axillae, trunk, extremities; 2.6cm to 7.5cm Wounds of
- ;;^UTILITY(U,$J,358.3,18708,1,3,0)
- ;;=3^12032
- ;;^UTILITY(U,$J,358.3,18709,0)
- ;;=12020^^122^1196^7^^^^1
- ;;^UTILITY(U,$J,358.3,18709,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18709,1,2,0)
- ;;=2^TX of Superficial Wound Dehiscence; simple closure
- ;;^UTILITY(U,$J,358.3,18709,1,3,0)
- ;;=3^12020
- ;;^UTILITY(U,$J,358.3,18710,0)
- ;;=12021^^122^1196^8^^^^1
- ;;^UTILITY(U,$J,358.3,18710,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18710,1,2,0)
- ;;=2^TX of Superficial Wound Dehiscence; simple closure with packing
- ;;^UTILITY(U,$J,358.3,18710,1,3,0)
- ;;=3^12021
- ;;^UTILITY(U,$J,358.3,18711,0)
- ;;=13160^^122^1196^9^^^^1
- ;;^UTILITY(U,$J,358.3,18711,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18711,1,2,0)
- ;;=2^Secondary Closure of Surgical Wound or Dehiscence, extensive or complicated 
- ;;^UTILITY(U,$J,358.3,18711,1,3,0)
- ;;=3^13160
- ;;^UTILITY(U,$J,358.3,18712,0)
- ;;=27650^^122^1196^10^^^^1
- ;;^UTILITY(U,$J,358.3,18712,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18712,1,2,0)
- ;;=2^Repair Primary Ruptured Achilles Tendon
- ;;^UTILITY(U,$J,358.3,18712,1,3,0)
- ;;=3^27650
- ;;^UTILITY(U,$J,358.3,18713,0)
- ;;=28406^^122^1196^11^^^^1
- ;;^UTILITY(U,$J,358.3,18713,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18713,1,2,0)
- ;;=2^Perc Fixation Calcaneous Fx
- ;;^UTILITY(U,$J,358.3,18713,1,3,0)
- ;;=3^28406
- ;;^UTILITY(U,$J,358.3,18714,0)
- ;;=16020^^122^1197^2^^^^1
- ;;^UTILITY(U,$J,358.3,18714,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18714,1,2,0)
- ;;=2^Dressings and/or Debridement, initial or subsequent; without anesthesia, office or hospital, small
- ;;^UTILITY(U,$J,358.3,18714,1,3,0)
- ;;=3^16020
- ;;^UTILITY(U,$J,358.3,18715,0)
- ;;=11100^^122^1198^1^^^^1
- ;;^UTILITY(U,$J,358.3,18715,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18715,1,2,0)
- ;;=2^Biopsy of skin,subq tissue single lesion
- ;;^UTILITY(U,$J,358.3,18715,1,3,0)
- ;;=3^11100
- ;;^UTILITY(U,$J,358.3,18716,0)
- ;;=11101^^122^1198^2^^^^1
- ;;^UTILITY(U,$J,358.3,18716,1,0)
- ;;=^358.31IA^3^2
- ;;^UTILITY(U,$J,358.3,18716,1,2,0)
- ;;=2^Biopsy of skin,subq tissue ea addl lesion
- ;;^UTILITY(U,$J,358.3,18716,1,3,0)
- ;;=3^11101
- ;;^UTILITY(U,$J,358.3,18717,0)
- ;;=20605^^122^1199^1^^^^1
+ ;;^UTILITY(U,$J,358.3,17379,1,3,0)
+ ;;=3^Dry Mouth,Unspec
+ ;;^UTILITY(U,$J,358.3,17379,1,4,0)
+ ;;=4^R68.2
+ ;;^UTILITY(U,$J,358.3,17379,2)
+ ;;=^5019552
+ ;;^UTILITY(U,$J,358.3,17380,0)
+ ;;=Z02.89^^88^861^1
+ ;;^UTILITY(U,$J,358.3,17380,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17380,1,3,0)
+ ;;=3^Administrative Exam Encounter
+ ;;^UTILITY(U,$J,358.3,17380,1,4,0)
+ ;;=4^Z02.89
+ ;;^UTILITY(U,$J,358.3,17380,2)
+ ;;=^5062645
+ ;;^UTILITY(U,$J,358.3,17381,0)
+ ;;=Z09.^^88^861^56
+ ;;^UTILITY(U,$J,358.3,17381,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17381,1,3,0)
+ ;;=3^F/U Exam After Treatment Encounter
+ ;;^UTILITY(U,$J,358.3,17381,1,4,0)
+ ;;=4^Z09.
+ ;;^UTILITY(U,$J,358.3,17381,2)
+ ;;=^5062668
+ ;;^UTILITY(U,$J,358.3,17382,0)
+ ;;=Z00.01^^88^861^60
+ ;;^UTILITY(U,$J,358.3,17382,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17382,1,3,0)
+ ;;=3^General Medical Exam w/ Abnormal Findings
+ ;;^UTILITY(U,$J,358.3,17382,1,4,0)
+ ;;=4^Z00.01
+ ;;^UTILITY(U,$J,358.3,17382,2)
+ ;;=^5062600
+ ;;^UTILITY(U,$J,358.3,17383,0)
+ ;;=Z00.00^^88^861^61
+ ;;^UTILITY(U,$J,358.3,17383,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17383,1,3,0)
+ ;;=3^General Medical Exam w/o Abnormal Findings
+ ;;^UTILITY(U,$J,358.3,17383,1,4,0)
+ ;;=4^Z00.00
+ ;;^UTILITY(U,$J,358.3,17383,2)
+ ;;=^5062599
+ ;;^UTILITY(U,$J,358.3,17384,0)
+ ;;=Z23.^^88^861^69
+ ;;^UTILITY(U,$J,358.3,17384,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17384,1,3,0)
+ ;;=3^Immunization Encounter
+ ;;^UTILITY(U,$J,358.3,17384,1,4,0)
+ ;;=4^Z23.
+ ;;^UTILITY(U,$J,358.3,17384,2)
+ ;;=^5062795
+ ;;^UTILITY(U,$J,358.3,17385,0)
+ ;;=Z03.89^^88^861^81
+ ;;^UTILITY(U,$J,358.3,17385,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17385,1,3,0)
+ ;;=3^Observation for Suspected Diseases/Ruled Out Conditions
+ ;;^UTILITY(U,$J,358.3,17385,1,4,0)
+ ;;=4^Z03.89
+ ;;^UTILITY(U,$J,358.3,17385,2)
+ ;;=^5062656
+ ;;^UTILITY(U,$J,358.3,17386,0)
+ ;;=Z04.9^^88^861^82
+ ;;^UTILITY(U,$J,358.3,17386,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17386,1,3,0)
+ ;;=3^Observation/Exam,Unspec Reason
+ ;;^UTILITY(U,$J,358.3,17386,1,4,0)
+ ;;=4^Z04.9
+ ;;^UTILITY(U,$J,358.3,17386,2)
+ ;;=^5062666
+ ;;^UTILITY(U,$J,358.3,17387,0)
+ ;;=Z51.5^^88^861^94
+ ;;^UTILITY(U,$J,358.3,17387,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17387,1,3,0)
+ ;;=3^Palliative Care Encounter
+ ;;^UTILITY(U,$J,358.3,17387,1,4,0)
+ ;;=4^Z51.5
+ ;;^UTILITY(U,$J,358.3,17387,2)
+ ;;=^5063063
+ ;;^UTILITY(U,$J,358.3,17388,0)
+ ;;=Z12.9^^88^861^162
+ ;;^UTILITY(U,$J,358.3,17388,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17388,1,3,0)
+ ;;=3^Screening for Malig Neop,Unspec Site
+ ;;^UTILITY(U,$J,358.3,17388,1,4,0)
+ ;;=4^Z12.9
+ ;;^UTILITY(U,$J,358.3,17388,2)
+ ;;=^5062698
+ ;;^UTILITY(U,$J,358.3,17389,0)
+ ;;=Z13.9^^88^861^163
+ ;;^UTILITY(U,$J,358.3,17389,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17389,1,3,0)
+ ;;=3^Screening,Unspec
+ ;;^UTILITY(U,$J,358.3,17389,1,4,0)
+ ;;=4^Z13.9
+ ;;^UTILITY(U,$J,358.3,17389,2)
+ ;;=^5062721
+ ;;^UTILITY(U,$J,358.3,17390,0)
+ ;;=Z48.89^^88^861^164
+ ;;^UTILITY(U,$J,358.3,17390,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17390,1,3,0)
+ ;;=3^Surgical Aftercare Encounter,Other Spec
+ ;;^UTILITY(U,$J,358.3,17390,1,4,0)
+ ;;=4^Z48.89
+ ;;^UTILITY(U,$J,358.3,17390,2)
+ ;;=^5063055
+ ;;^UTILITY(U,$J,358.3,17391,0)
+ ;;=Z51.81^^88^861^167
+ ;;^UTILITY(U,$J,358.3,17391,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17391,1,3,0)
+ ;;=3^Therapeutic Drug Level Monitoring
+ ;;^UTILITY(U,$J,358.3,17391,1,4,0)
+ ;;=4^Z51.81
+ ;;^UTILITY(U,$J,358.3,17391,2)
+ ;;=^5063064
+ ;;^UTILITY(U,$J,358.3,17392,0)
+ ;;=Z77.9^^88^861^55
+ ;;^UTILITY(U,$J,358.3,17392,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,17392,1,3,0)
+ ;;=3^Exposures/Contact with Hazardous Substances

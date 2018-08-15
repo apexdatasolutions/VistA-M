@@ -1,138 +1,124 @@
-IBDEI1AE ; ; 12-AUG-2014
- ;;3.0;IB ENCOUNTER FORM IMP/EXP;;MAY 15, 2014
+IBDEI1AE ; ; 19-NOV-2015
+ ;;3.0;IB ENCOUNTER FORM IMP/EXP;;JUN 29, 2015
  Q:'DIFQR(358.3)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
- ;;^UTILITY(U,$J,358.3,23039,1,5,0)
- ;;=5^Abdominal Mass/Lump
- ;;^UTILITY(U,$J,358.3,23039,2)
- ;;=Abdominal Mass/Lump^917
- ;;^UTILITY(U,$J,358.3,23040,0)
- ;;=789.2^^144^1419^130
- ;;^UTILITY(U,$J,358.3,23040,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23040,1,4,0)
- ;;=4^789.2
- ;;^UTILITY(U,$J,358.3,23040,1,5,0)
- ;;=5^Splenomegaly
- ;;^UTILITY(U,$J,358.3,23040,2)
- ;;=Splenomegaly^113452
- ;;^UTILITY(U,$J,358.3,23041,0)
- ;;=785.2^^144^1419^34
- ;;^UTILITY(U,$J,358.3,23041,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23041,1,4,0)
- ;;=4^785.2
- ;;^UTILITY(U,$J,358.3,23041,1,5,0)
- ;;=5^Cardiac murmurs, undiagnosed
- ;;^UTILITY(U,$J,358.3,23041,2)
- ;;=^295854
- ;;^UTILITY(U,$J,358.3,23042,0)
- ;;=786.50^^144^1419^37
- ;;^UTILITY(U,$J,358.3,23042,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23042,1,4,0)
- ;;=4^786.50
- ;;^UTILITY(U,$J,358.3,23042,1,5,0)
- ;;=5^Chest pain/Discomfort (nonsp) chest pain diff from discomfort
- ;;^UTILITY(U,$J,358.3,23042,2)
- ;;=^22485
- ;;^UTILITY(U,$J,358.3,23043,0)
- ;;=786.51^^144^1419^121
- ;;^UTILITY(U,$J,358.3,23043,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23043,1,4,0)
- ;;=4^786.51
- ;;^UTILITY(U,$J,358.3,23043,1,5,0)
- ;;=5^Precordial Pain
- ;;^UTILITY(U,$J,358.3,23043,2)
- ;;=Precordial Pain^276877
- ;;^UTILITY(U,$J,358.3,23044,0)
- ;;=786.2^^144^1419^43
- ;;^UTILITY(U,$J,358.3,23044,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23044,1,4,0)
- ;;=4^786.2
- ;;^UTILITY(U,$J,358.3,23044,1,5,0)
- ;;=5^Cough
- ;;^UTILITY(U,$J,358.3,23044,2)
- ;;=Cough^28905
- ;;^UTILITY(U,$J,358.3,23045,0)
- ;;=396.0^^144^1419^40
- ;;^UTILITY(U,$J,358.3,23045,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23045,1,4,0)
- ;;=4^396.0
- ;;^UTILITY(U,$J,358.3,23045,1,5,0)
- ;;=5^Combined Aortic&Mitral Valve stenosis
- ;;^UTILITY(U,$J,358.3,23045,2)
- ;;=^269580
- ;;^UTILITY(U,$J,358.3,23046,0)
- ;;=786.09^^144^1419^55
- ;;^UTILITY(U,$J,358.3,23046,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23046,1,4,0)
- ;;=4^786.09
- ;;^UTILITY(U,$J,358.3,23046,1,5,0)
- ;;=5^Dyspnea
- ;;^UTILITY(U,$J,358.3,23046,2)
- ;;=Dyspnea^87547
- ;;^UTILITY(U,$J,358.3,23047,0)
- ;;=786.8^^144^1419^76
- ;;^UTILITY(U,$J,358.3,23047,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23047,1,4,0)
- ;;=4^786.8
- ;;^UTILITY(U,$J,358.3,23047,1,5,0)
- ;;=5^Hiccough
- ;;^UTILITY(U,$J,358.3,23047,2)
- ;;=Hiccough^57197
- ;;^UTILITY(U,$J,358.3,23048,0)
- ;;=786.01^^144^1419^80
- ;;^UTILITY(U,$J,358.3,23048,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23048,1,4,0)
- ;;=4^786.01
- ;;^UTILITY(U,$J,358.3,23048,1,5,0)
- ;;=5^Hyperventilation
- ;;^UTILITY(U,$J,358.3,23048,2)
- ;;=Hyperventilation^60480
- ;;^UTILITY(U,$J,358.3,23049,0)
- ;;=786.6^^144^1419^99
- ;;^UTILITY(U,$J,358.3,23049,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23049,1,4,0)
- ;;=4^786.6
- ;;^UTILITY(U,$J,358.3,23049,1,5,0)
- ;;=5^Mass, Lump of chest
- ;;^UTILITY(U,$J,358.3,23049,2)
- ;;=^273380
- ;;^UTILITY(U,$J,358.3,23050,0)
- ;;=786.02^^144^1419^113
- ;;^UTILITY(U,$J,358.3,23050,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23050,1,4,0)
- ;;=4^786.02
- ;;^UTILITY(U,$J,358.3,23050,1,5,0)
- ;;=5^Orthopnea
- ;;^UTILITY(U,$J,358.3,23050,2)
- ;;=Orthopnea^186737
- ;;^UTILITY(U,$J,358.3,23051,0)
- ;;=786.52^^144^1419^114
- ;;^UTILITY(U,$J,358.3,23051,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23051,1,4,0)
- ;;=4^786.52
- ;;^UTILITY(U,$J,358.3,23051,1,5,0)
- ;;=5^Painful Respiration
- ;;^UTILITY(U,$J,358.3,23051,2)
- ;;=^89126
- ;;^UTILITY(U,$J,358.3,23052,0)
- ;;=785.1^^144^1419^116
- ;;^UTILITY(U,$J,358.3,23052,1,0)
- ;;=^358.31IA^5^2
- ;;^UTILITY(U,$J,358.3,23052,1,4,0)
- ;;=4^785.1
- ;;^UTILITY(U,$J,358.3,23052,1,5,0)
- ;;=5^Palpitations
- ;;^UTILITY(U,$J,358.3,23052,2)
- ;;=Palpitations^89281
+ ;;^UTILITY(U,$J,358.3,21504,1,4,0)
+ ;;=4^S06.310S
+ ;;^UTILITY(U,$J,358.3,21504,2)
+ ;;=^5020788
+ ;;^UTILITY(U,$J,358.3,21505,0)
+ ;;=S06.385S^^101^1032^29
+ ;;^UTILITY(U,$J,358.3,21505,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21505,1,3,0)
+ ;;=3^Contus/lac/hem brnst w LOC >24 hr w ret consc lev, sequela
+ ;;^UTILITY(U,$J,358.3,21505,1,4,0)
+ ;;=4^S06.385S
+ ;;^UTILITY(U,$J,358.3,21505,2)
+ ;;=^5021013
+ ;;^UTILITY(U,$J,358.3,21506,0)
+ ;;=S06.386S^^101^1032^30
+ ;;^UTILITY(U,$J,358.3,21506,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21506,1,3,0)
+ ;;=3^Contus/lac/hem brnst w LOC >24 hr w/o ret consc w surv, sqla
+ ;;^UTILITY(U,$J,358.3,21506,1,4,0)
+ ;;=4^S06.386S
+ ;;^UTILITY(U,$J,358.3,21506,2)
+ ;;=^5021016
+ ;;^UTILITY(U,$J,358.3,21507,0)
+ ;;=S06.383S^^101^1032^31
+ ;;^UTILITY(U,$J,358.3,21507,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21507,1,3,0)
+ ;;=3^Contus/lac/hem brnst w LOC of 1-5 hrs 59 min, sequela
+ ;;^UTILITY(U,$J,358.3,21507,1,4,0)
+ ;;=4^S06.383S
+ ;;^UTILITY(U,$J,358.3,21507,2)
+ ;;=^5021007
+ ;;^UTILITY(U,$J,358.3,21508,0)
+ ;;=S06.381S^^101^1032^32
+ ;;^UTILITY(U,$J,358.3,21508,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21508,1,3,0)
+ ;;=3^Contus/lac/hem brnst w LOC of 30 minutes or less, sequela
+ ;;^UTILITY(U,$J,358.3,21508,1,4,0)
+ ;;=4^S06.381S
+ ;;^UTILITY(U,$J,358.3,21508,2)
+ ;;=^5021001
+ ;;^UTILITY(U,$J,358.3,21509,0)
+ ;;=S06.382S^^101^1032^33
+ ;;^UTILITY(U,$J,358.3,21509,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21509,1,3,0)
+ ;;=3^Contus/lac/hem brnst w LOC of 31-59 min, sequela
+ ;;^UTILITY(U,$J,358.3,21509,1,4,0)
+ ;;=4^S06.382S
+ ;;^UTILITY(U,$J,358.3,21509,2)
+ ;;=^5021004
+ ;;^UTILITY(U,$J,358.3,21510,0)
+ ;;=S06.384S^^101^1032^34
+ ;;^UTILITY(U,$J,358.3,21510,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21510,1,3,0)
+ ;;=3^Contus/lac/hem brnst w LOC of 6-24 hrs, sequela
+ ;;^UTILITY(U,$J,358.3,21510,1,4,0)
+ ;;=4^S06.384S
+ ;;^UTILITY(U,$J,358.3,21510,2)
+ ;;=^5021010
+ ;;^UTILITY(U,$J,358.3,21511,0)
+ ;;=S06.389S^^101^1032^35
+ ;;^UTILITY(U,$J,358.3,21511,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21511,1,3,0)
+ ;;=3^Contus/lac/hem brnst w LOC of unsp duration, sequela
+ ;;^UTILITY(U,$J,358.3,21511,1,4,0)
+ ;;=4^S06.389S
+ ;;^UTILITY(U,$J,358.3,21511,2)
+ ;;=^5021025
+ ;;^UTILITY(U,$J,358.3,21512,0)
+ ;;=S06.380S^^101^1032^36
+ ;;^UTILITY(U,$J,358.3,21512,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21512,1,3,0)
+ ;;=3^Contus/lac/hem brnst w/o LOC, sequela
+ ;;^UTILITY(U,$J,358.3,21512,1,4,0)
+ ;;=4^S06.380S
+ ;;^UTILITY(U,$J,358.3,21512,2)
+ ;;=^5020998
+ ;;^UTILITY(U,$J,358.3,21513,0)
+ ;;=S06.375S^^101^1032^37
+ ;;^UTILITY(U,$J,358.3,21513,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21513,1,3,0)
+ ;;=3^Contus/lac/hem crblm w LOC >24 hr w ret consc lev, sequela
+ ;;^UTILITY(U,$J,358.3,21513,1,4,0)
+ ;;=4^S06.375S
+ ;;^UTILITY(U,$J,358.3,21513,2)
+ ;;=^5020983
+ ;;^UTILITY(U,$J,358.3,21514,0)
+ ;;=S06.376S^^101^1032^38
+ ;;^UTILITY(U,$J,358.3,21514,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21514,1,3,0)
+ ;;=3^Contus/lac/hem crblm w LOC >24 hr w/o ret consc w surv, sqla
+ ;;^UTILITY(U,$J,358.3,21514,1,4,0)
+ ;;=4^S06.376S
+ ;;^UTILITY(U,$J,358.3,21514,2)
+ ;;=^5020986
+ ;;^UTILITY(U,$J,358.3,21515,0)
+ ;;=S06.373S^^101^1032^39
+ ;;^UTILITY(U,$J,358.3,21515,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21515,1,3,0)
+ ;;=3^Contus/lac/hem crblm w LOC of 1-5 hrs 59 min, sequela
+ ;;^UTILITY(U,$J,358.3,21515,1,4,0)
+ ;;=4^S06.373S
+ ;;^UTILITY(U,$J,358.3,21515,2)
+ ;;=^5020977
+ ;;^UTILITY(U,$J,358.3,21516,0)
+ ;;=S06.371S^^101^1032^40
+ ;;^UTILITY(U,$J,358.3,21516,1,0)
+ ;;=^358.31IA^4^2
+ ;;^UTILITY(U,$J,358.3,21516,1,3,0)
+ ;;=3^Contus/lac/hem crblm w LOC of 30 minutes or less, sequela
